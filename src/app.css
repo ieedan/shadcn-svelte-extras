@@ -80,25 +80,22 @@
 html.dark .shiki,
 html.dark .shiki span {
 	color: var(--shiki-dark) !important;
-	background-color: transparent !important;
 	font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
-/* Remove background from light mode */
-html pre.shiki {
-	background-color: transparent !important;
-}
+@layer utilities {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
 
-/* For components that need horizontal scrolling */
-.scrollbar-hide {
-	-ms-overflow-style: none; /* Internet Explorer and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-	display: none; /* Chrome, Safari, and Opera */
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 }
 
 html {

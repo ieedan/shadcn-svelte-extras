@@ -31,3 +31,7 @@
 <Playground code={examples.variants.code}>
 	<examples.variants.Component />
 </Playground>
+<Subheading>Highlight Lines</Subheading>
+<Playground code={examples.highlightLines.code}>
+	<examples.highlightLines.Component />
+</Playground>

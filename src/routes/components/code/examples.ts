@@ -4,6 +4,8 @@ import NoLineNumbers from './no-line-numbers.svelte';
 import noLineNumbersRaw from './no-line-numbers.svelte?raw';
 import Variants from './variants.svelte';
 import variantsRaw from './variants.svelte?raw';
+import HighlightLines from './highlight-lines.svelte';
+import highlightLinesRaw from './highlight-lines.svelte?raw';
 
 const examples = {
 	basic: {
@@ -18,6 +20,10 @@ const examples = {
 		code: variantsRaw,
 		Component: Variants
 	},
+	highlightLines: {
+		code: highlightLinesRaw,
+		Component: HighlightLines
+	},
 	providerCode: `\<script lang="ts"\>
 	import { ShikiProvider } from '$lib/components/ui/code';
 	// ...
@@ -30,25 +36,22 @@ const examples = {
 html.dark .shiki,
 html.dark .shiki span {
 	color: var(--shiki-dark) !important;
-	background-color: transparent !important;
 	font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
-/* Remove background from light mode */
-html pre.shiki {
-	background-color: transparent !important;
-}
-
-/* For components that need horizontal scrolling */
-.scrollbar-hide {
-	-ms-overflow-style: none; /* Internet Explorer and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-	display: none; /* Chrome, Safari, and Opera */
+@layer utilities {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+	
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 }`
 };
 
