@@ -103,6 +103,13 @@ const map: Record<string, Route[]> = {
 			href: '/components/tree-view',
 			specifier: 'ui/tree-view',
 			source: 'src/lib/components/ui/tree-view'
+		},
+		{
+			name: 'TextArea Autosize',
+			description: 'A auto sizing text area.',
+			href: '/components/textarea-autosize',
+			specifier: 'ui/textarea-autosize',
+			source: 'src/lib/components/ui/textarea-autosize'
 		}
 	],
 	Actions: [
