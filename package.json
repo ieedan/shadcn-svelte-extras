@@ -5,13 +5,13 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "pnpm build:registry && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"build:registry": "jsrepo build"
+		"build:registry": "jsrepo build && jsrepo build --output-dir ./static/registry"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.3",
@@ -26,7 +26,7 @@
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.45.1",
 		"globals": "^15.14.0",
-		"jsrepo": "^1.24.0",
+		"jsrepo": "^1.26.0",
 		"lucide-svelte": "^0.469.0",
 		"mode-watcher": "^0.5.0",
 		"prettier": "^3.3.2",
