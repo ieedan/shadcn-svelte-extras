@@ -62,7 +62,7 @@ export class UseAutoScroll {
 			this.lastScrollHeight = this.#ref.scrollHeight;
 		});
 
-		observer.observe(this.#ref, { childList: true });
+		observer.observe(this.#ref, { childList: true, subtree: true });
 	}
 
 	get ref() {
