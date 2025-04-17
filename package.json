@@ -35,7 +35,7 @@
 		"globals": "^16.0.0",
 		"isomorphic-dompurify": "^2.23.0",
 		"jsrepo": "^1.47.1",
-		"mode-watcher": "^1.0.1",
+		"mode-watcher": "^1.0.0",
 		"package-manager-detector": "^1.2.0",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",

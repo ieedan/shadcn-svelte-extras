@@ -69,8 +69,8 @@ importers:
         specifier: ^1.47.1
         version: 1.47.1(typescript@5.8.3)(ws@8.18.0)(zod@3.24.2)
       mode-watcher:
-        specifier: ^1.0.1
-        version: 1.0.1(svelte@5.27.0)
+        specifier: ^1.0.0
+        version: 1.0.0(svelte@5.27.0)
       package-manager-detector:
         specifier: ^1.2.0
         version: 1.2.0
@@ -2077,8 +2077,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  mode-watcher@1.0.1:
-    resolution: {integrity: sha512-CUWzs9g9QMAH5WDnWgdDxBfNrkJsBELMPj2rtd7mTkJ1NjHi6H9mTDjxqPBkRkJHzxq7q8AFg/pWiE69WFRgEg==}
+  mode-watcher@1.0.0:
+    resolution: {integrity: sha512-pR7f1uVe6WAds4WAM8DxGk+w4fN94AgpYQp29IQRZqlWpYS1NwtVaLIil1OrYISuJaotfyLAviRKrc+yCwBw2g==}
     peerDependencies:
       svelte: ^5.27.0
 
@@ -5030,7 +5030,7 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  mode-watcher@1.0.1(svelte@5.27.0):
+  mode-watcher@1.0.0(svelte@5.27.0):
     dependencies:
       runed: 0.25.0(svelte@5.27.0)
       svelte: 5.27.0
