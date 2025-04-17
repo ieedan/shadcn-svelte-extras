@@ -6,7 +6,7 @@
 	let { class: className, ...rest }: IconProps = $props();
 </script>
 
-{#if $mode === 'dark'}
+{#if mode.current === 'dark'}
 	<svg
 		{...rest}
 		viewBox="0 0 16 16"
