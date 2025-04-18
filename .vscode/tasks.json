@@ -1,0 +1,79 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Dev Server",
+			"type": "shell",
+			"command": "pnpm dev",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "always",
+				"panel": "new",
+				"focus": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Format",
+			"type": "shell",
+			"command": "pnpm format",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "silent",
+				"revealProblems": "onProblem",
+				"close": true
+			}
+		},
+		{
+			"label": "Lint",
+			"type": "shell",
+			"command": "pnpm lint",
+			"problemMatcher": ["$eslint-stylish"],
+			"presentation": {
+				"reveal": "silent",
+				"revealProblems": "onProblem",
+				"close": false
+			}
+		},
+		{
+			"label": "Check",
+			"type": "shell",
+			"command": "pnpm check",
+			"problemMatcher": ["$tsc"],
+			"presentation": {
+				"reveal": "silent",
+				"revealProblems": "onProblem",
+				"close": false
+			}
+		},
+		{
+			"label": "Build",
+			"type": "shell",
+			"command": "pnpm build",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "silent",
+				"revealProblems": "onProblem",
+				"close": true
+			}
+		},
+		{
+			"label": "Validate (CI Checks)",
+			"dependsOrder": "sequence",
+			"dependsOn": ["Format", "Lint", "Check"],
+			"problemMatcher": [],
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true
+			}
+		}
+	]
+}

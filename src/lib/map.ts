@@ -92,6 +92,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/kbd/kbd.svelte'
 		},
 		{
+			name: 'Language Switcher',
+			description: 'Switch between languages easily.',
+			href: '/components/language-switcher',
+			specifier: 'ui/language-switcher',
+			source: 'src/lib/components/ui/language-switcher',
+			status: 'New'
+		},
+		{
 			name: 'Light Switch',
 			description: 'Click and change the theme.',
 			href: '/components/light-switch',
