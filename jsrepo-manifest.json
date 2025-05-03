@@ -369,6 +369,23 @@
 					}
 				},
 				{
+					"name": "language-switcher",
+					"directory": "src/lib/components/ui/language-switcher",
+					"category": "ui",
+					"tests": false,
+					"subdirectory": true,
+					"list": true,
+					"files": ["index.ts", "language-switcher.svelte", "types.ts"],
+					"localDependencies": ["ui/dropdown-menu", "ui/button", "utils/utils"],
+					"dependencies": [],
+					"devDependencies": ["@lucide/svelte@^0.486.0"],
+					"_imports_": {
+						"$lib/components/ui/dropdown-menu": "{{ui/dropdown-menu}}",
+						"$lib/components/ui/button": "{{ui/button}}",
+						"$lib/utils/utils": "{{utils/utils}}"
+					}
+				},
+				{
 					"name": "light-switch",
 					"directory": "src/lib/components/ui/light-switch",
 					"category": "ui",
