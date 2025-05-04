@@ -1,5 +1,7 @@
 {
 	"$schema": "https://unpkg.com/jsrepo@1.39.0/schemas/registry-config.json",
+	"name": "@ieedan/shadcn-svelte-extras",
+	"version": "package",
 	"meta": {
 		"authors": ["Aidan Bleser"],
 		"bugs": "https://github.com/ieedan/shadcn-svelte-extras/issues",
