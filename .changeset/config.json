@@ -1,0 +1,19 @@
+{
+	"$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
+	"changelog": [
+		"@svitejs/changesets-changelog-github-compact",
+		{ "repo": "ieedan/shadcn-svelte-extras" }
+	],
+	"commit": false,
+	"fixed": [],
+	"linked": [],
+	"access": "restricted",
+	"prettier": false,
+	"baseBranch": "main",
+	"updateInternalDependencies": "patch",
+	"ignore": [],
+	"privatePackages": {
+		"version": true,
+		"tag": true
+	}
+}

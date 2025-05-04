@@ -13,6 +13,7 @@
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
 		"build:registry": "jsrepo build",
+		"ci:release": "pnpm jsrepo publish --verbose && changeset tag",
 		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide"
 	},
 	"devDependencies": {
@@ -20,6 +21,8 @@
 		"@eslint/js": "^9.23.0",
 		"@fontsource-variable/inter": "^5.2.5",
 		"@fontsource/geist-mono": "^5.2.5",
+		"@inlang/cli": "^3.0.0",
+		"@inlang/paraglide-js": "2.0.11",
 		"@lucide/svelte": "^0.486.0",
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.2.1",
@@ -35,7 +38,6 @@
 		"eslint-plugin-svelte": "^3.4.1",
 		"globals": "^16.0.0",
 		"isomorphic-dompurify": "^2.22.0",
-		"jsrepo": "^1.45.1",
 		"mode-watcher": "^0.5.1",
 		"package-manager-detector": "^1.1.0",
 		"prettier": "^3.5.3",
@@ -59,9 +61,7 @@
 		"valibot": "1.0.0",
 		"vaul-svelte": "1.0.0-next.3",
 		"vite": "^6.2.4",
-		"yeezy-dates": "^1.0.1",
-		"@inlang/paraglide-js": "2.0.11",
-		"@inlang/cli": "^3.0.0"
+		"yeezy-dates": "^1.0.1"
 	},
 	"pnpm": {
 		"ignoredBuiltDependencies": [
@@ -70,5 +70,9 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@changesets/cli": "^2.29.2",
+		"jsrepo": "https://pkg.pr.new/jsrepojs/jsrepo@539"
 	}
 }

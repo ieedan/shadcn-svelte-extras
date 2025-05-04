@@ -1,61 +1,37 @@
-name: release-please
+name: Publish
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: write
-  pull-requests: write
-  id-token: write
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  build:
+  release:
+    name: Build & Publish Release
+    if: github.repository == 'ieedan/shadcn-svelte-extras'
     runs-on: ubuntu-latest
-    permissions:
-      # Required for pushing to the repository
-      contents: write
-      pull-requests: write
+
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install dependencies
-        run: pnpm sync
-
-      - name: Build jsrepo-manifest.json
-        run: pnpm build:registry
-
-      - name: Format manifest
-        run: pnpm format
-
-      - name: Create pull request with changes
-        uses: peter-evans/create-pull-request@v7
+      - name: Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
         with:
-          title: 'chore: update `jsrepo-manifest.json`'
-          body: |
-            - Update `jsrepo-manifest.json`
-
-            *This PR was auto generated*
-          assignees: ieedan
-          branch: build-manifest
-          commit-message: build `jsrepo-manifest.json`
-
-  release-please:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Release Please
-        uses: googleapis/release-please-action@v4
-        id: release
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          commit: 'chore(release): version package'
+          title: 'chore(release): version package'
+          publish: pnpm ci:release
+        env:
+          JSREPO_TOKEN: ${{ secrets.JSREPO_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ENV: production
