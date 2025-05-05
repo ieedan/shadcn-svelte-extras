@@ -74,6 +74,6 @@
 	"dependencies": {
 		"@changesets/cli": "^2.29.2",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"jsrepo": "https://pkg.pr.new/jsrepojs/jsrepo@539"
+		"jsrepo": "^2.0.0"
 	}
 }

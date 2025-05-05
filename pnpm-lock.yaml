@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(encoding@0.1.13)
       jsrepo:
-        specifier: https://pkg.pr.new/jsrepojs/jsrepo@539
-        version: https://pkg.pr.new/jsrepojs/jsrepo@539(encoding@0.1.13)(typescript@5.8.2)(ws@8.18.0)(zod@3.24.2)
+        specifier: ^2.0.0
+        version: 2.0.0(encoding@0.1.13)(typescript@5.8.2)(ws@8.18.0)(zod@3.24.2)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.7
@@ -2244,9 +2244,8 @@ packages:
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
-  jsrepo@https://pkg.pr.new/jsrepojs/jsrepo@539:
-    resolution: {tarball: https://pkg.pr.new/jsrepojs/jsrepo@539}
-    version: 1.47.1
+  jsrepo@2.0.0:
+    resolution: {integrity: sha512-Us7wfoV8PBihu/aoE0/pTn9oIaK4pZLx3T+didF7nzBKjRbnKTuqn77GuBY4ufUY7BV6W42D9n/IbfBt7P2dUg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -2430,6 +2429,7 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
+    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -5742,7 +5742,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsrepo@https://pkg.pr.new/jsrepojs/jsrepo@539(encoding@0.1.13)(typescript@5.8.2)(ws@8.18.0)(zod@3.24.2):
+  jsrepo@2.0.0(encoding@0.1.13)(typescript@5.8.2)(ws@8.18.0)(zod@3.24.2):
     dependencies:
       '@anthropic-ai/sdk': 0.40.1(encoding@0.1.13)
       '@biomejs/js-api': 0.7.1(@biomejs/wasm-nodejs@1.9.4)
