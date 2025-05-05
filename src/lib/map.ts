@@ -175,8 +175,7 @@ const map: Record<string, Route[]> = {
 			description: 'A component for displaying a table of contents.',
 			href: '/components/toc',
 			specifier: 'ui/toc',
-			source: 'src/lib/components/ui/toc',
-			status: 'New'
+			source: 'src/lib/components/ui/toc'
 		},
 		{
 			name: 'Tree View',
