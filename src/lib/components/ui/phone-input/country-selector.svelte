@@ -31,9 +31,11 @@
 	let selectedCountry = $derived(countries.find((a) => a.iso2 == selected));
 
 	let open = $state(false);
+	let selectedValue = $state(false);
 
 	const selectCountry = (country: Country) => {
 		selected = country.iso2;
+		selectedValue = true;
 		open = false;
 		onselect?.(selected);
 	};
@@ -56,7 +58,15 @@
 			</Button>
 		{/snippet}
 	</Popover.Trigger>
-	<Popover.Content class="w-[300px] p-0">
+	<Popover.Content
+		class="w-[300px] p-0"
+		onCloseAutoFocus={(e) => {
+			if (selectedValue) {
+				selectedValue = false;
+				e.preventDefault();
+			}
+		}}
+	>
 		<Command.Root>
 			<Command.Input placeholder="Search country..." />
 			<Command.List>
