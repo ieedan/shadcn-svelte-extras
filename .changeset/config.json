@@ -8,7 +8,6 @@
 	"fixed": [],
 	"linked": [],
 	"access": "restricted",
-	"prettier": false,
 	"baseBranch": "main",
 	"updateInternalDependencies": "patch",
 	"ignore": [],
