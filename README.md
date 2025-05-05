@@ -40,7 +40,7 @@ and more...
 **Initialize jsrepo**:
 
 ```bash
-jsrepo init github/ieedan/shadcn-svelte-extras
+jsrepo init @ieedan/shadcn-svelte-extras
 ```
 
 **Install components**:
