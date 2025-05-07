@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 2.0.3
+
+### Patch Changes
+
+- chore: update readme badges ([#164](https://github.com/ieedan/shadcn-svelte-extras/pull/164))
+
 ## 2.0.2
 
 ### Patch Changes
