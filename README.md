@@ -1,6 +1,7 @@
 # shadcn-svelte-extras
 
-[![jsrepo](https://jsrepo.dev/badges/build/passing.svg)](https://jsrepo.dev/registry?url=github/ieedan/shadcn-svelte-extras)
+[![jsrepo](https://jsrepo.com/badges/@ieedan/shadcn-svelte-extras)](https://jsrepo.com/@ieedan/shadcn-svelte-extras)
+[![jsrepo](https://jsrepo.com/badges/@ieedan/shadcn-svelte-extras/dm)](https://jsrepo.com/@ieedan/shadcn-svelte-extras)
 
 Turn key shadcn-svelte components to help you finish your app.
 
