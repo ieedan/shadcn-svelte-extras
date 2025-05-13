@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 2.0.4
+
+### Patch Changes
+
+- chore: bump deps ([#168](https://github.com/ieedan/shadcn-svelte-extras/pull/168))
+
 ## 2.0.3
 
 ### Patch Changes
