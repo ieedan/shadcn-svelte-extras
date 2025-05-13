@@ -48,7 +48,7 @@
 		"svelte": "^5.28.6",
 		"svelte-check": "^4.1.7",
 		"svelte-easy-crop": "^4.0.1",
-		"svelte-sonner": "^0.3.28",
+		"svelte-sonner": "^1.0.1",
 		"svelte-tel-input": "^3.6.0",
 		"svelte-toolbelt": "^0.7.1",
 		"sveltekit-superforms": "^2.25.0",
