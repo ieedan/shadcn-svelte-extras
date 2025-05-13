@@ -47,7 +47,7 @@
 			return;
 		}
 
-		value.push(validated);
+		value = [...value, validated]
 
 		inputValue = '';
 	};
