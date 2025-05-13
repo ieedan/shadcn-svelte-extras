@@ -243,8 +243,7 @@ const map: Record<string, Route[]> = {
 			description: 'A hook used to generate a table of contents based on the page content',
 			href: '/hooks/use-toc',
 			specifier: 'hooks/use-toc.svelte',
-			source: 'src/lib/hooks/use-toc.svelte.ts',
-			status: 'New'
+			source: 'src/lib/hooks/use-toc.svelte.ts'
 		}
 	]
 };

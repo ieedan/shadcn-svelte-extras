@@ -19,7 +19,7 @@
 <p>
 	Initialize jsrepo and add <ShadcnSvelteExtras /> as a repo:
 </p>
-<Snippet text="jsrepo init github/ieedan/shadcn-svelte-extras" />
+<Snippet text="jsrepo init @ieedan/shadcn-svelte-extras" />
 <p>Configure your paths so that components, hooks, and utils go to the right places:</p>
 <Code
 	lang="json"
