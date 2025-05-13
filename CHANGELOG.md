@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 2.0.5
+
+### Patch Changes
+
+- fix(tags-input): Ensure reactivity works correctly with stores ([#171](https://github.com/ieedan/shadcn-svelte-extras/pull/171))
+
 ## 2.0.4
 
 ### Patch Changes
