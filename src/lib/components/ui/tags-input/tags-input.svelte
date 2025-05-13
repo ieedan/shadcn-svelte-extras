@@ -47,7 +47,7 @@
 			return;
 		}
 
-		value = [...value, validated]
+		value = [...value, validated];
 
 		inputValue = '';
 	};
