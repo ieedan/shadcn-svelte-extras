@@ -149,6 +149,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/snippet/snippet.svelte'
 		},
 		{
+			name: 'Star Rating',
+			description: 'A simple star rating component.',
+			href: '/components/star-rating',
+			specifier: 'ui/star-rating',
+			source: 'src/lib/components/ui/star-rating',
+			status: 'New'
+		},
+		{
 			name: 'Tags Input',
 			description: 'A tags input component.',
 			href: '/components/tags-input',

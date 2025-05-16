@@ -1,7 +1,5 @@
 /*
-	jsrepo 1.19.1
-	Installed from github/ieedan/std
-	12-11-2024
+	Installed from @ieedan/std
 */
 
 /** Checks if provided value is actually a number.
@@ -21,10 +19,10 @@
  * isNumber(Number.POSITIVE_INFINITY); // false
  * ```
  */
-export const isNumber = (num: unknown): boolean => {
+export function isNumber(num: unknown): boolean {
 	if (typeof num === 'number') return num - num === 0;
 
 	if (typeof num === 'string' && num.trim() !== '') return Number.isFinite(+num);
 
 	return false;
-};
+}
