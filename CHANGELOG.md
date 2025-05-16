@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 2.1.1
+
+### Patch Changes
+
+- chore: Include star-rating in jsrepo release ([#175](https://github.com/ieedan/shadcn-svelte-extras/pull/175))
+
 ## 2.1.0
 
 ### Minor Changes
