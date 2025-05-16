@@ -1,4 +1,4 @@
-import LoginForm from './login-form.svelte';
+import ReviewForm from './review-form.svelte';
 import ConfigureDevice from './configure-device.svelte';
 import PhoneNumberSetting from './phone-number-setting.svelte';
 import CodeBlock from './code-block.svelte';
@@ -8,7 +8,7 @@ import FileDropZone from './file-drop-zone.svelte';
 import PmCommand from './pm-command.svelte';
 
 export {
-	LoginForm,
+	ReviewForm,
 	PmCommand,
 	ConfigureDevice,
 	PhoneNumberSetting,

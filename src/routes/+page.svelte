@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {
-		LoginForm,
+		ReviewForm,
 		ConfigureDevice,
 		PhoneNumberSetting,
 		CodeBlock,
@@ -50,7 +50,7 @@
 		<div class="flex flex-col gap-4 lg:col-start-1">
 			<ChatExample />
 			<TagsInput bind:value={tags} placeholder="Add a tag" />
-			<LoginForm />
+			<ReviewForm />
 			<SearchButton />
 			<div class="flex flex-col gap-4 2xl:hidden">
 				<EditorFileTree />
