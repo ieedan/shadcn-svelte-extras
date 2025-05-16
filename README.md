@@ -28,6 +28,7 @@ Turn key shadcn-svelte components to help you finish your app.
 | [Phone Input](https://shadcn-svelte-extras.com/components/phone-input)             | A phone number input component                                                          |
 | [PM Command](https://shadcn-svelte-extras.com/components/pm-command)               | A package manager command component                                                     |
 | [Snippet](https://shadcn-svelte-extras.com/components/snippet)                     | A snippet component                                                                     |
+| [Star Rating](https://shadcn-svelte-extras.com/components/star-rating)             | A simple star rating component                                                          |
 | [Tags Input](https://shadcn-svelte-extras.com/components/tags-input)               | A tags input component                                                                  |
 | [Terminal](https://shadcn-svelte-extras.com/components/terminal)                   | An implementation of the MacOS terminal. Useful for showcasing a command line interface |
 | [Theme Selector](https://shadcn-svelte-extras.com/components/theme-selector)       | Click to select the theme                                                               |
