@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 2.1.0
+
+### Minor Changes
+
+- feat: 🎉 New component `<StarRating/>` ([#173](https://github.com/ieedan/shadcn-svelte-extras/pull/173))
+
+### Patch Changes
+
+- chore: bump deps ([#173](https://github.com/ieedan/shadcn-svelte-extras/pull/173))
+
 ## 2.0.5
 
 ### Patch Changes
