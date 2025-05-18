@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as TreeView from '$lib/components/ui/tree-view';
 	import * as Icons from '$lib/components/icons';
-	import { FolderDot, FolderOpenDot } from '@lucide/svelte';
+	import { FolderDotIcon, FolderOpenDotIcon } from '@lucide/svelte';
 </script>
 
 <div class="h-40 w-72">
@@ -9,9 +9,9 @@
 		<TreeView.Folder name=".github">
 			{#snippet icon({ open })}
 				{#if open}
-					<FolderOpenDot class="size-4" />
+					<FolderOpenDotIcon class="size-4" />
 				{:else}
-					<FolderDot class="size-4" />
+					<FolderDotIcon class="size-4" />
 				{/if}
 			{/snippet}
 			<TreeView.Folder name="workflows"></TreeView.Folder>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Globe } from '@lucide/svelte';
+	import { GlobeIcon } from '@lucide/svelte';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils/utils';
@@ -25,7 +25,7 @@
 		class={cn(buttonVariants({ variant, size: 'icon' }), className)}
 		aria-label="Change language"
 	>
-		<Globe class="size-4" />
+		<GlobeIcon class="size-4" />
 		<span class="sr-only">Change language</span>
 	</DropdownMenu.Trigger>
 	<DropdownMenu.Content {align}>

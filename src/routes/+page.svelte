@@ -13,7 +13,7 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
-	import { LucideArrowRight, TerminalIcon } from '@lucide/svelte';
+	import { ArrowRightIcon, TerminalIcon } from '@lucide/svelte';
 	import { map } from '$lib/map';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
@@ -41,7 +41,7 @@
 		<a href="/components/terminal" class="flex place-items-center gap-1 text-sm font-medium">
 			<TerminalIcon class="size-4" />
 			<span class="hover:underline">jsrepo add ui/terminal</span>
-			<LucideArrowRight class="size-4" />
+			<ArrowRightIcon class="size-4" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
 		<p class="text-lg text-muted-foreground">Finish your app.</p>

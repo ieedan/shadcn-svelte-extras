@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { X } from '@lucide/svelte';
+	import { XIcon } from '@lucide/svelte';
 
 	type Props = {
 		value: string;
@@ -19,6 +19,6 @@
 		{value}
 	</span>
 	<button type="button" {disabled} onclick={() => onDelete(value)}>
-		<X class="size-4" />
+		<XIcon class="size-4" />
 	</button>
 </div>

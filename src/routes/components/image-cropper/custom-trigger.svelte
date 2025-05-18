@@ -2,7 +2,7 @@
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
-	import { Edit } from '@lucide/svelte';
+	import { EditIcon } from '@lucide/svelte';
 
 	let src = $state('https://github.com/shadcn.png');
 </script>
@@ -19,7 +19,7 @@
 						variant="outline"
 						size="icon"
 					>
-						<Edit class="size-4" />
+						<EditIcon class="size-4" />
 					</Button>
 				{/snippet}
 			</DropdownMenu.Trigger>

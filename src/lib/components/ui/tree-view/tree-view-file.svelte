@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { File } from '@lucide/svelte';
+	import { FileIcon } from '@lucide/svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils/utils';
 
@@ -16,7 +16,7 @@
 	{#if icon}
 		{@render icon({ name })}
 	{:else}
-		<File class="size-4" />
+		<FileIcon class="size-4" />
 	{/if}
 	<span>{name}</span>
 </button>

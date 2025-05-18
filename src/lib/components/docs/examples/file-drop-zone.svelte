@@ -8,7 +8,7 @@
 	} from '$lib/components/ui/file-drop-zone';
 	import { Progress } from '$lib/components/ui/progress';
 	import { sleep } from '$lib/utils/sleep';
-	import { X } from '@lucide/svelte';
+	import { XIcon } from '@lucide/svelte';
 	import { onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { SvelteDate } from 'svelte/reactivity';
@@ -114,7 +114,7 @@
 							files = [...files.slice(0, i), ...files.slice(i + 1)];
 						}}
 					>
-						<X />
+						<XIcon />
 					</Button>
 				{/await}
 			</div>

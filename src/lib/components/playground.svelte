@@ -4,7 +4,7 @@
 	import { Code } from '$lib/components/ui/code';
 	import { cn } from '$lib/utils/utils';
 	import { Button } from './ui/button';
-	import { RefreshCw } from '@lucide/svelte';
+	import { RefreshCwIcon } from '@lucide/svelte';
 
 	type Props = {
 		code: string;
@@ -39,7 +39,7 @@
 					class="absolute left-3 top-3"
 					onclick={() => remountCount++}
 				>
-					<RefreshCw class="size-4" />
+					<RefreshCwIcon class="size-4" />
 				</Button>
 			{/if}
 			{#key remountCount}

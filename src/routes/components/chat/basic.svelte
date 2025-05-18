@@ -2,7 +2,7 @@
 	import * as Chat from '$lib/components/ui/chat';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button } from '$lib/components/ui/button';
-	import { Info, Paperclip, Phone, Send, VideoIcon } from '@lucide/svelte';
+	import { InfoIcon, PaperclipIcon, PhoneIcon, SendIcon, VideoIcon } from '@lucide/svelte';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
 	import { formatShortTime, initials } from './utils';
@@ -28,13 +28,13 @@
 		</div>
 		<div class="flex place-items-center">
 			<Button variant="ghost" size="icon" class="rounded-full">
-				<Phone />
+				<PhoneIcon />
 			</Button>
 			<Button variant="ghost" size="icon" class="rounded-full">
 				<VideoIcon />
 			</Button>
 			<Button variant="ghost" size="icon" class="rounded-full">
-				<Info />
+				<InfoIcon />
 			</Button>
 		</div>
 	</div>
@@ -78,7 +78,7 @@
 		class="flex place-items-center gap-2 p-2"
 	>
 		<Button variant="ghost" size="icon" class="shrink-0 rounded-full">
-			<Paperclip />
+			<PaperclipIcon />
 		</Button>
 		<Input bind:value={message} class="rounded-full" placeholder="Type a message..." />
 		<Button
@@ -88,7 +88,7 @@
 			class="shrink-0 rounded-full"
 			disabled={message === ''}
 		>
-			<Send />
+			<SendIcon />
 		</Button>
 	</form>
 </div>

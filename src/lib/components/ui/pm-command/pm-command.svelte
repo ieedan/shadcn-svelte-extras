@@ -4,7 +4,7 @@
 	import type { Command, Agent } from 'package-manager-detector';
 	import { resolveCommand } from 'package-manager-detector/commands';
 	import CopyButton from '../copy-button/copy-button.svelte';
-	import { Clipboard } from '@lucide/svelte';
+	import { ClipboardIcon } from '@lucide/svelte';
 
 	const style = tv({
 		base: 'w-full rounded-lg border border-border',
@@ -59,7 +59,7 @@
 		</div>
 		<CopyButton text={commandText} class="mb-1 size-6 [&_svg]:size-3">
 			{#snippet icon()}
-				<Clipboard />
+				<ClipboardIcon />
 			{/snippet}
 		</CopyButton>
 	</div>

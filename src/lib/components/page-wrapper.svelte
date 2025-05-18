@@ -2,7 +2,7 @@
 	import type { Route } from '$lib/map';
 	import type { Snippet as SnippetType } from 'svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import { Code } from '@lucide/svelte';
+	import { CodeIcon } from '@lucide/svelte';
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
 	import * as Toc from '$lib/components/ui/toc';
@@ -48,7 +48,7 @@
 							class="flex w-fit place-items-center gap-1 rounded-md"
 						>
 							<span class="font-semibold">Component Source</span>
-							<Code class="size-3.5" />
+							<CodeIcon class="size-3.5" />
 						</Badge>
 					{/if}
 				</div>

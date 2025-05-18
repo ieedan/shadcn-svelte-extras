@@ -47,7 +47,7 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { Upload } from '@lucide/svelte';
+	import { UploadIcon } from '@lucide/svelte';
 	import { displaySize } from '.';
 	import { useId } from 'bits-ui';
 
@@ -183,7 +183,7 @@
 			<div
 				class="flex size-14 place-items-center justify-center rounded-full border border-dashed border-border text-muted-foreground"
 			>
-				<Upload class="size-7" />
+				<UploadIcon class="size-7" />
 			</div>
 			<div class="flex flex-col gap-0.5 text-center">
 				<span class="font-medium text-muted-foreground">

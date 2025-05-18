@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Dialog as DialogPrimitive, type WithoutChildrenOrChild } from 'bits-ui';
-	import X from '@lucide/svelte/icons/x';
+	import { XIcon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
 	import * as Dialog from './index.js';
 	import { cn } from '$lib/utils/utils.js';
@@ -34,7 +34,7 @@
 			<DialogPrimitive.Close
 				class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
 			>
-				<X class="size-4" />
+				<XIcon class="size-4" />
 				<span class="sr-only">Close</span>
 			</DialogPrimitive.Close>
 		{/if}

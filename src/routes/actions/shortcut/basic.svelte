@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Kbd } from '$lib/components/ui/kbd';
-	import { Command } from '@lucide/svelte';
+	import { CommandIcon } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	// import shortcut
 	import { shortcut } from '$lib/actions/shortcut.svelte';
@@ -16,5 +16,5 @@
 />
 
 <p class="flex place-items-center justify-center gap-1">
-	<Kbd variant="secondary" size="lg"><Command class="inline size-4" /> + 1</Kbd>
+	<Kbd variant="secondary" size="lg"><CommandIcon class="inline size-4" /> + 1</Kbd>
 </p>

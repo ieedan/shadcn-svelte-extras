@@ -2,7 +2,7 @@
 	import { cn } from '$lib/utils/utils';
 	import { onMount, type Snippet } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { ArrowDown } from '@lucide/svelte';
+	import { ArrowDownIcon } from '@lucide/svelte';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
 
@@ -43,7 +43,7 @@
 				size="icon"
 				class="absolute bottom-2 left-1/2 inline-flex -translate-x-1/2 transform rounded-full shadow-md"
 			>
-				<ArrowDown />
+				<ArrowDownIcon />
 			</Button>
 		</div>
 	{/if}

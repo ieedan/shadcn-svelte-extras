@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { ChevronLeft } from '@lucide/svelte';
+	import { ChevronLeftIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils/utils';
 	import { Button, type ButtonProps } from '$lib/components/ui/button';
 
@@ -17,6 +17,6 @@
 	size="sm"
 	{...rest}
 >
-	<ChevronLeft class="size-4" />
+	<ChevronLeftIcon class="size-4" />
 	{@render children()}
 </Button>
