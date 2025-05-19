@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@1.39.0/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@2.0.2/schemas/registry-config.json",
 	"name": "@ieedan/shadcn-svelte-extras",
 	"version": "package",
 	"meta": {
@@ -13,8 +13,8 @@
 	"peerDependencies": {
 		"svelte": "5.x.x",
 		"tailwindcss": {
-			"version": "3.x.x",
-			"message": "Tailwindcss@v4 support is in progress see: https://github.com/huntabyte/shadcn-svelte/issues/1643"
+			"version": "4.x.x",
+			"message": "Tailwindcss@v3 is no longer supported. Please use v2.1.1."
 		}
 	},
 	"dirs": ["./src/lib/components", "./src/lib"],
@@ -59,7 +59,7 @@
 		"use-toc.svelte"
 	],
 	"listCategories": [],
-	"excludeDeps": ["svelte"],
+	"excludeDeps": ["svelte", "@sveltejs/kit"],
 	"preview": true,
 	"rules": {
 		"no-category-index-file-dependency": "warn",

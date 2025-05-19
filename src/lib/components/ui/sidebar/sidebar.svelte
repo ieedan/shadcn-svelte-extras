@@ -1,7 +1,6 @@
 <script lang="ts">
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
-	import { cn } from '$lib/utils/utils.js';
-	import type { WithElementRef } from 'bits-ui';
+	import { cn, type WithElementRef } from '$lib/utils/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { SIDEBAR_WIDTH_MOBILE } from './constants.js';
 	import { useSidebar } from './context.svelte.js';
@@ -38,11 +37,16 @@
 	<Sheet.Root bind:open={() => sidebar.openMobile, (v) => sidebar.setOpenMobile(v)} {...restProps}>
 		<Sheet.Content
 			data-sidebar="sidebar"
+			data-slot="sidebar"
 			data-mobile="true"
 			class="bg-sidebar text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
 			style="--sidebar-width: {SIDEBAR_WIDTH_MOBILE};"
 			{side}
 		>
+			<Sheet.Header class="sr-only">
+				<Sheet.Title>Sidebar</Sheet.Title>
+				<Sheet.Description>Displays the mobile sidebar.</Sheet.Description>
+			</Sheet.Header>
 			<div class="flex h-full w-full flex-col">
 				{@render children?.()}
 			</div>
@@ -51,16 +55,18 @@
 {:else}
 	<div
 		bind:this={ref}
-		class="group peer text-sidebar-foreground hidden md:block"
+		class="text-sidebar-foreground group peer hidden md:block"
 		data-state={sidebar.state}
 		data-collapsible={sidebar.state === 'collapsed' ? collapsible : ''}
 		data-variant={variant}
 		data-side={side}
+		data-slot="sidebar"
 	>
 		<!-- This is what handles the sidebar gap on desktop -->
 		<div
+			data-slot="sidebar-gap"
 			class={cn(
-				'relative h-svh w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
+				'relative w-(--sidebar-width) bg-transparent transition-[width] duration-200 ease-linear',
 				'group-data-[collapsible=offcanvas]:w-0',
 				'group-data-[side=right]:rotate-180',
 				variant === 'floating' || variant === 'inset'
@@ -69,6 +75,7 @@
 			)}
 		></div>
 		<div
+			data-slot="sidebar-container"
 			class={cn(
 				'fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex',
 				side === 'left'
@@ -84,6 +91,7 @@
 		>
 			<div
 				data-sidebar="sidebar"
+				data-slot="sidebar-inner"
 				class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
 			>
 				{@render children?.()}

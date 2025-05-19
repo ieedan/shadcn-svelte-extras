@@ -7,7 +7,7 @@
 			variant: {
 				default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
 				outline:
-					'bg-background hover:bg-sidebar-accent hover:text-sidebar-accent-foreground shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]'
+					'bg-background hover:bg-sidebar-accent hover:text-sidebar-accent-foreground shadow-[0_0_0_1px_var(--sidebar-border)] hover:shadow-[0_0_0_1px_var(--sidebar-accent)]'
 			},
 			size: {
 				default: 'h-8 text-sm',
@@ -27,8 +27,8 @@
 
 <script lang="ts">
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { cn } from '$lib/utils/utils.js';
-	import { mergeProps, type WithElementRef, type WithoutChildrenOrChild } from 'bits-ui';
+	import { cn, type WithElementRef, type WithoutChildrenOrChild } from '$lib/utils/utils.js';
+	import { mergeProps } from 'bits-ui';
 	import type { ComponentProps, Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { useSidebar } from './context.svelte.js';
@@ -48,7 +48,7 @@
 		isActive?: boolean;
 		variant?: SidebarMenuButtonVariant;
 		size?: SidebarMenuButtonSize;
-		tooltipContent?: Snippet;
+		tooltipContent?: Snippet | string;
 		tooltipContentProps?: WithoutChildrenOrChild<ComponentProps<typeof Tooltip.Content>>;
 		child?: Snippet<[{ props: Record<string, unknown> }]>;
 	} = $props();
@@ -57,6 +57,7 @@
 
 	const buttonProps = $derived({
 		class: cn(sidebarMenuButtonVariants({ variant, size }), className),
+		'data-slot': 'sidebar-menu-button',
 		'data-sidebar': 'menu-button',
 		'data-size': size,
 		'data-active': isActive,
@@ -88,8 +89,13 @@
 			side="right"
 			align="center"
 			hidden={sidebar.state !== 'collapsed' || sidebar.isMobile}
-			children={tooltipContent}
 			{...tooltipContentProps}
-		/>
+		>
+			{#if typeof tooltipContent === 'string'}
+				{tooltipContent}
+			{:else if tooltipContent}
+				{@render tooltipContent()}
+			{/if}
+		</Tooltip.Content>
 	</Tooltip.Root>
 {/if}

@@ -10,7 +10,7 @@
 <ModeWatcher/>`;
 </script>
 
-<div class="border-border overflow-hidden rounded-lg border bg-card">
+<div class="border-border bg-card overflow-hidden rounded-lg border">
 	<div class="border-border flex place-items-center justify-between border-b p-2">
 		<div class="flex place-items-center gap-2">
 			<Svelte class="size-4" />

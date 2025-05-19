@@ -1,7 +1,6 @@
 <script lang="ts">
+	import { cn, type WithElementRef } from '$lib/utils/utils.js';
 	import { Skeleton } from '$lib/components/ui/skeleton/index.js';
-	import { cn } from '$lib/utils/utils.js';
-	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	let {
@@ -20,6 +19,7 @@
 
 <div
 	bind:this={ref}
+	data-slot="sidebar-menu-skeleton"
 	data-sidebar="menu-skeleton"
 	class={cn('flex h-8 items-center gap-2 rounded-md px-2', className)}
 	{...restProps}
