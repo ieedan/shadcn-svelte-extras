@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 3.0.0
+
+### Major Changes
+
+- feat: 🎉 Tailwind v4 🎉 ([#179](https://github.com/ieedan/shadcn-svelte-extras/pull/179))
+
+### Patch Changes
+
+- feat: Update lucide icon names from `X` -> `XIcon` ([#179](https://github.com/ieedan/shadcn-svelte-extras/pull/179))
+
 ## 2.1.1
 
 ### Patch Changes
