@@ -13,7 +13,7 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
-	import { ArrowRightIcon, TerminalIcon } from '@lucide/svelte';
+	import { ArrowRightIcon } from '@lucide/svelte';
 	import { map } from '$lib/map';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
