@@ -101,7 +101,7 @@
 				</div>
 				{#await file.url}
 					<Progress
-						class="h-2 w-full flex-grow"
+						class="h-2 w-full grow"
 						value={((date.getTime() - file.uploadedAt) / 1000) * 100}
 						max={100}
 					/>

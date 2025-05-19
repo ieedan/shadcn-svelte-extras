@@ -28,7 +28,7 @@
 	</Collapsible.Trigger>
 	<Collapsible.Content class="mx-2 border-l">
 		<div class="relative flex place-items-start">
-			<div class="mx-2 h-full w-[1px] bg-border"></div>
+			<div class="mx-2 h-full w-px bg-border"></div>
 			<div class="flex flex-col">
 				{@render children?.()}
 			</div>

@@ -187,6 +187,6 @@
 		{placeholder}
 		data-invalid={invalid}
 		onkeydown={keydown}
-		class="min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-none placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
+		class="min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-hidden placeholder:text-muted-foreground focus:outline-hidden disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
 	/>
 </div>

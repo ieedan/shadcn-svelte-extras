@@ -34,7 +34,7 @@
 </script>
 
 <RadioGroup.Root
-	class={cn('group flex w-fit place-items-center gap-1 rounded-md outline-none', className)}
+	class={cn('group flex w-fit place-items-center gap-1 rounded-md outline-hidden', className)}
 	bind:value={() => value.toString(), (v) => (value = parseInt(v))}
 	aria-readonly={readonly}
 	aria-disabled={disabled}

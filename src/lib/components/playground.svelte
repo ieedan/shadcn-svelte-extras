@@ -49,7 +49,7 @@
 			{/key}
 		</Tabs.Content>
 		<Tabs.Content value="code" class="size-full pb-4">
-			<Code lang="svelte" {code} class="size-full border-none" hideLines hideCopy />
+			<Code lang="svelte" {code} class="size-full border-none bg-transparent" hideLines hideCopy />
 		</Tabs.Content>
 	</Tabs.Root>
 </div>

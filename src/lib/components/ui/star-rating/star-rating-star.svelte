@@ -22,7 +22,7 @@
 		id="rating-{star}-{id}"
 		value={star.toString()}
 		onmouseover={() => starState.setRating()}
-		class="absolute inset-0 rounded-md outline-none ring-ring ring-offset-2 ring-offset-background focus-visible:ring-2"
+		class="absolute inset-0 rounded-md outline-hidden ring-ring ring-offset-2 ring-offset-background focus-visible:ring-2"
 	/>
 	<Label.Root for="rating-{star}-{id}">
 		<StarIcon

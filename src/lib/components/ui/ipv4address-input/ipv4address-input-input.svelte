@@ -115,7 +115,7 @@
 	oninput={onInput}
 	onkeydown={onKeydown}
 	type="text"
-	class="hide-ramp h-full w-9 border-0 bg-transparent text-center outline-none placeholder:text-muted-foreground focus:outline-none"
+	class="hide-ramp h-full w-9 border-0 bg-transparent text-center outline-hidden placeholder:text-muted-foreground focus:outline-hidden"
 	{...rest}
 />
 

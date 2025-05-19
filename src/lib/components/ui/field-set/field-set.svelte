@@ -8,8 +8,7 @@
 		base: 'flex h-fit w-full flex-col rounded-lg border border-border',
 		variants: {
 			variant: {
-				default: 'border-border',
-				primary: 'border-primary',
+				default: 'border-border bg-card',
 				destructive: 'border-destructive'
 			}
 		}

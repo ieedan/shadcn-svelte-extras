@@ -14,7 +14,7 @@
 	bind:ref
 	class={cn(
 		'shrink-0 bg-border',
-		orientation === 'horizontal' ? 'h-[1px] w-full' : 'min-h-full w-[1px]',
+		orientation === 'horizontal' ? 'h-px w-full' : 'min-h-full w-px',
 		className
 	)}
 	{orientation}

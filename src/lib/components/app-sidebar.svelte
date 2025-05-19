@@ -3,7 +3,7 @@
 	import { map } from '$lib/map';
 	import type { ComponentProps } from 'svelte';
 	import Logo from './logo.svelte';
-	import { Badge } from './ui/badge';
+	import { Badge } from '$lib/components/ui/badge';
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 

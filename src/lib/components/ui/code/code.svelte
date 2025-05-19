@@ -11,8 +11,8 @@
 		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
 		variants: {
 			variant: {
-				default: 'border-border bg-background',
-				secondary: 'border-transparent bg-secondary/50'
+				default: 'border-border bg-card',
+				secondary: 'bg-secondary/50 border-transparent'
 			}
 		}
 	});
@@ -108,7 +108,7 @@
 	{#if !hideCopy}
 		<div
 			class={cn(
-				'absolute right-2 top-2 flex place-items-center justify-center',
+				'absolute top-2 right-2 flex place-items-center justify-center',
 				copyButtonContainerClass
 			)}
 		>
@@ -118,6 +118,17 @@
 </div>
 
 <style lang="postcss">
+	@reference '../../../../app.css'
+
+	:global(.dark) {
+		:global(.shiki, .shiki span) {
+			color: var(--shiki-dark) !important;
+			font-style: var(--shiki-dark-font-style) !important;
+			font-weight: var(--shiki-dark-font-weight) !important;
+			text-decoration: var(--shiki-dark-text-decoration) !important;
+		}
+	}
+
 	/* Shiki see: https://shiki.matsu.io/guide/dual-themes#class-based-dark-mode */
 	:global(html.dark .shiki, html.dark .shiki span) {
 		color: var(--shiki-dark) !important;
@@ -138,7 +149,7 @@
 	}
 
 	:global(pre.shiki code) {
-		@apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0;
+		@apply grid min-w-full rounded-none border-0 bg-transparent p-0 break-words;
 		counter-reset: line;
 		box-decoration-break: clone;
 	}

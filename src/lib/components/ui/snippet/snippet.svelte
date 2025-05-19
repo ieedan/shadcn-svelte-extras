@@ -7,7 +7,7 @@
 		base: 'relative w-full max-w-full rounded-md border bg-background py-2.5 pl-3 pr-12',
 		variants: {
 			variant: {
-				default: 'border-border',
+				default: 'border-border bg-card',
 				secondary: 'border-border bg-accent',
 				destructive: 'border-destructive bg-destructive',
 				primary: 'border-primary bg-primary text-primary-foreground'

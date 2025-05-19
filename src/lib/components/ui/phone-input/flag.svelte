@@ -12,7 +12,7 @@
 	{#if country}
 		<span
 			aria-label="{country.name} flag."
-			class="flag flag-{country.iso2.toLowerCase()} mr-3 flex-shrink-0"
+			class="flag flag-{country.iso2.toLowerCase()} mr-3 shrink-0"
 		></span>
 	{/if}
 </span>
