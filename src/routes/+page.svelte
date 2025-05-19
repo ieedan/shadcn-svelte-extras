@@ -38,10 +38,9 @@
 
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">
-		<a href="/components/terminal" class="flex place-items-center gap-1 text-sm font-medium">
-			<TerminalIcon class="size-4" />
-			<span class="hover:underline">jsrepo add ui/terminal</span>
-			<ArrowRightIcon class="size-4" />
+		<a href="/docs/using-extras" class="flex place-items-center gap-1 text-sm font-medium">
+			<span class="hover:underline">Now with Tailwindcss v4 support!</span>
+			<ArrowRightIcon class="size-3.5" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
 		<p class="text-muted-foreground text-lg">Finish your app.</p>

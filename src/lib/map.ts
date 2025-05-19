@@ -1,10 +1,12 @@
+import type { LooseAutocomplete } from "./utils/types";
+
 export type Route = {
 	name: string;
 	description: string;
 	href: string;
 	specifier?: `${string}/${string}`;
 	source?: string;
-	status?: 'New' | 'Updated';
+	status?: LooseAutocomplete<'New' | 'Updated'>;
 };
 
 const map: Record<string, Route[]> = {
@@ -17,7 +19,8 @@ const map: Record<string, Route[]> = {
 		{
 			name: 'Using Extras',
 			description: 'How to add and use extras in your project.',
-			href: '/docs/using-extras'
+			href: '/docs/using-extras',
+			status: 'v4'
 		}
 	],
 	Components: [
@@ -97,7 +100,6 @@ const map: Record<string, Route[]> = {
 			href: '/components/language-switcher',
 			specifier: 'ui/language-switcher',
 			source: 'src/lib/components/ui/language-switcher',
-			status: 'New'
 		},
 		{
 			name: 'Light Switch',

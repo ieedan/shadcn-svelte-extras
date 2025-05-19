@@ -21,9 +21,10 @@
 </p>
 <Snippet text="jsrepo init @ieedan/shadcn-svelte-extras" />
 <p>Configure your paths so that components, hooks, and utils go to the right places:</p>
-<Code
-	lang="json"
-	code={`{
+<div>
+	<Code
+		lang="json"
+		code={`{
     "paths": {
 			"*": "$lib/blocks",
 			"ui": "$lib/components/ui",
@@ -32,6 +33,25 @@
 			"utils": "$lib/utils"
     }
 }`}
-/>
+	/>
+</div>
 <p>Start adding extras!</p>
 <Snippet text="jsrepo add ui/button" />
+<Subheading>Tailwind v4</Subheading>
+<p>
+	This site has been fully updated to tailwindcss v4. If you are looking for components compatible
+	with tailwindcss@v3 see the guide below.
+</p>
+<Subheading>Tailwind v3</Subheading>
+<p>
+	You can still access the tailwind v3 components by pinning the registry version to the latest
+	tailwind v3 compatible version:
+</p>
+<div>
+	<Code
+		lang="json"
+		code={`{
+    "repos": ["@ieedan/shadcn-svelte-extras@2.1.1"],
+}`}
+	/>
+</div>

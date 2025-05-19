@@ -42,15 +42,9 @@
 												<a {href} {...props}>
 													{name}
 													{#if status}
-														{#if status === 'New'}
-															<Badge class="bg-brand hover:bg-brand text-white">
-																{status}
-															</Badge>
-														{:else}
-															<Badge variant="secondary">
-																{status}
-															</Badge>
-														{/if}
+														<Badge class="bg-brand hover:bg-brand text-white">
+															{status}
+														</Badge>
 													{/if}
 												</a>
 											{/snippet}
