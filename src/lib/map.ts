@@ -1,4 +1,4 @@
-import type { LooseAutocomplete } from "./utils/types";
+import type { LooseAutocomplete } from './utils/types';
 
 export type Route = {
 	name: string;
@@ -99,7 +99,7 @@ const map: Record<string, Route[]> = {
 			description: 'A component for switching your sites locale.',
 			href: '/components/language-switcher',
 			specifier: 'ui/language-switcher',
-			source: 'src/lib/components/ui/language-switcher',
+			source: 'src/lib/components/ui/language-switcher'
 		},
 		{
 			name: 'Light Switch',
