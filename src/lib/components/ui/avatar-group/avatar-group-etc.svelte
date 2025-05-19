@@ -11,7 +11,7 @@
 
 <div
 	class={cn(
-		'relative flex size-8 items-center justify-center rounded-full bg-accent text-xs ring-2 ring-background',
+		'bg-accent ring-background relative flex size-8 items-center justify-center rounded-full text-xs ring-2',
 		className
 	)}
 >

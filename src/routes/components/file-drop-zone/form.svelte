@@ -61,7 +61,7 @@
 			<div class="flex place-items-center justify-between gap-2">
 				<div class="flex flex-col">
 					<span>{file.name}</span>
-					<span class="text-xs text-muted-foreground">{displaySize(file.size)}</span>
+					<span class="text-muted-foreground text-xs">{displaySize(file.size)}</span>
 				</div>
 				<Button
 					variant="outline"

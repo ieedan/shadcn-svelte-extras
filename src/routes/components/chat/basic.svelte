@@ -12,8 +12,8 @@
 	const messages = $state(data.messages);
 </script>
 
-<div class="w-full border border-border">
-	<div class="flex place-items-center justify-between border-b bg-background p-2">
+<div class="border-border w-full border">
+	<div class="bg-background flex place-items-center justify-between border-b p-2">
 		<div class="flex place-items-center gap-2">
 			<Avatar.Root>
 				<Avatar.Image src={data.friend.img} alt={data.friend.username} />

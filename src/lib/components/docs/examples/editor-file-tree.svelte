@@ -2,7 +2,7 @@
 	import * as TreeView from '$lib/components/ui/tree-view';
 </script>
 
-<div class="h-[825px] w-full border border-border">
+<div class="border-border h-[825px] w-full border">
 	<TreeView.Root class="p-4">
 		<TreeView.Folder name=".github" open={false}>
 			<TreeView.Folder name="workflows">

@@ -26,7 +26,7 @@
 	);
 </script>
 
-<Command.Root shouldFilter={false} class="h-fit border border-border">
+<Command.Root shouldFilter={false} class="border-border h-fit border">
 	<Command.Input {placeholder} bind:value />
 	<Command.List>
 		<Command.Group>

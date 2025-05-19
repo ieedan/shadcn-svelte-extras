@@ -9,7 +9,7 @@
 	<ShadcnSvelteExtras /> uses
 	<a target="_blank" href="https://jsrepo.dev" class="font-bold underline"> jsrepo </a> to allow you
 	to install blocks into project just like in
-	<a target="_blank" href="https://next.shadcn-svelte.com" class="text-nowrap font-bold underline">
+	<a target="_blank" href="https://next.shadcn-svelte.com" class="font-bold text-nowrap underline">
 		shadcn-svelte
 	</a>.
 </p>

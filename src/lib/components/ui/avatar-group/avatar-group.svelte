@@ -13,7 +13,7 @@
 <div
 	data-orientation={orientation}
 	class={cn(
-		'group/avatar-group flex items-center data-[orientation="horizontal"]:flex-row data-[orientation="vertical"]:flex-col data-[orientation="horizontal"]:-space-x-2 data-[orientation="vertical"]:-space-y-2',
+		'group/avatar-group flex items-center data-[orientation="horizontal"]:flex-row data-[orientation="horizontal"]:-space-x-2 data-[orientation="vertical"]:flex-col data-[orientation="vertical"]:-space-y-2',
 		className
 	)}
 >

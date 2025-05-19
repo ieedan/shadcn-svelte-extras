@@ -9,7 +9,7 @@
 	let { children, class: className }: Props = $props();
 </script>
 
-<div class={cn('aspect-video w-full rounded-lg border border-border bg-background', className)}>
+<div class={cn('border-border bg-background aspect-video w-full rounded-lg border', className)}>
 	<div class="border-b border-inherit p-4">
 		<div class="flex items-center gap-2">
 			<div class="size-2 rounded-full bg-[#ef4444]"></div>

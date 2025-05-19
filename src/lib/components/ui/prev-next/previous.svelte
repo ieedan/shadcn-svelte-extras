@@ -12,7 +12,7 @@
 </script>
 
 <Button
-	class={cn('flex place-items-center gap-2 pl-2 pr-4', className)}
+	class={cn('flex place-items-center gap-2 pr-4 pl-2', className)}
 	variant="outline"
 	size="sm"
 	{...rest}

@@ -7,7 +7,7 @@
 		base: 'inline-flex place-items-center justify-center gap-1 rounded-md p-0.5',
 		variants: {
 			variant: {
-				outline: 'border border-border bg-background text-muted-foreground',
+				outline: 'border-border bg-background text-muted-foreground border',
 				secondary: 'bg-secondary text-muted-foreground',
 				primary: 'bg-primary text-primary-foreground'
 			},

@@ -48,7 +48,9 @@
 		{options}
 		required
 		class={cn(
-			'flex h-10 min-w-0 max-w-[212px] rounded-lg rounded-l-none border border-l-0 border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 sm:text-sm',
+			'border-input border-l-none bg-background selection:bg-primary dark:bg-input/30 selection:text-primary-foreground ring-offset-background placeholder:text-muted-foreground flex h-9 w-full min-w-0 rounded-l-none rounded-r-md border-r border-y px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+			'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+			'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
 			className
 		)}
 		{...rest}

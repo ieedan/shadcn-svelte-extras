@@ -82,7 +82,7 @@
 	<div class="flex flex-col gap-2">
 		{#each files as file, i (file.name)}
 			<div
-				class="flex place-items-center justify-between gap-2 rounded-md border border-border p-2"
+				class="border-border flex place-items-center justify-between gap-2 rounded-md border p-2"
 			>
 				<div class="flex place-items-center gap-2">
 					{#await file.url then src}
@@ -90,13 +90,13 @@
 							<img
 								{src}
 								alt={file.name}
-								class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip"
+								class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 overflow-clip"
 							/>
 						</div>
 					{/await}
 					<div class="flex flex-col">
 						<span class="text-nowrap">{file.name}</span>
-						<span class="text-xs text-muted-foreground">{displaySize(file.size)}</span>
+						<span class="text-muted-foreground text-xs">{displaySize(file.size)}</span>
 					</div>
 				</div>
 				{#await file.url}

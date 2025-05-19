@@ -43,7 +43,7 @@
 													{name}
 													{#if status}
 														{#if status === 'New'}
-															<Badge class="bg-brand text-white hover:bg-brand">
+															<Badge class="bg-brand hover:bg-brand text-white">
 																{status}
 															</Badge>
 														{:else}

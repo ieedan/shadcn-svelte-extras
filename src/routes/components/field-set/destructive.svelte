@@ -15,7 +15,7 @@
 		</FieldSet.Content>
 		<FieldSet.Footer>
 			<div class="flex w-full place-items-center justify-between">
-				<span class="text-sm text-muted-foreground">Rename your project.</span>
+				<span class="text-muted-foreground text-sm">Rename your project.</span>
 				<Button variant="destructive" size="sm">Rename</Button>
 			</div>
 		</FieldSet.Footer>

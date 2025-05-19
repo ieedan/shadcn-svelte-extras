@@ -22,13 +22,13 @@
 		id="rating-{star}-{id}"
 		value={star.toString()}
 		onmouseover={() => starState.setRating()}
-		class="absolute inset-0 rounded-md outline-hidden ring-ring ring-offset-2 ring-offset-background focus-visible:ring-2"
+		class="ring-ring ring-offset-background absolute inset-0 rounded-md ring-offset-2 outline-hidden focus-visible:ring-2"
 	/>
 	<Label.Root for="rating-{star}-{id}">
 		<StarIcon
 			data-selected={starState.rootState.opts.value.current >= star}
 			class={cn(
-				'size-5 fill-transparent text-primary transition-all group-aria-disabled:opacity-50 data-[selected=true]:fill-primary',
+				'text-primary data-[selected=true]:fill-primary size-5 fill-transparent transition-all group-aria-disabled:opacity-50',
 				className
 			)}
 		/>

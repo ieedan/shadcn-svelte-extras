@@ -12,7 +12,7 @@
 		<PhoneInput value="+1 418 543 8090" />
 	</FieldSet.Content>
 	<FieldSet.Footer class="flex place-items-center justify-between">
-		<span class="text-sm text-muted-foreground"> Add your phone number. </span>
+		<span class="text-muted-foreground text-sm"> Add your phone number. </span>
 		<Button
 			{loading}
 			size="sm"

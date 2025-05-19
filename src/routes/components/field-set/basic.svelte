@@ -15,7 +15,7 @@
 		</FieldSet.Content>
 		<FieldSet.Footer>
 			<div class="flex w-full place-items-center justify-between">
-				<span class="text-sm text-muted-foreground">Save your username.</span>
+				<span class="text-muted-foreground text-sm">Save your username.</span>
 				<Button size="sm">Save</Button>
 			</div>
 		</FieldSet.Footer>

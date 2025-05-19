@@ -11,6 +11,7 @@
 
 <DrawerPrimitive.Description
 	bind:ref
-	class={cn('text-sm text-muted-foreground', className)}
+	data-slot="drawer-description"
+	class={cn('text-muted-foreground text-sm', className)}
 	{...restProps}
 />

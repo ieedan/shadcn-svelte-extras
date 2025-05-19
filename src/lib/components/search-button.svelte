@@ -19,7 +19,7 @@
 	class={cn('flex w-full place-items-center justify-between px-2', className)}
 	onclick={commandState.setTrue}
 >
-	<span class="flex place-items-center gap-2 text-muted-foreground">
+	<span class="text-muted-foreground flex place-items-center gap-2">
 		<SearchIcon class="inline size-4" />
 		Search
 	</span>

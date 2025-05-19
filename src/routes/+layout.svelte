@@ -70,7 +70,7 @@
 	<!-- Do NOT ask me why this is here it makes it work that's what matters -->
 	<Sidebar.Inset class="w-[200px]">
 		<header
-			class="sticky top-0 z-20 flex h-16 place-items-center justify-between border-b border-border bg-background pl-2 pr-6"
+			class="border-border bg-background sticky top-0 z-20 flex h-16 place-items-center justify-between border-b pr-6 pl-2"
 		>
 			<div class="flex place-items-center gap-2">
 				<Sidebar.Trigger class="md:hidden" />

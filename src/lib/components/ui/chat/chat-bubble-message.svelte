@@ -14,7 +14,7 @@
 
 <div
 	class={cn(
-		"order-2 rounded-lg bg-secondary p-4 text-sm group-data-[variant='sent']/chat-bubble:order-1 group-data-[variant='received']/chat-bubble:rounded-bl-none group-data-[variant='sent']/chat-bubble:rounded-br-none group-data-[variant='sent']/chat-bubble:bg-primary group-data-[variant='sent']/chat-bubble:text-primary-foreground",
+		"bg-secondary group-data-[variant='sent']/chat-bubble:bg-primary group-data-[variant='sent']/chat-bubble:text-primary-foreground order-2 rounded-lg p-4 text-sm group-data-[variant='received']/chat-bubble:rounded-bl-none group-data-[variant='sent']/chat-bubble:order-1 group-data-[variant='sent']/chat-bubble:rounded-br-none",
 		className
 	)}
 >

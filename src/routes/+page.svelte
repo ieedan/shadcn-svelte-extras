@@ -44,7 +44,7 @@
 			<ArrowRightIcon class="size-4" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
-		<p class="text-lg text-muted-foreground">Finish your app.</p>
+		<p class="text-muted-foreground text-lg">Finish your app.</p>
 	</div>
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 		<div class="flex flex-col gap-4 lg:col-start-1">

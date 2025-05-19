@@ -37,8 +37,8 @@ importers:
         specifier: 2.0.12
         version: 2.0.12
       '@lucide/svelte':
-        specifier: ^0.511.0
-        version: 0.511.0(svelte@5.30.2)
+        specifier: ^0.482.0
+        version: 0.482.0(svelte@5.30.2)
       '@lukulent/svelte-umami':
         specifier: ^0.0.4
         version: 0.0.4(svelte@5.30.2)
@@ -145,8 +145,8 @@ importers:
         specifier: 1.1.0
         version: 1.1.0(typescript@5.8.3)
       vaul-svelte:
-        specifier: 1.0.0-next.3
-        version: 1.0.0-next.3(svelte@5.30.2)
+        specifier: 1.0.0-next.7
+        version: 1.0.0-next.7(svelte@5.30.2)
       vite:
         specifier: ^6.3.5
         version: 6.3.5(@types/node@18.19.101)(jiti@2.4.2)(lightningcss@1.30.1)(yaml@2.7.1)
@@ -608,8 +608,8 @@ packages:
   '@lix-js/server-protocol-schema@0.1.1':
     resolution: {integrity: sha512-jBeALB6prAbtr5q4vTuxnRZZv1M2rKe8iNqRQhFJ4Tv7150unEa0vKyz0hs8Gl3fUGsWaNJBh3J8++fpbrpRBQ==}
 
-  '@lucide/svelte@0.511.0':
-    resolution: {integrity: sha512-aLCSPMUJmHlCuLXzXENXa4Z1NV2mN1iAZAFKk4bEbey+/MdsNlu+/DqwVkgW3Yvj6p8y8Vn5xZ2v9CLmPlA6Vw==}
+  '@lucide/svelte@0.482.0':
+    resolution: {integrity: sha512-n2ycHU9cNcleRDwwpEHBJ6pYzVhHIaL3a+9dQa8kns9hB2g05bY+v2p2KP8v0pZwtNhYTHk/F2o2uZ1bVtQGhw==}
     peerDependencies:
       svelte: ^5
 
@@ -2763,12 +2763,6 @@ packages:
     peerDependencies:
       svelte: ^3.58.0 || ^4.0.0 || ^5.0.0
 
-  svelte-toolbelt@0.4.6:
-    resolution: {integrity: sha512-k8OUvXBUifHZcAlWeY/HLg/4J0v5m2iOfOhn8fDmjt4AP8ZluaDh9eBFus9lFiLX6O5l6vKqI1dKL5wy7090NQ==}
-    engines: {node: '>=18', pnpm: '>=8.7.0'}
-    peerDependencies:
-      svelte: ^5.0.0-next.126
-
   svelte-toolbelt@0.7.1:
     resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
@@ -2996,8 +2990,8 @@ packages:
     resolution: {integrity: sha512-36B2ryl4+oL5QxZ3AzD0t5SsMNGvTtQHpjgFO5tbNxfXbMFkY822ktCDe1MnlqV3301QQI9SLHDNJokDI+Z9pA==}
     engines: {node: '>= 0.10'}
 
-  vaul-svelte@1.0.0-next.3:
-    resolution: {integrity: sha512-bqlCc28z1I6f23Sjv5W6UlNJdAPeX8tZbYZ3+ycOn/4hTvv2fo/5Le4bAX26RyFkpT6n5FXXCZN1/uNs8biyrQ==}
+  vaul-svelte@1.0.0-next.7:
+    resolution: {integrity: sha512-7zN7Bi3dFQixvvbUJY9uGDe7Ws/dGZeBQR2pXdXmzQiakjrxBvWo0QrmsX3HK+VH+SZOltz378cmgmCS9f9rSg==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0
@@ -3691,7 +3685,7 @@ snapshots:
 
   '@lix-js/server-protocol-schema@0.1.1': {}
 
-  '@lucide/svelte@0.511.0(svelte@5.30.2)':
+  '@lucide/svelte@0.482.0(svelte@5.30.2)':
     dependencies:
       svelte: 5.30.2
 
@@ -5888,12 +5882,6 @@ snapshots:
       libphonenumber-js: 1.10.43
       svelte: 5.30.2
 
-  svelte-toolbelt@0.4.6(svelte@5.30.2):
-    dependencies:
-      clsx: 2.1.1
-      style-to-object: 1.0.8
-      svelte: 5.30.2
-
   svelte-toolbelt@0.7.1(svelte@5.30.2):
     dependencies:
       clsx: 2.1.1
@@ -6125,11 +6113,11 @@ snapshots:
   validator@13.15.0:
     optional: true
 
-  vaul-svelte@1.0.0-next.3(svelte@5.30.2):
+  vaul-svelte@1.0.0-next.7(svelte@5.30.2):
     dependencies:
-      bits-ui: 1.5.2(svelte@5.30.2)
+      runed: 0.23.4(svelte@5.30.2)
       svelte: 5.30.2
-      svelte-toolbelt: 0.4.6(svelte@5.30.2)
+      svelte-toolbelt: 0.7.1(svelte@5.30.2)
 
   vfile-message@4.0.2:
     dependencies:

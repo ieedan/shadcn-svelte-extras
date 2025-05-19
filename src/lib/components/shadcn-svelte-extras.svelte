@@ -1,1 +1,1 @@
-<span class="text-nowrap text-brand">shadcn-svelte-extras</span>
+<span class="text-brand text-nowrap">shadcn-svelte-extras</span>

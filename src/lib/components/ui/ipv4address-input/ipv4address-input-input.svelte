@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { isNumber } from '$lib/utils/is-number';
+	import { cn } from '$lib/utils/utils';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = {
@@ -14,6 +15,7 @@
 		goPrevious,
 		goNext,
 		ref = $bindable(),
+		class: className,
 		...rest
 	}: Props & HTMLAttributes<HTMLInputElement> = $props();
 
@@ -115,7 +117,10 @@
 	oninput={onInput}
 	onkeydown={onKeydown}
 	type="text"
-	class="hide-ramp h-full w-9 border-0 bg-transparent text-center outline-hidden placeholder:text-muted-foreground focus:outline-hidden"
+	class={cn(
+		'hide-ramp placeholder:text-muted-foreground h-full w-9 border-0 bg-transparent text-center outline-hidden focus:outline-hidden',
+		className
+	)}
 	{...rest}
 />
 

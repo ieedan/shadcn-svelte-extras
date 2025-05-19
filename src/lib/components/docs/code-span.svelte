@@ -9,6 +9,6 @@
 	let { class: className = undefined, children, ...rest }: Props = $props();
 </script>
 
-<span class={cn('rounded-md bg-accent px-1 py-1 font-mono text-sm', className)} {...rest}>
+<span class={cn('bg-accent rounded-md px-1 py-1 font-mono text-sm', className)} {...rest}>
 	{@render children?.()}
 </span>

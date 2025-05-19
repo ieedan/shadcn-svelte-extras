@@ -45,11 +45,11 @@
 	<Popover.Trigger>
 		{#snippet child({ props })}
 			<Button
+				{...props}
 				type="button"
 				variant="outline"
-				class={cn('flex shrink-0 gap-1 rounded-e-none rounded-s-lg px-3')}
+				class={cn('flex shrink-0 gap-1 rounded-l-lg rounded-r-none px-3')}
 				{disabled}
-				{...props}
 			>
 				<Flag country={selectedCountry} />
 				<ChevronsUpDownIcon
@@ -81,7 +81,7 @@
 							>
 								<Flag {country} />
 								<span class="flex-1 text-sm">{country.name}</span>
-								<span class="text-sm text-foreground/50">
+								<span class="text-foreground/50 text-sm">
 									+{country.dialCode}
 								</span>
 								<div class="w-4">
