@@ -9,7 +9,7 @@
 <Playground code={examples.basic.code} class="min-h-[225px]">
 	<examples.basic.Component />
 </Playground>
-<Installation specifier="ui/button" />
+<Installation specifier="ui/copy-button" />
 <Subheading>Custom Icon</Subheading>
 <Playground code={examples.icon.code} class="min-h-[225px]">
 	<examples.icon.Component />
