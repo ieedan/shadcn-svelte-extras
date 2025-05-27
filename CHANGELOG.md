@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 3.1.0
+
+### Minor Changes
+
+- feat: Add attachment versions of `actions` apis. ([#182](https://github.com/ieedan/shadcn-svelte-extras/pull/182))
+
+- feat(active): Allow usage of search params as href ([#182](https://github.com/ieedan/shadcn-svelte-extras/pull/182))
+
 ## 3.0.0
 
 ### Major Changes
