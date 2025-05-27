@@ -1,3 +1,5 @@
+import { createAttachmentKey } from 'svelte/attachments';
+
 export type Options = {
 	/** Event to use to detect the shortcut @default 'keydown' */
 	event?: 'keydown' | 'keyup' | 'keypress';
@@ -72,6 +74,26 @@ export const shortcut = (node: HTMLElement, options: Options[] | Options) => {
 		};
 	});
 };
+
+/** Allows you to configure one or more shortcuts based on the key events of an element.
+ *
+ * ## Usage
+ * ```svelte
+ * <!-- Ctrl + K Shortcut -->
+ * <svelte:window
+ * 	  {...attachShortcut({
+ * 		  ctrl: true,
+ * 		  key: 'k',
+ * 		  callback: commandMenu.toggle
+ * 	  })}
+ * />
+ * ```
+ */
+export function attachShortcut(opts: Options[] | Options) {
+	return {
+		[createAttachmentKey()]: (node: HTMLElement) => shortcut(node, opts)
+	};
+}
 
 export type Key =
 	| 'backspace'

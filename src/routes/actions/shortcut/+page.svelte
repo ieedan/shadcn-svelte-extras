@@ -24,6 +24,20 @@
 />`}
 	/>
 </div>
+<Subheading>Attachment Usage</Subheading>
+<div>
+	<Code
+		lang="svelte"
+		code={`<!-- Ctrl/Command + K shortcut -->
+<svelte:window
+		{...attachShortcut({
+			key: 'k',
+			ctrl: true,
+			callback: commandMenu.toggle
+		})}
+/>`}
+	/>
+</div>
 <Subheading>Multiple</Subheading>
 <p>Configure multiple shortcuts by providing an array of options.</p>
 <div>

@@ -1,3 +1,4 @@
+import { createAttachmentKey } from 'svelte/attachments';
 import type { TransitionConfig } from 'svelte/transition';
 
 export type Options = {
@@ -23,3 +24,9 @@ export const typewriter = (
 		}
 	} satisfies TransitionConfig;
 };
+
+export function attachTypewriter(opts: Partial<Options> = {}) {
+	return {
+		[createAttachmentKey()]: (node: HTMLElement) => typewriter(node, opts)
+	};
+}

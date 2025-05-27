@@ -17,9 +17,10 @@
 </Playground>
 <Installation specifier="actions/active" />
 <Subheading>Usage</Subheading>
-<Code
-	lang="svelte"
-	code={`<!-- Use data-[active=true] and data-[active=false] to style the link -->
+<div>
+	<Code
+		lang="svelte"
+		code={`<!-- Use data-[active=true] and data-[active=false] to style the link -->
 <a 
 		href="/docs" 
 		use:active 
@@ -27,4 +28,19 @@
 >
 		Link
 </a>`}
-/>
+	/>
+</div>
+<Subheading>Attachment Usage</Subheading>
+<div>
+	<Code
+		lang="svelte"
+		code={`<!-- Use data-[active=true] and data-[active=false] to style the link -->
+<a 
+		href="/docs" 
+		{...attachActive()} 
+		class="data-[active=true]:bg-secondary"
+>
+		Link
+</a>`}
+	/>
+</div>

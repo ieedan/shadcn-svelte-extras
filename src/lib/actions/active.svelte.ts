@@ -1,5 +1,6 @@
 import { page } from '$app/state';
 import { untrack } from 'svelte';
+import { createAttachmentKey } from 'svelte/attachments';
 
 export type Options = {
 	/** Determines if the route should be active for subdirectories.
@@ -12,11 +13,25 @@ export type Options = {
 	 *  @default false
 	 */
 	isHash?: boolean;
+	/** Determines if the href of the `<a/>` tag is a search route
+	 *
+	 *  @default false
+	 */
+	isSearch?: boolean;
 	url: URL;
 };
 
-/** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state. */
-export const active = (node: HTMLAnchorElement, opts: Omit<Options, 'url'>) => {
+/** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state.
+ *
+ * @param node
+ * @param opts
+ *
+ * ## Usage
+ * ```svelte
+ * <a href="/" use:active>Route</a>
+ * ```
+ */
+export function active(node: HTMLAnchorElement, opts: Omit<Options, 'url'> = {}) {
 	checkIsActive(node.href, { ...opts, url: page.url }).toString();
 
 	$effect(() => {
@@ -30,16 +45,46 @@ export const active = (node: HTMLAnchorElement, opts: Omit<Options, 'url'>) => {
 			);
 		});
 	});
-};
+}
+
+/** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state.
+ *
+ * @param opts
+ * @returns
+ *
+ * ## Usage
+ * ```svelte
+ * <a href="/" {...attachActive()}>Route</a>
+ * ```
+ */
+export function attachActive(opts: Omit<Options, 'url'> = {}) {
+	return {
+		[createAttachmentKey()]: (node: HTMLAnchorElement) => active(node, opts)
+	};
+}
 
 export const checkIsActive = (
 	nodeHref: string,
-	{ activeForSubdirectories, url, isHash }: Options
+	{ activeForSubdirectories, url, isHash, isSearch }: Options
 ): boolean => {
 	let href: string = new URL(nodeHref).pathname;
 
 	if (isHash) {
 		href = new URL(nodeHref).hash;
+	}
+
+	let searchParamName: string | undefined = undefined;
+	let searchParamValue: string | undefined = undefined;
+
+	if (isSearch) {
+		const tempUrl = new URL(nodeHref);
+
+		for (const [key, value] of tempUrl.searchParams.entries()) {
+			searchParamName = key;
+			searchParamValue = value;
+		}
+
+		href = new URL(nodeHref).search;
 	}
 
 	const samePath = href === url.pathname;
@@ -51,5 +96,11 @@ export const checkIsActive = (
 	const isHashRoute: boolean =
 		isHash == true && (url.hash == href || ((href == '#' || href == '#/') && url.hash == ''));
 
-	return samePath || isParentRoute || isHashRoute;
+	const isSearchRoute: boolean =
+		isSearch === true &&
+		searchParamName !== undefined &&
+		searchParamValue !== undefined &&
+		(url.searchParams.get(searchParamName) ?? '/') === searchParamValue;
+
+	return samePath || isParentRoute || isHashRoute || isSearchRoute;
 };
