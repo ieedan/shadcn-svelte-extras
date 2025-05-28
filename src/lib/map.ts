@@ -21,7 +21,7 @@ const map: Record<string, Route[]> = {
 			description: 'How to add and use extras in your project.',
 			href: '/docs/using-extras',
 			status: 'v4'
-		}
+		},
 	],
 	Components: [
 		{

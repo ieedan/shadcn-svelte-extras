@@ -10,7 +10,7 @@
 	import { page } from '$app/state';
 	import { checkIsActive } from '$lib/actions/active.svelte';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
-	import { Button } from '$lib/components/ui/button';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import * as Icons from '$lib/components/icons';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import { commandContext } from '$lib/context';
@@ -20,6 +20,12 @@
 	import { LightSwitch } from '$lib/components/ui/light-switch';
 	import { dev } from '$app/environment';
 	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
+	import * as Dialog from '$lib/components/ui/dialog';
+	import { cn } from '$lib/utils/utils';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import { Code } from '$lib/components/ui/code';
+	import * as Tabs from '$lib/components/ui/tabs';
+	import { CodeSpan } from '$lib/components/docs';
 
 	let { children } = $props();
 
@@ -45,6 +51,8 @@
 	};
 
 	const currentDoc = $derived(getCurrentDoc(page.url));
+
+	const isMobile = new IsMobile();
 </script>
 
 <svelte:window
@@ -77,6 +85,50 @@
 				<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
 			</div>
 			<div class="flex place-items-center gap-1">
+				{#if !isMobile.current}
+					<Dialog.Root>
+						<!-- I just want to gauge interest here -->
+						<Dialog.Trigger
+							class={cn(buttonVariants({ variant: 'ghost' }), 'font-normal')}
+							data-umami-event="MCP button"
+						>
+							<Icons.MCP class="size-4" /> MCP
+						</Dialog.Trigger>
+						<Dialog.Content class="sm:max-w-2xl">
+							<Dialog.Title>Setup MCP</Dialog.Title>
+							<Dialog.Description
+								>Use the code below to setup MCP in your project.</Dialog.Description
+							>
+							<Tabs.Root value="cursor">
+								<Tabs.List>
+									<Tabs.Trigger value="cursor">Cursor</Tabs.Trigger>
+									<Tabs.Trigger value="windsurf">Windsurf</Tabs.Trigger>
+								</Tabs.List>
+								<Tabs.Content value="cursor">
+									Add the following code to your <CodeSpan>.cursor/mcp.json</CodeSpan> file.
+								</Tabs.Content>
+								<Tabs.Content value="windsurf">
+									Add the following code to your <CodeSpan
+										>.codeium/windsurf/mcp_config.json</CodeSpan
+									> file.
+								</Tabs.Content>
+							</Tabs.Root>
+							<div>
+								<Code
+									lang="json"
+									code={`{
+  "mcpServers": {
+    "jsrepo": {
+      "command": "npx",
+      "args": ["jsrepo", "mcp"]
+    }
+  }
+}`}
+								/>
+							</div>
+						</Dialog.Content>
+					</Dialog.Root>
+				{/if}
 				<Button
 					variant="ghost"
 					size="icon"
