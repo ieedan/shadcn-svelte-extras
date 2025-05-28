@@ -17,6 +17,14 @@
 			"message": "Tailwindcss@v3 is no longer supported. Please use v2.1.1."
 		}
 	},
+	"configFiles": [
+		{
+			"name": "Cursor Rules",
+			"path": "./rules/shadcn-svelte-extras.mdc",
+			"expectedPath": "./.cursor/rules/shadcn-svelte-extras.mdc",
+			"optional": true
+		}
+	],
 	"dirs": ["./src/lib/components", "./src/lib"],
 	"includeBlocks": [],
 	"includeCategories": ["ui", "hooks", "utils", "actions"],
