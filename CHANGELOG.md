@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.1.1
+
+### Patch Changes
+
+- feat: Add optional `Cursor Rules` file to provide additional context to llms ([#184](https://github.com/ieedan/shadcn-svelte-extras/pull/184))
+
 ## 3.1.0
 
 ### Minor Changes
