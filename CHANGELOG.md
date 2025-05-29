@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.2.0
+
+### Minor Changes
+
+- refactor(ui/modal): Refactors `ui/modal` for better composability ([#187](https://github.com/ieedan/shadcn-svelte-extras/pull/187))
+
 ## 3.1.1
 
 ### Patch Changes
