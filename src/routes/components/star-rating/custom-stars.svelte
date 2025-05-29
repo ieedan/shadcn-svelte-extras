@@ -2,10 +2,10 @@
 	import * as StarRating from '$lib/components/ui/star-rating';
 </script>
 
-<StarRating.Root stars={10}>
-	{#snippet children({ stars })}
-		{#each stars as star (star)}
-			<StarRating.Star {star} />
+<StarRating.Root max={10}>
+	{#snippet children({ items })}
+		{#each items as item (item.index)}
+			<StarRating.Star {...item} />
 		{/each}
 	{/snippet}
 </StarRating.Root>

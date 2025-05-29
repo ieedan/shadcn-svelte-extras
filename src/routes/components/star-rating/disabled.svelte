@@ -3,9 +3,9 @@
 </script>
 
 <StarRating.Root disabled value={3}>
-	{#snippet children({ stars })}
-		{#each stars as star (star)}
-			<StarRating.Star {star} />
+	{#snippet children({ items })}
+		{#each items as item (item.index)}
+			<StarRating.Star {...item} />
 		{/each}
 	{/snippet}
 </StarRating.Root>

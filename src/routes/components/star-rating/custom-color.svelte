@@ -3,9 +3,9 @@
 </script>
 
 <StarRating.Root>
-	{#snippet children({ stars })}
-		{#each stars as star (star)}
-			<StarRating.Star {star} class="text-yellow-400 data-[selected=true]:fill-yellow-400" />
+	{#snippet children({ items })}
+		{#each items as item (item.index)}
+			<StarRating.Star {...item} class="text-yellow-400" />
 		{/each}
 	{/snippet}
 </StarRating.Root>

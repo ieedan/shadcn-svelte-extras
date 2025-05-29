@@ -13,7 +13,7 @@
 		href="https://bits-ui.com"
 		target="_blank">bits-ui</Link
 	>
-	<CodeSpan>{'<RadioGroup/>'}</CodeSpan> component so it has all the behaviors you'd expect.
+	<CodeSpan>{'<RatingGroup/>'}</CodeSpan> component so it has all the behaviors you'd expect.
 </p>
 <Playground code={examples.basic.code}>
 	<examples.basic.Component />
@@ -28,9 +28,9 @@
 \<\/script\>
 
 <StarRating.Root>
-	{#snippet children({ stars })}
-		{#each stars as star (star)}
-			<StarRating.Star {star} />
+	{#snippet children({ items })}
+		{#each items as item (item.index)}
+			<StarRating.Star {...item} />
 		{/each}
 	{/snippet}
 </StarRating.Root>`}
@@ -40,6 +40,11 @@
 <p>You can have an arbitrary number of stars.</p>
 <Playground code={examples.customStars.code}>
 	<examples.customStars.Component />
+</Playground>
+<Subheading>Half Rating</Subheading>
+<p>You can also have half ratings. And they even work in RTL!</p>
+<Playground code={examples.halfRating.code}>
+	<examples.halfRating.Component />
 </Playground>
 <Subheading>Disabled</Subheading>
 <Playground code={examples.disabled.code}>

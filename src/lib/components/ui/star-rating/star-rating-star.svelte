@@ -1,36 +1,40 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { StarIcon } from '@lucide/svelte';
-	import { RadioGroup, Label } from 'bits-ui';
-	import { useStarRatingStar } from './star-rating.svelte.js';
-	import { box } from 'svelte-toolbelt';
-
-	const id = $props.id();
+	import { StarHalfIcon } from '@lucide/svelte';
+	import { unstable_RatingGroup as RatingGroup } from 'bits-ui';
 
 	type Props = {
-		star: number;
+		index: number;
+		state: 'active' | 'partial' | 'inactive';
 		class?: string;
 	};
 
-	let { star, class: className }: Props = $props();
-
-	const starState = useStarRatingStar({ star: box.with(() => star) });
+	let { index, state, class: className }: Props = $props();
 </script>
 
-<div class="relative">
-	<RadioGroup.Item
-		id="rating-{star}-{id}"
-		value={star.toString()}
-		onmouseover={() => starState.setRating()}
-		class="ring-ring ring-offset-background absolute inset-0 rounded-md ring-offset-2 outline-hidden focus-visible:ring-2"
-	/>
-	<Label.Root for="rating-{star}-{id}">
-		<StarIcon
-			data-selected={starState.rootState.opts.value.current >= star}
+<RatingGroup.Item
+	{index}
+	class={cn(
+		'ring-ring text-primary ring-offset-background group/item rounded-md ring-offset-2 outline-hidden group-aria-disabled:opacity-50 focus-visible:ring-2 [&>div]:size-5 [&>div>svg]:size-5',
+		className
+	)}
+>
+	<div class="relative">
+		<StarHalfIcon
 			class={cn(
-				'text-primary data-[selected=true]:fill-primary size-5 fill-transparent transition-all group-aria-disabled:opacity-50',
-				className
+				'absolute top-0 left-0 fill-transparent transition-all group-data-[state=active]/item:fill-current',
+				{
+					'ltr:fill-current': state === 'partial'
+				}
 			)}
 		/>
-	</Label.Root>
-</div>
+		<StarHalfIcon
+			class={cn(
+				'absolute top-0 right-0 scale-x-[-1] fill-transparent transition-all group-data-[state=active]/item:fill-current',
+				{
+					'rtl:fill-current': state === 'partial'
+				}
+			)}
+		/>
+	</div>
+</RatingGroup.Item>
