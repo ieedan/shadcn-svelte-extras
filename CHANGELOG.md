@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.2.1
+
+### Patch Changes
+
+- feat(ui/copy-button): Allow the button to have text ([#189](https://github.com/ieedan/shadcn-svelte-extras/pull/189))
+
 ## 3.2.0
 
 ### Minor Changes
