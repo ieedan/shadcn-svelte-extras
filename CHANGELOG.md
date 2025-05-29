@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.2.2
+
+### Patch Changes
+
+- fix(ui/drawer): Fix padding ([#191](https://github.com/ieedan/shadcn-svelte-extras/pull/191))
+
 ## 3.2.1
 
 ### Patch Changes
