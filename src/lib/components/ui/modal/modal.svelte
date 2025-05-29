@@ -1,37 +1,20 @@
 <script lang="ts">
-	import { MediaQuery } from 'svelte/reactivity';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
-	import type { Snippet } from 'svelte';
-	import { cn } from '$lib/utils/utils';
+	import type { DialogRootProps } from 'bits-ui';
+	import { useModal } from './modal.svelte.js';
 
-	type Props = {
-		open?: boolean;
-		class?: string;
-		hideClose?: boolean;
-		children: Snippet<[]>;
-	};
+	let { open = $bindable(false), children, ...rest }: DialogRootProps = $props();
 
-	const isDesktop = new MediaQuery('(min-width: 768px)');
-
-	let {
-		open = $bindable(false),
-		children,
-		class: className = undefined,
-		hideClose = false
-	}: Props = $props();
+	const modal = useModal();
 </script>
 
-{#if isDesktop.current}
-	<Dialog.Root bind:open>
-		<Dialog.Content class={cn('sm:max-w-xl', className)} {hideClose}>
-			{@render children()}
-		</Dialog.Content>
+{#if modal.view === 'desktop'}
+	<Dialog.Root bind:open {...rest}>
+		{@render children?.()}
 	</Dialog.Root>
 {:else}
-	<Drawer.Root bind:open>
-		<Drawer.Content class={cn('', className)}>
-			{@render children()}
-		</Drawer.Content>
+	<Drawer.Root bind:open {...rest}>
+		{@render children?.()}
 	</Drawer.Root>
 {/if}

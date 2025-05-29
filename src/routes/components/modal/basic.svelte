@@ -1,29 +1,26 @@
 <script lang="ts">
-	import { Modal } from '$lib/components/ui/modal';
-	import { Button } from '$lib/components/ui/button';
+	import * as Modal from '$lib/components/ui/modal';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
 
-	let open = false;
+	let open = $state(false);
 </script>
 
-<Button onclick={() => (open = true)}>Open Modal</Button>
-<Modal bind:open class="p-0">
-	<div class="border-border flex place-items-center border-b px-4 pb-4 sm:pt-4">
-		<h2 class="text-xl font-semibold">Create a team</h2>
-	</div>
-	<div class="flex flex-col gap-4 p-4">
-		<p class="text-sm">
-			Continue to start collaborating on Pro with increased usage, additional security features, and
-			support.
-		</p>
+<Modal.Root bind:open>
+	<Modal.Trigger class={buttonVariants({ variant: 'outline' })}>Open Modal</Modal.Trigger>
+	<Modal.Content>
+		<Modal.Header>
+			<Modal.Title>Create a team</Modal.Title>
+			<Modal.Description>Create a team</Modal.Description>
+		</Modal.Header>
 		<div>
 			<Label>Team Name</Label>
 			<Input />
 		</div>
-	</div>
-	<div class="border-border flex place-items-center justify-between border-t p-4">
-		<Button variant="outline" onclick={() => (open = false)}>Cancel</Button>
-		<Button>Continue</Button>
-	</div>
-</Modal>
+		<Modal.Footer>
+			<Button variant="outline" onclick={() => (open = false)}>Cancel</Button>
+			<Button>Continue</Button>
+		</Modal.Footer>
+	</Modal.Content>
+</Modal.Root>
