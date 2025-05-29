@@ -12,5 +12,5 @@
 			{/each}
 		{/snippet}
 	</StarRating.Root>
-	<span class="text-sm text-muted-foreground">Rating is {value}</span>
+	<span class="text-muted-foreground text-sm">Rating is {value}</span>
 </div>
