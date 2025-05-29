@@ -22,17 +22,23 @@
 		size = 'icon',
 		onCopy,
 		class: className,
-		...restProps
+		children,
+		...rest
 	}: Props = $props();
+
+	// this way if the user passes text then the button will be the default size
+	if (size === 'icon' && children) {
+		size = 'default';
+	}
 
 	const clipboard = new UseClipboard();
 </script>
 
 <Button
-	{...restProps}
+	{...rest}
 	{variant}
 	{size}
-	class={cn(className)}
+	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
 	tabindex={-1}
@@ -62,4 +68,5 @@
 			<span class="sr-only">Copy</span>
 		</div>
 	{/if}
+	{@render children?.()}
 </Button>

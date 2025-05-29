@@ -14,3 +14,7 @@
 <Playground code={examples.icon.code} class="min-h-[225px]">
 	<examples.icon.Component />
 </Playground>
+<Subheading>With Text</Subheading>
+<Playground code={examples.withText.code} class="min-h-[225px]">
+	<examples.withText.Component />
+</Playground>
