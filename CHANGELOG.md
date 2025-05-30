@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.2.3
+
+### Patch Changes
+
+- feat: Configure `defaultPaths` ([#193](https://github.com/ieedan/shadcn-svelte-extras/pull/193))
+
 ## 3.2.2
 
 ### Patch Changes
