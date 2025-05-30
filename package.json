@@ -23,7 +23,7 @@
 		"@fontsource/geist-mono": "^5.2.6",
 		"@inlang/cli": "^3.0.11",
 		"@inlang/paraglide-js": "2.0.12",
-		"@lucide/svelte": "^0.482.0",
+		"@lucide/svelte": "^0.511.0",
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.4.2",
 		"@shikijs/themes": "^3.4.2",
@@ -31,7 +31,7 @@
 		"@sveltejs/kit": "^2.21.1",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/vite": "^4.1.7",
-		"bits-ui": "1.5.2",
+		"bits-ui": "2.3.0",
 		"clsx": "^2.1.1",
 		"eslint": "^9.27.0",
 		"eslint-config-prettier": "^10.1.5",
@@ -45,12 +45,12 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"runed": "^0.28.0",
 		"shiki": "^3.4.2",
-		"svelte": "^5.30.2",
+		"svelte": "^5.33.10",
 		"svelte-check": "^4.2.1",
 		"svelte-easy-crop": "^4.0.1",
 		"svelte-sonner": "^1.0.1",
 		"svelte-tel-input": "^3.6.0",
-		"svelte-toolbelt": "^0.7.1",
+		"svelte-toolbelt": "^0.9.1",
 		"sveltekit-superforms": "^2.25.0",
 		"tailwind-merge": "^3.3.0",
 		"tailwind-variants": "^1.0.0",
@@ -74,6 +74,6 @@
 	"dependencies": {
 		"@changesets/cli": "^2.29.4",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"jsrepo": "^2.0.2"
+		"jsrepo": "^2.3.1"
 	}
 }
