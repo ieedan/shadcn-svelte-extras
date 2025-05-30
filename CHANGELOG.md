@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.3.0
+
+### Minor Changes
+
+- refactor(star-rating): Use `RatingGroup` instead of `RadioGroup` for `ui/star-rating` ([#186](https://github.com/ieedan/shadcn-svelte-extras/pull/186))
+
 ## 3.2.4
 
 ### Patch Changes
