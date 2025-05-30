@@ -1,7 +1,7 @@
 {
 	"name": "shadcn-svelte-extras",
 	"packageManager": "pnpm@10.4.1",
-	"version": "3.1.1",
+	"version": "3.2.4",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -22,7 +22,7 @@
 		"@fontsource-variable/inter": "^5.2.5",
 		"@fontsource/geist-mono": "^5.2.6",
 		"@inlang/cli": "^3.0.11",
-		"@inlang/paraglide-js": "2.0.13",
+		"@inlang/paraglide-js": "2.0.12",
 		"@lucide/svelte": "^0.511.0",
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.4.2",
@@ -30,7 +30,7 @@
 		"@sveltejs/adapter-vercel": "^5.7.2",
 		"@sveltejs/kit": "^2.21.1",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
-		"@tailwindcss/vite": "^4.1.8",
+		"@tailwindcss/vite": "^4.1.7",
 		"bits-ui": "2.3.0",
 		"clsx": "^2.1.1",
 		"eslint": "^9.27.0",
@@ -45,7 +45,7 @@
 		"prettier-plugin-tailwindcss": "^0.6.11",
 		"runed": "^0.28.0",
 		"shiki": "^3.4.2",
-		"svelte": "^5.33.6",
+		"svelte": "^5.33.10",
 		"svelte-check": "^4.2.1",
 		"svelte-easy-crop": "^4.0.1",
 		"svelte-sonner": "^1.0.3",
@@ -75,6 +75,6 @@
 	"dependencies": {
 		"@changesets/cli": "^2.29.4",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"jsrepo": "^2.2.1"
+		"jsrepo": "^2.3.1"
 	}
 }

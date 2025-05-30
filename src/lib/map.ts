@@ -120,7 +120,8 @@ const map: Record<string, Route[]> = {
 			description: 'A responsive dialog component.',
 			href: '/components/modal',
 			specifier: 'ui/modal',
-			source: 'src/lib/components/ui/modal/modal.svelte'
+			source: 'src/lib/components/ui/modal/modal.svelte',
+			status: 'Updated'
 		},
 		{
 			name: 'NLPDateInput',

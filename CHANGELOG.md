@@ -1,5 +1,35 @@
 # shadcn-svelte-extras
 
+## 3.2.4
+
+### Patch Changes
+
+- chore: bump deps ([#196](https://github.com/ieedan/shadcn-svelte-extras/pull/196))
+
+## 3.2.3
+
+### Patch Changes
+
+- feat: Configure `defaultPaths` ([#193](https://github.com/ieedan/shadcn-svelte-extras/pull/193))
+
+## 3.2.2
+
+### Patch Changes
+
+- fix(ui/drawer): Fix padding ([#191](https://github.com/ieedan/shadcn-svelte-extras/pull/191))
+
+## 3.2.1
+
+### Patch Changes
+
+- feat(ui/copy-button): Allow the button to have text ([#189](https://github.com/ieedan/shadcn-svelte-extras/pull/189))
+
+## 3.2.0
+
+### Minor Changes
+
+- refactor(ui/modal): Refactors `ui/modal` for better composability ([#187](https://github.com/ieedan/shadcn-svelte-extras/pull/187))
+
 ## 3.1.1
 
 ### Patch Changes

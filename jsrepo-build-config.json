@@ -1,5 +1,5 @@
 {
-	"$schema": "https://unpkg.com/jsrepo@2.0.2/schemas/registry-config.json",
+	"$schema": "https://unpkg.com/jsrepo@2.3.0/schemas/registry-config.json",
 	"name": "@ieedan/shadcn-svelte-extras",
 	"version": "package",
 	"meta": {
@@ -9,6 +9,13 @@
 		"homepage": "https://www.shadcn-svelte-extras.com/",
 		"repository": "https://github.com/ieedan/shadcn-svelte-extras",
 		"tags": ["svelte", "shadcn", "typescript", "components", "utilities"]
+	},
+	"defaultPaths": {
+		"*": "$lib/blocks",
+		"ui": "$lib/components/ui",
+		"hooks": "$lib/hooks",
+		"actions": "$lib/actions",
+		"utils": "$lib/utils"
 	},
 	"peerDependencies": {
 		"svelte": "5.x.x",
