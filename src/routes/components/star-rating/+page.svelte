@@ -58,3 +58,7 @@
 <Playground code={examples.customColor.code}>
 	<examples.customColor.Component />
 </Playground>
+<Subheading>Custom Size</Subheading>
+<Playground code={examples.customSize.code}>
+	<examples.customSize.Component />
+</Playground>
