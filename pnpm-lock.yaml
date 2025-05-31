@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(encoding@0.1.13)
       jsrepo:
-        specifier: ^2.3.1
-        version: 2.3.1(encoding@0.1.13)(typescript@5.8.3)(ws@8.18.2)(zod@3.24.4)
+        specifier: ^2.3.2
+        version: 2.3.2(encoding@0.1.13)(typescript@5.8.3)(ws@8.18.2)(zod@3.24.4)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.9
@@ -111,9 +111,12 @@ importers:
       svelte-easy-crop:
         specifier: ^4.0.1
         version: 4.0.1(svelte@5.33.10)
+      svelte-meta-tags:
+        specifier: ^4.3.0
+        version: 4.3.0(svelte@5.33.10)
       svelte-sonner:
-        specifier: ^1.0.3
-        version: 1.0.3(svelte@5.33.10)
+        specifier: ^1.0.4
+        version: 1.0.4(svelte@5.33.10)
       svelte-tel-input:
         specifier: ^3.6.0
         version: 3.6.0(svelte@5.33.10)
@@ -2137,8 +2140,8 @@ packages:
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
-  jsrepo@2.3.1:
-    resolution: {integrity: sha512-dw8yb3qnaIEvUuRImsw1D1jkAziaDm+HUVSPQIy89IfbBSWXGHw6C+ClJiXL2LRlQUgLCm2awoPT/Ju9FNnc3g==}
+  jsrepo@2.3.2:
+    resolution: {integrity: sha512-bVLL+3NJa/PXbvIYtR0BFDQCA/kIZ6Fa6gy1x2Ur+0bLuS5OpCUh96chzyW3xgG4eN14K1/P3Nzbw/hw6rfIOQ==}
     hasBin: true
 
   keyv@4.5.4:
@@ -2814,6 +2817,9 @@ packages:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==}
     engines: {node: '>=v12.22.7'}
 
+  schema-dts@1.1.5:
+    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
+
   semver@7.7.2:
     resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
@@ -2990,8 +2996,13 @@ packages:
       svelte:
         optional: true
 
-  svelte-sonner@1.0.3:
-    resolution: {integrity: sha512-vm/+GxgOOv2mnQYH1iUtBN/pLvFmlHthpK9YqsqIUJZbq4+HT6zopHk4S/1vHKvLTyjgo9vzqA0Z+Z2sPQ/nTQ==}
+  svelte-meta-tags@4.3.0:
+    resolution: {integrity: sha512-iwiepOc8p5MauzZpu0nxKsTCj6bLCOnhmR299w04W7vpdJ63sL3adjAj715hOG+TnHxxtlPlc/CeDX6tbc35Dw==}
+    peerDependencies:
+      svelte: ^5.0.0
+
+  svelte-sonner@1.0.4:
+    resolution: {integrity: sha512-ctm9jeV0Rf3im2J6RU1emccrJFjRSdNSPsLlxaF62TLZw9bB1D40U/U7+wqEgohJY/X7FBdghdj0BFQF/IqKPQ==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -5577,7 +5588,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsrepo@2.3.1(encoding@0.1.13)(typescript@5.8.3)(ws@8.18.2)(zod@3.24.4):
+  jsrepo@2.3.2(encoding@0.1.13)(typescript@5.8.3)(ws@8.18.2)(zod@3.24.4):
     dependencies:
       '@anthropic-ai/sdk': 0.52.0
       '@biomejs/js-api': 0.7.1(@biomejs/wasm-nodejs@1.9.4)
@@ -6194,6 +6205,8 @@ snapshots:
     dependencies:
       xmlchars: 2.2.0
 
+  schema-dts@1.1.5: {}
+
   semver@7.7.2: {}
 
   send@1.2.0:
@@ -6405,7 +6418,12 @@ snapshots:
     optionalDependencies:
       svelte: 5.33.10
 
-  svelte-sonner@1.0.3(svelte@5.33.10):
+  svelte-meta-tags@4.3.0(svelte@5.33.10):
+    dependencies:
+      schema-dts: 1.1.5
+      svelte: 5.33.10
+
+  svelte-sonner@1.0.4(svelte@5.33.10):
     dependencies:
       runed: 0.26.0(svelte@5.33.10)
       svelte: 5.33.10

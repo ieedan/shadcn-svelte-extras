@@ -17,13 +17,6 @@
 	const toc = new UseToc();
 </script>
 
-<svelte:head>
-	{#if doc}
-		<title>{doc.doc.name} - shadcn-svelte-extras</title>
-		<meta name="description" content={doc.doc.description} />
-	{/if}
-</svelte:head>
-
 <div
 	class="relative flex w-full justify-center gap-4 px-6 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
 >

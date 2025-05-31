@@ -26,6 +26,7 @@
 	import { Code } from '$lib/components/ui/code';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { CodeSpan } from '$lib/components/docs';
+	import { MetaTags } from '$lib/components/site/meta-tags';
 
 	let { children } = $props();
 
@@ -53,7 +54,65 @@
 	const currentDoc = $derived(getCurrentDoc(page.url));
 
 	const isMobile = new IsMobile();
+
+	const components = $derived(
+		Array.from(Object.entries(map))
+			.filter(([cat]) => cat === 'Components')
+			.flatMap(([_, components]) =>
+				components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
+			)
+			.join(', ')
+	);
 </script>
+
+<MetaTags
+	title="{currentDoc?.doc.name} - shadcn-svelte-extras"
+	titleTemplate="%s - shadcn-svelte-extras"
+	description={currentDoc?.doc.name === 'Introduction'
+		? 'Finish your app with awesome svelte components like {components}'
+		: currentDoc?.doc.description}
+	keywords={[
+		'shadcn-svelte',
+		'extras',
+		'svelte',
+		'components',
+		'cli',
+		'jsrepo',
+		'mcp',
+		'phone-input',
+		'tags-input',
+		'star-rating',
+		'file-drop-zone'
+	]}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
+		description:
+			currentDoc?.doc.name === 'Introduction'
+				? `Finish your app with awesome svelte components like ${components}`
+				: currentDoc?.doc.description,
+		image: 'https://shadcn-svelte-extras.com/og.png',
+		creator: '@ieeeedan'
+	}}
+	openGraph={{
+		url: page.url.toString(),
+		type: 'website',
+		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
+		description:
+			currentDoc?.doc.name === 'Introduction'
+				? `Finish your app with awesome svelte components like ${components}`
+				: currentDoc?.doc.description,
+		siteName: 'shadcn-svelte-extras',
+		images: [
+			{
+				url: 'https://shadcn-svelte-extras.com/og.png',
+				width: 2014,
+				height: 1143,
+				alt: 'shadcn-svelte-extras - Finish your app.'
+			}
+		]
+	}}
+/>
 
 <svelte:window
 	use:shortcut={{

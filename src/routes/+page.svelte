@@ -14,27 +14,9 @@
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import { ArrowRightIcon } from '@lucide/svelte';
-	import { map } from '$lib/map';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
-
-	const components = $derived(
-		Array.from(Object.entries(map))
-			.filter(([cat]) => cat === 'Components')
-			.flatMap(([_, components]) =>
-				components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
-			)
-			.join(', ')
-	);
 </script>
-
-<svelte:head>
-	<title>shadcn-svelte-extras</title>
-	<meta
-		name="description"
-		content="Finish your app with awesome svelte components like {components}"
-	/>
-</svelte:head>
 
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">

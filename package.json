@@ -48,7 +48,8 @@
 		"svelte": "^5.33.10",
 		"svelte-check": "^4.2.1",
 		"svelte-easy-crop": "^4.0.1",
-		"svelte-sonner": "^1.0.3",
+		"svelte-meta-tags": "^4.3.0",
+		"svelte-sonner": "^1.0.4",
 		"svelte-tel-input": "^3.6.0",
 		"svelte-toolbelt": "^0.9.1",
 		"sveltekit-superforms": "^2.25.0",
@@ -75,6 +76,6 @@
 	"dependencies": {
 		"@changesets/cli": "^2.29.4",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"jsrepo": "^2.3.1"
+		"jsrepo": "^2.3.2"
 	}
 }
