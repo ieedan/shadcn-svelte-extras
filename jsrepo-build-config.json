@@ -26,7 +26,7 @@
 	},
 	"configFiles": [
 		{
-			"name": "Cursor Rules",
+			"name": "Shadcn Svelte Extras Cursor Rules",
 			"path": "./rules/shadcn-svelte-extras.mdc",
 			"expectedPath": "./.cursor/rules/shadcn-svelte-extras.mdc",
 			"optional": true

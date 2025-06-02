@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@changesets/cli':
-        specifier: ^2.29.4
-        version: 2.29.4
       '@svitejs/changesets-changelog-github-compact':
         specifier: ^1.2.0
         version: 1.2.0(encoding@0.1.13)
@@ -18,6 +15,9 @@ importers:
         specifier: ^2.3.2
         version: 2.3.2(encoding@0.1.13)(typescript@5.8.3)(ws@8.18.2)(zod@3.24.4)
     devDependencies:
+      '@changesets/cli':
+        specifier: ^2.29.4
+        version: 2.29.4
       '@eslint/compat':
         specifier: ^1.2.9
         version: 1.2.9(eslint@9.28.0(jiti@2.4.2))
