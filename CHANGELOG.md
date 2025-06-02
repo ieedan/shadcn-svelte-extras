@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 3.3.1
+
+### Patch Changes
+
+- fix(rules): Updated cursor rules name so as not to conflict with other jsrepo registries. ([#201](https://github.com/ieedan/shadcn-svelte-extras/pull/201))
+
 ## 3.3.0
 
 ### Minor Changes
