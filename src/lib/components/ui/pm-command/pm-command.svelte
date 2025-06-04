@@ -4,7 +4,8 @@
 	import type { Command, Agent } from 'package-manager-detector';
 	import { resolveCommand } from 'package-manager-detector/commands';
 	import CopyButton from '../copy-button/copy-button.svelte';
-	import { ClipboardIcon } from '@lucide/svelte';
+	import { ClipboardIcon, TerminalIcon } from '@lucide/svelte';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	const style = tv({
 		base: 'border-border w-full rounded-lg border',
@@ -42,29 +43,44 @@
 </script>
 
 <div class={cn(style({ variant }), className)}>
-	<div class="border-border flex place-items-end justify-between border-b p-2 pb-0">
-		<div class="flex place-items-center gap-1">
-			{#each agents as pm (pm)}
-				<button
-					type="button"
-					class={{
-						'-mb-0.5 border-b-2 border-transparent p-1 font-mono text-sm': true,
-						'border-b-primary': agent === pm
-					}}
-					onclick={() => (agent = pm)}
-				>
-					{pm}
-				</button>
-			{/each}
+	<div class="border-border flex place-items-center justify-between gap-2 border-b py-1 pr-2">
+		<div class="flex place-items-center gap-2 px-2">
+			<div class="bg-foreground flex size-4 place-items-center justify-center opacity-50">
+				<TerminalIcon class="text-background size-3" />
+			</div>
+			<div class="flex place-items-center">
+				{#each agents as pm (pm)}
+					<button
+						type="button"
+						class={cn(
+							'text-muted-foreground flex h-7 place-items-center rounded-md border border-transparent px-2 py-1 font-mono text-sm leading-none font-light',
+							{
+								'bg-background border-border text-foreground dark:border-input dark:bg-input/30':
+									agent === pm
+							}
+						)}
+						onclick={() => (agent = pm)}
+					>
+						{pm}
+					</button>
+				{/each}
+			</div>
 		</div>
-		<CopyButton text={commandText} tooltip="Copy to Clipboard" class="mb-1 size-6 [&_svg]:size-3">
-			{#snippet icon()}
-				<ClipboardIcon />
-			{/snippet}
-		</CopyButton>
+		<Tooltip.Root>
+			<Tooltip.Trigger>
+				{#snippet child({ props })}
+					<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
+						{#snippet icon()}
+							<ClipboardIcon />
+						{/snippet}
+					</CopyButton>
+				{/snippet}
+			</Tooltip.Trigger>
+			<Tooltip.Content>Copy to Clipboard</Tooltip.Content>
+		</Tooltip.Root>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
-		<span class="font-mono text-sm text-nowrap">
+		<span class="text-muted-foreground font-mono text-sm leading-none font-light text-nowrap">
 			{commandText}
 		</span>
 	</div>

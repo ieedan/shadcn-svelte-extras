@@ -5,7 +5,7 @@
 	const command = 'jsrepo add ui/copy-button';
 </script>
 
-<CopyButton text={command} size="sm" variant="outline" tooltip="Copy to Clipboard">
+<CopyButton text={command} size="sm" variant="outline">
 	{#snippet icon()}
 		<TerminalIcon />
 	{/snippet}

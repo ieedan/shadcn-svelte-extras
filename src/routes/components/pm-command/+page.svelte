@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
+	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { Link } from '$lib/components/ui/link';
@@ -29,4 +29,11 @@
 <Subheading>Overflow</Subheading>
 <Playground code={examples.overflow.code} class="min-h-[225px] p-6">
 	<examples.overflow.Component />
+</Playground>
+<Subheading>Persisted Package Manager</Subheading>
+<p>
+	Use the runed <CodeSpan>PersistedState</CodeSpan> API to remember the users package manager.
+</p>
+<Playground code={examples.persistedPM.code} class="min-h-[225px] p-6">
+	<examples.persistedPM.Component />
 </Playground>

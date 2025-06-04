@@ -29,12 +29,12 @@
 
 <div class={cn(style({ variant, className: className }))}>
 	{#if typeof text == 'string'}
-		<pre class={cn('overflow-y-auto text-left font-mono text-sm whitespace-nowrap')}>
+		<pre class={cn('overflow-y-auto text-left font-mono text-sm font-light whitespace-nowrap')}>
 			{text}
 		</pre>
 	{:else}
 		{#each text as line, i (i)}
-			<pre class={cn('overflow-y-auto text-left font-mono text-sm whitespace-nowrap')}>
+			<pre class={cn('overflow-y-auto text-left font-mono text-sm font-light whitespace-nowrap')}>
 			{line}
 		</pre>
 		{/each}
@@ -43,7 +43,6 @@
 	<CopyButton
 		class="hover:text-opacity-80 absolute top-1/2 right-2 size-7 -translate-y-1/2 transition-opacity ease-in-out hover:bg-transparent dark:hover:bg-transparent"
 		text={typeof text === 'string' ? text : text.join('\n')}
-		tooltip="Copy to Clipboard"
 		{onCopy}
 	/>
 </div>

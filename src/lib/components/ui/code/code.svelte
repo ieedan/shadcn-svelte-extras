@@ -112,7 +112,7 @@
 				copyButtonContainerClass
 			)}
 		>
-			<CopyButton text={code} tooltip="Copy to Clipboard" />
+			<CopyButton text={code} />
 		</div>
 	{/if}
 </div>

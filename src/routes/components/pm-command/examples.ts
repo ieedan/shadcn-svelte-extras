@@ -6,6 +6,8 @@ import Variants from './variants.svelte';
 import variantsRaw from './variants.svelte?raw';
 import Overflow from './overflow.svelte';
 import overflowRaw from './overflow.svelte?raw';
+import PersistedPM from './persisted-pm.svelte';
+import persistedPMRaw from './persisted-pm.svelte?raw';
 
 const examples = {
 	basic: {
@@ -23,6 +25,10 @@ const examples = {
 	overflow: {
 		code: overflowRaw,
 		Component: Overflow
+	},
+	persistedPM: {
+		code: persistedPMRaw,
+		Component: PersistedPM
 	}
 };
 
