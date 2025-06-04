@@ -8,6 +8,8 @@ import Overflow from './overflow.svelte';
 import overflowRaw from './overflow.svelte?raw';
 import PersistedPM from './persisted-pm.svelte';
 import persistedPMRaw from './persisted-pm.svelte?raw';
+import ReOrderAgents from './re-order-agents.svelte';
+import reOrderAgentsRaw from './re-order-agents.svelte?raw';
 
 const examples = {
 	basic: {
@@ -29,6 +31,10 @@ const examples = {
 	persistedPM: {
 		code: persistedPMRaw,
 		Component: PersistedPM
+	},
+	reOrderAgents: {
+		code: reOrderAgentsRaw,
+		Component: ReOrderAgents
 	}
 };
 
