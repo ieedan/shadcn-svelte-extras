@@ -1,5 +1,21 @@
 # shadcn-svelte-extras
 
+## 3.4.0
+
+### Minor Changes
+
+- feat(ui/button): Add `onClickPromise` api to allow for easy loading states until promise resolution ([#203](https://github.com/ieedan/shadcn-svelte-extras/pull/203))
+
+### Patch Changes
+
+- fix: Use `font-light` anywhere we use `font-mono` ([#203](https://github.com/ieedan/shadcn-svelte-extras/pull/203))
+
+- fix(ui/pm-command): Improve accessibility by using `Tabs` for pm selection ([#203](https://github.com/ieedan/shadcn-svelte-extras/pull/203))
+
+- fix(ui/pm-command): Styling parity with original ([#203](https://github.com/ieedan/shadcn-svelte-extras/pull/203))
+
+- fix(ui/snippet): Styling parity with original ([#203](https://github.com/ieedan/shadcn-svelte-extras/pull/203))
+
 ## 3.3.1
 
 ### Patch Changes
