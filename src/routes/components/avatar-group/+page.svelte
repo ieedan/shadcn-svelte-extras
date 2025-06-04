@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { AvatarGroupReference } from '$lib/components/docs/api-reference/components';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { Code } from '$lib/components/ui/code';
@@ -33,3 +35,4 @@
 <Playground code={examples.vertical.code}>
 	<examples.vertical.Component />
 </Playground>
+<ApiReference name="Avatar" components={AvatarGroupReference} />
