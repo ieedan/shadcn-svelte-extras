@@ -2,10 +2,12 @@
 	import type { Route } from '$lib/map';
 	import type { Snippet as SnippetType } from 'svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import { CodeIcon } from '@lucide/svelte';
+	import { ArrowLeftIcon, ArrowRightIcon, CodeIcon } from '@lucide/svelte';
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
 	import * as Toc from '$lib/components/ui/toc';
+	import Button from './ui/button/button.svelte';
+	import * as Tooltip from './ui/tooltip';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -24,10 +26,56 @@
 		<div class="flex flex-col gap-5">
 			{#if doc}
 				<div class="flex flex-col gap-1">
-					<h1 class="text-4xl font-bold">
-						{doc.doc.name}
-					</h1>
-					<p class="text-muted-foreground text-lg">
+					<div class="flex items-center justify-between gap-2">
+						<h1 class="text-4xl font-bold">
+							{doc.doc.name}
+						</h1>
+						<div class="flex items-center gap-2">
+							{#if doc.prev}
+								<Tooltip.Root>
+									<Tooltip.Trigger>
+										{#snippet child({ props })}
+											<Button
+												{...props}
+												variant="secondary"
+												size="icon"
+												class="size-8"
+												href={doc.prev?.href}
+												data-umami-event="Navigate backward arrow"
+											>
+												<ArrowLeftIcon class="size-4" />
+											</Button>
+										{/snippet}
+									</Tooltip.Trigger>
+									<Tooltip.Content>
+										{doc.prev.name}
+									</Tooltip.Content>
+								</Tooltip.Root>
+							{/if}
+							{#if doc.next}
+								<Tooltip.Root>
+									<Tooltip.Trigger>
+										{#snippet child({ props })}
+											<Button
+												{...props}
+												variant="secondary"
+												size="icon"
+												class="size-8"
+												href={doc.next?.href}
+												data-umami-event="Navigate forward arrow"
+											>
+												<ArrowRightIcon class="size-4" />
+											</Button>
+										{/snippet}
+									</Tooltip.Trigger>
+									<Tooltip.Content>
+										{doc.next.name}
+									</Tooltip.Content>
+								</Tooltip.Root>
+							{/if}
+						</div>
+					</div>
+					<p class="!text-muted-foreground text-lg">
 						{doc.doc.description}
 					</p>
 					{#if doc.doc.source}
@@ -46,7 +94,7 @@
 					{/if}
 				</div>
 			{/if}
-			<div bind:this={toc.ref} style="display: contents;">
+			<div bind:this={toc.ref} style="display: contents;" class="page-wrapper">
 				{@render children()}
 			</div>
 		</div>

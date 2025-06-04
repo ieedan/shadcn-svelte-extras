@@ -6,6 +6,10 @@ import Variants from './variants.svelte';
 import variantsRaw from './variants.svelte?raw';
 import Overflow from './overflow.svelte';
 import overflowRaw from './overflow.svelte?raw';
+import PersistedPM from './persisted-pm.svelte';
+import persistedPMRaw from './persisted-pm.svelte?raw';
+import CustomizeAgents from './customize-agents.svelte';
+import customizeAgentsRaw from './customize-agents.svelte?raw';
 
 const examples = {
 	basic: {
@@ -23,6 +27,14 @@ const examples = {
 	overflow: {
 		code: overflowRaw,
 		Component: Overflow
+	},
+	persistedPM: {
+		code: persistedPMRaw,
+		Component: PersistedPM
+	},
+	customizeAgents: {
+		code: customizeAgentsRaw,
+		Component: CustomizeAgents
 	}
 };
 

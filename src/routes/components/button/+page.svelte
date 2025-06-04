@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
+	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
@@ -14,4 +14,12 @@
 <Subheading>Loading</Subheading>
 <Playground code={examples.loading.code} class="min-h-[225px]">
 	<examples.loading.Component />
+</Playground>
+<Subheading>onClickPromise</Subheading>
+<p>
+	You can also pass a promise to <CodeSpan>onClickPromise</CodeSpan> to show a loading state until it
+	resolves.
+</p>
+<Playground code={examples.onClickPromise.code} class="min-h-[225px]">
+	<examples.onClickPromise.Component />
 </Playground>

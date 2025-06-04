@@ -13,14 +13,13 @@ const map: Record<string, Route[]> = {
 	'Getting Started': [
 		{
 			name: 'Introduction',
-			description: 'Introduction to shadcn-svelte-extras.',
-			href: '/'
+			description: "Why we built shadcn-svelte-extras and why it's great.",
+			href: '/docs/introduction'
 		},
 		{
-			name: 'Using Extras',
+			name: 'Installation',
 			description: 'How to add and use extras in your project.',
-			href: '/docs/using-extras',
-			status: 'v4'
+			href: '/docs/installation'
 		}
 	],
 	Components: [
@@ -120,8 +119,7 @@ const map: Record<string, Route[]> = {
 			description: 'A responsive dialog component.',
 			href: '/components/modal',
 			specifier: 'ui/modal',
-			source: 'src/lib/components/ui/modal/modal.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/modal/modal.svelte'
 		},
 		{
 			name: 'NLPDateInput',
@@ -142,7 +140,8 @@ const map: Record<string, Route[]> = {
 			description: 'A package manager command component.',
 			href: '/components/pm-command',
 			specifier: 'ui/pm-command',
-			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
+			source: 'src/lib/components/ui/pm-command/pm-command.svelte',
+			status: 'Updated'
 		},
 		{
 			name: 'Snippet',
@@ -156,8 +155,7 @@ const map: Record<string, Route[]> = {
 			description: 'A simple star rating component.',
 			href: '/components/star-rating',
 			specifier: 'ui/star-rating',
-			source: 'src/lib/components/ui/star-rating',
-			status: 'New'
+			source: 'src/lib/components/ui/star-rating'
 		},
 		{
 			name: 'Tags Input',

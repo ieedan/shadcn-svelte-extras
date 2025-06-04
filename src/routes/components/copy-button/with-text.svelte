@@ -9,5 +9,5 @@
 	{#snippet icon()}
 		<TerminalIcon />
 	{/snippet}
-	<span class="font-mono text-sm">{command}</span>
+	<span class="font-mono text-sm font-light">{command}</span>
 </CopyButton>

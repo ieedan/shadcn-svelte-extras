@@ -29,12 +29,12 @@
 
 <div class={cn(style({ variant, className: className }))}>
 	{#if typeof text == 'string'}
-		<pre class={cn('overflow-y-auto text-left font-mono text-sm whitespace-nowrap')}>
+		<pre class={cn('overflow-y-auto text-left font-mono text-sm font-light whitespace-nowrap')}>
 			{text}
 		</pre>
 	{:else}
 		{#each text as line, i (i)}
-			<pre class={cn('overflow-y-auto text-left font-mono text-sm whitespace-nowrap')}>
+			<pre class={cn('overflow-y-auto text-left font-mono text-sm font-light whitespace-nowrap')}>
 			{line}
 		</pre>
 		{/each}

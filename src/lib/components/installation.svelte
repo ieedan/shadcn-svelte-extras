@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Snippet } from '$lib/components/ui/snippet';
+	import JsrepoCommand from './docs/jsrepo-command.svelte';
 	import { Subheading } from '$lib/components/docs';
 
 	type Props = {
@@ -10,4 +10,4 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<Snippet text="jsrepo add {specifier}" />
+<JsrepoCommand command="execute" args={['jsrepo', 'add', specifier]} />

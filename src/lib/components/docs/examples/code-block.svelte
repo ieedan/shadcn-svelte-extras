@@ -14,7 +14,9 @@
 	<div class="border-border flex place-items-center justify-between border-b p-2">
 		<div class="flex place-items-center gap-2">
 			<Svelte class="size-4" />
-			<span class="text-muted-foreground font-mono text-sm"> src/routes/+layout.svelte </span>
+			<span class="text-muted-foreground font-mono text-sm font-light">
+				src/routes/+layout.svelte
+			</span>
 		</div>
 		<CopyButton text={code} class="size-7" />
 	</div>

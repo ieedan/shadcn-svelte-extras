@@ -27,21 +27,35 @@
 	import { cn } from '$lib/utils/utils';
 	import type { Command, Agent } from 'package-manager-detector';
 	import { resolveCommand } from 'package-manager-detector/commands';
-	import CopyButton from '../copy-button/copy-button.svelte';
+	import CopyButton from '$lib/components/ui/copy-button/copy-button.svelte';
 	import { ClipboardIcon, TerminalIcon } from '@lucide/svelte';
 	import * as Tooltip from '$lib/components/ui/tooltip';
+	import { PersistedState } from 'runed';
 	import * as Tabs from '$lib/components/ui/tabs';
 
-	let {
-		variant = 'default',
-		class: className,
-		command,
-		agents = ['npm', 'pnpm', 'yarn', 'bun'],
-		args,
-		agent = $bindable('npm')
-	}: PMCommandProps = $props();
+	let { variant = 'default', class: className, command, args }: PMCommandProps = $props();
 
-	const cmd = $derived(resolveCommand(agent, command, args));
+	if (args[0] !== 'jsrepo') {
+		throw new Error("jsrepo command's first arg must be jsrepo");
+	}
+
+	const agents = ['jsrepo', 'pnpm', 'npm', 'bun', 'yarn'] as const;
+
+	const agent = new PersistedState<Agent | 'jsrepo'>(
+		'user-package-manager-jsrepo-command',
+		'jsrepo'
+	);
+
+	const cmd = $derived.by(() => {
+		if (agent.current === 'jsrepo') {
+			return {
+				command: 'jsrepo',
+				args: args.slice(1) // remove the first argument (jsrepo)
+			};
+		}
+
+		return resolveCommand(agent.current, command, args);
+	});
 
 	const commandText = $derived(`${cmd?.command} ${cmd?.args.join(' ')}`);
 </script>
@@ -52,7 +66,7 @@
 			<div class="bg-foreground flex size-4 place-items-center justify-center opacity-50">
 				<TerminalIcon class="text-background size-3" />
 			</div>
-			<Tabs.Root bind:value={agent}>
+			<Tabs.Root bind:value={agent.current}>
 				<Tabs.List class="h-auto bg-transparent p-0">
 					{#each agents as pm (pm)}
 						<Tabs.Trigger value={pm} class="h-7 font-mono text-sm font-light">
@@ -82,8 +96,8 @@
 	</div>
 </div>
 
-<style>
-	.no-scrollbar {
+<style lang="postcss">
+	:global(.no-scrollbar) {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}

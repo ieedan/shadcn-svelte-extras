@@ -37,6 +37,11 @@
 			variant?: ButtonVariant;
 			size?: ButtonSize;
 			loading?: boolean;
+			onClickPromise?: (
+				e: MouseEvent & {
+					currentTarget: EventTarget & HTMLButtonElement;
+				}
+			) => Promise<void>;
 		};
 </script>
 
@@ -53,6 +58,8 @@
 		type = 'button',
 		loading = false,
 		disabled = false,
+		onclick,
+		onClickPromise,
 		children,
 		...restProps
 	}: ButtonProps = $props();
@@ -64,6 +71,7 @@
 		data-slot="button"
 		class={cn(buttonVariants({ variant, size }), className)}
 		{href}
+		{onclick}
 		{...restProps}
 	>
 		{@render children?.()}
@@ -74,6 +82,17 @@
 		class={cn(buttonVariants({ variant, size }), className)}
 		disabled={disabled || loading}
 		{type}
+		onclick={async (e) => {
+			onclick?.(e);
+
+			if (onClickPromise) {
+				loading = true;
+
+				await onClickPromise(e);
+
+				loading = false;
+			}
+		}}
 		{...restProps}
 	>
 		{#if loading}

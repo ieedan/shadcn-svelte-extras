@@ -12,6 +12,7 @@
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/code" />
+<Subheading>Configuring Languages</Subheading>
 <p>
 	The highlighter and languages can be configured from <CodeSpan>shiki.ts</CodeSpan>.
 </p>
