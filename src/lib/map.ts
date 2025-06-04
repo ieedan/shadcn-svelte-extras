@@ -119,8 +119,7 @@ const map: Record<string, Route[]> = {
 			description: 'A responsive dialog component.',
 			href: '/components/modal',
 			specifier: 'ui/modal',
-			source: 'src/lib/components/ui/modal/modal.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/modal/modal.svelte'
 		},
 		{
 			name: 'NLPDateInput',
@@ -141,7 +140,8 @@ const map: Record<string, Route[]> = {
 			description: 'A package manager command component.',
 			href: '/components/pm-command',
 			specifier: 'ui/pm-command',
-			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
+			source: 'src/lib/components/ui/pm-command/pm-command.svelte',
+			status: 'Updated'
 		},
 		{
 			name: 'Snippet',
@@ -155,8 +155,7 @@ const map: Record<string, Route[]> = {
 			description: 'A simple star rating component.',
 			href: '/components/star-rating',
 			specifier: 'ui/star-rating',
-			source: 'src/lib/components/ui/star-rating',
-			status: 'New'
+			source: 'src/lib/components/ui/star-rating'
 		},
 		{
 			name: 'Tags Input',

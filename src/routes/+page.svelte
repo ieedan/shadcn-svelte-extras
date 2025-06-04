@@ -14,6 +14,7 @@
 	import ChatExample from './components/chat/basic.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import { ArrowRightIcon } from '@lucide/svelte';
+	import { Button } from '$lib/components/ui/button';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
@@ -26,6 +27,10 @@
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
 		<p class="text-muted-foreground text-lg">Finish your app.</p>
+		<div class="mt-2 flex place-items-center gap-2">
+			<Button href="/docs/installation" size="sm">Get Started</Button>
+			<Button variant="outline" href="/components" size="sm">Browse Components</Button>
+		</div>
 	</div>
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 		<div class="flex flex-col gap-4 lg:col-start-1">
