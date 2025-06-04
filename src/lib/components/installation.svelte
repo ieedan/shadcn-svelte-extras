@@ -14,4 +14,9 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<PMCommand command="execute" args={['jsrepo', 'add', specifier]} bind:agent={agent.current} />
+<PMCommand
+	command="execute"
+	args={['jsrepo', 'add', specifier]}
+	bind:agent={agent.current}
+	agents={['pnpm', 'npm', 'bun', 'yarn']}
+/>
