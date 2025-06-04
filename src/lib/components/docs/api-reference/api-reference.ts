@@ -16,6 +16,7 @@ export type PropReference = {
 	required: boolean;
 	bindable?: boolean;
 	defaultValue?: string;
+	tooltip?: string;
 };
 
 export type PropsReference<T> = {
@@ -103,25 +104,29 @@ export function createStringUnionProp({
 	defaultValue?: string;
 }) {
 	return {
-		type: type as string,
+		type: 'enum' as const,
 		description,
 		required,
 		bindable,
-		defaultValue
+		defaultValue,
+		tooltip: type
 	} satisfies PropReference;
 }
 
 export function createFunctionProp({
 	description,
-	required = false
+	required = false,
+	type
 }: {
 	description: string;
 	required?: boolean;
+	type: string;
 }) {
 	return {
 		type: 'function' as const,
 		description,
-		required
+		required,
+		tooltip: type
 	} satisfies PropReference;
 }
 

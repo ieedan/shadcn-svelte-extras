@@ -117,7 +117,7 @@
 	{/if}
 </div>
 
-<style lang="postcss">
+<style>
 	@reference '../../../../app.css'
 
 	:global(.dark) {

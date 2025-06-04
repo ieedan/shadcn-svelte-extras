@@ -3,8 +3,19 @@
 	import * as Alert from '$lib/components/ui/alert';
 	import { Link } from '$lib/components/ui/link';
 	import { cn } from '$lib/utils/utils';
+	import * as HoverCard from '$lib/components/ui/hover-card';
+	import { InfoIcon } from '@lucide/svelte';
+	import { highlighter } from '$lib/components/ui/code/shiki';
+	import type { HighlighterCore } from 'shiki';
+	import { onMount } from 'svelte';
 
 	let { name, component }: { name: string; component: Component<T> } = $props();
+
+	let hl = $state<HighlighterCore>();
+
+	onMount(() => {
+		highlighter.then((highlighter) => (hl = highlighter));
+	});
 </script>
 
 <div class="flex flex-col gap-1">
@@ -14,7 +25,7 @@
 		<span>
 			{name}.
 		</span>
-		<h3>
+		<h3 id={component.name}>
 			{component.name}
 		</h3>
 	</span>
@@ -48,15 +59,36 @@
 								{prop}
 							</span>
 						</td>
-						<td class="text-foreground px-4 py-2 align-top whitespace-pre">
+						<td class="text-foreground flex place-items-center px-4 py-2 align-top whitespace-pre">
 							<span
 								class="bg-secondary text-foreground/75 rounded-md px-2 py-1 font-mono text-sm font-light"
 							>
 								{propValue.type}
 							</span>
+							{#if propValue.tooltip}
+								{@const tooltipHighlighted = hl?.codeToHtml(propValue.tooltip ?? '', {
+									lang: 'typescript',
+									themes: {
+										light: 'github-light-default',
+										dark: 'github-dark-default'
+									}
+								})}
+								<HoverCard.Root openDelay={50} closeDelay={0}>
+									<HoverCard.Trigger
+										class="text-muted-foreground inline-flex size-[26px] place-items-center justify-center"
+									>
+										<InfoIcon class="size-4" />
+									</HoverCard.Trigger>
+									<HoverCard.Content align="center" class="p-0">
+										{@html tooltipHighlighted}
+									</HoverCard.Content>
+								</HoverCard.Root>
+							{/if}
 						</td>
 						<td class="text-muted-foreground px-4 py-2 align-top">
-							<span class="font-mono text-sm font-light">{propValue.defaultValue ?? '-'}</span>
+							<span class="font-mono text-sm font-light">
+								{propValue.defaultValue === undefined ? '-' : propValue.defaultValue}
+							</span>
 						</td>
 					</tr>
 				{/each}
@@ -64,3 +96,16 @@
 		</table>
 	</div>
 {/if}
+
+<style>
+	@reference '../../../../app.css';
+
+	:global(html.dark .shiki, html.dark .shiki span) {
+		color: var(--shiki-dark) !important;
+		background-color: var(--color-background) !important;
+		/* Optional, if you also want font styles */
+		font-style: var(--shiki-dark-font-style) !important;
+		font-weight: var(--shiki-dark-font-weight) !important;
+		text-decoration: var(--shiki-dark-text-decoration) !important;
+	}
+</style>
