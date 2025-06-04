@@ -26,6 +26,6 @@
 	});
 </script>
 
-<Window class={cn('font-mono text-sm', className)}>
+<Window class={cn('font-mono text-sm font-light', className)}>
 	{@render children?.()}
 </Window>

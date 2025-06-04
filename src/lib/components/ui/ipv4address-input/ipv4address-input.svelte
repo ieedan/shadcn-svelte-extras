@@ -75,7 +75,7 @@
 <div
 	aria-invalid={!valid}
 	class={cn(
-		'ring-offset-background border-input bg-background selection:bg-primary dark:bg-input/30 focus-within:ring-ring flex h-9 w-fit place-items-center rounded-md border px-3 font-mono ring-2 ring-transparent focus-within:ring-offset-2',
+		'ring-offset-background border-input bg-background selection:bg-primary dark:bg-input/30 focus-within:ring-ring flex h-9 w-fit place-items-center rounded-md border px-3 font-mono font-light ring-2 ring-transparent focus-within:ring-offset-2',
 		className
 	)}
 >
