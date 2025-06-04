@@ -37,12 +37,19 @@
 			variant?: ButtonVariant;
 			size?: ButtonSize;
 			loading?: boolean;
+			tooltip?: string;
+			onClickPromise?: (
+				e: MouseEvent & {
+					currentTarget: EventTarget & HTMLButtonElement;
+				}
+			) => Promise<void>;
 		};
 </script>
 
 <script lang="ts">
 	import { cn } from '$lib/utils/utils.js';
 	import { LoaderCircleIcon } from '@lucide/svelte';
+	import * as Tooltip from '$lib/components/ui/tooltip';
 
 	let {
 		class: className,
@@ -53,37 +60,71 @@
 		type = 'button',
 		loading = false,
 		disabled = false,
+		tooltip,
+		onclick,
+		onClickPromise,
 		children,
 		...restProps
 	}: ButtonProps = $props();
 </script>
 
-{#if href}
-	<a
-		bind:this={ref}
-		data-slot="button"
-		class={cn(buttonVariants({ variant, size }), className)}
-		{href}
-		{...restProps}
-	>
-		{@render children?.()}
-	</a>
+{#if tooltip}
+	<Tooltip.Root>
+		<Tooltip.Trigger>
+			{#snippet child({ props })}
+				{@render button({ props })}
+			{/snippet}
+		</Tooltip.Trigger>
+		<Tooltip.Content>
+			{tooltip}
+		</Tooltip.Content>
+	</Tooltip.Root>
 {:else}
-	<button
-		bind:this={ref}
-		class={cn(buttonVariants({ variant, size }), className)}
-		disabled={disabled || loading}
-		{type}
-		{...restProps}
-	>
-		{#if loading}
-			<div class="absolute flex size-full place-items-center justify-center bg-inherit">
-				<div class="flex animate-spin place-items-center justify-center">
-					<LoaderCircleIcon class="size-4" />
-				</div>
-			</div>
-			<span class="sr-only">Loading</span>
-		{/if}
-		{@render children?.()}
-	</button>
+	{@render button({ props: {} })}
 {/if}
+
+{#snippet button({ props }: { props: Record<string, unknown> })}
+	{#if href}
+		<a
+			{...props}
+			bind:this={ref}
+			data-slot="button"
+			class={cn(buttonVariants({ variant, size }), className)}
+			{href}
+			{onclick}
+			{...restProps}
+		>
+			{@render children?.()}
+		</a>
+	{:else}
+		<button
+			{...props}
+			bind:this={ref}
+			class={cn(buttonVariants({ variant, size }), className)}
+			disabled={disabled || loading}
+			{type}
+			onclick={async (e) => {
+				onclick?.(e);
+
+				if (onClickPromise) {
+					loading = true;
+
+					await onClickPromise(e);
+
+					loading = false;
+				}
+			}}
+			{...restProps}
+		>
+			{#if loading}
+				<div class="absolute flex size-full place-items-center justify-center bg-inherit">
+					<div class="flex animate-spin place-items-center justify-center">
+						<LoaderCircleIcon class="size-4" />
+					</div>
+				</div>
+				<span class="sr-only">Loading</span>
+			{/if}
+			{@render children?.()}
+		</button>
+	{/if}
+{/snippet}

@@ -57,7 +57,7 @@
 				</button>
 			{/each}
 		</div>
-		<CopyButton text={commandText} class="mb-1 size-6 [&_svg]:size-3">
+		<CopyButton text={commandText} tooltip="Copy to Clipboard" class="mb-1 size-6 [&_svg]:size-3">
 			{#snippet icon()}
 				<ClipboardIcon />
 			{/snippet}

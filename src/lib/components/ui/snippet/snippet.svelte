@@ -43,6 +43,7 @@
 	<CopyButton
 		class="hover:text-opacity-80 absolute top-1/2 right-2 size-7 -translate-y-1/2 transition-opacity ease-in-out hover:bg-transparent dark:hover:bg-transparent"
 		text={typeof text === 'string' ? text : text.join('\n')}
+		tooltip="Copy to Clipboard"
 		{onCopy}
 	/>
 </div>
