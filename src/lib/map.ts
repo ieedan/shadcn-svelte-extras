@@ -13,14 +13,13 @@ const map: Record<string, Route[]> = {
 	'Getting Started': [
 		{
 			name: 'Introduction',
-			description: 'Introduction to shadcn-svelte-extras.',
-			href: '/'
+			description: "Why we built shadcn-svelte-extras and why it's great.",
+			href: '/docs/introduction'
 		},
 		{
-			name: 'Using Extras',
+			name: 'Installation',
 			description: 'How to add and use extras in your project.',
-			href: '/docs/using-extras',
-			status: 'v4'
+			href: '/docs/installation'
 		}
 	],
 	Components: [

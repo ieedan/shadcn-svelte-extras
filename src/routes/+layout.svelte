@@ -135,7 +135,7 @@
 <Sidebar.Provider>
 	<AppSidebar />
 	<!-- Do NOT ask me why this is here it makes it work that's what matters -->
-	<Sidebar.Inset class="w-[200px]">
+	<Sidebar.Inset class="page-wrapper w-[200px]">
 		<header
 			class="border-border bg-background sticky top-0 z-20 flex h-16 place-items-center justify-between border-b pr-6 pl-2"
 		>

@@ -118,3 +118,10 @@
 html {
 	scroll-behavior: smooth;
 }
+
+/* Typography */
+
+/* Only target direct descendants of page-wrapper (A bit of a hack for the moment until we move to markdown based docs) */
+.page-wrapper > p {
+	@apply leading-7 text-neutral-800 dark:text-neutral-300;
+}

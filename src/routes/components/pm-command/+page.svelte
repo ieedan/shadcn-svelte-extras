@@ -37,11 +37,11 @@
 <Playground code={examples.persistedPM.code} class="min-h-[225px] p-6">
 	<examples.persistedPM.Component />
 </Playground>
-<Subheading>Re-order Agents</Subheading>
+<Subheading>Customize Agents</Subheading>
 <p>
-	You can also re-order or remove agents to your liking by providing your own array of agents with
-	the <CodeSpan>agents</CodeSpan> prop.
+	You can also customize the agents to your liking by providing your own array of agents with the
+	<CodeSpan>agents</CodeSpan> prop.
 </p>
-<Playground code={examples.reOrderAgents.code} class="min-h-[225px] p-6">
-	<examples.reOrderAgents.Component />
+<Playground code={examples.customizeAgents.code} class="min-h-[225px] p-6">
+	<examples.customizeAgents.Component />
 </Playground>

@@ -1,28 +1,27 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import ShadcnSvelteExtras from '$lib/components/shadcn-svelte-extras.svelte';
 	import { Code } from '$lib/components/ui/code';
 	import { Link } from '$lib/components/ui/link';
-	import { Snippet } from '$lib/components/ui/snippet';
 	import * as Tabs from '$lib/components/ui/tabs';
+	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
+	import { PMCommand } from '$lib/components/ui/pm-command';
 </script>
 
 <p>
-	<ShadcnSvelteExtras /> uses
-	<a target="_blank" href="https://jsrepo.dev" class="font-bold underline"> jsrepo </a> to allow you
-	to install blocks into project just like in
-	<a target="_blank" href="https://next.shadcn-svelte.com" class="font-bold text-nowrap underline">
-		shadcn-svelte
-	</a>.
+	shadcn-svelte-extras uses <Link href="https://jsrepo.dev" target="_blank">jsrepo</Link> to allow you
+	to install components into your project just like in
+	<Link href="https://next.shadcn-svelte.com" target="_blank">shadcn-svelte</Link>, but with some
+	additional features such as semantic versioning and easy updates.
 </p>
 <Subheading>Setup</Subheading>
-<p>Install jsrepo:</p>
-<Snippet text="npm install jsrepo@latest -g" />
+<p>Install jsrepo globally (optional but recommended):</p>
+<PMCommand command="global" args={['jsrepo']} />
+<p>Initialize jsrepo with shadcn-svelte-extras:</p>
+<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']} />
 <p>
-	Initialize jsrepo and add <ShadcnSvelteExtras /> as a repo:
+	Configure the <CodeSpan>paths</CodeSpan> key in your <CodeSpan>jsrepo.json</CodeSpan> file so that
+	components, hooks, and utils are added to the correct places:
 </p>
-<Snippet text="jsrepo init @ieedan/shadcn-svelte-extras" />
-<p>Configure your paths so that components, hooks, and utils go to the right places:</p>
 <div>
 	<Code
 		lang="json"
@@ -39,7 +38,7 @@
 	/>
 </div>
 <p>Start adding extras!</p>
-<Snippet text="jsrepo add ui/button" />
+<JsrepoCommand command="execute" args={['jsrepo', 'add', 'ui/button']} />
 <Subheading>MCP</Subheading>
 <p>
 	jsrepo now supports <Link href="https://jsrepo.dev/docs/registry/mcp" target="_blank">MCP</Link> and
@@ -76,7 +75,7 @@
 </p>
 <Subheading>Tailwind v4</Subheading>
 <p>
-	This site has been fully updated to tailwindcss v4. If you are looking for components compatible
+	This site has been fully updated to tailwindcss v4! If you are looking for components compatible
 	with tailwindcss@v3 see the guide below.
 </p>
 <Subheading>Tailwind v3</Subheading>
