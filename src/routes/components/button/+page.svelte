@@ -11,13 +11,6 @@
 	<examples.basic.Component />
 </Playground>
 <Installation specifier="ui/button" />
-<Subheading>Tooltip</Subheading>
-<p>
-	Add the <CodeSpan>tooltip</CodeSpan> prop to show a tooltip when hovering over the button.
-</p>
-<Playground code={examples.tooltip.code} class="min-h-[225px]">
-	<examples.tooltip.Component />
-</Playground>
 <Subheading>Loading</Subheading>
 <Playground code={examples.loading.code} class="min-h-[225px]">
 	<examples.loading.Component />
