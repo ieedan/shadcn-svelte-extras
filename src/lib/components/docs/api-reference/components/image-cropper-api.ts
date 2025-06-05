@@ -6,7 +6,7 @@ import type {
 	ImageCropperUploadTriggerPropsWithoutHTML
 } from '$lib/components/ui/image-cropper/types';
 
-const Root = api.createComponentReference<ImageCropperRootPropsWithoutHTML>({
+const Root = api.createComponentReference<Omit<ImageCropperRootPropsWithoutHTML, 'id'>>({
 	name: 'Root',
 	description:
 		'The root component for the image cropper. Handles image upload, cropping, and state management.',
