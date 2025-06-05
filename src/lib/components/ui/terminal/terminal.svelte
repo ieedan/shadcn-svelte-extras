@@ -1,18 +1,17 @@
 <script lang="ts">
 	import { Window } from '$lib/components/ui/window';
 	import { cn } from '$lib/utils/utils';
-	import type { WithChildren } from 'bits-ui';
 	import { useTerminalRoot } from './terminal.svelte.js';
 	import { onMount } from 'svelte';
+	import type { TerminalRootProps } from './types.js';
 
-	type Props = WithChildren<{
-		class?: string;
-		delay?: number;
-		speed?: number;
-		onComplete?: () => void;
-	}>;
-
-	let { delay = 0, speed = 1, onComplete = () => {}, children, class: className }: Props = $props();
+	let {
+		delay = 0,
+		speed = 1,
+		onComplete = () => {},
+		children,
+		class: className
+	}: TerminalRootProps = $props();
 
 	const terminal = useTerminalRoot({ delay, speed, onComplete });
 

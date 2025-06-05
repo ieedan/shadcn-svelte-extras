@@ -18,3 +18,4 @@ export { components as PMCommandReference } from './pm-command-api';
 export { components as SnippetReference } from './snippet-api';
 export { components as StarRatingStarReference } from './star-rating-star-api';
 export { components as TagsInputReference } from './tags-input-api';
+export { components as TerminalReference } from './terminal-api';
