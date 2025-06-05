@@ -63,6 +63,9 @@ const Root = api.createComponentReference<PhoneInputProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'PhoneInput' as const,
+	components: {
+		Root
+	}
 };

@@ -24,3 +24,5 @@ vite.config.ts.timestamp-*
 
 # Generated code
 src/lib/paraglide/
+
+static/components

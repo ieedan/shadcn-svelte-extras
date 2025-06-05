@@ -84,9 +84,12 @@ const Footer = api.createComponentReference<FieldSetFooterPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root,
-	Title,
-	Content,
-	Footer
+export const reference = {
+	name: 'FieldSet' as const,
+	components: {
+		Root,
+		Title,
+		Content,
+		Footer
+	}
 };

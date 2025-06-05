@@ -43,6 +43,9 @@ const Root = api.createComponentReference<CopyButtonPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'CopyButton' as const,
+	components: {
+		Root
+	}
 };

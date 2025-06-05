@@ -4,8 +4,6 @@
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
-	import { LinkReference } from '$lib/docs/api-reference/components';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Playground code={examples.basic.code}>
@@ -23,4 +21,3 @@
 <Link>Hello</Link>`}
 	/>
 </div>
-<ApiReference name="Link" components={LinkReference} />

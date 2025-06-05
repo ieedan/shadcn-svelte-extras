@@ -32,6 +32,9 @@ const Root = api.createComponentReference<IPv4AddressInputPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Ipv4addressInput' as const,
+	components: {
+		Root
+	}
 };

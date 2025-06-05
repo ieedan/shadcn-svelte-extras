@@ -5,8 +5,6 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
 	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { CodeReference } from '$lib/docs/api-reference/components';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -47,4 +45,3 @@
 <Playground code={examples.overflow.code}>
 	<examples.overflow.Component />
 </Playground>
-<ApiReference name="Code" components={CodeReference} />

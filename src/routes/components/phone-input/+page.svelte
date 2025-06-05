@@ -4,8 +4,6 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import { PhoneInputReference } from '$lib/docs/api-reference/components';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Subheading>Basic</Subheading>
@@ -25,7 +23,6 @@
 <Playground code={examples.customOrdering.code}>
 	<examples.customOrdering.Component />
 </Playground>
-<ApiReference name="PhoneInput" components={PhoneInputReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component takes inspiration from

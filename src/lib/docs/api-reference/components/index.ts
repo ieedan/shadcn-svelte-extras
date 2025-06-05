@@ -1,25 +1,92 @@
-export { components as AvatarGroupReference } from './avatar-group-api';
-export { components as ButtonReference } from './button-api';
-export { components as ChatReference } from './chat-api';
-export { components as CodeReference } from './code-api';
-export { components as CopyButtonReference } from './copy-button-api';
-export { components as FieldSetReference } from './field-set-api';
-export { components as FileDropZoneReference } from './file-drop-zone-api';
-export { components as ImageCropperReference } from './image-cropper-api';
-export { components as Ipv4addressInputReference } from './ipv4address-input-api';
-export { components as KbdReference } from './kbd-api';
-export { components as LanguageSwitcherReference } from './language-switcher-api';
-export { components as LightSwitchReference } from './light-switch-api';
-export { components as LinkReference } from './link-api';
-export { components as ModalReference } from './modal-api';
-export { components as NlpDateInputReference } from './nlp-date-input-api';
-export { components as PhoneInputReference } from './phone-input-api';
-export { components as PMCommandReference } from './pm-command-api';
-export { components as SnippetReference } from './snippet-api';
-export { components as StarRatingStarReference } from './star-rating-star-api';
-export { components as TagsInputReference } from './tags-input-api';
-export { components as TerminalReference } from './terminal-api';
-export { components as ThemeSelectorReference } from './theme-selector-api';
-export { components as TocReference } from './toc-api';
-export { components as TreeViewReference } from './tree-view-api';
-export { components as WindowReference } from './window-api';
+import * as casing from '$lib/utils/casing';
+
+// import all references
+import { reference as AvatarGroupReference } from './avatar-group-api';
+import { reference as ButtonReference } from './button-api';
+import { reference as ChatReference } from './chat-api';
+import { reference as CodeReference } from './code-api';
+import { reference as CopyButtonReference } from './copy-button-api';
+import { reference as FieldSetReference } from './field-set-api';
+import { reference as FileDropZoneReference } from './file-drop-zone-api';
+import { reference as ImageCropperReference } from './image-cropper-api';
+import { reference as Ipv4addressInputReference } from './ipv4address-input-api';
+import { reference as KbdReference } from './kbd-api';
+import { reference as LanguageSwitcherReference } from './language-switcher-api';
+import { reference as LightSwitchReference } from './light-switch-api';
+import { reference as LinkReference } from './link-api';
+import { reference as ModalReference } from './modal-api';
+import { reference as NlpDateInputReference } from './nlp-date-input-api';
+import { reference as PhoneInputReference } from './phone-input-api';
+import { reference as PMCommandReference } from './pm-command-api';
+import { reference as SnippetReference } from './snippet-api';
+import { reference as StarRatingReference } from './star-rating-api';
+import { reference as TagsInputReference } from './tags-input-api';
+import { reference as TerminalReference } from './terminal-api';
+import { reference as ThemeSelectorReference } from './theme-selector-api';
+import { reference as TocReference } from './toc-api';
+import { reference as TreeViewReference } from './tree-view-api';
+import { reference as WindowReference } from './window-api';
+
+export const references = [
+	AvatarGroupReference,
+	ButtonReference,
+	ChatReference,
+	CodeReference,
+	CopyButtonReference,
+	FieldSetReference,
+	FileDropZoneReference,
+	ImageCropperReference,
+	Ipv4addressInputReference,
+	KbdReference,
+	LanguageSwitcherReference,
+	LightSwitchReference,
+	LinkReference,
+	ModalReference,
+	NlpDateInputReference,
+	PhoneInputReference,
+	PMCommandReference,
+	SnippetReference,
+	StarRatingReference,
+	TagsInputReference,
+	TerminalReference,
+	ThemeSelectorReference,
+	TocReference,
+	TreeViewReference,
+	WindowReference
+];
+
+/** Get a reference by name
+ *
+ * @param name `kebab-case` name of the component to get the reference for
+ */
+export function getReference(name: string) {
+	return references.find((reference) => reference.name === casing.kebabToPascal(name));
+}
+
+export {
+	AvatarGroupReference,
+	ButtonReference,
+	ChatReference,
+	CodeReference,
+	CopyButtonReference,
+	FieldSetReference,
+	FileDropZoneReference,
+	ImageCropperReference,
+	Ipv4addressInputReference,
+	KbdReference,
+	LanguageSwitcherReference,
+	LightSwitchReference,
+	LinkReference,
+	ModalReference,
+	NlpDateInputReference,
+	PhoneInputReference,
+	PMCommandReference,
+	SnippetReference,
+	StarRatingReference,
+	TagsInputReference,
+	TerminalReference,
+	ThemeSelectorReference,
+	TocReference,
+	TreeViewReference,
+	WindowReference
+};

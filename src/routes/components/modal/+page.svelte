@@ -4,8 +4,6 @@
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { components as ModalReference } from '$lib/docs/api-reference/components/modal-api';
 </script>
 
 <Playground code={examples.basic.code}>
@@ -33,4 +31,3 @@
 </Modal.Root>`}
 	/>
 </div>
-<ApiReference name="Modal" components={ModalReference} />

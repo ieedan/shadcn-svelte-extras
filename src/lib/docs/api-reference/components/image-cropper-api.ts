@@ -99,11 +99,14 @@ const UploadTrigger = api.createComponentReference<ImageCropperUploadTriggerProp
 	}
 });
 
-export const components = {
-	Root,
-	Dialog,
-	Cropper,
-	Controls,
-	Preview,
-	UploadTrigger
+export const reference = {
+	name: 'ImageCropper' as const,
+	components: {
+		Root,
+		Dialog,
+		Cropper,
+		Controls,
+		Preview,
+		UploadTrigger
+	}
 };

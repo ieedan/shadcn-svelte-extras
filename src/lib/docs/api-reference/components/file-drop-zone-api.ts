@@ -40,6 +40,9 @@ const Root = api.createComponentReference<FileDropZonePropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'FileDropZone' as const,
+	components: {
+		Root
+	}
 };

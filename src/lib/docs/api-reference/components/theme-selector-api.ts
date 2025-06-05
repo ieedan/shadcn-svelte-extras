@@ -12,6 +12,9 @@ const Root = api.createComponentReference<ThemeSelectorProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'ThemeSelector' as const,
+	components: {
+		Root
+	}
 };

@@ -3,8 +3,6 @@
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
-	import { SnippetReference } from '$lib/docs/api-reference/components';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -20,4 +18,3 @@
 <Playground code={examples.multiline.code}>
 	<examples.multiline.Component />
 </Playground>
-<ApiReference name="Snippet" components={SnippetReference} />

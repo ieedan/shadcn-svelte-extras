@@ -110,10 +110,13 @@ const Loop = api.createComponentReference({
 	}
 });
 
-export const components = {
-	Root,
-	TypingAnimation,
-	AnimatedSpan,
-	Loading,
-	Loop
+export const reference = {
+	name: 'Terminal' as const,
+	components: {
+		Root,
+		TypingAnimation,
+		AnimatedSpan,
+		Loading,
+		Loop
+	}
 };

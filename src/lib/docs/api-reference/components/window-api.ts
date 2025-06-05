@@ -12,6 +12,9 @@ const Root = api.createComponentReference<WindowPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Window' as const,
+	components: {
+		Root
+	}
 };

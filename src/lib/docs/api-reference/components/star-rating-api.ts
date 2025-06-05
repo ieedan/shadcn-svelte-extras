@@ -1,6 +1,17 @@
 import * as api from '../api-reference';
 import type { StarRatingStarProps } from '$lib/components/ui/star-rating/types';
 
+const Root = api.createComponentReference({
+	name: 'Root',
+	description:
+		'The root component for the Star Rating. Forwards all props and behavior to bits-ui RatingGroup.Root.',
+	props: {},
+	forwardTo: {
+		name: 'bits-ui RatingGroup.Root',
+		href: 'https://bits-ui.com/docs/components/rating-group#root'
+	}
+});
+
 const Star = api.createComponentReference<StarRatingStarProps>({
 	name: 'Star',
 	description:
@@ -20,18 +31,10 @@ const Star = api.createComponentReference<StarRatingStarProps>({
 	}
 });
 
-const Root = api.createComponentReference({
-	name: 'Root',
-	description:
-		'The root component for the Star Rating. Forwards all props and behavior to bits-ui RatingGroup.Root.',
-	props: {},
-	forwardTo: {
-		name: 'bits-ui RatingGroup.Root',
-		href: 'https://bits-ui.com/docs/components/rating-group#root'
+export const reference = {
+	name: 'StarRating' as const,
+	components: {
+		Root,
+		Star
 	}
-});
-
-export const components = {
-	Root,
-	Star
 };

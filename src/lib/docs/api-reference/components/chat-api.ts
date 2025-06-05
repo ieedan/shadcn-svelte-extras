@@ -77,9 +77,12 @@ const BubbleAvatar = api.createComponentReference({
 	}
 });
 
-export const components = {
-	List,
-	Bubble,
-	BubbleMessage,
-	BubbleAvatar
+export const reference = {
+	name: 'Chat' as const,
+	components: {
+		List,
+		Bubble,
+		BubbleMessage,
+		BubbleAvatar
+	}
 };

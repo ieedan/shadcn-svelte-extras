@@ -36,6 +36,9 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Button' as const,
+	components: {
+		Root
+	}
 };

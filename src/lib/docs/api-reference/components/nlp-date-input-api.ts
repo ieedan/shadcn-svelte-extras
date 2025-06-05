@@ -22,6 +22,9 @@ const Root = api.createComponentReference<NLPDateInputProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'NlpDateInput' as const,
+	components: {
+		Root
+	}
 };

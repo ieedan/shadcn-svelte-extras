@@ -23,6 +23,9 @@ const Root = api.createComponentReference<SnippetProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Snippet' as const,
+	components: {
+		Root
+	}
 };

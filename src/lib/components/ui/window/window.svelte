@@ -2,7 +2,7 @@
 	import type { WithChildren } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	export type WindowPropsWithoutHTML = WithChildren<{}>;
+	export type WindowPropsWithoutHTML = WithChildren;
 
 	export type WindowProps = HTMLAttributes<HTMLDivElement> & WindowPropsWithoutHTML;
 </script>

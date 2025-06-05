@@ -62,12 +62,15 @@ const Description = api.createComponentReference({
 	}
 });
 
-export const components = {
-	Root,
-	Trigger,
-	Content,
-	Footer,
-	Header,
-	Title,
-	Description
+export const reference = {
+	name: 'Modal' as const,
+	components: {
+		Root,
+		Trigger,
+		Content,
+		Footer,
+		Header,
+		Title,
+		Description
+	}
 };

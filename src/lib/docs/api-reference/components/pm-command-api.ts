@@ -37,6 +37,9 @@ const Root = api.createComponentReference<PMCommandProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'PmCommand' as const,
+	components: {
+		Root
+	}
 };

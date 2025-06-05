@@ -34,6 +34,9 @@ const Root = api.createComponentReference<LanguageSwitcherProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'LanguageSwitcher' as const,
+	components: {
+		Root
+	}
 };

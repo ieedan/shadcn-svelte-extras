@@ -4,8 +4,6 @@
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { TreeViewReference } from '$lib/docs/api-reference/components';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -24,4 +22,3 @@
 <div>
 	<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
 </div>
-<ApiReference name="TreeView" components={TreeViewReference} />

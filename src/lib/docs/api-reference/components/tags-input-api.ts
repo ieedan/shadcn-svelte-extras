@@ -19,6 +19,9 @@ const Root = api.createComponentReference<TagsInputPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'TagsInput' as const,
+	components: {
+		Root
+	}
 };

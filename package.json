@@ -5,7 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "pnpm generate-reference && vite build",
 		"preview": "vite preview",
 		"sync": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +14,8 @@
 		"lint": "prettier --check . && eslint .",
 		"build:registry": "jsrepo build",
 		"ci:release": "pnpm jsrepo publish --verbose && changeset tag",
-		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide"
+		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
+		"generate-reference": "pnpm dlx tsx ./src/lib/scripts/generate-reference.ts"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.4",

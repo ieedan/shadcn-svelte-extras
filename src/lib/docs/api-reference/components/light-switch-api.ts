@@ -12,6 +12,9 @@ const Root = api.createComponentReference<LightSwitchProps>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'LightSwitch' as const,
+	components: {
+		Root
+	}
 };

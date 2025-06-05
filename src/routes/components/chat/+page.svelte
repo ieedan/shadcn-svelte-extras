@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { ChatReference } from '$lib/docs/api-reference/components';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
@@ -38,7 +36,6 @@
 	</Chat.Bubble>
 </Chat.List>`}
 />
-<ApiReference name="Chat" components={ChatReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component takes inspiration from

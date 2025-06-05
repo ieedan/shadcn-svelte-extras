@@ -58,8 +58,11 @@ const File = api.createComponentReference<TreeViewFilePropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root,
-	Folder,
-	File
+export const reference = {
+	name: 'TreeView' as const,
+	components: {
+		Root,
+		Folder,
+		File
+	}
 };

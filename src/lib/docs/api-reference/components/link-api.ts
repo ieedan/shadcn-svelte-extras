@@ -9,4 +9,9 @@ const Link = api.createComponentReference({
 	}
 });
 
-export const components = { Link };
+export const reference = {
+	name: 'Link' as const,
+	components: {
+		Link
+	}
+};

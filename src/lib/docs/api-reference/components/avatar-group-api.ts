@@ -57,8 +57,11 @@ const Etc = api.createComponentReference<AvatarGroupEtcPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root,
-	Member,
-	Etc
+export const reference = {
+	name: 'AvatarGroup' as const,
+	components: {
+		Root,
+		Member,
+		Etc
+	}
 };

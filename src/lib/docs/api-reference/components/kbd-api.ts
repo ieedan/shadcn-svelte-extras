@@ -30,6 +30,9 @@ const Root = api.createComponentReference<KbdPropsWithoutHTML>({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Kbd' as const,
+	components: {
+		Root
+	}
 };

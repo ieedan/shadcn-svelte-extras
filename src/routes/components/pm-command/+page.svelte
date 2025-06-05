@@ -4,8 +4,6 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import { PMCommandReference } from '$lib/docs/api-reference/components';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -47,4 +45,3 @@
 <Playground code={examples.customizeAgents.code} class="min-h-[225px] p-6">
 	<examples.customizeAgents.Component />
 </Playground>
-<ApiReference name="PMCommand" components={PMCommandReference} />

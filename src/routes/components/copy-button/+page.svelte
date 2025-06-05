@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { CopyButtonReference } from '$lib/docs/api-reference/components';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
@@ -20,4 +18,3 @@
 <Playground code={examples.withText.code} class="min-h-[225px]">
 	<examples.withText.Component />
 </Playground>
-<ApiReference name="CopyButton" components={CopyButtonReference} />

@@ -19,6 +19,9 @@ const Root = api.createComponentReference({
 	}
 });
 
-export const components = {
-	Root
+export const reference = {
+	name: 'Toc' as const,
+	components: {
+		Root
+	}
 };

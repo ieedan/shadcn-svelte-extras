@@ -5,8 +5,6 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import { FileDropZoneReference } from '$lib/docs/api-reference/components';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 
 	let { data } = $props();
 </script>
@@ -86,7 +84,6 @@ export const actions = {
 `}
 	/>
 </div>
-<ApiReference name="FileDropZone" components={FileDropZoneReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component takes inspiration from
