@@ -14,4 +14,4 @@ const Root = api.createComponentReference<ThemeSelectorProps>({
 
 export const components = {
 	Root
-}; 
+};

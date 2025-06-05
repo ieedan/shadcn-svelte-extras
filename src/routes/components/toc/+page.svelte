@@ -4,6 +4,8 @@
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { TocReference } from '$lib/components/docs/api-reference/components';
 </script>
 
 <Playground code={examples.basic.code}>
@@ -37,3 +39,4 @@
 <Toc.Root toc={toc.current}/>`}
 	/>
 </div>
+<ApiReference name="Toc" components={TocReference} />

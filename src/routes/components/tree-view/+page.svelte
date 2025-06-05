@@ -4,6 +4,8 @@
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { TreeViewReference } from '$lib/components/docs/api-reference/components';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -19,4 +21,7 @@
 	If you are using custom icons in a project we recommend you wrap the folder/file components with
 	the custom icons:
 </p>
-<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
+<div>
+	<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
+</div>
+<ApiReference name="TreeView" components={TreeViewReference} />

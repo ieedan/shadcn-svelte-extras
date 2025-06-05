@@ -1,16 +1,18 @@
-<script lang="ts">
-	import type { Heading } from '$lib/hooks/use-toc.svelte';
-	import { cn } from '$lib/utils/utils';
-	import Self from './toc.svelte';
-
-	type Props = {
+<script lang="ts" module>
+	export type TocProps = {
 		toc: Heading[];
 		class?: string;
 		/** Indicates whether this is a child component or root component */
 		isChild?: boolean;
 	};
+</script>
 
-	let { toc, isChild = false, class: className }: Props = $props();
+<script lang="ts">
+	import type { Heading } from '$lib/hooks/use-toc.svelte';
+	import { cn } from '$lib/utils/utils';
+	import Self from './toc.svelte';
+
+	let { toc, isChild = false, class: className }: TocProps = $props();
 </script>
 
 <ul class={cn('m-0 list-none text-sm font-medium', { 'pl-4': isChild })}>
