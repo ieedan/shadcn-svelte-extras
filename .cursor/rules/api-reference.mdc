@@ -3,7 +3,9 @@ description:
 globs: 
 alwaysApply: false
 ---
-When generating the API reference for a component only include props on the object of which the default value is different from the value you want to apply. You can use `src/lib/components/docs/api-reference/components/avatar-group-api.ts` as a reference.
+When generating the API reference for a component only include props on the object of which the default value is different from the value you want to apply. You can use `src/lib/components/docs/api-reference/components/avatar-group-api.ts` as a reference. 
+
+> WARNING: make sure to use the `WithoutHTML` types from the `types.ts` file to ensure only relevant types are documented
 
 Generate the API reference for components in `./src/lib/components/docs/api-reference/components`.
 
