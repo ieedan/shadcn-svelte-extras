@@ -1,8 +1,9 @@
-import { references } from '$lib/docs/api-reference/components/index.js';
-import * as casing from '$lib/utils/casing.js';
+// paths must be relative !!
+import { references } from '../docs/api-reference/components/index.js';
+import * as casing from '../utils/casing.js';
 import path from 'node:path';
 import fs from 'node:fs';
-import type { PropReference } from '$lib/docs/api-reference/api-reference';
+import type { PropReference } from '../docs/api-reference/api-reference';
 
 const COMPONENTS_PATH = './static/components';
 
