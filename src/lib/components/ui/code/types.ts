@@ -14,7 +14,8 @@ export type CodeRootPropsWithoutHTML = WithChildren<{
 	highlight?: (number | [number, number])[];
 }>;
 
-export type CodeRootProps = CodeRootPropsWithoutHTML & WithoutChildren<HTMLAttributes<HTMLDivElement>>;
+export type CodeRootProps = CodeRootPropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;
 
 export type CodeCopyButtonPropsWithoutHTML = Omit<CopyButtonPropsWithoutHTML, 'text'>;
 

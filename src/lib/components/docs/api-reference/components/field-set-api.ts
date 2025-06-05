@@ -93,4 +93,4 @@ export const components = {
 	Title,
 	Content,
 	Footer
-}; 
+};
