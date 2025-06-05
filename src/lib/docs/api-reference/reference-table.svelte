@@ -110,7 +110,7 @@
 {/if}
 
 <style>
-	@reference '../../../../app.css';
+	@reference '../../../app.css';
 
 	:global(html.dark .shiki, html.dark .shiki span) {
 		color: var(--shiki-dark) !important;

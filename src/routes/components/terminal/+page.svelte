@@ -5,8 +5,8 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import APIReference from '$lib/components/docs/api-reference/api-reference.svelte';
-	import { TerminalReference } from '$lib/components/docs/api-reference/components';
+	import APIReference from '$lib/docs/api-reference/api-reference.svelte';
+	import { TerminalReference } from '$lib/docs/api-reference/components';
 </script>
 
 <Playground code={examples.basic.code} replay>

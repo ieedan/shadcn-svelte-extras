@@ -5,8 +5,8 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import { ImageCropperReference } from '$lib/components/docs/api-reference/components';
-	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { ImageCropperReference } from '$lib/docs/api-reference/components';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Playground code={examples.basic.code}>

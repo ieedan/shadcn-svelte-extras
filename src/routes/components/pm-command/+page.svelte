@@ -4,8 +4,8 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
-	import { PMCommandReference } from '$lib/components/docs/api-reference/components';
-	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { PMCommandReference } from '$lib/docs/api-reference/components';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '..';
+	import { Subheading } from '../../components/docs';
 	import type { Component } from './api-reference';
 	import ReferenceTable from './reference-table.svelte';
 
