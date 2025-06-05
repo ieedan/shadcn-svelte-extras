@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { Button, type ButtonProps } from '$lib/components/ui/button';
+	import { Button, type ButtonElementProps } from '$lib/components/ui/button';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils/utils';
 	import { CheckIcon, CopyIcon, XIcon } from '@lucide/svelte';
 	import type { Snippet } from 'svelte';
 	import { scale } from 'svelte/transition';
 
-	// omit href so you can't create a link
-	interface Props extends Omit<ButtonProps, 'href'> {
+	interface Props extends ButtonElementProps {
 		text: string;
 		icon?: Snippet<[]>;
 		animationDuration?: number;

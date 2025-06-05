@@ -20,14 +20,7 @@ export type PropReference = {
 };
 
 export type PropsReference<T> = {
-	[K in keyof T]: Omit<PropReference, 'type'> &
-		(T[K] extends string
-			? { type: 'string' }
-			: T[K] extends number
-				? { type: 'number' }
-				: T[K] extends boolean
-					? { type: 'boolean' }
-					: { type: string });
+	[K in keyof T]-?: Omit<PropReference, 'type'>;
 };
 
 export function createStringProp({
@@ -116,17 +109,20 @@ export function createStringUnionProp({
 export function createFunctionProp({
 	description,
 	required = false,
-	type
+	type,
+	defaultValue
 }: {
 	description: string;
 	required?: boolean;
 	type: string;
+	defaultValue?: string;
 }) {
 	return {
 		type: 'function' as const,
 		description,
 		required,
-		tooltip: type
+		tooltip: type,
+		defaultValue
 	} satisfies PropReference;
 }
 
@@ -134,18 +130,24 @@ export function createAnyProp({
 	description,
 	required = false,
 	bindable = false,
-	type
+	type,
+	tooltip,
+	defaultValue
 }: {
-	type: LooseAutocomplete<'Snippet'>;
+	type: LooseAutocomplete<'Snippet' | 'HTMLElement'>;
 	description: string;
 	required?: boolean;
 	bindable?: boolean;
+	tooltip?: string;
+	defaultValue?: string;
 }) {
 	return {
 		type,
 		description,
 		required,
-		bindable
+		bindable,
+		tooltip,
+		defaultValue
 	} satisfies PropReference;
 }
 

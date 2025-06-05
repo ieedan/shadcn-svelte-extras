@@ -1,20 +1,25 @@
-import type { WithElementRef } from 'bits-ui';
+import type { WithChildren, WithoutChildren } from 'bits-ui';
 import type { HTMLAttributes } from 'svelte/elements';
 
-export type ChatBubblePropsWithoutHTML = {
+export type ChatListPropsWithoutHTML = WithChildren<{
+	ref?: HTMLDivElement | null;
+}>;
+
+export type ChatListProps = ChatListPropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;
+
+export type ChatBubblePropsWithoutHTML = WithChildren<{
+	ref?: HTMLDivElement | null;
 	variant: 'sent' | 'received';
-};
+}>;
 
-export type ChatBubbleProps = WithElementRef<
-	ChatBubblePropsWithoutHTML & HTMLAttributes<HTMLDivElement>,
-	HTMLDivElement
->;
+export type ChatBubbleProps = ChatBubblePropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;
 
-export type ChatBubbleMessagePropsWithoutHTML = {
+export type ChatBubbleMessagePropsWithoutHTML = WithChildren<{
+	ref?: HTMLDivElement | null;
 	typing?: boolean;
-};
+}>;
 
-export type ChatBubbleMessageProps = WithElementRef<
-	ChatBubbleMessagePropsWithoutHTML & HTMLAttributes<HTMLDivElement>,
-	HTMLDivElement
->;
+export type ChatBubbleMessageProps = ChatBubbleMessagePropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;

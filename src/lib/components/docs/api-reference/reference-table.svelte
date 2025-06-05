@@ -38,7 +38,7 @@
 			<Link href={component.forwardTo.href}>{component.forwardTo.name}</Link>
 		</Alert.Title>
 	</Alert.Root>
-{:else}
+{:else if Object.entries(component.props).length > 0}
 	<div class="border-border bg-card overflow-hidden rounded-lg border">
 		<table class={cn('w-full', 'bg-card')}>
 			<thead>
@@ -51,13 +51,22 @@
 			<tbody>
 				{#each Object.entries(component.props) as [prop, value] (prop)}
 					{@const propValue = value as PropReference}
-					<tr class="bg-card">
+					<tr class="bg-card border-border not-last:border-b">
 						<td class="text-foreground px-4 py-2 align-top">
-							<span
-								class="bg-brand/25 text-brand rounded-md px-2 py-1 font-mono text-sm font-light"
-							>
-								{prop}
-							</span>
+							<div class="flex place-items-center gap-2">
+								<span
+									class="bg-brand/25 text-brand rounded-md px-2 py-1 font-mono text-sm font-light"
+								>
+									{prop}{propValue.required ? '' : '?'}
+								</span>
+								{#if propValue.bindable}
+									<span
+										class="rounded-md bg-blue-500/50 px-2 py-1 font-mono text-xs font-light text-blue-600 dark:bg-blue-500/50 dark:text-blue-300"
+									>
+										$bindable
+									</span>
+								{/if}
+							</div>
 						</td>
 						<td class="text-foreground flex place-items-center px-4 py-2 align-top whitespace-pre">
 							<span
@@ -79,7 +88,10 @@
 									>
 										<InfoIcon class="size-4" />
 									</HoverCard.Trigger>
-									<HoverCard.Content align="center" class="p-0">
+									<HoverCard.Content
+										align="center"
+										class="flex place-items-center justify-center p-0"
+									>
 										{@html tooltipHighlighted}
 									</HoverCard.Content>
 								</HoverCard.Root>
@@ -102,7 +114,7 @@
 
 	:global(html.dark .shiki, html.dark .shiki span) {
 		color: var(--shiki-dark) !important;
-		background-color: var(--color-background) !important;
+		background-color: var(--color-popover) !important;
 		/* Optional, if you also want font styles */
 		font-style: var(--shiki-dark-font-style) !important;
 		font-weight: var(--shiki-dark-font-weight) !important;

@@ -1,18 +1,13 @@
 <script lang="ts">
-	import { cn, type WithElementRef } from '$lib/utils/utils';
-	import { onMount, type Snippet } from 'svelte';
+	import { cn } from '$lib/utils/utils';
+	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { ArrowDownIcon } from '@lucide/svelte';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { ChatListProps } from './types';
 
-	let {
-		ref = $bindable(null),
-		children,
-		class: className,
-		...rest
-	}: WithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement> = $props();
+	let { ref = $bindable(null), children, class: className, ...rest }: ChatListProps = $props();
 
 	// Prevents movement on page load
 	let canScrollSmooth = $state(false);

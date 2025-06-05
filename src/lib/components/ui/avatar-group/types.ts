@@ -1,22 +1,20 @@
-import type { Avatar as AvatarPrimitive, WithElementRef } from 'bits-ui';
+import type { Avatar as AvatarPrimitive, WithChildren, WithoutChildren } from 'bits-ui';
 import type { HTMLAttributes } from 'svelte/elements';
 
-export type AvatarGroupRootPropsWithoutHTML = {
+export type AvatarGroupRootPropsWithoutHTML = WithChildren<{
+	ref?: HTMLElement | null;
 	orientation?: 'vertical' | 'horizontal';
-};
+}>;
 
-export type AvatarGroupRootProps = WithElementRef<
-	AvatarGroupRootPropsWithoutHTML & HTMLAttributes<HTMLDivElement>,
-	HTMLDivElement
->;
+export type AvatarGroupRootProps = AvatarGroupRootPropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;
 
 export type AvatarGroupMemberProps = AvatarPrimitive.RootProps;
 
-export type AvatarGroupEtcPropsWithoutHTML = {
+export type AvatarGroupEtcPropsWithoutHTML = WithChildren<{
+	ref?: HTMLElement | null;
 	plus: number;
-};
+}>;
 
-export type AvatarGroupEtcProps = WithElementRef<
-	AvatarGroupEtcPropsWithoutHTML & HTMLAttributes<HTMLDivElement>,
-	HTMLDivElement
->;
+export type AvatarGroupEtcProps = AvatarGroupEtcPropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;

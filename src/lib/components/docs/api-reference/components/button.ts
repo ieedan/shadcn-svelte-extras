@@ -5,6 +5,18 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 	name: 'Root',
 	description: 'The root button component.',
 	props: {
+		ref: api.createAnyProp({
+			description: 'A reference to the button element.',
+			bindable: true,
+			type: 'HTMLElement',
+			tooltip: 'HTMLButtonElement | HTMLAnchorElement',
+			defaultValue: 'null'
+		}),
+		children: api.createAnyProp({
+			description: 'The content of the button.',
+			bindable: false,
+			type: 'Snippet'
+		}),
 		variant: api.createStringUnionProp({
 			type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
 			description: 'The visual style of the button.',

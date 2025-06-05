@@ -148,7 +148,7 @@
 					<Dialog.Root>
 						<!-- I just want to gauge interest here -->
 						<Dialog.Trigger
-							class={cn(buttonVariants({ variant: 'ghost' }), 'font-normal')}
+							class={cn(buttonVariants({ variant: 'secondary' }), 'font-normal')}
 							data-umami-event="MCP button"
 						>
 							<Icons.MCP class="size-4" /> MCP
