@@ -6,3 +6,4 @@ export { components as CopyButtonReference } from './copy-button-api';
 export { components as FieldSetReference } from './field-set-api';
 export { components as FileDropZoneReference } from './file-drop-zone-api';
 export { components as ImageCropperReference } from './image-cropper-api';
+export { components as Ipv4addressInputReference } from './ipv4address-input-api';

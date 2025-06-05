@@ -7,3 +7,5 @@ export type IPv4AddressInputProps = {
 	valid?: boolean;
 	name?: string;
 };
+
+export type IPv4AddressInputPropsWithoutHTML = IPv4AddressInputProps;
