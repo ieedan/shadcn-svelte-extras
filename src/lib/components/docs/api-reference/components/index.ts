@@ -10,3 +10,4 @@ export { components as Ipv4addressInputReference } from './ipv4address-input-api
 export { components as KbdReference } from './kbd-api';
 export { components as LanguageSwitcherReference } from './language-switcher-api';
 export { components as LightSwitchReference } from './light-switch-api';
+export { components as LinkReference } from './link-api';

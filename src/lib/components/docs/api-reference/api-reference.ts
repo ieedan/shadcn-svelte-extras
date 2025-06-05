@@ -1,7 +1,8 @@
 import type { LooseAutocomplete } from '$lib/utils/types';
 
 export type Component<T> = {
-	name: string;
+	/** Undefined only if the component is the only component */
+	name?: string;
 	description: string;
 	props: PropsReference<T>;
 	forwardTo?: {
@@ -181,7 +182,7 @@ export function createComponentReference<T extends Record<string, unknown>>({
 	props,
 	forwardTo
 }: {
-	name: string;
+	name?: string;
 	description: string;
 	props: PropsReference<T>;
 	forwardTo?: {

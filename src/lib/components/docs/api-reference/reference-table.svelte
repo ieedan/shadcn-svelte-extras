@@ -23,7 +23,7 @@
 		class="bg-secondary flex w-fit place-items-center rounded-md px-2 py-1 font-mono text-lg font-light"
 	>
 		<span>
-			{name}.
+			{name}{component.name ? '.' : ''}
 		</span>
 		<h3 id={component.name}>
 			{component.name}
@@ -34,7 +34,7 @@
 {#if component.forwardTo}
 	<Alert.Root>
 		<Alert.Title>
-			Documentation for this component can be found at
+			Documentation for this component's props can be found at
 			<Link href={component.forwardTo.href}>{component.forwardTo.name}</Link>
 		</Alert.Title>
 	</Alert.Root>

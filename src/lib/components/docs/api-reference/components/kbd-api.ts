@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { KbdPropsWithoutHTML } from '$lib/components/ui/kbd/kbd.svelte';
 
 const Root = api.createComponentReference<KbdPropsWithoutHTML>({
-	name: 'Root',
 	description: 'The root keyboard key component.',
 	props: {
 		ref: api.createAnyProp({

@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { CopyButtonPropsWithoutHTML } from '$lib/components/ui/copy-button/types';
 
 const Root = api.createComponentReference<CopyButtonPropsWithoutHTML>({
-	name: 'Root',
 	description: 'A button that copies text to the clipboard and shows feedback.',
 	props: {
 		ref: api.createAnyProp({

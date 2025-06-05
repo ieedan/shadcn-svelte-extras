@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { IPv4AddressInputPropsWithoutHTML } from '$lib/components/ui/ipv4address-input/types';
 
 const Root = api.createComponentReference<IPv4AddressInputPropsWithoutHTML>({
-	name: 'Root',
 	description:
 		'The root IPv4 address input component. Allows entry and validation of IPv4 addresses in a segmented input.',
 	props: {

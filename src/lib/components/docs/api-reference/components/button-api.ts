@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { ButtonPropsWithoutHTML } from '$lib/components/ui/button/types';
 
 const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
-	name: 'Root',
 	description: 'The root button component.',
 	props: {
 		ref: api.createAnyProp({

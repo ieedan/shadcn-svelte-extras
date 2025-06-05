@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { LanguageSwitcherProps } from '$lib/components/ui/language-switcher/types';
 
 const Root = api.createComponentReference<LanguageSwitcherProps>({
-	name: 'Root',
 	description: 'The root language switcher component.',
 	props: {
 		languages: api.createAnyProp({

@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { FileDropZonePropsWithoutHTML } from '$lib/components/ui/file-drop-zone/types';
 
 const Root = api.createComponentReference<FileDropZonePropsWithoutHTML>({
-	name: 'Root',
 	description: 'The root file drop zone component.',
 	props: {
 		ref: api.createAnyProp({
