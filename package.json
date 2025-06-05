@@ -15,7 +15,7 @@
 		"build:registry": "jsrepo build",
 		"ci:release": "pnpm jsrepo publish --verbose && changeset tag",
 		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
-		"generate-reference": "pnpm dlx tsx ./src/lib/scripts/generate-reference.ts"
+		"generate-reference": "pnpm sync && pnpm dlx tsx ./src/lib/scripts/generate-reference.ts"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.4",
