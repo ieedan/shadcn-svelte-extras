@@ -76,7 +76,7 @@
 							</span>
 							{#if propValue.tooltip}
 								{@const tooltipHighlighted = hl?.codeToHtml(propValue.tooltip ?? '', {
-									lang: 'typescript',
+									lang: propValue.type === 'Snippet' ? 'svelte' : 'typescript',
 									themes: {
 										light: 'github-light-default',
 										dark: 'github-dark-default'

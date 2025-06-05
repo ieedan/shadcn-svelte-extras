@@ -10,7 +10,6 @@ import type { CropperProps } from 'svelte-easy-crop';
 import type { HTMLAttributes, HTMLInputAttributes } from 'svelte/elements';
 
 export type ImageCropperRootPropsWithoutHTML = WithChildren<{
-	id?: string;
 	src?: string;
 	onCropped?: (url: string) => void;
 	onUnsupportedFile?: (file: File) => void;

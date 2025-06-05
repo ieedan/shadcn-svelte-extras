@@ -5,6 +5,8 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
+	import { ImageCropperReference } from '$lib/components/docs/api-reference/components';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
 </script>
 
 <Playground code={examples.basic.code}>
@@ -49,6 +51,8 @@
 <Playground code={examples.customPreview.code}>
 	<examples.customPreview.Component />
 </Playground>
+<Subheading>API Reference</Subheading>
+<ApiReference name="ImageCropper" components={ImageCropperReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by

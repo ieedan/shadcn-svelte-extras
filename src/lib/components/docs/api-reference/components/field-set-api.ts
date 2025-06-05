@@ -13,8 +13,7 @@ const Root = api.createComponentReference<FieldSetRootPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the field set root element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -36,8 +35,7 @@ const Title = api.createComponentReference<FieldSetTitlePropsWithoutHtml>({
 		ref: api.createAnyProp({
 			description: 'A reference to the field set title element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLHeadingElement',
+			type: 'HTMLHeadingElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -59,8 +57,7 @@ const Content = api.createComponentReference<FieldSetContentPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the field set content element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -77,8 +74,7 @@ const Footer = api.createComponentReference<FieldSetFooterPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the field set footer element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
