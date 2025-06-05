@@ -4,16 +4,7 @@
 	import { safeParseIPv4Address } from '.';
 	import { isNumber } from '$lib/utils/is-number';
 	import * as ipv4address from '$lib/utils/ipv4-address';
-
-	type Props = {
-		separator?: '.' | ' ' | '_';
-		/** An IP Address placeholder `0.0.0.0` or `0_0_0_0` or `0 0 0 0` */
-		placeholder?: string;
-		value?: string | null;
-		class?: string;
-		valid?: boolean;
-		name?: string;
-	};
+	import type { IPv4AddressInputProps } from './types';
 
 	let {
 		separator = '.',
@@ -22,7 +13,7 @@
 		class: className,
 		name,
 		valid = $bindable(false)
-	}: Props = $props();
+	}: IPv4AddressInputProps = $props();
 
 	const parsedPlaceholder = $derived(safeParseIPv4Address(placeholder));
 

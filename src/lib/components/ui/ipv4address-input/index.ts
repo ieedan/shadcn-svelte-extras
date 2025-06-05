@@ -45,3 +45,5 @@ export const safeParseIPv4Address = (
 };
 
 export { IPv4AddressInput };
+
+export type * from './types';
