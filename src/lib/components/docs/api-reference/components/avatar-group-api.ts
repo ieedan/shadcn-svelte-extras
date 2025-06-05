@@ -17,7 +17,6 @@ const Root = api.createComponentReference<AvatarGroupRootPropsWithoutHTML>({
 		}),
 		children: api.createAnyProp({
 			description: 'The content of the avatar group.',
-			bindable: false,
 			type: 'Snippet'
 		}),
 		orientation: api.createStringUnionProp({
@@ -51,7 +50,6 @@ const Etc = api.createComponentReference<AvatarGroupEtcPropsWithoutHTML>({
 		}),
 		children: api.createAnyProp({
 			description: 'The content of the avatar group etc.',
-			bindable: false,
 			type: 'Snippet'
 		}),
 		plus: api.createNumberProp({

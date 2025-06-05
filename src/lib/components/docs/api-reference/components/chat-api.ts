@@ -18,7 +18,6 @@ const List = api.createComponentReference<ChatListPropsWithoutHTML>({
 		}),
 		children: api.createAnyProp({
 			description: 'The content of the chat list.',
-			bindable: false,
 			type: 'Snippet'
 		})
 	}
@@ -37,7 +36,6 @@ const Bubble = api.createComponentReference<ChatBubblePropsWithoutHTML>({
 		}),
 		children: api.createAnyProp({
 			description: 'The content of the chat bubble.',
-			bindable: false,
 			type: 'Snippet'
 		}),
 		variant: api.createStringUnionProp({

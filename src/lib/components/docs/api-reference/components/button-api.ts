@@ -14,7 +14,6 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 		}),
 		children: api.createAnyProp({
 			description: 'The content of the button.',
-			bindable: false,
 			type: 'Snippet'
 		}),
 		variant: api.createStringUnionProp({
