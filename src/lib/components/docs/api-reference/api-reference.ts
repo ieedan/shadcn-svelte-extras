@@ -131,6 +131,26 @@ export function createNumberUnionProp({
 	} satisfies PropReference;
 }
 
+export function createDateProp({
+	description,
+	required = false,
+	bindable = false,
+	defaultValue
+}: {
+	description: string;
+	required?: boolean;
+	bindable?: boolean;
+	defaultValue?: string;
+}) {
+	return {
+		type: 'date' as const,
+		description,
+		required,
+		bindable,
+		defaultValue
+	} satisfies PropReference;
+}
+
 export function createFunctionProp({
 	description,
 	required = false,
