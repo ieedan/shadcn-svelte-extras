@@ -9,7 +9,6 @@ import type {
 export type PhoneInputProps = {
 	country?: CountryCode | null;
 	defaultCountry?: CountryCode | null;
-	el?: HTMLInputElement;
 	name?: string;
 	placeholder?: string;
 	disabled?: boolean;

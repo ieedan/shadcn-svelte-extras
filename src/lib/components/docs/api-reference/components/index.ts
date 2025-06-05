@@ -13,3 +13,4 @@ export { components as LightSwitchReference } from './light-switch-api';
 export { components as LinkReference } from './link-api';
 export { components as ModalReference } from './modal-api';
 export { components as NlpDateInputReference } from './nlp-date-input-api';
+export { components as PhoneInputReference } from './phone-input-api';
