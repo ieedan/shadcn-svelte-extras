@@ -5,6 +5,8 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { StarRatingStarReference } from '$lib/components/docs/api-reference/components';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -62,3 +64,4 @@
 <Playground code={examples.customSize.code}>
 	<examples.customSize.Component />
 </Playground>
+<ApiReference name="StarRating" components={StarRatingStarReference} />

@@ -3,26 +3,34 @@ description:
 globs: 
 alwaysApply: false
 ---
-When generating the API reference you can use `src/lib/components/docs/api-reference/components/avatar-group-api.ts` as a reference. 
+You will generate an API reference for a components props.
 
-> WARNING: make sure to use the `WithoutHTML` types from the `types.ts` file to ensure only relevant types are documented
+- Reference `src/lib/components/docs/api-reference/components/avatar-group-api.ts` for an example implementation
+- Reference `src/lib/components/docs/api-reference/api-reference.ts` for the documentation apis
+- Components can be found under `src/lib/components/ui/{{component}}`
+- You can tell a component prop is bindable because when it is destructured from the `$props()` function it will be assigned to `$bindable`.
 
-You can tell if a prop is `bindable` by looking at it's usage in the component. If it's bindable it will be in a destructured object with `$bindable`.
+To generate an API reference for a component you will need to modify a few files:
 
-Generate the API reference for components in `./src/lib/components/docs/api-reference/components`.
-
-The naming convention for the api reference file is {{component}}-api.ts.
-
-Once you have created the api reference add it to the `index.ts` file in the same directory like so:
-
+1. Create the `{{component}}-api.ts` file under `src/lib/components/docs/api-reference/components`.
+2. Add the re-export to the `index.ts` file in the same directory 
+example:
 ```ts
 export { components as ButtonReference } from './button-api';
 ```
+3. Add the `APIReference` component to the components documentation page located at `src/routes/components/{{component}}`
+```diff
+<script>
++   import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
++	import { ButtonReference } from '$lib/components/docs/api-reference/components';
+// ...
+</script>
 
-Once you have added it to the `index.ts` file import it and use it in the corresponding documentation file for the component located at `./src/routes/components/{{component}}/+page.svelte` like so:
-
-Example:
-
-```svelte
-<ApiReference name="Button" components={ButtonReference} />
+<!-- ... -->
++<ApiReference name="Button" components={ButtonReference} />
 ```
+- If there is an acknoledgements section place the reference above it
+
+- DO NOT create new types 
+- If all props from a component come from another component they can be forwarded to the documentation for that component if you don't know where to forward them ask
+

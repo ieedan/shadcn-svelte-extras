@@ -25,6 +25,7 @@
 <Playground code={examples.customOrdering.code}>
 	<examples.customOrdering.Component />
 </Playground>
+<ApiReference name="PhoneInput" components={PhoneInputReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component takes inspiration from
@@ -32,4 +33,3 @@
 		omeralpi/shadcn-phone-input
 	</Link>.
 </p>
-<ApiReference name="PhoneInput" components={PhoneInputReference} />

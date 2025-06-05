@@ -16,3 +16,4 @@ export { components as NlpDateInputReference } from './nlp-date-input-api';
 export { components as PhoneInputReference } from './phone-input-api';
 export { components as PMCommandReference } from './pm-command-api';
 export { components as SnippetReference } from './snippet-api';
+export { components as StarRatingStarReference } from './star-rating-star-api';

@@ -2,14 +2,9 @@
 	import { cn } from '$lib/utils/utils';
 	import { StarHalfIcon, StarIcon } from '@lucide/svelte';
 	import { unstable_RatingGroup as RatingGroup } from 'bits-ui';
+	import type { StarRatingStarProps } from './types';
 
-	type Props = {
-		index: number;
-		state: 'active' | 'partial' | 'inactive';
-		class?: string;
-	};
-
-	let { index, state, class: className }: Props = $props();
+	let { index, state, class: className }: StarRatingStarProps = $props();
 </script>
 
 <RatingGroup.Item

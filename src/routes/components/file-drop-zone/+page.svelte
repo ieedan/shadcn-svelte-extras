@@ -86,6 +86,7 @@ export const actions = {
 `}
 	/>
 </div>
+<ApiReference name="FileDropZone" components={FileDropZoneReference} />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component takes inspiration from
@@ -93,4 +94,3 @@ export const actions = {
 		sadmann/file-uploader
 	</Link>.
 </p>
-<ApiReference name="FileDropZone" components={FileDropZoneReference} />
