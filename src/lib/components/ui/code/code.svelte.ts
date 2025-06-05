@@ -5,7 +5,7 @@ import { highlighter } from './shiki';
 import DOMPurify from 'isomorphic-dompurify';
 import type { HighlighterCore } from 'shiki';
 
-type CodeRootProps = ReadableBoxedValues<{
+type CodeRootStateProps = ReadableBoxedValues<{
 	code: string;
 	lang: NonNullable<CodeRootProps['lang']>;
 	hideLines: boolean;
@@ -15,7 +15,7 @@ type CodeRootProps = ReadableBoxedValues<{
 class CodeRootState {
 	highlighter: HighlighterCore | null = $state(null);
 
-	constructor(readonly opts: CodeRootProps) {
+	constructor(readonly opts: CodeRootStateProps) {
 		highlighter.then((hl) => (this.highlighter = hl));
 	}
 
@@ -89,7 +89,7 @@ class CodeCopyButtonState {
 
 const ctx = new Context<CodeRootState>('code-root-state');
 
-export function useCode(props: CodeRootProps) {
+export function useCode(props: CodeRootStateProps) {
 	return ctx.set(new CodeRootState(props));
 }
 
