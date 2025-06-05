@@ -22,3 +22,4 @@ export { components as TerminalReference } from './terminal-api';
 export { components as ThemeSelectorReference } from './theme-selector-api';
 export { components as TocReference } from './toc-api';
 export { components as TreeViewReference } from './tree-view-api';
+export { components as WindowReference } from './window-api';
