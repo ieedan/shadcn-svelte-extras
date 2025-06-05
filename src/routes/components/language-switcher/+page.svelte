@@ -4,6 +4,8 @@
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
 	import { Link } from '$lib/components/ui/link';
+	import { LanguageSwitcherReference } from '$lib/components/docs/api-reference/components';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -30,3 +32,5 @@
 <Playground code={examples.paraglide.code}>
 	<examples.paraglide.Component />
 </Playground>
+
+<ApiReference name="LanguageSwitcher" components={LanguageSwitcherReference} />

@@ -8,3 +8,4 @@ export { components as FileDropZoneReference } from './file-drop-zone-api';
 export { components as ImageCropperReference } from './image-cropper-api';
 export { components as Ipv4addressInputReference } from './ipv4address-input-api';
 export { components as KbdReference } from './kbd-api';
+export { components as LanguageSwitcherReference } from './language-switcher-api';

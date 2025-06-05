@@ -1,11 +1,11 @@
-export interface Language {
+export type Language = {
 	/** Language code (e.g., 'en', 'de') */
 	code: string;
 	/** Display name (e.g., 'English', 'Deutsch') */
 	label: string;
-}
+};
 
-export interface LanguageSwitcherProps {
+export type LanguageSwitcherProps = {
 	/** List of available languages */
 	languages: Language[];
 
@@ -22,4 +22,4 @@ export interface LanguageSwitcherProps {
 	onChange?: (code: string) => void;
 
 	class?: string;
-}
+};
