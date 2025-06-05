@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { SnippetProps } from '$lib/components/ui/snippet/snippet.svelte';
 
 const Root = api.createComponentReference<SnippetProps>({
-	name: 'Root',
 	description: 'The root component for displaying a code snippet with copy functionality.',
 	props: {
 		variant: api.createStringUnionProp({

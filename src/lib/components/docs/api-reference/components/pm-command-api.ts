@@ -2,7 +2,6 @@ import type { PMCommandProps } from '$lib/components/ui/pm-command/pm-command.sv
 import * as api from '../api-reference';
 
 const Root = api.createComponentReference<PMCommandProps>({
-	name: 'Root',
 	description:
 		'The root component for displaying a package manager command with agent tabs and copy functionality.',
 	props: {

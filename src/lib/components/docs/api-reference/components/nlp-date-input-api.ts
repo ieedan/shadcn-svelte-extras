@@ -2,7 +2,6 @@ import * as api from '../api-reference';
 import type { NLPDateInputProps } from '$lib/components/ui/nlp-date-input/types';
 
 const Root = api.createComponentReference<NLPDateInputProps>({
-	name: 'Root',
 	description:
 		'The root component for the NLP Date Input. Allows users to enter dates in natural language and get suggestions.',
 	props: {
