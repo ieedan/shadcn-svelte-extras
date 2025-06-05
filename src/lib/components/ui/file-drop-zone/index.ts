@@ -1,7 +1,5 @@
-import FileDropZone, {
-	type FileRejectedReason,
-	type FileDropZoneProps
-} from './file-drop-zone.svelte';
+import FileDropZone from './file-drop-zone.svelte';
+import { type FileRejectedReason, type FileDropZoneProps } from './types';
 
 export const displaySize = (bytes: number): string => {
 	if (bytes < KILOBYTE) return `${bytes.toFixed(0)} B`;
