@@ -1,8 +1,14 @@
 <script lang="ts">
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
+	import { toast } from 'svelte-sonner';
 </script>
 
-<ImageCropper.Root src="https://github.com/shadcn.png">
+<ImageCropper.Root
+	src="https://github.com/shadcn.png"
+	onUnsupportedFile={(file) => {
+		toast.error(`Unsupported file type: ${file.type}`);
+	}}
+>
 	<ImageCropper.UploadTrigger>
 		<ImageCropper.Preview class="rounded-md" />
 	</ImageCropper.UploadTrigger>

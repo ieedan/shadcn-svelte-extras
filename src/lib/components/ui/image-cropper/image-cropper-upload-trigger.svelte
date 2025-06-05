@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { type WithChildren } from 'bits-ui';
 	import { useImageCropperTrigger } from './image-cropper.svelte.js';
+	import type { ImageCropperUploadTriggerProps } from './types';
 
-	let { children }: WithChildren = $props();
+	let { ref = $bindable(null), children, ...rest }: ImageCropperUploadTriggerProps = $props();
 
 	const triggerState = useImageCropperTrigger();
 </script>
 
-<label for={triggerState.rootState.id} class="hover:cursor-pointer">
+<label {...rest} bind:this={ref} for={triggerState.rootState.id} class="hover:cursor-pointer">
 	{@render children?.()}
 </label>
