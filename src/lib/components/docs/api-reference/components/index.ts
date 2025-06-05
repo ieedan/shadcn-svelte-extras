@@ -19,3 +19,4 @@ export { components as SnippetReference } from './snippet-api';
 export { components as StarRatingStarReference } from './star-rating-star-api';
 export { components as TagsInputReference } from './tags-input-api';
 export { components as TerminalReference } from './terminal-api';
+export { components as ThemeSelectorReference } from './theme-selector-api';
