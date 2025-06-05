@@ -11,8 +11,7 @@ const Root = api.createComponentReference<AvatarGroupRootPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the avatar group element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -44,8 +43,7 @@ const Etc = api.createComponentReference<AvatarGroupEtcPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the avatar group etc element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({

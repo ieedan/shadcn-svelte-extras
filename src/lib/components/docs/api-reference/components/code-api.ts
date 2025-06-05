@@ -11,8 +11,7 @@ const Root = api.createComponentReference<CodeRootPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the code block element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -55,8 +54,7 @@ const CopyButton = api.createComponentReference<CodeCopyButtonPropsWithoutHTML>(
 		ref: api.createAnyProp({
 			description: 'A reference to the copy button element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLButtonElement',
+			type: 'HTMLButtonElement',
 			defaultValue: 'null'
 		}),
 		variant: api.createStringUnionProp({

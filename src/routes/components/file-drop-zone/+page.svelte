@@ -5,6 +5,8 @@
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import { examples } from './examples';
+	import { FileDropZoneReference } from '$lib/components/docs/api-reference/components';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
 
 	let { data } = $props();
 </script>
@@ -91,3 +93,4 @@ export const actions = {
 		sadmann/file-uploader
 	</Link>.
 </p>
+<ApiReference name="FileDropZone" components={FileDropZoneReference} />

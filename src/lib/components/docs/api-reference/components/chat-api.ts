@@ -12,8 +12,7 @@ const List = api.createComponentReference<ChatListPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the chat list element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -30,8 +29,7 @@ const Bubble = api.createComponentReference<ChatBubblePropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the chat bubble element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
@@ -54,8 +52,7 @@ const BubbleMessage = api.createComponentReference<ChatBubbleMessagePropsWithout
 		ref: api.createAnyProp({
 			description: 'A reference to the chat bubble message element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLDivElement',
+			type: 'HTMLDivElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({

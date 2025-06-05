@@ -8,8 +8,7 @@ const Root = api.createComponentReference<CopyButtonPropsWithoutHTML>({
 		ref: api.createAnyProp({
 			description: 'A reference to the underlying button element.',
 			bindable: true,
-			type: 'HTMLElement',
-			tooltip: 'HTMLButtonElement',
+			type: 'HTMLButtonElement',
 			defaultValue: 'null'
 		}),
 		children: api.createAnyProp({
