@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CountrySelector from './country-selector.svelte';
-	import { defaultOptions, type Props } from '.';
+	import { defaultOptions, type PhoneInputProps } from '.';
 	import { cn } from '$lib/utils/utils';
 	import { TelInput, normalizedCountries } from 'svelte-tel-input';
 	import 'svelte-tel-input/styles/flags.css';
@@ -21,7 +21,7 @@
 		order = undefined,
 		name = undefined,
 		...rest
-	}: Props = $props();
+	}: PhoneInputProps = $props();
 
 	let el: HTMLInputElement | undefined = $state();
 
