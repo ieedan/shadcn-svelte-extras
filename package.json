@@ -4,7 +4,7 @@
 	"version": "3.4.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "pnpm generate-reference && vite dev",
 		"build": "pnpm generate-reference && vite build",
 		"preview": "vite preview",
 		"sync": "svelte-kit sync",
