@@ -1,19 +1,13 @@
 <script lang="ts">
-	import { Button, type ButtonElementProps } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/button';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils/utils';
 	import { CheckIcon, CopyIcon, XIcon } from '@lucide/svelte';
-	import type { Snippet } from 'svelte';
 	import { scale } from 'svelte/transition';
-
-	interface Props extends ButtonElementProps {
-		text: string;
-		icon?: Snippet<[]>;
-		animationDuration?: number;
-		onCopy?: (status: UseClipboard['status']) => void;
-	}
+	import type { CopyButtonProps } from './types';
 
 	let {
+		ref = $bindable(null),
 		text,
 		icon,
 		animationDuration = 500,
@@ -23,7 +17,7 @@
 		class: className,
 		children,
 		...rest
-	}: Props = $props();
+	}: CopyButtonProps = $props();
 
 	// this way if the user passes text then the button will be the default size
 	if (size === 'icon' && children) {
@@ -35,6 +29,7 @@
 
 <Button
 	{...rest}
+	bind:ref
 	{variant}
 	{size}
 	class={cn('flex items-center gap-2', className)}

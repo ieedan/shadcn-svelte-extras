@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Svelte } from '$lib/components/icons';
-	import { Code } from '$lib/components/ui/code';
+	import * as Code from '$lib/components/ui/code';
 	import { CopyButton } from '$lib/components/ui/copy-button';
 
 	let code = `\<script\>
@@ -20,5 +20,5 @@
 		</div>
 		<CopyButton text={code} class="size-7" />
 	</div>
-	<Code lang="svelte" hideCopy class="border-none" {code} highlight={[2, 5]} />
+	<Code.Root lang="svelte" class="border-none" {code} highlight={[2, 5]} />
 </div>

@@ -1,120 +1,33 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { tv, type VariantProps } from 'tailwind-variants';
-	import { highlighter, type SupportedLanguage } from './shiki';
-	import DOMPurify from 'isomorphic-dompurify';
-	import { onMount } from 'svelte';
-	import type { HighlighterCore } from 'shiki';
-	import { CopyButton } from '$lib/components/ui/copy-button';
-
-	const style = tv({
-		base: 'not-prose relative h-full max-h-[650px] overflow-auto rounded-lg border',
-		variants: {
-			variant: {
-				default: 'border-border bg-card',
-				secondary: 'bg-secondary/50 border-transparent'
-			}
-		}
-	});
-
-	type Variant = VariantProps<typeof style>['variant'];
-
-	type Props = {
-		variant?: Variant;
-		lang?: SupportedLanguage;
-		code: string;
-		class?: string;
-		copyButtonContainerClass?: string;
-		hideLines?: boolean;
-		hideCopy?: boolean;
-		highlight?: (number | [number, number])[];
-	};
-
-	const within = (num: number, range: Props['highlight']) => {
-		if (!range) return false;
-
-		let within = false;
-
-		for (const r of range) {
-			if (typeof r === 'number') {
-				if (num === r) {
-					within = true;
-					break;
-				}
-				continue;
-			}
-
-			if (r[0] <= num && num <= r[1]) {
-				within = true;
-				break;
-			}
-		}
-
-		return within;
-	};
+	import { codeVariants } from '.';
+	import type { CodeRootProps } from './types';
+	import { useCode } from './code.svelte.js';
+	import { box } from 'svelte-toolbelt';
 
 	let {
+		ref = $bindable(null),
 		variant = 'default',
 		lang = 'typescript',
 		code,
-		copyButtonContainerClass = undefined,
-		class: className = undefined,
+		class: className,
 		hideLines = false,
-		hideCopy = false,
-		highlight = []
-	}: Props = $props();
+		highlight = [],
+		children,
+		...rest
+	}: CodeRootProps = $props();
 
-	let hl = $state<HighlighterCore>();
-
-	const highlighted = $derived(
-		DOMPurify.sanitize(
-			hl?.codeToHtml(code, {
-				lang: lang,
-				themes: {
-					light: 'github-light-default',
-					dark: 'github-dark-default'
-				},
-				transformers: [
-					{
-						pre: (el) => {
-							el.properties.style = '';
-
-							if (!hideLines) {
-								el.properties.class += ' line-numbers';
-							}
-
-							return el;
-						},
-						line: (node, line) => {
-							if (within(line, highlight)) {
-								node.properties.class = node.properties.class + ' line--highlighted';
-							}
-
-							return node;
-						}
-					}
-				]
-			}) ?? code
-		)
-	);
-
-	onMount(() => {
-		highlighter.then((highlighter) => (hl = highlighter));
+	const codeState = useCode({
+		code: box.with(() => code),
+		hideLines: box.with(() => hideLines),
+		highlight: box.with(() => highlight),
+		lang: box.with(() => lang)
 	});
 </script>
 
-<div class={cn(style({ variant }), className)}>
-	{@html highlighted}
-	{#if !hideCopy}
-		<div
-			class={cn(
-				'absolute top-2 right-2 flex place-items-center justify-center',
-				copyButtonContainerClass
-			)}
-		>
-			<CopyButton text={code} />
-		</div>
-	{/if}
+<div {...rest} bind:this={ref} class={cn(codeVariants({ variant }), className)}>
+	{@html codeState.highlighted}
+	{@render children?.()}
 </div>
 
 <style>

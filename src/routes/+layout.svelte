@@ -23,7 +23,7 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { cn } from '$lib/utils/utils';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { Code } from '$lib/components/ui/code';
+	import Code from '$lib/components/docs/code.svelte';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { CodeSpan } from '$lib/components/docs';
 	import { MetaTags } from '$lib/components/site/meta-tags';

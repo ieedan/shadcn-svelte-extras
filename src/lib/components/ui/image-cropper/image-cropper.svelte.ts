@@ -1,4 +1,4 @@
-import type { ReadableBoxedValues, WritableBoxedValues } from '$lib/utils/box';
+import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import { Context } from 'runed';
 import type { CropArea, DispatchEvents } from 'svelte-easy-crop';
 import { getCroppedImg } from './utils';
