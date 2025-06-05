@@ -106,6 +106,30 @@ export function createStringUnionProp({
 	} satisfies PropReference;
 }
 
+export function createNumberUnionProp({
+	type,
+	description,
+	required = false,
+	bindable = false,
+	defaultValue
+}: {
+	/** Should be supplied as `1 | 2 | 3` */
+	type: string;
+	description: string;
+	required?: boolean;
+	bindable?: boolean;
+	defaultValue?: string;
+}) {
+	return {
+		type: 'enum' as const,
+		description,
+		required,
+		bindable,
+		defaultValue,
+		tooltip: type
+	} satisfies PropReference;
+}
+
 export function createFunctionProp({
 	description,
 	required = false,

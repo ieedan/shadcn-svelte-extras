@@ -3,6 +3,8 @@
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import { examples } from './examples';
+	import ApiReference from '$lib/components/docs/api-reference/api-reference.svelte';
+	import { FieldSetReference } from '$lib/components/docs/api-reference/components';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -14,3 +16,4 @@
 <Playground code={examples.destructive.code}>
 	<examples.destructive.Component />
 </Playground>
+<ApiReference name="FieldSet" components={FieldSetReference} />
