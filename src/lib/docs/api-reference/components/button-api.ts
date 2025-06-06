@@ -29,8 +29,7 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 			description: 'Whether the button is in a loading state.'
 		}),
 		onClickPromise: api.createFunctionProp({
-			description:
-				'A function that is called when the button is clicked and can return a promise for async actions.',
+			description: 'A function to await while showing a loading state when the button is clicked.',
 			type: '(e: MouseEvent) => Promise<void>'
 		})
 	}
