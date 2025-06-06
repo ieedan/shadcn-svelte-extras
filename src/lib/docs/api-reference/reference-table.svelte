@@ -90,7 +90,7 @@
 									</HoverCard.Trigger>
 									<HoverCard.Content
 										align="center"
-										class="flex place-items-center justify-center p-0 code-tooltip"
+										class="code-tooltip flex place-items-center justify-center p-0"
 									>
 										{@html tooltipHighlighted}
 									</HoverCard.Content>
