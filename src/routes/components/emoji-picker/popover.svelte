@@ -7,10 +7,18 @@
 	import { toast } from 'svelte-sonner';
 
 	let emoji = $state<string>('');
+
+	let open = $state(false);
 </script>
 
-<EmojiPicker.Root bind:value={emoji} onSelect={(emoji) => toast.success(`You selected ${emoji}!`)}>
-	<Popover.Root>
+<EmojiPicker.Root
+	bind:value={emoji}
+	onSelect={(emoji) => {
+		open = false;
+		toast.success(`You selected ${emoji}!`);
+	}}
+>
+	<Popover.Root bind:open>
 		<Popover.Trigger class={cn(buttonVariants({ variant: 'outline', size: 'icon' }))}>
 			{#if emoji === ''}
 				<SmilePlusIcon />
