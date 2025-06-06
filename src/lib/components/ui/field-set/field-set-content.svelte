@@ -1,18 +1,13 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAttributes } from 'svelte/elements';
-
-	interface Props extends WithElementRef<HTMLAttributes<HTMLDivElement>> {
-		class?: string;
-	}
+	import type { FieldSetTitleProps } from './types';
 
 	let {
-		class: className = undefined,
 		ref = $bindable(null),
+		class: className,
 		children,
 		...restProps
-	}: Props = $props();
+	}: FieldSetTitleProps = $props();
 </script>
 
 <div bind:this={ref} class={cn('p-6', className)} {...restProps}>

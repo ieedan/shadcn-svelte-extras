@@ -1,15 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import { FileIcon } from '@lucide/svelte';
-	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils/utils';
+	import type { TreeViewFileProps } from './types';
 
-	interface Props extends HTMLButtonAttributes {
-		name: string;
-		icon?: Snippet<[{ name: string }]>;
-	}
-
-	let { name, icon, type = 'button', class: className, ...rest }: Props = $props();
+	let { name, icon, type = 'button', class: className, ...rest }: TreeViewFileProps = $props();
 </script>
 
 <button {type} class={cn('flex place-items-center gap-1 pl-[3px]', className)} {...rest}>

@@ -21,3 +21,14 @@ export type LooseAutocomplete<T> = T | (string & {});
 export type Prettify<T> = {
 	[K in keyof T]: T[K];
 } & {};
+
+declare const brand: unique symbol;
+
+/** Allows you to create a branded type.
+ *
+ * ## Usage
+ * ```ts
+ * type Milliseconds = Brand<number, 'milliseconds'>;
+ * ```
+ */
+export type Brand<T, Brand extends string> = T & { [brand]: Brand };

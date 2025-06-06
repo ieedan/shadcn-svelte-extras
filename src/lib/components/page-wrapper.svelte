@@ -2,12 +2,15 @@
 	import type { Route } from '$lib/map';
 	import type { Snippet as SnippetType } from 'svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import { ArrowLeftIcon, ArrowRightIcon, CodeIcon } from '@lucide/svelte';
+	import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRight, CodeIcon } from '@lucide/svelte';
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
 	import * as Toc from '$lib/components/ui/toc';
 	import Button from './ui/button/button.svelte';
 	import * as Tooltip from './ui/tooltip';
+	import { page } from '$app/state';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import { getReference } from '$lib/docs/api-reference/components';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -78,24 +81,45 @@
 					<p class="!text-muted-foreground text-lg">
 						{doc.doc.description}
 					</p>
-					{#if doc.doc.source}
-						<Badge
-							href={new URL(
-								doc.doc.source,
-								'https://github.com/ieedan/shadcn-svelte-extras/tree/main/'
-							).toString()}
-							variant="secondary"
-							target="_blank"
-							class="flex w-fit place-items-center gap-1 rounded-md"
-						>
-							<span class="font-semibold">Component Source</span>
-							<CodeIcon class="size-3.5" />
-						</Badge>
-					{/if}
+					<div class="flex flex-wrap place-items-center gap-1">
+						{#if doc.doc.source}
+							<Badge
+								href={new URL(
+									doc.doc.source,
+									'https://github.com/ieedan/shadcn-svelte-extras/tree/main/'
+								).toString()}
+								variant="secondary"
+								target="_blank"
+								class="flex w-fit place-items-center gap-1 rounded-md"
+							>
+								<span class="font-semibold">Component Source</span>
+								<CodeIcon class="size-3.5" />
+							</Badge>
+						{/if}
+						{#if page.url.pathname.startsWith('/components')}
+							{@const componentName = page.url.pathname.slice('/components/'.length)}
+							<Badge
+								href="/components/{componentName}/llms.txt"
+								variant="secondary"
+								target="_blank"
+								class="flex w-fit place-items-center gap-1 rounded-md"
+							>
+								<span class="font-semibold">llms.txt</span>
+								<ArrowUpRight class="size-3.5" />
+							</Badge>
+						{/if}
+					</div>
 				</div>
 			{/if}
 			<div bind:this={toc.ref} style="display: contents;" class="page-wrapper">
 				{@render children()}
+				{#if page.url.pathname.startsWith('/components')}
+					{@const componentName = page.url.pathname.slice('/components/'.length)}
+					{@const reference = getReference(componentName)}
+					{#if reference}
+						<ApiReference {reference} />
+					{/if}
+				{/if}
 			</div>
 		</div>
 		<Navigation.Root class="pt-10">

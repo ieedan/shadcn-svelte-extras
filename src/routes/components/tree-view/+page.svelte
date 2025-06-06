@@ -2,7 +2,7 @@
 	import { Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code';
+	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
 </script>
 
@@ -19,4 +19,6 @@
 	If you are using custom icons in a project we recommend you wrap the folder/file components with
 	the custom icons:
 </p>
-<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
+<div>
+	<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
+</div>

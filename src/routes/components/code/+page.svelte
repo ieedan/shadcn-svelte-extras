@@ -2,7 +2,7 @@
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
-	import { Code } from '$lib/components/ui/code';
+	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
 	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
 </script>
@@ -25,6 +25,10 @@
 		[18, 25]
 	]}
 />
+<Subheading>Copy Button</Subheading>
+<Playground code={examples.copyButton.code}>
+	<examples.copyButton.Component />
+</Playground>
 <Subheading>No Line Numbers</Subheading>
 <Playground code={examples.noLineNumbers.code}>
 	<examples.noLineNumbers.Component />

@@ -1,18 +1,20 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import LoadingDots from './loading-dots.svelte';
 	import { cn } from '$lib/utils/utils';
+	import type { ChatBubbleMessageProps } from './types';
 
-	type Props = {
-		class?: string;
-		typing?: boolean;
-		children?: Snippet<[]>;
-	};
-
-	let { typing = false, class: className, children }: Props = $props();
+	let {
+		ref = $bindable(null),
+		typing = false,
+		class: className,
+		children,
+		...rest
+	}: ChatBubbleMessageProps = $props();
 </script>
 
 <div
+	{...rest}
+	bind:this={ref}
 	class={cn(
 		"bg-secondary group-data-[variant='sent']/chat-bubble:bg-primary group-data-[variant='sent']/chat-bubble:text-primary-foreground order-2 rounded-lg p-4 text-sm group-data-[variant='received']/chat-bubble:rounded-bl-none group-data-[variant='sent']/chat-bubble:order-1 group-data-[variant='sent']/chat-bubble:rounded-br-none",
 		className

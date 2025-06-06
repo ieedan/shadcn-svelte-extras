@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
-	import { Code } from '$lib/components/ui/code';
+	import Code from '$lib/components/docs/code.svelte';
 </script>
 
 <Installation specifier="hooks/use-clipboard.svelte" />

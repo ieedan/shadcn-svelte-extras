@@ -1,7 +1,6 @@
-<script lang="ts">
-	import { cn } from '$lib/utils/utils';
-	import type { Snippet } from 'svelte';
+<script lang="ts" module>
 	import { tv, type VariantProps } from 'tailwind-variants';
+	import type { WithChildren } from 'bits-ui';
 
 	const style = tv({
 		base: 'inline-flex place-items-center justify-center gap-1 rounded-md p-0.5',
@@ -22,16 +21,28 @@
 	type Size = VariantProps<typeof style>['size'];
 	type Variant = VariantProps<typeof style>['variant'];
 
-	type Props = {
+	export type KbdPropsWithoutHTML = WithChildren<{
+		ref?: HTMLElement | null;
 		class?: string;
 		size?: Size;
 		variant?: Variant;
-		children: Snippet<[]>;
-	};
+	}>;
 
-	let { class: className, children, size = 'default', variant = 'outline' }: Props = $props();
+	export type KbdProps = KbdPropsWithoutHTML;
 </script>
 
-<kbd class={cn(style({ size, variant }), className)}>
-	{@render children()}
+<script lang="ts">
+	import { cn } from '$lib/utils/utils';
+
+	let {
+		ref = $bindable(null),
+		class: className,
+		size = 'default',
+		variant = 'outline',
+		children
+	}: KbdProps = $props();
+</script>
+
+<kbd bind:this={ref} class={cn(style({ size, variant }), className)}>
+	{@render children?.()}
 </kbd>

@@ -1,14 +1,9 @@
 <script lang="ts">
-	import type { WithChildren } from 'bits-ui';
 	import { onDestroy } from 'svelte';
 	import { useTerminalLoop } from './terminal.svelte.js';
+	import type { TerminalLoopProps } from './types';
 
-	let {
-		delay = 500,
-		children
-	}: WithChildren<{
-		delay?: number;
-	}> = $props();
+	let { delay = 500, children }: TerminalLoopProps = $props();
 
 	let loopIndex = $state(0);
 	let loopDelayTimeout = $state<ReturnType<typeof setTimeout>>();

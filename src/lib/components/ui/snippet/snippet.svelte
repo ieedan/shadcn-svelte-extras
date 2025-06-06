@@ -1,7 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
 	import { cn } from '$lib/utils/utils';
 	import { tv, type VariantProps } from 'tailwind-variants';
 	import { CopyButton } from '../copy-button';
+	import type { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 
 	const style = tv({
 		base: 'bg-background relative w-full max-w-full rounded-md border py-2.5 pr-12 pl-3',
@@ -17,14 +18,16 @@
 
 	type Variant = VariantProps<typeof style>['variant'];
 
-	type Props = {
+	export type SnippetProps = {
 		variant?: Variant;
 		text: string | string[];
 		class?: string;
-		onCopy?: () => void;
+		onCopy?: (status: UseClipboard['status']) => void;
 	};
+</script>
 
-	let { text, variant = 'default', onCopy, class: className }: Props = $props();
+<script lang="ts">
+	let { text, variant = 'default', onCopy, class: className }: SnippetProps = $props();
 </script>
 
 <div class={cn(style({ variant, className: className }))}>

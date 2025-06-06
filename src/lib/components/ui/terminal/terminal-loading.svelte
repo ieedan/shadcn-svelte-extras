@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { onDestroy, type Snippet } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import { useAnimation } from './terminal.svelte.js';
-	import type { TerminalAnimationProps } from './types';
 	import { fly } from 'svelte/transition';
+	import type { TerminalLoadingProps } from './types';
 
 	const frames = ['◒', '◐', '◓', '◑'];
 
@@ -13,11 +13,7 @@
 		completeMessage,
 		duration = 1000,
 		class: className
-	}: Omit<TerminalAnimationProps, 'children'> & {
-		loadingMessage: Snippet<[]>;
-		completeMessage: Snippet<[]>;
-		duration?: number;
-	} = $props();
+	}: TerminalLoadingProps = $props();
 
 	let playAnimation = $state(false);
 	let animationSpeed = $state(1);

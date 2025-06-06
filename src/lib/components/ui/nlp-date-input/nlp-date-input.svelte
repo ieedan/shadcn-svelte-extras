@@ -1,20 +1,14 @@
 <script lang="ts">
 	import * as Command from '$lib/components/ui/command';
 	import { parseDate } from 'yeezy-dates';
-
-	type Props = {
-		min?: Date;
-		max?: Date;
-		placeholder?: string;
-		onChoice?: (opts: { label: string; date: Date }) => void;
-	};
+	import type { NLPDateInputProps } from './types';
 
 	let {
 		placeholder = 'E.g. "tomorrow at 5pm" or "in 2 hours"',
 		min,
 		max,
 		onChoice
-	}: Props = $props();
+	}: NLPDateInputProps = $props();
 
 	let value = $state('');
 

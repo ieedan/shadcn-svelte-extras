@@ -1,12 +1,16 @@
+<script lang="ts" module>
+	import type { WithChildren } from 'bits-ui';
+	import type { HTMLAttributes } from 'svelte/elements';
+
+	export type WindowPropsWithoutHTML = WithChildren;
+
+	export type WindowProps = HTMLAttributes<HTMLDivElement> & WindowPropsWithoutHTML;
+</script>
+
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { WithChildren } from 'bits-ui';
 
-	type Props = WithChildren<{
-		class?: string;
-	}>;
-
-	let { children, class: className }: Props = $props();
+	let { children, class: className }: WindowProps = $props();
 </script>
 
 <div class={cn('border-border bg-background aspect-video w-full rounded-lg border', className)}>

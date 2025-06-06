@@ -1,14 +1,16 @@
+<script lang="ts" module>
+	export type ThemeSelectorProps = {
+		variant?: 'outline' | 'ghost';
+	};
+</script>
+
 <script lang="ts">
 	import { SunIcon, MoonIcon } from '@lucide/svelte';
 	import { resetMode, setMode } from 'mode-watcher';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
 
-	type Props = {
-		variant?: 'outline' | 'ghost';
-	};
-
-	let { variant = 'outline' }: Props = $props();
+	let { variant = 'outline' }: ThemeSelectorProps = $props();
 </script>
 
 <DropdownMenu.Root>

@@ -8,6 +8,8 @@ import HighlightLines from './highlight-lines.svelte';
 import highlightLinesRaw from './highlight-lines.svelte?raw';
 import Overflow from './overflow.svelte';
 import overflowRaw from './overflow.svelte?raw';
+import CopyButton from './copy-button.svelte';
+import copyButtonRaw from './copy-button.svelte?raw';
 
 const examples = {
 	basic: {
@@ -29,6 +31,10 @@ const examples = {
 	overflow: {
 		code: overflowRaw,
 		Component: Overflow
+	},
+	copyButton: {
+		code: copyButtonRaw,
+		Component: CopyButton
 	}
 };
 

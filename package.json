@@ -4,8 +4,8 @@
 	"version": "3.4.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "pnpm generate-llms && vite dev",
+		"build": "pnpm generate-llms && vite build",
 		"preview": "vite preview",
 		"sync": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +14,8 @@
 		"lint": "prettier --check . && eslint .",
 		"build:registry": "jsrepo build",
 		"ci:release": "pnpm jsrepo publish --verbose && changeset tag",
-		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide"
+		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
+		"generate-llms": "pnpm sync && pnpm dlx tsx ./src/lib/scripts/generate-llms.ts"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.4",
@@ -25,7 +26,7 @@
 		"@inlang/cli": "^3.0.11",
 		"@inlang/paraglide-js": "2.0.13",
 		"@internationalized/date": "^3.8.1",
-		"@lucide/svelte": "^0.511.0",
+		"@lucide/svelte": "^0.513.0",
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.5.0",
 		"@shikijs/themes": "^3.5.0",

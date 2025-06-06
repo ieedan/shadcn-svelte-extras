@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getFileFromUrl } from '$lib/components/ui/image-cropper';
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
+	import { toast } from 'svelte-sonner';
 </script>
 
 <ImageCropper.Root
@@ -10,6 +11,9 @@
 		const file = await getFileFromUrl(url);
 
 		console.log(file);
+	}}
+	onUnsupportedFile={(file) => {
+		toast.error(`Unsupported file type: ${file.type}`);
 	}}
 >
 	<ImageCropper.UploadTrigger>

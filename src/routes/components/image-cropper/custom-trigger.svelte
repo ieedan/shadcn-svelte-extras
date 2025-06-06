@@ -3,11 +3,17 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { Button } from '$lib/components/ui/button';
 	import { EditIcon } from '@lucide/svelte';
+	import { toast } from 'svelte-sonner';
 
 	let src = $state('https://github.com/shadcn.png');
 </script>
 
-<ImageCropper.Root bind:src>
+<ImageCropper.Root
+	bind:src
+	onUnsupportedFile={(file) => {
+		toast.error(`Unsupported file type: ${file.type}`);
+	}}
+>
 	<div class="relative">
 		<ImageCropper.Preview />
 		<DropdownMenu.Root>

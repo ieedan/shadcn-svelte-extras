@@ -1,55 +1,9 @@
-<script lang="ts" module>
-	import type { Snippet } from 'svelte';
-	import type { HTMLInputAttributes } from 'svelte/elements';
-
-	export type FileRejectedReason =
-		| 'Maximum file size exceeded'
-		| 'File type not allowed'
-		| 'Maximum files uploaded';
-
-	export interface FileDropZoneProps extends Omit<HTMLInputAttributes, 'multiple'> {
-		/** Called with the uploaded files when the user drops or clicks and selects their files.
-		 *
-		 * @param files
-		 */
-		onUpload: (files: File[]) => Promise<void>;
-		/** The maximum amount files allowed to be uploaded */
-		maxFiles?: number;
-		fileCount?: number;
-		/** The maximum size of a file in bytes */
-		maxFileSize?: number;
-		children?: Snippet<[]>;
-		/** Called when a file does not meet the upload criteria (size, or type) */
-		onFileRejected?: (opts: { reason: FileRejectedReason; file: File }) => void;
-
-		// just for extra documentation
-		/** Takes a comma separated list of one or more file types.
-		 *
-		 *  [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept)
-		 *
-		 * ### Usage
-		 * ```svelte
-		 * <FileDropZone
-		 * 		accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-		 * />
-		 * ```
-		 *
-		 * ### Common Values
-		 * ```svelte
-		 * <FileDropZone accept="audio/*"/>
-		 * <FileDropZone accept="image/*"/>
-		 * <FileDropZone accept="video/*"/>
-		 * ```
-		 */
-		accept?: string;
-	}
-</script>
-
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
 	import { UploadIcon } from '@lucide/svelte';
 	import { displaySize } from '.';
 	import { useId } from 'bits-ui';
+	import type { FileDropZoneProps, FileRejectedReason } from './types';
 
 	let {
 		id = useId(),

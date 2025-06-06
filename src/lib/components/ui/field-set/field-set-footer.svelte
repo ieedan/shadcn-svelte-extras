@@ -1,20 +1,15 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { WithElementRef } from 'bits-ui';
-	import type { HTMLAttributes } from 'svelte/elements';
-
-	interface Props extends WithElementRef<HTMLAttributes<HTMLDivElement>> {
-		class?: string;
-	}
+	import type { FieldSetFooterProps } from './types';
 
 	let {
-		class: className = undefined,
 		ref = $bindable(null),
+		class: className,
 		children,
-		...restProps
-	}: Props = $props();
+		...rest
+	}: FieldSetFooterProps = $props();
 </script>
 
-<div bind:this={ref} class={cn('border-t border-inherit px-6 py-3', className)} {...restProps}>
+<div bind:this={ref} class={cn('border-t border-inherit px-6 py-3', className)} {...rest}>
 	{@render children?.()}
 </div>

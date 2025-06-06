@@ -1,17 +1,13 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { onMount, type Snippet } from 'svelte';
+	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { ArrowDownIcon } from '@lucide/svelte';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
+	import type { ChatListProps } from './types';
 
-	type Props = {
-		class?: string;
-		children?: Snippet<[]>;
-	};
-
-	let { children, class: className }: Props = $props();
+	let { ref = $bindable(null), children, class: className, ...rest }: ChatListProps = $props();
 
 	// Prevents movement on page load
 	let canScrollSmooth = $state(false);
@@ -25,6 +21,8 @@
 
 <div class="relative">
 	<div
+		{...rest}
+		bind:this={ref}
 		class={cn('no-scrollbar flex h-full w-full flex-col gap-4 overflow-y-auto p-4', className, {
 			'scroll-smooth': canScrollSmooth
 		})}

@@ -3,7 +3,7 @@
 
 	type Props = {
 		value: string;
-		disabled: boolean;
+		disabled: boolean | null;
 		active: boolean;
 		onDelete: (value: string) => void;
 	};

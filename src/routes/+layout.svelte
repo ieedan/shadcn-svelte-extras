@@ -23,7 +23,7 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { cn } from '$lib/utils/utils';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
-	import { Code } from '$lib/components/ui/code';
+	import Code from '$lib/components/docs/code.svelte';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { CodeSpan } from '$lib/components/docs';
 	import { MetaTags } from '$lib/components/site/meta-tags';
@@ -67,7 +67,6 @@
 
 <MetaTags
 	title="{currentDoc?.doc.name} - shadcn-svelte-extras"
-	titleTemplate="%s - shadcn-svelte-extras"
 	description={currentDoc?.doc.name === 'Introduction'
 		? `Finish your app with awesome svelte components like ${components}`
 		: currentDoc?.doc.description}
@@ -148,7 +147,7 @@
 					<Dialog.Root>
 						<!-- I just want to gauge interest here -->
 						<Dialog.Trigger
-							class={cn(buttonVariants({ variant: 'ghost' }), 'font-normal')}
+							class={cn(buttonVariants({ variant: 'secondary' }), 'font-normal')}
 							data-umami-event="MCP button"
 						>
 							<Icons.MCP class="size-4" /> MCP

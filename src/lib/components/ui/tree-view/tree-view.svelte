@@ -1,13 +1,8 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import type { Snippet } from 'svelte';
+	import type { TreeViewRootProps } from './types';
 
-	type Props = {
-		class?: string;
-		children?: Snippet<[]>;
-	};
-
-	let { children, class: className }: Props = $props();
+	let { children, class: className }: TreeViewRootProps = $props();
 </script>
 
 <div class={cn('flex flex-col', className)}>

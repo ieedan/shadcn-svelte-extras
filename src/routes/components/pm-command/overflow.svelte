@@ -3,7 +3,6 @@
 </script>
 
 <PMCommand
-	variant="secondary"
 	command="execute"
 	args={[
 		'jsrepo',

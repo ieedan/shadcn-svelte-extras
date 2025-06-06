@@ -140,8 +140,7 @@ const map: Record<string, Route[]> = {
 			description: 'A package manager command component.',
 			href: '/components/pm-command',
 			specifier: 'ui/pm-command',
-			source: 'src/lib/components/ui/pm-command/pm-command.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
 			name: 'Snippet',

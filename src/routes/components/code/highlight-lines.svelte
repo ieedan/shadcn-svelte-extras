@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Code } from '$lib/components/ui/code';
+	import * as Code from '$lib/components/ui/code';
 
 	const code = `export type Language = 
 | 'English (US)' 
@@ -19,12 +19,14 @@ export const greet = (name: string, language: Language): string => {
 </script>
 
 <div class="w-full p-6">
-	<Code
+	<Code.Root
 		lang="typescript"
 		{code}
 		highlight={[
 			[3, 4],
 			[10, 13]
 		]}
-	/>
+	>
+		<Code.CopyButton />
+	</Code.Root>
 </div>
