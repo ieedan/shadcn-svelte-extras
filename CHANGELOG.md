@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 4.0.0
+
+### Major Changes
+
+- feat: Export types from all components ([#205](https://github.com/ieedan/shadcn-svelte-extras/pull/205))
+
+- feat: Make `<Code/>` composable ([#205](https://github.com/ieedan/shadcn-svelte-extras/pull/205))
+
 ## 3.4.0
 
 ### Minor Changes
