@@ -67,7 +67,6 @@
 
 <MetaTags
 	title="{currentDoc?.doc.name} - shadcn-svelte-extras"
-	titleTemplate="%s - shadcn-svelte-extras"
 	description={currentDoc?.doc.name === 'Introduction'
 		? `Finish your app with awesome svelte components like ${components}`
 		: currentDoc?.doc.description}
