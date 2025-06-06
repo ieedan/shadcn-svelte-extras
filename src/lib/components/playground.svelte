@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import * as Tabs from '$lib/components/ui/tabs';
-	import Code from '$lib/components/docs/code.svelte';
+	import * as Code from '$lib/components/ui/code';
 	import { cn } from '$lib/utils/utils';
 	import { Button } from './ui/button';
 	import { RefreshCwIcon } from '@lucide/svelte';
@@ -49,7 +49,7 @@
 			{/key}
 		</Tabs.Content>
 		<Tabs.Content value="code" class="size-full pb-4">
-			<Code lang="svelte" {code} class="size-full border-none bg-transparent" hideLines />
+			<Code.Root lang="svelte" {code} class="size-full border-none !bg-transparent" hideLines />
 		</Tabs.Content>
 	</Tabs.Root>
 </div>
