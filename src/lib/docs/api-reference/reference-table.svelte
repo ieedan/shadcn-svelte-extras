@@ -90,7 +90,7 @@
 									</HoverCard.Trigger>
 									<HoverCard.Content
 										align="center"
-										class="flex place-items-center justify-center p-0"
+										class="code-tooltip flex place-items-center justify-center p-0"
 									>
 										{@html tooltipHighlighted}
 									</HoverCard.Content>
@@ -114,10 +114,13 @@
 
 	:global(html.dark .shiki, html.dark .shiki span) {
 		color: var(--shiki-dark) !important;
-		background-color: var(--color-popover) !important;
 		/* Optional, if you also want font styles */
 		font-style: var(--shiki-dark-font-style) !important;
 		font-weight: var(--shiki-dark-font-weight) !important;
 		text-decoration: var(--shiki-dark-text-decoration) !important;
+	}
+
+	:global(html.dark .code-tooltip .shiki, html.dark .code-tooltip .shiki span) {
+		background-color: var(--color-popover) !important;
 	}
 </style>
