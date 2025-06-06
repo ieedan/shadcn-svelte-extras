@@ -3,9 +3,16 @@ import { references } from '../docs/api-reference/components/index.js';
 import * as casing from '../utils/casing.js';
 import path from 'node:path';
 import fs from 'node:fs';
-import type { PropReference } from '../docs/api-reference/api-reference';
+import type { PropReference } from '../docs/api-reference/api-reference.js';
 
 const COMPONENTS_PATH = './static/components';
+
+let rootLLMs = `# shadcn-svelte-extras Documentation for LLMs
+
+> shadcn-svelte-extras is a collection of components that follow the same styling as shadcn-svelte.
+ 
+## Components
+`;
 
 for (const reference of references) {
 	const componentName = casing.pascalToKebab(reference.name);
@@ -13,6 +20,8 @@ for (const reference of references) {
 	const componentPath = path.join(COMPONENTS_PATH, componentName);
 
 	fs.mkdirSync(componentPath, { recursive: true });
+
+	rootLLMs += `- [${reference.name} Documentation](https://shadcn-svelte-extras.com/components/${componentName}/llms.txt)\n`;
 
 	const referenceText = `# ${reference.name} Documentation
 
@@ -53,3 +62,7 @@ ${Object.entries(component.props)
 
 	console.log(`📃 Wrote ${componentName} reference to ${componentPath}`);
 }
+
+fs.writeFileSync('./static/llms.txt', rootLLMs);
+
+console.log(`📃 Wrote root llms.txt to ./static/llms.txt`);
