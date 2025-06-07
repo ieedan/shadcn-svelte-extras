@@ -59,6 +59,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/copy-button/copy-button.svelte'
 		},
 		{
+			name: 'Emoji Picker',
+			description: 'An emoji picker component.',
+			href: '/components/emoji-picker',
+			specifier: 'ui/emoji-picker',
+			source: 'src/lib/components/ui/emoji-picker/emoji-picker.svelte'
+		},
+		{
 			name: 'Field Set',
 			description: 'A field set component.',
 			href: '/components/field-set',
@@ -238,6 +245,14 @@ const map: Record<string, Route[]> = {
 			href: '/hooks/use-clipboard',
 			specifier: 'hooks/use-clipboard.svelte',
 			source: 'src/lib/hooks/use-clipboard.svelte.ts'
+		},
+		{
+			name: 'UseFrecency',
+			description: 'A hook to track and sort items based on their frequency of use.',
+			href: '/hooks/use-frecency',
+			specifier: 'hooks/use-frecency.svelte',
+			source: 'src/lib/hooks/use-frecency.svelte.ts',
+			status: 'New'
 		},
 		{
 			name: 'UsePromise',
