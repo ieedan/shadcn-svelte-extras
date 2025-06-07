@@ -8,8 +8,7 @@
 		value = $bindable(''),
 		skin = '👋',
 		onSelect = () => {},
-		children,
-		...rest
+		children
 	}: EmojiPickerRootProps = $props();
 
 	const state = useEmojiPicker({

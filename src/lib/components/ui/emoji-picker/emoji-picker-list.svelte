@@ -70,7 +70,7 @@
 			</CommandPrimitive.Group>
 		{/if}
 	{/if}
-	{#each emojiData.categories as category}
+	{#each emojiData.categories as category (category.id)}
 		{@const emojis = category.emojis.filter((item) =>
 			filter(pickerState.root.emojiPickerState.search, emojiData.emojis[item].keywords)
 		)}
