@@ -5,6 +5,7 @@
 
 <EmojiPicker.Root skin="👋🏽" onSelect={(emoji) => toast.success(`You selected ${emoji}!`)}>
 	<EmojiPicker.Viewport>
-		<EmojiPicker.Picker search="hand" />
+		<EmojiPicker.Search value="hand" />
+		<EmojiPicker.List />
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>

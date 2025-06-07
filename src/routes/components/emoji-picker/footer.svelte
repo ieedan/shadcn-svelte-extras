@@ -7,5 +7,12 @@
 	<EmojiPicker.Viewport>
 		<EmojiPicker.Search />
 		<EmojiPicker.List />
+		<EmojiPicker.Footer>
+			{#snippet children({ active })}
+				{#if active}
+					<div>{active.emoji}</div>
+				{/if}
+			{/snippet}
+		</EmojiPicker.Footer>
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>

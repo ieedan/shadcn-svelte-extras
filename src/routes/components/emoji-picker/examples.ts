@@ -4,6 +4,8 @@ import Skin from './skin.svelte';
 import skinRaw from './skin.svelte?raw';
 import Popover from './popover.svelte';
 import popoverRaw from './popover.svelte?raw';
+import Footer from './footer.svelte';
+import footerRaw from './footer.svelte?raw';
 
 const examples = {
 	basic: {
@@ -17,6 +19,10 @@ const examples = {
 	popover: {
 		code: popoverRaw,
 		Component: Popover
+	},
+	footer: {
+		code: footerRaw,
+		Component: Footer
 	}
 };
 

@@ -20,7 +20,8 @@
 
 <EmojiPicker.Root>
 	<EmojiPicker.Viewport>
-		<EmojiPicker.Picker />
+		<EmojiPicker.Search />
+		<EmojiPicker.List />
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>`}
 	/>
@@ -32,4 +33,8 @@
 <Subheading>Popover</Subheading>
 <Playground code={examples.popover.code}>
 	<examples.popover.Component />
+</Playground>
+<Subheading>Footer</Subheading>
+<Playground code={examples.footer.code}>
+	<examples.footer.Component />
 </Playground>

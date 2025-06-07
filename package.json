@@ -35,7 +35,7 @@
 		"@sveltejs/kit": "^2.21.2",
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
 		"@tailwindcss/vite": "^4.1.7",
-		"bits-ui": "https://pkg.pr.new/bits-ui@8f1ccf1",
+		"bits-ui": "https://pkg.pr.new/bits-ui@192d319",
 		"clsx": "^2.1.1",
 		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.5",

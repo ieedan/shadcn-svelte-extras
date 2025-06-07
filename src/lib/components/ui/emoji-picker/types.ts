@@ -1,4 +1,7 @@
-import type { WithChildren } from 'bits-ui';
+import type { Emoji } from '@emoji-mart/data';
+import type { WithChildren, WithoutChild, WithoutChildren } from 'bits-ui';
+import type { Command as CommandPrimitive } from 'bits-ui';
+import type { Snippet } from 'svelte';
 
 /**
  * The skin tone modifier for the emoji
@@ -23,9 +26,13 @@ export type EmojiPickerRootProps = WithChildren<{
 	onSelect?: (emoji: string) => void;
 }>;
 
-export type EmojiPickerPickerProps = {
-	search?: string;
-	placeholder?: string;
+export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive.ListProps>> & {
 	maxRecents?: number;
 	emptyMessage?: string;
+};
+
+export type EmojiPickerSearchProps = CommandPrimitive.InputProps;
+
+export type EmojiPickerFooterProps = {
+	children: Snippet<[{ active: { emoji: string; data: Emoji; skin: number } | null }]>;
 };

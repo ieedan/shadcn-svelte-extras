@@ -1,5 +1,7 @@
 import Root from './emoji-picker.svelte';
-import Picker from './emoji-picker-picker.svelte';
+import List from './emoji-picker-list.svelte';
 import Viewport from './emoji-picker-viewport.svelte';
+import Search from './emoji-picker-search.svelte';  
+import Footer from './emoji-picker-footer.svelte';
 
-export { Root, Picker, Viewport };
+export { Root, List, Viewport, Search, Footer };

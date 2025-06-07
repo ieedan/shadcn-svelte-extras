@@ -27,7 +27,8 @@
 			{/if}
 		</Popover.Trigger>
 		<Popover.Content class="w-auto p-0">
-			<EmojiPicker.Picker />
+			<EmojiPicker.Search />
+			<EmojiPicker.List />
 		</Popover.Content>
 	</Popover.Root>
 </EmojiPicker.Root>
