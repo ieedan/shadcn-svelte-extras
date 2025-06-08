@@ -1,8 +1,14 @@
+<script lang="ts" module>
+	import type { ButtonProps } from './types';
+	import { buttonVariants, type ButtonSize, type ButtonVariant } from '.';
+
+	// re-export for compatibility with original component
+	export { type ButtonProps, buttonVariants, type ButtonSize, type ButtonVariant };
+</script>
+
 <script lang="ts">
 	import { cn } from '$lib/utils/utils.js';
 	import { LoaderCircleIcon } from '@lucide/svelte';
-	import type { ButtonProps } from './types';
-	import { buttonVariants } from '.';
 
 	let {
 		ref = $bindable(null),
