@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { ButtonPropsWithoutHTML } from '$lib/components/ui/button/types';
+import type { ButtonPropsWithoutHTML } from '$lib/components/ui/button/button.svelte';
 
 const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 	description: 'The root button component.',
