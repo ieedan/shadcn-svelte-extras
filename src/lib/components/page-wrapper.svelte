@@ -6,7 +6,7 @@
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
 	import * as Toc from '$lib/components/ui/toc';
-	import Button from './ui/button/button.svelte';
+	import { Button } from '$lib/components/ui/button';
 	import * as Tooltip from './ui/tooltip';
 	import { page } from '$app/state';
 	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
