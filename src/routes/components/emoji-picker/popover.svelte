@@ -13,9 +13,9 @@
 
 <EmojiPicker.Root
 	bind:value={emoji}
-	onSelect={(emoji) => {
+	onSelect={(selected) => {
 		open = false;
-		toast.success(`You selected ${emoji}!`);
+		toast.success(`You selected ${selected.emoji}!`);
 	}}
 >
 	<Popover.Root bind:open>

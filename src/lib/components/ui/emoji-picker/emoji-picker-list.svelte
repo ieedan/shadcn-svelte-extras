@@ -55,11 +55,12 @@
 					{#each recents as item (item)}
 						{@const { name, skin } = parseValue(item)}
 						{@const emoji = emojiData.emojis[name].skins[skin].native}
+						{@const emojiIdentifier = item}
 						<Command.Item
 							class="flex aspect-square size-9 place-items-center justify-center text-lg"
 							value="{item}:recent"
 							onSelect={() => {
-								pickerState.select(emoji);
+								pickerState.select(emojiIdentifier);
 								frecency.use(item);
 							}}
 						>
@@ -86,9 +87,9 @@
 						{@const key = makeValue(item, emojiSkin)}
 						<Command.Item
 							class="flex aspect-square size-9 place-items-center justify-center text-lg"
-							value={item}
+							value={key}
 							onSelect={() => {
-								pickerState.select(emoji.skins[emojiSkin].native);
+								pickerState.select(key);
 								frecency.use(key);
 							}}
 						>

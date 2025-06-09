@@ -1,7 +1,7 @@
 import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
-import type { EmojiPickerSkin } from './types';
-import data, { type Emoji, type EmojiMartData } from '@emoji-mart/data';
+import type { EmojiPickerSkin, SelectedEmoji } from './types';
+import data, { type EmojiMartData } from '@emoji-mart/data';
 
 const emojiData = data as EmojiMartData;
 
@@ -16,11 +16,7 @@ const SKIN_MAP = {
 
 type EmojiPickerState = {
 	search: string;
-	active: {
-		emoji: string;
-		data: Emoji;
-		skin: number;
-	} | null;
+	active: SelectedEmoji | null;
 };
 
 const defaultState: EmojiPickerState = {
@@ -31,7 +27,7 @@ const defaultState: EmojiPickerState = {
 type EmojiPickerRootProps = WritableBoxedValues<{
 	value: string;
 }> &
-	ReadableBoxedValues<{ skin: EmojiPickerSkin; onSelect: (emoji: string) => void }>;
+	ReadableBoxedValues<{ skin: EmojiPickerSkin; onSelect: (emoji: SelectedEmoji) => void }>;
 
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
@@ -48,12 +44,25 @@ class EmojiPickerRootState {
 	}
 
 	select(emoji: string) {
-		this.opts.value.current = emoji;
+		const { name, skin } = parseValue(emoji);
 
-		this.opts.onSelect.current(emoji);
+		const selected = {
+			emoji: emojiData.emojis[name].skins[skin].native,
+			data: emojiData.emojis[name],
+			skin
+		};
+
+		this.opts.value.current = selected.emoji;
+
+		this.opts.onSelect.current(selected);
 	}
 
 	onValueChange(value: string) {
+		if (value === '') {
+			this.emojiPickerState.active = null;
+			return;
+		}
+
 		const { name, skin } = parseValue(value);
 
 		this.emojiPickerState.active = {

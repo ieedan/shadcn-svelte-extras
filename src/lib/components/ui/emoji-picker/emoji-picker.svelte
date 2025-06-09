@@ -24,7 +24,6 @@
 <CommandPrimitive.Root
 	columns={6}
 	shouldFilter={false}
-	style="display: contents"
 	class="max-w-[232px]"
 	onValueChange={state.onValueChange}
 >

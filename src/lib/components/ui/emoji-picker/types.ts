@@ -3,6 +3,12 @@ import type { WithChildren, WithoutChild, WithoutChildren } from 'bits-ui';
 import type { Command as CommandPrimitive } from 'bits-ui';
 import type { Snippet } from 'svelte';
 
+export type SelectedEmoji = {
+	emoji: string;
+	data: Emoji;
+	skin: number;
+};
+
 /**
  * The skin tone modifier for the emoji
  *
@@ -23,7 +29,7 @@ export type EmojiPickerRootProps = WithChildren<{
 	 * @default '👋'
 	 */
 	skin?: EmojiPickerSkin;
-	onSelect?: (emoji: string) => void;
+	onSelect?: (emoji: SelectedEmoji) => void;
 }>;
 
 export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive.ListProps>> & {
@@ -34,5 +40,5 @@ export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive
 export type EmojiPickerSearchProps = CommandPrimitive.InputProps;
 
 export type EmojiPickerFooterProps = {
-	children: Snippet<[{ active: { emoji: string; data: Emoji; skin: number } | null }]>;
+	children: Snippet<[{ active: SelectedEmoji | null }]>;
 };

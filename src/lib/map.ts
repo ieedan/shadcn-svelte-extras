@@ -60,10 +60,11 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Emoji Picker',
-			description: 'An emoji picker component.',
+			description: 'A composable emoji picker component.',
 			href: '/components/emoji-picker',
 			specifier: 'ui/emoji-picker',
-			source: 'src/lib/components/ui/emoji-picker/emoji-picker.svelte'
+			source: 'src/lib/components/ui/emoji-picker/emoji-picker.svelte',
+			status: 'New'
 		},
 		{
 			name: 'Field Set',
