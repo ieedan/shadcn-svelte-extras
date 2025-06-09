@@ -3,10 +3,7 @@
 	import { toast } from 'svelte-sonner';
 </script>
 
-<EmojiPicker.Root
-	skin="👋🏽"
-	onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}
->
+<EmojiPicker.Root skin={3} onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}>
 	<EmojiPicker.Viewport>
 		<EmojiPicker.Search value="hand" />
 		<EmojiPicker.List />

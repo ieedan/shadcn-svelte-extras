@@ -5,15 +5,6 @@ import data, { type EmojiMartData } from '@emoji-mart/data';
 
 const emojiData = data as EmojiMartData;
 
-const SKIN_MAP = {
-	'👋': 0,
-	'👋🏻': 1,
-	'👋🏼': 2,
-	'👋🏽': 3,
-	'👋🏾': 4,
-	'👋🏿': 5
-};
-
 type EmojiPickerState = {
 	search: string;
 	active: SelectedEmoji | null;
@@ -26,8 +17,9 @@ const defaultState: EmojiPickerState = {
 
 type EmojiPickerRootProps = WritableBoxedValues<{
 	value: string;
+	skin: EmojiPickerSkin;
 }> &
-	ReadableBoxedValues<{ skin: EmojiPickerSkin; onSelect: (emoji: SelectedEmoji) => void }>;
+	ReadableBoxedValues<{ onSelect: (emoji: SelectedEmoji) => void }>;
 
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
@@ -35,12 +27,6 @@ class EmojiPickerRootState {
 	constructor(readonly opts: EmojiPickerRootProps) {
 		this.select = this.select.bind(this);
 		this.onValueChange = this.onValueChange.bind(this);
-	}
-
-	get skinIndex() {
-		if (typeof this.opts.skin.current === 'number') return this.opts.skin.current;
-
-		return SKIN_MAP[this.opts.skin.current];
 	}
 
 	select(emoji: string) {
@@ -88,7 +74,7 @@ class EmojiPickerListState {
 	}
 
 	get skinIndex() {
-		return this.root.skinIndex;
+		return this.root.opts.skin.current;
 	}
 
 	select(emoji: string) {
@@ -118,6 +104,61 @@ class EmojiPickerFooterState {
 	constructor(readonly root: EmojiPickerRootState) {}
 }
 
+type EmojiPickerSkinProps = ReadableBoxedValues<{
+	previewEmoji: string;
+}>;
+
+class EmojiPickerSkinToneSelectorState {
+	constructor(
+		readonly root: EmojiPickerRootState,
+		readonly opts: EmojiPickerSkinProps
+	) {
+		this.cycleSkinTone = this.cycleSkinTone.bind(this);
+	}
+
+	previewEmoji = $derived.by(() => {
+		for (const emoji of Object.entries(emojiData.emojis)) {
+			const [_, data] = emoji;
+
+			let found = false;
+			for (const skin of data.skins) {
+				if (skin.native === this.opts.previewEmoji.current) {
+					found = true;
+					break;
+				}
+			}
+
+			if (!found) continue;
+
+			if (data.skins.length === 0) {
+				throw new Error(
+					`The selected previewEmoji: ${this.opts.previewEmoji.current} does not have multiple skins!`
+				);
+			}
+
+			return data;
+		}
+
+		return null;
+	});
+
+	get preview() {
+		if (!this.previewEmoji) return null;
+
+		return this.previewEmoji.skins[this.root.opts.skin.current].native;
+	}
+
+	cycleSkinTone() {
+		if (!this.previewEmoji) return;
+
+		if (this.root.opts.skin.current + 1 > 5) {
+			this.root.opts.skin.current = 0;
+		} else {
+			this.root.opts.skin.current += 1;
+		}
+	}
+}
+
 const ctx = new Context<EmojiPickerRootState>('emoji-picker-root-state');
 
 export function useEmojiPicker(props: EmojiPickerRootProps) {
@@ -134,4 +175,8 @@ export function useEmojiPickerInput(props: EmojiPickerInputProps) {
 
 export function useEmojiPickerFooter() {
 	return new EmojiPickerFooterState(ctx.get());
+}
+
+export function useEmojiPickerSkinToneSelector(props: EmojiPickerSkinProps) {
+	return new EmojiPickerSkinToneSelectorState(ctx.get(), props);
 }

@@ -7,16 +7,17 @@
 	<EmojiPicker.Viewport>
 		<EmojiPicker.Search />
 		<EmojiPicker.List />
-		<EmojiPicker.Footer>
+		<EmojiPicker.Footer class="flex max-w-full place-items-center gap-2 px-2">
 			{#snippet children({ active })}
 				{#if active}
-					<div class="flex max-w-full items-center gap-2">
+					<div class="flex w-[calc(100%-40px)] items-center gap-2">
 						<span class="text-lg">{active.emoji}</span>
 						<span class="text-muted-foreground truncate text-xs">
 							{active.data.name}
 						</span>
 					</div>
 				{/if}
+				<EmojiPicker.SkinToneSelector previewEmoji="🫵" />
 			{/snippet}
 		</EmojiPicker.Footer>
 	</EmojiPicker.Viewport>

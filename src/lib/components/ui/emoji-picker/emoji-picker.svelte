@@ -6,7 +6,7 @@
 
 	let {
 		value = $bindable(''),
-		skin = '👋',
+		skin = $bindable(0),
 		onSelect = () => {},
 		children
 	}: EmojiPickerRootProps = $props();
@@ -16,7 +16,10 @@
 			() => value,
 			(v) => (value = v)
 		),
-		skin: box.with(() => skin),
+		skin: box.with(
+			() => skin,
+			(v) => (skin = v)
+		),
 		onSelect: box.with(() => onSelect)
 	});
 </script>
