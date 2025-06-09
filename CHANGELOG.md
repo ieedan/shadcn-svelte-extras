@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 4.0.1
+
+### Patch Changes
+
+- fix(ui/button): Relocate types to be exported from the same place as the original component ([#210](https://github.com/ieedan/shadcn-svelte-extras/pull/210))
+
 ## 4.0.0
 
 ### Major Changes
