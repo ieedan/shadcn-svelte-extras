@@ -36,6 +36,7 @@
 		"@tailwindcss/vite": "^4.1.7",
 		"bits-ui": "2.4.1",
 		"clsx": "^2.1.1",
+		"country-flag-icons": "^1.5.19",
 		"eslint": "^9.28.0",
 		"eslint-config-prettier": "^10.1.5",
 		"eslint-plugin-svelte": "^3.9.1",
