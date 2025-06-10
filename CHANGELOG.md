@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 4.1.0
+
+### Minor Changes
+
+- fix(ui/phone-input): Ensure country flags are the correct size ([#214](https://github.com/ieedan/shadcn-svelte-extras/pull/214))
+
+### Patch Changes
+
+- chore: Bump deps ([#214](https://github.com/ieedan/shadcn-svelte-extras/pull/214))
+
 ## 4.0.1
 
 ### Patch Changes
