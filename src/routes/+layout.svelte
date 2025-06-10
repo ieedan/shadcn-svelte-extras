@@ -27,8 +27,10 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { CodeSpan } from '$lib/components/docs';
 	import { MetaTags } from '$lib/components/site/meta-tags';
+	import { StarButton } from '$lib/components/ui/star-button';
+	import { onMount } from 'svelte';
 
-	let { children } = $props();
+	let { data, children } = $props();
 
 	const commandState = commandContext.set(new UseBoolean(false));
 
@@ -187,14 +189,12 @@
 						</Dialog.Content>
 					</Dialog.Root>
 				{/if}
-				<Button
-					variant="ghost"
-					size="icon"
-					href="https://github.com/ieedan/shadcn-svelte-extras"
+				<StarButton
+					href="https://github.com/huntabyte/shadcn-svelte"
 					target="_blank"
-				>
-					<Icons.GitHub class="size-4" />
-				</Button>
+					stars={data.stars}
+					fallback={data.FALLBACK_STARS}
+				/>
 				<LightSwitch variant="ghost" />
 			</div>
 		</header>
