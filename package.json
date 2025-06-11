@@ -19,6 +19,7 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.4",
+		"@emoji-mart/data": "^1.2.1",
 		"@eslint/compat": "^1.2.9",
 		"@eslint/js": "^9.28.0",
 		"@fontsource-variable/geist-mono": "^5.2.6",
@@ -34,7 +35,7 @@
 		"@sveltejs/kit": "^2.21.4",
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
 		"@tailwindcss/vite": "^4.1.8",
-		"bits-ui": "2.5.0",
+		"bits-ui": "^2.6.0",
 		"clsx": "^2.1.1",
 		"country-flag-icons": "^1.5.19",
 		"eslint": "^9.28.0",
