@@ -5,6 +5,7 @@
 
 <div class="flex flex-col place-items-center gap-4">
 	<EmojiPicker.Root
+		disableInitialScroll
 		showRecents
 		recentsKey="emoji-picker-recents"
 		onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}

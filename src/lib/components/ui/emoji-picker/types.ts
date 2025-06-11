@@ -25,8 +25,7 @@ export type SelectedEmoji = {
  */
 export type EmojiPickerSkin = 0 | 1 | 2 | 3 | 4 | 5;
 
-export type EmojiPickerRootProps = WithChildren<{
-	value?: string;
+export type EmojiPickerRootPropsWithoutHTML = WithChildren<{
 	/**
 	 * The default skin to use
 	 *
@@ -61,6 +60,11 @@ export type EmojiPickerRootProps = WithChildren<{
 				maxRecents?: never;
 		  }
 	);
+
+export type EmojiPickerRootProps = WithoutChild<
+	Omit<CommandPrimitive.RootProps, 'filter' | 'shouldFilter' | 'columns' | 'onValueChange'>
+> &
+	EmojiPickerRootPropsWithoutHTML;
 
 export type EmojiPickerListPropsWithoutHTML = {
 	emptyMessage?: string;

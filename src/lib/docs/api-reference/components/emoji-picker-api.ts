@@ -1,20 +1,15 @@
 import * as api from '../api-reference';
 import type {
-	EmojiPickerRootProps,
 	EmojiPickerFooterPropsWithoutHTML,
 	EmojiPickerSkinPropsWithoutHTML,
-	EmojiPickerListPropsWithoutHTML
+	EmojiPickerListPropsWithoutHTML,
+	EmojiPickerRootPropsWithoutHTML
 } from '$lib/components/ui/emoji-picker';
 
-const Root = api.createComponentReference<EmojiPickerRootProps>({
+const Root = api.createComponentReference<EmojiPickerRootPropsWithoutHTML>({
 	name: 'Root',
 	description: 'The root component of the emoji picker.',
 	props: {
-		value: api.createStringProp({
-			description: 'The selected emoji value.',
-			bindable: true,
-			defaultValue: "''"
-		}),
 		skin: api.createNumberUnionProp({
 			type: '0 | 1 | 2 | 3 | 4 | 5',
 			description: 'The default skin tone to use.',

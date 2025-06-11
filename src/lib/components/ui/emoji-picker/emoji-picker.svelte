@@ -3,6 +3,7 @@
 	import type { EmojiPickerRootProps } from './types';
 	import { useEmojiPicker } from './emoji-picker.svelte.js';
 	import { Command as CommandPrimitive } from 'bits-ui';
+	import { cn } from '$lib/utils/utils';
 
 	let {
 		value = $bindable(''),
@@ -12,7 +13,9 @@
 		recentsKey = '',
 		maxRecents = 12,
 		onSkinChange = () => {},
-		children
+		class: className,
+		children,
+		...rest
 	}: EmojiPickerRootProps = $props();
 
 	const state = useEmojiPicker({
@@ -33,9 +36,10 @@
 </script>
 
 <CommandPrimitive.Root
+	{...rest}
 	columns={6}
 	shouldFilter={false}
-	class="max-w-[232px]"
+	class={cn('max-w-[232px]', className)}
 	onValueChange={state.onValueChange}
 >
 	{@render children?.()}

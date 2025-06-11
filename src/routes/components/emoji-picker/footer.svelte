@@ -8,6 +8,7 @@
 </script>
 
 <EmojiPicker.Root
+	disableInitialScroll
 	bind:skin={skin.current}
 	onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}
 >

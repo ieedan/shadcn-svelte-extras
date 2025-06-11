@@ -12,6 +12,7 @@
 </script>
 
 <EmojiPicker.Root
+	disableInitialScroll
 	bind:value={emoji}
 	onSelect={(selected) => {
 		open = false;
