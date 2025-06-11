@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 4.2.0
+
+### Minor Changes
+
+- feat(ui/emoji-picker): Emoji picker ([#208](https://github.com/ieedan/shadcn-svelte-extras/pull/208))
+
 ## 4.1.0
 
 ### Minor Changes
