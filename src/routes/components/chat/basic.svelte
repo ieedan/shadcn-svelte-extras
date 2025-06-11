@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<Chat.List class="max-h-[400px]">
-		{#each messages as message (message.sentAt)}
+		{#each messages as message (message)}
 			{@const sender = data.users.find((u) => u.id === message.senderId)}
 
 			<Chat.Bubble variant={message.senderId === data.user.id ? 'sent' : 'received'}>
