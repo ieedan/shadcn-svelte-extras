@@ -2,6 +2,7 @@ import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { EmojiPickerSkin, SelectedEmoji } from './types';
 import data, { type EmojiMartData } from '@emoji-mart/data';
+import { UseFrecency } from '$lib/hooks/use-frecency.svelte';
 
 const emojiData = data as EmojiMartData;
 
@@ -19,14 +20,34 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 	value: string;
 	skin: EmojiPickerSkin;
 }> &
-	ReadableBoxedValues<{ onSelect: (emoji: SelectedEmoji) => void }>;
+	ReadableBoxedValues<{
+		onSelect: (emoji: SelectedEmoji) => void;
+		showRecents: boolean;
+		recentsKey: string;
+		maxRecents: number;
+		onSkinChange: (skin: EmojiPickerSkin) => void;
+	}>;
 
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
+	frecency: UseFrecency | null;
 
 	constructor(readonly opts: EmojiPickerRootProps) {
 		this.select = this.select.bind(this);
 		this.onValueChange = this.onValueChange.bind(this);
+
+		if (this.opts.showRecents) {
+			if (!this.opts.recentsKey)
+				throw new Error('[emoji-picker] recentsKey is required when recents is true');
+
+			this.frecency = new UseFrecency(
+				this.opts.recentsKey.current,
+				{},
+				{ maxItems: this.opts.maxRecents.current }
+			);
+		} else {
+			this.frecency = null;
+		}
 	}
 
 	select(emoji: string) {
@@ -55,7 +76,7 @@ class EmojiPickerRootState {
 
 		const data = emojiData.emojis[name];
 
-		if (data.skins.length === 0) {
+		if (data.skins.length === 1) {
 			this.emojiPickerState.active = {
 				emoji: data.skins[0].native,
 				data: data,
@@ -92,6 +113,18 @@ class EmojiPickerListState {
 
 	select(emoji: string) {
 		this.root.select(emoji);
+	}
+
+	get maxRecents() {
+		if (this.root.opts.showRecents) {
+			return this.root.opts.maxRecents.current;
+		}
+
+		return 0;
+	}
+
+	get showRecents() {
+		return this.root.opts.showRecents.current && this.root.frecency !== null;
 	}
 }
 
@@ -169,6 +202,8 @@ class EmojiPickerSkinToneSelectorState {
 		} else {
 			this.root.opts.skin.current += 1;
 		}
+
+		this.root.opts.onSkinChange.current(this.root.opts.skin.current as EmojiPickerSkin);
 	}
 }
 

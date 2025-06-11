@@ -3,7 +3,9 @@
 	import { toast } from 'svelte-sonner';
 </script>
 
-<EmojiPicker.Root onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}>
+<EmojiPicker.Root
+	onSelect={(selected) => toast.success(`You selected ${selected.emoji}`)}
+>
 	<EmojiPicker.Viewport>
 		<EmojiPicker.Search />
 		<EmojiPicker.List />

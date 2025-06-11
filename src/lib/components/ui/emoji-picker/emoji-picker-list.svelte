@@ -2,7 +2,6 @@
 	import * as Command from '$lib/components/ui/command';
 	import { Command as CommandPrimitive } from 'bits-ui';
 	import data, { type EmojiMartData } from '@emoji-mart/data';
-	import { UseFrecency } from '$lib/hooks/use-frecency.svelte';
 	import * as casing from '$lib/utils/casing';
 	import type { EmojiPickerListProps } from './types';
 	import { makeValue, parseValue, useEmojiPickerList } from './emoji-picker.svelte.js';
@@ -10,15 +9,12 @@
 
 	let {
 		ref = $bindable(null),
-		maxRecents = 12,
 		emptyMessage = 'No results.',
 		class: className,
 		...rest
 	}: EmojiPickerListProps = $props();
 
 	const emojiData = data as EmojiMartData;
-
-	const frecency = new UseFrecency('emoji-picker-frecency', {}, { maxItems: maxRecents });
 
 	const filter = (value: string, keywords: string[]) => {
 		if (!Array.isArray(keywords)) {
@@ -39,14 +35,14 @@
 	<Command.Empty class="absolute inset-0 flex place-items-center justify-center py-0">
 		{emptyMessage}
 	</Command.Empty>
-	{#if maxRecents > 0}
-		{@const recents = frecency.items
+	{#if pickerState.showRecents}
+		{@const recents = pickerState.root.frecency?.items
 			.filter((item) => {
 				const { name } = parseValue(item);
 				return filter(pickerState.root.emojiPickerState.search, emojiData.emojis[name].keywords);
 			})
-			.slice(0, maxRecents)}
-		{#if recents.length > 0}
+			.slice(0, pickerState.maxRecents)}
+		{#if recents && recents.length > 0}
 			<CommandPrimitive.Group>
 				<CommandPrimitive.GroupHeading class="text-muted-foreground px-2 py-1 text-xs">
 					Recents
@@ -55,13 +51,12 @@
 					{#each recents as item (item)}
 						{@const { name, skin } = parseValue(item)}
 						{@const emoji = emojiData.emojis[name].skins[skin].native}
-						{@const emojiIdentifier = item}
 						<Command.Item
 							class="flex aspect-square size-9 place-items-center justify-center text-lg"
 							value="{item}:recent"
 							onSelect={() => {
-								pickerState.select(emojiIdentifier);
-								frecency.use(item);
+								pickerState.select(item);
+								pickerState.root.frecency?.use(item);
 							}}
 						>
 							{emoji}
@@ -90,7 +85,7 @@
 							value={item}
 							onSelect={() => {
 								pickerState.select(key);
-								frecency.use(key);
+								pickerState.root.frecency?.use(key);
 							}}
 						>
 							{emoji.skins[emojiSkin].native}

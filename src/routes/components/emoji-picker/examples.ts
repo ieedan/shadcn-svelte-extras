@@ -6,6 +6,8 @@ import Popover from './popover.svelte';
 import popoverRaw from './popover.svelte?raw';
 import Footer from './footer.svelte';
 import footerRaw from './footer.svelte?raw';
+import Recents from './recents.svelte';
+import recentsRaw from './recents.svelte?raw';
 
 const examples = {
 	basic: {
@@ -23,6 +25,10 @@ const examples = {
 	footer: {
 		code: footerRaw,
 		Component: Footer
+	},
+	recents: {
+		code: recentsRaw,
+		Component: Recents
 	}
 };
 

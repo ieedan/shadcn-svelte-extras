@@ -8,6 +8,10 @@
 		value = $bindable(''),
 		skin = $bindable(0),
 		onSelect = () => {},
+		showRecents = false,
+		recentsKey = '',
+		maxRecents = 12,
+		onSkinChange = () => {},
 		children
 	}: EmojiPickerRootProps = $props();
 
@@ -20,7 +24,11 @@
 			() => skin,
 			(v) => (skin = v)
 		),
-		onSelect: box.with(() => onSelect)
+		showRecents: box.with(() => showRecents),
+		recentsKey: box.with(() => recentsKey),
+		maxRecents: box.with(() => maxRecents),
+		onSelect: box.with(() => onSelect),
+		onSkinChange: box.with(() => onSkinChange)
 	});
 </script>
 

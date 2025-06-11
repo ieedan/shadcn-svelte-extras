@@ -43,10 +43,26 @@ export type EmojiPickerRootProps = WithChildren<{
 	 */
 	skin?: EmojiPickerSkin;
 	onSelect?: (emoji: SelectedEmoji) => void;
-}>;
+	onSkinChange?: (skin: EmojiPickerSkin) => void;
+}> &
+	(
+		| {
+				/** Show recently used emojis */
+				showRecents?: true;
+				/** The key to use to store the recently used emojis */
+				recentsKey: string;
+				maxRecents?: number;
+		  }
+		| {
+				/** Show recently used emojis */
+				showRecents?: false | never;
+				/** The key to use to store the recently used emojis */
+				recentsKey?: never;
+				maxRecents?: never;
+		  }
+	);
 
 export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive.ListProps>> & {
-	maxRecents?: number;
 	emptyMessage?: string;
 };
 
