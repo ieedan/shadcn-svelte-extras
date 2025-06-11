@@ -17,14 +17,12 @@
 		<EmojiPicker.List />
 		<EmojiPicker.Footer class="flex max-w-full place-items-center gap-2 px-2">
 			{#snippet children({ active })}
-				{#if active}
-					<div class="flex w-[calc(100%-40px)] items-center gap-2">
-						<span class="text-lg">{active.emoji}</span>
-						<span class="text-muted-foreground truncate text-xs">
-							{active.data.name}
-						</span>
-					</div>
-				{/if}
+				<div class="flex w-[calc(100%-40px)] items-center gap-2">
+					<span class="text-lg">{active?.emoji}</span>
+					<span class="text-muted-foreground truncate text-xs">
+						{active?.data.name}
+					</span>
+				</div>
 				<EmojiPicker.SkinToneSelector previewEmoji="🫵" />
 			{/snippet}
 		</EmojiPicker.Footer>

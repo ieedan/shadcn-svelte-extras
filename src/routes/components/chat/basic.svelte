@@ -1,15 +1,20 @@
 <script lang="ts">
 	import * as Chat from '$lib/components/ui/chat';
+	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
+	import * as Popover from '$lib/components/ui/popover';
 	import * as Avatar from '$lib/components/ui/avatar';
-	import { Button } from '$lib/components/ui/button';
-	import { InfoIcon, PaperclipIcon, PhoneIcon, SendIcon, VideoIcon } from '@lucide/svelte';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { InfoIcon, PhoneIcon, SendIcon, SmilePlusIcon, VideoIcon } from '@lucide/svelte';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
 	import { formatShortTime, initials } from './utils';
+	import { cn } from '$lib/utils/utils';
 
 	let message = $state('');
 
 	const messages = $state(data.messages);
+
+	let open = $state(false);
 </script>
 
 <div class="border-border w-full border">
@@ -39,7 +44,7 @@
 		</div>
 	</div>
 	<Chat.List class="max-h-[400px]">
-		{#each messages as message (message.sentAt)}
+		{#each messages as message (message)}
 			{@const sender = data.users.find((u) => u.id === message.senderId)}
 
 			<Chat.Bubble variant={message.senderId === data.user.id ? 'sent' : 'received'}>
@@ -77,9 +82,38 @@
 		}}
 		class="flex place-items-center gap-2 p-2"
 	>
-		<Button variant="ghost" size="icon" class="shrink-0 rounded-full">
-			<PaperclipIcon />
-		</Button>
+		<EmojiPicker.Root
+			showRecents
+			recentsKey="emoji-picker-recents"
+			disableInitialScroll
+			onSelect={(selected) => {
+				open = false;
+				message += selected.emoji;
+			}}
+		>
+			<Popover.Root bind:open>
+				<Popover.Trigger
+					class={cn(buttonVariants({ variant: 'outline', size: 'icon' }), 'shrink-0 rounded-full')}
+				>
+					<SmilePlusIcon />
+				</Popover.Trigger>
+				<Popover.Content class="w-auto p-0" side="top" align="start">
+					<EmojiPicker.Search />
+					<EmojiPicker.List class="h-[175px]" />
+					<EmojiPicker.Footer class="relative flex max-w-[232px] place-items-center gap-2 px-2">
+						{#snippet children({ active })}
+							<div class="flex w-[calc(100%-40px)] items-center gap-2">
+								<span class="text-lg">{active?.emoji}</span>
+								<span class="text-muted-foreground truncate text-xs">
+									{active?.data.name}
+								</span>
+							</div>
+							<EmojiPicker.SkinToneSelector />
+						{/snippet}
+					</EmojiPicker.Footer>
+				</Popover.Content>
+			</Popover.Root>
+		</EmojiPicker.Root>
 		<Input bind:value={message} class="rounded-full" placeholder="Type a message..." />
 		<Button
 			type="submit"
