@@ -62,9 +62,12 @@ export type EmojiPickerRootProps = WithChildren<{
 		  }
 	);
 
-export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive.ListProps>> & {
+export type EmojiPickerListPropsWithoutHTML = {
 	emptyMessage?: string;
 };
+
+export type EmojiPickerListProps = WithoutChildren<WithoutChild<CommandPrimitive.ListProps>> &
+	EmojiPickerListPropsWithoutHTML;
 
 export type EmojiPickerSearchProps = CommandPrimitive.InputProps;
 

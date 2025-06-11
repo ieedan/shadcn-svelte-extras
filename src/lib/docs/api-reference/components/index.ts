@@ -26,6 +26,7 @@ import { reference as ThemeSelectorReference } from './theme-selector-api';
 import { reference as TocReference } from './toc-api';
 import { reference as TreeViewReference } from './tree-view-api';
 import { reference as WindowReference } from './window-api';
+import { reference as EmojiPickerReference } from './emoji-picker-api';
 
 export const references = [
 	AvatarGroupReference,
@@ -52,7 +53,8 @@ export const references = [
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
-	WindowReference
+	WindowReference,
+	EmojiPickerReference
 ];
 
 /** Get a reference by name
@@ -88,5 +90,6 @@ export {
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
-	WindowReference
+	WindowReference,
+	EmojiPickerReference
 };
