@@ -51,10 +51,23 @@ class EmojiPickerRootState {
 
 		const { name, skin } = parseValue(value);
 
+		const emojiSkin = skin ? skin : this.opts.skin.current;
+
+		const data = emojiData.emojis[name];
+
+		if (data.skins.length === 0) {
+			this.emojiPickerState.active = {
+				emoji: data.skins[0].native,
+				data: data,
+				skin: 0
+			};
+			return;
+		}
+
 		this.emojiPickerState.active = {
-			emoji: emojiData.emojis[name].skins[skin].native,
-			data: emojiData.emojis[name],
-			skin
+			emoji: data.skins[emojiSkin].native,
+			data: data,
+			skin: emojiSkin
 		};
 	}
 }

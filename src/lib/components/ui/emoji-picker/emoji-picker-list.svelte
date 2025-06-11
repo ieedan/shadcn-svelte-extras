@@ -87,7 +87,7 @@
 						{@const key = makeValue(item, emojiSkin)}
 						<Command.Item
 							class="flex aspect-square size-9 place-items-center justify-center text-lg"
-							value={key}
+							value={item}
 							onSelect={() => {
 								pickerState.select(key);
 								frecency.use(key);

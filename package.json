@@ -35,7 +35,7 @@
 		"@sveltejs/kit": "^2.21.4",
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
 		"@tailwindcss/vite": "^4.1.8",
-		"bits-ui": "https://pkg.pr.new/bits-ui@192d319",
+		"bits-ui": "^2.6.0",
 		"clsx": "^2.1.1",
 		"country-flag-icons": "^1.5.19",
 		"eslint": "^9.28.0",
