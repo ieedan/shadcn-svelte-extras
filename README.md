@@ -16,6 +16,7 @@ Turn key shadcn-svelte components to help you finish your app.
 | [Chat](https://shadcn-svelte-extras.com/components/chat)                           | A component for creating live chats                                                     |
 | [Code](https://shadcn-svelte-extras.com/components/code)                           | A code component                                                                        |
 | [Copy Button](https://shadcn-svelte-extras.com/components/copy-button)             | A button used to copy text to the clipboard                                             |
+| [Emoji Picker](https://shadcn-svelte-extras.com/components/emoji-picker)           | A composable emoji picker component                                                     |
 | [Field Set](https://shadcn-svelte-extras.com/components/field-set)                 | A field set component                                                                   |
 | [File Drop Zone](https://shadcn-svelte-extras.com/components/file-drop-zone)       | A file drop zone component                                                              |
 | [Image Cropper](https://shadcn-svelte-extras.com/components/image-cropper)         | A component for uploading and resizing images                                           |
