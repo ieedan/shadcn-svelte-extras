@@ -23,6 +23,9 @@
 	<EmojiPicker.Viewport>
 		<EmojiPicker.Search />
 		<EmojiPicker.List />
+		<EmojiPicker.Footer>
+			<EmojiPicker.SkinToneSelector />
+		</EmojiPicker.Footer>
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>`}
 	/>
