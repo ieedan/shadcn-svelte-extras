@@ -67,7 +67,7 @@
 
 @theme inline {
 	--font-mono: 'Geist Mono Variable', monospace;
-	--font-sans: 'Inter Variable', sans-serif;
+	--font-sans: 'Geist Variable', sans-serif;
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);
 	--radius-lg: var(--radius);

@@ -22,8 +22,8 @@
 		"@emoji-mart/data": "^1.2.1",
 		"@eslint/compat": "^1.2.9",
 		"@eslint/js": "^9.28.0",
+		"@fontsource-variable/geist": "^5.2.6",
 		"@fontsource-variable/geist-mono": "^5.2.6",
-		"@fontsource-variable/inter": "^5.2.6",
 		"@inlang/cli": "^3.0.11",
 		"@inlang/paraglide-js": "2.0.13",
 		"@internationalized/date": "^3.8.2",
@@ -34,7 +34,10 @@
 		"@sveltejs/adapter-vercel": "^5.7.2",
 		"@sveltejs/kit": "^2.21.4",
 		"@sveltejs/vite-plugin-svelte": "^5.1.0",
-		"@tailwindcss/vite": "^4.1.8",
+		"@tailwindcss/vite": "^4.1.9",
+		"@zxcvbn-ts/core": "^3.0.4",
+		"@zxcvbn-ts/language-common": "^3.0.4",
+		"@zxcvbn-ts/language-en": "^3.0.2",
 		"bits-ui": "^2.6.0",
 		"clsx": "^2.1.1",
 		"country-flag-icons": "^1.5.19",
@@ -54,13 +57,13 @@
 		"svelte-check": "^4.2.1",
 		"svelte-easy-crop": "^4.0.1",
 		"svelte-meta-tags": "^4.4.0",
-		"svelte-sonner": "^1.0.4",
+		"svelte-sonner": "^1.0.5",
 		"svelte-tel-input": "^3.6.0",
 		"svelte-toolbelt": "^0.9.1",
 		"sveltekit-superforms": "^2.26.1",
-		"tailwind-merge": "^3.3.0",
+		"tailwind-merge": "^3.3.1",
 		"tailwind-variants": "^1.0.0",
-		"tailwindcss": "^4.1.8",
+		"tailwindcss": "^4.1.9",
 		"tw-animate-css": "^1.3.4",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.34.0",
@@ -80,6 +83,6 @@
 	},
 	"dependencies": {
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"jsrepo": "^2.3.3"
+		"jsrepo": "^2.4.0"
 	}
 }

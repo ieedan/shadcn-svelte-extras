@@ -73,6 +73,7 @@
 		type = 'button',
 		loading = false,
 		disabled = false,
+		tabindex = 0,
 		onclick,
 		onClickPromise,
 		class: className,
@@ -91,7 +92,7 @@
 	disabled={href ? undefined : disabled || loading}
 	aria-disabled={href ? disabled : undefined}
 	role={href && disabled ? 'link' : undefined}
-	tabindex={href && disabled ? -1 : 0}
+	tabindex={href && disabled ? -1 : tabindex}
 	class={cn(buttonVariants({ variant, size }), className)}
 	bind:this={ref}
 	onclick={async (
