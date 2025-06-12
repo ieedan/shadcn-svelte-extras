@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 4.3.0
+
+### Minor Changes
+
+- feat(ui/password): Add a password component ([#218](https://github.com/ieedan/shadcn-svelte-extras/pull/218))
+
 ## 4.2.0
 
 ### Minor Changes
