@@ -25,6 +25,7 @@
 	</Card.Header>
 	<Card.Content class="flex flex-col gap-4">
 		<form
+			method="POST"
 			onsubmit={(e) => {
 				e.preventDefault();
 				submit();
