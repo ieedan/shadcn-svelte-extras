@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
+	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { examples } from './examples';
+	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Playground code={examples.basic.code}>
@@ -27,6 +28,11 @@
 </Password.Root>`}
 	/>
 </div>
+<Subheading>Toggle Visibility</Subheading>
+<p>Add a button to toggle the visibility of the password.</p>
+<Playground code={examples.toggleVisibility.code}>
+	<examples.toggleVisibility.Component />
+</Playground>
 <Subheading>Copy</Subheading>
 <p>Add a button to copy the secret to the clipboard.</p>
 <Playground code={examples.copy.code}>
@@ -37,13 +43,15 @@
 <Playground code={examples.both.code}>
 	<examples.both.Component />
 </Playground>
-<Subheading>Min Score</Subheading>
-<p>Set a minimum score for the password to control when the password is considered valid.</p>
-<Playground code={examples.minScore.code}>
-	<examples.minScore.Component />
-</Playground>
-<Subheading>Tainted</Subheading>
-<p>The password input won't be styled as invalid until the user has interacted with it.</p>
-<Playground code={examples.tainted.code}>
-	<examples.tainted.Component />
+<Subheading>Strength</Subheading>
+<p>
+	Add a strength meter to the password input using
+	<Link href="https://zxcvbn-ts.github.io/zxcvbn/">zxcvbn-ts</Link>
+</p>
+<p>
+	When a password is too weak (as determined by the <CodeSpan>minScore</CodeSpan> prop) the input is
+	marked as invalid and users will be unable to submit the form.
+</p>
+<Playground code={examples.strength.code}>
+	<examples.strength.Component />
 </Playground>

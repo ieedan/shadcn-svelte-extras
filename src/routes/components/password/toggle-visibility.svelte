@@ -7,6 +7,5 @@
 		<Password.Input>
 			<Password.ToggleVisibility />
 		</Password.Input>
-		<Password.Strength />
 	</Password.Root>
 </div>
