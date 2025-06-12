@@ -4,11 +4,12 @@ import type {
 	Meter as MeterPrimitive,
 	Toggle as TogglePrimitive
 } from 'bits-ui';
-import type { HTMLInputAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLInputAttributes } from 'svelte/elements';
 import type { CopyButtonProps } from '$lib/components/ui/copy-button/types';
 import type { ZxcvbnResult } from '@zxcvbn-ts/core';
 
-export type PasswordRootProps = WithChildren<{
+export type PasswordRootPropsWithoutHTML = WithChildren<{
+	ref?: HTMLDivElement | null;
 	hidden?: boolean;
 	/** The minimum acceptable score for a password. (0-4)
 	 *
@@ -16,6 +17,9 @@ export type PasswordRootProps = WithChildren<{
 	 */
 	minScore?: number;
 }>;
+
+export type PasswordRootProps = WithoutChildren<HTMLAttributes<HTMLDivElement>> &
+	PasswordRootPropsWithoutHTML;
 
 export type PasswordInputPropsWithoutHTML = WithChildren<{
 	ref?: HTMLInputElement | null;

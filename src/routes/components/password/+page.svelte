@@ -46,7 +46,7 @@
 <Subheading>Strength</Subheading>
 <p>
 	Add a strength meter to the password input using
-	<Link href="https://zxcvbn-ts.github.io/zxcvbn/">zxcvbn-ts</Link>
+	<Link href="https://zxcvbn-ts.github.io/zxcvbn/" target="_blank">zxcvbn-ts</Link>
 </p>
 <p>
 	When a password is too weak (as determined by the <CodeSpan>minScore</CodeSpan> prop) the input is

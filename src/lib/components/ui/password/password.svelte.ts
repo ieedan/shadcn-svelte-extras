@@ -72,7 +72,11 @@ class PasswordInputState {
 		$effect(() => {
 			if (!this.root.passwordState.strengthMounted) return;
 
-			if (this.root.strength.score < this.root.opts.minScore.current) {
+			// if the password is empty, we let the `required` attribute handle the validation
+			if (
+				this.root.passwordState.value !== '' &&
+				this.root.strength.score < this.root.opts.minScore.current
+			) {
 				this.opts.ref.current?.setCustomValidity('Password is too weak');
 			} else {
 				this.opts.ref.current?.setCustomValidity('');

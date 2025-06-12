@@ -7,7 +7,8 @@
 		EditorFileTree,
 		FileDropZone,
 		Terminal,
-		PmCommand
+		PmCommand,
+		SignupForm
 	} from '$lib/components/docs/examples';
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
@@ -42,6 +43,7 @@
 			<ReviewForm />
 			<SearchButton />
 			<div class="flex flex-col gap-4 2xl:hidden">
+				<SignupForm />
 				<EditorFileTree />
 			</div>
 		</div>
@@ -59,6 +61,7 @@
 		<div class="hidden flex-col gap-4 2xl:col-start-3 2xl:flex">
 			<Terminal />
 			<PmCommand />
+			<SignupForm />
 			<EditorFileTree />
 		</div>
 	</div>

@@ -2,8 +2,15 @@
 	import { box } from 'svelte-toolbelt';
 	import { usePassword } from './password.svelte.js';
 	import type { PasswordRootProps } from './types';
+	import { cn } from '$lib/utils/utils.js';
 
-	let { hidden = $bindable(true), minScore = 3, children }: PasswordRootProps = $props();
+	let {
+		ref = $bindable(null),
+		hidden = $bindable(true),
+		minScore = 3,
+		class: className,
+		children
+	}: PasswordRootProps = $props();
 
 	usePassword({
 		hidden: box.with(
@@ -14,4 +21,6 @@
 	});
 </script>
 
-{@render children?.()}
+<div bind:this={ref} class={cn('flex flex-col gap-2', className)}>
+	{@render children?.()}
+</div>
