@@ -6,6 +6,7 @@ import EditorFileTree from './editor-file-tree.svelte';
 import Terminal from './terminal.svelte';
 import FileDropZone from './file-drop-zone.svelte';
 import PmCommand from './pm-command.svelte';
+import SignupForm from './signup-form.svelte';
 
 export {
 	ReviewForm,
@@ -15,5 +16,6 @@ export {
 	CodeBlock,
 	EditorFileTree,
 	Terminal,
-	FileDropZone
+	FileDropZone,
+	SignupForm
 };

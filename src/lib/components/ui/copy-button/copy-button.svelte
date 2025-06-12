@@ -15,6 +15,7 @@
 		size = 'icon',
 		onCopy,
 		class: className,
+		tabindex = -1,
 		children,
 		...rest
 	}: CopyButtonProps = $props();
@@ -32,10 +33,10 @@
 	bind:ref
 	{variant}
 	{size}
+	{tabindex}
 	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
-	tabindex={-1}
 	onclick={async () => {
 		const status = await clipboard.copy(text);
 
@@ -44,12 +45,12 @@
 >
 	{#if clipboard.status === 'success'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>
-			<CheckIcon />
+			<CheckIcon tabindex={-1} />
 			<span class="sr-only">Copied</span>
 		</div>
 	{:else if clipboard.status === 'failure'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>
-			<XIcon />
+			<XIcon tabindex={-1} />
 			<span class="sr-only">Failed to copy</span>
 		</div>
 	{:else}
@@ -57,7 +58,7 @@
 			{#if icon}
 				{@render icon()}
 			{:else}
-				<CopyIcon />
+				<CopyIcon tabindex={-1} />
 			{/if}
 			<span class="sr-only">Copy</span>
 		</div>

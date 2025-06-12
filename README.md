@@ -26,6 +26,7 @@ Turn key shadcn-svelte components to help you finish your app.
 | [Link](https://shadcn-svelte-extras.com/components/link)                           | A simple link component                                                                 |
 | [Modal](https://shadcn-svelte-extras.com/components/modal)                         | A responsive dialog component                                                           |
 | [NLP Date Input](https://shadcn-svelte-extras.com/components/nlp-date-input)       | A natural language date input with suggestions                                          |
+| [Password](https://shadcn-svelte-extras.com/components/password)                   | A password input component                                                              |
 | [Phone Input](https://shadcn-svelte-extras.com/components/phone-input)             | A phone number input component                                                          |
 | [PM Command](https://shadcn-svelte-extras.com/components/pm-command)               | A package manager command component                                                     |
 | [Snippet](https://shadcn-svelte-extras.com/components/snippet)                     | A snippet component                                                                     |

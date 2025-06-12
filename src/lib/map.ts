@@ -137,6 +137,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/nlp-date-input/nlp-date-input.svelte'
 		},
 		{
+			name: 'Password',
+			description: 'Components for handling passwords and other secrets.',
+			href: '/components/password',
+			specifier: 'ui/password',
+			source: 'src/lib/components/ui/password',
+			status: 'New'
+		},
+		{
 			name: 'Phone Input',
 			description: 'A phone number input component.',
 			href: '/components/phone-input',

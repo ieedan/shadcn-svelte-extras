@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '@fontsource-variable/geist-mono';
-	import '@fontsource-variable/inter';
+	import '@fontsource-variable/geist';
 	import { ModeWatcher } from 'mode-watcher';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 	import '../app.css';
