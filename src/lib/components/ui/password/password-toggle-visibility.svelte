@@ -5,12 +5,13 @@
 	import type { PasswordToggleVisibilityProps } from './types.js';
 	import { cn } from '$lib/utils/utils.js';
 
-	let { class: className }: PasswordToggleVisibilityProps = $props();
+	let { ref = $bindable(null), class: className }: PasswordToggleVisibilityProps = $props();
 
 	const state = usePasswordToggleVisibility();
 </script>
 
 <Toggle
+	bind:ref
 	aria-label={state.root.opts.hidden.current ? 'Show password' : 'Hide password'}
 	bind:pressed={state.root.opts.hidden.current}
 	class={cn(

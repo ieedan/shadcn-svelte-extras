@@ -3,13 +3,14 @@
 	import { usePassword } from './password.svelte.js';
 	import type { PasswordRootProps } from './types';
 
-	let { hidden = $bindable(true), children }: PasswordRootProps = $props();
+	let { hidden = $bindable(true), minScore = 3, children }: PasswordRootProps = $props();
 
 	usePassword({
 		hidden: box.with(
 			() => hidden,
 			(v) => (hidden = v)
-		)
+		),
+		minScore: box.with(() => minScore)
 	});
 </script>
 

@@ -1,18 +1,42 @@
-import type { WithChildren, WithoutChildren } from 'bits-ui';
+import type {
+	WithChildren,
+	WithoutChildren,
+	Meter as MeterPrimitive,
+	Toggle as TogglePrimitive
+} from 'bits-ui';
 import type { HTMLInputAttributes } from 'svelte/elements';
 import type { CopyButtonProps } from '$lib/components/ui/copy-button/types';
+import type { ZxcvbnResult } from '@zxcvbn-ts/core';
 
 export type PasswordRootProps = WithChildren<{
 	hidden?: boolean;
+	/** The minimum acceptable score for a password. (0-4)
+	 *
+	 * @default 3
+	 */
+	minScore?: number;
 }>;
 
-export type PasswordInputPropsWithoutHTML = WithChildren;
+export type PasswordInputPropsWithoutHTML = WithChildren<{
+	ref?: HTMLInputElement | null;
+}>;
 
-export type PasswordInputProps = Omit<WithoutChildren<HTMLInputAttributes>, 'type' | 'files'> &
+export type PasswordInputProps = Omit<
+	WithoutChildren<HTMLInputAttributes>,
+	'type' | 'files' | 'aria-invalid'
+> &
 	PasswordInputPropsWithoutHTML;
 
-export type PasswordToggleVisibilityProps = {
-	class?: string;
-};
+export type PasswordToggleVisibilityProps = Omit<
+	TogglePrimitive.RootProps,
+	'children' | 'pressed' | 'aria-label' | 'tabindex'
+>;
 
 export type PasswordCopyButtonProps = Omit<CopyButtonProps, 'children' | 'text'>;
+
+export type PasswordStrengthPropsWithoutHTML = {
+	strength?: ZxcvbnResult;
+};
+
+export type PasswordStrengthProps = PasswordStrengthPropsWithoutHTML &
+	WithoutChildren<MeterPrimitive.RootProps>;

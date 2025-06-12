@@ -37,3 +37,13 @@
 <Playground code={examples.both.code}>
 	<examples.both.Component />
 </Playground>
+<Subheading>Min Score</Subheading>
+<p>Set a minimum score for the password to control when the password is considered valid.</p>
+<Playground code={examples.minScore.code}>
+	<examples.minScore.Component />
+</Playground>
+<Subheading>Tainted</Subheading>
+<p>The password input won't be styled as invalid until the user has interacted with it.</p>
+<Playground code={examples.tainted.code}>
+	<examples.tainted.Component />
+</Playground>
