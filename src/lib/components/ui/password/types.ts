@@ -15,7 +15,7 @@ export type PasswordRootPropsWithoutHTML = WithChildren<{
 	 *
 	 * @default 3
 	 */
-	minScore?: number;
+	minScore?: 0 | 1 | 2 | 3 | 4;
 }>;
 
 export type PasswordRootProps = WithoutChildren<HTMLAttributes<HTMLDivElement>> &
@@ -23,11 +23,12 @@ export type PasswordRootProps = WithoutChildren<HTMLAttributes<HTMLDivElement>> 
 
 export type PasswordInputPropsWithoutHTML = WithChildren<{
 	ref?: HTMLInputElement | null;
+	value?: string;
 }>;
 
 export type PasswordInputProps = Omit<
 	WithoutChildren<HTMLInputAttributes>,
-	'type' | 'files' | 'aria-invalid'
+	'type' | 'files' | 'aria-invalid' | 'value'
 > &
 	PasswordInputPropsWithoutHTML;
 
