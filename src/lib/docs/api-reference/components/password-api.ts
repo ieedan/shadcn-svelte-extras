@@ -79,6 +79,7 @@ const Strength = api.createComponentReference<PasswordStrengthPropsWithoutHTML>(
 	props: {
 		strength: api.createAnyProp({
 			description: 'The zxcvbn result object for password strength.',
+			bindable: true,
 			type: 'ZxcvbnResult'
 		})
 	}
