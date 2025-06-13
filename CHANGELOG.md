@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 4.4.0
+
+### Minor Changes
+
+- feat(hooks): Add `is-mac` hook ([#222](https://github.com/ieedan/shadcn-svelte-extras/pull/222))
+
 ## 4.3.1
 
 ### Patch Changes
