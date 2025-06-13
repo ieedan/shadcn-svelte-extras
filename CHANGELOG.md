@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 4.3.1
+
+### Patch Changes
+
+- fix: Correctly bind strength for `Password.Strength` ([#220](https://github.com/ieedan/shadcn-svelte-extras/pull/220))
+
+- chore: bump deps ([#220](https://github.com/ieedan/shadcn-svelte-extras/pull/220))
+
 ## 4.3.0
 
 ### Minor Changes
