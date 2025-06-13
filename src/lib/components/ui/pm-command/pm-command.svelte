@@ -62,18 +62,20 @@
 				</Tabs.List>
 			</Tabs.Root>
 		</div>
-		<Tooltip.Root>
-			<Tooltip.Trigger>
-				{#snippet child({ props })}
-					<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
-						{#snippet icon()}
-							<ClipboardIcon />
-						{/snippet}
-					</CopyButton>
-				{/snippet}
-			</Tooltip.Trigger>
-			<Tooltip.Content>Copy to Clipboard</Tooltip.Content>
-		</Tooltip.Root>
+		<Tooltip.Provider delayDuration={0}>
+			<Tooltip.Root>
+				<Tooltip.Trigger>
+					{#snippet child({ props })}
+						<CopyButton {...props} text={commandText} class="size-6 [&_svg]:size-3">
+							{#snippet icon()}
+								<ClipboardIcon />
+							{/snippet}
+						</CopyButton>
+					{/snippet}
+				</Tooltip.Trigger>
+				<Tooltip.Content>Copy to Clipboard</Tooltip.Content>
+			</Tooltip.Root>
+		</Tooltip.Provider>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
 		<span class="text-muted-foreground font-mono text-sm leading-none font-light text-nowrap">
