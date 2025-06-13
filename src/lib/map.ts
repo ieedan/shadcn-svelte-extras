@@ -234,6 +234,14 @@ const map: Record<string, Route[]> = {
 	],
 	Hooks: [
 		{
+			name: 'IsMac',
+			description: 'A hook to determine if the user is on a Mac.',
+			href: '/hooks/is-mac',
+			specifier: 'hooks/is-mac.svelte',
+			source: 'src/lib/hooks/is-mac.svelte.ts',
+			status: 'New'
+		},
+		{
 			name: 'UseAutoScroll',
 			description:
 				'A hook to enable the creation of containers that automatically scroll to the bottom of their content.',
