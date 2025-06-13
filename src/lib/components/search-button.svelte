@@ -4,6 +4,7 @@
 	import { SearchIcon, CommandIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils/utils';
 	import { commandContext } from '$lib/context';
+	import { IsMac } from '$lib/hooks/is-mac.svelte';
 
 	type Props = {
 		class?: string;
@@ -12,6 +13,8 @@
 	let { class: className }: Props = $props();
 
 	const commandState = commandContext.get();
+
+	const isMac = new IsMac();
 </script>
 
 <Button
@@ -24,7 +27,11 @@
 		Search
 	</span>
 	<Kbd size="sm" variant="secondary">
-		<CommandIcon class="inline" />
+		{#if isMac.current}
+			<CommandIcon class="inline size-3" />
+		{:else}
+			Ctrl
+		{/if}
 		+ K
 	</Kbd>
 </Button>

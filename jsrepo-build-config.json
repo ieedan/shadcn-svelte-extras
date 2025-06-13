@@ -73,7 +73,8 @@
 		"use-boolean.svelte",
 		"use-clipboard.svelte",
 		"use-promise.svelte",
-		"use-toc.svelte"
+		"use-toc.svelte",
+		"is-mac.svelte"
 	],
 	"listCategories": [],
 	"excludeDeps": ["svelte", "@sveltejs/kit"],
