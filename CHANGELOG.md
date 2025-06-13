@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 4.4.1
+
+### Patch Changes
+
+- fix(ui/pm-command): Wrap tooltip in `Tooltip.Provider` to prevent errors ([#224](https://github.com/ieedan/shadcn-svelte-extras/pull/224))
+
 ## 4.4.0
 
 ### Minor Changes
