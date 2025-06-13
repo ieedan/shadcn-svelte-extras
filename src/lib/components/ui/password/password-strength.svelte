@@ -5,11 +5,15 @@
 	import { Meter } from 'bits-ui';
 	import { cn } from '$lib/utils/utils.js';
 
-	let { class: className }: PasswordStrengthProps = $props();
+	let { strength = $bindable(), class: className }: PasswordStrengthProps = $props();
 
 	const state = usePasswordStrength();
 
 	const score = $derived(state.strength.score);
+
+	$effect(() => {
+		strength = state.strength;
+	});
 
 	const color = tv({
 		base: '',
