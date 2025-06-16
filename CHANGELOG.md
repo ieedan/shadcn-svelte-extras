@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 5.0.0
+
+### Major Changes
+
+- breaking(hooks/is-mac.svelte): Export const (`isMac`) instead of class. ([#227](https://github.com/ieedan/shadcn-svelte-extras/pull/227))
+
+### Minor Changes
+
+- feat(hooks/is-mac.svelte): Export `cmdOrCtrl` and `optionOrAlt` helpers ([#227](https://github.com/ieedan/shadcn-svelte-extras/pull/227))
+
 ## 4.4.1
 
 ### Patch Changes
