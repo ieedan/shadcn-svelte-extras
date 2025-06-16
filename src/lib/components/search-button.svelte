@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { Kbd } from '$lib/components/ui/kbd';
 	import { Button } from '$lib/components/ui/button';
-	import { SearchIcon, CommandIcon } from '@lucide/svelte';
+	import { SearchIcon } from '@lucide/svelte';
 	import { cn } from '$lib/utils/utils';
 	import { commandContext } from '$lib/context';
-	import { IsMac } from '$lib/hooks/is-mac.svelte';
+	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
 
 	type Props = {
 		class?: string;
@@ -13,8 +13,6 @@
 	let { class: className }: Props = $props();
 
 	const commandState = commandContext.get();
-
-	const isMac = new IsMac();
 </script>
 
 <Button
@@ -27,11 +25,6 @@
 		Search
 	</span>
 	<Kbd size="sm" variant="secondary">
-		{#if isMac.current}
-			<CommandIcon class="inline size-3" />
-		{:else}
-			Ctrl
-		{/if}
-		+ K
+		{cmdOrCtrl} + K
 	</Kbd>
 </Button>

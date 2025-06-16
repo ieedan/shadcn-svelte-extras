@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
+	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
@@ -15,16 +15,22 @@
 <div>
 	<Code
 		lang="svelte"
-		highlight={[2, 4]}
+		highlight={[2, 5]}
 		code={`\<script lang="ts"\>
-    import { IsMac } from '$lib/hooks/is-mac.svelte.js';
-
-    const isMac = new IsMac();
+    import { isMac } from '$lib/hooks/is-mac.svelte.js';
 \<\/script\>
 
-<p>{isMac.current ? '⌘' : 'Ctrl'}</p>`}
+<p>{isMac ? 'Mac' : 'Not Mac'}</p>`}
 	/>
 </div>
+<Subheading>Keys</Subheading>
+<p>
+	Often times you'll want to show modifier keys in your UI. You can do this with the exported
+	<CodeSpan>cmdOrCtrl</CodeSpan> and <CodeSpan>optionOrAlt</CodeSpan> variables.
+</p>
+<Playground code={examples.keys.code}>
+	<examples.keys.Component />
+</Playground>
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This hook is based on the shadcn-svelte
@@ -33,5 +39,7 @@
 		target="_blank"
 	>
 		useIsMac
-	</Link> hook.
+	</Link> hook, as well as some useful enhancements by <Link href="https://github.com/tglide">
+		Thomas G. Lopes
+	</Link>
 </p>
