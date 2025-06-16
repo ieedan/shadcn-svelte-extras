@@ -39,7 +39,10 @@
 		target="_blank"
 	>
 		useIsMac
-	</Link> hook, as well as some useful enhancements by <Link href="https://github.com/tglide">
+	</Link> hook, as well as some useful enhancements by <Link
+		href="https://github.com/tglide"
+		target="_blank"
+	>
 		Thomas G. Lopes
 	</Link>
 </p>
