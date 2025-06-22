@@ -28,6 +28,7 @@
 	let inputValue = $state('');
 	let tagIndex = $state<number>();
 	let invalid = $state(false);
+	let isComposing = $state(false);
 
 	$effect(() => {
 		// whenever input value changes reset invalid
@@ -40,6 +41,8 @@
 	});
 
 	const enter = () => {
+		if (isComposing) return;
+
 		const validated = validate(inputValue, value);
 
 		if (!validated) {
@@ -48,8 +51,15 @@
 		}
 
 		value = [...value, validated];
-
 		inputValue = '';
+	};
+
+	const compositionStart = () => {
+		isComposing = true;
+	};
+
+	const compositionEnd = () => {
+		isComposing = false;
 	};
 
 	const keydown = (e: KeyboardEvent) => {
@@ -58,6 +68,8 @@
 		if (e.key === 'Enter') {
 			// prevent form submit
 			e.preventDefault();
+
+			if (isComposing) return;
 
 			enter();
 			return;
@@ -183,6 +195,8 @@
 		{...rest}
 		bind:value={inputValue}
 		onblur={blur}
+		oncompositionstart={compositionStart}
+		oncompositionend={compositionEnd}
 		{disabled}
 		{placeholder}
 		data-invalid={invalid}
