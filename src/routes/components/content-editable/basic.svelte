@@ -1,5 +1,17 @@
 <script lang="ts">
 	import * as ContentEditable from '$lib/components/ui/content-editable';
+
+	let value = $state('');
 </script>
 
-<ContentEditable.Root this="h1" onValueCommit={(v) => console.log(v)} value="something" />
+<div class="w-[250px]">
+	<ContentEditable.Root
+		this="p"
+		onValueCommit={(v) => console.log('value commit', v)}
+		onEditingChange={(v) => console.log('editing', v)}
+		bind:value
+	>
+		Something
+	</ContentEditable.Root>
+	<span>Value: {value}</span>
+</div>
