@@ -23,7 +23,7 @@
 			})}
 		>
 			{#if heading.id}
-				<a href="#{heading.id}" class="hover:text-foreground">
+				<a href="#{heading.id}" class="hover:text-foreground block">
 					{heading.label}
 				</a>
 			{:else}

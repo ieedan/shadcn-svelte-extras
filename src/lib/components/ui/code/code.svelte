@@ -53,12 +53,6 @@
 	:global(pre.shiki) {
 		@apply overflow-auto rounded-lg bg-inherit py-4 text-sm;
 		max-height: min(100%, 650px);
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-
-	:global(pre.shiki::-webkit-scrollbar) {
-		display: none;
 	}
 
 	:global(pre.shiki code) {
