@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 5.0.2
+
+### Patch Changes
+
+- chore: bump deps ([#232](https://github.com/ieedan/shadcn-svelte-extras/pull/232))
+
+- fix(hooks/use-toc.svelte): Ensure subheadings are observed for visibility ([#232](https://github.com/ieedan/shadcn-svelte-extras/pull/232))
+
 ## 5.0.1
 
 ### Patch Changes
