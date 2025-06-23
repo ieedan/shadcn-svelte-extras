@@ -16,11 +16,11 @@
 		children: Snippet<[]>;
 	};
 
-    const uuid = $props.id();
+	const uuid = $props.id();
 
 	let {
-        id = uuid,
-        ref = $bindable(null),
+		id = uuid,
+		ref = $bindable(null),
 		this: tag,
 		editing = $bindable(false),
 		value = $bindable(''),
@@ -28,13 +28,13 @@
 		onValueChange = noop,
 		onEditingChange = noop,
 		children,
-        class: className,
-        ...props
+		class: className,
+		...props
 	}: Props = $props();
 
 	const state = useContentEditable({
-        id: box.with(() => id!),
-        ref: box.with(
+		id: box.with(() => id!),
+		ref: box.with(
 			() => ref,
 			(v) => (ref = v)
 		),
@@ -54,11 +54,6 @@
 	const mergedProps = $derived(mergeProps(props, state.props));
 </script>
 
-<svelte:element
-	this={tag}
-    class={cn(className)}
-	contenteditable
-	{...mergedProps as any}
->
+<svelte:element this={tag} class={cn(className)} contenteditable {...mergedProps as any}>
 	{@render children?.()}
 </svelte:element>
