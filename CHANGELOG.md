@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.0.3
+
+### Patch Changes
+
+- fix(hooks/use-toc.svelte): Improve heading visibility algorithim to make the topmost heading active ([#234](https://github.com/ieedan/shadcn-svelte-extras/pull/234))
+
 ## 5.0.2
 
 ### Patch Changes
