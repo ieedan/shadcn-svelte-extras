@@ -81,9 +81,13 @@ export class UseToc {
 				}
 			});
 
-			this.#toc.forEach((heading) => {
+			const observe = (heading: Heading) => {
 				intersectionObserver.observe(heading.ref);
-			});
+
+				heading.children.forEach(observe);
+			};
+
+			this.#toc.forEach(observe);
 
 			return () => intersectionObserver.disconnect();
 		});
