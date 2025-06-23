@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.0.1
+
+### Patch Changes
+
+- fix(tags-input): Fix Korean IME composition issue when adding tags ([#229](https://github.com/ieedan/shadcn-svelte-extras/pull/229))
+
 ## 5.0.0
 
 ### Major Changes
