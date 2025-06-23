@@ -52,6 +52,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/code/code.svelte'
 		},
 		{
+			name: 'Content Editable',
+			description: 'A content editable component.',
+			href: '/components/content-editable',
+			specifier: 'ui/content-editable',
+			source: 'src/lib/components/ui/content-editable',
+			status: 'New'
+		},
+		{
 			name: 'Copy Button',
 			description: 'A button used to copy text to the clipboard.',
 			href: '/components/copy-button',
