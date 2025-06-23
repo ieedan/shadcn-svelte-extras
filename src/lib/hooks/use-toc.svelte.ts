@@ -69,27 +69,35 @@ export class UseToc {
 
 		// reactive to the table of contents
 		$effect(() => {
-			const intersectionObserver = new IntersectionObserver((entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						resetActiveHeading(this.#toc);
+			const sectionVisibility = new Map<Element, number>();
 
-						const index = entry.target.getAttribute(INDEX_ATTRIBUTE);
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => sectionVisibility.set(entry.target, entry.intersectionRatio));
 
-						setHeadingActive(this.#toc, parseInt(index ?? '-1'));
-					}
-				}
+				// headings that are (partly) visible
+				const visible = [...sectionVisibility.entries()]
+					.filter(([, ratio]) => ratio > 0)
+					// sort by distance from viewport top
+					.sort(([a], [b]) => a.getBoundingClientRect().top - b.getBoundingClientRect().top);
+
+				if (visible.length === 0) return;
+
+				// the heading nearest to the top wins
+				const activeEl = visible[0][0];
+				const idx = +activeEl.getAttribute(INDEX_ATTRIBUTE)!;
+
+				resetActiveHeading(this.#toc);
+				setHeadingActive(this.#toc, idx);
 			});
 
 			const observe = (heading: Heading) => {
-				intersectionObserver.observe(heading.ref);
-
+				observer.observe(heading.ref);
 				heading.children.forEach(observe);
 			};
 
 			this.#toc.forEach(observe);
 
-			return () => intersectionObserver.disconnect();
+			return () => observer.disconnect();
 		});
 	}
 
