@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 5.1.0
+
+### Minor Changes
+
+- fix(ui/code): Don't hide scrollbar ([#239](https://github.com/ieedan/shadcn-svelte-extras/pull/239))
+
+### Patch Changes
+
+- fix(ui/toc): Ensure text wrap doesn't break toc links ([#239](https://github.com/ieedan/shadcn-svelte-extras/pull/239))
+
 ## 5.0.3
 
 ### Patch Changes
