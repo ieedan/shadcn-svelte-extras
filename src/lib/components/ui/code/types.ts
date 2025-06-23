@@ -21,3 +21,10 @@ export type CodeCopyButtonPropsWithoutHTML = Omit<CopyButtonPropsWithoutHTML, 't
 
 export type CodeCopyButtonProps = CodeCopyButtonPropsWithoutHTML &
 	WithoutChildren<HTMLAttributes<HTMLButtonElement>>;
+
+export type CodeOverflowPropsWithoutHTML = WithChildren<{
+	collapsed?: boolean;
+}>;
+
+export type CodeOverflowProps = CodeOverflowPropsWithoutHTML &
+	WithoutChildren<HTMLAttributes<HTMLDivElement>>;

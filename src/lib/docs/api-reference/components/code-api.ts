@@ -1,7 +1,8 @@
 import * as api from '../api-reference';
 import type {
 	CodeRootPropsWithoutHTML,
-	CodeCopyButtonPropsWithoutHTML
+	CodeCopyButtonPropsWithoutHTML,
+	CodeOverflowPropsWithoutHTML
 } from '$lib/components/ui/code/types';
 
 const Root = api.createComponentReference<CodeRootPropsWithoutHTML>({
@@ -85,10 +86,26 @@ const CopyButton = api.createComponentReference<CodeCopyButtonPropsWithoutHTML>(
 	}
 });
 
+const Overflow = api.createComponentReference<CodeOverflowPropsWithoutHTML>({
+	name: 'Overflow',
+	description: 'A component to handle overflow of the code block.',
+	props: {
+		collapsed: api.createBooleanProp({
+			description: 'Whether the code block is collapsed.',
+			defaultValue: true
+		}),
+		children: api.createAnyProp({
+			description: 'Slot content for the overflow component.',
+			type: 'Snippet'
+		})
+	}
+});
+
 export const reference = {
 	name: 'Code' as const,
 	components: {
 		Root,
-		CopyButton
+		CopyButton,
+		Overflow
 	}
 };
