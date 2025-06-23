@@ -15,7 +15,7 @@
 	<Code
 		lang="svelte"
 		code={`\<script lang="ts"\>
-	import * as AvatarGroup from '$lib/components/ui/link';
+	import * as AvatarGroup from '$lib/components/ui/avatar-group';
 \<\/script\>
 
 <AvatarGroup.Root>
