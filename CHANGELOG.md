@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- fix(tags-input): Fix Korean IME composition issue when adding tags ([`eb6b707`](https://github.com/ieedan/shadcn-svelte-extras/commit/eb6b707ced275478ec9f03c53715c13212e70046))
+- fix(tags-input): Fix Korean IME composition issue when adding tags ([#229](https://github.com/ieedan/shadcn-svelte-extras/pull/229))
 
 ## 5.0.0
 
