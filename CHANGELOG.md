@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 5.2.1
+
+### Patch Changes
+
+- fix(ui/theme-selector): Ensure icons transition with animation as intended ([#245](https://github.com/ieedan/shadcn-svelte-extras/pull/245))
+
+- fix(ui/light-switch): Ensure icons transition with animation as intended ([#245](https://github.com/ieedan/shadcn-svelte-extras/pull/245))
+
 ## 5.2.0
 
 ### Minor Changes
