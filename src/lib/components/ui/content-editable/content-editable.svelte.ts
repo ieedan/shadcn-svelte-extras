@@ -9,94 +9,126 @@ import {
 
 const EDITING_ATTRIBUTE = 'data-editing';
 
-type ContentEditableRootProps = WithRefProps &
-	WritableBoxedValues<{
-		editing: boolean;
-		value: string;
-	}> &
+type ContentEditableRootProps = WritableBoxedValues<{
+	editing: boolean;
+	value: string;
+}> &
 	ReadableBoxedValues<{
 		onValueCommit: (value: string) => void;
 		onValueChange: (value: string) => void;
 		onEditingChange: (editing: boolean) => void;
 	}>;
 
-class ContentEditableRootState {
-	ogValue = $state('');
+type ContentEditableState = {
+	ogValue: string;
+	setInnerText: (text: string) => void;
+};
 
-	constructor(readonly opts: ContentEditableRootProps) {
-		this.onfocus = this.onfocus.bind(this);
-		this.onblur = this.onblur.bind(this);
+class ContentEditableRootState {
+	rootState: ContentEditableState = $state({
+		ogValue: '',
+		setInnerText: () => {}
+	});
+
+	constructor(readonly opts: ContentEditableRootProps) {}
+
+	endEdit({ commit = false }: { commit?: boolean } = {}) {
+		this.opts.editing.current = false;
+
+		if (!commit) {
+			this.opts.value.current = this.rootState.ogValue;
+			this.rootState.setInnerText(this.rootState.ogValue);
+			return;
+		}
+
+		this.rootState.setInnerText(this.opts.value.current);
+		this.opts.onValueCommit.current(this.opts.value.current);
+	}
+
+	startEdit() {
+		this.rootState.ogValue = this.opts.value.current;
+		this.opts.editing.current = true;
+		this.opts.onEditingChange.current(true);
+	}
+}
+
+type ContentEditableContentProps = WithRefProps;
+
+class ContentEditableContentState {
+	constructor(
+		readonly root: ContentEditableRootState,
+		readonly opts: ContentEditableContentProps
+	) {
 		this.oninput = this.oninput.bind(this);
 		this.onkeydown = this.onkeydown.bind(this);
+
+		this.root.rootState.setInnerText = (text: string) => {
+			if (this.opts.ref.current !== null) this.opts.ref.current.innerText = text;
+		};
 
 		$effect(() => {
 			if (this.opts.ref.current !== null) {
 				untrack(() => {
 					const value = this.opts.ref.current?.innerText ?? '';
-					this.opts.value.current = value;
+					this.root.opts.value.current = value;
+					this.root.rootState.ogValue = value;
 				});
 			}
 		});
 	}
 
-	endEdit(commit = false) {
-		this.opts.ref.current?.blur();
-
-		if (!commit) {
-			this.opts.value.current = this.ogValue;
-			if (this.opts.ref.current !== null) this.opts.ref.current.innerText = this.ogValue;
-			return;
-		}
-
-		if (this.opts.ref.current !== null) this.opts.ref.current.innerText = this.opts.value.current;
-		this.opts.onValueCommit.current(this.opts.value.current);
-	}
-
-	startEdit() {
-		this.ogValue = this.opts.value.current;
-		this.opts.editing.current = true;
-		this.opts.onEditingChange.current(true);
-	}
-
-	onfocus(_e: FocusEvent) {
-		this.startEdit();
-	}
-
-	onblur(_e: FocusEvent) {
-		this.opts.editing.current = false;
-		this.opts.onEditingChange.current(false);
-	}
-
 	oninput(e: InputEvent) {
 		const value = (e.target as HTMLElement)?.innerText;
-		this.opts.value.current = value;
-		this.opts.onValueChange.current(value);
+		this.root.opts.value.current = value;
+		this.root.opts.onValueChange.current(value);
 	}
 
 	onkeydown(e: KeyboardEvent) {
 		switch (e.key) {
 			case 'Enter':
 				e.preventDefault();
-				this.endEdit(true);
+				e.stopPropagation();
+				this.root.endEdit({ commit: true });
 				break;
 			case 'Escape':
-				this.endEdit(false);
+				e.preventDefault();
+				e.stopPropagation();
+				this.root.endEdit({ commit: false });
 				break;
 		}
 	}
 
 	props = $derived.by(() => ({
-		onfocus: this.onfocus,
-		onblur: this.onblur,
 		oninput: this.oninput,
 		onkeydown: this.onkeydown,
-		[EDITING_ATTRIBUTE]: this.opts.editing.current ? '' : undefined,
+		contenteditable: this.root.opts.editing.current ? true : false,
+		[EDITING_ATTRIBUTE]: this.root.opts.editing.current ? '' : undefined,
 		...attachRef(this.opts.ref)
 	}));
+}
+
+class ContentEditableTriggerState {
+	constructor(readonly root: ContentEditableRootState) {}
+}
+
+class ContentEditableCancelState {
+	constructor(readonly root: ContentEditableRootState) {}
 }
 
 const ctx = new Context<ContentEditableRootState>('content-editable-root');
 
 export function useContentEditable(props: ContentEditableRootProps) {
 	return ctx.set(new ContentEditableRootState(props));
+}
+
+export function useContentEditableContent(props: ContentEditableContentProps) {
+	return new ContentEditableContentState(ctx.get(), props);
+}
+
+export function useContentEditableTrigger() {
+	return new ContentEditableTriggerState(ctx.get());
+}
+
+export function useContentEditableCancel() {
+	return new ContentEditableCancelState(ctx.get());
 }
