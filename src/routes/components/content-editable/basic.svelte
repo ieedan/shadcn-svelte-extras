@@ -5,7 +5,7 @@
 	let editing = $state(true);
 </script>
 
-<div class="w-[250px] flex flex-col gap-2">
+<div class="flex w-[250px] flex-col gap-2">
 	<ContentEditable.Root
 		onValueCommit={(v) => console.log('value commit', v)}
 		onEditingChange={(v) => console.log('editing', v)}
@@ -13,8 +13,8 @@
 		bind:editing
 	>
 		<ContentEditable.Content this="p">Something</ContentEditable.Content>
-		<ContentEditable.Trigger />
-		<ContentEditable.Cancel />
+		<ContentEditable.Trigger>Edit</ContentEditable.Trigger>
+		<ContentEditable.Cancel>Cancel</ContentEditable.Cancel>
 	</ContentEditable.Root>
 	<span>Value: {value}</span>
 	<span>Editing: {editing}</span>

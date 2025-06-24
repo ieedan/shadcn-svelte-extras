@@ -33,6 +33,7 @@ class ContentEditableRootState {
 	constructor(readonly opts: ContentEditableRootProps) {}
 
 	endEdit({ commit = false }: { commit?: boolean } = {}) {
+		if (!this.opts.editing.current) return;
 		this.opts.editing.current = false;
 
 		if (!commit) {
@@ -47,6 +48,7 @@ class ContentEditableRootState {
 	}
 
 	startEdit() {
+		if (this.opts.editing.current) return;
 		this.rootState.ogValue = this.opts.value.current;
 		this.opts.editing.current = true;
 		this.opts.onEditingChange.current(true);

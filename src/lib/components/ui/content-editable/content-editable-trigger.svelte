@@ -1,12 +1,22 @@
 <script lang="ts">
-	import Button from '../button/button.svelte';
+	import Button, { type ButtonElementProps } from '../button/button.svelte';
 	import { useContentEditableTrigger } from './content-editable.svelte.js';
 
-	type Props = {};
+	type Props = ButtonElementProps;
 
-	let {} = $props();
+	let { variant = 'secondary', size = 'sm', onclick, children, ...rest }: Props = $props();
 
 	const state = useContentEditableTrigger();
 </script>
 
-<Button onclick={() => state.root.startEdit()} variant="secondary">Edit</Button>
+<Button
+	onclick={(e: Parameters<NonNullable<Props['onclick']>>[0]) => {
+		onclick?.(e);
+		state.root.startEdit();
+	}}
+	{size}
+	{variant}
+	{...rest}
+>
+	{@render children?.()}
+</Button>

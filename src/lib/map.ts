@@ -53,7 +53,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Content Editable',
-			description: 'A content editable component.',
+			description: 'A component that allows you to edit the content of a text element.',
 			href: '/components/content-editable',
 			specifier: 'ui/content-editable',
 			source: 'src/lib/components/ui/content-editable',

@@ -1,14 +1,22 @@
 <script lang="ts">
-	import Button from "../button/button.svelte";
-	import { useContentEditableTrigger } from "./content-editable.svelte.js";
+	import Button, { type ButtonElementProps } from '../button/button.svelte';
+	import { useContentEditableCancel } from './content-editable.svelte.js';
 
-    type Props = {
+	type Props = ButtonElementProps;
 
-    };
+	let { variant = 'outline', size = 'sm', onclick, children, ...rest }: Props = $props();
 
-    let {} = $props();
-
-    const state = useContentEditableTrigger();
+	const state = useContentEditableCancel();
 </script>
 
-<Button onclick={() => state.root.endEdit({ commit: false })} variant="outline">Cancel</Button>
+<Button
+	onclick={(e: Parameters<NonNullable<Props['onclick']>>[0]) => {
+		onclick?.(e);
+		state.root.endEdit({ commit: false });
+	}}
+	{size}
+	{variant}
+	{...rest}
+>
+	{@render children?.()}
+</Button>
