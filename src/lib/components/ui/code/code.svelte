@@ -31,7 +31,7 @@
 </div>
 
 <style>
-	@reference '../../../../app.css'
+	@reference '../../../../app.css';
 
 	:global(.dark) {
 		:global(.shiki, .shiki span) {
