@@ -31,7 +31,7 @@
 </div>
 
 <style>
-	@reference '../../../../app.css'
+	@reference '../../../../app.css';
 
 	:global(.dark) {
 		:global(.shiki, .shiki span) {
@@ -51,7 +51,11 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-auto rounded-lg bg-inherit py-4 text-sm;
+		@apply overflow-x-auto rounded-lg bg-inherit py-4 text-sm;
+	}
+
+	:global(pre.shiki:not([data-code-overflow] *):not([data-code-overflow])) {
+		@apply overflow-y-auto;
 		max-height: min(100%, 650px);
 	}
 

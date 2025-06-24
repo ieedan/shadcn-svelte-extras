@@ -4,7 +4,9 @@
 </script>
 
 <div class="w-full p-6">
-	<Code.Root lang="svelte" class="w-full" code={codeCode}>
-		<Code.CopyButton />
-	</Code.Root>
+	<Code.Overflow>
+		<Code.Root lang="svelte" code={codeCode}>
+			<Code.CopyButton />
+		</Code.Root>
+	</Code.Overflow>
 </div>

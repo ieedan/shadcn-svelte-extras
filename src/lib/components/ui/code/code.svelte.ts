@@ -1,9 +1,27 @@
 import { Context } from 'runed';
-import type { ReadableBoxedValues } from 'svelte-toolbelt';
+import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { CodeRootProps } from './types';
 import { highlighter } from './shiki';
 import DOMPurify from 'isomorphic-dompurify';
 import type { HighlighterCore } from 'shiki';
+
+type CodeOverflowStateProps = WritableBoxedValues<{
+	collapsed: boolean;
+}>;
+
+class CodeOverflowState {
+	constructor(readonly opts: CodeOverflowStateProps) {
+		this.toggleCollapsed = this.toggleCollapsed.bind(this);
+	}
+
+	toggleCollapsed() {
+		this.opts.collapsed.current = !this.opts.collapsed.current;
+	}
+
+	get collapsed() {
+		return this.opts.collapsed.current;
+	}
+}
 
 type CodeRootStateProps = ReadableBoxedValues<{
 	code: string;
@@ -15,7 +33,10 @@ type CodeRootStateProps = ReadableBoxedValues<{
 class CodeRootState {
 	highlighter: HighlighterCore | null = $state(null);
 
-	constructor(readonly opts: CodeRootStateProps) {
+	constructor(
+		readonly opts: CodeRootStateProps,
+		readonly overflow?: CodeOverflowState
+	) {
 		highlighter.then((hl) => (this.highlighter = hl));
 	}
 
@@ -87,10 +108,24 @@ class CodeCopyButtonState {
 	}
 }
 
+const overflowCtx = new Context<CodeOverflowState>('code-overflow-state');
+
 const ctx = new Context<CodeRootState>('code-root-state');
 
+export function useCodeOverflow(props: CodeOverflowStateProps) {
+	return overflowCtx.set(new CodeOverflowState(props));
+}
+
 export function useCode(props: CodeRootStateProps) {
-	return ctx.set(new CodeRootState(props));
+	let overflow: CodeOverflowState | undefined = undefined;
+
+	try {
+		overflow = overflowCtx.get();
+	} catch {
+		// ignore
+	}
+
+	return ctx.set(new CodeRootState(props, overflow));
 }
 
 export function useCodeCopyButton() {
