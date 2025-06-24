@@ -43,6 +43,7 @@ class ContentEditableRootState {
 
 		this.rootState.setInnerText(this.opts.value.current);
 		this.opts.onValueCommit.current(this.opts.value.current);
+		this.rootState.ogValue = this.opts.value.current;
 	}
 
 	startEdit() {
