@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.2.0
+
+### Minor Changes
+
+- feat(ui/code): Add `Code.Overflow` component ([#242](https://github.com/ieedan/shadcn-svelte-extras/pull/242))
+
 ## 5.1.0
 
 ### Minor Changes
