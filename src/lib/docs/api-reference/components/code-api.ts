@@ -92,6 +92,7 @@ const Overflow = api.createComponentReference<CodeOverflowPropsWithoutHTML>({
 	props: {
 		collapsed: api.createBooleanProp({
 			description: 'Whether the code block is collapsed.',
+			bindable: true,
 			defaultValue: true
 		}),
 		children: api.createAnyProp({
