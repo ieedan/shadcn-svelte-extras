@@ -21,8 +21,6 @@
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
-<MetaTags title="shadcn-svelte-extras - Finish your app with 20+ components and utilities" />
-
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">
 		<a href="/docs/using-extras" class="flex place-items-center gap-1 text-sm font-medium">
