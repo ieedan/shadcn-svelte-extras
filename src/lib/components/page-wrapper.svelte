@@ -2,7 +2,10 @@
 	import type { Route } from '$lib/map';
 	import type { Snippet as SnippetType } from 'svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRight, CodeIcon } from '@lucide/svelte';
+	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
+	import CodeIcon from '@lucide/svelte/icons/code';
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
 	import * as Toc from '$lib/components/ui/toc';

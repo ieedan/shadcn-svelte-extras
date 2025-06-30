@@ -57,7 +57,7 @@ const map: Record<string, Route[]> = {
 			href: '/components/copy-button',
 			specifier: 'ui/copy-button',
 			source: 'src/lib/components/ui/copy-button/copy-button.svelte'
-		},	
+		},
 		{
 			name: 'Emoji Picker',
 			description: 'A composable emoji picker component.',
@@ -140,7 +140,7 @@ const map: Record<string, Route[]> = {
 			description: 'Components for handling passwords and other secrets.',
 			href: '/components/password',
 			specifier: 'ui/password',
-			source: 'src/lib/components/ui/password',
+			source: 'src/lib/components/ui/password'
 		},
 		{
 			name: 'Phone Input',
@@ -236,7 +236,7 @@ const map: Record<string, Route[]> = {
 			description: 'A hook to determine if the user is on a Mac.',
 			href: '/hooks/is-mac',
 			specifier: 'hooks/is-mac.svelte',
-			source: 'src/lib/hooks/is-mac.svelte.ts',
+			source: 'src/lib/hooks/is-mac.svelte.ts'
 		},
 		{
 			name: 'UseAutoScroll',
@@ -269,7 +269,8 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'UseMedia',
-			description: 'A hook to track the size of the screen using the standard Tailwind CSS breakpoints.',
+			description:
+				'A hook to track the size of the screen using the standard Tailwind CSS breakpoints.',
 			href: '/hooks/use-media',
 			specifier: 'hooks/use-media.svelte',
 			source: 'src/lib/hooks/use-media.svelte.ts',

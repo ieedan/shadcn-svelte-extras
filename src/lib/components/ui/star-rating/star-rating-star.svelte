@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/utils';
-	import { StarHalfIcon, StarIcon } from '@lucide/svelte';
+	import StarHalfIcon from '@lucide/svelte/icons/star-half';
+	import StarIcon from '@lucide/svelte/icons/star';
 	import { unstable_RatingGroup as RatingGroup } from 'bits-ui';
 	import type { StarRatingStarProps } from './types';
 

@@ -4,7 +4,11 @@
 	import * as Popover from '$lib/components/ui/popover';
 	import * as Avatar from '$lib/components/ui/avatar';
 	import { Button, buttonVariants } from '$lib/components/ui/button';
-	import { InfoIcon, PhoneIcon, SendIcon, SmilePlusIcon, VideoIcon } from '@lucide/svelte';
+	import InfoIcon from '@lucide/svelte/icons/info';
+	import PhoneIcon from '@lucide/svelte/icons/phone';
+	import SendIcon from '@lucide/svelte/icons/send';
+	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
+	import VideoIcon from '@lucide/svelte/icons/video';
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
 	import { formatShortTime, initials } from './utils';

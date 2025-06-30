@@ -63,7 +63,7 @@
 
 <script lang="ts">
 	import { cn } from '$lib/utils/utils.js';
-	import { LoaderCircleIcon } from '@lucide/svelte';
+	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
 
 	let {
 		ref = $bindable(null),

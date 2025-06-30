@@ -3,7 +3,7 @@
 	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
 	import * as Popover from '$lib/components/ui/popover';
 	import { cn } from '$lib/utils/utils';
-	import { SmilePlusIcon } from '@lucide/svelte';
+	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
 	import { toast } from 'svelte-sonner';
 
 	let emoji = $state<string>('');

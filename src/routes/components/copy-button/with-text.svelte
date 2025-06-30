@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CopyButton } from '$lib/components/ui/copy-button';
-	import { TerminalIcon } from '@lucide/svelte';
+	import TerminalIcon from '@lucide/svelte/icons/terminal';
 
 	const command = 'jsrepo add ui/copy-button';
 </script>

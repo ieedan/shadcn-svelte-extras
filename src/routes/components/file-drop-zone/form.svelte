@@ -6,7 +6,7 @@
 		MEGABYTE,
 		type FileDropZoneProps
 	} from '$lib/components/ui/file-drop-zone';
-	import { XIcon } from '@lucide/svelte';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';
 	import { type SuperValidated, superForm, filesProxy } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';

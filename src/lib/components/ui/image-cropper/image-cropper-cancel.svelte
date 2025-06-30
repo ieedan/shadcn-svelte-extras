@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { type ButtonElementProps, Button } from '$lib/components/ui/button';
 	import { useImageCropperCancel } from './image-cropper.svelte.js';
-	import { Trash2Icon } from '@lucide/svelte';
+	import Trash2Icon from '@lucide/svelte/icons/trash-2';
 
 	let {
 		ref = $bindable(null),
