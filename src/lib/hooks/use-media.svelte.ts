@@ -17,7 +17,7 @@ export const TAILWIND_BREAKPOINTS: Breakpoints<'sm' | 'md' | 'lg' | 'xl' | '2xl'
  * @param breakpoints
  * @returns
  */
-export function useBreakpoints<K extends string = keyof typeof TAILWIND_BREAKPOINTS>(
+export function useMedia<K extends string = keyof typeof TAILWIND_BREAKPOINTS>(
 	breakpoints: Breakpoints<K> = TAILWIND_BREAKPOINTS as Breakpoints<K>
 ): Record<K, boolean> {
 	const queries = {};
