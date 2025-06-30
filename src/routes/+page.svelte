@@ -16,7 +16,6 @@
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import { ArrowRightIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { MetaTags } from '$lib/components/site/meta-tags';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
