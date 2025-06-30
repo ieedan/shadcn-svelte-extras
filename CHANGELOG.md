@@ -1,5 +1,17 @@
 # shadcn-svelte-extras
 
+## 5.3.0
+
+### Minor Changes
+
+- feat(hooks/use-media.svelte): Add `useMedia` hook to allow for JS of the viewport width ([#248](https://github.com/ieedan/shadcn-svelte-extras/pull/248))
+
+### Patch Changes
+
+- fix: Update all `@lucide/svelte` imports to default imports ([#248](https://github.com/ieedan/shadcn-svelte-extras/pull/248))
+
+- chore: bump deps ([#248](https://github.com/ieedan/shadcn-svelte-extras/pull/248))
+
 ## 5.2.1
 
 ### Patch Changes
