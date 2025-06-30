@@ -72,8 +72,10 @@
 		"use-auto-scroll.svelte",
 		"use-boolean.svelte",
 		"use-clipboard.svelte",
+		"use-media.svelte",
 		"use-promise.svelte",
 		"use-toc.svelte",
+		"use-frecency.svelte",
 		"is-mac.svelte"
 	],
 	"listCategories": [],
