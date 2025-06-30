@@ -52,7 +52,7 @@
 	<div id="carbon-container"></div>
 </aside>
 
-<style>
+<!-- <style>
 	@reference '../../app.css';
 
 	:global(.carbon-responsive-wrap) {
@@ -66,4 +66,4 @@
 	:global(.carbon-poweredby) {
 		@apply !text-foreground;
 	}
-</style>
+</style> -->
