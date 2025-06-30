@@ -66,7 +66,7 @@
 </script>
 
 <MetaTags
-	title="{currentDoc?.doc.name} - shadcn-svelte-extras"
+	title={currentDoc ? `${currentDoc.doc.name} - shadcn-svelte-extras` : 'shadcn-svelte-extras'}
 	description={currentDoc?.doc.name === 'Introduction'
 		? `Finish your app with awesome svelte components like ${components}`
 		: currentDoc?.doc.description}
