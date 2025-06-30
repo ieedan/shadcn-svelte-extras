@@ -2,7 +2,7 @@
 	import { cn } from '$lib/utils/utils';
 	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
-	import { ArrowDownIcon } from '@lucide/svelte';
+	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte.js';
 	import type { ChatListProps } from './types';

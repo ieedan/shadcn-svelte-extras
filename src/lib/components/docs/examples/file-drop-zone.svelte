@@ -8,7 +8,7 @@
 	} from '$lib/components/ui/file-drop-zone';
 	import { Progress } from '$lib/components/ui/progress';
 	import { sleep } from '$lib/utils/sleep';
-	import { XIcon } from '@lucide/svelte';
+	import XIcon from '@lucide/svelte/icons/x';
 	import { onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';
 	import { SvelteDate } from 'svelte/reactivity';

@@ -4,7 +4,7 @@
 	import { Link } from '$lib/components/ui/link';
 	import { cn } from '$lib/utils/utils';
 	import * as HoverCard from '$lib/components/ui/hover-card';
-	import { InfoIcon } from '@lucide/svelte';
+	import InfoIcon from '@lucide/svelte/icons/info';
 	import { highlighter } from '$lib/components/ui/code/shiki';
 	import type { HighlighterCore } from 'shiki';
 	import { onMount } from 'svelte';

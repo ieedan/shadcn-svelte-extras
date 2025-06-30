@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FileIcon } from '@lucide/svelte';
+	import FileIcon from '@lucide/svelte/icons/file';
 	import { cn } from '$lib/utils/utils';
 	import type { TreeViewFileProps } from './types';
 

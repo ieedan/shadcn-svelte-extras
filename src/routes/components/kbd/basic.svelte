@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Kbd } from '$lib/components/ui/kbd';
-	import { CommandIcon } from '@lucide/svelte';
+	import CommandIcon from '@lucide/svelte/icons/command';
 </script>
 
 <Kbd size="lg">

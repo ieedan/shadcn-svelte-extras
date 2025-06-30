@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { ChevronLeftIcon } from '@lucide/svelte';
+	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
 	import { cn } from '$lib/utils/utils';
 	import { Button, type AnchorElementProps } from '$lib/components/ui/button';
 
