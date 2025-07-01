@@ -1,69 +1,58 @@
-<!-- Modified from https://github.com/shinokada/svelte-carbonads -->
+<!-- Thanks Hunter! https://github.com/huntabyte/shadcn-svelte/blob/cb5d1d3b05c721593db07fa1974110038d44c1b0/docs/src/lib/components/carbon.svelte -->
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { navigating } from '$app/stores';
+	import { beforeNavigate } from '$app/navigation';
+	import { dev, browser } from '$app/environment';
 
-	interface WindowWithCarbonAds extends Window {
-		_carbonads: {
-			refresh: () => void;
-		};
-	}
-
-	const CARBON_SOURCE =
+	const src =
 		'https://cdn.carbonads.com/carbon.js?serve=CW7IE53W&placement=wwwshadcn-svelte-extrascom&format=cover';
+	const localId = $props.id();
+
+	let container: HTMLElement | null = null;
 
 	onMount(() => {
-		refreshCarbonAds();
-	});
-
-	navigating.subscribe((navigating) => {
-		if (navigating) {
+		if (!dev) {
 			refreshCarbonAds();
+
+			return () => {
+				const scriptNode = container?.querySelector(`[data-id="${localId}"]`);
+				const carbonNode = container?.querySelector(`#carbonads`);
+				scriptNode?.remove();
+				carbonNode?.remove();
+			};
 		}
 	});
 
+	beforeNavigate(() => refreshCarbonAds());
+
+	function createCarbonScript() {
+		const script = document.createElement('script');
+		script.async = true;
+		script.id = '_carbonads_js';
+		script.src = src;
+		script.type = 'text/javascript';
+		script.dataset.id = localId;
+		return script;
+	}
+
 	function refreshCarbonAds() {
-		const isCarbonAdsRendered = document.querySelector('#carbonads');
-		const windowWithCarbon = window as unknown as WindowWithCarbonAds;
+		if (!dev) {
+			if (!browser) return;
 
-		if (isCarbonAdsRendered && windowWithCarbon._carbonads) {
-			windowWithCarbon._carbonads.refresh();
-		} else {
-			const script = document.createElement('script');
-			script.async = true;
-			script.id = '_carbonads_js';
-			script.src = CARBON_SOURCE;
+			const scriptNode = container?.querySelector("[data-id='_carbonads_js']");
+			const carbonAdsNode = container?.querySelector('#carbonads');
 
-			const container = document.querySelector('#carbon-container');
+			carbonAdsNode?.remove();
+			scriptNode?.remove();
+
+			const script = createCarbonScript();
+			container = document.getElementById(localId);
 			if (container) {
-				// Remove any existing scripts first to avoid duplicates
-				const existingScript = container.querySelector('#_carbonads_js');
-				if (existingScript) {
-					container.removeChild(existingScript);
-				}
 				container.appendChild(script);
 			}
 		}
 	}
 </script>
 
-<aside class="py-4">
-	<div id="carbon-container"></div>
-</aside>
-
-<!-- <style>
-	@reference '../../app.css';
-
-	:global(.carbon-responsive-wrap) {
-		@apply !bg-accent !text-foreground !border-border !rounded-lg;
-	}
-
-	:global(.carbon-text) {
-		@apply !text-foreground;
-	}
-
-	:global(.carbon-poweredby) {
-		@apply !text-foreground;
-	}
-</style> -->
+<div id={localId} class="w-full pt-4"></div>
