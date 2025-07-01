@@ -15,7 +15,6 @@
 	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 	import { getReference } from '$lib/docs/api-reference/components';
 	import CarbonAds from './carbon-ads.svelte';
-	import { dev } from '$app/environment';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -150,9 +149,7 @@
 				<div class="space-y-2">
 					<span class="text-foreground text-sm font-medium">On This Page</span>
 					<Toc.Root toc={toc.current} />
-					{#if !dev}
-						<CarbonAds />
-					{/if}
+					<CarbonAds />
 				</div>
 			</div>
 		</div>
