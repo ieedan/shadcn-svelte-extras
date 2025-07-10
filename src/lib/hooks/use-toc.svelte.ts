@@ -123,7 +123,7 @@ const createHeading = (element: HTMLHeadingElement, index: number): Heading => {
 		id: element.id,
 		level: parseInt(kind[1]),
 		label: element.innerText ?? '',
-		active: true,
+		active: false,
 		children: []
 	};
 };
