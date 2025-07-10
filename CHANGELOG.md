@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.3.1
+
+### Patch Changes
+
+- ToC - Initialize Headings with active: false to avoid ToC flicker during render ([#253](https://github.com/ieedan/shadcn-svelte-extras/pull/253))
+
 ## 5.3.0
 
 ### Minor Changes
