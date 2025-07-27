@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 5.3.2
+
+### Patch Changes
+
+- chore: bump deps ([#255](https://github.com/ieedan/shadcn-svelte-extras/pull/255))
+
+- fix: Use `SvelteMap` and `SvelteUrl` to fix linting errors ([#255](https://github.com/ieedan/shadcn-svelte-extras/pull/255))
+
 ## 5.3.1
 
 ### Patch Changes
