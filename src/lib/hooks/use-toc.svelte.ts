@@ -1,3 +1,5 @@
+import { SvelteMap } from 'svelte/reactivity';
+
 export type HeadingKind = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export type Heading = {
@@ -69,7 +71,7 @@ export class UseToc {
 
 		// reactive to the table of contents
 		$effect(() => {
-			const sectionVisibility = new Map<Element, number>();
+			const sectionVisibility = new SvelteMap<Element, number>();
 
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => sectionVisibility.set(entry.target, entry.intersectionRatio));
