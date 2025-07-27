@@ -1,6 +1,7 @@
 import { page } from '$app/state';
 import { untrack } from 'svelte';
 import { createAttachmentKey } from 'svelte/attachments';
+import { SvelteURL } from 'svelte/reactivity';
 
 export type Options = {
 	/** Determines if the route should be active for subdirectories.
@@ -67,24 +68,24 @@ export const checkIsActive = (
 	nodeHref: string,
 	{ activeForSubdirectories, url, isHash, isSearch }: Options
 ): boolean => {
-	let href: string = new URL(nodeHref).pathname;
+	let href: string = new SvelteURL(nodeHref).pathname;
 
 	if (isHash) {
-		href = new URL(nodeHref).hash;
+		href = new SvelteURL(nodeHref).hash;
 	}
 
 	let searchParamName: string | undefined = undefined;
 	let searchParamValue: string | undefined = undefined;
 
 	if (isSearch) {
-		const tempUrl = new URL(nodeHref);
+		const tempUrl = new SvelteURL(nodeHref);
 
 		for (const [key, value] of tempUrl.searchParams.entries()) {
 			searchParamName = key;
 			searchParamValue = value;
 		}
 
-		href = new URL(nodeHref).search;
+		href = new SvelteURL(nodeHref).search;
 	}
 
 	const samePath = href === url.pathname;
