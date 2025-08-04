@@ -60,8 +60,6 @@
 		});
 	});
 
-
-
 	const enter = () => {
 		if (isComposing) return;
 
@@ -288,10 +286,10 @@
 				<Command.List>
 					<Command.Group>
 						{#each filteredOptions() as option, index (option.value)}
-							<Command.Item 
-								value={option.value} 
+							<Command.Item
+								value={option.value}
 								onSelect={() => selectOption(option)}
-								class={index === 0 ? "bg-accent text-accent-foreground" : ""}
+								class={index === 0 ? 'bg-accent text-accent-foreground' : ''}
 							>
 								{option.label}
 							</Command.Item>
