@@ -60,6 +60,8 @@
 		});
 	});
 
+
+
 	const enter = () => {
 		if (isComposing) return;
 
@@ -110,12 +112,7 @@
 			return;
 		}
 
-		// Handle arrow down to open dropdown and focus first item
-		if (e.key === 'ArrowDown' && !open && filteredOptions().length > 0) {
-			e.preventDefault();
-			open = true;
-			return;
-		}
+		// Allow normal tab behavior - don't intercept Tab key
 
 		if (e.key === 'Enter') {
 			// prevent form submit
@@ -123,8 +120,9 @@
 
 			if (isComposing) return;
 
-			// If dropdown is open and has filtered options, don't add custom tag
+			// If dropdown is open and has filtered options, select the first one
 			if (open && filteredOptions().length > 0) {
+				selectOption(filteredOptions()[0]);
 				return;
 			}
 
@@ -289,8 +287,12 @@
 			<Command.Root shouldFilter={false}>
 				<Command.List>
 					<Command.Group>
-						{#each filteredOptions() as option (option.value)}
-							<Command.Item value={option.value} onSelect={() => selectOption(option)}>
+						{#each filteredOptions() as option, index (option.value)}
+							<Command.Item 
+								value={option.value} 
+								onSelect={() => selectOption(option)}
+								class={index === 0 ? "bg-accent text-accent-foreground" : ""}
+							>
 								{option.label}
 							</Command.Item>
 						{/each}
