@@ -2,7 +2,6 @@
 	import { cn } from '$lib/utils/utils';
 	import type { TagsComboboxProps, TagsComboboxOption } from './types';
 	import TagsComboboxTag from './tags-combobox-tag.svelte';
-	import * as Popover from '$lib/components/ui/popover';
 	import * as Command from '$lib/components/ui/command';
 	import { untrack, tick } from 'svelte';
 
