@@ -175,7 +175,8 @@ const map: Record<string, Route[]> = {
 			description: 'A tags input component with combobox functionality.',
 			href: '/components/tags-combobox',
 			specifier: 'ui/tags-combobox',
-			source: 'src/lib/components/ui/tags-combobox'
+			source: 'src/lib/components/ui/tags-combobox',
+			status: 'New'
 		},
 		{
 			name: 'Tags Input',
