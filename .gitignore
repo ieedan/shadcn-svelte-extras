@@ -27,3 +27,6 @@ src/lib/paraglide/
 
 static/components
 static/llms.txt
+
+# Local files
+*.local.md
