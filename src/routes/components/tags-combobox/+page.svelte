@@ -12,14 +12,26 @@
 </Playground>
 <Installation specifier="ui/tags-combobox" />
 <Subheading class="mt-0">Usage</Subheading>
+<p>
+	The Tags Combobox component combines the functionality of a tags input with a searchable dropdown of predefined options.
+	Users can either select from the dropdown or type custom tags.
+</p>
 <div>
 	<Code
 		lang="svelte"
 		code={`\<script lang="ts"\>
 	import { TagsCombobox } from "$lib/components/ui/tags-combobox";
+	import type { TagsComboboxOption } from "$lib/components/ui/tags-combobox/types";
+	
+	let value = $state([]);
+	
+	const options: TagsComboboxOption[] = [
+		{ value: 'option1', label: 'Option 1' },
+		{ value: 'option2', label: 'Option 2' }
+	];
 \<\/script\>
 
-<TagsCombobox/>`}
+<TagsCombobox bind:value {options} placeholder="Select or type..." />`}
 	/>
 </div>
 <Subheading>Custom Validation</Subheading>

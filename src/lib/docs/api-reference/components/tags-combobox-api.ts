@@ -10,11 +10,21 @@ const Root = api.createComponentReference<TagsComboboxPropsWithoutHTML>({
 			type: 'string[]',
 			defaultValue: '[]'
 		}),
+		options: api.createAnyProp({
+			description: 'Array of options to display in the combobox dropdown.',
+			type: 'TagsComboboxOption[]',
+			defaultValue: '[]'
+		}),
 		validate: api.createFunctionProp({
 			description:
 				'A function to validate and transform a tag before it is added. Return the transformed tag or undefined to reject.',
 			type: '(val: string, tags: string[]) => string | undefined',
 			defaultValue: 'defaultValidate'
+		}),
+		onOptionSelect: api.createFunctionProp({
+			description: 'Callback function called when an option is selected from the dropdown.',
+			type: '(option: TagsComboboxOption) => void',
+			defaultValue: 'undefined'
 		})
 	}
 });
