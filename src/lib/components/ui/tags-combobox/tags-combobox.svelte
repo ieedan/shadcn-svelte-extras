@@ -40,7 +40,7 @@
 	// Filter options based on input value and exclude already selected tags
 	const filteredOptions = $derived(() => {
 		if (!options || options.length === 0) return [];
-		
+
 		const searchTerm = inputValue.toLowerCase();
 		return options.filter((option) => {
 			// Filter out already selected tags
@@ -79,13 +79,13 @@
 	const selectOption = (option: TagsComboboxOption) => {
 		// Add the option value as a tag
 		const validated = validate(option.value, value);
-		
+
 		if (validated) {
 			value = [...value, validated];
 			inputValue = '';
 			open = false;
 			onOptionSelect?.(option);
-			
+
 			// Refocus the input after selection
 			tick().then(() => {
 				inputElement?.focus();
@@ -285,16 +285,13 @@
 	</div>
 	{#if open && filteredOptions().length > 0}
 		<div
-			class="absolute top-full left-0 z-50 mt-1 w-full rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+			class="bg-popover text-popover-foreground absolute top-full left-0 z-50 mt-1 w-full rounded-md border p-1 shadow-md"
 		>
 			<Command.Root shouldFilter={false}>
 				<Command.List>
 					<Command.Group>
 						{#each filteredOptions() as option (option.value)}
-							<Command.Item
-								value={option.value}
-								onSelect={() => selectOption(option)}
-							>
+							<Command.Item value={option.value} onSelect={() => selectOption(option)}>
 								{option.label}
 							</Command.Item>
 						{/each}

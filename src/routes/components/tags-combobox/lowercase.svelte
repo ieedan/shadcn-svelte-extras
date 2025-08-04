@@ -4,7 +4,7 @@
 	import { customValidate } from './custom-validate';
 
 	let value = $state(['svelte', 'typescript']);
-	
+
 	const options: TagsComboboxOption[] = [
 		{ value: 'svelte', label: 'Svelte' },
 		{ value: 'vue', label: 'Vue' },
@@ -16,5 +16,10 @@
 </script>
 
 <div class="w-full p-6">
-	<TagsCombobox bind:value {options} placeholder="Add a tag (will be lowercase)" validate={customValidate} />
+	<TagsCombobox
+		bind:value
+		{options}
+		placeholder="Add a tag (will be lowercase)"
+		validate={customValidate}
+	/>
 </div>

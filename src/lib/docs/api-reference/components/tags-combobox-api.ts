@@ -2,7 +2,8 @@ import * as api from '../api-reference';
 import type { TagsComboboxPropsWithoutHTML } from '$lib/components/ui/tags-combobox/types';
 
 const Root = api.createComponentReference<TagsComboboxPropsWithoutHTML>({
-	description: 'The root tags combobox component. Allows entry and validation of multiple tags with combobox functionality.',
+	description:
+		'The root tags combobox component. Allows entry and validation of multiple tags with combobox functionality.',
 	props: {
 		value: api.createAnyProp({
 			description: 'The current list of tags.',

@@ -3,7 +3,7 @@
 	import type { TagsComboboxOption } from '$lib/components/ui/tags-combobox/types';
 
 	let value = $state(['Svelte', 'TypeScript']);
-	
+
 	const frameworks: TagsComboboxOption[] = [
 		{ value: 'svelte', label: 'Svelte' },
 		{ value: 'vue', label: 'Vue' },
@@ -12,7 +12,7 @@
 		{ value: 'solid', label: 'Solid' },
 		{ value: 'qwik', label: 'Qwik' }
 	];
-	
+
 	const languages: TagsComboboxOption[] = [
 		{ value: 'typescript', label: 'TypeScript' },
 		{ value: 'javascript', label: 'JavaScript' },
@@ -21,7 +21,7 @@
 		{ value: 'go', label: 'Go' },
 		{ value: 'java', label: 'Java' }
 	];
-	
+
 	// Combine frameworks and languages
 	const options = [...frameworks, ...languages];
 </script>

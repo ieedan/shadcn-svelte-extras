@@ -13,8 +13,8 @@
 <Installation specifier="ui/tags-combobox" />
 <Subheading class="mt-0">Usage</Subheading>
 <p>
-	The Tags Combobox component combines the functionality of a tags input with a searchable dropdown of predefined options.
-	Users can either select from the dropdown or type custom tags.
+	The Tags Combobox component combines the functionality of a tags input with a searchable dropdown
+	of predefined options. Users can either select from the dropdown or type custom tags.
 </p>
 <div>
 	<Code
