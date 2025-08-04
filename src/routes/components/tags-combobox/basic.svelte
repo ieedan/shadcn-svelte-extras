@@ -5,21 +5,21 @@
 	let value = $state(['Svelte', 'TypeScript']);
 
 	const frameworks: TagsComboboxOption[] = [
-		{ value: 'svelte', label: 'Svelte' },
-		{ value: 'vue', label: 'Vue' },
-		{ value: 'react', label: 'React' },
-		{ value: 'angular', label: 'Angular' },
-		{ value: 'solid', label: 'Solid' },
-		{ value: 'qwik', label: 'Qwik' }
+		{ value: 'Svelte', label: 'Svelte' },
+		{ value: 'Vue', label: 'Vue' },
+		{ value: 'React', label: 'React' },
+		{ value: 'Angular', label: 'Angular' },
+		{ value: 'Solid', label: 'Solid' },
+		{ value: 'Qwik', label: 'Qwik' }
 	];
 
 	const languages: TagsComboboxOption[] = [
-		{ value: 'typescript', label: 'TypeScript' },
-		{ value: 'javascript', label: 'JavaScript' },
-		{ value: 'python', label: 'Python' },
-		{ value: 'rust', label: 'Rust' },
-		{ value: 'go', label: 'Go' },
-		{ value: 'java', label: 'Java' }
+		{ value: 'TypeScript', label: 'TypeScript' },
+		{ value: 'JavaScript', label: 'JavaScript' },
+		{ value: 'Python', label: 'Python' },
+		{ value: 'Rust', label: 'Rust' },
+		{ value: 'Go', label: 'Go' },
+		{ value: 'Java', label: 'Java' }
 	];
 
 	// Combine frameworks and languages

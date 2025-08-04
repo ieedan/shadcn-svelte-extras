@@ -1,6 +1,6 @@
-import type { TagsInputProps } from '$lib/components/ui/tags-input/types';
+import type { TagsComboboxProps } from '$lib/components/ui/tags-combobox/types';
 
-export const customValidate: TagsInputProps['validate'] = (val, tags) => {
+export const customValidate: TagsComboboxProps['validate'] = (val, tags) => {
 	// trim and convert to lowercase
 	const transformed = val.trim().toLowerCase();
 
