@@ -1,7 +1,7 @@
 {
 	"name": "shadcn-svelte-extras",
 	"packageManager": "pnpm@10.11.1",
-	"version": "5.3.1",
+	"version": "5.3.2",
 	"type": "module",
 	"scripts": {
 		"dev": "pnpm generate-llms && vite dev",
