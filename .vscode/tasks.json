@@ -2,7 +2,7 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Dev Server",
+			"label": "pnpm dev",
 			"type": "shell",
 			"command": "pnpm dev",
 			"problemMatcher": [],
@@ -13,62 +13,68 @@
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			}
+			},
+			"detail": "Run the development server"
 		},
 		{
-			"label": "Format",
+			"label": "pnpm format",
 			"type": "shell",
 			"command": "pnpm format",
 			"problemMatcher": [],
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Format code with Prettier"
 		},
 		{
-			"label": "Lint",
+			"label": "pnpm lint",
 			"type": "shell",
 			"command": "pnpm lint",
 			"problemMatcher": ["$eslint-stylish"],
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Run ESLint"
 		},
 		{
-			"label": "Check",
+			"label": "pnpm check",
 			"type": "shell",
 			"command": "pnpm check",
 			"problemMatcher": ["$tsc"],
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Run svelte-check for type checking"
 		},
 		{
-			"label": "Build",
+			"label": "pnpm build",
 			"type": "shell",
 			"command": "pnpm build",
 			"problemMatcher": [],
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Build the project"
 		},
 		{
-			"label": "Generate i18n",
+			"label": "pnpm generate-i18n",
 			"type": "shell",
 			"command": "pnpm generate-i18n",
 			"problemMatcher": [],
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Generate i18n files"
 		},
 		{
-			"label": "Validate (CI Checks)",
+			"label": "Run All CI Checks",
 			"dependsOrder": "sequence",
-			"dependsOn": ["Generate i18n", "Format", "Lint", "Check"],
+			"dependsOn": ["pnpm generate-i18n", "pnpm format", "pnpm lint", "pnpm check"],
 			"problemMatcher": [],
 			"group": {
 				"kind": "test",
@@ -77,7 +83,8 @@
 			"presentation": {
 				"panel": "dedicated",
 				"focus": true
-			}
+			},
+			"detail": "Run full quality checks: generate-i18n, format, lint, check"
 		}
 	]
 }
