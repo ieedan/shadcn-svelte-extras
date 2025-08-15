@@ -143,6 +143,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/password'
 		},
 		{
+			name: 'Number Picker',
+			description: 'An iOS-style scrollable number selection component with a drawer variant.',
+			href: '/components/number-picker',
+			specifier: 'ui/number-picker',
+			source: 'src/lib/components/ui/number-picker'
+		},
+		{
 			name: 'Phone Input',
 			description: 'A phone number input component.',
 			href: '/components/phone-input',
