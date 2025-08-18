@@ -157,6 +157,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
+			name: 'Ramp Input',
+			description: 'A component for incrementing and decrementing a value.',
+			href: '/components/ramp-input',
+			specifier: 'ui/ramp-input',
+			source: 'src/lib/components/ui/ramp-input'
+		},
+		{
 			name: 'Snippet',
 			description: 'A snippet component.',
 			href: '/components/snippet',
