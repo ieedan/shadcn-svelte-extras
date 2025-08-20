@@ -161,7 +161,8 @@ const map: Record<string, Route[]> = {
 			description: 'A component for incrementing and decrementing a value.',
 			href: '/components/ramp-input',
 			specifier: 'ui/ramp-input',
-			source: 'src/lib/components/ui/ramp-input'
+			source: 'src/lib/components/ui/ramp-input',
+			status: 'New'
 		},
 		{
 			name: 'Snippet',
@@ -280,8 +281,7 @@ const map: Record<string, Route[]> = {
 				'A hook to track the size of the screen using the standard Tailwind CSS breakpoints.',
 			href: '/hooks/use-media',
 			specifier: 'hooks/use-media.svelte',
-			source: 'src/lib/hooks/use-media.svelte.ts',
-			status: 'New'
+			source: 'src/lib/hooks/use-media.svelte.ts'
 		},
 		{
 			name: 'UsePromise',

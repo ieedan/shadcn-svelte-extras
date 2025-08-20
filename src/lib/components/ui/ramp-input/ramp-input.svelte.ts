@@ -12,6 +12,14 @@ type RampInputRootProps = WritableBoxedValues<{
 
 export class RampInputRootContext {
 	constructor(readonly opts: RampInputRootProps) {}
+
+	valid = $derived.by(() => {
+		const value = this.opts.value.current;
+		const min = this.opts.min?.current;
+		const max = this.opts.max?.current;
+
+		return (min === undefined || value >= min) && (max === undefined || value <= max);
+	});
 }
 
 export class RampInputInputContext {
