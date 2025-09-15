@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.4.0
+
+### Minor Changes
+
+- feat: `Meter` component ([#260](https://github.com/ieedan/shadcn-svelte-extras/pull/260))
+
 ## 5.3.2
 
 ### Patch Changes
