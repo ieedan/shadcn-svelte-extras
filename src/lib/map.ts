@@ -122,6 +122,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/link/link.svelte'
 		},
 		{
+			name: 'Meter',
+			description: 'A meter component.',
+			href: '/components/meter',
+			specifier: 'ui/meter',
+			source: 'src/lib/components/ui/meter/meter.svelte',
+			status: 'New'
+		},
+		{
 			name: 'Modal',
 			description: 'A responsive dialog component.',
 			href: '/components/modal',

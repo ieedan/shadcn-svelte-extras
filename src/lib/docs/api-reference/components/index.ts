@@ -14,6 +14,7 @@ import { reference as KbdReference } from './kbd-api';
 import { reference as LanguageSwitcherReference } from './language-switcher-api';
 import { reference as LightSwitchReference } from './light-switch-api';
 import { reference as LinkReference } from './link-api';
+import { reference as MeterReference } from './meter-api';
 import { reference as ModalReference } from './modal-api';
 import { reference as NlpDateInputReference } from './nlp-date-input-api';
 import { reference as PhoneInputReference } from './phone-input-api';
@@ -43,6 +44,7 @@ export const references = [
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
+	MeterReference,
 	ModalReference,
 	NlpDateInputReference,
 	PhoneInputReference,
@@ -81,6 +83,7 @@ export {
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
+	MeterReference,
 	ModalReference,
 	NlpDateInputReference,
 	PhoneInputReference,
