@@ -5,7 +5,7 @@
 </script>
 
 <RampInput.Root bind:value rampBy={1} min={0} max={100}>
-	<RampInput.RampUp />
-	<RampInput.Input />
 	<RampInput.RampDown />
+	<RampInput.Input />
+	<RampInput.RampUp />
 </RampInput.Root>
