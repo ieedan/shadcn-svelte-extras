@@ -1,0 +1,1 @@
+export { default as Rename } from './rename.svelte';
