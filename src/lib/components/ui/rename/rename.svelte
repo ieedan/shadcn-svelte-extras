@@ -3,6 +3,7 @@
 		id?: string;
 		this: TagName;
 		mode: 'edit' | 'view';
+		blurBehavior?: 'exit' | 'none';
 		/** Controls whether the user can focus the input or text element */
 		canFocus?: boolean;
 		value: string;
@@ -32,16 +33,17 @@
 		value = $bindable(),
 		canFocus = false,
 		class: className,
+		blurBehavior,
 		inputClass,
 		textClass,
 		onSave = () => true,
 		onCancel = () => {}
 	}: RenameProps<TagName> = $props();
 
+	blurBehavior = (blurBehavior ?? canFocus) ? 'exit' : 'none';
+
 	let inputRef = $state<HTMLInputElement | null>(null);
 	let textRef = $state<HTMLElement | null>(null);
-
-        $inspect(id)
 
 	const rootState = useRename({
 		id,
@@ -63,7 +65,8 @@
 			(v) => (textRef = v)
 		),
 		onSave,
-		onCancel
+		onCancel,
+		blurBehavior: box.with(() => blurBehavior)
 	});
 
 	const commonClass = cn('text-base w-[225px]', className, inputClass);
@@ -74,16 +77,25 @@
 		{id}
 		bind:this={inputRef}
 		type="text"
-		class={cn(commonClass, inputClass)}
+		data-mode="edit"
+		class={cn(
+			commonClass,
+			'border-border rounded-md border outline-none',
+			'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+			'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+			inputClass
+		)}
 		onkeydown={rootState.onInputKeydown}
 		onblur={rootState.onInputBlur}
 		bind:value={rootState.editingValue}
+		autocomplete="off"
 	/>
 {:else if mode === 'view'}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<svelte:element
 		this={tagName as never}
 		{id}
+		data-mode="view"
 		class={cn(commonClass, textClass)}
 		contenteditable={canFocus}
 		onfocus={rootState.onTextFocus}
