@@ -26,12 +26,5 @@ export class MetaTagsRootState {
 const ctx = new Context<MetaTagsRootState>('meta-tags-ctx');
 
 export function useMetaTags(opts: RootStateProps) {
-	let base: MetaTagsRootState | null;
-	try {
-		base = ctx.get();
-	} catch {
-		base = null;
-	}
-
-	return new MetaTagsRootState(base, opts);
+	return new MetaTagsRootState(ctx.getOr(null), opts);
 }

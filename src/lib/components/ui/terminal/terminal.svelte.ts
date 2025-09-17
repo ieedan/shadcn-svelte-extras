@@ -101,15 +101,7 @@ export const useTerminalLoop = (props: TerminalLoopProps) => {
 };
 
 export const useTerminalRoot = (props: TerminalRootProps) => {
-	let loopState: TerminalLoop | undefined = undefined;
-
-	try {
-		loopState = TerminalLoopContext.get();
-	} catch {
-		// do nothing we don't care
-	}
-
-	return TerminalRootContext.set(new TerminalSession(props, loopState));
+	return TerminalRootContext.set(new TerminalSession(props, TerminalLoopContext.getOr(undefined)));
 };
 
 export const useAnimation = (props: AnimationStateProps) => {

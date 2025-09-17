@@ -117,15 +117,7 @@ export function useCodeOverflow(props: CodeOverflowStateProps) {
 }
 
 export function useCode(props: CodeRootStateProps) {
-	let overflow: CodeOverflowState | undefined = undefined;
-
-	try {
-		overflow = overflowCtx.get();
-	} catch {
-		// ignore
-	}
-
-	return ctx.set(new CodeRootState(props, overflow));
+	return ctx.set(new CodeRootState(props, overflowCtx.getOr(undefined)));
 }
 
 export function useCodeCopyButton() {
