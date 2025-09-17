@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	export type RenameProps<TagName extends keyof HTMLElementTagNameMap> = {
+	export type RenameProps<TagName extends TextElementTagNames> = {
 		id?: string;
 		this: TagName;
 		mode?: 'edit' | 'view';
@@ -18,10 +18,11 @@
 	};
 </script>
 
-<script lang="ts" generics="TagName extends keyof HTMLElementTagNameMap">
+<script lang="ts" generics="TagName extends TextElementTagNames">
 	import { cn } from '$lib/utils/utils';
 	import { box } from 'svelte-toolbelt';
 	import { useRenameInput } from './rename.svelte.js';
+	import type { TextElementTagNames } from './types.js';
 
 	const uid = $props.id();
 
