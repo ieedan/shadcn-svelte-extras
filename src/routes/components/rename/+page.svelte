@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
+	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Installation from '$lib/components/installation.svelte';
 	import Playground from '$lib/components/playground.svelte';
 	import Code from '$lib/components/docs/code.svelte';
@@ -36,4 +36,14 @@
 <p>When in content editable mode the user can click on the text to start editing it.</p>
 <Playground code={examples.contentEditable.code}>
 	<examples.contentEditable.Component />
+</Playground>
+
+<Subheading>External Control</Subheading>
+<p>
+	You can put the <CodeSpan>Rename</CodeSpan> component into edit mode by using the <CodeSpan
+		>Edit</CodeSpan
+	> component or by setting the <CodeSpan>mode</CodeSpan> prop to <CodeSpan>'edit'</CodeSpan>.
+</p>
+<Playground code={examples.contextMenu.code}>
+	<examples.contextMenu.Component />
 </Playground>

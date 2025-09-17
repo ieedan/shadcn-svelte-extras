@@ -4,6 +4,7 @@
 		this: TagName;
 		mode?: 'edit' | 'view';
 		blurBehavior?: 'exit' | 'none';
+		fallbackCursorPositionBehavior?: 'start' | 'end' | 'all';
 		value: string;
 		/** Applied first to both the input and text elements*/
 		class?: string;
@@ -33,6 +34,7 @@
 		value = $bindable(),
 		class: className,
 		blurBehavior,
+		fallbackCursorPositionBehavior = 'end',
 		inputClass,
 		textClass,
 		onSave = () => true,
@@ -64,10 +66,11 @@
 		onSave,
 		onCancel,
 		blurBehavior: box.with(() => blurBehavior),
-		validate
+		validate,
+		fallbackCursorPositionBehavior: box.with(() => fallbackCursorPositionBehavior)
 	});
 
-	const commonClass = cn('text-base', className, inputClass);
+	const commonClass = cn('text-base min-w-0 w-full');
 </script>
 
 {#if mode === 'edit'}
@@ -81,6 +84,7 @@
 			'border-border rounded-md border outline-none',
 			'focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
 			'aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive',
+			className,
 			inputClass
 		)}
 		aria-invalid={rootState.invalid}
@@ -95,7 +99,7 @@
 		this={tagName as never}
 		{id}
 		data-mode="view"
-		class={cn(commonClass, textClass)}
+		class={cn(commonClass, className, textClass)}
 		onclick={rootState.onTextClick}
 		bind:this={textRef}
 	>

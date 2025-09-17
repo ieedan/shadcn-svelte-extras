@@ -32,7 +32,8 @@ export default ts.config(
 				}
 			],
 			'no-prototype-builtins': 'off',
-			'no-useless-escape': 'warn'
+			'no-useless-escape': 'warn',
+			'svelte/no-navigation-without-resolve': 'off'
 		}
 	},
 	{

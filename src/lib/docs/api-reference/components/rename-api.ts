@@ -22,6 +22,11 @@ const Root = api.createComponentReference<RenameProps<'p'>>({
 			type: '"exit" | "none"',
 			description: 'What to do on input blur in edit mode.'
 		}),
+		fallbackCursorPositionBehavior: api.createStringUnionProp({
+			type: '"start" | "end" | "all"',
+			description: 'What to do if the cursor position is not found.',
+			defaultValue: 'end'
+		}),
 		value: api.createStringProp({
 			description: 'The accepted value of the input.',
 			bindable: true,
@@ -67,7 +72,7 @@ const Edit = api.createComponentReference({
 		child: api.createAnyProp({
 			description: 'Custom component to render instead of the default button.',
 			type: 'Snippet',
-			tooltip: 'Snippet<[{ props: Record<string, unknown> }]>'
+			tooltip: 'Snippet<[{ edit: () => void }]>'
 		})
 	}
 });
@@ -79,7 +84,7 @@ const Cancel = api.createComponentReference({
 		child: api.createAnyProp({
 			description: 'Custom component to render instead of the default button.',
 			type: 'Snippet',
-			tooltip: 'Snippet<[{ props: Record<string, unknown> }]>'
+			tooltip: 'Snippet<[{ cancel: () => void }]>'
 		})
 	}
 });
@@ -91,7 +96,7 @@ const Save = api.createComponentReference({
 		child: api.createAnyProp({
 			description: 'Custom component to render instead of the default button.',
 			type: 'Snippet',
-			tooltip: 'Snippet<[{ props: Record<string, unknown> }]>'
+			tooltip: 'Snippet<[{ save: () => void }]>'
 		})
 	}
 });

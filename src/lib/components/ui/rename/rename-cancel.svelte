@@ -6,14 +6,14 @@
 	const cancelState = useRenameCancel();
 
 	type Props = Omit<ButtonElementProps, 'type' | 'onclick'> & {
-		child?: Snippet<[{ props: Record<string, unknown> }]>;
+		child?: Snippet<[{ cancel: () => void }]>;
 	};
 
 	let { ref = $bindable(null), children, variant = 'outline', child, ...rest }: Props = $props();
 </script>
 
 {#if child}
-	{@render child({ props: { ref, variant, ...rest } })}
+	{@render child({ cancel: cancelState.cancel })}
 {:else}
 	<Button bind:ref type="button" onclick={cancelState.cancel} {variant} {...rest}>
 		{#if children}

@@ -6,14 +6,14 @@
 	const editState = useRenameEdit();
 
 	type Props = Omit<ButtonElementProps, 'type' | 'onclick'> & {
-		child?: Snippet<[{ props: Record<string, unknown> }]>;
+		child?: Snippet<[{ edit: () => void }]>;
 	};
 
 	let { ref = $bindable(null), children, variant = 'outline', child, ...rest }: Props = $props();
 </script>
 
 {#if child}
-	{@render child({ props: { ref, variant, ...rest } })}
+	{@render child({ edit: editState.edit })}
 {:else}
 	<Button bind:ref type="button" onclick={editState.edit} {variant} {...rest}>
 		{#if children}

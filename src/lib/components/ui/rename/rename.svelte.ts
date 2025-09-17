@@ -50,6 +50,7 @@ type RenameInputStateProps = WritableBoxedValues<{
 }> &
 	ReadableBoxedValues<{
 		blurBehavior?: 'exit' | 'none';
+		fallbackCursorPositionBehavior: 'start' | 'end' | 'all';
 	}> & {
 		id: string;
 		onSave?: (value: string) => Promise<boolean> | boolean;
@@ -116,19 +117,27 @@ class RenameInputState {
 		});
 	}
 
-	async startEditing(selectionStart?: number) {
+	async startEditing(selection?: { start: number; end?: number }) {
 		this.mode = 'edit';
 		this.editingValue = this.opts.value.current;
 		await tick();
 		this.opts.inputRef.current?.focus();
-		if (selectionStart !== undefined) {
-			this.opts.inputRef.current?.setSelectionRange(selectionStart, selectionStart);
-		} else {
-			// otherwise just start at the end
+		if (selection !== undefined) {
 			this.opts.inputRef.current?.setSelectionRange(
-				this.editingValue.length,
-				this.editingValue.length
+				selection.start,
+				selection.end ?? selection.start
 			);
+		} else {
+			if (this.opts.fallbackCursorPositionBehavior.current === 'start') {
+				this.opts.inputRef.current?.setSelectionRange(0, 0);
+			} else if (this.opts.fallbackCursorPositionBehavior.current === 'end') {
+				this.opts.inputRef.current?.setSelectionRange(
+					this.editingValue.length,
+					this.editingValue.length
+				);
+			} else if (this.opts.fallbackCursorPositionBehavior.current === 'all') {
+				this.opts.inputRef.current?.setSelectionRange(0, this.editingValue.length);
+			}
 		}
 	}
 
@@ -167,7 +176,7 @@ class RenameInputState {
 		// this is how we make sure the selection starts where the user clicked
 		const selected = window.getSelection();
 		const focusOffset = selected?.focusOffset;
-		await this.startEditing(focusOffset);
+		await this.startEditing(focusOffset ? { start: focusOffset } : undefined);
 	}
 }
 
