@@ -80,7 +80,7 @@ class RenameInputState {
 		// function bindings
 		this.onInputKeydown = this.onInputKeydown.bind(this);
 		this.onInputBlur = this.onInputBlur.bind(this);
-		this.onTextFocus = this.onTextFocus.bind(this);
+		this.onTextClick = this.onTextClick.bind(this);
 		this.save = this.save.bind(this);
 		this.cancel = this.cancel.bind(this);
 		this.startEditing = this.startEditing.bind(this);
@@ -160,9 +160,11 @@ class RenameInputState {
 		this.cancel();
 	}
 
-	async onTextFocus() {
-		// wait for the selection to be updated
+	async onTextClick() {
+		// do nothing if the provider state is defined
+		if (this.providerState !== undefined) return;
 		await new Promise((res) => setTimeout(res, 0));
+		// this is how we make sure the selection starts where the user clicked
 		const selected = window.getSelection();
 		const focusOffset = selected?.focusOffset;
 		await this.startEditing(focusOffset);

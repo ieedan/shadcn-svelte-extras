@@ -95,8 +95,7 @@
 		{id}
 		data-mode="view"
 		class={cn(commonClass, textClass)}
-		contenteditable={rootState.providerState === undefined}
-		onfocus={rootState.onTextFocus}
+		onclick={rootState.onTextClick}
 		bind:this={textRef}
 	>
 		{value}

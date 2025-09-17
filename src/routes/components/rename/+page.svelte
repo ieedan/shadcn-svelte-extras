@@ -15,12 +15,25 @@
 	<Code
 		lang="svelte"
 		code={`\<script lang="ts"\>
-	import { Rename } from '$lib/components/ui/rename';
-
-	let mode = $state('view');
-	let value = $state('Hello');
+	import * as Rename from '$lib/components/ui/rename';
 \<\/script\>
 
-<Rename this="span" bind:mode={mode} bind:value={value} />`}
+<Rename.Provider>
+	<Rename.Root />
+	<Rename.Save />
+	<Rename.Cancel />
+	<Rename.Edit />
+</Rename.Provider>
+
+<!-- or -->
+
+<!-- Content editable mode -->
+<Rename.Root />
+`}
 	/>
 </div>
+<Subheading>Content Editable</Subheading>
+<p>When in content editable mode the user can click on the text to start editing it.</p>
+<Playground code={examples.contentEditable.code}>
+	<examples.contentEditable.Component />
+</Playground>
