@@ -166,7 +166,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Rename',
-			description: 'A component for renaming entities.',
+			description: 'A component for renaming stuff.',
 			href: '/components/rename',
 			specifier: 'ui/rename',
 			source: 'src/lib/components/ui/rename/rename.svelte',

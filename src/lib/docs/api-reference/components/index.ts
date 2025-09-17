@@ -29,6 +29,7 @@ import { reference as TreeViewReference } from './tree-view-api';
 import { reference as WindowReference } from './window-api';
 import { reference as EmojiPickerReference } from './emoji-picker-api';
 import { reference as PasswordReference } from './password-api';
+import { reference as RenameReference } from './rename-api';
 
 export const references = [
 	AvatarGroupReference,
@@ -58,7 +59,8 @@ export const references = [
 	TreeViewReference,
 	WindowReference,
 	EmojiPickerReference,
-	PasswordReference
+	PasswordReference,
+	RenameReference
 ];
 
 /** Get a reference by name
@@ -97,5 +99,6 @@ export {
 	TreeViewReference,
 	WindowReference,
 	EmojiPickerReference,
-	PasswordReference
+	PasswordReference,
+	RenameReference
 };
