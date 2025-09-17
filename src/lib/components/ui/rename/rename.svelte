@@ -4,7 +4,7 @@
 		this: TagName;
 		mode?: 'edit' | 'view';
 		blurBehavior?: 'exit' | 'none';
-		fallbackCursorPositionBehavior?: 'start' | 'end' | 'all';
+		fallbackSelectionBehavior?: 'start' | 'end' | 'all';
 		value: string;
 		/** Applied first to both the input and text elements*/
 		class?: string;
@@ -34,7 +34,7 @@
 		value = $bindable(),
 		class: className,
 		blurBehavior,
-		fallbackCursorPositionBehavior = 'end',
+		fallbackSelectionBehavior = 'end',
 		inputClass,
 		textClass,
 		onSave = () => true,
@@ -67,7 +67,7 @@
 		onCancel,
 		blurBehavior: box.with(() => blurBehavior),
 		validate,
-		fallbackCursorPositionBehavior: box.with(() => fallbackCursorPositionBehavior)
+		fallbackSelectionBehavior: box.with(() => fallbackSelectionBehavior)
 	});
 
 	const commonClass = cn('text-base min-w-0 w-full');

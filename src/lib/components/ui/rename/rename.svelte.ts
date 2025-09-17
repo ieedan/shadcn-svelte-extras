@@ -50,7 +50,7 @@ type RenameInputStateProps = WritableBoxedValues<{
 }> &
 	ReadableBoxedValues<{
 		blurBehavior?: 'exit' | 'none';
-		fallbackCursorPositionBehavior: 'start' | 'end' | 'all';
+		fallbackSelectionBehavior: 'start' | 'end' | 'all';
 	}> & {
 		id: string;
 		onSave?: (value: string) => Promise<boolean> | boolean;
@@ -128,14 +128,14 @@ class RenameInputState {
 				selection.end ?? selection.start
 			);
 		} else {
-			if (this.opts.fallbackCursorPositionBehavior.current === 'start') {
+			if (this.opts.fallbackSelectionBehavior.current === 'start') {
 				this.opts.inputRef.current?.setSelectionRange(0, 0);
-			} else if (this.opts.fallbackCursorPositionBehavior.current === 'end') {
+			} else if (this.opts.fallbackSelectionBehavior.current === 'end') {
 				this.opts.inputRef.current?.setSelectionRange(
 					this.editingValue.length,
 					this.editingValue.length
 				);
-			} else if (this.opts.fallbackCursorPositionBehavior.current === 'all') {
+			} else if (this.opts.fallbackSelectionBehavior.current === 'all') {
 				this.opts.inputRef.current?.setSelectionRange(0, this.editingValue.length);
 			}
 		}

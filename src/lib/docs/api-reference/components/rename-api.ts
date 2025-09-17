@@ -22,9 +22,9 @@ const Root = api.createComponentReference<RenameProps<'p'>>({
 			type: '"exit" | "none"',
 			description: 'What to do on input blur in edit mode.'
 		}),
-		fallbackCursorPositionBehavior: api.createStringUnionProp({
+		fallbackSelectionBehavior: api.createStringUnionProp({
 			type: '"start" | "end" | "all"',
-			description: 'What to do if the cursor position is not found.',
+			description: 'How should the selection be set on focus when it cannot be detected.',
 			defaultValue: 'end'
 		}),
 		value: api.createStringProp({

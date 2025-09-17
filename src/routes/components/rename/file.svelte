@@ -46,7 +46,7 @@
 					class="text-foreground outline-ring flex h-7 w-[200px] !rounded-xs text-start focus:!ring-0 focus:outline-1 data-[mode=view]:place-items-center"
 					validate={validateName}
 					bind:mode={renameMode}
-					fallbackCursorPositionBehavior="all"
+					fallbackSelectionBehavior="all"
 				/>
 			</button>
 		</ContextMenu.Trigger>
