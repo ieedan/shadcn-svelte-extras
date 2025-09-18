@@ -165,6 +165,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
+			name: 'Rename',
+			description: 'A component for renaming stuff.',
+			href: '/components/rename',
+			specifier: 'ui/rename',
+			source: 'src/lib/components/ui/rename/rename.svelte',
+			status: 'New'
+		},
+		{
 			name: 'Snippet',
 			description: 'A snippet component.',
 			href: '/components/snippet',
