@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.5.0
+
+### Minor Changes
+
+- feat: `ui/rename` ([#262](https://github.com/ieedan/shadcn-svelte-extras/pull/262))
+
 ## 5.4.0
 
 ### Minor Changes
