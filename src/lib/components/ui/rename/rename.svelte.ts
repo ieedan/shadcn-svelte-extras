@@ -53,8 +53,8 @@ type RenameInputStateProps = WritableBoxedValues<{
 		fallbackSelectionBehavior: 'start' | 'end' | 'all';
 	}> & {
 		id: string;
-		onSave?: (value: string) => Promise<boolean> | boolean;
-		onCancel?: () => Promise<void> | void;
+		onSave?: (value: string) => void;
+		onCancel?: () => void;
 		validate: (value: string) => boolean;
 	};
 

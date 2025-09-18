@@ -13,7 +13,7 @@
 		/** Applied to the text element, overrides class */
 		textClass?: string;
 		/** Called when the user saves the value. Return true to accept and edit false to show and invalid state */
-		onSave?: (value: string) => Promise<boolean> | boolean;
+		onSave?: (value: string) => void;
 		onCancel?: () => void;
 		validate?: (value: string) => boolean;
 	};
@@ -37,7 +37,7 @@
 		fallbackSelectionBehavior = 'end',
 		inputClass,
 		textClass,
-		onSave = () => true,
+		onSave = () => {},
 		onCancel = () => {},
 		validate = () => true
 	}: RenameProps<TagName> = $props();
