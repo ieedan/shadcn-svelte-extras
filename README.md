@@ -29,6 +29,7 @@ Turn key shadcn-svelte components to help you finish your app.
 | [Password](https://shadcn-svelte-extras.com/components/password)                   | A password input component                                                              |
 | [Phone Input](https://shadcn-svelte-extras.com/components/phone-input)             | A phone number input component                                                          |
 | [PM Command](https://shadcn-svelte-extras.com/components/pm-command)               | A package manager command component                                                     |
+| [Rename](https://shadcn-svelte-extras.com/components/rename)                       | A component to rename stuff                                                             |
 | [Snippet](https://shadcn-svelte-extras.com/components/snippet)                     | A snippet component                                                                     |
 | [Star Rating](https://shadcn-svelte-extras.com/components/star-rating)             | A simple star rating component                                                          |
 | [Tags Input](https://shadcn-svelte-extras.com/components/tags-input)               | A tags input component                                                                  |
