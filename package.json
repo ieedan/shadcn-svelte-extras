@@ -82,6 +82,7 @@
 		]
 	},
 	"dependencies": {
+		"@number-flow/svelte": "^0.3.9",
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
 		"geist@latest": "link:@fontsource/variable/geist@latest",
 		"jsrepo": "^2.4.9"
