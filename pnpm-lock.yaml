@@ -11,9 +11,6 @@ importers:
       '@svitejs/changesets-changelog-github-compact':
         specifier: ^1.2.0
         version: 1.2.0(encoding@0.1.13)
-      geist@latest:
-        specifier: link:@fontsource/variable/geist@latest
-        version: link:@fontsource/variable/geist@latest
       jsrepo:
         specifier: ^2.4.9
         version: 2.4.9(typescript@5.9.2)(ws@8.18.3)(zod@3.25.76)

@@ -83,7 +83,6 @@
 	},
 	"dependencies": {
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0",
-		"geist@latest": "link:@fontsource/variable/geist@latest",
 		"jsrepo": "^2.4.9"
 	}
 }
