@@ -70,6 +70,7 @@
 		"valibot": "1.1.0",
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "^7.1.5",
+		"vite-plugin-transform-lucide-imports": "^0.0.1",
 		"yeezy-dates": "^1.0.1"
 	},
 	"pnpm": {
