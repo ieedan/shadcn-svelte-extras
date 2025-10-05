@@ -1,5 +1,5 @@
 ---
-'shadcn-svelte-extras': major
+'shadcn-svelte-extras': minor
 ---
 
-breaking: Remove `Kbd` in favor of shadcn-svelte `Kbd`
+deprecate(ui/kbd): Remove `Kbd` in favor of shadcn-svelte `Kbd`
