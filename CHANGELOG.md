@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 5.6.0
+
+### Minor Changes
+
+- deprecate(ui/kbd): Remove `Kbd` in favor of shadcn-svelte `Kbd` ([#268](https://github.com/ieedan/shadcn-svelte-extras/pull/268))
+
 ## 5.5.0
 
 ### Minor Changes
