@@ -21,7 +21,6 @@ Turn key shadcn-svelte components to help you finish your app.
 | [File Drop Zone](https://shadcn-svelte-extras.com/components/file-drop-zone)       | A file drop zone component                                                              |
 | [Image Cropper](https://shadcn-svelte-extras.com/components/image-cropper)         | A component for uploading and resizing images                                           |
 | [IPv4Address Input](https://shadcn-svelte-extras.com/components/ipv4address-input) | An IPv4 address input input with all the behavior you'd expect                          |
-| [Kbd](https://shadcn-svelte-extras.com/components/kbd)                             | Denotes user input from a keyboard                                                      |
 | [Light Switch](https://shadcn-svelte-extras.com/components/light-switch)           | A component to click and change the theme                                               |
 | [Link](https://shadcn-svelte-extras.com/components/link)                           | A simple link component                                                                 |
 | [Modal](https://shadcn-svelte-extras.com/components/modal)                         | A responsive dialog component                                                           |

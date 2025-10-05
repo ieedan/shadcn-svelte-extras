@@ -94,13 +94,6 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/ipv4address-input'
 		},
 		{
-			name: 'Keyboard Input',
-			description: 'Denotes user input from a keyboard.',
-			href: '/components/kbd',
-			specifier: 'ui/kbd',
-			source: 'src/lib/components/ui/kbd/kbd.svelte'
-		},
-		{
 			name: 'Language Switcher',
 			description: 'A component for switching your sites locale.',
 			href: '/components/language-switcher',

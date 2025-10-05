@@ -6,6 +6,7 @@
 
 <script lang="ts">
 	import Documents from './file.svelte';
+	import { Kbd } from '$lib/components/ui/kbd';
 
 	let documents: Doc[] = $state([
 		{ name: '+layout.svelte' },
@@ -19,7 +20,7 @@
 </script>
 
 <div class="flex flex-col gap-4">
-	<p class="text-muted-foreground text-sm">Right click or press <kbd>F2</kbd> to rename files.</p>
+	<p class="text-muted-foreground text-sm">Right click or press <Kbd>F2</Kbd> to rename files.</p>
 	<div class="flex flex-col">
 		{#each documents as document, index (document.name)}
 			<Documents
