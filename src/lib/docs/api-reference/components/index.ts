@@ -10,7 +10,6 @@ import { reference as FieldSetReference } from './field-set-api';
 import { reference as FileDropZoneReference } from './file-drop-zone-api';
 import { reference as ImageCropperReference } from './image-cropper-api';
 import { reference as Ipv4addressInputReference } from './ipv4address-input-api';
-import { reference as KbdReference } from './kbd-api';
 import { reference as LanguageSwitcherReference } from './language-switcher-api';
 import { reference as LightSwitchReference } from './light-switch-api';
 import { reference as LinkReference } from './link-api';
@@ -41,7 +40,6 @@ export const references = [
 	FileDropZoneReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
-	KbdReference,
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
@@ -81,7 +79,6 @@ export {
 	FileDropZoneReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
-	KbdReference,
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
