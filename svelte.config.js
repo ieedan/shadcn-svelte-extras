@@ -9,7 +9,10 @@ const config = {
 
 	kit: {
 		adapter: adapter()
-	}
+	},
+	prerender: {
+		origin: 'https://shadcn-svelte-extras.com',
+	},
 };
 
 export default config;
