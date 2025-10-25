@@ -9,6 +9,7 @@
 		languages = [],
 		value = $bindable(''),
 		align = 'end',
+		side = 'bottom',
 		variant = 'outline',
 		onChange,
 		class: className
@@ -28,7 +29,7 @@
 		<GlobeIcon class="size-4" />
 		<span class="sr-only">Change language</span>
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content {align}>
+	<DropdownMenu.Content {align} {side}>
 		<DropdownMenu.RadioGroup bind:value onValueChange={onChange}>
 			{#each languages as language (language.code)}
 				<DropdownMenu.RadioItem value={language.code}>
