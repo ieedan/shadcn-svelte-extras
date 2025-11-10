@@ -22,6 +22,3 @@ jobs:
 
       - name: Check
         run: pnpm check
-
-      - name: Build Registry
-        run: pnpm build:registry
