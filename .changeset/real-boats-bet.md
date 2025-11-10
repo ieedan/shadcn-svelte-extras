@@ -1,5 +1,5 @@
 ---
-'shadcn-svelte-extras': patch
+'shadcn-svelte-extras': major
 ---
 
 jsrepo v3
