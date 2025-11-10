@@ -21,7 +21,7 @@
 	import { dev } from '$app/environment';
 	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
 	import * as Dialog from '$lib/components/ui/dialog';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import * as Tabs from '$lib/components/ui/tabs';

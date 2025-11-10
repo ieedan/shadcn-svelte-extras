@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Meter } from '$lib/components/ui/meter';
-	import { cn } from '$lib/utils/utils.js';
+	import { cn } from '$lib/utils.js';
 	import { onMount } from 'svelte';
 	import { linear } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';

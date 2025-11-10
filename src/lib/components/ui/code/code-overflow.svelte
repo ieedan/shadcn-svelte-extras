@@ -3,7 +3,7 @@
 	import { useCodeOverflow } from './code.svelte.js';
 	import { box } from 'svelte-toolbelt';
 	import type { CodeOverflowProps } from './types';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
 	let {
 		collapsed = $bindable(true),

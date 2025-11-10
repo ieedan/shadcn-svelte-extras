@@ -12,7 +12,7 @@
 	import { Input } from '$lib/components/ui/input';
 	import * as data from './data';
 	import { formatShortTime, initials } from './utils';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
 	let message = $state('');
 

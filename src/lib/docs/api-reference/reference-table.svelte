@@ -2,7 +2,7 @@
 	import type { Component, PropReference } from './api-reference';
 	import * as Alert from '$lib/components/ui/alert';
 	import { Link } from '$lib/components/ui/link';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import * as HoverCard from '$lib/components/ui/hover-card';
 	import InfoIcon from '@lucide/svelte/icons/info';
 	import { highlighter } from '$lib/components/ui/code/shiki';

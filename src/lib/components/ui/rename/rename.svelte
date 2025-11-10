@@ -20,7 +20,7 @@
 </script>
 
 <script lang="ts" generics="TagName extends TextElementTagNames">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { box } from 'svelte-toolbelt';
 	import { useRenameInput } from './rename.svelte.js';
 	import type { TextElementTagNames } from './types.js';

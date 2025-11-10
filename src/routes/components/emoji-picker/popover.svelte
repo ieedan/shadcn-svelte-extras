@@ -2,7 +2,7 @@
 	import { buttonVariants } from '$lib/components/ui/button';
 	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
 	import * as Popover from '$lib/components/ui/popover';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
 	import { toast } from 'svelte-sonner';
 

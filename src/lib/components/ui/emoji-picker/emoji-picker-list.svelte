@@ -5,7 +5,7 @@
 	import * as casing from '$lib/utils/casing';
 	import type { EmojiPickerListProps } from './types';
 	import { makeValue, parseValue, useEmojiPickerList } from './emoji-picker.svelte.js';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
 	let {
 		ref = $bindable(null),

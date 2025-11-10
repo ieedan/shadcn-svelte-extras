@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { unstable_RatingGroup as RatingGroup, type RatingGroupRootProps } from 'bits-ui';
 
 	let {
