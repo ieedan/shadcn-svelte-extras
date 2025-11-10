@@ -7,3 +7,4 @@ CHANGELOG.md
 
 # Generated code
 src/lib/paraglide/
+.changeset/pre.json
