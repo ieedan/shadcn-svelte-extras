@@ -18,84 +18,84 @@ export default defineConfig({
 			utils: '$lib/utils',
 			lib: '$lib'
 		},
-        excludeDeps: ['svelte', '@sveltejs/kit'],
+		excludeDeps: ['svelte', '@sveltejs/kit'],
 		items: [
-            // lib
-            {
-                name: 'utils',
-                description: 'Global utilities used by most of the components.',
-                type: 'lib',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils.ts'
-                    }
-                ]
-            },
-            // utils
-            {
-                name: 'casing',
-                type: 'utils',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils/casing.ts'
-                    }
-                ]
-            },
-            {
-                name: 'is-letter',
-                type: 'utils',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils/is-letter.ts'
-                    }
-                ]
-            },
-            {
-                name: 'is-number',
-                type: 'utils',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils/is-number.ts'
-                    }
-                ]
-            },
-            {
-                name: 'ipv4-address',
-                type: 'utils',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils/ipv4-address.ts'
-                    }
-                ]
-            },
-            {
-                name: 'result',
-                type: 'utils',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/utils/result.ts'
-                    }
-                ]
-            },
+			// lib
+			{
+				name: 'utils',
+				description: 'Global utilities used by most of the components.',
+				type: 'lib',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils.ts'
+					}
+				]
+			},
+			// utils
+			{
+				name: 'casing',
+				type: 'utils',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils/casing.ts'
+					}
+				]
+			},
+			{
+				name: 'is-letter',
+				type: 'utils',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils/is-letter.ts'
+					}
+				]
+			},
+			{
+				name: 'is-number',
+				type: 'utils',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils/is-number.ts'
+					}
+				]
+			},
+			{
+				name: 'ipv4-address',
+				type: 'utils',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils/ipv4-address.ts'
+					}
+				]
+			},
+			{
+				name: 'result',
+				type: 'utils',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/utils/result.ts'
+					}
+				]
+			},
 
 			// ui
-            {
-                name: 'avatar',
-                title: 'Avatar',
-                type: 'ui',
-                add: 'when-needed',
-                files: [
-                    {
-                        path: 'src/lib/components/ui/avatar'
-                    }
-                ]
-            },
+			{
+				name: 'avatar',
+				title: 'Avatar',
+				type: 'ui',
+				add: 'when-needed',
+				files: [
+					{
+						path: 'src/lib/components/ui/avatar'
+					}
+				]
+			},
 			{
 				name: 'avatar-group',
 				title: 'AvatarGroup',
@@ -140,22 +140,22 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'collapsible',
 				title: 'Collapsible',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/collapsible'
 					}
 				]
 			},
-            {
+			{
 				name: 'command',
 				title: 'Command',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/command'
@@ -173,33 +173,33 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'dialog',
 				title: 'Dialog',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/dialog'
 					}
 				]
 			},
-            {
+			{
 				name: 'drawer',
 				title: 'Drawer',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/drawer'
 					}
 				]
 			},
-            {
+			{
 				name: 'dropdown-menu',
 				title: 'DropdownMenu',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/dropdown-menu'
@@ -250,11 +250,11 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'input',
 				title: 'Input',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/input'
@@ -371,11 +371,11 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'popover',
 				title: 'Popover',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/popover'
@@ -393,11 +393,11 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'scroll-area',
 				title: 'ScrollArea',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/scroll-area'
@@ -426,11 +426,11 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'tabs',
 				title: 'Tabs',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/tabs'
@@ -481,22 +481,22 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'toggle',
 				title: 'Toggle',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/toggle'
 					}
 				]
 			},
-            {
+			{
 				name: 'tooltip',
 				title: 'Tooltip',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/components/ui/tooltip'
@@ -549,11 +549,11 @@ export default defineConfig({
 					}
 				]
 			},
-            {
+			{
 				name: 'typewriter',
 				title: 'Typewriter',
 				type: 'ui',
-                add: 'when-needed',
+				add: 'when-needed',
 				files: [
 					{
 						path: 'src/lib/actions/typewriter.svelte.ts'

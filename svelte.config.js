@@ -11,8 +11,8 @@ const config = {
 		adapter: adapter()
 	},
 	prerender: {
-		origin: 'https://shadcn-svelte-extras.com',
-	},
+		origin: 'https://shadcn-svelte-extras.com'
+	}
 };
 
 export default config;
