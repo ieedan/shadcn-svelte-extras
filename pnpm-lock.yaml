@@ -97,8 +97,8 @@ importers:
         specifier: ^2.27.0
         version: 2.27.0(postcss@8.5.6)
       jsrepo:
-        specifier: 3.0.0-beta.12
-        version: 3.0.0-beta.12(svelte@5.43.6)
+        specifier: 3.0.0-beta.13
+        version: 3.0.0-beta.13(svelte@5.43.6)
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.43.6)
@@ -1857,12 +1857,12 @@ packages:
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
 
-  jsrepo@3.0.0-beta.12:
-    resolution: {integrity: sha512-I+D6qqK30JXQ4aOA/MNTeFhETVCQ82y2wF1ncV1TKVUWFBwp1k/qFEE6ktS4HsIOcfEszKbJVG7pcK8KF/xf7Q==}
+  jsrepo@3.0.0-beta.13:
+    resolution: {integrity: sha512-XxgyZ/y6M2aeNjrgIxjAAD7vpzMCPwXliFNAkKWdsJpTvxvlz1NThgItyjttIqcovAC9PMCk8l1ROihrvogNYw==}
     hasBin: true
     peerDependencies:
-      svelte: ^5.41.4
-      vue: ^3.5.22
+      svelte: ^5.x.x
+      vue: ^3.x.x
     peerDependenciesMeta:
       svelte:
         optional: true
@@ -4661,7 +4661,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  jsrepo@3.0.0-beta.12(svelte@5.43.6):
+  jsrepo@3.0.0-beta.13(svelte@5.43.6):
     dependencies:
       commander: 14.0.2
       oxc-parser: 0.96.0
