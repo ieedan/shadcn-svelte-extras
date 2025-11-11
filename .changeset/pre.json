@@ -5,6 +5,7 @@
     "shadcn-svelte-extras": "5.6.0"
   },
   "changesets": [
+    "crazy-drinks-enjoy",
     "five-bags-buy",
     "real-boats-bet"
   ]
