@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.0.0-beta.3
+
+### Patch Changes
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
 ## 6.0.0-beta.2
 
 ### Patch Changes
