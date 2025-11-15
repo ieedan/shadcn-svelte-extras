@@ -12,10 +12,10 @@ export default defineConfig({
 		tags: ['svelte', 'shadcn', 'typescript', 'components', 'utilities'],
 		defaultPaths: {
 			ui: '$lib/components/ui',
-			blocks: '$lib/components',
-			hooks: '$lib/hooks',
-			actions: '$lib/actions',
-			utils: '$lib/utils',
+			block: '$lib/components',
+			hook: '$lib/hooks',
+			action: '$lib/actions',
+			util: '$lib/utils',
 			lib: '$lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
@@ -35,7 +35,7 @@ export default defineConfig({
 			// utils
 			{
 				name: 'casing',
-				type: 'utils',
+				type: 'util',
 				add: 'when-needed',
 				files: [
 					{
@@ -45,7 +45,7 @@ export default defineConfig({
 			},
 			{
 				name: 'is-letter',
-				type: 'utils',
+				type: 'util',
 				add: 'when-needed',
 				files: [
 					{
@@ -55,7 +55,7 @@ export default defineConfig({
 			},
 			{
 				name: 'is-number',
-				type: 'utils',
+				type: 'util',
 				add: 'when-needed',
 				files: [
 					{
@@ -65,7 +65,7 @@ export default defineConfig({
 			},
 			{
 				name: 'ipv4-address',
-				type: 'utils',
+				type: 'util',
 				add: 'when-needed',
 				files: [
 					{
@@ -75,7 +75,7 @@ export default defineConfig({
 			},
 			{
 				name: 'result',
-				type: 'utils',
+				type: 'util',
 				add: 'when-needed',
 				files: [
 					{
@@ -531,7 +531,7 @@ export default defineConfig({
 				name: 'active',
 				title: 'Active',
 				description: 'A active component.',
-				type: 'actions',
+				type: 'action',
 				files: [
 					{
 						path: 'src/lib/actions/active.svelte.ts'
@@ -542,7 +542,7 @@ export default defineConfig({
 				name: 'shortcut',
 				title: 'Shortcut',
 				description: 'A shortcut component.',
-				type: 'actions',
+				type: 'action',
 				files: [
 					{
 						path: 'src/lib/actions/shortcut.svelte.ts'
@@ -552,7 +552,7 @@ export default defineConfig({
 			{
 				name: 'typewriter',
 				title: 'Typewriter',
-				type: 'ui',
+				type: 'action',
 				add: 'when-needed',
 				files: [
 					{
@@ -566,7 +566,7 @@ export default defineConfig({
 				name: 'is-mac',
 				title: 'IsMac',
 				description: 'A is mac hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/is-mac.svelte.ts'
@@ -577,7 +577,7 @@ export default defineConfig({
 				name: 'use-auto-scroll',
 				title: 'UseAutoScroll',
 				description: 'A use auto scroll hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-auto-scroll.svelte.ts'
@@ -588,7 +588,7 @@ export default defineConfig({
 				name: 'use-boolean',
 				title: 'UseBoolean',
 				description: 'A use boolean hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-boolean.svelte.ts'
@@ -599,7 +599,7 @@ export default defineConfig({
 				name: 'use-clipboard',
 				title: 'UseClipboard',
 				description: 'A use clipboard hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-clipboard.svelte.ts'
@@ -610,7 +610,7 @@ export default defineConfig({
 				name: 'use-media',
 				title: 'UseMedia',
 				description: 'A use media hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-media.svelte.ts'
@@ -621,7 +621,7 @@ export default defineConfig({
 				name: 'use-promise',
 				title: 'UsePromise',
 				description: 'A use promise hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-promise.svelte.ts'
@@ -632,7 +632,7 @@ export default defineConfig({
 				name: 'use-toc',
 				title: 'UseToc',
 				description: 'A use toc hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-toc.svelte.ts'
@@ -643,7 +643,7 @@ export default defineConfig({
 				name: 'use-frecency',
 				title: 'UseFrecency',
 				description: 'A use frecency hook.',
-				type: 'hooks',
+				type: 'hook',
 				files: [
 					{
 						path: 'src/lib/hooks/use-frecency.svelte.ts'
