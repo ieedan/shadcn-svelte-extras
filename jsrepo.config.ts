@@ -1,5 +1,6 @@
 import { defineConfig, RegistryItem } from 'jsrepo';
 import addType from './.jsrepo/outputs/add-type';
+import demoType from './.jsrepo/outputs/demo-type';
 
 export default defineConfig({
 	registries: ['@registry/kit'],
@@ -30,7 +31,7 @@ export default defineConfig({
 			lib: '$lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
-		outputs: [addType()],
+		outputs: [addType(), demoType()],
 		items: [
 			// ui
 			...([

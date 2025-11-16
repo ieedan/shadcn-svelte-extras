@@ -41,26 +41,7 @@ export const REGISTRY_ITEMS = [
 'use-media',
 'use-promise',
 'use-toc',
-'use-frecency',
-'utils',
-'casing',
-'is-letter',
-'is-number',
-'ipv4-address',
-'result',
-'typewriter',
-'avatar',
-'collapsible',
-'command',
-'dialog',
-'drawer',
-'dropdown-menu',
-'input',
-'popover',
-'scroll-area',
-'tabs',
-'toggle',
-'tooltip'
+'use-frecency'
 ] as const;
 
 export type RegistryItem = (typeof REGISTRY_ITEMS)[number];

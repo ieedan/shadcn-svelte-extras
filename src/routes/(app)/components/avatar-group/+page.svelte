@@ -5,7 +5,7 @@
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo item="avatar-group" demo="avatar-group"/>
+<Demo demo="avatar-group"/>
 <Subheading>Installation</Subheading>
 <Add item="avatar-group"/>
 <Subheading>Usage</Subheading>
@@ -28,4 +28,4 @@
 	/>
 </div>
 <Subheading>Vertical</Subheading>
-<Demo item="avatar-group" demo="avatar-group-vertical"/>
+<Demo demo="avatar-group-vertical"/>
