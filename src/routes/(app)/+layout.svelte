@@ -1,0 +1,197 @@
+<script lang="ts">
+	import '@fontsource-variable/geist-mono';
+	import '@fontsource-variable/geist';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import AppSidebar from '$lib/components/app-sidebar.svelte';
+	import { map, type Route } from '$lib/map';
+	import { page } from '$app/state';
+	import { checkIsActive } from '$lib/actions/active.svelte';
+	import PageWrapper from '$lib/components/page-wrapper.svelte';
+	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import * as Icons from '$lib/components/icons';
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import { commandContext } from '$lib/context';
+	import { shortcut } from '$lib/actions/shortcut.svelte';
+	import { Command } from '$lib/components/docs/command';
+	import SearchButton from '$lib/components/search-button.svelte';
+	import { LightSwitch } from '$lib/components/ui/light-switch';
+	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
+	import * as Dialog from '$lib/components/ui/dialog';
+	import { cn } from '$lib/utils.js';
+	import { IsMobile } from '$lib/hooks/is-mobile.svelte';
+	import Code from '$lib/components/docs/code.svelte';
+	import * as Tabs from '$lib/components/ui/tabs';
+	import { CodeSpan } from '$lib/components/docs';
+	import { MetaTags } from '$lib/components/site/meta-tags';
+	
+	let { children } = $props();
+
+	const commandState = commandContext.set(new UseBoolean(false));
+
+	const getCurrentDoc = (
+		url: URL
+	): { group: string; doc: Route; next?: Route; prev?: Route } | undefined => {
+		const docs = Object.entries(map).flatMap(([group, routes]) =>
+			routes.map((r) => ({ group, ...r }))
+		);
+
+		for (let i = 0; i < docs.length; i++) {
+			const doc = docs[i];
+
+			const isActive = checkIsActive(new URL(doc.href, url.origin).toString(), {
+				activeForSubdirectories: false,
+				url
+			});
+
+			if (isActive) return { group: doc.group, doc: doc, prev: docs[i - 1], next: docs[i + 1] };
+		}
+	};
+
+	const currentDoc = $derived(getCurrentDoc(page.url));
+
+	const isMobile = new IsMobile();
+
+	const components = $derived(
+		Array.from(Object.entries(map))
+			.filter(([cat]) => cat === 'Components')
+			.flatMap(([_, components]) =>
+				components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
+			)
+			.join(', ')
+	);
+</script>
+
+<MetaTags
+	title={currentDoc ? `${currentDoc.doc.name} - shadcn-svelte-extras` : 'shadcn-svelte-extras'}
+	description={currentDoc?.doc.name === 'Introduction'
+		? `Finish your app with awesome svelte components like ${components}`
+		: currentDoc?.doc.description}
+	keywords={[
+		'shadcn-svelte',
+		'extras',
+		'svelte',
+		'components',
+		'cli',
+		'jsrepo',
+		'mcp',
+		'phone-input',
+		'tags-input',
+		'star-rating',
+		'file-drop-zone'
+	]}
+	twitter={{
+		cardType: 'summary_large_image',
+		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
+		description:
+			currentDoc?.doc.name === 'Introduction'
+				? `Finish your app with awesome svelte components like ${components}`
+				: currentDoc?.doc.description,
+		image: 'https://shadcn-svelte-extras.com/og.png',
+		creator: '@ieeeedan'
+	}}
+	openGraph={{
+		url: page.url.toString(),
+		type: 'website',
+		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
+		description:
+			currentDoc?.doc.name === 'Introduction'
+				? `Finish your app with awesome svelte components like ${components}`
+				: currentDoc?.doc.description,
+		siteName: 'shadcn-svelte-extras',
+		images: [
+			{
+				url: 'https://shadcn-svelte-extras.com/og.png',
+				width: 2014,
+				height: 1143,
+				alt: 'shadcn-svelte-extras - Finish your app.'
+			}
+		]
+	}}
+/>
+
+<svelte:window
+	use:shortcut={{
+		ctrl: true,
+		key: 'k',
+		callback: commandState.setTrue
+	}}
+/>
+
+<Toaster />
+<Command />
+<Sidebar.Provider>
+	<AppSidebar />
+	<!-- Do NOT ask me why this is here it makes it work that's what matters -->
+	<Sidebar.Inset class="page-wrapper w-[200px]">
+		<header
+			class="border-border bg-background sticky top-0 z-20 flex h-16 place-items-center justify-between border-b pr-6 pl-2"
+		>
+			<div class="flex place-items-center gap-2">
+				<Sidebar.Trigger class="md:hidden" />
+				<SearchButton class="w-[200px] transition-all sm:w-[250px]" />
+			</div>
+			<div class="flex place-items-center gap-1">
+				{#if !isMobile.current}
+					<Dialog.Root>
+						<!-- I just want to gauge interest here -->
+						<Dialog.Trigger
+							class={cn(buttonVariants({ variant: 'secondary' }), 'font-normal')}
+							data-umami-event="MCP button"
+						>
+							<Icons.MCP class="size-4" /> MCP
+						</Dialog.Trigger>
+						<Dialog.Content class="sm:max-w-2xl">
+							<Dialog.Title>Setup MCP</Dialog.Title>
+							<Dialog.Description
+								>Use the code below to setup MCP in your project.</Dialog.Description
+							>
+							<Tabs.Root value="cursor">
+								<Tabs.List>
+									<Tabs.Trigger value="cursor">Cursor</Tabs.Trigger>
+									<Tabs.Trigger value="windsurf">Windsurf</Tabs.Trigger>
+								</Tabs.List>
+								<Tabs.Content value="cursor">
+									Add the following code to your <CodeSpan>.cursor/mcp.json</CodeSpan> file.
+								</Tabs.Content>
+								<Tabs.Content value="windsurf">
+									Add the following code to your <CodeSpan
+										>.codeium/windsurf/mcp_config.json</CodeSpan
+									> file.
+								</Tabs.Content>
+							</Tabs.Root>
+							<div>
+								<Code
+									lang="json"
+									code={`{
+  "mcpServers": {
+    "jsrepo": {
+      "command": "npx",
+      "args": ["jsrepo", "mcp"]
+    }
+  }
+}`}
+								/>
+							</div>
+						</Dialog.Content>
+					</Dialog.Root>
+				{/if}
+				<Button
+					variant="ghost"
+					size="icon"
+					href="https://github.com/ieedan/shadcn-svelte-extras"
+					target="_blank"
+				>
+					<Icons.GitHub class="size-4" />
+				</Button>
+				<LightSwitch variant="ghost" />
+			</div>
+		</header>
+		{#if page.url.pathname !== '/'}
+			<PageWrapper doc={currentDoc}>
+				{@render children()}
+			</PageWrapper>
+		{:else}
+			{@render children()}
+		{/if}
+	</Sidebar.Inset>
+</Sidebar.Provider>

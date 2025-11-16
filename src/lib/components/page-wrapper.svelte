@@ -29,7 +29,7 @@
 <div
 	class="relative flex w-full justify-center gap-4 px-6 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
 >
-	<div class="mx-auto w-full max-w-2xl min-w-0" style="min-height: calc(100svh - 112px);">
+	<div class="mx-auto w-full max-w-4xl min-w-0" style="min-height: calc(100svh - 112px);">
 		<div class="flex flex-col gap-5">
 			{#if doc}
 				<div class="flex flex-col gap-1">

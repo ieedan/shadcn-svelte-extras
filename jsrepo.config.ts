@@ -1,4 +1,5 @@
 import { defineConfig } from 'jsrepo';
+import addType from './.jsrepo/outputs/add-type';
 
 export default defineConfig({
 	registry: {
@@ -19,6 +20,7 @@ export default defineConfig({
 			lib: '$lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
+		outputs: [addType()],
 		items: [
 			// lib
 			{
@@ -651,5 +653,15 @@ export default defineConfig({
 				]
 			}
 		]
-	}
+	},
+	paths: {
+		ui: '$lib/components/ui',
+		block: '$lib/components',
+		logo: '$lib/components/logos',
+		hook: '$lib/hooks',
+		action: '$lib/actions',
+		util: '$lib/utils',
+		lib: '$lib'
+	},
+	registries: ['@registry/kit']
 });
