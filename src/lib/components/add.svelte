@@ -7,7 +7,7 @@
         withoutRegistry?: boolean;
     };
 
-    let { item, withoutRegistry = true }: Props = $props();
+    let { item, withoutRegistry = false }: Props = $props();
 </script>
 
 <Add.Root {item} {withoutRegistry}>

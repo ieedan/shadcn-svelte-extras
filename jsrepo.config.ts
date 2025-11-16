@@ -1,4 +1,4 @@
-import { defineConfig } from 'jsrepo';
+import { defineConfig, RegistryItem } from 'jsrepo';
 import addType from './.jsrepo/outputs/add-type';
 
 export default defineConfig({
@@ -35,56 +35,58 @@ export default defineConfig({
 				]
 			},
 			// utils
-			{
-				name: 'casing',
-				type: 'util',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/utils/casing.ts'
-					}
-				]
-			},
-			{
-				name: 'is-letter',
-				type: 'util',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/utils/is-letter.ts'
-					}
-				]
-			},
-			{
-				name: 'is-number',
-				type: 'util',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/utils/is-number.ts'
-					}
-				]
-			},
-			{
-				name: 'ipv4-address',
-				type: 'util',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/utils/ipv4-address.ts'
-					}
-				]
-			},
-			{
-				name: 'result',
-				type: 'util',
-				add: 'when-needed',
-				files: [
-					{
-						path: 'src/lib/utils/result.ts'
-					}
-				]
-			},
+			...[
+				{
+					name: 'casing',
+					type: 'util',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/utils/casing.ts'
+						}
+					]
+				},
+				{
+					name: 'is-letter',
+					type: 'util',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/utils/is-letter.ts'
+						}
+					]
+				},
+				{
+					name: 'is-number',
+					type: 'util',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/utils/is-number.ts'
+						}
+					]
+				},
+				{
+					name: 'ipv4-address',
+					type: 'util',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/utils/ipv4-address.ts'
+						}
+					]
+				},
+				{
+					name: 'result',
+					type: 'util',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/utils/result.ts'
+						}
+					]
+				}
+			] satisfies RegistryItem[],
 
 			// ui
 			{
