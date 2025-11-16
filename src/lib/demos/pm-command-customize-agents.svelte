@@ -1,0 +1,10 @@
+<script lang="ts">
+	import { PMCommand } from '$lib/components/ui/pm-command';
+</script>
+
+<PMCommand
+	command="execute"
+	args={['jsrepo', 'add', 'ui/pm-command']}
+	agents={['pnpm', 'npm', 'bun', 'yarn']}
+	class="max-w-xl"
+/>
