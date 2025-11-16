@@ -47,7 +47,9 @@ class AddRootState {
 		const command = resolveCommand(this.agent, 'execute', [
 			'jsrepo',
 			'add',
-			this.opts.withoutRegistry.current ? this.opts.item.current : `${this.registry}/${this.opts.item.current}`
+			this.opts.withoutRegistry.current
+				? this.opts.item.current
+				: `${this.registry}/${this.opts.item.current}`
 		]);
 
 		return command

@@ -6,6 +6,5 @@
 	command="execute"
 	args={['jsrepo', 'add', 'ui/pm-command']}
 	agents={['pnpm', 'npm', 'bun', 'yarn']}
-    class="max-w-xl"
+	class="max-w-xl"
 />
-

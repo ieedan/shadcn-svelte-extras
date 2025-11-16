@@ -12,4 +12,3 @@
 </script>
 
 <LanguageSwitcher {languages} bind:value />
-

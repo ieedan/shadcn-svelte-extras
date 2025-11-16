@@ -7,4 +7,3 @@
 	<Label>Phone Number</Label>
 	<PhoneInput value="+1 418 543 8090" placeholder="Enter a phone number" />
 </div>
-

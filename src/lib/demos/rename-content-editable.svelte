@@ -9,4 +9,3 @@
 
 	<p>Value: <span class="font-bold">{value}</span></p>
 </div>
-

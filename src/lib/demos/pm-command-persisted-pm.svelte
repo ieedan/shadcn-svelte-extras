@@ -6,5 +6,9 @@
 	const agent = new PersistedState<Agent>('user-package-manager', 'npm');
 </script>
 
-<PMCommand command="execute" args={['jsrepo', 'add', 'ui/pm-command']} bind:agent={agent.current} class="max-w-xl"/>
-
+<PMCommand
+	command="execute"
+	args={['jsrepo', 'add', 'ui/pm-command']}
+	bind:agent={agent.current}
+	class="max-w-xl"
+/>

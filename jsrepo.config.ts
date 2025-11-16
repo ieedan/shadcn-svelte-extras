@@ -1126,5 +1126,5 @@ export default defineConfig({
 				}
 			] satisfies RegistryItem[])
 		]
-	},
+	}
 });

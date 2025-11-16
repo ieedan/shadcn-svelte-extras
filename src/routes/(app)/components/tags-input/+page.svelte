@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import customValidateRaw from './custom-validate.ts?raw';
 </script>
 
-<Demo demo="tags-input"/>
+<Demo demo="tags-input" />
 <Subheading>Installation</Subheading>
-<Add item="tags-input"/>
+<Add item="tags-input" />
 <Subheading class="mt-0">Usage</Subheading>
 <div>
 	<Code
@@ -33,4 +33,4 @@
 <p>
 	Pass the function to the <CodeSpan>{'<TagsInput/>'}</CodeSpan> component:
 </p>
-<Demo demo="tags-input-lowercase"/>
+<Demo demo="tags-input-lowercase" />

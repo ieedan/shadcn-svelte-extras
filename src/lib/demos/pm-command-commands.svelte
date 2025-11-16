@@ -2,8 +2,7 @@
 	import { PMCommand } from '$lib/components/ui/pm-command';
 </script>
 
-<div class="flex w-full flex-col gap-4 max-w-xl">
+<div class="flex w-full max-w-xl flex-col gap-4">
 	<PMCommand command="execute" args={['shadcn-svelte@next', 'add']} />
-	<PMCommand command="add" args={['bits-ui', '-D']}/>
+	<PMCommand command="add" args={['bits-ui', '-D']} />
 </div>
-

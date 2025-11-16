@@ -20,4 +20,3 @@
 		</ImageCropper.Controls>
 	</ImageCropper.Dialog>
 </ImageCropper.Root>
-

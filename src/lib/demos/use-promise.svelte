@@ -28,4 +28,3 @@
 		args={[`jsrepo@${version.current}`, 'add', 'hooks/use-promise.svelte']}
 	/>
 </div>
-

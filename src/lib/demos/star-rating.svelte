@@ -14,4 +14,3 @@
 	</StarRating.Root>
 	<span class="text-muted-foreground text-sm">Rating is {value}</span>
 </div>
-

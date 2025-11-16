@@ -1,16 +1,16 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Demo demo="language-switcher"/>
+<Demo demo="language-switcher" />
 <Subheading>Installation</Subheading>
-<Add item="language-switcher"/>
+<Add item="language-switcher" />
 
 <Subheading>Ghost + Align</Subheading>
-<Demo demo="language-switcher-variants"/>
+<Demo demo="language-switcher-variants" />
 
 <Subheading>Paraglide Integration</Subheading>
 <p>
@@ -22,4 +22,4 @@
 		ParaglideJS
 	</Link>:
 </p>
-<Demo demo="language-switcher-paraglide"/>
+<Demo demo="language-switcher-paraglide" />

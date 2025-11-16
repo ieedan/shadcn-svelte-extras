@@ -11,4 +11,3 @@
 	{/snippet}
 	<span class="font-mono text-sm font-light">{command}</span>
 </CopyButton>
-

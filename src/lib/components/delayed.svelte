@@ -15,7 +15,7 @@
 			visible = true;
 		}, delay);
 
-        return () => clearTimeout(timeout);
+		return () => clearTimeout(timeout);
 	});
 </script>
 

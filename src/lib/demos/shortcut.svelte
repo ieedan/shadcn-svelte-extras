@@ -21,4 +21,3 @@
 		<Kbd>1</Kbd>
 	</KbdGroup>
 </p>
-

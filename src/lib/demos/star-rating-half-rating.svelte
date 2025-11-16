@@ -26,4 +26,3 @@
 		</StarRating.Root>
 	</div>
 </div>
-

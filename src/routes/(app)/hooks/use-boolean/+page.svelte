@@ -6,7 +6,7 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<Add item="use-boolean"/>
+<Add item="use-boolean" />
 <Subheading>Usage</Subheading>
 <p>Use this hook to manage boolean values with more concise syntax.</p>
 <p>Before:</p>

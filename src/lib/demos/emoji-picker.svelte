@@ -9,4 +9,3 @@
 		<EmojiPicker.List />
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>
-

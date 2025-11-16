@@ -7,4 +7,3 @@
 	<Label>Phone Number</Label>
 	<PhoneInput country="US" placeholder="Enter a phone number" />
 </div>
-

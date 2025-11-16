@@ -12,7 +12,7 @@
 	} from '$lib/components/docs/examples';
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
-	import ChatExample from './components/chat/basic.svelte';
+	import ChatExample from '$lib/demos/chat.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import { ArrowRightIcon } from '@lucide/svelte';
 	import { Button } from '$lib/components/ui/button';

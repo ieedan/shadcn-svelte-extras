@@ -6,4 +6,3 @@
 	<strong># Window</strong>
 	<p>An awesome styled window component.</p>
 </Window>
-

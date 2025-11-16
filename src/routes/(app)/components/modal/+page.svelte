@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="modal"/>
+<Demo demo="modal" />
 <Subheading>Installation</Subheading>
-<Add item="modal"/>
+<Add item="modal" />
 <Subheading class="mt-0">Usage</Subheading>
 <p>The modal component can be composed just like a dialog or drawer component.</p>
 <div>

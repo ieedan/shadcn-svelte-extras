@@ -38,4 +38,3 @@
 		<span>✔ All done.</span>
 	</Terminal.AnimatedSpan>
 </Terminal.Root>
-

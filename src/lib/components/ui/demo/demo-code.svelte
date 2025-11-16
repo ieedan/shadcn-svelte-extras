@@ -30,7 +30,7 @@ we don't have to render the code every time we switch tabs
 <Tabs.Content
 	id="{uid}-code"
 	value="code"
-	class={cn('rounded-md border border-border', className)}
+	class={cn('border-border rounded-md border', className)}
 	{...rest}
 ></Tabs.Content>
 

@@ -7,7 +7,7 @@
 
 <div
 	class={cn(
-		'flex h-9 items-center overflow-hidden rounded-md border border-border bg-background',
+		'border-border bg-background flex h-9 items-center overflow-hidden rounded-md border',
 		className
 	)}
 	{...rest}

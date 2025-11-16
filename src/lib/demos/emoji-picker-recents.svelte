@@ -17,4 +17,3 @@
 	</EmojiPicker.Root>
 	<p class="text-muted-foreground text-center text-sm">Pick an emoji to add it to your recents.</p>
 </div>
-

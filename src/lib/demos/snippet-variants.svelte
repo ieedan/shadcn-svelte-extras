@@ -8,4 +8,3 @@
 	<Snippet variant="secondary" text="npx jsrepo add ui/snippet" />
 	<Snippet variant="destructive" text="npx jsrepo add ui/snippet" />
 </div>
-

@@ -9,18 +9,18 @@
 <Tabs.List
 	data-slot="demo-tabs"
 	bind:ref
-	class={cn('h-9 rounded-md border border-border bg-background', className)}
+	class={cn('border-border bg-background h-9 rounded-md border', className)}
 	{...rest}
 >
 	<Tabs.Trigger
 		value="preview"
-		class="rounded-sm border-none bg-background data-[state=active]:bg-accent!"
+		class="bg-background data-[state=active]:bg-accent! rounded-sm border-none"
 	>
 		Preview
 	</Tabs.Trigger>
 	<Tabs.Trigger
 		value="code"
-		class="rounded-sm border-none bg-background data-[state=active]:bg-accent!"
+		class="bg-background data-[state=active]:bg-accent! rounded-sm border-none"
 	>
 		Code
 	</Tabs.Trigger>

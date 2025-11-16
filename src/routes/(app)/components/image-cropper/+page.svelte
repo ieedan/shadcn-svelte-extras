@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Demo demo="image-cropper"/>
+<Demo demo="image-cropper" />
 <Subheading>Installation</Subheading>
-<Add item="image-cropper"/>
+<Add item="image-cropper" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -32,13 +32,13 @@
 	/>
 </div>
 <Subheading>Square Preview</Subheading>
-<Demo demo="image-cropper-square-preview"/>
+<Demo demo="image-cropper-square-preview" />
 <Subheading>No Default Image</Subheading>
-<Demo demo="image-cropper-no-default-image"/>
+<Demo demo="image-cropper-no-default-image" />
 <Subheading>Custom Trigger</Subheading>
-<Demo demo="image-cropper-custom-trigger"/>
+<Demo demo="image-cropper-custom-trigger" />
 <Subheading>Custom Preview</Subheading>
-<Demo demo="image-cropper-custom-preview"/>
+<Demo demo="image-cropper-custom-preview" />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by

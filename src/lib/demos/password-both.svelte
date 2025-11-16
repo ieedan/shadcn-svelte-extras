@@ -24,4 +24,3 @@
 		<Toggle.Root bind:pressed={showCopy}>Show Copy</Toggle.Root>
 	</div>
 </div>
-

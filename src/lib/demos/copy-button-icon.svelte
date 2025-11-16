@@ -8,4 +8,3 @@
 		<ClipboardIcon />
 	{/snippet}
 </CopyButton>
-

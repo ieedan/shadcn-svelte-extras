@@ -2,12 +2,12 @@
 	import * as Add from '$lib/components/ui/add';
 	import type { RegistryItem } from '$lib/registry-items';
 
-    type Props = {
-        item: RegistryItem;
-        withoutRegistry?: boolean;
-    };
+	type Props = {
+		item: RegistryItem;
+		withoutRegistry?: boolean;
+	};
 
-    let { item, withoutRegistry = false }: Props = $props();
+	let { item, withoutRegistry = false }: Props = $props();
 </script>
 
 <Add.Root {item} {withoutRegistry}>

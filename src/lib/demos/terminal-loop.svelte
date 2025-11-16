@@ -40,4 +40,3 @@
 		</Terminal.AnimatedSpan>
 	</Terminal.Root>
 </Terminal.Loop>
-

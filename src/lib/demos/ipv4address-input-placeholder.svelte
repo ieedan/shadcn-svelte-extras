@@ -7,4 +7,3 @@
 	<Label>IP Address</Label>
 	<IPv4AddressInput placeholder="0 0 0 0" />
 </div>
-

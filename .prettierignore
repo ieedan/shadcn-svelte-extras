@@ -8,3 +8,5 @@ CHANGELOG.md
 # Generated code
 src/lib/paraglide/
 .changeset/pre.json
+src/lib/demos/index.ts
+src/lib/registry-items.ts

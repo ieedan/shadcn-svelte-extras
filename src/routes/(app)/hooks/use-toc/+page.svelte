@@ -5,7 +5,7 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<Add item="use-toc"/>
+<Add item="use-toc" />
 <Subheading>Usage</Subheading>
 <p>Generate a table of contents using the content of the page.</p>
 <div>

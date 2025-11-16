@@ -11,4 +11,3 @@
 		<Code.CopyButton />
 	</Code.Root>
 </div>
-

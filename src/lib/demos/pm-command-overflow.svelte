@@ -15,6 +15,5 @@
 		'use-clipboard',
 		'utils'
 	]}
-    class="max-w-xl"
+	class="max-w-xl"
 />
-

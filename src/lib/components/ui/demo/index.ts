@@ -14,7 +14,7 @@ import ControlRefresh from './demo-control-refresh.svelte';
 import { tv } from 'tailwind-variants';
 
 export const controlVariants = tv({
-	base: 'rounded-md data-[state=on]:bg-accent h-full text-muted-foreground transition-colors hover:text-foreground [&_svg]:shrink-0 [&_svg]:pointer-events-none [&_svg]:size-4 px-2 hover:bg-accent'
+	base: 'data-[state=on]:bg-accent text-muted-foreground hover:text-foreground hover:bg-accent h-full rounded-md px-2 transition-colors [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0'
 });
 
 export {

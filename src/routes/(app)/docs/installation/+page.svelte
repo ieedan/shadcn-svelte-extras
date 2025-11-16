@@ -4,7 +4,6 @@
 	import { Link } from '$lib/components/ui/link';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
-	import { PMCommand } from '$lib/components/ui/pm-command';
 	import Add from '$lib/components/add.svelte';
 </script>
 
@@ -24,9 +23,7 @@
 <div>
 	<Code
 		lang="typescript"
-		highlight={[
-			[5, 10]
-		]}
+		highlight={[[5, 10]]}
 		code={`import { defineConfig } from 'jsrepo';
 
 export default defineConfig({
@@ -41,7 +38,7 @@ export default defineConfig({
 	/>
 </div>
 <p>Start adding extras!</p>
-<Add item="button"/>
+<Add item="button" />
 <Subheading>MCP</Subheading>
 <p>
 	jsrepo now supports <Link href="https://jsrepo.dev/docs/registry/mcp" target="_blank">MCP</Link> and
@@ -78,8 +75,8 @@ export default defineConfig({
 </p>
 <Subheading>Tailwind v3</Subheading>
 <p>
-	You can still access the tailwind v3 components by using jsrepo v2 and pinning the registry version to the latest
-	tailwind v3 compatible version:
+	You can still access the tailwind v3 components by using jsrepo v2 and pinning the registry
+	version to the latest tailwind v3 compatible version:
 </p>
 <div>
 	<Code

@@ -9,4 +9,3 @@
 		{/each}
 	{/snippet}
 </StarRating.Root>
-

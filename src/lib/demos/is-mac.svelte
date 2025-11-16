@@ -13,4 +13,3 @@
 		<span class="text-muted-foreground text-xs">(sorry Linux users)</span>
 	</div>
 {/if}
-

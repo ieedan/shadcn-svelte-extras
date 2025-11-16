@@ -5,7 +5,7 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<Add item="use-auto-scroll"/>
+<Add item="use-auto-scroll" />
 <Subheading>Usage</Subheading>
 <p>Create a container that automatically scrolls to the bottom.</p>
 <Code

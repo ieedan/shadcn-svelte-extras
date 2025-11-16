@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="avatar-group"/>
+<Demo demo="avatar-group" />
 <Subheading>Installation</Subheading>
-<Add item="avatar-group"/>
+<Add item="avatar-group" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -28,4 +28,4 @@
 	/>
 </div>
 <Subheading>Vertical</Subheading>
-<Demo demo="avatar-group-vertical"/>
+<Demo demo="avatar-group-vertical" />

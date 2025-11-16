@@ -13,7 +13,10 @@
 	let { children } = $props();
 
 	const agent = new PersistedState<Add.Agent>('user-agent-preference', 'npm');
-	const registry = new PersistedState<typeof REGISTRY_OPTIONS[number]>('user-registry-preference', '@ieedan/shadcn-svelte-extras');
+	const registry = new PersistedState<(typeof REGISTRY_OPTIONS)[number]>(
+		'user-registry-preference',
+		'@ieedan/shadcn-svelte-extras'
+	);
 </script>
 
 <MetaTags

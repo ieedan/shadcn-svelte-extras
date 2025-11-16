@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="rename"/>
+<Demo demo="rename" />
 <Subheading>Installation</Subheading>
-<Add item="rename"/>
+<Add item="rename" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -32,7 +32,7 @@
 </div>
 <Subheading>Content Editable</Subheading>
 <p>When in content editable mode the user can click on the text to start editing it.</p>
-<Demo demo="rename-content-editable"/>
+<Demo demo="rename-content-editable" />
 
 <Subheading>External Control</Subheading>
 <p>
@@ -40,4 +40,4 @@
 		>Edit</CodeSpan
 	> component or by setting the <CodeSpan>mode</CodeSpan> prop to <CodeSpan>'edit'</CodeSpan>.
 </p>
-<Demo demo="rename-context-menu"/>
+<Demo demo="rename-context-menu" />

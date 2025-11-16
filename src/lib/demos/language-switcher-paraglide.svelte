@@ -35,4 +35,3 @@
 
 	<h3>{m.example_message()}</h3>
 </div>
-

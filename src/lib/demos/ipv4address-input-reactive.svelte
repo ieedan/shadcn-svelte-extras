@@ -11,4 +11,3 @@
 	<IPv4AddressInput bind:value />
 	<Input bind:value class="w-[198px]" />
 </div>
-

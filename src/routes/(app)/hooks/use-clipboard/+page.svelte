@@ -5,7 +5,7 @@
 </script>
 
 <Subheading>Installation</Subheading>
-<Add item="use-clipboard"/>
+<Add item="use-clipboard" />
 <Subheading>Usage</Subheading>
 <p>Create a button that copies some text to the clipboard.</p>
 <div>

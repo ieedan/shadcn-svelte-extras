@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="use-promise"/>
+<Demo demo="use-promise" />
 <Subheading>Installation</Subheading>
-<Add item="use-promise"/>
+<Add item="use-promise" />
 <Subheading>Usage</Subheading>
 <p>Set a default value for the version until it is streamed back from the server.</p>
 <div>

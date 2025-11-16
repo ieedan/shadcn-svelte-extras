@@ -30,4 +30,3 @@ export const greet = (name: string, language: Language): string => {
 		<Code.CopyButton />
 	</Code.Root>
 </div>
-

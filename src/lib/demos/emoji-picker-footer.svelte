@@ -28,4 +28,3 @@
 		</EmojiPicker.Footer>
 	</EmojiPicker.Viewport>
 </EmojiPicker.Root>
-

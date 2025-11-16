@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
 	import schemaRaw from './schema.ts?raw';
 </script>
 
-<Demo demo="file-drop-zone"/>
+<Demo demo="file-drop-zone" />
 <Subheading>Installation</Subheading>
-<Add item="file-drop-zone"/>
+<Add item="file-drop-zone" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -45,7 +45,7 @@
 		</li>
 	</ul>
 </div>
-<Demo demo="file-drop-zone-form"/>
+<Demo demo="file-drop-zone-form" />
 <p>Schema:</p>
 <div>
 	<Code lang="typescript" code={schemaRaw} />

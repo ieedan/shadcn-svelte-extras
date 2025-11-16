@@ -29,7 +29,7 @@
 	{type}
 	value={value.toString()}
 	onValueChange={(value) => controlGroupState.onValueChange(parseInt(value))}
-	class={cn('hidden h-9 gap-0.5 rounded-md border border-border p-0.5 md:flex', className)}
+	class={cn('border-border hidden h-9 gap-0.5 rounded-md border p-0.5 md:flex', className)}
 	{...rest}
 >
 	{@render children?.()}

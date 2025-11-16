@@ -21,4 +21,3 @@
 <div class="w-full p-6">
 	<TagsInput bind:value placeholder="Add a tag" validate={customValidate} />
 </div>
-

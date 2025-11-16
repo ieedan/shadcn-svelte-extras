@@ -3,7 +3,7 @@
 	import { toast } from 'svelte-sonner';
 </script>
 
-<div class="flex items-center justify-center max-w-xl w-full">
+<div class="flex w-full max-w-xl items-center justify-center">
 	<div class="h-72 w-full py-6">
 		<NLPDateInput
 			onChoice={({ date, label }) =>

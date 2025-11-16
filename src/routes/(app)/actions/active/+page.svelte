@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
@@ -11,9 +11,9 @@
 		{`<a/>`}
 	</CodeSpan> tag to be used for styling.
 </p>
-<Demo demo="active"/>
+<Demo demo="active" />
 <Subheading>Installation</Subheading>
-<Add item="active"/>
+<Add item="active" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code

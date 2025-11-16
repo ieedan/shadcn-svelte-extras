@@ -32,8 +32,8 @@
 <Tabs.Content
 	value="preview"
 	data-slot="demo-preview"
-	class={cn('relative aspect-video rounded-md border border-border bg-background', {
-		'border-none bg-accent [--pattern-fg:oklch(0_0_0/0.05)] before:pointer-events-none before:absolute before:inset-px before:rounded-[calc(0.625rem-1px)] before:bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] dark:bg-card dark:[--pattern-fg:oklch(1_0_0/0.05)]':
+	class={cn('border-border bg-background relative aspect-video rounded-md border', {
+		'bg-accent dark:bg-card border-none [--pattern-fg:oklch(0_0_0/0.05)] before:pointer-events-none before:absolute before:inset-px before:rounded-[calc(0.625rem-1px)] before:bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] dark:[--pattern-fg:oklch(1_0_0/0.05)]':
 			type === 'iframe'
 	})}
 >
@@ -46,7 +46,7 @@
 				defaultSize={100}
 				minSize={30}
 				onResize={previewState.onResize}
-				class="relative rounded-md border border-border bg-background"
+				class="border-border bg-background relative rounded-md border"
 			>
 				{#key previewState.root.previewKey}
 					<iframe

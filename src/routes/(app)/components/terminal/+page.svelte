@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Demo demo="terminal"/>
+<Demo demo="terminal" />
 <Subheading>Installation</Subheading>
-<Add item="terminal"/>
+<Add item="terminal" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -71,7 +71,7 @@
 		{'<Terminal.Loop/>'}
 	</CodeSpan> component.
 </p>
-<Demo demo="terminal-loop"/>
+<Demo demo="terminal-loop" />
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by

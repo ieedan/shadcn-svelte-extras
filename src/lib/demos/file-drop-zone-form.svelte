@@ -98,4 +98,3 @@
 	<Button type="submit" class="w-fit">Submit</Button>
 	<SuperDebug data={$formData} />
 </form>
-

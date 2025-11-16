@@ -33,4 +33,3 @@
 		</Popover.Content>
 	</Popover.Root>
 </EmojiPicker.Root>
-

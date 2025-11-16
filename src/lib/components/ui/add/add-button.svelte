@@ -13,7 +13,7 @@
 <button
 	type="button"
 	class={cn(
-		'flex flex-1 place-items-center rounded-l-md transition-colors hover:bg-accent md:pr-2 [&_svg]:size-3.5',
+		'hover:bg-accent flex flex-1 place-items-center rounded-l-md transition-colors md:pr-2 [&_svg]:size-3.5',
 		className
 	)}
 	{...rest}

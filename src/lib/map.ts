@@ -119,7 +119,7 @@ const map: Record<string, Route[]> = {
 			description: 'A meter component.',
 			href: '/components/meter',
 			specifier: 'ui/meter',
-			source: 'src/lib/components/ui/meter/meter.svelte',
+			source: 'src/lib/components/ui/meter/meter.svelte'
 		},
 		{
 			name: 'Modal',
@@ -161,7 +161,7 @@ const map: Record<string, Route[]> = {
 			description: 'A component for renaming stuff.',
 			href: '/components/rename',
 			specifier: 'ui/rename',
-			source: 'src/lib/components/ui/rename/rename.svelte',
+			source: 'src/lib/components/ui/rename/rename.svelte'
 		},
 		{
 			name: 'Snippet',
@@ -280,7 +280,7 @@ const map: Record<string, Route[]> = {
 				'A hook to track the size of the screen using the standard Tailwind CSS breakpoints.',
 			href: '/hooks/use-media',
 			specifier: 'hooks/use-media.svelte',
-			source: 'src/lib/hooks/use-media.svelte.ts',
+			source: 'src/lib/hooks/use-media.svelte.ts'
 		},
 		{
 			name: 'UsePromise',

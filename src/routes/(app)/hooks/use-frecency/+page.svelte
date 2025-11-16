@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
-	import Demo from "$lib/components/demo.svelte";
+	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="use-frecency"/>
+<Demo demo="use-frecency" />
 <Subheading>Installation</Subheading>
-<Add item="use-frecency"/>
+<Add item="use-frecency" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code

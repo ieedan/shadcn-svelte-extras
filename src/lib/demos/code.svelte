@@ -9,4 +9,3 @@
 <div class="w-full p-6">
 	<Code.Root lang="typescript" class="w-full" {code} />
 </div>
-
