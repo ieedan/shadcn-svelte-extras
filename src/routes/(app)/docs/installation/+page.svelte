@@ -5,6 +5,7 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
 	import { PMCommand } from '$lib/components/ui/pm-command';
+	import Add from '$lib/components/add.svelte';
 </script>
 
 <p>
@@ -14,31 +15,33 @@
 	additional features such as semantic versioning and easy updates.
 </p>
 <Subheading>Setup</Subheading>
-<p>Install jsrepo globally (optional but recommended):</p>
-<PMCommand command="global" args={['jsrepo']} />
 <p>Initialize jsrepo with shadcn-svelte-extras:</p>
-<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']} />
+<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras@beta']} />
 <p>
 	Configure the <CodeSpan>paths</CodeSpan> key in your <CodeSpan>jsrepo.json</CodeSpan> file so that
 	components, hooks, and utils are added to the correct places:
 </p>
 <div>
 	<Code
-		lang="json"
-		code={`{
-    // ...
-    "paths": {
-			"*": "$lib/blocks",
-			"ui": "$lib/components/ui",
-			"hooks": "$lib/hooks",
-			"actions": "$lib/actions",
-			"utils": "$lib/utils"
+		lang="typescript"
+		highlight={[
+			[5, 10]
+		]}
+		code={`import { defineConfig } from 'jsrepo';
+
+export default defineConfig({
+    registries: ['@ieedan/shadcn-svelte-extras@beta'],
+    paths: {
+			ui: "$lib/components/ui",
+			hook: "$lib/hooks",
+			action: "$lib/actions",
+			util: "$lib/utils"
     }
 }`}
 	/>
 </div>
 <p>Start adding extras!</p>
-<JsrepoCommand command="execute" args={['jsrepo', 'add', 'ui/button']} />
+<Add item="button"/>
 <Subheading>MCP</Subheading>
 <p>
 	jsrepo now supports <Link href="https://jsrepo.dev/docs/registry/mcp" target="_blank">MCP</Link> and
@@ -73,14 +76,9 @@
 	We also added a Cursor Rules config file for your convenience. You can add it when you initialize
 	shadcn-svelte-extras with the <CodeSpan>jsrepo init</CodeSpan> command.
 </p>
-<Subheading>Tailwind v4</Subheading>
-<p>
-	This site has been fully updated to tailwindcss v4! If you are looking for components compatible
-	with tailwindcss@v3 see the guide below.
-</p>
 <Subheading>Tailwind v3</Subheading>
 <p>
-	You can still access the tailwind v3 components by pinning the registry version to the latest
+	You can still access the tailwind v3 components by using jsrepo v2 and pinning the registry version to the latest
 	tailwind v3 compatible version:
 </p>
 <div>
