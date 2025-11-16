@@ -1,16 +1,14 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
-	import { examples } from './examples';
 </script>
 
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/image-cropper" />
+<Demo demo="image-cropper"/>
+<Subheading>Installation</Subheading>
+<Add item="image-cropper"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -34,21 +32,13 @@
 	/>
 </div>
 <Subheading>Square Preview</Subheading>
-<Playground code={examples.squarePreview.code}>
-	<examples.squarePreview.Component />
-</Playground>
+<Demo demo="image-cropper-square-preview"/>
 <Subheading>No Default Image</Subheading>
-<Playground code={examples.noDefaultImage.code}>
-	<examples.noDefaultImage.Component />
-</Playground>
+<Demo demo="image-cropper-no-default-image"/>
 <Subheading>Custom Trigger</Subheading>
-<Playground code={examples.customTrigger.code}>
-	<examples.customTrigger.Component />
-</Playground>
+<Demo demo="image-cropper-custom-trigger"/>
 <Subheading>Custom Preview</Subheading>
-<Playground code={examples.customPreview.code}>
-	<examples.customPreview.Component />
-</Playground>
+<Demo demo="image-cropper-custom-preview"/>
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This component was inspired by

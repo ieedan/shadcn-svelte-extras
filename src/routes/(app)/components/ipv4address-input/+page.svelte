@@ -1,24 +1,16 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 </script>
 
 <Subheading>Basic</Subheading>
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/ipv4address-input" />
+<Demo demo="ipv4address-input"/>
+<Subheading>Installation</Subheading>
+<Add item="ipv4address-input"/>
 <Subheading>Placeholder</Subheading>
-<Playground code={examples.placeholder.code}>
-	<examples.placeholder.Component />
-</Playground>
+<Demo demo="ipv4address-input-placeholder"/>
 <Subheading>Reactive</Subheading>
-<Playground code={examples.reactive.code}>
-	<examples.reactive.Component />
-</Playground>
+<Demo demo="ipv4address-input-reactive"/>
 <Subheading>Validation</Subheading>
-<Playground code={examples.valid.code}>
-	<examples.valid.Component />
-</Playground>
+<Demo demo="ipv4address-input-valid"/>

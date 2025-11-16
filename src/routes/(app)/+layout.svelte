@@ -23,7 +23,9 @@
 	import * as Tabs from '$lib/components/ui/tabs';
 	import { CodeSpan } from '$lib/components/docs';
 	import { MetaTags } from '$lib/components/site/meta-tags';
-	
+	import { dev } from '$app/environment';
+	import { UmamiAnalytics } from '@lukulent/svelte-umami';
+
 	let { children } = $props();
 
 	const commandState = commandContext.set(new UseBoolean(false));
@@ -116,6 +118,14 @@
 		callback: commandState.setTrue
 	}}
 />
+
+<!-- only inject analytics in production (intentionally placed here so we don't count demo views) -->
+{#if !dev}
+	<UmamiAnalytics
+		srcURL="https://cloud.umami.is/script.js"
+		websiteID="07b288db-9239-4fbf-9d68-4f2ca9b63f89"
+	/>
+{/if}
 
 <Toaster />
 <Command />

@@ -90,6 +90,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/chat'
+						},
+						{
+							path: 'src/lib/demos/chat.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -101,6 +106,36 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/code'
+						},
+						{
+							path: 'src/lib/demos/code.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-copy-button.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-no-line-numbers.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-highlight-lines.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-overflow.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -112,6 +147,21 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/copy-button'
+						},
+						{
+							path: 'src/lib/demos/copy-button.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/copy-button-icon.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/copy-button-with-text.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -123,6 +173,31 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/emoji-picker'
+						},
+						{
+							path: 'src/lib/demos/emoji-picker.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/emoji-picker-skin.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/emoji-picker-popover.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/emoji-picker-footer.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/emoji-picker-recents.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -134,6 +209,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/field-set'
+						},
+						{
+							path: 'src/lib/demos/field-set.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/field-set-destructive.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -145,6 +230,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/file-drop-zone'
+						},
+						{
+							path: 'src/lib/demos/file-drop-zone.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/file-drop-zone-form.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -156,6 +251,31 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/image-cropper'
+						},
+						{
+							path: 'src/lib/demos/image-cropper.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/image-cropper-square-preview.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/image-cropper-no-default-image.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/image-cropper-custom-trigger.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/image-cropper-custom-preview.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -167,6 +287,26 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/ipv4address-input'
+						},
+						{
+							path: 'src/lib/demos/ipv4address-input.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/ipv4address-input-placeholder.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/ipv4address-input-reactive.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/ipv4address-input-valid.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

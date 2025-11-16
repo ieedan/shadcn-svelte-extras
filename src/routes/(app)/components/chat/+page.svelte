@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
-	import { examples } from './examples';
 </script>
 
-<Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code} class="min-h-[625px] p-4">
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/chat" />
+<Demo demo="chat"/>
+<Subheading>Installation</Subheading>
+<Add item="chat"/>
 <Subheading>Usage</Subheading>
 <Code
 	lang="svelte"

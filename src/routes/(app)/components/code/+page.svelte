@@ -1,17 +1,14 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
 </script>
 
-<Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/code" />
+<Demo demo="code"/>
+<Subheading>Installation</Subheading>
+<Add item="code"/>
 <Subheading>Configuring Languages</Subheading>
 <p>
 	The highlighter and languages can be configured from <CodeSpan>shiki.ts</CodeSpan>.
@@ -26,22 +23,12 @@
 	]}
 />
 <Subheading>Copy Button</Subheading>
-<Playground code={examples.copyButton.code}>
-	<examples.copyButton.Component />
-</Playground>
+<Demo demo="code-copy-button"/>
 <Subheading>No Line Numbers</Subheading>
-<Playground code={examples.noLineNumbers.code}>
-	<examples.noLineNumbers.Component />
-</Playground>
+<Demo demo="code-no-line-numbers"/>
 <Subheading>Variants</Subheading>
-<Playground code={examples.variants.code}>
-	<examples.variants.Component />
-</Playground>
+<Demo demo="code-variants"/>
 <Subheading>Highlight Lines</Subheading>
-<Playground code={examples.highlightLines.code} class="h-[500px]">
-	<examples.highlightLines.Component />
-</Playground>
+<Demo demo="code-highlight-lines"/>
 <Subheading>Overflow</Subheading>
-<Playground code={examples.overflow.code}>
-	<examples.overflow.Component />
-</Playground>
+<Demo demo="code-overflow"/>

@@ -1,19 +1,15 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
-	import { examples } from './examples';
-
-	let { data } = $props();
+	import schemaRaw from './schema.ts?raw';
 </script>
 
-<Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code} class="min-h-[300px]">
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/file-drop-zone" />
+<Demo demo="file-drop-zone"/>
+<Subheading>Installation</Subheading>
+<Add item="file-drop-zone"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -49,12 +45,10 @@
 		</li>
 	</ul>
 </div>
-<Playground code={examples.form.code} class="min-h-[300px]">
-	<examples.form.Component {data} />
-</Playground>
+<Demo demo="file-drop-zone-form"/>
 <p>Schema:</p>
 <div>
-	<Code lang="typescript" code={examples.schema} />
+	<Code lang="typescript" code={schemaRaw} />
 </div>
 <p>Server:</p>
 <div>

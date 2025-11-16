@@ -1,6 +1,6 @@
 import { fail, message, superValidate } from 'sveltekit-superforms';
 import { valibot } from 'sveltekit-superforms/adapters';
-import { schema } from './schema';
+import { schema } from '$lib/demos/file-drop-zone-form.svelte';
 
 export const load = async () => {
 	return {
