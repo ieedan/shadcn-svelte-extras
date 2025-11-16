@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 </script>
 
-<Playground replay code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="hooks/use-promise.svelte" />
+<Demo demo="use-promise"/>
+<Subheading>Installation</Subheading>
+<Add item="use-promise"/>
 <Subheading>Usage</Subheading>
 <p>Set a default value for the version until it is streamed back from the server.</p>
 <div>

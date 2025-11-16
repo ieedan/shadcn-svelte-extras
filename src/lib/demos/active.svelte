@@ -4,17 +4,17 @@
 	const links = [
 		{
 			title: 'Button',
-			href: '/actions/active#/',
+			href: '#/',
 			isHash: true
 		},
 		{
 			title: 'Code',
-			href: '/actions/active#code',
+			href: '#code',
 			isHash: true
 		},
 		{
 			title: 'Field Set',
-			href: '/actions/active#field-set',
+			href: '#field-set',
 			isHash: true
 		}
 	];
@@ -37,3 +37,4 @@
 		{/each}
 	</div>
 </div>
+

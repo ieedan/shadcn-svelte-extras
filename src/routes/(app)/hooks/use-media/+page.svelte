@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 </script>
 
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="hooks/use-media.svelte" />
+<Demo demo="use-media"/>
+<Subheading>Installation</Subheading>
+<Add item="use-media"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -27,6 +25,4 @@
 </div>
 <Subheading>Custom Breakpoints</Subheading>
 <p>You can also define your own breakpoints and get full type safety.</p>
-<Playground code={examples.custom.code}>
-	<examples.custom.Component />
-</Playground>
+<Demo demo="use-media-custom"/>

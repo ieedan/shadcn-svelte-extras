@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Installation specifier="hooks/use-boolean.svelte" />
+<Subheading>Installation</Subheading>
+<Add item="use-boolean"/>
 <Subheading>Usage</Subheading>
 <p>Use this hook to manage boolean values with more concise syntax.</p>
 <p>Before:</p>

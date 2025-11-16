@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Add from '$lib/components/add.svelte';
 </script>
 
-<Installation specifier="hooks/use-auto-scroll.svelte" />
+<Subheading>Installation</Subheading>
+<Add item="use-auto-scroll"/>
 <Subheading>Usage</Subheading>
 <p>Create a container that automatically scrolls to the bottom.</p>
 <Code

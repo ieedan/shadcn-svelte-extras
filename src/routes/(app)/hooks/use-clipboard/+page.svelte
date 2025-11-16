@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Add from '$lib/components/add.svelte';
 </script>
 
-<Installation specifier="hooks/use-clipboard.svelte" />
+<Subheading>Installation</Subheading>
+<Add item="use-clipboard"/>
 <Subheading>Usage</Subheading>
 <p>Create a button that copies some text to the clipboard.</p>
 <div>

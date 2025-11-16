@@ -84,7 +84,15 @@ export const DEMOS = [
 'toc',
 'tree-view',
 'tree-view-custom-icons',
-'window'
+'window',
+'active',
+'shortcut',
+'is-mac',
+'is-mac-keys',
+'use-media',
+'use-media-custom',
+'use-promise',
+'use-frecency'
 ] as const;
 
 export type Demo = (typeof DEMOS)[number];

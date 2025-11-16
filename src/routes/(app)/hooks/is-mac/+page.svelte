@@ -1,16 +1,14 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
 </script>
 
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="hooks/is-mac.svelte" />
+<Demo demo="is-mac"/>
+<Subheading>Installation</Subheading>
+<Add item="is-mac"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -28,9 +26,7 @@
 	Often times you'll want to show modifier keys in your UI. You can do this with the exported
 	<CodeSpan>cmdOrCtrl</CodeSpan> and <CodeSpan>optionOrAlt</CodeSpan> variables.
 </p>
-<Playground code={examples.keys.code}>
-	<examples.keys.Component />
-</Playground>
+<Demo demo="is-mac-keys"/>
 <Subheading>Acknowledgements</Subheading>
 <p>
 	This hook is based on the shadcn-svelte

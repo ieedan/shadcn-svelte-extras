@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
 	import { toast } from 'svelte-sonner';
-	// import shortcut
 	import { shortcut } from '$lib/actions/shortcut.svelte';
+	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
 </script>
 
 <!-- Ctrl/Command + 1 shortcut -->
@@ -10,7 +10,7 @@
 	use:shortcut={{
 		key: '1',
 		ctrl: true,
-		callback: () => toast.success('You pressed Ctrl + 1')
+		callback: () => toast.success(`You pressed ${cmdOrCtrl} + 1`)
 	}}
 />
 
@@ -21,3 +21,4 @@
 		<Kbd>1</Kbd>
 	</KbdGroup>
 </p>
+

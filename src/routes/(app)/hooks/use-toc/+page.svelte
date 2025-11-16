@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Add from '$lib/components/add.svelte';
 </script>
 
-<Installation specifier="hooks/use-toc.svelte" />
+<Subheading>Installation</Subheading>
+<Add item="use-toc"/>
 <Subheading>Usage</Subheading>
 <p>Generate a table of contents using the content of the page.</p>
 <div>

@@ -760,6 +760,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/actions/active.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/active.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -771,6 +776,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/actions/shortcut.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/shortcut.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				}
@@ -786,6 +796,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/is-mac.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/is-mac.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/is-mac-keys.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -830,6 +850,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-media.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/use-media.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/use-media-custom.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -841,6 +871,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-promise.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/use-promise.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -863,6 +898,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-frecency.svelte.ts'
+						},
+						{
+							path: 'src/lib/demos/use-frecency.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				}

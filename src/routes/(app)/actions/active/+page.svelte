@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 </script>
 
 <p>
@@ -12,10 +11,9 @@
 		{`<a/>`}
 	</CodeSpan> tag to be used for styling.
 </p>
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="actions/active" />
+<Demo demo="active"/>
+<Subheading>Installation</Subheading>
+<Add item="active"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
