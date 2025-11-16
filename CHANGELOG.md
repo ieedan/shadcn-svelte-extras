@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 6.0.0-beta.4
+
+### Patch Changes
+
+- fix: rename item types ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- bump jsrepo ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- feat: add examples to all components ([#284](https://github.com/ieedan/shadcn-svelte-extras/pull/284))
+
 ## 6.0.0-beta.3
 
 ### Patch Changes

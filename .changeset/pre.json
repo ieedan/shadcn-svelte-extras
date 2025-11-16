@@ -5,9 +5,12 @@
     "shadcn-svelte-extras": "5.6.0"
   },
   "changesets": [
+    "big-baboons-ask",
     "crazy-drinks-enjoy",
     "crazy-lamps-watch",
     "five-bags-buy",
-    "real-boats-bet"
+    "real-boats-bet",
+    "smooth-books-poke",
+    "wicked-bags-flow"
   ]
 }
