@@ -1,24 +1,20 @@
 <script lang="ts">
 	import { Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
+	import treeViewFileCustomRaw from './tree-view-file-custom.svelte?raw';
 </script>
 
-<Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code} class="min-h-[300px]">
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/tree-view" />
+<Demo demo="tree-view"/>
+<Subheading>Installation</Subheading>
+<Add item="tree-view"/>
 <Subheading>Custom Icons</Subheading>
-<Playground code={examples.customIcons.code} class="min-h-[300px]">
-	<examples.customIcons.Component />
-</Playground>
+<Demo demo="tree-view-custom-icons"/>
 <p>
 	If you are using custom icons in a project we recommend you wrap the folder/file components with
 	the custom icons:
 </p>
 <div>
-	<Code lang="svelte" highlight={[[13, 21]]} code={examples.customFileComponentCode} />
+	<Code lang="svelte" highlight={[[13, 21]]} code={treeViewFileCustomRaw} />
 </div>

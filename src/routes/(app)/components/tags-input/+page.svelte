@@ -1,16 +1,14 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
-	import { examples } from './examples';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
+	import customValidateRaw from './custom-validate.ts?raw';
 </script>
 
-<Subheading class="mt-0">Basic</Subheading>
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/tags-input" />
+<Demo demo="tags-input"/>
+<Subheading>Installation</Subheading>
+<Add item="tags-input"/>
 <Subheading class="mt-0">Usage</Subheading>
 <div>
 	<Code
@@ -30,11 +28,9 @@
 <p>For example let's say you want to make all of the tags lowercase.</p>
 <p>Write a custom validate function:</p>
 <div>
-	<Code lang="typescript" code={examples.customValidateCode} />
+	<Code lang="typescript" code={customValidateRaw} />
 </div>
 <p>
 	Pass the function to the <CodeSpan>{'<TagsInput/>'}</CodeSpan> component:
 </p>
-<Playground code={examples.lowercase.code}>
-	<examples.lowercase.Component />
-</Playground>
+<Demo demo="tags-input-lowercase"/>

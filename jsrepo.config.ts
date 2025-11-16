@@ -318,6 +318,21 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/language-switcher'
+						},
+						{
+							path: 'src/lib/demos/language-switcher.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/language-switcher-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/language-switcher-paraglide.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -329,6 +344,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/light-switch'
+						},
+						{
+							path: 'src/lib/demos/light-switch.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/light-switch-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -340,6 +365,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/link'
+						},
+						{
+							path: 'src/lib/demos/link.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -351,6 +381,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/meter'
+						},
+						{
+							path: 'src/lib/demos/meter.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -362,6 +397,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/modal'
+						},
+						{
+							path: 'src/lib/demos/modal.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -373,6 +413,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/nlp-date-input'
+						},
+						{
+							path: 'src/lib/demos/nlp-date-input.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/nlp-date-input-min-max.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -384,6 +434,31 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/password'
+						},
+						{
+							path: 'src/lib/demos/password.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/password-toggle-visibility.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/password-copy.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/password-both.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/password-strength.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -395,6 +470,26 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/phone-input'
+						},
+						{
+							path: 'src/lib/demos/phone-input.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/phone-input-default-country.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/phone-input-default-value.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/phone-input-custom-ordering.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -406,6 +501,36 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/pm-command'
+						},
+						{
+							path: 'src/lib/demos/pm-command.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/pm-command-commands.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/pm-command-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/pm-command-overflow.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/pm-command-persisted-pm.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/pm-command-customize-agents.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -417,6 +542,21 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/rename'
+						},
+						{
+							path: 'src/lib/demos/rename.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/rename-content-editable.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/rename-context-menu.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -428,6 +568,21 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/snippet'
+						},
+						{
+							path: 'src/lib/demos/snippet.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/snippet-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/snippet-multiline.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -439,6 +594,41 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/star-rating'
+						},
+						{
+							path: 'src/lib/demos/star-rating.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-custom-stars.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-half-rating.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-disabled.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-readonly.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-custom-color.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/star-rating-custom-size.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -450,6 +640,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/tags-input'
+						},
+						{
+							path: 'src/lib/demos/tags-input.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/tags-input-lowercase.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -461,6 +661,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/terminal'
+						},
+						{
+							path: 'src/lib/demos/terminal.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/terminal-loop.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -472,6 +682,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/theme-selector'
+						},
+						{
+							path: 'src/lib/demos/theme-selector.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/theme-selector-variants.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -483,6 +703,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/toc'
+						},
+						{
+							path: 'src/lib/demos/toc.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -494,6 +719,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/tree-view'
+						},
+						{
+							path: 'src/lib/demos/tree-view.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/tree-view-custom-icons.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -505,6 +740,11 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/window'
+						},
+						{
+							path: 'src/lib/demos/window.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				}

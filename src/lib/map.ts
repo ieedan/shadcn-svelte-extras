@@ -120,7 +120,6 @@ const map: Record<string, Route[]> = {
 			href: '/components/meter',
 			specifier: 'ui/meter',
 			source: 'src/lib/components/ui/meter/meter.svelte',
-			status: 'New'
 		},
 		{
 			name: 'Modal',
@@ -163,7 +162,6 @@ const map: Record<string, Route[]> = {
 			href: '/components/rename',
 			specifier: 'ui/rename',
 			source: 'src/lib/components/ui/rename/rename.svelte',
-			status: 'New'
 		},
 		{
 			name: 'Snippet',
@@ -283,7 +281,6 @@ const map: Record<string, Route[]> = {
 			href: '/hooks/use-media',
 			specifier: 'hooks/use-media.svelte',
 			source: 'src/lib/hooks/use-media.svelte.ts',
-			status: 'New'
 		},
 		{
 			name: 'UsePromise',

@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Installation from '$lib/components/installation.svelte';
-	import Playground from '$lib/components/demo.svelte';
 	import Code from '$lib/components/docs/code.svelte';
+	import Demo from "$lib/components/demo.svelte";
+	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
-	import { examples } from './examples';
 </script>
 
 <Subheading class="mt-0">Basic</Subheading>
@@ -15,10 +14,9 @@
 	>
 	<CodeSpan>{'<RatingGroup/>'}</CodeSpan> component so it has all the behaviors you'd expect.
 </p>
-<Playground code={examples.basic.code}>
-	<examples.basic.Component />
-</Playground>
-<Installation specifier="ui/star-rating" />
+<Demo demo="star-rating"/>
+<Subheading>Installation</Subheading>
+<Add item="star-rating"/>
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -38,27 +36,15 @@
 </div>
 <Subheading>Custom Stars</Subheading>
 <p>You can have an arbitrary number of stars.</p>
-<Playground code={examples.customStars.code}>
-	<examples.customStars.Component />
-</Playground>
+<Demo demo="star-rating-custom-stars"/>
 <Subheading>Half Rating</Subheading>
 <p>You can also have half ratings. And they even work in RTL!</p>
-<Playground code={examples.halfRating.code}>
-	<examples.halfRating.Component />
-</Playground>
+<Demo demo="star-rating-half-rating"/>
 <Subheading>Disabled</Subheading>
-<Playground code={examples.disabled.code}>
-	<examples.disabled.Component />
-</Playground>
+<Demo demo="star-rating-disabled"/>
 <Subheading>Readonly</Subheading>
-<Playground code={examples.readonly.code}>
-	<examples.readonly.Component />
-</Playground>
+<Demo demo="star-rating-readonly"/>
 <Subheading>Custom Color</Subheading>
-<Playground code={examples.customColor.code}>
-	<examples.customColor.Component />
-</Playground>
+<Demo demo="star-rating-custom-color"/>
 <Subheading>Custom Size</Subheading>
-<Playground code={examples.customSize.code}>
-	<examples.customSize.Component />
-</Playground>
+<Demo demo="star-rating-custom-size"/>

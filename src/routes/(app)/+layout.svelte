@@ -134,7 +134,7 @@
 	<!-- Do NOT ask me why this is here it makes it work that's what matters -->
 	<Sidebar.Inset class="page-wrapper w-[200px]">
 		<header
-			class="border-border bg-background sticky top-0 z-20 flex h-16 place-items-center justify-between border-b pr-6 pl-2"
+			class="border-border bg-background sticky top-0 z-40 flex h-16 place-items-center justify-between border-b pr-6 pl-2"
 		>
 			<div class="flex place-items-center gap-2">
 				<Sidebar.Trigger class="md:hidden" />

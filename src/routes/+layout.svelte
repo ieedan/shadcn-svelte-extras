@@ -8,8 +8,12 @@
 	import { MetaTags } from '$lib/components/site/meta-tags';
 	import * as Add from '$lib/components/ui/add';
 	import { REGISTRY_OPTIONS } from '$lib/constants';
+	import { PersistedState } from 'runed';
 
 	let { children } = $props();
+
+	const agent = new PersistedState<Add.Agent>('user-agent-preference', 'npm');
+	const registry = new PersistedState<typeof REGISTRY_OPTIONS[number]>('user-registry-preference', '@ieedan/shadcn-svelte-extras');
 </script>
 
 <MetaTags
@@ -55,9 +59,9 @@
 <ModeWatcher />
 <Toaster />
 <Add.Provider
-	agent="pnpm"
+	bind:agent={agent.current}
+	bind:registry={registry.current}
 	registryOptions={REGISTRY_OPTIONS}
-	registry="@ieedan/shadcn-svelte-extras"
 >
 	{@render children()}
 </Add.Provider>
