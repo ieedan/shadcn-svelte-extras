@@ -12,7 +12,7 @@
 <Subheading>Not a port</Subheading>
 <p>We are not a port of anything and therefore we aren't limited by anything.</p>
 <p>
-	While we promise to maintain compatibility with shadcn-svelte we aren't limited an upstream
+	While we promise to maintain compatibility with shadcn-svelte we aren't limited by an upstream
 	project. If there is something that should exist that doesn't, we build it.
 </p>
 <Subheading>Composability</Subheading>
@@ -30,7 +30,7 @@
 	<Accordion.Item value="q-1">
 		<Accordion.Trigger>How compatible is this with shadcn-svelte?</Accordion.Trigger>
 		<Accordion.Content>
-			Our team contains contributors to shadcn-svelte and they keep up well with any changes made to
+			Our team includes contributors to shadcn-svelte and they keep up well with any changes made to
 			the original.
 		</Accordion.Content>
 	</Accordion.Item>
