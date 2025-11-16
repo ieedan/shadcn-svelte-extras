@@ -2,4 +2,5 @@
 	import { Button } from '$lib/components/ui/button';
 </script>
 
-<Button loading>Hello</Button>
+<Button loading>Save</Button>
+

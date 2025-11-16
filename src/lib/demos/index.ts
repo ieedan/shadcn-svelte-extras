@@ -4,8 +4,11 @@
 */
 
 export const DEMOS = [
-    'avatar-group.svelte',
-'avatar-group-vertical.svelte'
+    'avatar-group',
+'avatar-group-vertical',
+'button',
+'button-loading',
+'button-on-click-promise'
 ] as const;
 
 export type Demo = (typeof DEMOS)[number];

@@ -46,11 +46,13 @@ export default defineConfig({
 						},
 						{
 							path: 'src/lib/demos/avatar-group.svelte',
-							role: 'example'
+							role: 'example',
+							dependencyResolution: 'manual'
 						},
 						{
 							path: 'src/lib/demos/avatar-group-vertical.svelte',
-							role: 'example'
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -62,6 +64,21 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/button'
+						},
+						{
+							path: 'src/lib/demos/button.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/button-loading.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/button-on-click-promise.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

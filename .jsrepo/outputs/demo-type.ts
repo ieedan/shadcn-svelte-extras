@@ -8,7 +8,7 @@ export default function (): Output {
 			const filePath = path.join(cwd, 'src/lib/demos/index.ts');
 
 			const demoNames = buildResult.items.flatMap((item) =>
-				item.files.filter((file) => file.role === 'example').map((file) => path.basename(file.path))
+				item.files.filter((file) => file.role === 'example').map((file) => path.parse(file.path).name)
 			);
 
 			const fileContent = `/**
