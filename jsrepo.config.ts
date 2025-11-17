@@ -38,7 +38,8 @@ export default defineConfig({
 				{
 					name: 'avatar-group',
 					title: 'AvatarGroup',
-					description: 'A composable avatar group component for displaying multiple user avatars, profile pictures, or user images in a stacked or grouped layout with overflow indicators.',
+					description:
+						'A composable avatar group component for displaying multiple user avatars, profile pictures, or user images in a stacked or grouped layout with overflow indicators.',
 					type: 'ui',
 					files: [
 						{
@@ -59,7 +60,8 @@ export default defineConfig({
 				{
 					name: 'button',
 					title: 'Button',
-					description: 'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
+					description:
+						'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
 					type: 'ui',
 					files: [
 						{
@@ -85,7 +87,8 @@ export default defineConfig({
 				{
 					name: 'chat',
 					title: 'Chat',
-					description: 'A component for creating live chats, messaging interfaces, conversation UIs, chat bubbles, message threads, and real-time communication displays.',
+					description:
+						'A component for creating live chats, messaging interfaces, conversation UIs, chat bubbles, message threads, and real-time communication displays.',
 					type: 'ui',
 					files: [
 						{
@@ -101,7 +104,8 @@ export default defineConfig({
 				{
 					name: 'code',
 					title: 'Code',
-					description: 'A code component for displaying syntax-highlighted code blocks, code snippets, programming code, source code, with line numbers, copy functionality, and code highlighting.',
+					description:
+						'A code component for displaying syntax-highlighted code blocks, code snippets, programming code, source code, with line numbers, copy functionality, and code highlighting.',
 					type: 'ui',
 					files: [
 						{
@@ -142,7 +146,8 @@ export default defineConfig({
 				{
 					name: 'copy-button',
 					title: 'CopyButton',
-					description: 'A button used to copy text to the clipboard, copy code snippets, copy content, clipboard copy functionality with visual feedback and copy confirmation.',
+					description:
+						'A button used to copy text to the clipboard, copy code snippets, copy content, clipboard copy functionality with visual feedback and copy confirmation.',
 					type: 'ui',
 					files: [
 						{
@@ -168,7 +173,8 @@ export default defineConfig({
 				{
 					name: 'emoji-picker',
 					title: 'EmojiPicker',
-					description: 'A composable emoji picker component for selecting emojis, emoji selector, emoji chooser, emoji reactions, emoji input, with categories, search, and recent emojis.',
+					description:
+						'A composable emoji picker component for selecting emojis, emoji selector, emoji chooser, emoji reactions, emoji input, with categories, search, and recent emojis.',
 					type: 'ui',
 					files: [
 						{
@@ -204,7 +210,8 @@ export default defineConfig({
 				{
 					name: 'field-set',
 					title: 'FieldSet',
-					description: 'A field set component for grouping form fields, form groups, input groups, form sections, with labels, descriptions, error states, and validation feedback.',
+					description:
+						'A field set component for grouping form fields, form groups, input groups, form sections, with labels, descriptions, error states, and validation feedback.',
 					type: 'ui',
 					files: [
 						{
@@ -225,7 +232,8 @@ export default defineConfig({
 				{
 					name: 'file-drop-zone',
 					title: 'FileDropZone',
-					description: 'A file drop zone component for drag and drop file uploads, file uploader, file input, drag drop files, file selector, with preview, validation, and multiple file support.',
+					description:
+						'A file drop zone component for drag and drop file uploads, file uploader, file input, drag drop files, file selector, with preview, validation, and multiple file support.',
 					type: 'ui',
 					files: [
 						{
@@ -246,7 +254,8 @@ export default defineConfig({
 				{
 					name: 'image-cropper',
 					title: 'ImageCropper',
-					description: 'An image cropper component for cropping images, image editor, photo cropper, image resize, crop tool, with aspect ratio control, preview, and image upload.',
+					description:
+						'An image cropper component for cropping images, image editor, photo cropper, image resize, crop tool, with aspect ratio control, preview, and image upload.',
 					type: 'ui',
 					files: [
 						{
@@ -282,7 +291,8 @@ export default defineConfig({
 				{
 					name: 'ipv4address-input',
 					title: 'Ipv4AddressInput',
-					description: 'An IPv4 address input component for entering IP addresses, network addresses, IP input field, with validation, formatting, and octet separation.',
+					description:
+						'An IPv4 address input component for entering IP addresses, network addresses, IP input field, with validation, formatting, and octet separation.',
 					type: 'ui',
 					files: [
 						{
@@ -313,7 +323,8 @@ export default defineConfig({
 				{
 					name: 'language-switcher',
 					title: 'LanguageSwitcher',
-					description: 'A language switcher component for changing locales, i18n language selector, locale switcher, internationalization, translation switcher, and multi-language support.',
+					description:
+						'A language switcher component for changing locales, i18n language selector, locale switcher, internationalization, translation switcher, and multi-language support.',
 					type: 'ui',
 					files: [
 						{
@@ -339,7 +350,8 @@ export default defineConfig({
 				{
 					name: 'light-switch',
 					title: 'LightSwitch',
-					description: 'A light switch component for toggling themes, dark mode toggle, light dark mode switcher, theme toggle button, with smooth animations and visual feedback.',
+					description:
+						'A light switch component for toggling themes, dark mode toggle, light dark mode switcher, theme toggle button, with smooth animations and visual feedback.',
 					type: 'ui',
 					files: [
 						{
@@ -360,7 +372,8 @@ export default defineConfig({
 				{
 					name: 'link',
 					title: 'Link',
-					description: 'A link component for navigation, anchor links, hyperlinks, styled links, with variants, external link indicators, and active states.',
+					description:
+						'A link component for navigation, anchor links, hyperlinks, styled links, with variants, external link indicators, and active states.',
 					type: 'ui',
 					files: [
 						{
@@ -376,7 +389,8 @@ export default defineConfig({
 				{
 					name: 'meter',
 					title: 'Meter',
-					description: 'A meter component for displaying scalar measurements, value indicators, gauges, measurement displays, disk usage, storage capacity, with min max values and visual value indication.',
+					description:
+						'A meter component for displaying scalar measurements, value indicators, gauges, measurement displays, disk usage, storage capacity, with min max values and visual value indication.',
 					type: 'ui',
 					files: [
 						{
@@ -392,7 +406,8 @@ export default defineConfig({
 				{
 					name: 'modal',
 					title: 'Modal',
-					description: 'A modal component for dialogs, popups, overlays, dialog boxes, modal windows, with backdrop, close functionality, and responsive design.',
+					description:
+						'A modal component for dialogs, popups, overlays, dialog boxes, modal windows, with backdrop, close functionality, and responsive design.',
 					type: 'ui',
 					files: [
 						{
@@ -408,7 +423,8 @@ export default defineConfig({
 				{
 					name: 'nlp-date-input',
 					title: 'NlpDateInput',
-					description: 'A natural language processing date input component for parsing date strings, smart date input, date picker with NLP, text to date conversion, and date suggestions.',
+					description:
+						'A natural language processing date input component for parsing date strings, smart date input, date picker with NLP, text to date conversion, and date suggestions.',
 					type: 'ui',
 					files: [
 						{
@@ -429,7 +445,8 @@ export default defineConfig({
 				{
 					name: 'password',
 					title: 'Password',
-					description: 'A password component for password input fields, secure password entry, password visibility toggle, password strength indicator, and secret input handling.',
+					description:
+						'A password component for password input fields, secure password entry, password visibility toggle, password strength indicator, and secret input handling.',
 					type: 'ui',
 					files: [
 						{
@@ -465,7 +482,8 @@ export default defineConfig({
 				{
 					name: 'phone-input',
 					title: 'PhoneInput',
-					description: 'A phone number input component for telephone numbers, phone number form field, international phone input, country code selector, and phone validation.',
+					description:
+						'A phone number input component for telephone numbers, phone number form field, international phone input, country code selector, and phone validation.',
 					type: 'ui',
 					files: [
 						{
@@ -496,7 +514,8 @@ export default defineConfig({
 				{
 					name: 'pm-command',
 					title: 'PmCommand',
-					description: 'A package manager command component for displaying npm, pnpm, yarn, bun commands, install commands, package manager instructions, and copyable command snippets.',
+					description:
+						'A package manager command component for displaying npm, pnpm, yarn, bun commands, install commands, package manager instructions, and copyable command snippets.',
 					type: 'ui',
 					files: [
 						{
@@ -537,7 +556,8 @@ export default defineConfig({
 				{
 					name: 'rename',
 					title: 'Rename',
-					description: 'A component for renaming files, folders, items, inline editing, editable text, rename input, with validation and keyboard shortcuts.',
+					description:
+						'A component for renaming files, folders, items, inline editing, editable text, rename input, with validation and keyboard shortcuts.',
 					type: 'ui',
 					files: [
 						{
@@ -563,7 +583,8 @@ export default defineConfig({
 				{
 					name: 'snippet',
 					title: 'Snippet',
-					description: 'A snippet component for displaying code snippets, command snippets, text snippets, with copy functionality, variants, and multiline support.',
+					description:
+						'A snippet component for displaying code snippets, command snippets, text snippets, with copy functionality, variants, and multiline support.',
 					type: 'ui',
 					files: [
 						{
@@ -589,7 +610,8 @@ export default defineConfig({
 				{
 					name: 'star-rating',
 					title: 'StarRating',
-					description: 'A star rating component for ratings, reviews, star selector, 5 star rating, rating input, with half stars, readonly mode, custom colors, and sizes.',
+					description:
+						'A star rating component for ratings, reviews, star selector, 5 star rating, rating input, with half stars, readonly mode, custom colors, and sizes.',
 					type: 'ui',
 					files: [
 						{
@@ -635,7 +657,8 @@ export default defineConfig({
 				{
 					name: 'tags-input',
 					title: 'TagsInput',
-					description: 'A tags input component for tag input fields, multi-tag input, tag selector, chip input, tag management, with add remove tags, and tag validation.',
+					description:
+						'A tags input component for tag input fields, multi-tag input, tag selector, chip input, tag management, with add remove tags, and tag validation.',
 					type: 'ui',
 					files: [
 						{
@@ -656,7 +679,8 @@ export default defineConfig({
 				{
 					name: 'terminal',
 					title: 'Terminal',
-					description: 'A terminal component for displaying command line interfaces, terminal emulator, CLI display, shell terminal, code examples, with typing animation and command output.',
+					description:
+						'A terminal component for displaying command line interfaces, terminal emulator, CLI display, shell terminal, code examples, with typing animation and command output.',
 					type: 'ui',
 					files: [
 						{
@@ -677,7 +701,8 @@ export default defineConfig({
 				{
 					name: 'theme-selector',
 					title: 'ThemeSelector',
-					description: 'A theme selector component for choosing themes, theme picker, color scheme selector, dark light theme switcher, with multiple theme options and visual preview.',
+					description:
+						'A theme selector component for choosing themes, theme picker, color scheme selector, dark light theme switcher, with multiple theme options and visual preview.',
 					type: 'ui',
 					files: [
 						{
@@ -698,7 +723,8 @@ export default defineConfig({
 				{
 					name: 'toc',
 					title: 'TableOfContents',
-					description: 'A table of contents component for navigation, document outline, page navigation, TOC sidebar, with anchor links, active section highlighting, and scroll tracking.',
+					description:
+						'A table of contents component for navigation, document outline, page navigation, TOC sidebar, with anchor links, active section highlighting, and scroll tracking.',
 					type: 'ui',
 					files: [
 						{
@@ -714,7 +740,8 @@ export default defineConfig({
 				{
 					name: 'tree-view',
 					title: 'TreeView',
-					description: 'A tree view component for displaying hierarchical data, file tree, folder structure, nested lists, directory tree, with expand collapse, custom icons, and selection.',
+					description:
+						'A tree view component for displaying hierarchical data, file tree, folder structure, nested lists, directory tree, with expand collapse, custom icons, and selection.',
 					type: 'ui',
 					files: [
 						{
@@ -735,7 +762,8 @@ export default defineConfig({
 				{
 					name: 'window',
 					title: 'Window',
-					description: 'A beautiful styled window component for windowed UI, desktop-style windows, window container, with title bar, close button, and customizable content area.',
+					description:
+						'A beautiful styled window component for windowed UI, desktop-style windows, window container, with title bar, close button, and customizable content area.',
 					type: 'ui',
 					files: [
 						{
@@ -755,7 +783,8 @@ export default defineConfig({
 				{
 					name: 'active',
 					title: 'Active',
-					description: 'Automatically add the `data-active` attribute to a link based on its active state. Active link detection, navigation state, route matching, and active link styling.',
+					description:
+						'Automatically add the `data-active` attribute to a link based on its active state. Active link detection, navigation state, route matching, and active link styling.',
 					type: 'action',
 					files: [
 						{
@@ -771,7 +800,8 @@ export default defineConfig({
 				{
 					name: 'shortcut',
 					title: 'Shortcut',
-					description: 'Add keyboard shortcuts to your application. Keyboard shortcuts, hotkeys, key bindings, keyboard navigation, command shortcuts, and keyboard event handling.',
+					description:
+						'Add keyboard shortcuts to your application. Keyboard shortcuts, hotkeys, key bindings, keyboard navigation, command shortcuts, and keyboard event handling.',
 					type: 'action',
 					files: [
 						{
@@ -791,7 +821,8 @@ export default defineConfig({
 				{
 					name: 'is-mac',
 					title: 'IsMac',
-					description: 'Determine if the user is on a Mac. Platform detection, macOS detection, Mac OS detection, platform-specific UI, and Mac keyboard shortcuts.',
+					description:
+						'Determine if the user is on a Mac. Platform detection, macOS detection, Mac OS detection, platform-specific UI, and Mac keyboard shortcuts.',
 					type: 'hook',
 					files: [
 						{
@@ -812,7 +843,8 @@ export default defineConfig({
 				{
 					name: 'use-auto-scroll',
 					title: 'UseAutoScroll',
-					description: 'Automatically scroll to the bottom of an element when new content is added. Auto scroll, chat scroll, message scroll, scroll to bottom, and dynamic content scrolling.',
+					description:
+						'Automatically scroll to the bottom of an element when new content is added. Auto scroll, chat scroll, message scroll, scroll to bottom, and dynamic content scrolling.',
 					type: 'hook',
 					files: [
 						{
@@ -823,7 +855,8 @@ export default defineConfig({
 				{
 					name: 'use-boolean',
 					title: 'UseBoolean',
-					description: 'Simplify working with boolean values. Toggle state, boolean state management, true false toggle, boolean hook, and reactive boolean values.',
+					description:
+						'Simplify working with boolean values. Toggle state, boolean state management, true false toggle, boolean hook, and reactive boolean values.',
 					type: 'hook',
 					files: [
 						{
@@ -834,7 +867,8 @@ export default defineConfig({
 				{
 					name: 'use-clipboard',
 					title: 'UseClipboard',
-					description: 'Copy text to the users clipboard. Clipboard API, copy to clipboard, clipboard copy hook, copy functionality, and clipboard state management.',
+					description:
+						'Copy text to the users clipboard. Clipboard API, copy to clipboard, clipboard copy hook, copy functionality, and clipboard state management.',
 					type: 'hook',
 					files: [
 						{
@@ -845,7 +879,8 @@ export default defineConfig({
 				{
 					name: 'use-media',
 					title: 'UseMedia',
-					description: 'Track the size of the screen using the standard Tailwind CSS breakpoints. Responsive breakpoints, media queries, screen size detection, mobile desktop detection, and responsive design hooks.',
+					description:
+						'Track the size of the screen using the standard Tailwind CSS breakpoints. Responsive breakpoints, media queries, screen size detection, mobile desktop detection, and responsive design hooks.',
 					type: 'hook',
 					files: [
 						{
@@ -866,7 +901,8 @@ export default defineConfig({
 				{
 					name: 'use-promise',
 					title: 'UsePromise',
-					description: 'Manage the state of a promise reactively in the absence of {#await}. Promise state management, async state, loading error success states, promise hook, and reactive promises.',
+					description:
+						'Manage the state of a promise reactively in the absence of {#await}. Promise state management, async state, loading error success states, promise hook, and reactive promises.',
 					type: 'hook',
 					files: [
 						{
@@ -882,7 +918,8 @@ export default defineConfig({
 				{
 					name: 'use-toc',
 					title: 'UseToc',
-					description: 'Generate a table of contents. TOC generation, document outline, heading extraction, navigation generation, and table of contents hook.',
+					description:
+						'Generate a table of contents. TOC generation, document outline, heading extraction, navigation generation, and table of contents hook.',
 					type: 'hook',
 					files: [
 						{
@@ -893,7 +930,8 @@ export default defineConfig({
 				{
 					name: 'use-frecency',
 					title: 'UseFrecency',
-					description: 'Sort items based on how frequently and recent they were used. Frequency sorting, recency sorting, usage tracking, smart sorting, and item ranking.',
+					description:
+						'Sort items based on how frequently and recent they were used. Frequency sorting, recency sorting, usage tracking, smart sorting, and item ranking.',
 					type: 'hook',
 					files: [
 						{
