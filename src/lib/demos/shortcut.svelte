@@ -16,7 +16,7 @@
 
 <p class="flex place-items-center justify-center gap-1">
 	<KbdGroup>
-		<Kbd>⌘</Kbd>
+		<Kbd>{cmdOrCtrl}</Kbd>
 		<span>+</span>
 		<Kbd>1</Kbd>
 	</KbdGroup>

@@ -537,7 +537,7 @@ export default defineConfig({
 				{
 					name: 'rename',
 					title: 'Rename',
-					description: 'A rename component.',
+					description: 'A component for renaming stuff.',
 					type: 'ui',
 					files: [
 						{
@@ -735,7 +735,7 @@ export default defineConfig({
 				{
 					name: 'window',
 					title: 'Window',
-					description: 'A window component.',
+					description: 'A beautiful styled window component.',
 					type: 'ui',
 					files: [
 						{
@@ -755,7 +755,7 @@ export default defineConfig({
 				{
 					name: 'active',
 					title: 'Active',
-					description: 'A active component.',
+					description: 'Automatically add the `data-active` attribute to a link based on its active state.',
 					type: 'action',
 					files: [
 						{
@@ -771,7 +771,7 @@ export default defineConfig({
 				{
 					name: 'shortcut',
 					title: 'Shortcut',
-					description: 'A shortcut component.',
+					description: 'Add shortcuts to your application.',
 					type: 'action',
 					files: [
 						{
@@ -791,7 +791,7 @@ export default defineConfig({
 				{
 					name: 'is-mac',
 					title: 'IsMac',
-					description: 'A is mac hook.',
+					description: 'Determine if the user is on a Mac.',
 					type: 'hook',
 					files: [
 						{
@@ -812,7 +812,7 @@ export default defineConfig({
 				{
 					name: 'use-auto-scroll',
 					title: 'UseAutoScroll',
-					description: 'A use auto scroll hook.',
+					description: 'Automatically scroll to the bottom of an element when new content is added.',
 					type: 'hook',
 					files: [
 						{
@@ -823,7 +823,7 @@ export default defineConfig({
 				{
 					name: 'use-boolean',
 					title: 'UseBoolean',
-					description: 'A use boolean hook.',
+					description: 'Simplify working with boolean values.',
 					type: 'hook',
 					files: [
 						{
@@ -834,7 +834,7 @@ export default defineConfig({
 				{
 					name: 'use-clipboard',
 					title: 'UseClipboard',
-					description: 'A use clipboard hook.',
+					description: 'Copy text to the users clipboard.',
 					type: 'hook',
 					files: [
 						{
@@ -845,7 +845,7 @@ export default defineConfig({
 				{
 					name: 'use-media',
 					title: 'UseMedia',
-					description: 'A use media hook.',
+					description: 'Track the size of the screen using the standard Tailwind CSS breakpoints.',
 					type: 'hook',
 					files: [
 						{
@@ -866,7 +866,7 @@ export default defineConfig({
 				{
 					name: 'use-promise',
 					title: 'UsePromise',
-					description: 'A use promise hook.',
+					description: 'Manage the state of a promise reactively in the absence of {#await}.',
 					type: 'hook',
 					files: [
 						{
@@ -882,7 +882,7 @@ export default defineConfig({
 				{
 					name: 'use-toc',
 					title: 'UseToc',
-					description: 'A use toc hook.',
+					description: 'Generate a table of contents.',
 					type: 'hook',
 					files: [
 						{
@@ -893,7 +893,7 @@ export default defineConfig({
 				{
 					name: 'use-frecency',
 					title: 'UseFrecency',
-					description: 'A use frecency hook.',
+					description: 'Sort items based on how frequently and recent they were used.',
 					type: 'hook',
 					files: [
 						{
