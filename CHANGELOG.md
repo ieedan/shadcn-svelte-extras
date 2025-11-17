@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.0.0-beta.5
+
+### Patch Changes
+
+- chore: llm improvements ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
 ## 6.0.0-beta.4
 
 ### Patch Changes
