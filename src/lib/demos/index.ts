@@ -16,6 +16,8 @@ export const DEMOS = [
 	'code-variants',
 	'code-highlight-lines',
 	'code-overflow',
+	'confirm-delete-dialog',
+	'confirm-delete-dialog-with-text',
 	'copy-button',
 	'copy-button-icon',
 	'copy-button-with-text',
