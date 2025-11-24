@@ -22,7 +22,7 @@
 <div>
 	<Code
 		lang="typescript"
-		highlight={[[5, 10]]}
+		highlight={[[5, 11]]}
 		code={`import { defineConfig } from 'jsrepo';
 
 export default defineConfig({
@@ -34,7 +34,7 @@ export default defineConfig({
 			util: "$lib/utils",
 			lib: "$lib"
     }
-}`}
+});`}
 	/>
 </div>
 <p>Start adding extras!</p>
