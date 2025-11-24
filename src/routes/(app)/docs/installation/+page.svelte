@@ -15,7 +15,7 @@
 </p>
 <Subheading>Setup</Subheading>
 <p>Initialize jsrepo with shadcn-svelte-extras:</p>
-<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras@beta']} />
+<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']} />
 <p>
 	Configure the <CodeSpan>paths</CodeSpan> key in your <CodeSpan>jsrepo.json</CodeSpan> file so that
 	components, hooks, and utils are added to the correct places:
@@ -27,7 +27,7 @@
 		code={`import { defineConfig } from 'jsrepo';
 
 export default defineConfig({
-    registries: ['@ieedan/shadcn-svelte-extras@beta'],
+    registries: ['@ieedan/shadcn-svelte-extras'],
     paths: {
 			ui: "$lib/components/ui",
 			hook: "$lib/hooks",
