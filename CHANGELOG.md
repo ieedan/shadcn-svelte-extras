@@ -1,5 +1,27 @@
 # shadcn-svelte-extras
 
+## 6.0.0
+
+### Major Changes
+
+- jsrepo v3 ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+### Patch Changes
+
+- fix: rename item types ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- chore: bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- bump jsrepo ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- feat: add examples to all components ([#284](https://github.com/ieedan/shadcn-svelte-extras/pull/284))
+
+- chore: llm improvements ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
 ## 6.0.0-beta.5
 
 ### Patch Changes
