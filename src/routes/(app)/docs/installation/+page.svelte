@@ -40,13 +40,9 @@ export default defineConfig({
 <p>Start adding extras!</p>
 <Add item="button" />
 <Subheading>MCP</Subheading>
-<p>
-	To setup the jsrepo MCP server you can run the following command:
-</p>
+<p>To setup the jsrepo MCP server you can run the following command:</p>
 <JsrepoCommand command="execute" args={['jsrepo', 'config', 'mcp']} />
-<p>
-	This will configure the jsrepo MCP server for the client of your choice.
-</p>
+<p>This will configure the jsrepo MCP server for the client of your choice.</p>
 <p>
 	We also added a Cursor Rules config file for your convenience. You can add it when you initialize
 	shadcn-svelte-extras with the <CodeSpan>jsrepo init</CodeSpan> command.
