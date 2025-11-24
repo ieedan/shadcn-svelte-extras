@@ -12,7 +12,7 @@
 
 <DropdownMenu.Item
 	class={cn('', className)}
-	onSelect={() => window.open('https://v3.jsrepo.dev/docs/cli/add', '_blank')}
+	onSelect={() => window.open('https://jsrepo.dev/docs/cli/add', '_blank')}
 	{...rest}
 >
 	<ExternalLink class="size-4" />
