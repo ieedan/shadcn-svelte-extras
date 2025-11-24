@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import * as Tabs from '$lib/components/ui/tabs';
 	import * as Code from '$lib/components/ui/code';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { Button } from './ui/button';
 	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 

@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
 	let { children, class: className }: WindowProps = $props();
 </script>

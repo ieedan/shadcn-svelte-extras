@@ -1,4 +1,4 @@
-import * as casing from '$lib/utils/casing';
+import * as casing from '../../../utils/casing.js';
 
 // import all references
 import { reference as AvatarGroupReference } from './avatar-group-api';

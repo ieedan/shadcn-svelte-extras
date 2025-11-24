@@ -2,7 +2,7 @@
 	import GlobeIcon from '@lucide/svelte/icons/globe';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { buttonVariants } from '$lib/components/ui/button';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import type { LanguageSwitcherProps } from './types';
 
 	let {

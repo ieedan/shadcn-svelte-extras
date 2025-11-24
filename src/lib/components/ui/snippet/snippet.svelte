@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { tv, type VariantProps } from 'tailwind-variants';
 	import { CopyButton } from '../copy-button';
 	import type { UseClipboard } from '$lib/hooks/use-clipboard.svelte';

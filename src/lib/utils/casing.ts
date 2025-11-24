@@ -2,7 +2,7 @@
 	Installed from @ieedan/std
 */
 
-import { isLetter } from '$lib/utils/is-letter';
+import { isLetter } from './is-letter.js';
 
 /** Converts a `camelCase` string to a `snake_case` string
  *

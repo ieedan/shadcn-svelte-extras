@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { mode } from 'mode-watcher';
 	import type { Props as IconProps } from './icons';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
 	let { class: className, ...rest }: IconProps = $props();
 </script>

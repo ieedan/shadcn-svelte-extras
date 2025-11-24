@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { onDestroy } from 'svelte';
 	import { useAnimation } from './terminal.svelte.js';
 	import { fly } from 'svelte/transition';
