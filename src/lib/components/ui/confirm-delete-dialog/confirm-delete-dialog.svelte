@@ -22,7 +22,7 @@
 			this.options = null;
 		}
 
-		async confirm() {
+		confirm() {
 			if (this.options?.input) {
 				if (this.inputText !== this.options.input.confirmationText) {
 					return;
@@ -30,9 +30,14 @@
 			}
 
 			this.loading = true;
-			await this.options?.onConfirm();
-			this.loading = false;
-			this.open = false;
+			this.options
+				?.onConfirm()
+				.then(() => {
+					this.open = false;
+				})
+				.finally(() => {
+					this.loading = false;
+				});
 		}
 
 		cancel() {
@@ -78,9 +83,10 @@
 <AlertDialog.Root bind:open={dialogState.open}>
 	<AlertDialog.Content>
 		<form
-			onsubmit={async (e) => {
+			method="POST"
+			onsubmit={(e) => {
 				e.preventDefault();
-				await dialogState.confirm();
+				dialogState.confirm();
 			}}
 			class="flex flex-col gap-4"
 		>
@@ -96,6 +102,13 @@
 				<Input
 					bind:value={dialogState.inputText}
 					placeholder={`Enter \"${dialogState.options.input.confirmationText}\" to confirm.`}
+					onkeydown={(e) => {
+						if (e.key === 'Enter') {
+							// for some reason without this the form will submit and the dialog will close immediately
+							e.preventDefault();
+							dialogState.confirm();
+						}
+					}}
 				/>
 			{/if}
 			<AlertDialog.Footer>

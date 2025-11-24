@@ -3,8 +3,4 @@ import ConfirmDeleteDialog, {
 	type ConfirmDeleteOptions
 } from './confirm-delete-dialog.svelte';
 
-export {
-	ConfirmDeleteDialog,
-	confirmDelete,
-	type ConfirmDeleteOptions
-};
+export { ConfirmDeleteDialog, confirmDelete, type ConfirmDeleteOptions };

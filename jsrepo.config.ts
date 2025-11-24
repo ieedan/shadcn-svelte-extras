@@ -146,8 +146,7 @@ export default defineConfig({
 				{
 					name: 'confirm-delete-dialog',
 					title: 'ConfirmDeleteDialog',
-					description:
-						'A dialog for confirming delete actions.',
+					description: 'A dialog for confirming delete actions.',
 					type: 'ui',
 					files: [
 						{
@@ -160,6 +159,11 @@ export default defineConfig({
 						},
 						{
 							path: 'src/lib/demos/confirm-delete-dialog-with-text.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/confirm-delete-dialog-skip-confirmation.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
 						}

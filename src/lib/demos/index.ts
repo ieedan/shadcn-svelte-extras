@@ -18,6 +18,7 @@ export const DEMOS = [
 	'code-overflow',
 	'confirm-delete-dialog',
 	'confirm-delete-dialog-with-text',
+	'confirm-delete-dialog-skip-confirmation',
 	'copy-button',
 	'copy-button-icon',
 	'copy-button-with-text',

@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { buttonVariants } from '$lib/components/ui/button';
-	import {
-		confirmDelete,
-		ConfirmDeleteDialog,
-	} from '$lib/components/ui/confirm-delete-dialog';
+	import { confirmDelete, ConfirmDeleteDialog } from '$lib/components/ui/confirm-delete-dialog';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
 	import * as Avatar from '$lib/components/ui/avatar';
@@ -34,8 +31,8 @@
 		{
 			name: 'jsrepo.dev',
 			url: 'https://jsrepo.dev',
-			githubUrl: 'https://github.com/jsrepojs/jsrepo.dev',
-			faviconUrl: 'https://jsrepo.dev/favicon.png'
+			githubUrl: 'https://github.com/jsrepojs/jsrepo',
+			faviconUrl: 'https://jsrepo.com/favicon.png'
 		},
 		{
 			name: 'jsrepo.com',
@@ -80,7 +77,7 @@
 										title: 'Delete repository',
 										description: 'Are you sure you want to delete this repository?',
 										onConfirm: async () => {
-                                            await sleep(250);
+											await sleep(250);
 											projects = projects.filter((p) => p.url !== project.url);
 										}
 									});
