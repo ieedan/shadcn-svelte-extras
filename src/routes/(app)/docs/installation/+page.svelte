@@ -41,34 +41,12 @@ export default defineConfig({
 <Add item="button" />
 <Subheading>MCP</Subheading>
 <p>
-	jsrepo now supports <Link href="https://jsrepo.dev/docs/registry/mcp" target="_blank">MCP</Link> and
-	you can use it to find and install extras into your project.
+	To setup the jsrepo MCP server you can run the following command:
 </p>
-<Tabs.Root value="cursor">
-	<Tabs.List>
-		<Tabs.Trigger value="cursor">Cursor</Tabs.Trigger>
-		<Tabs.Trigger value="windsurf">Windsurf</Tabs.Trigger>
-	</Tabs.List>
-	<Tabs.Content value="cursor">
-		Add the following code to your <CodeSpan>.cursor/mcp.json</CodeSpan> file.
-	</Tabs.Content>
-	<Tabs.Content value="windsurf">
-		Add the following code to your <CodeSpan>.codeium/windsurf/mcp_config.json</CodeSpan> file.
-	</Tabs.Content>
-</Tabs.Root>
-<div>
-	<Code
-		lang="json"
-		code={`{
-	"mcpServers": {
-		"jsrepo": {
-			"command": "npx",
-			"args": ["jsrepo", "mcp"]
-		}
-	}
-}`}
-	/>
-</div>
+<JsrepoCommand command="execute" args={['jsrepo', 'config', 'mcp']} />
+<p>
+	This will configure the jsrepo MCP server for the client of your choice.
+</p>
 <p>
 	We also added a Cursor Rules config file for your convenience. You can add it when you initialize
 	shadcn-svelte-extras with the <CodeSpan>jsrepo init</CodeSpan> command.
