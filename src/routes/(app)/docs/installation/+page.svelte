@@ -31,7 +31,8 @@ export default defineConfig({
 			ui: "$lib/components/ui",
 			hook: "$lib/hooks",
 			action: "$lib/actions",
-			util: "$lib/utils"
+			util: "$lib/utils",
+			lib: "$lib"
     }
 }`}
 	/>
