@@ -2,7 +2,6 @@
 	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
 	import { Link } from '$lib/components/ui/link';
-	import * as Tabs from '$lib/components/ui/tabs';
 	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
