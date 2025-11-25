@@ -3,6 +3,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import transformLucideImports from 'vite-plugin-transform-lucide-imports';
+import { sveltekitOG } from '@ethercorps/sveltekit-og/plugin'
 
 export default defineConfig({
 	plugins: [
@@ -14,6 +15,7 @@ export default defineConfig({
 			disableAsyncLocalStorage: true
 		}),
 		sveltekit(),
-		transformLucideImports()
+		transformLucideImports(),
+		sveltekitOG()
 	]
 });

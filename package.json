@@ -23,6 +23,7 @@
 		"@emoji-mart/data": "^1.2.1",
 		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
+		"@ethercorps/sveltekit-og": "^4.2.0",
 		"@fontsource-variable/geist": "^5.2.8",
 		"@fontsource-variable/geist-mono": "^5.2.7",
 		"@inlang/cli": "^3.0.12",
