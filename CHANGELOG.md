@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 6.1.0
+
+### Minor Changes
+
+- feat: Add `ConfirmDeleteDialog` component ([#292](https://github.com/ieedan/shadcn-svelte-extras/pull/292))
+
+### Patch Changes
+
+- feat: Add Code block example to code ([#292](https://github.com/ieedan/shadcn-svelte-extras/pull/292))
+
 ## 6.0.1
 
 ### Patch Changes
