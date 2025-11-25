@@ -52,6 +52,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/code/code.svelte'
 		},
 		{
+			name: 'Confirm Delete Dialog',
+			description: 'A dialog for confirming delete actions.',
+			href: '/components/confirm-delete-dialog',
+			specifier: 'ui/confirm-delete-dialog',
+			source: 'src/lib/components/ui/confirm-delete-dialog',
+			status: 'New'
+		},
+		{
 			name: 'Copy Button',
 			description: 'A button used to copy text to the clipboard.',
 			href: '/components/copy-button',

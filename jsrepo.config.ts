@@ -140,6 +140,37 @@ export default defineConfig({
 							path: 'src/lib/demos/code-overflow.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/code-block.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
+					name: 'confirm-delete-dialog',
+					title: 'ConfirmDeleteDialog',
+					description: 'A dialog for confirming delete actions.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/confirm-delete-dialog'
+						},
+						{
+							path: 'src/lib/demos/confirm-delete-dialog.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/confirm-delete-dialog-with-text.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/confirm-delete-dialog-skip-confirmation.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
@@ -1030,6 +1061,17 @@ export default defineConfig({
 			// shadcn-svelte
 			...([
 				// ui
+				{
+					name: 'alert-dialog',
+					title: 'AlertDialog',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/alert-dialog'
+						}
+					]
+				},
 				{
 					name: 'avatar',
 					title: 'Avatar',
