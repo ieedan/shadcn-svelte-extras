@@ -4,7 +4,7 @@
 
 <div class="flex w-full max-w-3xs flex-col gap-2">
 	<Password.Root>
-		<Password.Input>
+		<Password.Input placeholder="Password">
 			<Password.ToggleVisibility />
 		</Password.Input>
 		<Password.Strength />

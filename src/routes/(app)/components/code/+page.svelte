@@ -32,3 +32,5 @@
 <Demo demo="code-highlight-lines" />
 <Subheading>Overflow</Subheading>
 <Demo demo="code-overflow" />
+<Subheading>Code Block</Subheading>
+<Demo demo="code-block" />
