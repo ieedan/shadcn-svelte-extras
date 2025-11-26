@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.1.1
+
+### Patch Changes
+
+- chore: Update Cursor rules file ([#294](https://github.com/ieedan/shadcn-svelte-extras/pull/294))
+
 ## 6.1.0
 
 ### Minor Changes
