@@ -14,6 +14,9 @@ export type LanguageSwitcherProps = {
 
 	/** Dropdown alignment */
 	align?: 'start' | 'center' | 'end';
+	
+	/** Dropdown side */
+	side?: 'top' | 'right' | 'bottom' | 'left';
 
 	/** Button variant */
 	variant?: 'outline' | 'ghost';
