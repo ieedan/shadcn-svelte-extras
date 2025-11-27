@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.1.2
+
+### Patch Changes
+
+- fix(ConfirmDeleteDialog): Add `type="button"` to AlertDialog.Cancel ([`cfabcf4`](https://github.com/ieedan/shadcn-svelte-extras/commit/cfabcf4aa784b884afa87c33e788b4665997549f))
+
 ## 6.1.1
 
 ### Patch Changes
