@@ -791,6 +791,23 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'underline-tabs',
+					title: 'UnderlineTabs',
+					description:
+						'A underline tabs component for displaying tabs, tab navigation, tab selection, tab navigation, and tab selection.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/underline-tabs'
+						},
+						{
+							path: 'src/lib/demos/underline-tabs.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'window',
 					title: 'Window',
 					description:

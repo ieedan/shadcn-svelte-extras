@@ -88,6 +88,7 @@ export const DEMOS = [
 	'toc',
 	'tree-view',
 	'tree-view-custom-icons',
+	'underline-tabs',
 	'window',
 	'active',
 	'shortcut',
