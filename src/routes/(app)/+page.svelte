@@ -23,7 +23,9 @@
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">
 		<a href="/components/underline-tabs" class="flex place-items-center gap-1 text-sm font-medium">
-			<span class="hover:underline">New component <span class="font-bold">Underline Tabs</span>!</span>
+			<span class="hover:underline"
+				>New component <span class="font-bold">Underline Tabs</span>!</span
+			>
 			<ArrowRightIcon class="size-3.5" />
 		</a>
 		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
