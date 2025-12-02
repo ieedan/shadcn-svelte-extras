@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.2.0
+
+### Minor Changes
+
+- feat: 🎉 New component `UnderlineTabs` ([#303](https://github.com/ieedan/shadcn-svelte-extras/pull/303))
+
 ## 6.1.2
 
 ### Patch Changes
