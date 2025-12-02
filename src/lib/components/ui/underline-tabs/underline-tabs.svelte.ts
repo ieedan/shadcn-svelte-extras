@@ -9,7 +9,10 @@ export const [send, receive] = crossfade({
 
 type UnderlineTabsRootProps = WritableBoxedValues<{
 	value: string;
-}>;
+}> &
+	ReadableBoxedValues<{
+		id: string;
+	}>;
 
 class UnderlineTabsRootState {
 	hoveredTab = $state<string | null>(null);

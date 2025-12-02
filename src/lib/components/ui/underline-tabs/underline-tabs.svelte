@@ -4,18 +4,22 @@
 	import { useUnderlineTabs } from './underline-tabs.svelte.js';
 	import { box } from 'svelte-toolbelt';
 
+	const uid = $props.id();
+
 	let {
 		ref = $bindable(null),
 		value = $bindable(''),
+		id = uid,
 		class: className,
 		...restProps
-	}: Omit<TabsPrimitive.RootProps, 'orientation'> = $props();
+	}: Omit<TabsPrimitive.RootProps, 'orientation' | 'id'> & { id?: string } = $props();
 
 	useUnderlineTabs({
 		value: box.with(
 			() => value,
 			(v) => (value = v)
-		)
+		),
+		id: box.with(() => id)
 	});
 </script>
 

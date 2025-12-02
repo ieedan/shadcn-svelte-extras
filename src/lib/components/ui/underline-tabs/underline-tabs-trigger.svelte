@@ -47,15 +47,15 @@
 				'bg-accent absolute top-0 z-1 h-[calc(100%-3px)] w-full rounded-md opacity-0 transition-opacity duration-300 peer-focus-visible:opacity-100',
 				state.rootState.isHovered && 'opacity-100'
 			)}
-			in:receive={{ key: 'tab-hover', duration: 300 }}
-			out:send={{ key: 'tab-hover', duration: 300 }}
+			in:receive={{ key: `${state.rootState.opts.id.current}-tab-hover`, duration: 300 }}
+			out:send={{ key: `${state.rootState.opts.id.current}-tab-hover`, duration: 300 }}
 		></div>
 	{/if}
 	{#if state.rootState.opts.value.current === value}
 		<div
 			class="bg-primary absolute -bottom-px z-1 h-0.5 w-full"
-			in:receive={{ key: 'tab-active-border', duration: 200 }}
-			out:send={{ key: 'tab-active-border', duration: 200 }}
+			in:receive={{ key: `${state.rootState.opts.id.current}-tab-active-border`, duration: 200 }}
+			out:send={{ key: `${state.rootState.opts.id.current}-tab-active-border`, duration: 200 }}
 		></div>
 	{/if}
 </div>
