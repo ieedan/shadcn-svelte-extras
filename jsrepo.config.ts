@@ -804,6 +804,11 @@ export default defineConfig({
 							path: 'src/lib/demos/underline-tabs.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/underline-tabs-overflow.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

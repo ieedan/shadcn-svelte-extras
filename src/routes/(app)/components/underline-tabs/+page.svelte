@@ -7,3 +7,5 @@
 <Demo demo="underline-tabs" />
 <Subheading>Installation</Subheading>
 <Add item="underline-tabs" />
+<Subheading>Overflow</Subheading>
+<Demo demo="underline-tabs-overflow" />
