@@ -17,6 +17,7 @@
 <Demo demo="nlp-date-input-min-max" />
 <Subheading>Locale</Subheading>
 <p>
-	Additionally, you can specify the locale used for parsing by using the <CodeSpan>locale</CodeSpan> prop.
+	Additionally, you can specify the locale used for parsing by using the <CodeSpan>locale</CodeSpan>
+	prop.
 </p>
 <Demo demo="nlp-date-input-locale" />
