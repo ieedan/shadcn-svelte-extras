@@ -51,6 +51,7 @@ export const DEMOS = [
 	'modal',
 	'nlp-date-input',
 	'nlp-date-input-min-max',
+	'nlp-date-input-locale',
 	'password',
 	'password-toggle-visibility',
 	'password-copy',

@@ -41,6 +41,7 @@
 		"@zxcvbn-ts/language-common": "^3.0.4",
 		"@zxcvbn-ts/language-en": "^3.0.2",
 		"bits-ui": "^2.14.4",
+		"chrono-node": "^2.9.0",
 		"clsx": "^2.1.1",
 		"concurrently": "^9.2.1",
 		"country-flag-icons": "^1.6.4",
@@ -76,8 +77,7 @@
 		"valibot": "1.1.0",
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "7.2.2",
-		"vite-plugin-transform-lucide-imports": "^0.3.0",
-		"yeezy-dates": "^1.0.1"
+		"vite-plugin-transform-lucide-imports": "^0.3.0"
 	},
 	"pnpm": {
 		"ignoredBuiltDependencies": [

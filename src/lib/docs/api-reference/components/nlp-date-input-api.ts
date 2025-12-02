@@ -15,6 +15,10 @@ const Root = api.createComponentReference<NLPDateInputProps>({
 			description: 'The placeholder text for the input.',
 			defaultValue: 'E.g. "tomorrow at 5pm" or "in 2 hours"'
 		}),
+		locale: api.createStringProp({
+			description: 'The locale to use for parsing dates.',
+			defaultValue: 'en'
+		}),
 		onChoice: api.createFunctionProp({
 			description: 'Callback fired when a suggestion is selected.',
 			type: '(opts: { label: string; date: Date }) => void'

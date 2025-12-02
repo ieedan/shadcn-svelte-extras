@@ -470,6 +470,11 @@ export default defineConfig({
 							path: 'src/lib/demos/nlp-date-input-min-max.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/nlp-date-input-locale.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

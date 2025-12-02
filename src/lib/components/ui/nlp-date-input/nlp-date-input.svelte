@@ -1,21 +1,24 @@
 <script lang="ts">
 	import * as Command from '$lib/components/ui/command';
-	import { parseDate } from 'yeezy-dates';
+	import * as chrono from 'chrono-node';
 	import type { NLPDateInputProps } from './types';
 
 	let {
 		placeholder = 'E.g. "tomorrow at 5pm" or "in 2 hours"',
 		min,
 		max,
+		locale,
 		onChoice
 	}: NLPDateInputProps = $props();
 
 	let value = $state('');
+	let parser = $derived(locale && chrono[locale] ? chrono[locale].parse : chrono.parse);
 
 	const suggestions = $derived(
-		parseDate(value).filter(
+		parser(value).filter(
 			(suggestion) =>
-				(min === undefined || suggestion.date > min) && (max === undefined || suggestion.date < max)
+				(min === undefined || suggestion.date() > min) &&
+				(max === undefined || suggestion.date() < max)
 		)
 	);
 </script>
@@ -32,11 +35,11 @@
 				>
 					<div class="flex w-full place-items-center justify-between">
 						<span>
-							{suggestion.label}
+							{suggestion.text}
 						</span>
 						<span class="text-muted-foreground">
-							{suggestion.date.toDateString()}
-							{suggestion.date.toLocaleTimeString()}
+							{suggestion.date().toLocaleDateString()}
+							{suggestion.date().toLocaleTimeString()}
 						</span>
 					</div>
 				</Command.Item>
