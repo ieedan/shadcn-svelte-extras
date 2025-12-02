@@ -2,4 +2,4 @@
 'shadcn-svelte-extras': minor
 ---
 
-feat: Add `UnderlineTabs` component
+feat: 🎉 New component `UnderlineTabs`
