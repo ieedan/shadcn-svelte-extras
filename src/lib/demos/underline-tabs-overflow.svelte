@@ -3,7 +3,7 @@
 	import { Window } from '$lib/components/ui/window';
 </script>
 
-<div class="p-6 w-full max-w-full flex items-center justify-center">
+<div class="flex w-full max-w-full items-center justify-center p-6">
 	<Window class="max-w-lg" contentClass="px-0 py-1">
 		<UnderlineTabs.Root value="overview">
 			<UnderlineTabs.List>

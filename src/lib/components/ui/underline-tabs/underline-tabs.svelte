@@ -11,10 +11,12 @@
 		...restProps
 	}: Omit<TabsPrimitive.RootProps, 'orientation'> = $props();
 
-	useUnderlineTabs({ value: box.with(
-		() => value,
-		(v) => (value = v)
-	)});
+	useUnderlineTabs({
+		value: box.with(
+			() => value,
+			(v) => (value = v)
+		)
+	});
 </script>
 
 <TabsPrimitive.Root

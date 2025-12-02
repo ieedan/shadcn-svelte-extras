@@ -23,12 +23,12 @@
 </TabsPrimitive.List>
 
 <style>
-	:global([data-slot="underline-tabs-list"]) {
+	:global([data-slot='underline-tabs-list']) {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}
 
-	:global([data-slot="underline-tabs-list"]::-webkit-scrollbar) {
+	:global([data-slot='underline-tabs-list']::-webkit-scrollbar) {
 		display: none;
 	}
 </style>

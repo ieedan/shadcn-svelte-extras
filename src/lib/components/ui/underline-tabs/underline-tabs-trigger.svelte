@@ -10,6 +10,8 @@
 		class: className,
 		onmouseenter,
 		onmouseleave,
+		onfocus,
+		onblur,
 		children,
 		...restProps
 	}: TabsPrimitive.TriggerProps = $props();
@@ -17,7 +19,9 @@
 	const state = useUnderlineTabsTrigger({
 		value: box.with(() => value),
 		onmouseenter: box.with(() => onmouseenter),
-		onmouseleave: box.with(() => onmouseleave)
+		onmouseleave: box.with(() => onmouseleave),
+		onfocus: box.with(() => onfocus),
+		onblur: box.with(() => onblur)
 	});
 </script>
 
@@ -26,7 +30,7 @@
 		bind:ref
 		data-slot="underline-tabs-trigger"
 		class={cn(
-			"dark:data-[state=active]:text-foreground focus-visible:ring-ring/50 focus-visible:outline-ring text-foreground dark:text-muted-foreground relative z-2 inline-flex h-[calc(100%-3px)] flex-1 items-center justify-center gap-1.5 px-3 py-1 text-sm font-medium whitespace-nowrap transition-colors focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+			"dark:data-[state=active]:text-foreground data-[state=active]:text-foreground text-muted-foreground relative z-2 inline-flex h-[calc(100%-3px)] flex-1 items-center justify-center gap-1.5 px-3 py-1 text-sm font-medium whitespace-nowrap transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
 			state.rootState.isHovered &&
 				state.rootState.hoveredTab === value &&
 				'data-[state=inactive]:text-foreground!',
@@ -40,8 +44,8 @@
 	{#if state.rootState.hoveredTab === value}
 		<div
 			class={cn(
-				'bg-accent absolute top-0 z-1 h-[calc(100%-3px)] w-full rounded-md transition-opacity duration-300',
-				!state.rootState.isHovered && 'opacity-0'
+				'bg-accent absolute top-0 z-1 h-[calc(100%-3px)] w-full rounded-md opacity-0 transition-opacity duration-300 peer-focus-visible:opacity-100',
+				state.rootState.isHovered && 'opacity-100'
 			)}
 			in:receive={{ key: 'tab-hover', duration: 300 }}
 			out:send={{ key: 'tab-hover', duration: 300 }}
