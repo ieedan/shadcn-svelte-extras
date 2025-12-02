@@ -32,6 +32,7 @@ export const REGISTRY_ITEMS = [
 	'theme-selector',
 	'toc',
 	'tree-view',
+	'underline-tabs',
 	'window',
 	'active',
 	'shortcut',

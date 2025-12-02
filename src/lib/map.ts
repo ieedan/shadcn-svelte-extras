@@ -222,6 +222,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/tree-view'
 		},
 		{
+			name: 'Underline Tabs',
+			description: 'A horizontal tabs component with an underline.',
+			href: '/components/underline-tabs',
+			specifier: 'ui/underline-tabs',
+			source: 'src/lib/components/ui/underline-tabs',
+			status: 'New'
+		},
+		{
 			name: 'Window',
 			description: 'A window component.',
 			href: '/components/window',

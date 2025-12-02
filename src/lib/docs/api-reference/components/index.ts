@@ -25,6 +25,7 @@ import { reference as TerminalReference } from './terminal-api';
 import { reference as ThemeSelectorReference } from './theme-selector-api';
 import { reference as TocReference } from './toc-api';
 import { reference as TreeViewReference } from './tree-view-api';
+import { reference as UnderlineTabsReference } from './underline-tabs-api';
 import { reference as WindowReference } from './window-api';
 import { reference as EmojiPickerReference } from './emoji-picker-api';
 import { reference as PasswordReference } from './password-api';
@@ -55,6 +56,7 @@ export const references = [
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
 	PasswordReference,
@@ -94,6 +96,7 @@ export {
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
 	PasswordReference,
