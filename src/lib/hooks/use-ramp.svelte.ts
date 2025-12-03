@@ -6,22 +6,22 @@ export type UseRampOptions = {
 	 * @default 200
 	 */
 	maxFrequency?: number;
-    /**
-     * The minimum amount of time it should take to increment the value by 1 in milliseconds
-     * @default 25
-     */
-    minFrequency?: number;
-    /**
-     * The amount of time to wait in milliseconds before starting to ramp up.
-     * @default 100
-     */
+	/**
+	 * The minimum amount of time it should take to increment the value by 1 in milliseconds
+	 * @default 25
+	 */
+	minFrequency?: number;
+	/**
+	 * The amount of time to wait in milliseconds before starting to ramp up.
+	 * @default 100
+	 */
 	startDelay?: number;
-    /**
-     * The amount of time it should take to ramp up to the minimum frequency
-     * @default 2500
-     */
+	/**
+	 * The amount of time it should take to ramp up to the minimum frequency
+	 * @default 2500
+	 */
 	rampUpTime?: number;
-    /** A function to determine whether the value can be incremented. When false the ramp will be reset. */
+	/** A function to determine whether the value can be incremented. When false the ramp will be reset. */
 	canRamp: () => boolean;
 };
 
@@ -48,7 +48,7 @@ export function useRamp({
 		increment();
 		rampIntervalTimeout = setTimeout(
 			() => rampUp(),
-			(minFrequency + maxFrequency) - (freq * maxFrequency)
+			minFrequency + maxFrequency - freq * maxFrequency
 		);
 	}
 
@@ -56,11 +56,11 @@ export function useRamp({
 		clearTimeout(rampStartTimeout);
 		clearTimeout(rampIntervalTimeout);
 		rampStartedAt = undefined;
-        active = false;
+		active = false;
 	}
 
 	function start() {
-        active = true;
+		active = true;
 		rampStartedAt = Date.now();
 		rampStartTimeout = setTimeout(() => rampUp(), startDelay);
 	}

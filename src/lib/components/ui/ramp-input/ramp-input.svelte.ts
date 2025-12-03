@@ -50,7 +50,7 @@ export class RampInputInputContext {
 		oninput: this.oninput.bind(this),
 		min: this.rootState.opts.min?.current,
 		max: this.rootState.opts.max?.current,
-		'aria-invalid': !this.rootState.valid,
+		'aria-invalid': !this.rootState.valid
 	}));
 }
 
@@ -133,6 +133,7 @@ export class RampInputButton {
 	});
 
 	props = $derived.by(() => ({
+		tabindex: -1,
 		disabled: !this.enabled || this.opts.disabled.current,
 		onpointerdown: this.onpointerdown.bind(this),
 		onpointerup: this.onpointerup.bind(this),

@@ -7,7 +7,7 @@
 	import { box } from 'svelte-toolbelt';
 
 	let {
-		variant = 'outline',
+		variant = 'ghost',
 		size = 'icon',
 		class: className,
 		children,
@@ -30,8 +30,9 @@
 <Button
 	{variant}
 	{size}
+	data-slot="ramp-input-decrement"
 	aria-label="Decrease"
-	class={cn('rounded-full', className)}
+	class={cn(className)}
 	{...buttonState.props}
 	{...rest}
 >

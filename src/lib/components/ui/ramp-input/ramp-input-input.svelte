@@ -13,6 +13,7 @@
 		'aria-invalid:border-destructive border-border h-9 rounded-md border px-4 text-center outline-none',
 		className
 	)}
+	data-slot="ramp-input-input"
 	bind:value={inputState.rootState.opts.value.current}
 	{...inputState.props}
 	{...rest}

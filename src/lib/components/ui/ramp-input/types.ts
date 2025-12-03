@@ -4,15 +4,15 @@ import type { ButtonElementProps } from '../button';
 import type { UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 
 export type RampInputRootProps = {
-	value: number;
-	rampBy: number;
+	value?: number;
+	rampBy?: number;
 	min?: number;
 	max?: number;
 	rampSettings?: Omit<UseRampOptions, 'increment' | 'canRamp'>;
 	children: Snippet;
 };
 
-export type RampButtonProps = Omit<ButtonElementProps, 'disabled'> & {
+export type RampButtonProps = Omit<ButtonElementProps, 'disabled' | 'tabindex'> & {
 	disabled?: boolean;
 };
 
