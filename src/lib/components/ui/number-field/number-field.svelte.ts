@@ -50,7 +50,8 @@ export class NumberFieldInputContext {
 		oninput: this.oninput.bind(this),
 		min: this.rootState.opts.min?.current,
 		max: this.rootState.opts.max?.current,
-		'aria-invalid': !this.rootState.valid
+		'aria-invalid': !this.rootState.valid,
+		step: this.rootState.opts.step.current
 	}));
 }
 

@@ -3,9 +3,9 @@
 	import { useNumberFieldInput } from './number-field.svelte.js';
 	import type { NumberFieldInputProps } from './types.js';
 
-	const inputState = useNumberFieldInput();
-
 	let { ref = $bindable(null), class: className, ...rest }: NumberFieldInputProps = $props();
+
+	const inputState = useNumberFieldInput();
 </script>
 
 <input
