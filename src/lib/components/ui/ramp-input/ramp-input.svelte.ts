@@ -7,7 +7,7 @@ type RampInputRootProps = WritableBoxedValues<{
 	value: number;
 }> &
 	ReadableBoxedValues<{
-		rampBy: number;
+		step: number;
 		min?: number;
 		max?: number;
 		rampSettings: Omit<UseRampOptions, 'increment' | 'canRamp'>;
@@ -100,20 +100,20 @@ export class RampInputButton {
 	}
 
 	ramp() {
-		const rampBy =
+		const step =
 			this.opts.direction === 'up'
-				? this.rootState.opts.rampBy.current
-				: -this.rootState.opts.rampBy.current;
-		this.rootState.opts.value.current += rampBy;
+				? this.rootState.opts.step.current
+				: -this.rootState.opts.step.current;
+		this.rootState.opts.value.current += step;
 	}
 
 	enabled = $derived.by(() => {
-		const rampBy =
+		const step =
 			this.opts.direction === 'up'
-				? this.rootState.opts.rampBy.current
-				: -this.rootState.opts.rampBy.current;
+				? this.rootState.opts.step.current
+				: -this.rootState.opts.step.current;
 
-		const newValue = this.rootState.opts.value.current + rampBy;
+		const newValue = this.rootState.opts.value.current + step;
 
 		if (
 			this.rootState.opts.min?.current !== undefined &&

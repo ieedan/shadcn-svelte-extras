@@ -5,7 +5,7 @@
 
 	let {
 		value = $bindable(0),
-		rampBy = 1,
+		step = 1,
 		min,
 		max,
 		rampSettings = { startDelay: 400, rampUpTime: 0, minFrequency: 35, maxFrequency: 35 },
@@ -17,7 +17,7 @@
 			() => value,
 			(v) => (value = v)
 		),
-		rampBy: box.with(() => rampBy),
+		step: box.with(() => step),
 		min: box.with(() => min),
 		max: box.with(() => max),
 		rampSettings: box.with(() => rampSettings)

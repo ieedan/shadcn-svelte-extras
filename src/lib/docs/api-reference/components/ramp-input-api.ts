@@ -7,11 +7,11 @@ const Root = api.createComponentReference({
 		value: api.createNumberProp({
 			description: 'The current value of the input.',
 			bindable: true,
-			defaultValue: '0'
+			defaultValue: 0
 		}),
 		rampBy: api.createNumberProp({
 			description: 'The amount to increment or decrement the value by.',
-			defaultValue: '1'
+			defaultValue: 1
 		}),
 		min: api.createNumberProp({
 			description: 'The minimum value allowed.'
@@ -98,7 +98,7 @@ const Increment = api.createComponentReference({
 		}),
 		disabled: api.createBooleanProp({
 			description: 'Whether the button is disabled.',
-			defaultValue: 'false'
+			defaultValue: false
 		}),
 		onpointerdown: api.createFunctionProp({
 			description: 'Handler for the pointerdown event.',
@@ -145,7 +145,7 @@ const Decrement = api.createComponentReference({
 		}),
 		disabled: api.createBooleanProp({
 			description: 'Whether the button is disabled.',
-			defaultValue: 'false'
+			defaultValue: false
 		}),
 		onpointerdown: api.createFunctionProp({
 			description: 'Handler for the pointerdown event.',

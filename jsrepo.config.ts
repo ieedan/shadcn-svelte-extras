@@ -597,6 +597,11 @@ export default defineConfig({
 							path: 'src/lib/demos/ramp-input.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/ramp-input-step.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

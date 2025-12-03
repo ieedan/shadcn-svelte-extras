@@ -67,6 +67,7 @@ export const DEMOS = [
 	'pm-command-persisted-pm',
 	'pm-command-customize-agents',
 	'ramp-input',
+	'ramp-input-step',
 	'rename',
 	'rename-content-editable',
 	'rename-context-menu',

@@ -6,7 +6,7 @@ import type { WithElementRef } from '$lib/utils';
 
 export type RampInputRootProps = {
 	value?: number;
-	rampBy?: number;
+	step?: number;
 	min?: number;
 	max?: number;
 	rampSettings?: Omit<UseRampOptions, 'increment' | 'canRamp'>;
