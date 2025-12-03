@@ -41,7 +41,7 @@ export function useRamp({
 	function rampUp() {
 		if (!active) return;
 		const timeSinceStart = Date.now() - (rampStartedAt ?? 0);
-		const freq = rampUpTime === 0 ? 1 : Math.min(timeSinceStart, rampUpTime) / rampUpTime;
+		const freq = rampUpTime === 0 ? 0 : Math.min(timeSinceStart, rampUpTime) / rampUpTime;
 		if (!canRamp()) {
 			reset();
 			return;
@@ -49,7 +49,7 @@ export function useRamp({
 		increment();
 		rampIntervalTimeout = setTimeout(
 			() => rampUp(),
-			minFrequency + maxFrequency - freq * maxFrequency
+			maxFrequency - freq * (maxFrequency - minFrequency)
 		);
 	}
 
