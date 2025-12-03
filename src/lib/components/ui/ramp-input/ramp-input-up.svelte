@@ -30,6 +30,7 @@
 <Button
 	{variant}
 	{size}
+	aria-label="Increase"
 	class={cn('rounded-full', className)}
 	{...buttonState.props}
 	{...rest}
