@@ -5,6 +5,7 @@
 	import type { NumberFieldButtonProps } from './types.js';
 	import { cn } from '$lib/utils';
 	import { box } from 'svelte-toolbelt';
+	import { onDestroy } from 'svelte';
 
 	let {
 		ref = $bindable(null),
@@ -27,6 +28,8 @@
 		onclick: box.with(() => onclick),
 		disabled: box.with(() => disabled)
 	});
+
+	onDestroy(() => buttonState.destroy());
 </script>
 
 <Button

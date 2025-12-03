@@ -138,6 +138,10 @@ export class NumberFieldButton {
 		onpointerup: this.onpointerup.bind(this),
 		onclick: this.onclick.bind(this)
 	}));
+
+	destroy() {
+		this.rampState.reset();
+	}
 }
 
 const ctx = new Context<NumberFieldRootContext>('number-field-root');
