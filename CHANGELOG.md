@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.3.0
+
+### Minor Changes
+
+- feat: 🎉 New component `NumberField` ([#306](https://github.com/ieedan/shadcn-svelte-extras/pull/306))
+
 ## 6.2.1
 
 ### Patch Changes
