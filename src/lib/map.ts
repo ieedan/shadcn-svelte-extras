@@ -165,6 +165,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
+			name: 'Number Field',
+			description: 'A component for incrementing and decrementing a value.',
+			href: '/components/number-field',
+			specifier: 'ui/number-field',
+			source: 'src/lib/components/ui/number-field',
+			status: 'New'
+		},
+		{
 			name: 'Rename',
 			description: 'A component for renaming stuff.',
 			href: '/components/rename',

@@ -21,6 +21,7 @@ export const REGISTRY_ITEMS = [
 	'meter',
 	'modal',
 	'nlp-date-input',
+	'number-field',
 	'password',
 	'phone-input',
 	'pm-command',
