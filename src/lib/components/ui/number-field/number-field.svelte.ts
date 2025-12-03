@@ -59,6 +59,8 @@ type NumberFieldButtonProps = {
 } & ReadableBoxedValues<{
 	onpointerdown: ButtonElementProps['onpointerdown'];
 	onpointerup: ButtonElementProps['onpointerup'];
+	onpointerleave: ButtonElementProps['onpointerleave'];
+	onpointercancel: ButtonElementProps['onpointercancel'];
 	onclick: ButtonElementProps['onclick'];
 	disabled: boolean;
 }>;
@@ -89,6 +91,16 @@ export class NumberFieldButton {
 		// we do this so that the click event is not triggered if the button was being held
 		setTimeout(() => this.rampState.reset());
 		this.opts.onpointerup.current?.(e);
+	}
+
+	onpointerleave(e: Parameters<NonNullable<ButtonElementProps['onpointerleave']>>[0]) {
+		this.rampState.reset();
+		this.opts.onpointerleave.current?.(e);
+	}
+
+	onpointercancel(e: Parameters<NonNullable<ButtonElementProps['onpointercancel']>>[0]) {
+		this.rampState.reset();
+		this.opts.onpointercancel.current?.(e);
 	}
 
 	onclick(e: Parameters<NonNullable<ButtonElementProps['onclick']>>[0]) {
@@ -136,6 +148,8 @@ export class NumberFieldButton {
 		disabled: !this.enabled || this.opts.disabled.current,
 		onpointerdown: this.onpointerdown.bind(this),
 		onpointerup: this.onpointerup.bind(this),
+		onpointerleave: this.onpointerleave.bind(this),
+		onpointercancel: this.onpointercancel.bind(this),
 		onclick: this.onclick.bind(this)
 	}));
 

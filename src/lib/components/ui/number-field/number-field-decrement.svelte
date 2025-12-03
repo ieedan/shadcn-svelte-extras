@@ -16,6 +16,8 @@
 		disabled = false,
 		onpointerdown,
 		onpointerup,
+		onpointerleave,
+		onpointercancel,
 		onclick,
 		tabindex = -1,
 		...rest
@@ -25,6 +27,8 @@
 		direction: 'down',
 		onpointerdown: box.with(() => onpointerdown),
 		onpointerup: box.with(() => onpointerup),
+		onpointerleave: box.with(() => onpointerleave),
+		onpointercancel: box.with(() => onpointercancel),
 		onclick: box.with(() => onclick),
 		disabled: box.with(() => disabled)
 	});
