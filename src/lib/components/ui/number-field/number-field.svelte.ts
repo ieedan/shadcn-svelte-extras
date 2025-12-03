@@ -69,16 +69,16 @@ export class NumberFieldButton {
 		readonly rootState: NumberFieldRootContext,
 		readonly opts: NumberFieldButtonProps
 	) {
-		this.ramp = this.ramp.bind(this);
+		this.increment = this.increment.bind(this);
 		this.rampState = useRamp({
-			increment: () => this.ramp(),
+			increment: () => this.increment(),
 			canRamp: () => this.enabled,
 			...this.rootState.opts.rampSettings.current
 		});
 	}
 
 	onpointerdown(e: Parameters<NonNullable<ButtonElementProps['onpointerdown']>>[0]) {
-		this.ramp();
+		this.increment();
 
 		this.rampState.start();
 
@@ -94,12 +94,12 @@ export class NumberFieldButton {
 	onclick(e: Parameters<NonNullable<ButtonElementProps['onclick']>>[0]) {
 		if (this.rampState.active) return;
 
-		this.ramp();
+		this.increment();
 
 		this.opts.onclick.current?.(e);
 	}
 
-	ramp() {
+	increment() {
 		const step =
 			this.opts.direction === 'up'
 				? this.rootState.opts.step.current

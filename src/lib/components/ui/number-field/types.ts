@@ -13,7 +13,7 @@ export type NumberFieldRootProps = {
 	children: Snippet;
 };
 
-export type RampButtonProps = Omit<ButtonElementProps, 'disabled' | 'tabindex'> & {
+export type NumberFieldButtonProps = Omit<ButtonElementProps, 'disabled' | 'tabindex'> & {
 	disabled?: boolean;
 };
 

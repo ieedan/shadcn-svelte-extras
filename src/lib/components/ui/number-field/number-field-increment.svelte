@@ -2,7 +2,7 @@
 	import PlusIcon from '@lucide/svelte/icons/plus';
 	import { Button } from '../button';
 	import { useNumberFieldButton } from './number-field.svelte.js';
-	import type { RampButtonProps } from './types.js';
+	import type { NumberFieldButtonProps } from './types.js';
 	import { cn } from '$lib/utils';
 	import { box } from 'svelte-toolbelt';
 
@@ -17,7 +17,7 @@
 		onpointerup,
 		onclick,
 		...rest
-	}: RampButtonProps = $props();
+	}: NumberFieldButtonProps = $props();
 
 	const buttonState = useNumberFieldButton({
 		direction: 'up',
