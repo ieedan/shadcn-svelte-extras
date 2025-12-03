@@ -27,6 +27,31 @@ export class RampInputRootContext {
 
 export class RampInputInputContext {
 	constructor(readonly rootState: RampInputRootContext) {}
+
+	oninput(e: Parameters<NonNullable<HTMLInputElement['oninput']>>[0]) {
+		const value = (e.currentTarget as HTMLInputElement).value;
+
+		if (
+			this.rootState.opts.min?.current !== undefined &&
+			Number(value) < this.rootState.opts.min.current
+		) {
+			this.rootState.opts.value.current = this.rootState.opts.min.current;
+		}
+		if (
+			this.rootState.opts.max?.current !== undefined &&
+			Number(value) > this.rootState.opts.max.current
+		) {
+			this.rootState.opts.value.current = this.rootState.opts.max.current;
+		}
+	}
+
+	props = $derived.by(() => ({
+		type: 'number',
+		oninput: this.oninput.bind(this),
+		min: this.rootState.opts.min?.current,
+		max: this.rootState.opts.max?.current,
+		'aria-invalid': !this.rootState.valid,
+	}));
 }
 
 type RampInputButtonProps = {

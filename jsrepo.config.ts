@@ -587,8 +587,7 @@ export default defineConfig({
 				{
 					name: 'ramp-input',
 					title: 'RampInput',
-					description:
-						'A component for incrementing and decrementing a number.',
+					description: 'A component for incrementing and decrementing a number.',
 					type: 'ui',
 					files: [
 						{
@@ -982,6 +981,18 @@ export default defineConfig({
 							path: 'src/lib/demos/use-promise.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
+					name: 'use-ramp',
+					title: 'UseRamp',
+					add: 'when-needed',
+					description: 'Ramp a value up/down over time.',
+					type: 'hook',
+					files: [
+						{
+							path: 'src/lib/hooks/use-ramp.svelte.ts'
 						}
 					]
 				},

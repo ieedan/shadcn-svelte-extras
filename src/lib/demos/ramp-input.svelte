@@ -5,7 +5,17 @@
 </script>
 
 <RampInput.Root bind:value rampBy={1} min={0} max={100}>
-	<RampInput.RampDown />
-	<RampInput.Input />
-	<RampInput.RampUp />
+	<div class="border-border flex h-9 items-center overflow-hidden rounded-md border">
+		<RampInput.RampDown
+			class="rounded-start rounded-none focus-visible:ring-0"
+			variant="ghost"
+			tabindex={-1}
+		/>
+		<RampInput.Input class="rounded-none border-x border-y-0" />
+		<RampInput.RampUp
+			class="rounded-end rounded-none focus-visible:ring-0"
+			variant="ghost"
+			tabindex={-1}
+		/>
+	</div>
 </RampInput.Root>
