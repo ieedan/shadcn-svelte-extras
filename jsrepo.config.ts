@@ -474,6 +474,27 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'number-field',
+					title: 'NumberField',
+					description: 'A component for incrementing and decrementing a number.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/number-field'
+						},
+						{
+							path: 'src/lib/demos/number-field.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/number-field-step.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'password',
 					title: 'Password',
 					description:
@@ -579,27 +600,6 @@ export default defineConfig({
 						},
 						{
 							path: 'src/lib/demos/pm-command-customize-agents.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
-					]
-				},
-				{
-					name: 'number-field',
-					title: 'NumberField',
-					description: 'A component for incrementing and decrementing a number.',
-					type: 'ui',
-					files: [
-						{
-							path: 'src/lib/components/ui/number-field'
-						},
-						{
-							path: 'src/lib/demos/number-field.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/number-field-step.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
 						}
