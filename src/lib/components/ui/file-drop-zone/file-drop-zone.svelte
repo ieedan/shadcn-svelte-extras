@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import UploadIcon from '@lucide/svelte/icons/upload';
 	import { displaySize } from '.';
 	import { useId } from 'bits-ui';

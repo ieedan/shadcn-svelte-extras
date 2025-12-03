@@ -40,7 +40,7 @@
 			<div class="flex flex-col gap-2">
 				<Label>Password</Label>
 				<Password.Root>
-					<Password.Input name="password" required>
+					<Password.Input name="password" required placeholder="Password">
 						<Password.ToggleVisibility />
 					</Password.Input>
 					<Password.Strength />

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
-	import { unstable_RatingGroup as RatingGroup, type RatingGroupRootProps } from 'bits-ui';
+	import { cn } from '$lib/utils.js';
+	import { RatingGroup, type RatingGroupRootProps } from 'bits-ui';
 
 	let {
 		value = $bindable(0),

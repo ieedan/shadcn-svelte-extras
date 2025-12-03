@@ -1,5 +1,125 @@
 # shadcn-svelte-extras
 
+## 6.2.1
+
+### Patch Changes
+
+- fix(Meter): Only transition necessary properties + fix demo ([`a4a42af`](https://github.com/ieedan/shadcn-svelte-extras/commit/a4a42afdc1dec21e96cd8b242c2ac139cdad4298))
+
+## 6.2.0
+
+### Minor Changes
+
+- feat: 🎉 New component `UnderlineTabs` ([#303](https://github.com/ieedan/shadcn-svelte-extras/pull/303))
+
+## 6.1.2
+
+### Patch Changes
+
+- fix(ConfirmDeleteDialog): Add `type="button"` to AlertDialog.Cancel ([`cfabcf4`](https://github.com/ieedan/shadcn-svelte-extras/commit/cfabcf4aa784b884afa87c33e788b4665997549f))
+
+## 6.1.1
+
+### Patch Changes
+
+- chore: Update Cursor rules file ([#294](https://github.com/ieedan/shadcn-svelte-extras/pull/294))
+
+## 6.1.0
+
+### Minor Changes
+
+- feat: Add `ConfirmDeleteDialog` component ([#292](https://github.com/ieedan/shadcn-svelte-extras/pull/292))
+
+### Patch Changes
+
+- feat: Add Code block example to code ([#292](https://github.com/ieedan/shadcn-svelte-extras/pull/292))
+
+## 6.0.1
+
+### Patch Changes
+
+- chore: bump deps ([#289](https://github.com/ieedan/shadcn-svelte-extras/pull/289))
+
+## 6.0.0
+
+### Major Changes
+
+- jsrepo v3 ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+### Patch Changes
+
+- fix: rename item types ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- chore: bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- feat: add examples to all components ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+- chore: llm improvements ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 6.0.0-beta.5
+
+### Patch Changes
+
+- chore: llm improvements ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 6.0.0-beta.4
+
+### Patch Changes
+
+- fix: rename item types ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- bump jsrepo ([#282](https://github.com/ieedan/shadcn-svelte-extras/pull/282))
+
+- feat: add examples to all components ([#284](https://github.com/ieedan/shadcn-svelte-extras/pull/284))
+
+## 6.0.0-beta.3
+
+### Patch Changes
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 6.0.0-beta.2
+
+### Patch Changes
+
+- bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 6.0.0-beta.1
+
+### Patch Changes
+
+- chore: bump jsrepo ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 6.0.0-beta.0
+
+### Major Changes
+
+- jsrepo v3 ([#276](https://github.com/ieedan/shadcn-svelte-extras/pull/276))
+
+## 5.6.0
+
+### Minor Changes
+
+- deprecate(ui/kbd): Remove `Kbd` in favor of shadcn-svelte `Kbd` ([#268](https://github.com/ieedan/shadcn-svelte-extras/pull/268))
+
+## 5.5.0
+
+### Minor Changes
+
+- feat: `ui/rename` ([#262](https://github.com/ieedan/shadcn-svelte-extras/pull/262))
+
+## 5.4.0
+
+### Minor Changes
+
+- feat: `Meter` component ([#260](https://github.com/ieedan/shadcn-svelte-extras/pull/260))
+
 ## 5.3.2
 
 ### Patch Changes

@@ -62,7 +62,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils/utils.js';
+	import { cn } from '$lib/utils.js';
 	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
 
 	let {
@@ -113,10 +113,8 @@
 	}}
 >
 	{#if type !== undefined && loading}
-		<div class="absolute flex size-full place-items-center justify-center bg-inherit">
-			<div class="flex animate-spin place-items-center justify-center">
-				<LoaderCircleIcon class="size-4" />
-			</div>
+		<div class="flex animate-spin place-items-center justify-center">
+			<LoaderCircleIcon class="size-4" />
 		</div>
 		<span class="sr-only">Loading</span>
 	{/if}

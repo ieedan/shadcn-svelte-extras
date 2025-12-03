@@ -1,4 +1,4 @@
-import * as casing from '$lib/utils/casing';
+import * as casing from '../../../utils/casing.js';
 
 // import all references
 import { reference as AvatarGroupReference } from './avatar-group-api';
@@ -10,10 +10,10 @@ import { reference as FieldSetReference } from './field-set-api';
 import { reference as FileDropZoneReference } from './file-drop-zone-api';
 import { reference as ImageCropperReference } from './image-cropper-api';
 import { reference as Ipv4addressInputReference } from './ipv4address-input-api';
-import { reference as KbdReference } from './kbd-api';
 import { reference as LanguageSwitcherReference } from './language-switcher-api';
 import { reference as LightSwitchReference } from './light-switch-api';
 import { reference as LinkReference } from './link-api';
+import { reference as MeterReference } from './meter-api';
 import { reference as ModalReference } from './modal-api';
 import { reference as NlpDateInputReference } from './nlp-date-input-api';
 import { reference as PhoneInputReference } from './phone-input-api';
@@ -25,9 +25,11 @@ import { reference as TerminalReference } from './terminal-api';
 import { reference as ThemeSelectorReference } from './theme-selector-api';
 import { reference as TocReference } from './toc-api';
 import { reference as TreeViewReference } from './tree-view-api';
+import { reference as UnderlineTabsReference } from './underline-tabs-api';
 import { reference as WindowReference } from './window-api';
 import { reference as EmojiPickerReference } from './emoji-picker-api';
 import { reference as PasswordReference } from './password-api';
+import { reference as RenameReference } from './rename-api';
 
 export const references = [
 	AvatarGroupReference,
@@ -39,10 +41,10 @@ export const references = [
 	FileDropZoneReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
-	KbdReference,
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
+	MeterReference,
 	ModalReference,
 	NlpDateInputReference,
 	PhoneInputReference,
@@ -54,9 +56,11 @@ export const references = [
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
-	PasswordReference
+	PasswordReference,
+	RenameReference
 ];
 
 /** Get a reference by name
@@ -77,10 +81,10 @@ export {
 	FileDropZoneReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
-	KbdReference,
 	LanguageSwitcherReference,
 	LightSwitchReference,
 	LinkReference,
+	MeterReference,
 	ModalReference,
 	NlpDateInputReference,
 	PhoneInputReference,
@@ -92,7 +96,9 @@ export {
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
-	PasswordReference
+	PasswordReference,
+	RenameReference
 };

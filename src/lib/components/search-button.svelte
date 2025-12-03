@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Kbd } from '$lib/components/ui/kbd';
+	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
 	import { Button } from '$lib/components/ui/button';
 	import SearchIcon from '@lucide/svelte/icons/search';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { commandContext } from '$lib/context';
 	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
 
@@ -24,7 +24,11 @@
 		<SearchIcon class="inline size-4" />
 		Search
 	</span>
-	<Kbd size="sm" variant="secondary">
-		{cmdOrCtrl} + K
-	</Kbd>
+	<KbdGroup>
+		<Kbd>
+			{cmdOrCtrl}
+		</Kbd>
+		<span>+</span>
+		<Kbd>K</Kbd>
+	</KbdGroup>
 </Button>

@@ -119,6 +119,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+* {
+	overscroll-behavior: none;
+}
+
 /* Typography */
 
 /* Only target direct descendants of page-wrapper (A bit of a hack for the moment until we move to markdown based docs) */

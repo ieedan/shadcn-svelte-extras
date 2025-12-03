@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import type { AvatarGroupEtcProps } from './types';
 
 	let { ref = $bindable(null), plus, class: className, ...rest }: AvatarGroupEtcProps = $props();

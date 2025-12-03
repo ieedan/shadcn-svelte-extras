@@ -52,6 +52,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/code/code.svelte'
 		},
 		{
+			name: 'Confirm Delete Dialog',
+			description: 'A dialog for confirming delete actions.',
+			href: '/components/confirm-delete-dialog',
+			specifier: 'ui/confirm-delete-dialog',
+			source: 'src/lib/components/ui/confirm-delete-dialog',
+			status: 'New'
+		},
+		{
 			name: 'Copy Button',
 			description: 'A button used to copy text to the clipboard.',
 			href: '/components/copy-button',
@@ -94,13 +102,6 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/ipv4address-input'
 		},
 		{
-			name: 'Keyboard Input',
-			description: 'Denotes user input from a keyboard.',
-			href: '/components/kbd',
-			specifier: 'ui/kbd',
-			source: 'src/lib/components/ui/kbd/kbd.svelte'
-		},
-		{
 			name: 'Language Switcher',
 			description: 'A component for switching your sites locale.',
 			href: '/components/language-switcher',
@@ -120,6 +121,13 @@ const map: Record<string, Route[]> = {
 			href: '/components/link',
 			specifier: 'ui/link',
 			source: 'src/lib/components/ui/link/link.svelte'
+		},
+		{
+			name: 'Meter',
+			description: 'A meter component.',
+			href: '/components/meter',
+			specifier: 'ui/meter',
+			source: 'src/lib/components/ui/meter/meter.svelte'
 		},
 		{
 			name: 'Modal',
@@ -163,6 +171,13 @@ const map: Record<string, Route[]> = {
 			specifier: 'ui/ramp-input',
 			source: 'src/lib/components/ui/ramp-input',
 			status: 'New'
+		},
+		{
+			name: 'Rename',
+			description: 'A component for renaming stuff.',
+			href: '/components/rename',
+			specifier: 'ui/rename',
+			source: 'src/lib/components/ui/rename/rename.svelte'
 		},
 		{
 			name: 'Snippet',
@@ -213,6 +228,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/tree-view',
 			specifier: 'ui/tree-view',
 			source: 'src/lib/components/ui/tree-view'
+		},
+		{
+			name: 'Underline Tabs',
+			description: 'A horizontal tabs component with an underline.',
+			href: '/components/underline-tabs',
+			specifier: 'ui/underline-tabs',
+			source: 'src/lib/components/ui/underline-tabs',
+			status: 'New'
 		},
 		{
 			name: 'Window',

@@ -3,7 +3,7 @@
 	import { useEmojiPickerSkinToneSelector } from './emoji-picker.svelte.js';
 	import type { EmojiPickerSkinProps } from './types.js';
 	import { Button, type ButtonElementProps } from '$lib/components/ui/button';
-	import { cn } from '$lib/utils/utils.js';
+	import { cn } from '$lib/utils.js';
 
 	let {
 		previewEmoji = '👋',

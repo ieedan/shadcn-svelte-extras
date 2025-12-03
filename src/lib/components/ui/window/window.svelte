@@ -2,15 +2,17 @@
 	import type { WithChildren } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	export type WindowPropsWithoutHTML = WithChildren;
+	export type WindowPropsWithoutHTML = WithChildren & {
+		contentClass?: string;
+	};
 
 	export type WindowProps = HTMLAttributes<HTMLDivElement> & WindowPropsWithoutHTML;
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 
-	let { children, class: className }: WindowProps = $props();
+	let { children, class: className, contentClass }: WindowProps = $props();
 </script>
 
 <div class={cn('border-border bg-background aspect-video w-full rounded-lg border', className)}>
@@ -21,7 +23,7 @@
 			<div class="size-2 rounded-full bg-[#22c55e]"></div>
 		</div>
 	</div>
-	<div class="p-4">
+	<div class={cn('p-4', contentClass)}>
 		{@render children?.()}
 	</div>
 </div>

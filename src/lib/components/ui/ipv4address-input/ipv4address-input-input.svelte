@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { isNumber } from '$lib/utils/is-number';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = {

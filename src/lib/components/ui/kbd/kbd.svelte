@@ -1,48 +1,19 @@
-<script lang="ts" module>
-	import { tv, type VariantProps } from 'tailwind-variants';
-	import type { WithChildren } from 'bits-ui';
-
-	const style = tv({
-		base: 'inline-flex place-items-center justify-center gap-1 rounded-md p-0.5',
-		variants: {
-			variant: {
-				outline: 'border-border bg-background text-muted-foreground border',
-				secondary: 'bg-secondary text-muted-foreground',
-				primary: 'bg-primary text-primary-foreground'
-			},
-			size: {
-				sm: 'min-w-6 gap-1.5 p-0.5 px-1 text-sm',
-				default: 'min-w-8 gap-1.5 p-1 px-2',
-				lg: 'min-w-9 gap-2 p-1 px-3 text-lg'
-			}
-		}
-	});
-
-	type Size = VariantProps<typeof style>['size'];
-	type Variant = VariantProps<typeof style>['variant'];
-
-	export type KbdPropsWithoutHTML = WithChildren<{
-		ref?: HTMLElement | null;
-		class?: string;
-		size?: Size;
-		variant?: Variant;
-	}>;
-
-	export type KbdProps = KbdPropsWithoutHTML;
-</script>
-
 <script lang="ts">
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	let {
-		ref = $bindable(null),
-		class: className,
-		size = 'default',
-		variant = 'outline',
-		children
-	}: KbdProps = $props();
+	let { class: className, children, ...restProps }: HTMLAttributes<HTMLElement> = $props();
 </script>
 
-<kbd bind:this={ref} class={cn(style({ size, variant }), className)}>
+<kbd
+	data-slot="kbd"
+	class={cn(
+		'bg-muted text-muted-foreground pointer-events-none inline-flex h-5 w-fit min-w-5 items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium select-none',
+		"[&_svg:not([class*='size-'])]:size-3",
+		'[[data-slot=tooltip-content]_&]:bg-background/20 [[data-slot=tooltip-content]_&]:text-background dark:[[data-slot=tooltip-content]_&]:bg-background/10',
+		className
+	)}
+	{...restProps}
+>
 	{@render children?.()}
 </kbd>

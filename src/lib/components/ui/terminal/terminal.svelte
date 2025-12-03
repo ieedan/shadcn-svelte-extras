@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Window } from '$lib/components/ui/window';
-	import { cn } from '$lib/utils/utils';
+	import { cn } from '$lib/utils.js';
 	import { useTerminalRoot } from './terminal.svelte.js';
 	import { onMount } from 'svelte';
 	import type { TerminalRootProps } from './types.js';
