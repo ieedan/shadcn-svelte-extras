@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.2.1
+
+### Patch Changes
+
+- fix(Meter): Only transition necessary properties + fix demo ([`a4a42af`](https://github.com/ieedan/shadcn-svelte-extras/commit/a4a42afdc1dec21e96cd8b242c2ac139cdad4298))
+
 ## 6.2.0
 
 ### Minor Changes
