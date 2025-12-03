@@ -1,11 +1,17 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
+	import { cn, type WithElementRef } from '$lib/utils';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		children,
+		...rest
+	}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();
 </script>
 
 <div
+	bind:this={ref}
 	class={cn(
 		'border-border flex h-9 items-center overflow-hidden rounded-md border',
 		'*:data-[slot=ramp-input-increment]:rounded-end *:data-[slot=ramp-input-increment]:rounded-none *:data-[slot=ramp-input-increment]:focus-visible:ring-0',

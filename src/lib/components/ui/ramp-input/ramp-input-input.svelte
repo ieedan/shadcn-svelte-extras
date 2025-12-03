@@ -5,7 +5,7 @@
 
 	const inputState = useRampInputInput();
 
-	let { class: className, ...rest }: RampInputInputProps = $props();
+	let { ref = $bindable(null), class: className, ...rest }: RampInputInputProps = $props();
 </script>
 
 <input
@@ -13,6 +13,7 @@
 		'aria-invalid:border-destructive border-border h-9 rounded-md border px-4 text-center outline-none',
 		className
 	)}
+	bind:this={ref}
 	data-slot="ramp-input-input"
 	bind:value={inputState.rootState.opts.value.current}
 	{...inputState.props}

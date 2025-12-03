@@ -7,6 +7,7 @@
 	import { box } from 'svelte-toolbelt';
 
 	let {
+		ref = $bindable(null),
 		variant = 'ghost',
 		size = 'icon',
 		class: className,
@@ -30,6 +31,7 @@
 <Button
 	{variant}
 	{size}
+	bind:ref
 	data-slot="ramp-input-decrement"
 	aria-label="Decrease"
 	class={cn(className)}
