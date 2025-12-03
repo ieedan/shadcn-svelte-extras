@@ -1,5 +1,7 @@
 import { Context } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
+import type { ButtonElementProps } from '../button';
+import { useRamp, type UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 
 type RampInputRootProps = WritableBoxedValues<{
 	value: number;
@@ -8,6 +10,7 @@ type RampInputRootProps = WritableBoxedValues<{
 		rampBy: number;
 		min?: number;
 		max?: number;
+		rampSettings: Omit<UseRampOptions, 'increment' | 'canRamp'>;
 	}>;
 
 export class RampInputRootContext {
@@ -28,14 +31,47 @@ export class RampInputInputContext {
 
 type RampInputButtonProps = {
 	direction: 'up' | 'down';
-};
+} & ReadableBoxedValues<{
+	onpointerdown: ButtonElementProps['onpointerdown'];
+	onpointerup: ButtonElementProps['onpointerup'];
+	onclick: ButtonElementProps['onclick'];
+	disabled: boolean;
+}>;
 
 export class RampInputButton {
+	rampState: ReturnType<typeof useRamp>;
 	constructor(
 		readonly rootState: RampInputRootContext,
 		readonly opts: RampInputButtonProps
 	) {
 		this.ramp = this.ramp.bind(this);
+		this.rampState = useRamp({
+			increment: () => this.ramp(),
+			canRamp: () => this.enabled,
+			...this.rootState.opts.rampSettings.current
+		});
+	}
+
+	onpointerdown(e: Parameters<NonNullable<ButtonElementProps['onpointerdown']>>[0]) {
+		this.ramp();
+
+		this.rampState.start();
+
+		this.opts.onpointerdown.current?.(e);
+	}
+
+	onpointerup(e: Parameters<NonNullable<ButtonElementProps['onpointerup']>>[0]) {
+		// we do this so that the click event is not triggered if the button was being held
+		setTimeout(() => this.rampState.reset());
+		this.opts.onpointerup.current?.(e);
+	}
+
+	onclick(e: Parameters<NonNullable<ButtonElementProps['onclick']>>[0]) {
+		if (this.rampState.active) return;
+
+		this.ramp();
+
+		this.opts.onclick.current?.(e);
 	}
 
 	ramp() {
@@ -70,6 +106,13 @@ export class RampInputButton {
 
 		return true;
 	});
+
+	props = $derived.by(() => ({
+		disabled: !this.enabled || this.opts.disabled.current,
+		onpointerdown: this.onpointerdown.bind(this),
+		onpointerup: this.onpointerup.bind(this),
+		onclick: this.onclick.bind(this)
+	}));
 }
 
 const ctx = new Context<RampInputRootContext>('ramp-input-root');

@@ -585,6 +585,23 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'ramp-input',
+					title: 'RampInput',
+					description:
+						'A component for incrementing and decrementing a number.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/ramp-input'
+						},
+						{
+							path: 'src/lib/demos/ramp-input.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'rename',
 					title: 'Rename',
 					description:
