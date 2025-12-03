@@ -10,7 +10,7 @@
 
 <input
 	class={cn(
-		'aria-invalid:border-destructive border-border flex-1 h-9 rounded-md border px-4 text-center outline-none',
+		'aria-invalid:border-destructive border-border h-9 flex-1 rounded-md border px-4 text-center outline-none',
 		className
 	)}
 	bind:this={ref}
@@ -32,4 +32,3 @@
 		margin: 0;
 	}
 </style>
-

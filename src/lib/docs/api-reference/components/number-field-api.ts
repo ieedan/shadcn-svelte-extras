@@ -20,9 +20,11 @@ const Root = api.createComponentReference({
 			description: 'The maximum value allowed.'
 		}),
 		rampSettings: api.createAnyProp({
-			description: 'Configuration options for the ramp behavior when holding down increment/decrement buttons.',
+			description:
+				'Configuration options for the ramp behavior when holding down increment/decrement buttons.',
 			type: 'object',
-			tooltip: '{ startDelay?: number; rampUpTime?: number; minFrequency?: number; maxFrequency?: number }',
+			tooltip:
+				'{ startDelay?: number; rampUpTime?: number; minFrequency?: number; maxFrequency?: number }',
 			defaultValue: '{ startDelay: 400, rampUpTime: 0, minFrequency: 35, maxFrequency: 35 }'
 		}),
 		children: api.createAnyProp({
@@ -34,7 +36,8 @@ const Root = api.createComponentReference({
 
 const Group = api.createComponentReference({
 	name: 'Group',
-	description: 'A container component that groups the input and buttons together with proper styling.',
+	description:
+		'A container component that groups the input and buttons together with proper styling.',
 	props: {
 		ref: api.createAnyProp({
 			description: 'A reference to the group container element.',
@@ -172,4 +175,3 @@ export const reference = {
 		Decrement
 	}
 };
-

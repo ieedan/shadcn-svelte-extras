@@ -16,14 +16,14 @@
 	<NumberField.Root bind:value={calories} step={100} min={0} max={10000}>
 		<div class="flex flex-col items-center">
 			<div class="flex w-full min-w-[230px] items-center justify-between gap-4 py-4">
-				<NumberField.Decrement variant="outline" class="rounded-full" />
+				<NumberField.Decrement variant="outline" class="rounded-full" tabindex={null} />
 				<span class="flex items-center gap-2 text-center text-3xl">
 					<FireIcon class="size-7 text-amber-500" />
 					<span class="font-mono">
 						{calories}
 					</span>
 				</span>
-				<NumberField.Increment variant="outline" class="rounded-full" />
+				<NumberField.Increment variant="outline" class="rounded-full" tabindex={null} />
 			</div>
 		</div>
 	</NumberField.Root>
@@ -36,4 +36,3 @@
 		</Button>
 	</div>
 </div>
-

@@ -9,8 +9,7 @@
 <Add item="number-field" />
 <Subheading>Step</Subheading>
 <p>
-	Use the <CodeSpan>step</CodeSpan> prop to increment or decrement the value by a specific amount,
-	in this case 100.
+	Use the <CodeSpan>step</CodeSpan> prop to increment or decrement the value by a specific amount, in
+	this case 100.
 </p>
 <Demo demo="number-field-step" />
-

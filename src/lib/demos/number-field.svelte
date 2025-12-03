@@ -9,4 +9,3 @@
 		<NumberField.Increment />
 	</NumberField.Group>
 </NumberField.Root>
-

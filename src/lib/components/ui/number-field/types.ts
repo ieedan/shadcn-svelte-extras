@@ -13,11 +13,10 @@ export type NumberFieldRootProps = {
 	children: Snippet;
 };
 
-export type NumberFieldButtonProps = Omit<ButtonElementProps, 'disabled' | 'tabindex'> & {
+export type NumberFieldButtonProps = Omit<ButtonElementProps, 'disabled'> & {
 	disabled?: boolean;
 };
 
 export type NumberFieldInputProps = WithElementRef<
 	Omit<HTMLInputAttributes, 'min' | 'max' | 'value' | 'type'>
 >;
-

@@ -17,4 +17,3 @@ export {
 	Increment as NumberFieldIncrement,
 	Input as NumberFieldInput
 };
-

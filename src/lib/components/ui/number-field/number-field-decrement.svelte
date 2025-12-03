@@ -16,6 +16,7 @@
 		onpointerdown,
 		onpointerup,
 		onclick,
+		tabindex = -1,
 		...rest
 	}: NumberFieldButtonProps = $props();
 
@@ -31,6 +32,7 @@
 <Button
 	{variant}
 	{size}
+	{tabindex}
 	bind:ref
 	data-slot="number-field-decrement"
 	aria-label="Decrease"
@@ -44,4 +46,3 @@
 		<MinusIcon />
 	{/if}
 </Button>
-

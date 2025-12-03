@@ -133,7 +133,6 @@ export class NumberFieldButton {
 	});
 
 	props = $derived.by(() => ({
-		tabindex: -1,
 		disabled: !this.enabled || this.opts.disabled.current,
 		onpointerdown: this.onpointerdown.bind(this),
 		onpointerup: this.onpointerup.bind(this),
@@ -154,4 +153,3 @@ export function useNumberFieldInput() {
 export function useNumberFieldButton(props: NumberFieldButtonProps) {
 	return new NumberFieldButton(ctx.get(), props);
 }
-
