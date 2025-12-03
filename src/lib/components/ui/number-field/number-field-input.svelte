@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { cn } from '$lib/utils.js';
-	import { useRampInputInput } from './ramp-input.svelte.js';
-	import type { RampInputInputProps } from './types.js';
+	import { useNumberFieldInput } from './number-field.svelte.js';
+	import type { NumberFieldInputProps } from './types.js';
 
-	const inputState = useRampInputInput();
+	const inputState = useNumberFieldInput();
 
-	let { ref = $bindable(null), class: className, ...rest }: RampInputInputProps = $props();
+	let { ref = $bindable(null), class: className, ...rest }: NumberFieldInputProps = $props();
 </script>
 
 <input
@@ -14,7 +14,7 @@
 		className
 	)}
 	bind:this={ref}
-	data-slot="ramp-input-input"
+	data-slot="number-field-input"
 	bind:value={inputState.rootState.opts.value.current}
 	{...inputState.props}
 	{...rest}
@@ -32,3 +32,4 @@
 		margin: 0;
 	}
 </style>
+

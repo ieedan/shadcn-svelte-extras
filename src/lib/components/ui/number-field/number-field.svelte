@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { box } from 'svelte-toolbelt';
-	import type { RampInputRootProps } from './types';
-	import { useRampInput } from './ramp-input.svelte.js';
+	import type { NumberFieldRootProps } from './types';
+	import { useNumberField } from './number-field.svelte.js';
 
 	let {
 		value = $bindable(0),
@@ -10,9 +10,9 @@
 		max,
 		rampSettings = { startDelay: 400, rampUpTime: 0, minFrequency: 35, maxFrequency: 35 },
 		children
-	}: RampInputRootProps = $props();
+	}: NumberFieldRootProps = $props();
 
-	useRampInput({
+	useNumberField({
 		value: box.with(
 			() => value,
 			(v) => (value = v)
@@ -25,3 +25,4 @@
 </script>
 
 {@render children?.()}
+

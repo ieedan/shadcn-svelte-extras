@@ -4,12 +4,13 @@
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Demo demo="ramp-input" />
+<Demo demo="number-field" />
 <Subheading>Installation</Subheading>
-<Add item="ramp-input" />
+<Add item="number-field" />
 <Subheading>Step</Subheading>
 <p>
 	Use the <CodeSpan>step</CodeSpan> prop to increment or decrement the value by a specific amount,
 	in this case 100.
 </p>
-<Demo demo="ramp-input-step" />
+<Demo demo="number-field-step" />
+

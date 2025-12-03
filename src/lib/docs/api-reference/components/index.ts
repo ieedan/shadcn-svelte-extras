@@ -18,7 +18,7 @@ import { reference as ModalReference } from './modal-api';
 import { reference as NlpDateInputReference } from './nlp-date-input-api';
 import { reference as PhoneInputReference } from './phone-input-api';
 import { reference as PMCommandReference } from './pm-command-api';
-import { reference as RampInputReference } from './ramp-input-api';
+import { reference as NumberFieldReference } from './number-field-api';
 import { reference as SnippetReference } from './snippet-api';
 import { reference as StarRatingReference } from './star-rating-api';
 import { reference as TagsInputReference } from './tags-input-api';
@@ -50,7 +50,7 @@ export const references = [
 	NlpDateInputReference,
 	PhoneInputReference,
 	PMCommandReference,
-	RampInputReference,
+	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
 	TagsInputReference,
@@ -91,7 +91,7 @@ export {
 	NlpDateInputReference,
 	PhoneInputReference,
 	PMCommandReference,
-	RampInputReference,
+	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
 	TagsInputReference,

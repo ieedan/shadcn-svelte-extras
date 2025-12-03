@@ -585,21 +585,21 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'ramp-input',
-					title: 'RampInput',
+					name: 'number-field',
+					title: 'NumberField',
 					description: 'A component for incrementing and decrementing a number.',
 					type: 'ui',
 					files: [
 						{
-							path: 'src/lib/components/ui/ramp-input'
+							path: 'src/lib/components/ui/number-field'
 						},
 						{
-							path: 'src/lib/demos/ramp-input.svelte',
+							path: 'src/lib/demos/number-field.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
 						},
 						{
-							path: 'src/lib/demos/ramp-input-step.svelte',
+							path: 'src/lib/demos/number-field-step.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
 						}

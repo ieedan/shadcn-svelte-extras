@@ -24,7 +24,7 @@ export const REGISTRY_ITEMS = [
 	'password',
 	'phone-input',
 	'pm-command',
-	'ramp-input',
+	'number-field',
 	'rename',
 	'snippet',
 	'star-rating',

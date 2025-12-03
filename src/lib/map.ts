@@ -165,11 +165,11 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
-			name: 'Ramp Input',
+			name: 'Number Field',
 			description: 'A component for incrementing and decrementing a value.',
-			href: '/components/ramp-input',
-			specifier: 'ui/ramp-input',
-			source: 'src/lib/components/ui/ramp-input',
+			href: '/components/number-field',
+			specifier: 'ui/number-field',
+			source: 'src/lib/components/ui/number-field',
 			status: 'New'
 		},
 		{

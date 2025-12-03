@@ -4,7 +4,7 @@ import type { ButtonElementProps } from '../button';
 import type { UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 import type { WithElementRef } from '$lib/utils';
 
-export type RampInputRootProps = {
+export type NumberFieldRootProps = {
 	value?: number;
 	step?: number;
 	min?: number;
@@ -17,6 +17,7 @@ export type RampButtonProps = Omit<ButtonElementProps, 'disabled' | 'tabindex'> 
 	disabled?: boolean;
 };
 
-export type RampInputInputProps = WithElementRef<
+export type NumberFieldInputProps = WithElementRef<
 	Omit<HTMLInputAttributes, 'min' | 'max' | 'value' | 'type'>
 >;
+

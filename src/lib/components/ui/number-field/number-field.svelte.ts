@@ -3,7 +3,7 @@ import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { ButtonElementProps } from '../button';
 import { useRamp, type UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 
-type RampInputRootProps = WritableBoxedValues<{
+type NumberFieldRootProps = WritableBoxedValues<{
 	value: number;
 }> &
 	ReadableBoxedValues<{
@@ -13,8 +13,8 @@ type RampInputRootProps = WritableBoxedValues<{
 		rampSettings: Omit<UseRampOptions, 'increment' | 'canRamp'>;
 	}>;
 
-export class RampInputRootContext {
-	constructor(readonly opts: RampInputRootProps) {}
+export class NumberFieldRootContext {
+	constructor(readonly opts: NumberFieldRootProps) {}
 
 	valid = $derived.by(() => {
 		const value = this.opts.value.current;
@@ -25,8 +25,8 @@ export class RampInputRootContext {
 	});
 }
 
-export class RampInputInputContext {
-	constructor(readonly rootState: RampInputRootContext) {}
+export class NumberFieldInputContext {
+	constructor(readonly rootState: NumberFieldRootContext) {}
 
 	oninput(e: Parameters<NonNullable<HTMLInputElement['oninput']>>[0]) {
 		const value = (e.currentTarget as HTMLInputElement).value;
@@ -54,7 +54,7 @@ export class RampInputInputContext {
 	}));
 }
 
-type RampInputButtonProps = {
+type NumberFieldButtonProps = {
 	direction: 'up' | 'down';
 } & ReadableBoxedValues<{
 	onpointerdown: ButtonElementProps['onpointerdown'];
@@ -63,11 +63,11 @@ type RampInputButtonProps = {
 	disabled: boolean;
 }>;
 
-export class RampInputButton {
+export class NumberFieldButton {
 	rampState: ReturnType<typeof useRamp>;
 	constructor(
-		readonly rootState: RampInputRootContext,
-		readonly opts: RampInputButtonProps
+		readonly rootState: NumberFieldRootContext,
+		readonly opts: NumberFieldButtonProps
 	) {
 		this.ramp = this.ramp.bind(this);
 		this.rampState = useRamp({
@@ -141,16 +141,17 @@ export class RampInputButton {
 	}));
 }
 
-const ctx = new Context<RampInputRootContext>('ramp-input-root');
+const ctx = new Context<NumberFieldRootContext>('number-field-root');
 
-export function useRampInput(props: RampInputRootProps) {
-	return ctx.set(new RampInputRootContext(props));
+export function useNumberField(props: NumberFieldRootProps) {
+	return ctx.set(new NumberFieldRootContext(props));
 }
 
-export function useRampInputInput() {
-	return new RampInputInputContext(ctx.get());
+export function useNumberFieldInput() {
+	return new NumberFieldInputContext(ctx.get());
 }
 
-export function useRampInputButton(props: RampInputButtonProps) {
-	return new RampInputButton(ctx.get(), props);
+export function useNumberFieldButton(props: NumberFieldButtonProps) {
+	return new NumberFieldButton(ctx.get(), props);
 }
+

@@ -2,7 +2,7 @@ import * as api from '../api-reference';
 
 const Root = api.createComponentReference({
 	name: 'Root',
-	description: 'The root component of the ramp input. Manages the value state and ramp behavior.',
+	description: 'The root component of the number field. Manages the value state and ramp behavior.',
 	props: {
 		value: api.createNumberProp({
 			description: 'The current value of the input.',
@@ -26,7 +26,7 @@ const Root = api.createComponentReference({
 			defaultValue: '{ startDelay: 400, rampUpTime: 0, minFrequency: 35, maxFrequency: 35 }'
 		}),
 		children: api.createAnyProp({
-			description: 'The child components of the ramp input.',
+			description: 'The child components of the number field.',
 			type: 'Snippet'
 		})
 	}
@@ -163,7 +163,7 @@ const Decrement = api.createComponentReference({
 });
 
 export const reference = {
-	name: 'RampInput' as const,
+	name: 'NumberField' as const,
 	components: {
 		Root,
 		Group,

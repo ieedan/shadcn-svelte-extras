@@ -1,7 +1,7 @@
 <script lang="ts">
-	import PlusIcon from '@lucide/svelte/icons/plus';
+	import MinusIcon from '@lucide/svelte/icons/minus';
 	import { Button } from '../button';
-	import { useRampInputButton } from './ramp-input.svelte.js';
+	import { useNumberFieldButton } from './number-field.svelte.js';
 	import type { RampButtonProps } from './types.js';
 	import { cn } from '$lib/utils';
 	import { box } from 'svelte-toolbelt';
@@ -19,8 +19,8 @@
 		...rest
 	}: RampButtonProps = $props();
 
-	const buttonState = useRampInputButton({
-		direction: 'up',
+	const buttonState = useNumberFieldButton({
+		direction: 'down',
 		onpointerdown: box.with(() => onpointerdown),
 		onpointerup: box.with(() => onpointerup),
 		onclick: box.with(() => onclick),
@@ -32,8 +32,8 @@
 	{variant}
 	{size}
 	bind:ref
-	data-slot="ramp-input-increment"
-	aria-label="Increase"
+	data-slot="number-field-decrement"
+	aria-label="Decrease"
 	class={cn(className)}
 	{...buttonState.props}
 	{...rest}
@@ -41,6 +41,7 @@
 	{#if children}
 		{@render children?.()}
 	{:else}
-		<PlusIcon />
+		<MinusIcon />
 	{/if}
 </Button>
+
