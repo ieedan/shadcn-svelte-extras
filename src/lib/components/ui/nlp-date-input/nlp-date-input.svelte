@@ -1,6 +1,5 @@
 <script lang="ts">
 	import * as Command from '$lib/components/ui/command';
-	import * as chrono from 'chrono-node';
 	import type { NLPDateInputProps } from './types';
 	import { getNlpSuggestions } from '.';
 
@@ -14,13 +13,8 @@
 	}: NLPDateInputProps = $props();
 
 	let value = $state('');
-	let parser = $derived(locale && chrono[locale] ? chrono[locale].parse : chrono.parse);
 
 	const suggestions = $derived(() => getNlpSuggestions(value, locale, min, max, defaultValues));
-
-	$effect(() => {
-		console.log('Suggestions updated:', $state.snapshot(suggestions()));
-	});
 </script>
 
 <Command.Root shouldFilter={false} class="border-border h-fit border">
