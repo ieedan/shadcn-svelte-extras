@@ -8,9 +8,9 @@
 		<NLPDateInput
 			locale="fr"
 			placeholder={'E.g. "demain à 17h" ou "dans 2 heures"'}
-			onChoice={({ date, text }) =>
+			onChoice={({ refDate, text }) =>
 				toast.success(text, {
-					description: `${date().toDateString()} ${date().toLocaleTimeString()}`
+					description: `${new Date(refDate).toDateString()} ${new Date(refDate).toLocaleTimeString()}`
 				})}
 		/>
 	</div>

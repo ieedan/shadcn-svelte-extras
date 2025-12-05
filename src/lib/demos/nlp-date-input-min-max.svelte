@@ -11,9 +11,9 @@
 			placeholder={'E.g. "this evening" or "2 hours from now"'}
 			min={new Date()}
 			max={new Date(Date.now() + DAY)}
-			onChoice={({ date, text }) =>
+			onChoice={({ refDate, text }) =>
 				toast.success(text, {
-					description: `${date().toDateString()} ${date().toLocaleTimeString()}`
+					description: `${new Date(refDate).toDateString()} ${new Date(refDate).toLocaleTimeString()}`
 				})}
 		/>
 	</div>
