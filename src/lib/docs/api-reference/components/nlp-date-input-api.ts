@@ -11,6 +11,10 @@ const Root = api.createComponentReference<NLPDateInputProps>({
 		max: api.createDateProp({
 			description: 'The maximum date allowed for suggestions.'
 		}),
+		defaultValues: api.createAnyProp({
+			description: 'An array of default input strings to show suggestions for on mount.',
+			type: 'string[]'
+		}),
 		placeholder: api.createStringProp({
 			description: 'The placeholder text for the input.',
 			defaultValue: 'E.g. "tomorrow at 5pm" or "in 2 hours"'

@@ -7,19 +7,42 @@
 		placeholder = 'E.g. "tomorrow at 5pm" or "in 2 hours"',
 		min,
 		max,
-		locale,
+		locale = 'en',
+		defaultValues,
 		onChoice
 	}: NLPDateInputProps = $props();
 
 	let value = $state('');
 	let parser = $derived(locale && chrono[locale] ? chrono[locale].parse : chrono.parse);
 
+	function fullNormalize(str: string): string {
+		return str
+			.normalize('NFD')
+			.replace(/[\u0300-\u036f]/g, '')
+			.replace(/[\u2019\u2018]/g, "'");
+	}
+
+	function getRelativeDayKeyword(locale: string): string[] {
+		const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
+
+		return [rtf.format(1, 'day'), rtf.format(0, 'day'), rtf.format(-1, 'day')].map(fullNormalize);
+	}
+
+	let defaults = $derived(
+		defaultValues && defaultValues.length > 0
+			? defaultValues.map((input) => parser(input)[0])
+			: getRelativeDayKeyword(locale).map((input) => parser(input)[0])
+	);
+
 	const suggestions = $derived(
-		parser(value).filter(
-			(suggestion) =>
-				(min === undefined || suggestion.date() > min) &&
-				(max === undefined || suggestion.date() < max)
-		)
+		(value
+			? parser(value).filter(
+					(suggestion) =>
+						(min === undefined || suggestion.date() > min) &&
+						(max === undefined || suggestion.date() < max)
+				)
+			: defaults
+		).filter((s) => s !== undefined)
 	);
 </script>
 
