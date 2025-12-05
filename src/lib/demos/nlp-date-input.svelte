@@ -6,9 +6,9 @@
 <div class="flex w-full max-w-xl items-center justify-center">
 	<div class="h-72 w-full py-6">
 		<NLPDateInput
-			onChoice={({ refDate, text }) =>
-				toast.success(text, {
-					description: `${new Date(refDate).toDateString()} ${new Date(refDate).toLocaleTimeString()}`
+			onChoice={({ date, display }) =>
+				toast.success(display, {
+					description: `${date.toDateString()} ${date.toLocaleTimeString()}`
 				})}
 		/>
 	</div>

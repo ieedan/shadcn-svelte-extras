@@ -21,11 +21,11 @@ const Root = api.createComponentReference<NLPDateInputProps>({
 		}),
 		locale: api.createStringProp({
 			description: 'The locale to use for parsing dates.',
-			defaultValue: 'en'
+			defaultValue: '"en"'
 		}),
 		onChoice: api.createFunctionProp({
 			description: 'Callback fired when a suggestion is selected.',
-			type: '(opts: { label: string; date: Date }) => void'
+			type: '(opts: { display: string; parseText: string; date: Date; }) => void'
 		})
 	}
 });

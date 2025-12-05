@@ -1,5 +1,4 @@
-import type { ParsedResult } from 'chrono-node';
-import { locales } from './index';
+import { locales, type NLPSuggestion } from './index';
 
 export type NLPDateInputProps = {
 	min?: Date;
@@ -7,5 +6,5 @@ export type NLPDateInputProps = {
 	locale?: keyof typeof locales;
 	defaultValues?: string[];
 	placeholder?: string;
-	onChoice?: (opts: ParsedResult) => void;
+	onChoice?: (opts: NLPSuggestion) => void;
 };
