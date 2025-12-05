@@ -18,6 +18,7 @@ import { reference as ModalReference } from './modal-api';
 import { reference as NlpDateInputReference } from './nlp-date-input-api';
 import { reference as PhoneInputReference } from './phone-input-api';
 import { reference as PMCommandReference } from './pm-command-api';
+import { reference as NumberFieldReference } from './number-field-api';
 import { reference as SnippetReference } from './snippet-api';
 import { reference as StarRatingReference } from './star-rating-api';
 import { reference as TagsInputReference } from './tags-input-api';
@@ -25,6 +26,7 @@ import { reference as TerminalReference } from './terminal-api';
 import { reference as ThemeSelectorReference } from './theme-selector-api';
 import { reference as TocReference } from './toc-api';
 import { reference as TreeViewReference } from './tree-view-api';
+import { reference as UnderlineTabsReference } from './underline-tabs-api';
 import { reference as WindowReference } from './window-api';
 import { reference as EmojiPickerReference } from './emoji-picker-api';
 import { reference as PasswordReference } from './password-api';
@@ -48,6 +50,7 @@ export const references = [
 	NlpDateInputReference,
 	PhoneInputReference,
 	PMCommandReference,
+	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
 	TagsInputReference,
@@ -55,6 +58,7 @@ export const references = [
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
 	PasswordReference,
@@ -87,6 +91,7 @@ export {
 	NlpDateInputReference,
 	PhoneInputReference,
 	PMCommandReference,
+	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
 	TagsInputReference,
@@ -94,6 +99,7 @@ export {
 	ThemeSelectorReference,
 	TocReference,
 	TreeViewReference,
+	UnderlineTabsReference,
 	WindowReference,
 	EmojiPickerReference,
 	PasswordReference,

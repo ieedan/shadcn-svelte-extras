@@ -165,6 +165,14 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/pm-command/pm-command.svelte'
 		},
 		{
+			name: 'Number Field',
+			description: 'A component for incrementing and decrementing a value.',
+			href: '/components/number-field',
+			specifier: 'ui/number-field',
+			source: 'src/lib/components/ui/number-field',
+			status: 'New'
+		},
+		{
 			name: 'Rename',
 			description: 'A component for renaming stuff.',
 			href: '/components/rename',
@@ -220,6 +228,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/tree-view',
 			specifier: 'ui/tree-view',
 			source: 'src/lib/components/ui/tree-view'
+		},
+		{
+			name: 'Underline Tabs',
+			description: 'A horizontal tabs component with an underline.',
+			href: '/components/underline-tabs',
+			specifier: 'ui/underline-tabs',
+			source: 'src/lib/components/ui/underline-tabs',
+			status: 'New'
 		},
 		{
 			name: 'Window',

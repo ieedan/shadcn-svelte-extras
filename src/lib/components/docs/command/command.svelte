@@ -9,7 +9,7 @@
 </script>
 
 <Dialog.Root bind:open={commandState.current}>
-	<Dialog.Content class="p-0" hideClose>
+	<Dialog.Content class="top-[35%] p-0" hideClose>
 		<Command.Root>
 			<Command.Input placeholder="Search for extras..." />
 			<Command.List class="min-h-[300px]">

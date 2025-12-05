@@ -25,10 +25,13 @@
 		<span>{usage.current.toFixed(0)}/{LIMIT}</span>
 	</div>
 	<Meter
-		class={cn('--meter-background:(var(--color-blue-500))', {
-			'![--meter-background:var(--destructive)]': usage.current === LIMIT,
-			'[--meter-background:var(--color-orange-400)]': usage.current > LIMIT * 0.75
-		})}
+		class={cn(
+			'--meter-background:(var(--color-blue-500)) [&_div]:transition-colors [&_div]:transition-none',
+			{
+				'[--meter-background:var(--destructive)]!': usage.current === LIMIT,
+				'[--meter-background:var(--color-orange-400)]': usage.current > LIMIT * 0.75
+			}
+		)}
 		value={usage.current}
 		max={LIMIT}
 	/>

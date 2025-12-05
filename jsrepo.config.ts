@@ -479,6 +479,27 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'number-field',
+					title: 'NumberField',
+					description: 'A component for incrementing and decrementing a number.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/number-field'
+						},
+						{
+							path: 'src/lib/demos/number-field.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/number-field-step.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'password',
 					title: 'Password',
 					description:
@@ -796,6 +817,28 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'underline-tabs',
+					title: 'UnderlineTabs',
+					description:
+						'A underline tabs component for displaying tabs, tab navigation, tab selection, tab navigation, and tab selection.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/underline-tabs'
+						},
+						{
+							path: 'src/lib/demos/underline-tabs.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/underline-tabs-overflow.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'window',
 					title: 'Window',
 					description:
@@ -948,6 +991,18 @@ export default defineConfig({
 							path: 'src/lib/demos/use-promise.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
+					name: 'use-ramp',
+					title: 'UseRamp',
+					add: 'when-needed',
+					description: 'Ramp a value up/down over time.',
+					type: 'hook',
+					files: [
+						{
+							path: 'src/lib/hooks/use-ramp.svelte.ts'
 						}
 					]
 				},

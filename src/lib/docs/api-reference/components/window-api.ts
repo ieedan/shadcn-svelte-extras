@@ -5,6 +5,9 @@ const Root = api.createComponentReference<WindowPropsWithoutHTML>({
 	name: 'Root',
 	description: 'The root window component. Renders a styled window with optional children.',
 	props: {
+		contentClass: api.createStringProp({
+			description: 'Classes applied to the content of the window.'
+		}),
 		children: api.createAnyProp({
 			description: 'The content of the window.',
 			type: 'Snippet'
