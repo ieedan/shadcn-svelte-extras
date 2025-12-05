@@ -14,7 +14,11 @@
 
 	let value = $state('');
 
-	const suggestions = $derived(() => getNlpSuggestions(value, locale, min, max, defaultValues));
+	const suggestions = $derived(() =>
+		getNlpSuggestions(value, locale, min, max, defaultValues)
+			.filter((v) => min === undefined || v.date >= min)
+			.filter((v) => max === undefined || v.date <= max)
+	);
 </script>
 
 <Command.Root shouldFilter={false} class="border-border h-fit border">
