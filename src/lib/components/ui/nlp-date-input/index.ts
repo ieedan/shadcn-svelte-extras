@@ -1,6 +1,7 @@
 import NLPDateInput from './nlp-date-input.svelte';
 import { en, uk, fr, de, es, it, ja, pt, nl, zh, ru, sv } from 'chrono-node';
 import * as chrono from 'chrono-node';
+import type { ParsedResult, Chrono } from 'chrono-node';
 
 export const locales = {
 	en,
@@ -82,11 +83,14 @@ function formatDisplay(date: Date, locale: string): string {
 	return normalize(out);
 }
 
-function getParser(locale: string) {
-	const any = chrono as any;
-	if (any[locale] && any[locale].parseDate) {
-		return (txt: string) => any[locale].parseDate(txt);
+function getParser(locale: string): (txt: string) => Date | null {
+	const localizedParsers = chrono as unknown as Record<string, Partial<Chrono>>;
+
+	const parser = localizedParsers[locale];
+	if (parser && typeof parser.parseDate === 'function') {
+		return (txt: string) => parser.parseDate!(txt);
 	}
+
 	return (txt: string) => chrono.parseDate(txt);
 }
 
@@ -123,6 +127,64 @@ function generateTemplates(input: string, locale: string): string[] {
 	return results.filter((r) => r.toLowerCase().startsWith(lower));
 }
 
+function expandAroundDate(
+	date: Date,
+	locale: string,
+	min?: Date,
+	max?: Date,
+	hasExplicitTime?: boolean
+): NLPSuggestion[] {
+	const out: NLPSuggestion[] = [];
+	const base = date.getTime();
+
+	// Note: Maybe make these configurable in the future?
+	const minuteSteps = hasExplicitTime ? [15, 30, 45] : [];
+	const hourSteps = [-2, -1, 1, 2];
+
+	for (const h of hourSteps) {
+		const d = new Date(base);
+		d.setHours(d.getHours() + h);
+		if (min && d < min) continue;
+		if (max && d > max) continue;
+
+		out.push({
+			display: formatDisplay(d, locale),
+			parseText: '',
+			date: d
+		});
+	}
+
+	for (const m of minuteSteps) {
+		const d = new Date(base);
+		d.setMinutes(d.getMinutes() + m);
+		if (min && d < min) continue;
+		if (max && d > max) continue;
+		out.push({
+			display: formatDisplay(d, locale),
+			parseText: '',
+			date: d
+		});
+	}
+
+	return out;
+}
+
+function detectExplicitTime(input: string, locale: string): boolean {
+	const localizedParsers = chrono as unknown as Record<string, Partial<Chrono>>;
+	const parserForLocale = localizedParsers[locale];
+
+	const results: ParsedResult[] = parserForLocale?.parse
+		? parserForLocale.parse(input)
+		: chrono.parse(input);
+
+	if (results.length === 0) return false;
+
+	const start = results[0].start;
+	if (!start) return false;
+
+	return start.isCertain('hour') || start.isCertain('minute');
+}
+
 export function getNlpSuggestions(
 	input: string,
 	locale: string,
@@ -132,16 +194,18 @@ export function getNlpSuggestions(
 ): NLPSuggestion[] {
 	const trimmed = input.trim();
 	const parse = getParser(locale);
+
+	const hasExplicitTime = detectExplicitTime(trimmed, locale);
+
 	if (!trimmed) {
 		const base = defaultInputs?.length
 			? defaultInputs
 			: [relativeDayLabel(-1, locale), relativeDayLabel(0, locale), relativeDayLabel(1, locale)];
 
-		return base
+		const suggestions = base
 			.map((txt) => {
 				const d = parse(txt);
 				if (!d) return null;
-
 				return {
 					display: formatDisplay(d, locale),
 					parseText: txt,
@@ -149,34 +213,61 @@ export function getNlpSuggestions(
 				};
 			})
 			.filter(Boolean) as NLPSuggestion[];
+
+		return uniqueByDate(suggestions);
 	}
 
-	const suggestions: NLPSuggestion[] = [];
-	const d = parse(trimmed);
-	if (d) {
+	let suggestions: NLPSuggestion[] = [];
+
+	const parsed = parse(trimmed);
+	if (parsed) {
 		suggestions.push({
-			display: formatDisplay(d, locale),
+			display: formatDisplay(parsed, locale),
 			parseText: trimmed,
-			date: d
+			date: parsed
 		});
+
+		suggestions.push(...expandAroundDate(parsed, locale, min, max, hasExplicitTime));
 	}
 
 	const templates = generateTemplates(trimmed, locale);
 	for (const t of templates) {
-		const dt = parse(t);
-		if (!dt) continue;
-
-		if (min && dt < min) continue;
-		if (max && dt > max) continue;
-
-		if (suggestions.some((s) => s.date.getTime() === dt.getTime())) continue;
-
+		const d = parse(t);
+		if (!d) continue;
 		suggestions.push({
-			display: formatDisplay(dt, locale),
+			display: formatDisplay(d, locale),
 			parseText: t,
-			date: dt
+			date: d
 		});
 	}
 
-	return suggestions;
+	suggestions = uniqueByDate(suggestions);
+
+	if (suggestions.length < 3 && parsed) {
+		const extra = expandAroundDate(parsed, locale, min, max, hasExplicitTime);
+		for (const e of extra) {
+			if (suggestions.length >= 3) break;
+			suggestions.push(e);
+		}
+	}
+
+	return uniqueByDate(suggestions);
+}
+
+function normalizeDate(d: Date): number {
+	const copy = new Date(d);
+	copy.setSeconds(0, 0);
+	return copy.getTime();
+}
+
+function uniqueByDate(arr: NLPSuggestion[]): NLPSuggestion[] {
+	const seen = new Set<number>();
+
+	return arr.filter((s) => {
+		const t = normalizeDate(s.date);
+		if (seen.has(t)) return false;
+		seen.add(t);
+		if (t !== s.date.getTime()) s.date = new Date(t);
+		return true;
+	});
 }
