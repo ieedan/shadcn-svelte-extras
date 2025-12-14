@@ -22,6 +22,7 @@
 		class: className,
 		disabled = false,
 		validate = defaultValidate,
+        onValueChange,
 		...rest
 	}: TagsInputProps = $props();
 
@@ -51,6 +52,7 @@
 		}
 
 		value = [...value, validated];
+        onValueChange?.($state.snapshot(value))
 		inputValue = '';
 	};
 
@@ -174,6 +176,7 @@
 
 	const deleteIndex = (index: number) => {
 		value = [...value.slice(0, index), ...value.slice(index + 1)];
+        onValueChange?.($state.snapshot(value))
 	};
 
 	const blur = () => {
