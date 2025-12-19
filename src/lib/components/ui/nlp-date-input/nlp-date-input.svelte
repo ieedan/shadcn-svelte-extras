@@ -36,8 +36,14 @@
 							{suggestion.display}
 						</span>
 						<span class="text-muted-foreground">
-							{suggestion.date.toLocaleDateString()}
-							{suggestion.date.toLocaleTimeString()}
+							{suggestion.date.toLocaleDateString(locale, {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+								weekday: 'short',
+								hour: '2-digit',
+								minute: '2-digit'
+							})}
 						</span>
 					</div>
 				</Command.Item>
