@@ -52,7 +52,7 @@
 		}
 
 		value = [...value, validated];
-        onValueChange?.($state.snapshot(value))
+        onValueChange?.(value)
 		inputValue = '';
 	};
 
@@ -176,7 +176,7 @@
 
 	const deleteIndex = (index: number) => {
 		value = [...value.slice(0, index), ...value.slice(index + 1)];
-        onValueChange?.($state.snapshot(value))
+        onValueChange?.(value)
 	};
 
 	const blur = () => {

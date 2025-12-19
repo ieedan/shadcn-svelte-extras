@@ -16,11 +16,10 @@ const Root = api.createComponentReference<TagsInputPropsWithoutHTML>({
 			type: '(val: string, tags: string[]) => string | undefined',
 			defaultValue: 'defaultValidate'
 		}),
-        onValueChange: api.createFunctionProp({
-            description:
-                'A function called after the value of the component changes',
-            type: '(tags: string[]) => void'
-        })
+		onValueChange: api.createFunctionProp({
+			description: 'A function called when the value changes',
+			type: '(tags: string[]) => void'
+		})
 	}
 });
 
