@@ -1,6 +1,8 @@
 <script lang="ts" module>
 	export type ThemeSelectorProps = {
 		variant?: 'outline' | 'ghost';
+		align?: 'start' | 'center' | 'end';
+		side?: 'top' | 'right' | 'bottom' | 'left';
 	};
 </script>
 
@@ -11,7 +13,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { buttonVariants } from '$lib/components/ui/button/index.js';
 
-	let { variant = 'outline' }: ThemeSelectorProps = $props();
+	let { variant = 'outline' align = 'end', side = 'bottom' }: ThemeSelectorProps = $props();
 </script>
 
 <DropdownMenu.Root>
@@ -20,7 +22,7 @@
 		<MoonIcon class="absolute scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0" />
 		<span class="sr-only">Toggle theme</span>
 	</DropdownMenu.Trigger>
-	<DropdownMenu.Content align="end">
+	<DropdownMenu.Content {align} {side}>
 		<DropdownMenu.Item onclick={() => setMode('light')}>Light</DropdownMenu.Item>
 		<DropdownMenu.Item onclick={() => setMode('dark')}>Dark</DropdownMenu.Item>
 		<DropdownMenu.Item onclick={() => resetMode()}>System</DropdownMenu.Item>
