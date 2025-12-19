@@ -15,6 +15,10 @@ const Root = api.createComponentReference<TagsInputPropsWithoutHTML>({
 				'A function to validate and transform a tag before it is added. Return the transformed tag or undefined to reject.',
 			type: '(val: string, tags: string[]) => string | undefined',
 			defaultValue: 'defaultValidate'
+		}),
+		onValueChange: api.createFunctionProp({
+			description: 'A function called when the value changes',
+			type: '(tags: string[]) => void'
 		})
 	}
 });
