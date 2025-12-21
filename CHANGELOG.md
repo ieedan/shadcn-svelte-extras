@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 6.4.0
+
+### Minor Changes
+
+- Add `onValueChange` callback to Tags Input component ([#312](https://github.com/ieedan/shadcn-svelte-extras/pull/312))
+
+### Patch Changes
+
+- Fix SI units (KB, MB, GB are powers of 10, not powers of 2) ([#312](https://github.com/ieedan/shadcn-svelte-extras/pull/312))
+
 ## 6.3.0
 
 ### Minor Changes
