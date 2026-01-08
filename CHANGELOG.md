@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.5.0
+
+### Minor Changes
+
+- refactor(file-drop-zone): Make file drop zone composable and add .textarea component ([#317](https://github.com/ieedan/shadcn-svelte-extras/pull/317))
+
 ## 6.4.0
 
 ### Minor Changes
