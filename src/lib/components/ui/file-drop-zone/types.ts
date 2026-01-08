@@ -1,13 +1,15 @@
 import type { WithChildren } from 'bits-ui';
-import type { HTMLInputAttributes } from 'svelte/elements';
+import type { WithElementRef } from 'svelte-toolbelt';
+import type { HTMLInputAttributes, HTMLLabelAttributes } from 'svelte/elements';
 
 export type FileRejectedReason =
 	| 'Maximum file size exceeded'
 	| 'File type not allowed'
 	| 'Maximum files uploaded';
 
-export type FileDropZonePropsWithoutHTML = WithChildren<{
+export type FileDropZoneRootPropsWithoutHTML = WithChildren<{
 	ref?: HTMLInputElement | null;
+	id?: string;
 	/** Called with the uploaded files when the user drops or clicks and selects their files.
 	 *
 	 * @param files
@@ -43,5 +45,11 @@ export type FileDropZonePropsWithoutHTML = WithChildren<{
 	accept?: string;
 }>;
 
-export type FileDropZoneProps = FileDropZonePropsWithoutHTML &
-	Omit<HTMLInputAttributes, 'multiple' | 'files'>;
+export type FileDropZoneRootProps = FileDropZoneRootPropsWithoutHTML &
+	Omit<HTMLInputAttributes, 'multiple' | 'files' | 'id' | 'class'>;
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export type FileDropZoneTriggerPropsWithoutHTML = WithChildren<WithElementRef<{}>>;
+
+export type FileDropZoneTriggerProps = FileDropZoneTriggerPropsWithoutHTML &
+	Omit<HTMLLabelAttributes, 'for'>;
