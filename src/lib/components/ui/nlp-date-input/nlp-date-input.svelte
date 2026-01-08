@@ -1,22 +1,23 @@
 <script lang="ts">
 	import * as Command from '$lib/components/ui/command';
-	import { parseDate } from 'yeezy-dates';
 	import type { NLPDateInputProps } from './types';
+	import { getNlpSuggestions } from '.';
 
 	let {
 		placeholder = 'E.g. "tomorrow at 5pm" or "in 2 hours"',
 		min,
 		max,
+		locale = 'en',
+		defaultValues,
 		onChoice
 	}: NLPDateInputProps = $props();
 
 	let value = $state('');
 
-	const suggestions = $derived(
-		parseDate(value).filter(
-			(suggestion) =>
-				(min === undefined || suggestion.date > min) && (max === undefined || suggestion.date < max)
-		)
+	const suggestions = $derived(() =>
+		getNlpSuggestions(value, locale, min, max, defaultValues)
+			.filter((v) => min === undefined || v.date >= min)
+			.filter((v) => max === undefined || v.date <= max)
 	);
 </script>
 
@@ -24,7 +25,7 @@
 	<Command.Input {placeholder} bind:value />
 	<Command.List>
 		<Command.Group>
-			{#each suggestions as suggestion (suggestion)}
+			{#each suggestions() as suggestion (suggestion)}
 				<Command.Item
 					onSelect={() => {
 						onChoice?.(suggestion);
@@ -32,11 +33,17 @@
 				>
 					<div class="flex w-full place-items-center justify-between">
 						<span>
-							{suggestion.label}
+							{suggestion.display}
 						</span>
 						<span class="text-muted-foreground">
-							{suggestion.date.toDateString()}
-							{suggestion.date.toLocaleTimeString()}
+							{suggestion.date.toLocaleDateString(locale, {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric',
+								weekday: 'short',
+								hour: '2-digit',
+								minute: '2-digit'
+							})}
 						</span>
 					</div>
 				</Command.Item>
