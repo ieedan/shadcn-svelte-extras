@@ -15,7 +15,7 @@
 		| {
 				type: 'component';
 				children: Snippet;
-				demo?: undefined;
+				demo?: string;
 		  }
 	) & {
 		class?: string;

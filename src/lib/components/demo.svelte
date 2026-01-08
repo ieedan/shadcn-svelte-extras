@@ -18,11 +18,13 @@
 		<Demo.Tabs />
 		<Demo.ActionsGroup>
 			<Demo.ControlGroup>
+				<Demo.Fullscreen />
+				<Demo.ControlGroupSeparator />
 				<Demo.ControlRefresh />
 			</Demo.ControlGroup>
 		</Demo.ActionsGroup>
 	</Demo.ActionsGroup>
-	<Demo.Preview type="component">
+	<Demo.Preview type="component" {demo}>
 		<div class="flex size-full items-center justify-center">
 			{#await ComponentPromise}
 				<Spinner />
