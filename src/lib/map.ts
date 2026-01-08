@@ -56,8 +56,7 @@ const map: Record<string, Route[]> = {
 			description: 'A dialog for confirming delete actions.',
 			href: '/components/confirm-delete-dialog',
 			specifier: 'ui/confirm-delete-dialog',
-			source: 'src/lib/components/ui/confirm-delete-dialog',
-			status: 'New'
+			source: 'src/lib/components/ui/confirm-delete-dialog'
 		},
 		{
 			name: 'Copy Button',
@@ -85,7 +84,8 @@ const map: Record<string, Route[]> = {
 			description: 'A file drop zone component.',
 			href: '/components/file-drop-zone',
 			specifier: 'ui/file-drop-zone',
-			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte'
+			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte',
+			status: 'Updated'
 		},
 		{
 			name: 'Image Cropper',
@@ -169,8 +169,7 @@ const map: Record<string, Route[]> = {
 			description: 'A component for incrementing and decrementing a value.',
 			href: '/components/number-field',
 			specifier: 'ui/number-field',
-			source: 'src/lib/components/ui/number-field',
-			status: 'New'
+			source: 'src/lib/components/ui/number-field'
 		},
 		{
 			name: 'Rename',
@@ -234,8 +233,7 @@ const map: Record<string, Route[]> = {
 			description: 'A horizontal tabs component with an underline.',
 			href: '/components/underline-tabs',
 			specifier: 'ui/underline-tabs',
-			source: 'src/lib/components/ui/underline-tabs',
-			status: 'New'
+			source: 'src/lib/components/ui/underline-tabs'
 		},
 		{
 			name: 'Window',

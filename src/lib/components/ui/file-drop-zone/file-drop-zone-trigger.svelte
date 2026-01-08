@@ -15,11 +15,18 @@
 	const triggerState = useFileDropZoneTrigger();
 </script>
 
-<label bind:this={ref} class={cn('', className)} {...triggerState.props} {...rest}>
+<label
+	bind:this={ref}
+	class={cn('group/file-drop-zone-trigger', className)}
+	{...triggerState.props}
+	{...rest}
+>
 	{#if children}
 		{@render children()}
 	{:else}
-		<div class="flex flex-col place-items-center justify-center gap-2">
+		<div
+			class="hover:bg-accent/25 flex h-48 flex-col place-items-center justify-center gap-2 rounded-lg border border-dashed p-6 transition-all group-aria-disabled/file-drop-zone-trigger:opacity-50 hover:cursor-pointer group-aria-disabled/file-drop-zone-trigger:hover:cursor-not-allowed"
+		>
 			<div
 				class="border-border text-muted-foreground flex size-14 place-items-center justify-center rounded-full border border-dashed"
 			>

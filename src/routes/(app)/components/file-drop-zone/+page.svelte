@@ -15,10 +15,13 @@
 	<Code
 		lang="svelte"
 		code={`\<script lang="ts"\>
-	import { FileDropZone } from "$lib/components/ui/file-drop-zone";
+	import * as FileDropZone from "$lib/components/ui/file-drop-zone";
 \<\/script\>
 
-<FileDropZone/>`}
+<FileDropZone.Root>
+	<FileDropZone.Trigger />
+	<FileDropZone.Textarea />
+</FileDropZone.Root>`}
 	/>
 </div>
 <p>Custom placeholder:</p>
@@ -29,9 +32,11 @@
 	import { FileDropZone } from "$lib/components/ui/file-drop-zone";
 \<\/script\>
 
-<FileDropZone>
-	Upload files
-</FileDropZone>`}
+<FileDropZone.Root>
+	<FileDropZone.Trigger>
+		Upload files
+	</FileDropZone.Trigger>
+</FileDropZone.Root>`}
 	/>
 </div>
 <Subheading>Form</Subheading>
@@ -78,10 +83,3 @@ export const actions = {
 `}
 	/>
 </div>
-<Subheading>Acknowledgements</Subheading>
-<p>
-	This component takes inspiration from
-	<Link href="https://github.com/sadmann7/file-uploader" target="_blank">
-		sadmann/file-uploader
-	</Link>.
-</p>
