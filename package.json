@@ -28,7 +28,7 @@
 		"@inlang/cli": "^3.0.12",
 		"@inlang/paraglide-js": "2.3.2",
 		"@internationalized/date": "^3.10.0",
-		"@lucide/svelte": "^0.554.0",
+		"@lucide/svelte": "^0.561.0",
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^3.15.0",
 		"@shikijs/themes": "^3.15.0",

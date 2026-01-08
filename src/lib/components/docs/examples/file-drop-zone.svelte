@@ -1,11 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import {
-		displaySize,
-		FileDropZone,
-		MEGABYTE,
-		type FileDropZoneProps
-	} from '$lib/components/ui/file-drop-zone';
+	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 	import { Progress } from '$lib/components/ui/progress';
 	import { sleep } from '$lib/utils/sleep';
 	import XIcon from '@lucide/svelte/icons/x';
@@ -13,11 +8,14 @@
 	import { toast } from 'svelte-sonner';
 	import { SvelteDate } from 'svelte/reactivity';
 
-	const onUpload: FileDropZoneProps['onUpload'] = async (files) => {
+	const onUpload: FileDropZone.FileDropZoneRootProps['onUpload'] = async (files) => {
 		await Promise.allSettled(files.map((file) => uploadFile(file)));
 	};
 
-	const onFileRejected: FileDropZoneProps['onFileRejected'] = async ({ reason, file }) => {
+	const onFileRejected: FileDropZone.FileDropZoneRootProps['onFileRejected'] = async ({
+		reason,
+		file
+	}) => {
 		toast.error(`${file.name} failed to upload!`, { description: reason });
 	};
 
@@ -71,14 +69,16 @@
 </script>
 
 <div class="flex w-full flex-col gap-2">
-	<FileDropZone
+	<FileDropZone.Root
 		{onUpload}
 		{onFileRejected}
-		maxFileSize={2 * MEGABYTE}
+		maxFileSize={3 * FileDropZone.MEGABYTE}
 		accept="image/*"
 		maxFiles={4}
 		fileCount={files.length}
-	/>
+	>
+		<FileDropZone.Trigger />
+	</FileDropZone.Root>
 	<div class="flex flex-col gap-2">
 		{#each files as file, i (file.name)}
 			<div
@@ -96,7 +96,7 @@
 					{/await}
 					<div class="flex flex-col">
 						<span class="text-nowrap">{file.name}</span>
-						<span class="text-muted-foreground text-xs">{displaySize(file.size)}</span>
+						<span class="text-muted-foreground text-xs">{FileDropZone.displaySize(file.size)}</span>
 					</div>
 				</div>
 				{#await file.url}

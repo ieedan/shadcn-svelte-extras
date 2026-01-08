@@ -279,6 +279,11 @@ export default defineConfig({
 							path: 'src/lib/demos/file-drop-zone-form.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/file-drop-zone-text-area.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

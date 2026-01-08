@@ -32,6 +32,7 @@ export const DEMOS = [
 	'field-set-destructive',
 	'file-drop-zone',
 	'file-drop-zone-form',
+	'file-drop-zone-text-area',
 	'image-cropper',
 	'image-cropper-square-preview',
 	'image-cropper-no-default-image',
