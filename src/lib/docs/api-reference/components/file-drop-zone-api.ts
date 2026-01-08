@@ -1,5 +1,8 @@
 import * as api from '../api-reference';
-import type { FileDropZoneRootPropsWithoutHTML, FileDropZoneTriggerPropsWithoutHTML } from '$lib/components/ui/file-drop-zone/types';
+import type {
+	FileDropZoneRootPropsWithoutHTML,
+	FileDropZoneTriggerPropsWithoutHTML
+} from '$lib/components/ui/file-drop-zone/types';
 
 const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 	name: 'Root',
@@ -12,7 +15,8 @@ const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 			defaultValue: 'null'
 		}),
 		id: api.createStringProp({
-			description: 'The unique identifier for the file input element. Auto-generated if not provided.'
+			description:
+				'The unique identifier for the file input element. Auto-generated if not provided.'
 		}),
 		children: api.createAnyProp({
 			description:
@@ -46,7 +50,8 @@ const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 
 const Trigger = api.createComponentReference<FileDropZoneTriggerPropsWithoutHTML>({
 	name: 'Trigger',
-	description: 'The trigger element for the file drop zone. Renders as a label that activates the file input. Provides a default UI if no children are provided.',
+	description:
+		'The trigger element for the file drop zone. Renders as a label that activates the file input. Provides a default UI if no children are provided.',
 	props: {
 		ref: api.createAnyProp({
 			description: 'A reference to the label element.',
@@ -64,15 +69,18 @@ const Trigger = api.createComponentReference<FileDropZoneTriggerPropsWithoutHTML
 
 const Textarea = api.createComponentReference({
 	name: 'Textarea',
-	description: 'A textarea component that supports file uploads via drag-and-drop, paste, and click-to-select. Integrates with the FileDropZone root component.',
+	description:
+		'A textarea component that supports file uploads via drag-and-drop, paste, and click-to-select. Integrates with the FileDropZone root component.',
 	props: {
 		child: api.createAnyProp({
-			description: 'Custom render function for the textarea element. Receives props to spread on the textarea.',
+			description:
+				'Custom render function for the textarea element. Receives props to spread on the textarea.',
 			type: 'Snippet',
 			tooltip: 'Snippet<[{ props: HTMLAttributes<HTMLTextAreaElement> }]>'
 		}),
 		onpaste: api.createFunctionProp({
-			description: 'Called when content is pasted into the textarea. Also handles file paste events.',
+			description:
+				'Called when content is pasted into the textarea. Also handles file paste events.',
 			type: '(e: ClipboardEvent) => void'
 		}),
 		ondragover: api.createFunctionProp({
@@ -80,7 +88,8 @@ const Textarea = api.createComponentReference({
 			type: '(e: DragEvent) => void'
 		}),
 		ondrop: api.createFunctionProp({
-			description: 'Called when files are dropped onto the textarea. Also handles file drop events.',
+			description:
+				'Called when files are dropped onto the textarea. Also handles file drop events.',
 			type: '(e: DragEvent) => void'
 		})
 	}

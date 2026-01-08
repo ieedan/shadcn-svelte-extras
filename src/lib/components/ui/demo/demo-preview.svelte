@@ -6,7 +6,7 @@
 	import type { Snippet } from 'svelte';
 	import { box } from 'svelte-toolbelt';
 
-	type Props =
+	type Props = (
 		| {
 				type: 'iframe';
 				demo: string;
@@ -16,9 +16,12 @@
 				type: 'component';
 				children: Snippet;
 				demo?: undefined;
-		  };
+		  }
+	) & {
+		class?: string;
+	};
 
-	let { type, demo, children }: Props = $props();
+	let { type, demo, class: className, children }: Props = $props();
 
 	let resizableRef = $state<Resizable.Pane | null>(null);
 
@@ -34,11 +37,14 @@
 	data-slot="demo-preview"
 	class={cn('border-border bg-background relative aspect-video rounded-md border', {
 		'bg-accent dark:bg-card border-none [--pattern-fg:oklch(0_0_0/0.05)] before:pointer-events-none before:absolute before:inset-px before:rounded-[calc(0.625rem-1px)] before:bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] dark:[--pattern-fg:oklch(1_0_0/0.05)]':
-			type === 'iframe'
+			type === 'iframe',
+		className
 	})}
 >
 	{#if children}
-		{@render children?.()}
+		{#key previewState.root.previewKey}
+			{@render children?.()}
+		{/key}
 	{:else}
 		<Resizable.PaneGroup direction="horizontal">
 			<Resizable.Pane

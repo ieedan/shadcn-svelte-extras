@@ -39,6 +39,11 @@
 </FileDropZone.Root>`}
 	/>
 </div>
+<Subheading>Text Area</Subheading>
+<p>
+	You can use the Textarea component to allow users to paste or drag and drop files into a textarea.
+</p>
+<Demo demo="file-drop-zone-text-area" />
 <Subheading>Form</Subheading>
 <div>
 	<span> Resources: </span>
