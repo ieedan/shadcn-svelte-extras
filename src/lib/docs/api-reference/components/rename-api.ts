@@ -12,6 +12,11 @@ const Root = api.createComponentReference<RenameProps<'p'>>({
 			type: '"a" | "abbr" | "address" | "b" | "bdi" | "bdo" | "blockquote" | "cite" | "code" | "data" | "dd" | "del" | "dfn" | "dt" | "em" | "figcaption" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "header" | "hgroup" | "i" | "ins" | "kbd" | "label" | "legend" | "li" | "main" | "mark" | "nav" | "noscript" | "p" | "pre" | "q" | "rp" | "rt" | "ruby" | "s" | "samp" | "search" | "section" | "small" | "span" | "strong" | "sub" | "summary" | "sup" | "time" | "title" | "u" | "var"',
 			description: 'The tag name to render in view mode.'
 		}),
+		inputTag: api.createStringUnionProp({
+			type: '"input" | "textarea"',
+			description: 'The input the render in edit mode.',
+			defaultValue: 'input'
+		}),
 		mode: api.createStringUnionProp({
 			type: '"edit" | "view"',
 			description: 'The current mode of the component.',
