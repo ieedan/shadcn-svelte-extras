@@ -34,6 +34,13 @@
 <p>When in content editable mode the user can click on the text to start editing it.</p>
 <Demo demo="rename-content-editable" />
 
+<Subheading>Text Area</Subheading>
+<p>
+	The <CodeSpan>Rename</CodeSpan> component can also be a <CodeSpan>textarea</CodeSpan> by setting the
+	<CodeSpan>inputTag</CodeSpan> prop to <CodeSpan>'textarea'</CodeSpan>.
+</p>
+<Demo demo="rename-text-area" />
+
 <Subheading>External Control</Subheading>
 <p>
 	You can put the <CodeSpan>Rename</CodeSpan> component into edit mode by using the <CodeSpan
