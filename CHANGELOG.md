@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.6.0
+
+### Minor Changes
+
+- feat(rename): Add `inputTag` prop to allow customization of the underlying input ([#320](https://github.com/ieedan/shadcn-svelte-extras/pull/320))
+
 ## 6.5.0
 
 ### Minor Changes
