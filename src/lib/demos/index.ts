@@ -72,6 +72,7 @@ export const DEMOS = [
 	'rename',
 	'rename-content-editable',
 	'rename-context-menu',
+	'rename-text-area',
 	'snippet',
 	'snippet-variants',
 	'snippet-multiline',

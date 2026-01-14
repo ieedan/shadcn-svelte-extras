@@ -45,7 +45,7 @@ class RenameSaveState {
 type RenameInputStateProps = WritableBoxedValues<{
 	mode: 'edit' | 'view';
 	value: string;
-	inputRef: HTMLInputElement | null;
+	inputRef: HTMLInputElement | HTMLTextAreaElement | null;
 	textRef: HTMLElement | null;
 }> &
 	ReadableBoxedValues<{

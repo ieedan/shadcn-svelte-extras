@@ -634,6 +634,11 @@ export default defineConfig({
 							path: 'src/lib/demos/rename-context-menu.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/rename-text-area.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
