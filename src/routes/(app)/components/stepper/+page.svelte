@@ -7,6 +7,7 @@
 
 <Demo demo="stepper" />
 <Subheading>Installation</Subheading>
+<Add item="stepper" />
 <Subheading>Usage</Subheading>
 <div>
 	<Code
@@ -29,7 +30,6 @@
 `}
 	/>
 </div>
-<Add item="stepper" />
 <Subheading>Icons</Subheading>
 <p>
 	Add an icon to the <CodeSpan>Indicator</CodeSpan> component to display an icon.
