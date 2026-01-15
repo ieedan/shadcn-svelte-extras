@@ -271,7 +271,7 @@
 			{/if}
 		</div>
 
-		<div class="flex w-full justify-between">
+		<div class="flex w-full justify-between gap-2">
 			<Stepper.Previous>Previous</Stepper.Previous>
 			{#if step < 4}
 				<Stepper.Next disabled={!canGoToNextStep}>Next</Stepper.Next>

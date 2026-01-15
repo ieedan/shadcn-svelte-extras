@@ -27,7 +27,10 @@
 		</Demo.ActionsGroup>
 	</Demo.ActionsGroup>
 	<Demo.Preview type="component" {demo}>
-		<div data-toc-ignore class={cn('flex size-full items-center justify-center', className)}>
+		<div
+			data-toc-ignore
+			class={cn('flex h-full w-full max-w-full items-center justify-center p-4', className)}
+		>
 			{#await ComponentPromise}
 				<Spinner />
 			{:then Component}

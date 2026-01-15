@@ -35,11 +35,14 @@
 <Tabs.Content
 	value="preview"
 	data-slot="demo-preview"
-	class={cn('border-border bg-background relative aspect-video rounded-md border', {
-		'bg-accent dark:bg-card border-none [--pattern-fg:oklch(0_0_0/0.05)] before:pointer-events-none before:absolute before:inset-px before:rounded-[calc(0.625rem-1px)] before:bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] dark:[--pattern-fg:oklch(1_0_0/0.05)]':
-			type === 'iframe',
-		className
-	})}
+	class={cn(
+		'border-border bg-background relative flex min-h-[400px] max-w-full items-center justify-center rounded-md border',
+		{
+			'bg-accent dark:bg-card border-none [--pattern-fg:oklch(0_0_0/0.05)] before:pointer-events-none before:absolute before:inset-px before:rounded-[calc(0.625rem-1px)] before:bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] dark:[--pattern-fg:oklch(1_0_0/0.05)]':
+				type === 'iframe',
+			className
+		}
+	)}
 >
 	{#if children}
 		{#key previewState.root.previewKey}

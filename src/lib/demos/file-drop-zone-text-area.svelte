@@ -83,7 +83,7 @@
 				{/snippet}
 			</FileDropZone.Textarea>
 
-			<div class="flex items-center justify-between">
+			<div class="flex items-center justify-between gap-2">
 				<div class="flex items-center gap-2">
 					<Select.Root type="single" bind:value={selectedModel}>
 						<Select.Trigger size="sm" class="border-none">

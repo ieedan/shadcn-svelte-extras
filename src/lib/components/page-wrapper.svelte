@@ -37,7 +37,7 @@
 						<h1 class="text-4xl font-bold">
 							{doc.doc.name}
 						</h1>
-						<div class="flex items-center gap-2">
+						<div class="hidden items-center gap-2 md:flex">
 							{#if doc.prev}
 								<Tooltip.Root>
 									<Tooltip.Trigger>
@@ -82,7 +82,7 @@
 							{/if}
 						</div>
 					</div>
-					<p class="!text-muted-foreground text-lg">
+					<p class="text-muted-foreground! text-lg">
 						{doc.doc.description}
 					</p>
 					<div class="flex flex-wrap place-items-center gap-1">
