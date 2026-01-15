@@ -38,7 +38,7 @@
 <div class="flex items-center justify-center">
 	<Stepper.Root bind:step>
 		<Stepper.Nav orientation="vertical" class="w-full px-4">
-			{#each steps as item}
+			{#each steps as item (item.step)}
 				<Stepper.Item>
 					<Stepper.Trigger>
 						<Stepper.Indicator>

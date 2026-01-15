@@ -37,11 +37,11 @@
 
 <Stepper.Root bind:step>
 	<Stepper.Nav orientation="horizontal" class="w-full px-4">
-		{#each steps as item}
+		{#each steps as item (item.step)}
 			<Stepper.Item>
 				<Stepper.Trigger class="flex max-w-[150px] flex-col items-center">
 					<Stepper.Indicator>
-						<item.icon class="size-4" />
+						<item.icon />
 					</Stepper.Indicator>
 					<div class="flex flex-col">
 						<Stepper.Title>

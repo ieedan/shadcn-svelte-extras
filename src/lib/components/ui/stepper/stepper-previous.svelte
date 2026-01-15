@@ -18,7 +18,9 @@
 		disabled: box.with(() => disabled)
 	});
 
-	const mergedProps = $derived(mergeProps(buttonState.props, rest, { variant, size, 'data-slot': 'stepper-previous' }));
+	const mergedProps = $derived(
+		mergeProps(buttonState.props, rest, { variant, size, 'data-slot': 'stepper-previous' })
+	);
 </script>
 
 {#if child}

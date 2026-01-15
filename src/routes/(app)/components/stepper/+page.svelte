@@ -19,4 +19,7 @@
 </p>
 <Demo demo="stepper-vertical" />
 <Subheading>Form</Subheading>
+<p>
+	Create a multi-step form with the <CodeSpan>Stepper</CodeSpan> component.
+</p>
 <Demo demo="stepper-form" class="min-h-[600px]" />

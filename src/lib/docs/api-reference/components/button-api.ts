@@ -31,6 +31,10 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 		onClickPromise: api.createFunctionProp({
 			description: 'A function to await while showing a loading state when the button is clicked.',
 			type: '(e: MouseEvent) => Promise<void>'
+		}),
+		'data-slot': api.createStringProp({
+			description: 'The data-slot attribute of the button.',
+			defaultValue: 'button'
 		})
 	}
 });

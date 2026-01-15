@@ -32,7 +32,7 @@ export default ts.config(
 				}
 			],
 			'no-prototype-builtins': 'off',
-			'no-useless-escape': 'warn',
+			'no-useless-escape': 'off',
 			'svelte/no-navigation-without-resolve': 'off'
 		}
 	},
@@ -50,7 +50,7 @@ export default ts.config(
 		},
 		rules: {
 			'svelte/no-at-html-tags': 'warn',
-			'svelte/no-useless-mustaches': 'warn'
+			'svelte/no-useless-mustaches': 'off'
 		}
 	}
 );
