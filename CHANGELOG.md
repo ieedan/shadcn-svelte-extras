@@ -1,5 +1,17 @@
 # shadcn-svelte-extras
 
+## 6.7.0
+
+### Minor Changes
+
+- feat: New component `Stepper` 🎉 ([#323](https://github.com/ieedan/shadcn-svelte-extras/pull/323))
+
+### Patch Changes
+
+- chore: bump deps ([#323](https://github.com/ieedan/shadcn-svelte-extras/pull/323))
+
+- feat(use-toc): Don't add headings contained by `data-toc-ignore` to the table of contents ([#323](https://github.com/ieedan/shadcn-svelte-extras/pull/323))
+
 ## 6.6.0
 
 ### Minor Changes
