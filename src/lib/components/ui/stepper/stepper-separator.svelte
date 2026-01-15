@@ -12,8 +12,6 @@
 	data-slot="stepper-separator"
 	class={cn(
 		'bg-muted data-[state=completed]:bg-primary h-1 transition-colors',
-		// positioning
-		'absolute top-[12px] left-[35px] w-full',
 		{
 			hidden: separatorState.itemState.isLast
 		},

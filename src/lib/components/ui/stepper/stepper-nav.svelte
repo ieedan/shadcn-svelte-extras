@@ -12,10 +12,10 @@
 
 <div
 	class={cn(
-		'flex gap-2 justify-between',
+		'flex',
 		{
-			'flex-row': orientation === 'horizontal',
-			'flex-col': orientation === 'vertical'
+			'flex-row justify-between': orientation === 'horizontal',
+			'flex-col gap-2': orientation === 'vertical'
 		},
 		className
 	)}

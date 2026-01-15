@@ -10,6 +10,14 @@
 	const stepperItemState = useStepperItem({ id });
 </script>
 
-<div data-slot="stepper-item" class={cn('', className)} {...stepperItemState.props} {...rest}>
+<div
+	data-slot="stepper-item"
+	class={cn(
+		'',
+		className
+	)}
+	{...stepperItemState.props}
+	{...rest}
+>
 	{@render children?.()}
 </div>
