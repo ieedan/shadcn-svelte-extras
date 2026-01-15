@@ -8,7 +8,8 @@
 		FileDropZone,
 		Terminal,
 		PmCommand,
-		SignupForm
+		SignupForm,
+		StepperExample
 	} from '$lib/components/docs/examples';
 	import { Snippet } from '$lib/components/ui/snippet';
 	import SearchButton from '$lib/components/search-button.svelte';
@@ -22,9 +23,9 @@
 
 <div class="flex flex-col gap-8 p-8">
 	<div class="flex flex-col gap-2">
-		<a href="/components/file-drop-zone" class="flex place-items-center gap-1 text-sm font-medium">
+		<a href="/components/stepper" class="flex place-items-center gap-1 text-sm font-normal">
 			<span class="hover:underline">
-				Updated <span class="font-bold">File Drop Zone</span>!
+				New component <span class="font-bold">Stepper</span>!
 			</span>
 			<ArrowRightIcon class="size-3.5" />
 		</a>
@@ -50,6 +51,7 @@
 			<PhoneNumberSetting />
 			<CodeBlock />
 			<ConfigureDevice />
+			<StepperExample />
 			<Snippet text="npx shadcn-svelte@next init" />
 			<FileDropZone />
 			<div class="flex flex-col gap-4 2xl:hidden">

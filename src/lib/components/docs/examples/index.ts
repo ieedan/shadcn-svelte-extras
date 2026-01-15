@@ -7,6 +7,7 @@ import Terminal from './terminal.svelte';
 import FileDropZone from './file-drop-zone.svelte';
 import PmCommand from './pm-command.svelte';
 import SignupForm from './signup-form.svelte';
+import StepperExample from './stepper-example.svelte';
 
 export {
 	ReviewForm,
@@ -17,5 +18,6 @@ export {
 	EditorFileTree,
 	Terminal,
 	FileDropZone,
-	SignupForm
+	SignupForm,
+	StepperExample
 };
