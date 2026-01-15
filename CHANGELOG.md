@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.7.1
+
+### Patch Changes
+
+- fix: Little mobile scaling fixes ([#325](https://github.com/ieedan/shadcn-svelte-extras/pull/325))
+
 ## 6.7.0
 
 ### Minor Changes
