@@ -84,8 +84,7 @@ const map: Record<string, Route[]> = {
 			description: 'A file drop zone component.',
 			href: '/components/file-drop-zone',
 			specifier: 'ui/file-drop-zone',
-			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte'
 		},
 		{
 			name: 'Image Cropper',
