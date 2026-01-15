@@ -193,6 +193,13 @@ const map: Record<string, Route[]> = {
 			source: 'src/lib/components/ui/star-rating'
 		},
 		{
+			name: 'Stepper',
+			description: 'A stepper component.',
+			href: '/components/stepper',
+			specifier: 'ui/stepper',
+			source: 'src/lib/components/ui/stepper'
+		},
+		{
 			name: 'Tags Input',
 			description: 'A tags input component.',
 			href: '/components/tags-input',
