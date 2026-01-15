@@ -11,6 +11,8 @@
 </script>
 
 <div
+	data-slot="stepper-nav"
+	aria-orientation={orientation}
 	class={cn(
 		'flex',
 		{

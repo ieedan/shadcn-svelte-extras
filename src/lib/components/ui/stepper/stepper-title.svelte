@@ -5,6 +5,6 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-<div class={cn('text-center text-lg font-medium', className)} {...rest}>
+<div data-slot="stepper-title" class={cn('text-center text-lg font-medium', className)} {...rest}>
 	{@render children?.()}
 </div>
