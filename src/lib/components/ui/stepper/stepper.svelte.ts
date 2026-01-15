@@ -40,24 +40,22 @@ class StepperRootState {
 		const nextStep = this.steps[this.opts.step.current];
 		if (!nextStep) return;
 
-		this.opts.step.current++;
-
 		const triggerRef = nextStep.triggerRef();
-		if (!triggerRef) return;
+		if (triggerRef?.disabled) return;
 
-		triggerRef.focus();
+		this.opts.step.current++;
+		triggerRef?.focus();
 	}
 
 	navigatePrevious() {
 		const previousStep = this.steps[this.opts.step.current - 2];
 		if (!previousStep) return;
 
-		this.opts.step.current--;
-
 		const triggerRef = previousStep.triggerRef();
-		if (!triggerRef) return;
+		if (triggerRef?.disabled) return;
 
-		triggerRef.focus();
+		this.opts.step.current--;
+		triggerRef?.focus();
 	}
 }
 
@@ -116,6 +114,7 @@ class StepperItemState {
 
 type StepperItemTriggerProps = ReadableBoxedValues<{
 	ref: HTMLButtonElement | null;
+	disabled: boolean;
 	onclick: HTMLButtonAttributes['onclick'];
 	onkeydown: HTMLButtonAttributes['onkeydown'];
 }>;
@@ -139,6 +138,7 @@ class StepperItemTriggerState {
 	}
 
 	_onkeydown(e: KeyboardEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
+		if (this.opts.disabled.current) return;
 		switch (e.key) {
 			case 'ArrowRight':
 				if (this.itemState.navState.opts.orientation.current === 'vertical') return;
@@ -163,6 +163,7 @@ class StepperItemTriggerState {
 
 	props = $derived.by(() => ({
 		id: `${this.itemState.opts.id}-trigger`,
+		disabled: this.opts.disabled.current,
 		onclick: this._onclick.bind(this),
 		onkeydown: this._onkeydown.bind(this),
 		'data-state': this.itemState.state,

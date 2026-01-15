@@ -6,6 +6,7 @@
 
 	let {
 		ref = $bindable(null),
+		disabled = false,
 		onclick,
 		onkeydown,
 		class: className,
@@ -15,6 +16,7 @@
 
 	const triggerState = useStepperItemTrigger({
 		ref: box.with(() => ref),
+		disabled: box.with(() => disabled ?? false),
 		onclick: box.with(() => onclick),
 		onkeydown: box.with(() => onkeydown)
 	});
