@@ -42,7 +42,7 @@
 				<Stepper.Item>
 					<Stepper.Trigger>
 						<Stepper.Indicator>
-							<item.icon class="size-4" />
+							<item.icon />
 						</Stepper.Indicator>
 						<div class="flex flex-col">
 							<Stepper.Title>

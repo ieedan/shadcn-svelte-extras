@@ -193,7 +193,7 @@ const map: Record<string, Route[]> = {
 		},
 		{
 			name: 'Stepper',
-			description: 'A stepper component.',
+			description: 'A keyboard accessible stepper component.',
 			href: '/components/stepper',
 			specifier: 'ui/stepper',
 			source: 'src/lib/components/ui/stepper',
