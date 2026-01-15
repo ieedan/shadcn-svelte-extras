@@ -11,7 +11,7 @@
 <div
 	data-slot="stepper-separator"
 	class={cn(
-		'bg-muted data-[state=completed]:bg-primary h-1 transition-colors',
+		'bg-muted data-[state=completed]:bg-primary absolute top-[12px] h-1 w-full shrink-0 transition-colors',
 		{
 			hidden: separatorState.itemState.isLast
 		},

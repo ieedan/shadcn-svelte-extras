@@ -13,7 +13,10 @@
 <div
 	data-slot="stepper-item"
 	class={cn(
-		'',
+		'group/stepper-item relative flex',
+		{
+			'flex-1': !stepperItemState.isLast
+		},
 		className
 	)}
 	{...stepperItemState.props}

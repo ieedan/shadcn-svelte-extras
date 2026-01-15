@@ -7,3 +7,5 @@
 <Demo demo="stepper" />
 <Subheading>Installation</Subheading>
 <Add item="stepper" />
+<Subheading>Icons</Subheading>
+<Demo demo="stepper-icon" />

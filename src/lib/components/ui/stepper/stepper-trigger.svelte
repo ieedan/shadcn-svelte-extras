@@ -23,12 +23,7 @@
 <button
 	bind:this={ref}
 	data-slot="stepper-trigger"
-	class={cn(
-		'bg-primary text-primary-foreground z-10 flex size-7 items-center justify-center rounded-full ring-3 transition-colors',
-		'data-[state=inactive]:text-muted-foreground data-[state=inactive]:bg-muted ring-background ',
-		'focus-visible:ring-ring ring-offset-background ring-offset-2 focus-visible:ring-3',
-		className
-	)}
+	class={cn('group/stepper-trigger z-1', className)}
 	{...triggerState.props}
 	{...restProps}
 >

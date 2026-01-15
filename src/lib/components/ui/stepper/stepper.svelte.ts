@@ -83,9 +83,9 @@ class StepperItemState {
 		return this.step === this.rootState.steps.length;
 	});
 
-    isFirst = $derived.by(() => {
-        return this.step === 1;
-    });
+	isFirst = $derived.by(() => {
+		return this.step === 1;
+	});
 
 	state: 'active' | 'completed' | 'inactive' = $derived.by(() => {
 		if (this.step < this.rootState.opts.step.current) return 'completed';

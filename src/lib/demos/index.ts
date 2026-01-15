@@ -77,6 +77,7 @@ export const DEMOS = [
 	'snippet-variants',
 	'snippet-multiline',
 	'stepper',
+	'stepper-icon',
 	'star-rating',
 	'star-rating-custom-stars',
 	'star-rating-half-rating',
