@@ -39,11 +39,11 @@
 	<Stepper.Nav orientation="horizontal" class="w-10/12 px-4">
 		{#each steps as item (item.step)}
 			<Stepper.Item>
-				<Stepper.Trigger class="flex max-w-[150px] flex-col items-center">
+				<Stepper.Trigger class="flex lg:w-[150px] flex-col items-center">
 					<Stepper.Indicator>
 						<item.icon />
 					</Stepper.Indicator>
-					<div class="flex flex-col">
+					<div class="flex-col hidden lg:flex">
 						<Stepper.Title>
 							{item.title}
 						</Stepper.Title>
@@ -53,7 +53,7 @@
 					</div>
 				</Stepper.Trigger>
 
-				<Stepper.Separator class="left-[calc(60px)]" />
+				<Stepper.Separator class="lg:left-[calc(60px)]" />
 			</Stepper.Item>
 		{/each}
 	</Stepper.Nav>
