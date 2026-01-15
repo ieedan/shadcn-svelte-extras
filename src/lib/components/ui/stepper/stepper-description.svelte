@@ -5,6 +5,15 @@
 	let { class: className, children, ...rest }: HTMLAttributes<HTMLDivElement> = $props();
 </script>
 
-<div data-slot="stepper-description" class={cn('text-muted-foreground text-center text-sm', className)} {...rest}>
+<div
+	data-slot="stepper-description"
+	class={cn(
+		'text-muted-foreground text-sm',
+		'group-data-[orientation=vertical]/stepper-nav:text-left',
+		'group-data-[orientation=horizontal]/stepper-nav:text-center',
+		className
+	)}
+	{...rest}
+>
 	{@render children?.()}
 </div>

@@ -61,6 +61,19 @@ class StepperRootState {
 	}
 }
 
+type StepperNavProps = ReadableBoxedValues<{
+	orientation: 'horizontal' | 'vertical';
+}>;
+
+class StepperNavState {
+	constructor(readonly opts: StepperNavProps) {}
+
+	props = $derived.by(() => ({
+		'aria-orientation': this.opts.orientation.current,
+		'data-orientation': this.opts.orientation.current
+	}));
+}
+
 type StepperItemProps = {
 	id: string;
 };
@@ -70,6 +83,7 @@ class StepperItemState {
 	triggerRef = $state<HTMLButtonElement | null>(null);
 	constructor(
 		readonly opts: StepperItemProps,
+		readonly navState: StepperNavState,
 		readonly rootState: StepperRootState
 	) {
 		this.step = this.rootState.registerStep(this);
@@ -127,9 +141,21 @@ class StepperItemTriggerState {
 	_onkeydown(e: KeyboardEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
 		switch (e.key) {
 			case 'ArrowRight':
+				if (this.itemState.navState.opts.orientation.current === 'vertical') return;
 				this.itemState.rootState.navigateNext();
 				break;
 			case 'ArrowLeft':
+				if (this.itemState.navState.opts.orientation.current === 'vertical') return;
+				this.itemState.rootState.navigatePrevious();
+				break;
+			case 'ArrowDown':
+				if (this.itemState.navState.opts.orientation.current === 'horizontal') return;
+				e.preventDefault(); // prevent default scroll behavior
+				this.itemState.rootState.navigateNext();
+				break;
+			case 'ArrowUp':
+				if (this.itemState.navState.opts.orientation.current === 'horizontal') return;
+				e.preventDefault(); // prevent default scroll behavior
 				this.itemState.rootState.navigatePrevious();
 				break;
 		}
@@ -186,14 +212,19 @@ class StepperStepButtonState {
 }
 
 const StepperCtx = new Context<StepperRootState>('stepper-root-ctx');
+const StepperNavCtx = new Context<StepperNavState>('stepper-nav-ctx');
 const StepperItemCtx = new Context<StepperItemState>('stepper-item-ctx');
 
 export function useStepperRoot(props: StepperRootProps) {
 	return StepperCtx.set(new StepperRootState(props));
 }
 
+export function useStepperNav(props: StepperNavProps) {
+	return StepperNavCtx.set(new StepperNavState(props));
+}
+
 export function useStepperItem(props: StepperItemProps) {
-	return StepperItemCtx.set(new StepperItemState(props, StepperCtx.get()));
+	return StepperItemCtx.set(new StepperItemState(props, StepperNavCtx.get(), StepperCtx.get()));
 }
 
 export function useStepperItemTrigger(props: StepperItemTriggerProps) {

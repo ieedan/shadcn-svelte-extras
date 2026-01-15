@@ -11,7 +11,9 @@
 <div
 	data-slot="stepper-separator"
 	class={cn(
-		'bg-muted data-[state=completed]:bg-primary absolute top-[12px] h-1 w-full shrink-0 transition-colors',
+		'bg-muted data-[state=completed]:bg-primary absolute shrink-0 transition-colors',
+		'group-data-[orientation=horizontal]/stepper-nav:top-[12px] group-data-[orientation=horizontal]/stepper-nav:h-1 group-data-[orientation=horizontal]/stepper-nav:w-full',
+		'group-data-[orientation=vertical]/stepper-nav:top-[28px] group-data-[orientation=vertical]/stepper-nav:h-full group-data-[orientation=vertical]/stepper-nav:w-1 group-data-[orientation=vertical]/stepper-nav:left-[12px]',
 		{
 			hidden: separatorState.itemState.isLast
 		},
