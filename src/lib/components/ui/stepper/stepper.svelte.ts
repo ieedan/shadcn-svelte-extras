@@ -159,6 +159,7 @@ class StepperItemTriggerState {
 				this.itemState.rootState.navigatePrevious();
 				break;
 		}
+		this.opts.onkeydown.current?.(e);
 	}
 
 	props = $derived.by(() => ({
