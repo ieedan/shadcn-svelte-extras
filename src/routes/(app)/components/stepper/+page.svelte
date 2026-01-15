@@ -18,3 +18,5 @@
 	stepper vertical.
 </p>
 <Demo demo="stepper-vertical" />
+<Subheading>Form</Subheading>
+<Demo demo="stepper-form" class="min-h-[600px]" />

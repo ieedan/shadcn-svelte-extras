@@ -688,6 +688,16 @@ export default defineConfig({
 							path: 'src/lib/demos/stepper-icon.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/stepper-vertical.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/stepper-form.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},
