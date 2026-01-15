@@ -1,12 +1,14 @@
 <script lang="ts">
 	import * as Demo from '$lib/components/ui/demo';
+	import { cn } from '$lib/utils';
 	import { Spinner } from './ui/spinner';
 
 	type Props = {
 		demo: string;
+		class?: string;
 	};
 
-	let { demo }: Props = $props();
+	let { demo, class: className }: Props = $props();
 
 	const ComponentPromise = $derived(
 		import(`$lib/demos/${demo}.svelte`).then(({ default: Component }) => Component)
@@ -25,7 +27,7 @@
 		</Demo.ActionsGroup>
 	</Demo.ActionsGroup>
 	<Demo.Preview type="component" {demo}>
-		<div class="flex size-full items-center justify-center">
+		<div data-toc-ignore class={cn('flex size-full items-center justify-center', className)}>
 			{#await ComponentPromise}
 				<Spinner />
 			{:then Component}

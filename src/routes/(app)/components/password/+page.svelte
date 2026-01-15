@@ -41,7 +41,7 @@
 	<Link href="https://zxcvbn-ts.github.io/zxcvbn/" target="_blank">zxcvbn-ts</Link>
 </p>
 <p>
-	When a password is too weak (as determined by the <CodeSpan>minScore</CodeSpan> prop) the input is
-	marked as invalid and users will be unable to submit the form.
+	When a password is too weak (as determined by the <CodeSpan>minScore</CodeSpan> prop) the input is marked
+	as invalid and users will be unable to submit the form.
 </p>
 <Demo demo="password-strength" />

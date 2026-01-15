@@ -13,8 +13,8 @@
 	We use
 	<Link href="https://github.com/antfu-collective/package-manager-detector" target="_blank">
 		package-manager-detector
-	</Link> to ensure that every package manager is properly supported. Also giving your auto-complete
-	for your commands.
+	</Link> to ensure that every package manager is properly supported. Also giving your auto-complete for
+	your commands.
 </p>
 <Demo demo="pm-command-commands" />
 <Subheading>Variants</Subheading>

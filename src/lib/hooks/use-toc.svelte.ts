@@ -14,6 +14,7 @@ export type Heading = {
 };
 
 export const INDEX_ATTRIBUTE = 'data-toc-index';
+export const TOC_IGNORE_ATTRIBUTE = 'data-toc-ignore';
 
 /** A hook for generating a table of contents using the page content.
  *
@@ -113,7 +114,7 @@ export class UseToc {
 	}
 }
 
-const createHeading = (element: HTMLHeadingElement, index: number): Heading => {
+function createHeading(element: HTMLHeadingElement, index: number): Heading {
 	const kind = element.tagName.toLowerCase() as HeadingKind;
 
 	element.setAttribute(INDEX_ATTRIBUTE, index.toString());
@@ -128,18 +129,17 @@ const createHeading = (element: HTMLHeadingElement, index: number): Heading => {
 		active: false,
 		children: []
 	};
-};
+}
 
 /** Gets all of the headings contained in the provided element and create a table of contents.
  *
  * @param el
  * @returns
  */
-const getToc = (el: HTMLElement): Heading[] => {
-	const headings = Array.from(el.querySelectorAll('h1, h2, h3, h4, h5, h6')).map((h, i) =>
-		createHeading(h as HTMLHeadingElement, i)
-	);
-
+function getToc(el: HTMLElement): Heading[] {
+	const headings = Array.from(el.querySelectorAll('h1, h2, h3, h4, h5, h6'))
+		.map((h, i) => createHeading(h as HTMLHeadingElement, i))
+		.filter((h) => h.ref.closest(`[${TOC_IGNORE_ATTRIBUTE}]`) === null);
 	if (headings.length === 0) return [];
 
 	const toc: Heading[] = [];
@@ -157,9 +157,9 @@ const getToc = (el: HTMLElement): Heading[] => {
 	}
 
 	return toc;
-};
+}
 
-const addChildren = (headings: Heading[], base: Heading, index: number): number => {
+function addChildren(headings: Heading[], base: Heading, index: number): number {
 	let i = index;
 
 	while (i < headings.length) {
@@ -176,4 +176,4 @@ const addChildren = (headings: Heading[], base: Heading, index: number): number 
 	}
 
 	return i;
-};
+}

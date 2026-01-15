@@ -31,8 +31,8 @@
 </div>
 <Subheading>Delay</Subheading>
 <p>
-	So that you can show a status to your users <CodeSpan>UseClipboard</CodeSpan> delays resetting the
-	state of
+	So that you can show a status to your users <CodeSpan>UseClipboard</CodeSpan> delays resetting the state
+	of
 	<CodeSpan>.copied</CodeSpan>. By default this delay is set to 500ms.
 </p>
 <div>

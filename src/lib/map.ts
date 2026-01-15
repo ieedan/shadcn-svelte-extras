@@ -84,8 +84,7 @@ const map: Record<string, Route[]> = {
 			description: 'A file drop zone component.',
 			href: '/components/file-drop-zone',
 			specifier: 'ui/file-drop-zone',
-			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte',
-			status: 'Updated'
+			source: 'src/lib/components/ui/file-drop-zone/file-drop-zone.svelte'
 		},
 		{
 			name: 'Image Cropper',
@@ -191,6 +190,14 @@ const map: Record<string, Route[]> = {
 			href: '/components/star-rating',
 			specifier: 'ui/star-rating',
 			source: 'src/lib/components/ui/star-rating'
+		},
+		{
+			name: 'Stepper',
+			description: 'A keyboard accessible stepper component.',
+			href: '/components/stepper',
+			specifier: 'ui/stepper',
+			source: 'src/lib/components/ui/stepper',
+			status: 'New'
 		},
 		{
 			name: 'Tags Input',

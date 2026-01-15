@@ -670,6 +670,38 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'stepper',
+					title: 'Stepper',
+					description:
+						'A stepper component for multi-step forms, step navigation, progress indicators, wizard flows, step-by-step processes, with next/previous navigation and step validation.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/stepper'
+						},
+						{
+							path: 'src/lib/demos/stepper.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/stepper-icon.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/stepper-vertical.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/stepper-form.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'star-rating',
 					title: 'StarRating',
 					description:

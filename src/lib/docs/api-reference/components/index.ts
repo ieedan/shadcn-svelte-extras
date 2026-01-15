@@ -21,6 +21,7 @@ import { reference as PMCommandReference } from './pm-command-api';
 import { reference as NumberFieldReference } from './number-field-api';
 import { reference as SnippetReference } from './snippet-api';
 import { reference as StarRatingReference } from './star-rating-api';
+import { reference as StepperReference } from './stepper-api';
 import { reference as TagsInputReference } from './tags-input-api';
 import { reference as TerminalReference } from './terminal-api';
 import { reference as ThemeSelectorReference } from './theme-selector-api';
@@ -53,6 +54,7 @@ export const references = [
 	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
+	StepperReference,
 	TagsInputReference,
 	TerminalReference,
 	ThemeSelectorReference,
@@ -94,6 +96,7 @@ export {
 	NumberFieldReference,
 	SnippetReference,
 	StarRatingReference,
+	StepperReference,
 	TagsInputReference,
 	TerminalReference,
 	ThemeSelectorReference,

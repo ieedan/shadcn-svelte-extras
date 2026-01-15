@@ -27,6 +27,7 @@ export const REGISTRY_ITEMS = [
 	'pm-command',
 	'rename',
 	'snippet',
+	'stepper',
 	'star-rating',
 	'tags-input',
 	'terminal',
