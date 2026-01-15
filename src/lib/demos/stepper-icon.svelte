@@ -36,7 +36,7 @@
 </script>
 
 <Stepper.Root bind:step>
-	<Stepper.Nav orientation="horizontal" class="w-full px-4">
+	<Stepper.Nav orientation="horizontal" class="w-10/12 px-4">
 		{#each steps as item (item.step)}
 			<Stepper.Item>
 				<Stepper.Trigger class="flex max-w-[150px] flex-col items-center">

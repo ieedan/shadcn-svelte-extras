@@ -5,7 +5,7 @@
 </script>
 
 <Stepper.Root bind:step>
-	<div class="flex w-full flex-col gap-8 px-4">
+	<div class="flex w-10/12 flex-col gap-8 px-4">
 		<Stepper.Nav orientation="horizontal" class="justify-between">
 			{#each Array.from({ length: 4 }) as _, index (index)}
 				<Stepper.Item>
