@@ -30,7 +30,7 @@
 						onChoice?.(suggestion);
 					}}
 				>
-					<div class="flex w-full place-items-center justify-between">
+					<div class="flex w-full place-items-center justify-between gap-2">
 						<span>
 							{suggestion.label}
 						</span>
