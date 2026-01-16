@@ -51,23 +51,38 @@ export class UseClipboard {
 		}
 
 		try {
-			await navigator.clipboard.writeText(text);
-
-			this.#copiedStatus = 'success';
-
-			this.timeout = setTimeout(() => {
-				this.#copiedStatus = undefined;
-			}, this.delay);
+			// Check if modern Clipboard API is available
+			if (navigator.clipboard && window.isSecureContext) {
+				await navigator.clipboard.writeText(text);
+				this.#copiedStatus = 'success';
+			} else {
+				this.fallbackCopy(text);
+			}
 		} catch {
-			// an error can occur when not in the browser or if the user hasn't given clipboard access
 			this.#copiedStatus = 'failure';
-
-			this.timeout = setTimeout(() => {
-				this.#copiedStatus = undefined;
-			}, this.delay);
 		}
 
+		this.timeout = setTimeout(() => {
+			this.#copiedStatus = undefined;
+		}, this.delay);
+
 		return this.#copiedStatus;
+	}
+
+	private fallbackCopy(text: string): void {
+		const textArea = document.createElement('textarea');
+		textArea.value = text;
+		textArea.style.position = 'fixed';
+		textArea.style.top = '0';
+		textArea.style.left = '0';
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
+		const successful = document.execCommand('copy');
+		this.#copiedStatus = successful ? 'success' : 'failure';
+
+		document.body.removeChild(textArea);
 	}
 
 	/** true when the user has just copied to the clipboard. */
