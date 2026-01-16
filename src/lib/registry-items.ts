@@ -4,6 +4,7 @@
 */
 
 export const REGISTRY_ITEMS = [
+	'active',
 	'avatar-group',
 	'button',
 	'chat',
@@ -15,6 +16,7 @@ export const REGISTRY_ITEMS = [
 	'file-drop-zone',
 	'image-cropper',
 	'ipv4address-input',
+	'is-mac',
 	'language-switcher',
 	'light-switch',
 	'link',
@@ -26,26 +28,24 @@ export const REGISTRY_ITEMS = [
 	'phone-input',
 	'pm-command',
 	'rename',
+	'shortcut',
 	'snippet',
-	'stepper',
 	'star-rating',
+	'stepper',
 	'tags-input',
 	'terminal',
 	'theme-selector',
 	'toc',
 	'tree-view',
 	'underline-tabs',
-	'window',
-	'active',
-	'shortcut',
-	'is-mac',
 	'use-auto-scroll',
 	'use-boolean',
 	'use-clipboard',
+	'use-frecency',
 	'use-media',
 	'use-promise',
 	'use-toc',
-	'use-frecency'
+	'window'
 ] as const;
 
 export type RegistryItem = (typeof REGISTRY_ITEMS)[number];

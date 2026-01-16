@@ -10,7 +10,7 @@ export default function (): Output {
 			const demoNames = buildResult.items.flatMap((item) =>
 				item.files
 					.filter((file) => file.role === 'example')
-					.map((file) => path.parse(file.path).name)
+					.map((file) => path.parse(file.path).name).sort()
 			);
 
 			const fileContent = `/**
