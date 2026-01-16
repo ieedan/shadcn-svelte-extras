@@ -52,5 +52,5 @@ jsrepo init @ieedan/shadcn-svelte-extras
 ```bash
 jsrepo add # list
 
-jsrepo add ui/button # single
+jsrepo add button # single
 ```
