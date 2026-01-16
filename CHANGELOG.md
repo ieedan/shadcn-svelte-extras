@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.7.2
+
+### Patch Changes
+
+- feat(use-clipboard): Make copying functionality more robust in non-secure contexts ([#327](https://github.com/ieedan/shadcn-svelte-extras/pull/327))
+
 ## 6.7.1
 
 ### Patch Changes
