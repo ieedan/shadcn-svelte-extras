@@ -20,7 +20,7 @@
     const clipboard = new UseClipboard();
 \<\/script\>
 
-<button onclick={clipboard.copy('Hello, World!')}>
+<button onclick={() => clipboard.copy('Hello, World!')}>
     {#if clipboard.copied}
         Copied!
     {:else}
@@ -59,7 +59,7 @@
     const clipboard = new UseClipboard();
 \<\/script\>
 
-<button onclick={clipboard.copy('Hello, World!')}>
+<button onclick={() => clipboard.copy('Hello, World!')}>
     {#if clipboard.status === 'success'}
         Copied!
     {:else if clipboard.status === 'failure'}
