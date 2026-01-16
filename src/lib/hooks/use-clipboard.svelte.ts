@@ -50,39 +50,13 @@ export class UseClipboard {
 			clearTimeout(this.timeout);
 		}
 
-		try {
-			// Check if modern Clipboard API is available
-			if (navigator.clipboard && window.isSecureContext) {
-				await navigator.clipboard.writeText(text);
-				this.#copiedStatus = 'success';
-			} else {
-				this.fallbackCopy(text);
-			}
-		} catch {
-			this.#copiedStatus = 'failure';
-		}
+		this.#copiedStatus = await copyText(text);
 
 		this.timeout = setTimeout(() => {
 			this.#copiedStatus = undefined;
 		}, this.delay);
 
 		return this.#copiedStatus;
-	}
-
-	private fallbackCopy(text: string): void {
-		const textArea = document.createElement('textarea');
-		textArea.value = text;
-		textArea.style.position = 'fixed';
-		textArea.style.top = '0';
-		textArea.style.left = '0';
-		document.body.appendChild(textArea);
-		textArea.focus();
-		textArea.select();
-
-		const successful = document.execCommand('copy');
-		this.#copiedStatus = successful ? 'success' : 'failure';
-
-		document.body.removeChild(textArea);
 	}
 
 	/** true when the user has just copied to the clipboard. */
@@ -94,5 +68,32 @@ export class UseClipboard {
 	 * and gives a status of either `success` or `failure`. */
 	get status() {
 		return this.#copiedStatus;
+	}
+}
+
+export async function copyText(text: string): Promise<'success' | 'failure'> {
+	try {
+		if (navigator.clipboard && window.isSecureContext) {
+			await navigator.clipboard.writeText(text);
+			return 'success';
+		}
+
+		// when navigator.clipboard is unavailable we fallback to this for wider browser compatibility
+		const textArea = document.createElement('textarea');
+		textArea.value = text;
+		textArea.style.position = 'fixed';
+		textArea.style.top = '0';
+		textArea.style.left = '0';
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+
+		const successful = document.execCommand('copy');
+
+		document.body.removeChild(textArea);
+
+		return successful ? 'success' : 'failure';
+	} catch {
+		return 'failure';
 	}
 }
