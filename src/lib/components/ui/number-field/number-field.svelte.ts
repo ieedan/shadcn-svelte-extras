@@ -89,8 +89,7 @@ export class NumberFieldButton {
 	}
 
 	onpointerup(e: Parameters<NonNullable<ButtonElementProps['onpointerup']>>[0]) {
-		// we do this so that the click event is not triggered if the button was being held
-		setTimeout(() => this.rampState.reset());
+		this.rampState.reset();
 		this.opts.onpointerup.current?.(e);
 	}
 
@@ -105,7 +104,7 @@ export class NumberFieldButton {
 	}
 
 	onclick(e: Parameters<NonNullable<ButtonElementProps['onclick']>>[0]) {
-		if (this.rampState.active) return;
+		if (!this.rampState.ramping) return;
 
 		this.increment();
 

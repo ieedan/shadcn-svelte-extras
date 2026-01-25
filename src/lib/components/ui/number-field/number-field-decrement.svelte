@@ -43,7 +43,7 @@
 	bind:ref
 	data-slot="number-field-decrement"
 	aria-label="Decrease"
-	class={cn(className)}
+	class={cn('touch-manipulation', className)}
 	{...buttonState.props}
 	{...rest}
 >
