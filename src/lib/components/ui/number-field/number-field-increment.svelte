@@ -43,7 +43,7 @@
 	bind:ref
 	data-slot="number-field-increment"
 	aria-label="Increase"
-	class={cn(className)}
+	class={cn('touch-manipulation', className)}
 	{...buttonState.props}
 	{...rest}
 >
