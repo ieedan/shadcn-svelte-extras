@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 6.7.3
+
+### Patch Changes
+
+- fix(NumberField): Prevent double counts ([#330](https://github.com/ieedan/shadcn-svelte-extras/pull/330))
+
+- fix(NumberField): Add `touch-manipulation` to increment/decrement buttons to prevent zooming when double tapping on mobile devices ([#330](https://github.com/ieedan/shadcn-svelte-extras/pull/330))
+
 ## 6.7.2
 
 ### Patch Changes
