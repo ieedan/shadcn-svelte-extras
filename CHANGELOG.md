@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.7.4
+
+### Patch Changes
+
+- fix(PhoneInput): make input optional by default and add `required` prop ([#333](https://github.com/ieedan/shadcn-svelte-extras/pull/333))
+
 ## 6.7.3
 
 ### Patch Changes
