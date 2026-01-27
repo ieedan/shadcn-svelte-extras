@@ -32,6 +32,11 @@ const Root = api.createComponentReference<PhoneInputProps>({
 			bindable: true,
 			defaultValue: false
 		}),
+		required: api.createBooleanProp({
+			description: 'Whether the input is required.',
+			bindable: false,
+			defaultValue: undefined
+		}),
 		class: api.createStringProp({
 			description: 'Custom class for the input.'
 		}),
