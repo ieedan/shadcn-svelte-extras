@@ -13,6 +13,7 @@ export type PhoneInputProps = {
 	placeholder?: string;
 	disabled?: boolean;
 	readonly?: boolean;
+	required?: boolean;
 	class?: string;
 	value?: E164Number | null;
 	valid?: boolean;
