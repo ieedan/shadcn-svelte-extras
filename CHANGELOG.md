@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.7.5
+
+### Patch Changes
+
+- chore: update jsrepo ([#335](https://github.com/ieedan/shadcn-svelte-extras/pull/335))
+
 ## 6.7.4
 
 ### Patch Changes
