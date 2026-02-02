@@ -49,7 +49,7 @@
 		"eslint-plugin-svelte": "^3.14.0",
 		"globals": "^17.0.0",
 		"isomorphic-dompurify": "2.25.0",
-		"jsrepo": "3.0.10",
+		"jsrepo": "3.2.0",
 		"mode-watcher": "^1.1.0",
 		"package-manager-detector": "^1.6.0",
 		"paneforge": "^1.0.2",
