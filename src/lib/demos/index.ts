@@ -88,6 +88,8 @@ export const DEMOS = [
 	'star-rating-half-rating',
 	'star-rating-readonly',
 	'tags-input',
+	'tags-input-autocomplete',
+	'tags-input-autocomplete-restricted',
 	'tags-input-lowercase',
 	'terminal',
 	'terminal-loop',

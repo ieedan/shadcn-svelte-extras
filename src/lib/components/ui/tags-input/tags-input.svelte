@@ -2,6 +2,7 @@
 	import { cn } from '$lib/utils.js';
 	import type { TagsInputProps } from './types';
 	import TagsInputTag from './tags-input-tag.svelte';
+	import TagsInputSuggestion from './tags-input-suggestion.svelte';
 	import { untrack } from 'svelte';
 
 	const defaultValidate: TagsInputProps['validate'] = (val, tags) => {
@@ -16,6 +17,14 @@
 		return transformed;
 	};
 
+	const defaultFilter: NonNullable<TagsInputProps['filterSuggestions']> = (
+		inputValue,
+		suggestions
+	) => {
+		const lower = inputValue.toLowerCase();
+		return suggestions.filter((s) => s.toLowerCase().includes(lower));
+	};
+
 	let {
 		value = $bindable([]),
 		placeholder,
@@ -23,6 +32,9 @@
 		disabled = false,
 		validate = defaultValidate,
 		onValueChange,
+		suggestions,
+		filterSuggestions = defaultFilter,
+		restrictToSuggestions = false,
 		...rest
 	}: TagsInputProps = $props();
 
@@ -30,6 +42,30 @@
 	let tagIndex = $state<number>();
 	let invalid = $state(false);
 	let isComposing = $state(false);
+	let inputFocused = $state(false);
+	let suggestionIndex = $state<number>();
+	let listboxId = $state(`tags-input-listbox-${Math.random().toString(36).slice(2, 9)}`);
+
+	const filteredSuggestions = $derived.by(() => {
+		if (!suggestions) return [];
+
+		const available = suggestions.filter((s) => !value.includes(s));
+
+		if (inputValue.length === 0) return available;
+
+		return filterSuggestions(inputValue, available);
+	});
+
+	const showSuggestions = $derived(inputFocused && filteredSuggestions.length > 0);
+
+	$effect(() => {
+		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+		filteredSuggestions;
+
+		untrack(() => {
+			suggestionIndex = undefined;
+		});
+	});
 
 	$effect(() => {
 		// whenever input value changes reset invalid
@@ -41,8 +77,36 @@
 		});
 	});
 
+	const selectSuggestion = (val: string) => {
+		const validated = validate(val, value);
+
+		if (!validated) return;
+
+		value = [...value, validated];
+		onValueChange?.(value);
+		inputValue = '';
+		suggestionIndex = undefined;
+	};
+
 	const enter = () => {
 		if (isComposing) return;
+
+		if (showSuggestions && suggestionIndex !== undefined) {
+			selectSuggestion(filteredSuggestions[suggestionIndex]);
+			return;
+		}
+
+		if (restrictToSuggestions && suggestions) {
+			const match = suggestions.find((s) => s.toLowerCase() === inputValue.trim().toLowerCase());
+
+			if (!match) {
+				invalid = true;
+				return;
+			}
+
+			selectSuggestion(match);
+			return;
+		}
 
 		const validated = validate(inputValue, value);
 
@@ -66,6 +130,42 @@
 
 	const keydown = (e: KeyboardEvent) => {
 		const target = e.target as HTMLInputElement;
+
+		if (e.key === 'Escape') {
+			if (showSuggestions) {
+				suggestionIndex = undefined;
+				inputFocused = false;
+				target.blur();
+				return;
+			}
+		}
+
+		if (showSuggestions) {
+			if (e.key === 'ArrowDown') {
+				e.preventDefault();
+
+				if (suggestionIndex === undefined) {
+					suggestionIndex = 0;
+				} else {
+					suggestionIndex = (suggestionIndex + 1) % filteredSuggestions.length;
+				}
+
+				return;
+			}
+
+			if (e.key === 'ArrowUp') {
+				e.preventDefault();
+
+				if (suggestionIndex === undefined) {
+					suggestionIndex = filteredSuggestions.length - 1;
+				} else {
+					suggestionIndex =
+						(suggestionIndex - 1 + filteredSuggestions.length) % filteredSuggestions.length;
+				}
+
+				return;
+			}
+		}
 
 		if (e.key === 'Enter') {
 			// prevent form submit
@@ -181,12 +281,19 @@
 
 	const blur = () => {
 		tagIndex = undefined;
+		setTimeout(() => {
+			inputFocused = false;
+		}, 150);
+	};
+
+	const focus = () => {
+		inputFocused = true;
 	};
 </script>
 
 <div
 	class={cn(
-		'border-input bg-background selection:bg-primary dark:bg-input/30 flex min-h-[36px] w-full flex-wrap place-items-center gap-1 rounded-md border py-0.5 pr-1 pl-1 disabled:opacity-50 aria-disabled:cursor-not-allowed',
+		'border-input bg-background selection:bg-primary dark:bg-input/30 relative flex min-h-[36px] w-full flex-wrap place-items-center gap-1 rounded-md border py-0.5 pr-1 pl-1 disabled:opacity-50 aria-disabled:cursor-not-allowed',
 		className
 	)}
 	aria-disabled={disabled}
@@ -198,12 +305,36 @@
 		{...rest}
 		bind:value={inputValue}
 		onblur={blur}
+		onfocus={focus}
 		oncompositionstart={compositionStart}
 		oncompositionend={compositionEnd}
 		{disabled}
 		{placeholder}
 		data-invalid={invalid}
 		onkeydown={keydown}
+		role={suggestions ? 'combobox' : undefined}
+		aria-expanded={suggestions ? showSuggestions : undefined}
+		aria-autocomplete={suggestions ? 'list' : undefined}
+		aria-controls={suggestions ? listboxId : undefined}
+		aria-activedescendant={suggestionIndex !== undefined
+			? `${listboxId}-${suggestionIndex}`
+			: undefined}
 		class="placeholder:text-muted-foreground min-w-16 shrink grow basis-0 border-none bg-transparent px-2 outline-hidden focus:outline-hidden disabled:cursor-not-allowed data-[invalid=true]:text-red-500 md:text-sm"
 	/>
+	{#if showSuggestions}
+		<div
+			id={listboxId}
+			role="listbox"
+			class="bg-popover text-popover-foreground absolute top-full right-0 left-0 z-50 mt-1 flex max-h-[200px] flex-wrap gap-1 overflow-y-auto rounded-md border p-1.5 shadow-md"
+		>
+			{#each filteredSuggestions as suggestion, i (suggestion)}
+				<TagsInputSuggestion
+					id="{listboxId}-{i}"
+					value={suggestion}
+					active={i === suggestionIndex}
+					onSelect={selectSuggestion}
+				/>
+			{/each}
+		</div>
+	{/if}
 </div>
