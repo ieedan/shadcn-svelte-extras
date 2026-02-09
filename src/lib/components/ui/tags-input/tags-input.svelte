@@ -44,7 +44,7 @@
 	let isComposing = $state(false);
 	let inputFocused = $state(false);
 	let suggestionIndex = $state<number>();
-	let listboxId = $state(`tags-input-listbox-${Math.random().toString(36).slice(2, 9)}`);
+	let listboxId = $props.id();
 
 	const filteredSuggestions = $derived.by(() => {
 		if (!suggestions) return [];
