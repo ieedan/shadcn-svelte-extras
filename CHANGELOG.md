@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.7.6
+
+### Patch Changes
+
+- fix(file-drop-zone): Ensure `accept` handles extension patterns correctly ([#339](https://github.com/ieedan/shadcn-svelte-extras/pull/339))
+
 ## 6.7.5
 
 ### Patch Changes
