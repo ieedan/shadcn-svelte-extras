@@ -71,7 +71,8 @@
 		filteredSuggestions;
 
 		untrack(() => {
-			suggestionIndex = undefined;
+			// default to first suggestion for better ux
+			suggestionIndex = filteredSuggestions.length > 0 ? 0 : undefined;
 		});
 	});
 
