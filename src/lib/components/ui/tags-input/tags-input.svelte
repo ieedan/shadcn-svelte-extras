@@ -325,7 +325,7 @@
 		<div
 			id={listboxId}
 			role="listbox"
-			class="bg-popover text-popover-foreground absolute top-full right-0 left-0 z-50 mt-1 flex max-h-[200px] flex-wrap gap-1 overflow-y-auto rounded-md border p-1.5 shadow-md"
+			class="bg-popover text-popover-foreground absolute top-full right-0 left-0 z-50 mt-1 max-h-50 overflow-y-auto rounded-md border p-1 shadow-md"
 		>
 			{#each filteredSuggestions as suggestion, i (suggestion)}
 				<TagsInputSuggestion
