@@ -45,6 +45,14 @@
 	let inputFocused = $state(false);
 	let suggestionIndex = $state<number>();
 	let listboxId = $props.id();
+	let listboxEl = $state<HTMLElement>();
+
+	$effect(() => {
+		if (suggestionIndex !== undefined && listboxEl) {
+			const item = listboxEl.querySelector(`#${CSS.escape(listboxId)}-${suggestionIndex}`);
+			item?.scrollIntoView({ block: 'nearest' });
+		}
+	});
 
 	const filteredSuggestions = $derived.by(() => {
 		if (!suggestions) return [];
@@ -323,6 +331,7 @@
 	/>
 	{#if showSuggestions}
 		<div
+			bind:this={listboxEl}
 			id={listboxId}
 			role="listbox"
 			class="bg-popover text-popover-foreground absolute top-full right-0 left-0 z-50 mt-1 max-h-50 overflow-y-auto rounded-md border p-1 shadow-md"
