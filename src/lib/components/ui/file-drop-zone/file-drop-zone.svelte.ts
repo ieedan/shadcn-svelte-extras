@@ -74,7 +74,7 @@ class FileDropZoneState {
 
 		const isAcceptable = acceptedTypes.some((pattern) => {
 			// check extension like .mp4
-			if (fileType.startsWith('.')) {
+			if (fileType === '' || pattern.startsWith('.')) {
 				return fileName.endsWith(pattern);
 			}
 
