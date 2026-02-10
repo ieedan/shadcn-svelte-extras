@@ -64,7 +64,9 @@
 		return filterSuggestions(inputValue, available);
 	});
 
-	const showSuggestions = $derived(inputFocused && filteredSuggestions.length > 0);
+	const showSuggestions = $derived(
+		inputFocused && filteredSuggestions.length > 0 && tagIndex === undefined
+	);
 
 	$effect(() => {
 		// eslint-disable-next-line @typescript-eslint/no-unused-expressions
