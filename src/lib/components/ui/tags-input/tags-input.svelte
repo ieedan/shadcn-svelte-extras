@@ -184,6 +184,16 @@
 
 			if (isComposing) return;
 
+			// delete focused tag
+			if (tagIndex !== undefined) {
+				deleteIndex(tagIndex);
+
+				// focus previous tag or reset
+				const prev = tagIndex - 1;
+				tagIndex = prev < 0 ? undefined : prev;
+				return;
+			}
+
 			enter();
 			return;
 		}
