@@ -767,6 +767,16 @@ export default defineConfig({
 							path: 'src/lib/demos/tags-input-lowercase.svelte',
 							role: 'example',
 							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/tags-input-autocomplete.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/tags-input-autocomplete-restricted.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
 						}
 					]
 				},

@@ -19,6 +19,19 @@ const Root = api.createComponentReference<TagsInputPropsWithoutHTML>({
 		onValueChange: api.createFunctionProp({
 			description: 'A function called when the value changes',
 			type: '(tags: string[]) => void'
+		}),
+		suggestions: api.createAnyProp({
+			description: 'A list of autocomplete suggestions to display.',
+			type: 'string[]'
+		}),
+		filterSuggestions: api.createFunctionProp({
+			description:
+				'A custom filter function for suggestions. Defaults to case-insensitive contains.',
+			type: '(inputValue: string, suggestions: string[]) => string[]'
+		}),
+		restrictToSuggestions: api.createBooleanProp({
+			description: 'When true, only values from the suggestions list can be added.',
+			defaultValue: false
 		})
 	}
 });

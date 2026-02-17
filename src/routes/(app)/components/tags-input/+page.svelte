@@ -34,3 +34,13 @@
 	Pass the function to the <CodeSpan>{'<TagsInput/>'}</CodeSpan> component:
 </p>
 <Demo demo="tags-input-lowercase" />
+<Subheading>Autocomplete</Subheading>
+<p>
+	Provide a list of <CodeSpan>suggestions</CodeSpan> to show an autocomplete dropdown as the user types.
+</p>
+<Demo demo="tags-input-autocomplete" />
+<Subheading>Restricted to Suggestions</Subheading>
+<p>
+	Set <CodeSpan>restrictToSuggestions</CodeSpan> to only allow values from the suggestions list.
+</p>
+<Demo demo="tags-input-autocomplete-restricted" />
