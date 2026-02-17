@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.8.0
+
+### Minor Changes
+
+- feat(TagsInput): Add autocomplete support with `suggestions`, `filterSuggestions`, and `restrictToSuggestions` props ([#337](https://github.com/ieedan/shadcn-svelte-extras/pull/337))
+
 ## 6.7.6
 
 ### Patch Changes
