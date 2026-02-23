@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.8.1
+
+### Patch Changes
+
+- fix: Add `class` prop to `Chat.Bubble` ([`33bc90f`](https://github.com/ieedan/shadcn-svelte-extras/commit/33bc90fe81ae0117cb8668c7a631142cf3480f62))
+
 ## 6.8.0
 
 ### Minor Changes
