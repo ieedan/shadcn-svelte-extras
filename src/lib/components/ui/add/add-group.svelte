@@ -6,10 +6,7 @@
 </script>
 
 <div
-	class={cn(
-		'border-border bg-background flex h-9 items-center rounded-md border',
-		className
-	)}
+	class={cn('border-border bg-background flex h-9 items-center rounded-md border', className)}
 	{...rest}
 >
 	{@render children?.()}
