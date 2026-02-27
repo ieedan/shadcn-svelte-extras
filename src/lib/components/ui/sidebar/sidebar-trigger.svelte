@@ -10,6 +10,7 @@
 </script>
 
 <Button
+	bind:ref
 	type="button"
 	data-sidebar="trigger"
 	data-slot="sidebar-trigger"

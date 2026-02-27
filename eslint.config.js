@@ -49,7 +49,6 @@ export default ts.config(
 			}
 		},
 		rules: {
-			'svelte/no-at-html-tags': 'warn',
 			'svelte/no-useless-mustaches': 'off'
 		}
 	}

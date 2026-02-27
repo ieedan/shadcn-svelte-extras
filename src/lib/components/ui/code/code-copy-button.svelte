@@ -16,6 +16,7 @@
 </script>
 
 <CopyButton
+	bind:ref
 	class={cn('absolute top-2 right-2', className)}
 	text={copyButton.code}
 	{variant}

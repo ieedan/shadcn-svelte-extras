@@ -8,6 +8,6 @@
 	}: DropdownMenuPrimitive.RootProps = $props();
 </script>
 
-<DropdownMenuPrimitive.Root {...restProps}>
+<DropdownMenuPrimitive.Root bind:open {...restProps}>
 	{@render children?.()}
 </DropdownMenuPrimitive.Root>

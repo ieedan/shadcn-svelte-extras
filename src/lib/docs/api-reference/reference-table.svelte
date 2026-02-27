@@ -92,6 +92,7 @@
 										align="center"
 										class="code-tooltip flex place-items-center justify-center p-0"
 									>
+										<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 										{@html tooltipHighlighted}
 									</HoverCard.Content>
 								</HoverCard.Root>
