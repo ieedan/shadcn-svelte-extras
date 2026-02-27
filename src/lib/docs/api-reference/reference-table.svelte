@@ -39,10 +39,10 @@
 		</Alert.Title>
 	</Alert.Root>
 {:else if Object.entries(component.props).length > 0}
-	<div class="border-border bg-card overflow-hidden rounded-lg border">
-		<table class={cn('w-full', 'bg-card')}>
+	<div class="border-border bg-card rounded-lg border">
+		<table class={cn('w-full', '')}>
 			<thead>
-				<tr class="bg-muted border-border border-b">
+				<tr class="border-border border-b">
 					<th class="text-foreground px-4 py-2 text-left text-sm font-semibold">Prop</th>
 					<th class="text-foreground px-4 py-2 text-left text-sm font-semibold">Type</th>
 					<th class="text-foreground px-4 py-2 text-left text-sm font-semibold">Default</th>
