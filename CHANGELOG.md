@@ -1,5 +1,13 @@
 # shadcn-svelte-extras
 
+## 6.8.3
+
+### Patch Changes
+
+- chore: bump deps ([#353](https://github.com/ieedan/shadcn-svelte-extras/pull/353))
+
+- update(button): Update button to include the `icon-*` size variants ([#353](https://github.com/ieedan/shadcn-svelte-extras/pull/353))
+
 ## 6.8.2
 
 ### Patch Changes
