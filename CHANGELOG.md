@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.8.2
+
+### Patch Changes
+
+- feat(modal): Add `NestedRoot` component to allow for nested modals ([#351](https://github.com/ieedan/shadcn-svelte-extras/pull/351))
+
 ## 6.8.1
 
 ### Patch Changes
