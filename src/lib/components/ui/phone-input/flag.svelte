@@ -24,6 +24,7 @@
 >
 	{#await getFlag(country) then flag}
 		{#if flag}
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html flag}
 		{/if}
 	{/await}
