@@ -64,12 +64,16 @@ class PasswordRootState {
 	passwordState = $state(defaultPasswordState);
 	strength = $state<ZxcvbnResult | undefined>(undefined);
 	strengthScore = $state<0 | 1 | 2 | 3 | 4>(0);
+	strengthLoading = $state(false);
+	#requestId = 0;
 
 	constructor(readonly opts: PasswordRootStateProps) {}
 
 	resetStrength() {
+		this.#requestId += 1;
 		this.strength = undefined;
 		this.strengthScore = 0;
+		this.strengthLoading = false;
 	}
 
 	async updateStrength() {
@@ -79,14 +83,25 @@ class PasswordRootState {
 			return;
 		}
 
+		const requestId = ++this.#requestId;
+		this.strengthLoading = true;
+
 		try {
 			const zxcvbn = await loadZxcvbnRunner();
 			const result = zxcvbn(password);
+			if (requestId !== this.#requestId) return;
+
 			this.strength = result;
 			this.strengthScore = result.score as 0 | 1 | 2 | 3 | 4;
 		} catch {
+			if (requestId !== this.#requestId) return;
+
 			this.strength = undefined;
 			this.strengthScore = 0;
+		} finally {
+			if (requestId === this.#requestId) {
+				this.strengthLoading = false;
+			}
 		}
 	}
 }
@@ -120,6 +135,7 @@ class PasswordInputState {
 			// if the password is empty, we let the `required` attribute handle the validation
 			if (
 				this.root.passwordState.value !== '' &&
+				!this.root.strengthLoading &&
 				this.root.strengthScore < this.root.opts.minScore.current
 			) {
 				this.opts.ref.current?.setCustomValidity('Password is too weak');
@@ -131,6 +147,7 @@ class PasswordInputState {
 
 	props = $derived.by(() => ({
 		'aria-invalid':
+			!this.root.strengthLoading &&
 			this.root.strengthScore < this.root.opts.minScore.current &&
 			this.root.passwordState.tainted &&
 			this.root.passwordState.strengthMounted
