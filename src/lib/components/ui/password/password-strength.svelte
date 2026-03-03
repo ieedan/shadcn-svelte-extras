@@ -10,7 +10,7 @@
 
 	const state = usePasswordStrength();
 
-	const score = $derived(state.strength.score);
+	const score = $derived(state.score);
 
 	$effect(() => {
 		strength = state.strength;
@@ -31,7 +31,7 @@
 </script>
 
 <Meter.Root
-	value={state.strength.score}
+	value={score}
 	class={cn('bg-accent relative h-[6px] w-full gap-1 overflow-hidden rounded-full', className)}
 	min={0}
 	max={4}

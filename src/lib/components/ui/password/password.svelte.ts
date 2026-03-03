@@ -1,19 +1,41 @@
 import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
-import { zxcvbn, zxcvbnOptions } from '@zxcvbn-ts/core';
-import * as zxcvbnCommonPackage from '@zxcvbn-ts/language-common';
-import * as zxcvbnEnPackage from '@zxcvbn-ts/language-en';
+import type { ZxcvbnResult } from '@zxcvbn-ts/core';
 
-const passwordOptions = {
-	translations: zxcvbnEnPackage.translations,
-	graphs: zxcvbnCommonPackage.adjacencyGraphs,
-	dictionary: {
-		...zxcvbnCommonPackage.dictionary,
-		...zxcvbnEnPackage.dictionary
+type ZxcvbnCoreModule = typeof import('@zxcvbn-ts/core');
+type ZxcvbnCommonModule = typeof import('@zxcvbn-ts/language-common');
+type ZxcvbnEnModule = typeof import('@zxcvbn-ts/language-en');
+type ZxcvbnRunner = ZxcvbnCoreModule['zxcvbn'];
+
+let zxcvbnRunnerPromise: Promise<ZxcvbnRunner> | null = null;
+
+const loadZxcvbnRunner = async (): Promise<ZxcvbnRunner> => {
+	if (!zxcvbnRunnerPromise) {
+		zxcvbnRunnerPromise = Promise.all([
+			import('@zxcvbn-ts/core'),
+			import('@zxcvbn-ts/language-common'),
+			import('@zxcvbn-ts/language-en')
+		])
+			.then(([core, common, en]: [ZxcvbnCoreModule, ZxcvbnCommonModule, ZxcvbnEnModule]) => {
+				core.zxcvbnOptions.setOptions({
+					translations: en.translations,
+					graphs: common.adjacencyGraphs,
+					dictionary: {
+						...common.dictionary,
+						...en.dictionary
+					}
+				});
+
+				return core.zxcvbn;
+			})
+			.catch((error: unknown) => {
+				zxcvbnRunnerPromise = null;
+				throw error;
+			});
 	}
-};
 
-zxcvbnOptions.setOptions(passwordOptions);
+	return zxcvbnRunnerPromise;
+};
 
 type PasswordRootStateProps = WritableBoxedValues<{
 	hidden: boolean;
@@ -40,11 +62,33 @@ const defaultPasswordState: PasswordState = {
 
 class PasswordRootState {
 	passwordState = $state(defaultPasswordState);
+	strength = $state<ZxcvbnResult | undefined>(undefined);
+	strengthScore = $state<0 | 1 | 2 | 3 | 4>(0);
 
 	constructor(readonly opts: PasswordRootStateProps) {}
 
-	// only re-run when the password changes
-	strength = $derived.by(() => zxcvbn(this.passwordState.value));
+	resetStrength() {
+		this.strength = undefined;
+		this.strengthScore = 0;
+	}
+
+	async updateStrength() {
+		const password = this.passwordState.value;
+		if (!this.passwordState.strengthMounted || password.length === 0) {
+			this.resetStrength();
+			return;
+		}
+
+		try {
+			const zxcvbn = await loadZxcvbnRunner();
+			const result = zxcvbn(password);
+			this.strength = result;
+			this.strengthScore = result.score as 0 | 1 | 2 | 3 | 4;
+		} catch {
+			this.strength = undefined;
+			this.strengthScore = 0;
+		}
+	}
 }
 
 type PasswordInputStateProps = WritableBoxedValues<{
@@ -65,6 +109,7 @@ class PasswordInputState {
 				if (this.root.passwordState.value !== this.opts.value.current) {
 					this.root.passwordState.tainted = true;
 					this.root.passwordState.value = this.opts.value.current;
+					void this.root.updateStrength();
 				}
 			}
 		);
@@ -75,7 +120,7 @@ class PasswordInputState {
 			// if the password is empty, we let the `required` attribute handle the validation
 			if (
 				this.root.passwordState.value !== '' &&
-				this.root.strength.score < this.root.opts.minScore.current
+				this.root.strengthScore < this.root.opts.minScore.current
 			) {
 				this.opts.ref.current?.setCustomValidity('Password is too weak');
 			} else {
@@ -86,7 +131,7 @@ class PasswordInputState {
 
 	props = $derived.by(() => ({
 		'aria-invalid':
-			this.root.strength.score < this.root.opts.minScore.current &&
+			this.root.strengthScore < this.root.opts.minScore.current &&
 			this.root.passwordState.tainted &&
 			this.root.passwordState.strengthMounted
 	}));
@@ -121,16 +166,22 @@ class PasswordCopyState {
 class PasswordStrengthState {
 	constructor(readonly root: PasswordRootState) {
 		this.root.passwordState.strengthMounted = true;
+		void this.root.updateStrength();
 
 		$effect(() => {
 			return () => {
 				this.root.passwordState.strengthMounted = false;
+				this.root.resetStrength();
 			};
 		});
 	}
 
 	get strength() {
 		return this.root.strength;
+	}
+
+	get score() {
+		return this.root.strengthScore;
 	}
 }
 
