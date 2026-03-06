@@ -4,17 +4,18 @@
 	import type { PasswordStrengthProps } from './types.js';
 	import { Meter } from 'bits-ui';
 	import { cn } from '$lib/utils.js';
+	import { box } from 'svelte-toolbelt';
 
-	// eslint-disable-next-line no-useless-assignment
 	let { strength = $bindable(), class: className }: PasswordStrengthProps = $props();
 
-	const state = usePasswordStrength();
-
-	const score = $derived(state.score);
-
-	$effect(() => {
-		strength = state.strength;
+	usePasswordStrength({
+		strength: box.with(
+			() => strength,
+			(v) => (strength = v)
+		)
 	});
+
+	const score = $derived(strength?.score ?? 0);
 
 	const color = tv({
 		base: '',
