@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.8.4
+
+### Patch Changes
+
+- fix(Password): Lazy load `zxcvbn` so that users not making use of the `Password.Strength` component don't need to import it ([#357](https://github.com/ieedan/shadcn-svelte-extras/pull/357))
+
 ## 6.8.3
 
 ### Patch Changes
