@@ -196,8 +196,7 @@ const map: Record<string, Route[]> = {
 			description: 'A keyboard accessible stepper component.',
 			href: '/components/stepper',
 			specifier: 'ui/stepper',
-			source: 'src/lib/components/ui/stepper',
-			status: 'New'
+			source: 'src/lib/components/ui/stepper'
 		},
 		{
 			name: 'Tags Input',
