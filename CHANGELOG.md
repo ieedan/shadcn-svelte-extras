@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.8.5
+
+### Patch Changes
+
+- fix(tree-view): various styling and accessibility fixes ([`ac3e1a8`](https://github.com/ieedan/shadcn-svelte-extras/commit/ac3e1a85ed00cccf7a5e3fee89e72bd955f9a0b9))
+
 ## 6.8.4
 
 ### Patch Changes
