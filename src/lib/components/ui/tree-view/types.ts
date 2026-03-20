@@ -7,12 +7,14 @@ export type TreeViewRootProps = HTMLAttributes<HTMLDivElement>;
 export type TreeViewFolderProps = WithChildren<{
 	name: string;
 	open?: boolean;
+	selected?: boolean;
 	class?: string;
 	icon?: Snippet<[{ name: string; open: boolean }]>;
 }>;
 
 export type TreeViewFilePropsWithoutHTML = WithChildren<{
 	name: string;
+	selected?: boolean;
 	icon?: Snippet<[{ name: string }]>;
 }>;
 

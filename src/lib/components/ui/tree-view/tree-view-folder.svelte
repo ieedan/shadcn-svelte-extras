@@ -8,13 +8,14 @@
 	let {
 		name,
 		open = $bindable(true),
+		selected,
 		class: className,
 		icon,
 		children
 	}: TreeViewFolderProps = $props();
 </script>
 
-<Collapsible.Root bind:open>
+<Collapsible.Root bind:open role="treeitem" aria-selected={selected} aria-expanded={open}>
 	<Collapsible.Trigger class={cn('flex place-items-center gap-1', className)}>
 		{#if icon}
 			{@render icon({ name, open })}
@@ -28,7 +29,7 @@
 	<Collapsible.Content class="ml-2 border-l">
 		<div class="relative flex place-items-start">
 			<div class="bg-border mx-2 h-full w-px"></div>
-			<div class="flex flex-1 flex-col">
+			<div role="group" class="flex flex-1 flex-col">
 				{@render children?.()}
 			</div>
 		</div>
