@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '@fontsource-variable/geist-mono';
-	import '@fontsource-variable/geist';
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import { page } from '$app/state';

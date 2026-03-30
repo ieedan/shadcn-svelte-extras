@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '@fontsource-variable/geist-mono';
-	import '@fontsource-variable/geist';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import { map, type Route } from '$lib/map';

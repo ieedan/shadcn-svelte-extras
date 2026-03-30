@@ -2,6 +2,9 @@
 
 @import 'tw-animate-css';
 
+@import '@fontsource-variable/geist-mono';
+@import '@fontsource-variable/geist';
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
