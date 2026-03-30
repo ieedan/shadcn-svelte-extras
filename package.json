@@ -32,7 +32,7 @@
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^4.0.2",
 		"@shikijs/themes": "^4.0.2",
-		"@sveltejs/adapter-vercel": "^6.3.3",
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/kit": "^2.55.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.2.2",
@@ -77,6 +77,7 @@
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "8.0.3",
 		"vite-plugin-transform-lucide-imports": "^0.3.0",
+		"wrangler": "^4.78.0",
 		"yeezy-dates": "^1.1.0"
 	},
 	"pnpm": {
