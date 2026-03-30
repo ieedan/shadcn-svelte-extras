@@ -48,7 +48,6 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.16.0",
 		"globals": "^17.4.0",
-		"isomorphic-dompurify": "3.7.1",
 		"jsrepo": "3.7.0",
 		"mode-watcher": "^1.1.0",
 		"package-manager-detector": "^1.6.0",
