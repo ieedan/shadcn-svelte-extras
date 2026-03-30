@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 6.9.0
+
+### Minor Changes
+
+- upgrade(phone-input): Upgrade to `svelte-tel-input@4` ([#364](https://github.com/ieedan/shadcn-svelte-extras/pull/364))
+
+### Patch Changes
+
+- chore: bump deps ([#366](https://github.com/ieedan/shadcn-svelte-extras/pull/366))
+
 ## 6.8.5
 
 ### Patch Changes
