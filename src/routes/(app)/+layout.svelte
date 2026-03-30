@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '@fontsource-variable/geist-mono';
-	import '@fontsource-variable/geist';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import { map, type Route } from '$lib/map';
@@ -16,7 +14,6 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import { LightSwitch } from '$lib/components/ui/light-switch';
 	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
-	import { MetaTags } from '$lib/components/site/meta-tags';
 	import { dev } from '$app/environment';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
 
@@ -44,64 +41,7 @@
 	};
 
 	const currentDoc = $derived(getCurrentDoc(page.url));
-
-	const components = $derived(
-		Array.from(Object.entries(map))
-			.filter(([cat]) => cat === 'Components')
-			.flatMap(([_, components]) =>
-				components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
-			)
-			.join(', ')
-	);
 </script>
-
-<MetaTags
-	title={currentDoc ? `${currentDoc.doc.name} - shadcn-svelte-extras` : 'shadcn-svelte-extras'}
-	description={currentDoc?.doc.name === 'Introduction'
-		? `Finish your app with awesome svelte components like ${components}`
-		: currentDoc?.doc.description}
-	keywords={[
-		'shadcn-svelte',
-		'extras',
-		'svelte',
-		'components',
-		'cli',
-		'jsrepo',
-		'mcp',
-		'phone-input',
-		'tags-input',
-		'star-rating',
-		'file-drop-zone'
-	]}
-	twitter={{
-		cardType: 'summary_large_image',
-		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
-		description:
-			currentDoc?.doc.name === 'Introduction'
-				? `Finish your app with awesome svelte components like ${components}`
-				: currentDoc?.doc.description,
-		image: 'https://shadcn-svelte-extras.com/og.png',
-		creator: '@ieeeedan'
-	}}
-	openGraph={{
-		url: page.url.toString(),
-		type: 'website',
-		title: `${currentDoc?.doc.name} - shadcn-svelte-extras`,
-		description:
-			currentDoc?.doc.name === 'Introduction'
-				? `Finish your app with awesome svelte components like ${components}`
-				: currentDoc?.doc.description,
-		siteName: 'shadcn-svelte-extras',
-		images: [
-			{
-				url: 'https://shadcn-svelte-extras.com/og.png',
-				width: 2014,
-				height: 1143,
-				alt: 'shadcn-svelte-extras - Finish your app.'
-			}
-		]
-	}}
-/>
 
 <svelte:window
 	use:shortcut={{
