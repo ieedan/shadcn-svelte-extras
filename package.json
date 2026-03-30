@@ -32,7 +32,7 @@
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^4.0.2",
 		"@shikijs/themes": "^4.0.2",
-		"@sveltejs/adapter-vercel": "^6.3.3",
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/kit": "^2.55.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.2.2",
@@ -48,7 +48,6 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.16.0",
 		"globals": "^17.4.0",
-		"isomorphic-dompurify": "2.25.0",
 		"jsrepo": "3.7.0",
 		"mode-watcher": "^1.1.0",
 		"package-manager-detector": "^1.6.0",
@@ -77,6 +76,7 @@
 		"vaul-svelte": "1.0.0-next.7",
 		"vite": "8.0.3",
 		"vite-plugin-transform-lucide-imports": "^0.3.0",
+		"wrangler": "^4.78.0",
 		"yeezy-dates": "^1.1.0"
 	},
 	"pnpm": {

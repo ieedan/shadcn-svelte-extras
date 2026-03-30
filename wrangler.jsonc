@@ -1,0 +1,14 @@
+{
+	// https://svelte.dev/docs/kit/adapter-cloudflare
+	// Cloudflare Pages: build command `pnpm build`, output `.svelte-kit/cloudflare`
+	// CLI preview after build: `pnpm exec wrangler pages dev .svelte-kit/cloudflare`
+	"name": "shadcn-svelte-extras",
+	"compatibility_date": "2025-11-24",
+	// Required by SvelteKit on Cloudflare Pages when libraries use AsyncLocalStorage
+	"compatibility_flags": ["nodejs_als"],
+	"main": ".svelte-kit/cloudflare/_worker.js",
+	"assets": {
+		"binding": "ASSETS",
+		"directory": ".svelte-kit/cloudflare"
+	}
+}
