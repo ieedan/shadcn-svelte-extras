@@ -34,12 +34,12 @@
 	let open = $state(false);
 	let selectedValue = $state(false);
 
-	const selectCountry = (country: Country) => {
+	function selectCountry(country: Country) {
 		selected = country.iso2;
 		selectedValue = true;
 		open = false;
 		onselect?.(selected);
-	};
+	}
 </script>
 
 <Popover.Root bind:open>
@@ -61,6 +61,7 @@
 	</Popover.Trigger>
 	<Popover.Content
 		class="w-[300px] p-0"
+		align="start"
 		onCloseAutoFocus={(e) => {
 			if (selectedValue) {
 				selectedValue = false;
@@ -69,7 +70,7 @@
 		}}
 	>
 		<Command.Root>
-			<Command.Input placeholder="Search country..." />
+			<Command.Input placeholder="Search..." />
 			<Command.List>
 				<ScrollArea class="h-72">
 					<Command.Empty>No country found.</Command.Empty>

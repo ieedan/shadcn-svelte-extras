@@ -40,11 +40,10 @@ const Root = api.createComponentReference<PhoneInputProps>({
 		class: api.createStringProp({
 			description: 'Custom class for the input.'
 		}),
-		value: api.createAnyProp({
+		value: api.createStringProp({
 			description: 'The phone number value (E.164 format).',
 			bindable: true,
-			type: 'E164Number | null',
-			defaultValue: 'null'
+			defaultValue: '""'
 		}),
 		valid: api.createBooleanProp({
 			description: 'Whether the current value is valid.',
