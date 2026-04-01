@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 6.10.0
+
+### Minor Changes
+
+- breaking(code): No longer sanitize shiki html output ([#370](https://github.com/ieedan/shadcn-svelte-extras/pull/370))
+
+### Patch Changes
+
+- chore: bump deps ([#370](https://github.com/ieedan/shadcn-svelte-extras/pull/370))
+
 ## 6.9.0
 
 ### Minor Changes
