@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import * as FieldSet from '$lib/components/ui/field-set';

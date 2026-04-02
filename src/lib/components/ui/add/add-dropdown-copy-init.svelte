@@ -12,7 +12,7 @@
 
 	const dropdownCopyInitState = useAddDropdownCopyInit();
 
-	const mergedProps = mergeProps(rest, dropdownCopyInitState.props);
+	const mergedProps = $derived(mergeProps(rest, dropdownCopyInitState.props));
 </script>
 
 <DropdownMenu.Item class={cn('flex flex-col place-items-start! gap-1', className)} {...mergedProps}>

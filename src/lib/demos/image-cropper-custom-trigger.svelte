@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as ImageCropper from '$lib/components/ui/image-cropper';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import EditIcon from '@lucide/svelte/icons/edit';
 	import { toast } from 'svelte-sonner';
 

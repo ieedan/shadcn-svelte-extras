@@ -24,13 +24,6 @@ const map: Record<string, Route[]> = {
 	],
 	Components: [
 		{
-			name: 'Avatar Group',
-			description: 'A composable avatar grouping component.',
-			href: '/components/avatar-group',
-			specifier: 'ui/avatar-group',
-			source: 'src/lib/components/ui/avatar-group'
-		},
-		{
 			name: 'Button',
 			description: 'An extended button component.',
 			href: '/components/button',

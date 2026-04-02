@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as Modal from '$lib/components/ui/modal';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
+	import { buttonVariants } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
 </script>

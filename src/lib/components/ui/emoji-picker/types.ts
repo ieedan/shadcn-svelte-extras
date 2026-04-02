@@ -3,7 +3,7 @@ import type { WithChildren, WithoutChild, WithoutChildren } from 'bits-ui';
 import type { Command as CommandPrimitive } from 'bits-ui';
 import type { Snippet } from 'svelte';
 import type { HTMLAttributes } from 'svelte/elements';
-import type { ButtonElementProps } from '../button';
+import type { ButtonProps } from '$lib/components/button.svelte';
 
 export type SelectedEmoji = {
 	emoji: string;
@@ -90,5 +90,4 @@ export type EmojiPickerSkinPropsWithoutHTML = {
 	previewEmoji?: string;
 };
 
-export type EmojiPickerSkinProps = EmojiPickerSkinPropsWithoutHTML &
-	WithoutChildren<ButtonElementProps>;
+export type EmojiPickerSkinProps = EmojiPickerSkinPropsWithoutHTML & WithoutChildren<ButtonProps>;

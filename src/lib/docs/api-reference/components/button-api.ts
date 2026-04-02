@@ -1,7 +1,11 @@
 import * as api from '../api-reference';
-import type { ButtonPropsWithoutHTML } from '$lib/components/ui/button/button.svelte';
+import type { ButtonProps } from '$lib/components/button.svelte';
+import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
+import { type WithChildren } from 'bits-ui';
 
-const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
+const Root = api.createComponentReference<
+	WithChildren<Omit<ButtonProps, keyof HTMLButtonAttributes | keyof HTMLAnchorAttributes>>
+>({
 	description: 'The root button component.',
 	props: {
 		ref: api.createAnyProp({
@@ -31,10 +35,6 @@ const Root = api.createComponentReference<ButtonPropsWithoutHTML>({
 		onClickPromise: api.createFunctionProp({
 			description: 'A function to await while showing a loading state when the button is clicked.',
 			type: '(e: MouseEvent) => Promise<void>'
-		}),
-		'data-slot': api.createStringProp({
-			description: 'The data-slot attribute of the button.',
-			defaultValue: 'button'
 		})
 	}
 });

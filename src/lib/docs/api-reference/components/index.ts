@@ -1,7 +1,6 @@
 import * as casing from '../../../utils/casing.js';
 
 // import all references
-import { reference as AvatarGroupReference } from './avatar-group-api';
 import { reference as ButtonReference } from './button-api';
 import { reference as ChatReference } from './chat-api';
 import { reference as CodeReference } from './code-api';
@@ -34,7 +33,6 @@ import { reference as PasswordReference } from './password-api';
 import { reference as RenameReference } from './rename-api';
 
 export const references = [
-	AvatarGroupReference,
 	ButtonReference,
 	ChatReference,
 	CodeReference,
@@ -76,7 +74,6 @@ export function getReference(name: string) {
 }
 
 export {
-	AvatarGroupReference,
 	ButtonReference,
 	ChatReference,
 	CodeReference,

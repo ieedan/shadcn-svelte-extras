@@ -5,7 +5,7 @@
 	import { page } from '$app/state';
 	import { checkIsActive } from '$lib/actions/active.svelte';
 	import PageWrapper from '$lib/components/page-wrapper.svelte';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as Icons from '$lib/components/icons';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import { commandContext } from '$lib/context';

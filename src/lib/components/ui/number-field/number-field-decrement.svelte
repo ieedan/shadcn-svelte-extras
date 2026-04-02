@@ -1,6 +1,6 @@
 <script lang="ts">
 	import MinusIcon from '@lucide/svelte/icons/minus';
-	import { Button } from '../button';
+	import Button from '$lib/components/button.svelte';
 	import { useNumberFieldButton } from './number-field.svelte.js';
 	import type { NumberFieldButtonProps } from './types.js';
 	import { cn } from '$lib/utils';
@@ -45,7 +45,7 @@
 	aria-label="Decrease"
 	class={cn('touch-manipulation', className)}
 	{...buttonState.props}
-	{...rest}
+	{...rest /* eslint-disable-line @typescript-eslint/no-explicit-any */ as any}
 >
 	{#if children}
 		{@render children?.()}

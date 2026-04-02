@@ -7,7 +7,7 @@
 </script>
 
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';

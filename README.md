@@ -11,7 +11,6 @@ Turn key shadcn-svelte components to help you finish your app.
 
 | Name                                                                               |                                                                                         |
 | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [AvatarGroup](https://shadcn-svelte-extras.com/components/avatar-group)            | A composable avatar grouping component                                                  |
 | [Button](https://shadcn-svelte-extras.com/components/button)                       | An extended button component                                                            |
 | [Chat](https://shadcn-svelte-extras.com/components/chat)                           | A component for creating live chats                                                     |
 | [Code](https://shadcn-svelte-extras.com/components/code)                           | A code component                                                                        |

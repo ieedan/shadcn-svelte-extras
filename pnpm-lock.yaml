@@ -123,6 +123,9 @@ importers:
       runed:
         specifier: ^0.37.1
         version: 0.37.1(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(zod@4.3.6)
+      shadcn-svelte:
+        specifier: ^1.2.6
+        version: 1.2.6(svelte@5.55.1)
       shiki:
         specifier: ^4.0.2
         version: 4.0.2
@@ -2347,6 +2350,9 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  node-fetch-native@1.6.7:
+    resolution: {integrity: sha512-g9yhqoedzIUm0nTnTqAQvueMPVOuIY16bqgAJJC8XOOubYFNwz6IER9qs0Gq2Xd0+CecCKFjtdDTMA4u4xG06Q==}
+
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -2698,6 +2704,12 @@ packages:
 
   set-cookie-parser@3.0.1:
     resolution: {integrity: sha512-n7Z7dXZhJbwuAHhNzkTti6Aw9QDDjZtm3JTpTGATIdNzdQz5GuFs22w90BcvF4INfnrL5xrX3oGsuqO5Dx3A1Q==}
+
+  shadcn-svelte@1.2.6:
+    resolution: {integrity: sha512-nI2ybAZwQwgejl+8Z7Y6c/aG1QBXTJqK+oCAOdh1N7L3djiWV7ru9Ox6DSq7Bs+EsSPTIzp0dkr7DzSv/0qdGA==}
+    hasBin: true
+    peerDependencies:
+      svelte: ^5.0.0
 
   sharp@0.34.5:
     resolution: {integrity: sha512-Ou9I5Ft9WNcCbXrU9cMgPBcCK8LiwLqcbywW3t4oDV37n1pzpuNLsYiAV8eODnjbtQlSDwZ2cUEeQz4E54Hltg==}
@@ -5228,6 +5240,8 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  node-fetch-native@1.6.7: {}
+
   node-fetch@2.7.0(encoding@0.1.13):
     dependencies:
       whatwg-url: 5.0.0
@@ -5514,6 +5528,14 @@ snapshots:
   semver@7.7.3: {}
 
   set-cookie-parser@3.0.1: {}
+
+  shadcn-svelte@1.2.6(svelte@5.55.1):
+    dependencies:
+      commander: 14.0.3
+      node-fetch-native: 1.6.7
+      postcss: 8.5.8
+      svelte: 5.55.1
+      tailwind-merge: 3.5.0
 
   sharp@0.34.5:
     dependencies:

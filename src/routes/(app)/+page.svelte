@@ -16,7 +16,7 @@
 	import ChatExample from '$lib/demos/chat.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import { ArrowRightIcon } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>

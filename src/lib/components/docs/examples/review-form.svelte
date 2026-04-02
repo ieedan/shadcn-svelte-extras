@@ -1,5 +1,5 @@
 <script>
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import { Textarea } from '$lib/components/ui/textarea';
 	import { Label } from '$lib/components/ui/label';
 	import * as Card from '$lib/components/ui/card';

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Popover from '$lib/components/ui/popover';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as Command from '$lib/components/ui/command';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import CheckIcon from '@lucide/svelte/icons/check';

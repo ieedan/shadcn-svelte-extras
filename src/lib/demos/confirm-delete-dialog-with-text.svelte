@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import { ConfirmDeleteDialog, confirmDelete } from '$lib/components/ui/confirm-delete-dialog';
 	import { sleep } from '$lib/utils/sleep';
 	import { toast } from 'svelte-sonner';

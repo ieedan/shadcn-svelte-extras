@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import { cn } from '$lib/utils.js';
 	import { commandContext } from '$lib/context';

@@ -24,6 +24,7 @@ export default defineConfig({
 		tags: ['svelte', 'shadcn', 'typescript', 'components', 'utilities'],
 		defaultPaths: {
 			ui: '$lib/components/ui',
+			component: '$lib/components',
 			block: '$lib/components',
 			hook: '$lib/hooks',
 			action: '$lib/actions',
@@ -35,55 +36,6 @@ export default defineConfig({
 		items: [
 			// ui
 			...([
-				{
-					name: 'avatar-group',
-					title: 'AvatarGroup',
-					description:
-						'A composable avatar group component for displaying multiple user avatars, profile pictures, or user images in a stacked or grouped layout with overflow indicators.',
-					type: 'ui',
-					files: [
-						{
-							path: 'src/lib/components/ui/avatar-group'
-						},
-						{
-							path: 'src/lib/demos/avatar-group.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/avatar-group-vertical.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
-					]
-				},
-				{
-					name: 'button',
-					title: 'Button',
-					description:
-						'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
-					type: 'ui',
-					files: [
-						{
-							path: 'src/lib/components/ui/button'
-						},
-						{
-							path: 'src/lib/demos/button.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/button-loading.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/button-on-click-promise.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
-					]
-				},
 				{
 					name: 'chat',
 					title: 'Chat',
@@ -904,6 +856,37 @@ export default defineConfig({
 				}
 			] satisfies RegistryItem[]),
 
+			// components
+			...([
+				{
+					name: 'button',
+					title: 'Button',
+					description:
+						'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
+					type: 'component',
+					files: [
+						{
+							path: 'src/lib/components/button.svelte'
+						},
+						{
+							path: 'src/lib/demos/button.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/button-loading.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/button-on-click-promise.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				}
+			] satisfies RegistryItem[]),
+
 			// actions
 			...([
 				{
@@ -1187,6 +1170,16 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/avatar'
+						}
+					]
+				},
+				{
+					name: 'shadcn-svelte-button',
+					title: 'shadcn-svelte/Button',
+					type: 'component',
+					files: [
+						{
+							path: 'src/lib/components/ui/button'
 						}
 					]
 				},

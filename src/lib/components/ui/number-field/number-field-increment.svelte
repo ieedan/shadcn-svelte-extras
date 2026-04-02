@@ -1,6 +1,6 @@
 <script lang="ts">
 	import PlusIcon from '@lucide/svelte/icons/plus';
-	import { Button } from '../button';
+	import Button from '$lib/components/button.svelte';
 	import { useNumberFieldButton } from './number-field.svelte.js';
 	import type { NumberFieldButtonProps } from './types.js';
 	import { cn } from '$lib/utils';
@@ -45,7 +45,7 @@
 	aria-label="Increase"
 	class={cn('touch-manipulation', className)}
 	{...buttonState.props}
-	{...rest}
+	{...rest /* eslint-disable-line @typescript-eslint/no-explicit-any */ as any}
 >
 	{#if children}
 		{@render children?.()}
