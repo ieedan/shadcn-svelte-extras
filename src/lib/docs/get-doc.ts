@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
 
-function slugFromPath(path: string) {
+export function slugFromPath(path: string) {
 	return path.replace('/content/', '').replace('.md', '').replace('/index', '').trim();
 }
 
