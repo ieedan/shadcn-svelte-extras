@@ -6,6 +6,7 @@ description: 'A phone number input component.'
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -31,3 +32,5 @@ description: 'A phone number input component.'
 ## Acknowledgements
 
 This component takes inspiration from [omeralpi/shadcn-phone-input](https://github.com/omeralpi/shadcn-phone-input).
+
+<ApiReference />

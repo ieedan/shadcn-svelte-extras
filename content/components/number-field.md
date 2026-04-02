@@ -6,6 +6,7 @@ description: "A component for incrementing and decrementing a value."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="number-field" />
@@ -22,3 +23,5 @@ Use the `step` prop to increment or decrement the value by a specific amount, in
 
 
 <Demo demo="number-field-step" />
+
+<ApiReference />

@@ -8,6 +8,7 @@ description: "A file tree component."
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import treeViewFileCustomRaw from '$lib/docs/tree-view-file-custom.svelte?raw';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="tree-view" />
@@ -28,3 +29,5 @@ If you are using custom icons in a project we recommend you wrap the folder/file
 <div>
 	<Code lang="svelte" highlight={[[13, 21]]} code={treeViewFileCustomRaw} />
 </div>
+
+<ApiReference />

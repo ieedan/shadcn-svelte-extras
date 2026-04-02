@@ -8,6 +8,7 @@ description: "A tags input component."
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import customValidateRaw from '$lib/docs/tags-input-custom-validate.ts?raw';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="tags-input" />
@@ -64,3 +65,5 @@ Set `restrictToSuggestions` to only allow values from the suggestions list.
 
 
 <Demo demo="tags-input-autocomplete-restricted" />
+
+<ApiReference />

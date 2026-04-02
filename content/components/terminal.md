@@ -6,6 +6,7 @@ description: "An implementation of the MacOS terminal. Useful for showcasing a c
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="terminal" />
@@ -65,3 +66,5 @@ You can make the terminal preview continuously loop using the `<Terminal.Loop/>`
 ## Acknowledgements
 
 This component was inspired by [magicuidesign/magicui](https://magicui.design/docs/components/terminal).
+
+<ApiReference />

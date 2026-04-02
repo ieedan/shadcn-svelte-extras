@@ -6,6 +6,7 @@ description: "Click to select the theme."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="theme-selector" />
@@ -17,3 +18,5 @@ description: "Click to select the theme."
 ## Ghost
 
 <Demo demo="theme-selector-variants" />
+
+<ApiReference />

@@ -6,6 +6,7 @@ description: "An IPv4 address input with all the behavior you'd expect."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -27,3 +28,5 @@ description: "An IPv4 address input with all the behavior you'd expect."
 ## Validation
 
 <Demo demo="ipv4address-input-valid" />
+
+<ApiReference />

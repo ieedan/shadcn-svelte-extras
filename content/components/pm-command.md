@@ -6,6 +6,7 @@ description: "A package manager command component."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="pm-command" />
@@ -40,3 +41,5 @@ You can also customize the agents to your liking by providing your own array of 
 	`agents` prop.
 
 <Demo demo="pm-command-customize-agents" />
+
+<ApiReference />

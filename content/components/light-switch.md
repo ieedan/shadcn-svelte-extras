@@ -6,6 +6,7 @@ description: "Click and change the theme."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="light-switch" />
@@ -17,3 +18,5 @@ description: "Click and change the theme."
 ## Ghost
 
 <Demo demo="light-switch-variants" />
+
+<ApiReference />

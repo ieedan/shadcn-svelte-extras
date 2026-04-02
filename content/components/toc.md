@@ -6,6 +6,7 @@ description: "A component for displaying a table of contents."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="toc" />
@@ -39,3 +40,4 @@ description: "A component for displaying a table of contents."
 <Toc.Root toc={toc.current}/>
 ```
 
+<ApiReference />

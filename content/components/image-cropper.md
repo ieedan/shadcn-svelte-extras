@@ -6,6 +6,7 @@ description: 'A component for uploading and resizing images.'
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="image-cropper" />
@@ -54,3 +55,5 @@ description: 'A component for uploading and resizing images.'
 ## Acknowledgements
 
 This component was inspired by [sujjeee/shadcn-image-cropper](https://github.com/sujjeee/shadcn-image-cropper).
+
+<ApiReference />

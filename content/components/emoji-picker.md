@@ -6,6 +6,7 @@ description: 'A composable emoji picker component.'
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="emoji-picker" />
@@ -56,3 +57,5 @@ amount of uses will be sorted by the last time they were used.
 ## Acknowledgements
 
 The API and style of this component takes inspiration from [Frimousse](https://frimousse.liveblocks.io/).
+
+<ApiReference />

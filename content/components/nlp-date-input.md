@@ -6,6 +6,7 @@ description: "A natural language date input with suggestions."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 
@@ -27,3 +28,5 @@ You may want to limit what suggestions are actually presented to the user so tha
 
 
 <Demo demo="nlp-date-input-min-max" />
+
+<ApiReference />

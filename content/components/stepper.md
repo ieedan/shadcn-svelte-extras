@@ -6,6 +6,7 @@ description: "A keyboard accessible stepper component."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="stepper" />
@@ -59,3 +60,5 @@ Create a multi-step form with the `Stepper` component.
 
 
 <Demo demo="stepper-form" class="min-h-[600px]" />
+
+<ApiReference />

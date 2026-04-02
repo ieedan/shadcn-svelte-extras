@@ -6,6 +6,7 @@ description: "Components for creating live chats."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="chat" />
@@ -43,3 +44,4 @@ description: "Components for creating live chats."
 
 This component takes inspiration from [jakobhoeg/shadcn-chat](https://github.com/jakobhoeg/shadcn-chat).
 
+<ApiReference />

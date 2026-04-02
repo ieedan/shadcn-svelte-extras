@@ -6,6 +6,7 @@ description: "A component for renaming stuff."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="rename" />
@@ -58,3 +59,5 @@ You can put the `Rename` component into edit mode by using the `Edit` component 
 
 
 <Demo demo="rename-context-menu" />
+
+<ApiReference />

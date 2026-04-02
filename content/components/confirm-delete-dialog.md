@@ -6,6 +6,7 @@ description: "A dialog for confirming delete actions."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="confirm-delete-dialog" />
@@ -54,3 +55,5 @@ Sometimes it's nice to give the user the ability to skip the confirmation. In th
 
 
 <Demo demo="confirm-delete-dialog-skip-confirmation" />
+
+<ApiReference />

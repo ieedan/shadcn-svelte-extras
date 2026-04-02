@@ -8,6 +8,7 @@ description: "A code component."
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="code" />
@@ -53,3 +54,5 @@ The highlighter and languages can be configured from `shiki.ts`.
 ## Code Block
 
 <Demo demo="code-block" />
+
+<ApiReference />

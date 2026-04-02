@@ -6,6 +6,7 @@ description: "A responsive dialog component."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="modal" />
@@ -37,3 +38,4 @@ The modal component can be composed just like a dialog or drawer component.
 </Modal.Root>
 ```
 
+<ApiReference />

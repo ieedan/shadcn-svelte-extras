@@ -8,6 +8,7 @@ description: 'A file drop zone component.'
 	import Add from '$lib/components/add.svelte';
 	import Code from '$lib/components/docs/code.svelte';
 	import schemaRaw from '$lib/docs/file-drop-zone-schema.ts?raw';
+	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="file-drop-zone" />
@@ -86,3 +87,5 @@ export const actions = {
 	}
 };
 ```
+
+<ApiReference />

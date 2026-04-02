@@ -3,6 +3,8 @@ import {
 	GITHUB_DOC_BLOB_BASE,
 	REGISTRY_ITEM_URL_BASE
 } from '$lib/constants';
+import { getReference } from '$lib/docs/api-reference/components';
+import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -184,6 +186,20 @@ function stripCodeDocImport(markdown: string): string {
 	);
 }
 
+function stripApiReferenceImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import ApiReference from '\$lib\/docs\/api-reference\/api-reference\.svelte';\s*\n/gm,
+		''
+	);
+}
+
+function replaceApiReferenceTags(markdown: string, docSlug: string | undefined): string {
+	const slug = docSlug?.match(/^components\/(.+)$/)?.[1];
+	const ref = slug ? getReference(slug) : undefined;
+	const replacement = ref ? referenceBundleToMarkdown(ref) : '';
+	return markdown.replace(/<ApiReference\s*\/>/g, replacement);
+}
+
 function stripRawImports(markdown: string, vars: Set<string>): string {
 	let out = markdown;
 	for (const v of vars) {
@@ -198,7 +214,7 @@ function stripRawImports(markdown: string, vars: Set<string>): string {
 const DEMO_TAG = /<Demo\s+demo="([^"]+)"[^/]*\/>/g;
 const ADD_TAG = /<Add\s+item="([^"]+)"([^/]*)\/>/g;
 
-export function transformDocMarkdown(markdown: string): string {
+export function transformDocMarkdown(markdown: string, docSlug?: string): string {
 	const rawImportMap = parseRawImportMap(markdown);
 	const usedRawVars = new Set<string>();
 
@@ -213,8 +229,10 @@ export function transformDocMarkdown(markdown: string): string {
 	});
 
 	merged = replaceCodeTags(merged, rawImportMap, usedRawVars);
+	merged = replaceApiReferenceTags(merged, docSlug);
 	merged = stripDemoAddImports(merged);
 	merged = stripCodeDocImport(merged);
+	merged = stripApiReferenceImport(merged);
 	merged = stripRawImports(merged, usedRawVars);
 	merged = removeEmptyScriptBlocks(merged);
 

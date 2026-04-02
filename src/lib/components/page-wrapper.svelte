@@ -10,9 +10,6 @@
 	import * as Toc from '$lib/components/ui/toc';
 	import Button from '$lib/components/button.svelte';
 	import * as Tooltip from './ui/tooltip';
-	import { page } from '$app/state';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import { getReference } from '$lib/docs/api-reference/components';
 	import CarbonAds from './carbon-ads.svelte';
 	import CopyMarkdownButton from './copy-markdown-button.svelte';
 
@@ -106,13 +103,6 @@
 			{/if}
 			<div bind:this={toc.ref} style="display: contents;" class="page-wrapper">
 				{@render children()}
-				{#if page.url.pathname.startsWith('/components')}
-					{@const componentName = page.url.pathname.slice('/components/'.length)}
-					{@const reference = getReference(componentName)}
-					{#if reference}
-						<ApiReference {reference} />
-					{/if}
-				{/if}
 			</div>
 		</div>
 		<Navigation.Root class="pt-10">
@@ -134,7 +124,7 @@
 	</div>
 	<div class="hidden xl:block">
 		<div class="sticky top-20 -mt-6 h-[calc(100vh-7rem)] pt-4">
-			<div class="no-scrollbar h-full overflow-auto pb-10">
+			<div class="no-scrollbar h-full pb-10">
 				<div class="space-y-2">
 					<span class="text-foreground text-sm font-medium">On This Page</span>
 					<Toc.Root toc={toc.current} />
