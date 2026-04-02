@@ -5,14 +5,29 @@ import {
 } from '$lib/constants';
 import { getReference } from '$lib/docs/api-reference/components';
 import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
-import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { resolveCommand } from 'package-manager-detector/commands';
 
-const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
+/** Bundled at build time so doc `<Code />` expansion works on Cloudflare (no `node:fs`). */
+const rawLibLoaders = import.meta.glob('/src/lib/**/*', {
+	query: '?raw',
+	import: 'default'
+}) as Record<string, () => Promise<string>>;
 
 const DEFAULT_REGISTRY = '@ieedan/shadcn-svelte-extras';
+
+function normalizeLibRelPath(path: string): string {
+	return path.replace(/\\/g, '/').replace(/^\/+/, '');
+}
+
+/** Match Vite glob keys (`/src/lib/...`) to a repo-relative path (`src/lib/...`). */
+function findRawLoader(relPath: string): (() => Promise<string>) | undefined {
+	const n = normalizeLibRelPath(relPath);
+	for (const key of [`/${n}`, n]) {
+		const load = rawLibLoaders[key];
+		if (load) return load;
+	}
+	return undefined;
+}
 
 function demoSourcePath(slug: string): string {
 	return `src/lib/demos/${slug}.svelte`;
@@ -76,22 +91,22 @@ function removeEmptyScriptBlocks(markdown: string): string {
 	});
 }
 
-/** Map `$lib/…` specifiers (without `?raw`) to absolute repo paths. */
-function resolveLibImport(specifier: string): string {
+/** Map `$lib/…` specifiers (without `?raw`) to `src/lib/…` paths (Vite glob keys). */
+function resolveLibImportPath(specifier: string): string {
 	if (specifier.startsWith('$lib/')) {
-		return join(REPO_ROOT, 'src/lib', specifier.slice('$lib/'.length));
+		return `src/lib/${specifier.slice('$lib/'.length)}`.replace(/\\/g, '/');
 	}
 	throw new Error(`Unsupported raw import (expected \$lib/…): ${specifier}`);
 }
 
-/** Variable name → filesystem path for `import x from '…?raw'` in doc markdown. */
+/** Variable name → `src/lib/…` path for `import x from '…?raw'` in doc markdown. */
 function parseRawImportMap(markdown: string): Map<string, string> {
 	const map = new Map<string, string>();
 	const re = /^\s*import\s+(\w+)\s+from\s+['"]([^'"]+)\?raw['"];\s*$/gm;
 	let m: RegExpExecArray | null;
 	while ((m = re.exec(markdown)) !== null) {
 		const [, name, spec] = m;
-		map.set(name, resolveLibImport(spec));
+		map.set(name, resolveLibImportPath(spec));
 	}
 	return map;
 }
@@ -148,19 +163,40 @@ function formatCodeFence(lang: string, content: string, highlight?: number[][]):
 	return '```' + lang + meta + '\n' + body + '\n```\n';
 }
 
-function replaceCodeTags(
+async function replaceAsync(
+	str: string,
+	re: RegExp,
+	replacer: (match: RegExpExecArray) => Promise<string>
+): Promise<string> {
+	const flags = re.flags.includes('g') ? re.flags : `${re.flags}g`;
+	const globalRe = new RegExp(re.source, flags);
+	const parts: string[] = [];
+	let lastIndex = 0;
+	let m: RegExpExecArray | null;
+	while ((m = globalRe.exec(str)) !== null) {
+		parts.push(str.slice(lastIndex, m.index));
+		parts.push(await replacer(m));
+		lastIndex = globalRe.lastIndex;
+	}
+	parts.push(str.slice(lastIndex));
+	return parts.join('');
+}
+
+async function replaceCodeTags(
 	markdown: string,
 	rawMap: Map<string, string>,
 	usedRawVars: Set<string>
-): string {
-	const expand = (attrs: string): string | null => {
+): Promise<string> {
+	const expand = async (attrs: string): Promise<string | null> => {
 		const parsed = parseCodeAttrs(attrs);
 		if (!parsed) return null;
-		const filePath = rawMap.get(parsed.codeVar);
-		if (!filePath) return null;
+		const relPath = rawMap.get(parsed.codeVar);
+		if (!relPath) return null;
+		const load = findRawLoader(relPath);
+		if (!load) return null;
 		let fileContent: string;
 		try {
-			fileContent = readFileSync(filePath, 'utf8');
+			fileContent = await load();
 		} catch {
 			return null;
 		}
@@ -168,13 +204,13 @@ function replaceCodeTags(
 		return formatCodeFence(parsed.lang, fileContent, parsed.highlight);
 	};
 
-	let out = markdown.replace(/<div>\s*<Code\s+([\s\S]*?)\/\s*>\s*<\/div>/gi, (full, attrs: string) => {
-		return expand(attrs) ?? full;
-	});
+	let out = await replaceAsync(
+		markdown,
+		/<div>\s*<Code\s+([\s\S]*?)\/\s*>\s*<\/div>/gi,
+		async (m) => (await expand(m[1]!)) ?? m[0]!
+	);
 
-	out = out.replace(/<Code\s+([\s\S]*?)\/\s*>/g, (full, attrs: string) => {
-		return expand(attrs) ?? full;
-	});
+	out = await replaceAsync(out, /<Code\s+([\s\S]*?)\/\s*>/g, async (m) => (await expand(m[1]!)) ?? m[0]!);
 
 	return out;
 }
@@ -214,7 +250,7 @@ function stripRawImports(markdown: string, vars: Set<string>): string {
 const DEMO_TAG = /<Demo\s+demo="([^"]+)"[^/]*\/>/g;
 const ADD_TAG = /<Add\s+item="([^"]+)"([^/]*)\/>/g;
 
-export function transformDocMarkdown(markdown: string, docSlug?: string): string {
+export async function transformDocMarkdown(markdown: string, docSlug?: string): Promise<string> {
 	const rawImportMap = parseRawImportMap(markdown);
 	const usedRawVars = new Set<string>();
 
@@ -228,7 +264,7 @@ export function transformDocMarkdown(markdown: string, docSlug?: string): string
 		return formatAddBlock(item, withoutRegistry);
 	});
 
-	merged = replaceCodeTags(merged, rawImportMap, usedRawVars);
+	merged = await replaceCodeTags(merged, rawImportMap, usedRawVars);
 	merged = replaceApiReferenceTags(merged, docSlug);
 	merged = stripDemoAddImports(merged);
 	merged = stripCodeDocImport(merged);
