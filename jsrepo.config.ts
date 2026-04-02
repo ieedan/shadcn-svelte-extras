@@ -1,6 +1,8 @@
+import { execSync } from 'node:child_process';
 import { defineConfig, InvalidImportWarning, RegistryItem } from 'jsrepo';
 import addType from './.jsrepo/outputs/add-type';
 import demoType from './.jsrepo/outputs/demo-type';
+import registryJson from './.jsrepo/outputs/registry-json';
 
 export default defineConfig({
 	registries: ['@registry/kit'],
@@ -33,7 +35,7 @@ export default defineConfig({
 			lib: '$lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
-		outputs: [addType(), demoType()],
+		outputs: [addType(), demoType(), registryJson()],
 		items: [
 			// ui
 			...([
@@ -1153,8 +1155,8 @@ export default defineConfig({
 			...([
 				// ui
 				{
-					name: 'alert-dialog',
-					title: 'AlertDialog',
+					name: 'shadcn-svelte-alert-dialog',
+					title: 'shadcn-svelte/alert-dialog',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1164,8 +1166,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'avatar',
-					title: 'Avatar',
+					name: 'shadcn-svelte-avatar',
+					title: 'shadcn-svelte/avatar',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1176,7 +1178,7 @@ export default defineConfig({
 				},
 				{
 					name: 'shadcn-svelte-button',
-					title: 'shadcn-svelte/Button',
+					title: 'shadcn-svelte/button',
 					type: 'component',
 					files: [
 						{
@@ -1185,8 +1187,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'collapsible',
-					title: 'Collapsible',
+					name: 'shadcn-svelte-collapsible',
+					title: 'shadcn-svelte/collapsible',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1196,8 +1198,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'command',
-					title: 'Command',
+					name: 'shadcn-svelte-command',
+					title: 'shadcn-svelte/command',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1207,8 +1209,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'dialog',
-					title: 'Dialog',
+					name: 'shadcn-svelte-dialog',
+					title: 'shadcn-svelte/dialog',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1218,8 +1220,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'drawer',
-					title: 'Drawer',
+					name: 'shadcn-svelte-drawer',
+					title: 'shadcn-svelte/drawer',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1229,8 +1231,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'dropdown-menu',
-					title: 'DropdownMenu',
+					name: 'shadcn-svelte-dropdown-menu',
+					title: 'shadcn-svelte/dropdown-menu',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1240,8 +1242,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'input',
-					title: 'Input',
+					name: 'shadcn-svelte-input',
+					title: 'shadcn-svelte/input',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1251,8 +1253,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'input-group',
-					title: 'InputGroup',
+					name: 'shadcn-svelte-input-group',
+					title: 'shadcn-svelte/input-group',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1262,8 +1264,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'popover',
-					title: 'Popover',
+					name: 'shadcn-svelte-popover',
+					title: 'shadcn-svelte/popover',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1273,8 +1275,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'scroll-area',
-					title: 'ScrollArea',
+					name: 'shadcn-svelte-scroll-area',
+					title: 'shadcn-svelte/scroll-area',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1284,8 +1286,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'spinner',
-					title: 'Spinner',
+					name: 'shadcn-svelte-spinner',
+					title: 'shadcn-svelte/spinner',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1295,8 +1297,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'tabs',
-					title: 'Tabs',
+					name: 'shadcn-svelte-tabs',
+					title: 'shadcn-svelte/tabs',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1306,8 +1308,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'textarea',
-					title: 'Textarea',
+					name: 'shadcn-svelte-textarea',
+					title: 'shadcn-svelte/textarea',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1317,8 +1319,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'toggle',
-					title: 'Toggle',
+					name: 'shadcn-svelte-toggle',
+					title: 'shadcn-svelte/toggle',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1328,8 +1330,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'tooltip',
-					title: 'Tooltip',
+					name: 'shadcn-svelte-tooltip',
+					title: 'shadcn-svelte/tooltip',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -1350,6 +1352,16 @@ export default defineConfig({
 			}
 
 			handler(warning);
+		}
+	},
+	hooks: {
+		after: async (args) => {
+			if (args.command !== 'build') return;
+			execSync('pnpm exec shadcn-svelte registry build', {
+				cwd: args.options.cwd,
+				stdio: 'inherit',
+				env: process.env
+			});
 		}
 	}
 });

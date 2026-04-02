@@ -46,4 +46,4 @@ export const safeParseIPv4Address = (
 
 export { IPv4AddressInput };
 
-export type * from './types';
+export type { IPv4AddressInputProps, IPv4AddressInputPropsWithoutHTML } from './types';
