@@ -27,7 +27,8 @@
 			"name": "button",
 			"type": "registry:component",
 			"registryDependencies": [
-				"./utils.json"
+				"./shadcn-svelte-button.json",
+				"./shadcn-svelte-spinner.json"
 			],
 			"files": [
 				{
@@ -36,10 +37,7 @@
 				}
 			],
 			"title": "Button",
-			"description": "An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2"
-			]
+			"description": "An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements."
 		},
 		{
 			"name": "casing",
