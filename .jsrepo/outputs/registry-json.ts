@@ -39,10 +39,24 @@ function registryDisplayName(fullName: string): string {
 	return fullName;
 }
 
+/** In-registry deps as `./name.json` so `shadcn add https://host/r/item.json` resolves siblings by URL (not components.json `registry` index). */
+function toRelativeRegistryDep(dep: string, itemNames: Set<string>): string {
+	if (
+		dep.startsWith('http://') ||
+		dep.startsWith('https://') ||
+		dep.startsWith('./') ||
+		dep.startsWith('../')
+	) {
+		return dep;
+	}
+	return itemNames.has(dep) ? `./${dep}.json` : dep;
+}
+
 export default function (): Output {
 	return {
 		output: async (buildResult, { cwd }) => {
 			const outPath = path.join(cwd, 'registry.json');
+			const itemNames = new Set(buildResult.items.map((i) => i.name));
 
 			const items = buildResult.items
 				.map((item) => {
@@ -56,10 +70,14 @@ export default function (): Output {
 
 					if (files.length === 0) return null;
 
+					const registryDependencies = (item.registryDependencies ?? []).map((dep) =>
+						toRelativeRegistryDep(dep, itemNames)
+					);
+
 					const entry: Record<string, unknown> = {
 						name: item.name,
 						type: mapRegistryType(item.type),
-						registryDependencies: item.registryDependencies ?? [],
+						registryDependencies,
 						files
 					};
 

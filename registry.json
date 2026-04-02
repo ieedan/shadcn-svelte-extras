@@ -27,8 +27,8 @@
 			"name": "button",
 			"type": "registry:component",
 			"registryDependencies": [
-				"shadcn-svelte-button",
-				"shadcn-svelte-spinner"
+				"./shadcn-svelte-button.json",
+				"./shadcn-svelte-spinner.json"
 			],
 			"files": [
 				{
@@ -43,7 +43,7 @@
 			"name": "casing",
 			"type": "registry:lib",
 			"registryDependencies": [
-				"is-letter"
+				"./is-letter.json"
 			],
 			"files": [
 				{
@@ -56,10 +56,10 @@
 			"name": "chat",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-avatar",
-				"utils",
-				"button",
-				"use-auto-scroll"
+				"./shadcn-svelte-avatar.json",
+				"./utils.json",
+				"./button.json",
+				"./use-auto-scroll.json"
 			],
 			"files": [
 				{
@@ -102,9 +102,9 @@
 			"name": "code",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"copy-button",
-				"utils",
-				"button"
+				"./copy-button.json",
+				"./utils.json",
+				"./button.json"
 			],
 			"files": [
 				{
@@ -152,8 +152,8 @@
 			"name": "confirm-delete-dialog",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-alert-dialog",
-				"shadcn-svelte-input"
+				"./shadcn-svelte-alert-dialog.json",
+				"./shadcn-svelte-input.json"
 			],
 			"files": [
 				{
@@ -172,10 +172,10 @@
 			"name": "copy-button",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"button",
-				"use-clipboard",
-				"utils",
-				"shadcn-svelte-button"
+				"./button.json",
+				"./use-clipboard.json",
+				"./utils.json",
+				"./shadcn-svelte-button.json"
 			],
 			"files": [
 				{
@@ -202,11 +202,11 @@
 			"name": "emoji-picker",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"shadcn-svelte-command",
-				"casing",
-				"button",
-				"use-frecency"
+				"./utils.json",
+				"./shadcn-svelte-command.json",
+				"./casing.json",
+				"./button.json",
+				"./use-frecency.json"
 			],
 			"files": [
 				{
@@ -260,7 +260,7 @@
 			"name": "field-set",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -299,7 +299,7 @@
 			"name": "file-drop-zone",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -340,10 +340,10 @@
 			"name": "image-cropper",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"button",
-				"utils",
-				"shadcn-svelte-dialog",
-				"shadcn-svelte-avatar"
+				"./button.json",
+				"./utils.json",
+				"./shadcn-svelte-dialog.json",
+				"./shadcn-svelte-avatar.json"
 			],
 			"files": [
 				{
@@ -409,8 +409,8 @@
 			"name": "ipv4-address",
 			"type": "registry:lib",
 			"registryDependencies": [
-				"is-number",
-				"result"
+				"./is-number.json",
+				"./result.json"
 			],
 			"files": [
 				{
@@ -423,9 +423,9 @@
 			"name": "ipv4address-input",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"is-number",
-				"utils",
-				"ipv4-address"
+				"./is-number.json",
+				"./utils.json",
+				"./ipv4-address.json"
 			],
 			"files": [
 				{
@@ -487,9 +487,9 @@
 			"name": "language-switcher",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-dropdown-menu",
-				"shadcn-svelte-button",
-				"utils"
+				"./shadcn-svelte-dropdown-menu.json",
+				"./shadcn-svelte-button.json",
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -515,7 +515,7 @@
 			"name": "light-switch",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"button"
+				"./button.json"
 			],
 			"files": [
 				{
@@ -542,7 +542,7 @@
 			"name": "link",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -561,7 +561,7 @@
 			"name": "meter",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -583,8 +583,8 @@
 			"name": "modal",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-dialog",
-				"shadcn-svelte-drawer"
+				"./shadcn-svelte-dialog.json",
+				"./shadcn-svelte-drawer.json"
 			],
 			"files": [
 				{
@@ -639,7 +639,7 @@
 			"name": "nlp-date-input",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-command"
+				"./shadcn-svelte-command.json"
 			],
 			"files": [
 				{
@@ -665,9 +665,9 @@
 			"name": "number-field",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"button",
-				"utils",
-				"use-ramp"
+				"./button.json",
+				"./utils.json",
+				"./use-ramp.json"
 			],
 			"files": [
 				{
@@ -715,10 +715,10 @@
 			"name": "password",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"copy-button",
-				"utils",
-				"shadcn-svelte-input",
-				"shadcn-svelte-toggle"
+				"./copy-button.json",
+				"./utils.json",
+				"./shadcn-svelte-input.json",
+				"./shadcn-svelte-toggle.json"
 			],
 			"files": [
 				{
@@ -771,11 +771,11 @@
 			"name": "phone-input",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-popover",
-				"button",
-				"shadcn-svelte-command",
-				"shadcn-svelte-scroll-area",
-				"utils"
+				"./shadcn-svelte-popover.json",
+				"./button.json",
+				"./shadcn-svelte-command.json",
+				"./shadcn-svelte-scroll-area.json",
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -815,10 +815,10 @@
 			"name": "pm-command",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"copy-button",
-				"shadcn-svelte-tooltip",
-				"shadcn-svelte-tabs"
+				"./utils.json",
+				"./copy-button.json",
+				"./shadcn-svelte-tooltip.json",
+				"./shadcn-svelte-tabs.json"
 			],
 			"files": [
 				{
@@ -842,8 +842,8 @@
 			"name": "rename",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"button",
-				"utils"
+				"./button.json",
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -901,9 +901,9 @@
 			"name": "shadcn-svelte-alert-dialog",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-button",
-				"button",
-				"utils"
+				"./shadcn-svelte-button.json",
+				"./button.json",
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -968,7 +968,7 @@
 			"name": "shadcn-svelte-avatar",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1009,7 +1009,7 @@
 			"name": "shadcn-svelte-button",
 			"type": "registry:component",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1057,9 +1057,9 @@
 			"name": "shadcn-svelte-command",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-dialog",
-				"utils",
-				"shadcn-svelte-input-group"
+				"./shadcn-svelte-dialog.json",
+				"./utils.json",
+				"./shadcn-svelte-input-group.json"
 			],
 			"files": [
 				{
@@ -1121,8 +1121,8 @@
 			"name": "shadcn-svelte-dialog",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"button"
+				"./utils.json",
+				"./button.json"
 			],
 			"files": [
 				{
@@ -1180,7 +1180,7 @@
 			"name": "shadcn-svelte-drawer",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1241,7 +1241,7 @@
 			"name": "shadcn-svelte-dropdown-menu",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1327,7 +1327,7 @@
 			"name": "shadcn-svelte-input",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1345,10 +1345,10 @@
 			"name": "shadcn-svelte-input-group",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"button",
-				"shadcn-svelte-input",
-				"shadcn-svelte-textarea"
+				"./utils.json",
+				"./button.json",
+				"./shadcn-svelte-input.json",
+				"./shadcn-svelte-textarea.json"
 			],
 			"files": [
 				{
@@ -1389,7 +1389,7 @@
 			"name": "shadcn-svelte-popover",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1438,7 +1438,7 @@
 			"name": "shadcn-svelte-scroll-area",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1463,7 +1463,7 @@
 			"name": "shadcn-svelte-spinner",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1484,7 +1484,7 @@
 			"name": "shadcn-svelte-tabs",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1518,7 +1518,7 @@
 			"name": "shadcn-svelte-textarea",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1536,7 +1536,7 @@
 			"name": "shadcn-svelte-toggle",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1558,7 +1558,7 @@
 			"name": "shadcn-svelte-tooltip",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1608,9 +1608,9 @@
 			"name": "snippet",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"copy-button",
-				"use-clipboard"
+				"./utils.json",
+				"./copy-button.json",
+				"./use-clipboard.json"
 			],
 			"files": [
 				{
@@ -1632,7 +1632,7 @@
 			"name": "star-rating",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1663,8 +1663,8 @@
 			"name": "stepper",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"shadcn-svelte-button"
+				"./utils.json",
+				"./shadcn-svelte-button.json"
 			],
 			"files": [
 				{
@@ -1731,7 +1731,7 @@
 			"name": "tags-input",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1765,9 +1765,9 @@
 			"name": "terminal",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"typewriter",
-				"window"
+				"./utils.json",
+				"./typewriter.json",
+				"./window.json"
 			],
 			"files": [
 				{
@@ -1815,8 +1815,8 @@
 			"name": "theme-selector",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"shadcn-svelte-dropdown-menu",
-				"shadcn-svelte-button"
+				"./shadcn-svelte-dropdown-menu.json",
+				"./shadcn-svelte-button.json"
 			],
 			"files": [
 				{
@@ -1839,8 +1839,8 @@
 			"name": "toc",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"use-toc",
-				"utils"
+				"./use-toc.json",
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -1859,8 +1859,8 @@
 			"name": "tree-view",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils",
-				"shadcn-svelte-collapsible"
+				"./utils.json",
+				"./shadcn-svelte-collapsible.json"
 			],
 			"files": [
 				{
@@ -1907,7 +1907,7 @@
 			"name": "underline-tabs",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -2070,7 +2070,7 @@
 			"name": "window",
 			"type": "registry:ui",
 			"registryDependencies": [
-				"utils"
+				"./utils.json"
 			],
 			"files": [
 				{
