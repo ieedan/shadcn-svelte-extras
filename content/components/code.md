@@ -18,9 +18,7 @@ description: "A code component."
 
 ## Configuring Languages
 
-
 The highlighter and languages can be configured from `shiki.ts`.
-
 
 <Code
 	lang="typescript"

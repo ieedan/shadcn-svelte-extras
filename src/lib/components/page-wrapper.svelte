@@ -14,6 +14,7 @@
 	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 	import { getReference } from '$lib/docs/api-reference/components';
 	import CarbonAds from './carbon-ads.svelte';
+	import CopyMarkdownButton from './copy-markdown-button.svelte';
 
 	type Props = {
 		doc: { group: string; doc: Route; next?: Route; prev?: Route } | undefined;
@@ -31,12 +32,13 @@
 	<div class="mx-auto w-full max-w-4xl min-w-0" style="min-height: calc(100svh - 112px);">
 		<div class="flex flex-col">
 			{#if doc}
-				<div class="flex flex-col gap-1 mb-5">
+				<div class="mb-5 flex flex-col gap-1">
 					<div class="flex items-center justify-between gap-2">
 						<h1 class="text-4xl font-bold">
 							{doc.doc.name}
 						</h1>
 						<div class="hidden items-center gap-2 md:flex">
+							<CopyMarkdownButton />
 							{#if doc.prev}
 								<Tooltip.Root>
 									<Tooltip.Trigger>
