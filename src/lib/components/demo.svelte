@@ -15,7 +15,7 @@
 	);
 </script>
 
-<Demo.Root>
+<Demo.Root class="mt-6">
 	<Demo.ActionsGroup class="justify-between">
 		<Demo.Tabs />
 		<Demo.ActionsGroup>

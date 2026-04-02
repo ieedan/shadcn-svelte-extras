@@ -11,10 +11,11 @@
 </script>
 
 <svg
-	class={cn('size-4 fill-black dark:fill-white', className)}
+	class={cn('size-4 shrink-0 fill-current', className)}
 	viewBox="0 0 256 250"
 	xmlns="http://www.w3.org/2000/svg"
 	preserveAspectRatio="xMidYMid"
+	aria-hidden="true"
 	{...rest}
 >
 	<path
