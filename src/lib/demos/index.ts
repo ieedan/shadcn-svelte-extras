@@ -4,12 +4,7 @@
 */
 
 export const DEMOS = [
-    	'avatar-group',
-	'avatar-group-vertical',
-	'button',
-	'button-loading',
-	'button-on-click-promise',
-	'chat',
+    	'chat',
 	'code',
 	'code-block',
 	'code-copy-button',
@@ -101,6 +96,9 @@ export const DEMOS = [
 	'underline-tabs',
 	'underline-tabs-overflow',
 	'window',
+	'button',
+	'button-loading',
+	'button-on-click-promise',
 	'active',
 	'shortcut',
 	'is-mac',

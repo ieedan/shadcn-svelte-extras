@@ -6,6 +6,7 @@ export default defineConfig({
 	registries: ['@registry/kit'],
 	paths: {
 		ui: '$lib/components/ui',
+		component: '$lib/components',
 		block: '$lib/components',
 		logo: '$lib/components/logos',
 		hook: '$lib/hooks',
@@ -1250,6 +1251,17 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'input-group',
+					title: 'InputGroup',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/input-group'
+						}
+					]
+				},
+				{
 					name: 'popover',
 					title: 'Popover',
 					type: 'ui',
@@ -1272,6 +1284,17 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'spinner',
+					title: 'Spinner',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/spinner'
+						}
+					]
+				},
+				{
 					name: 'tabs',
 					title: 'Tabs',
 					type: 'ui',
@@ -1279,6 +1302,17 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/tabs'
+						}
+					]
+				},
+				{
+					name: 'textarea',
+					title: 'Textarea',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/textarea'
 						}
 					]
 				},

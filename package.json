@@ -4,7 +4,7 @@
 	"version": "6.10.0",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently -n 'registry,app' -c 'blue,green' \"pnpm registry:dev\"  \"pnpm generate-llms && vite dev\"",
+		"dev": "concurrently -n 'registry,app' -c 'blue,green' \"pnpm registry:dev\"  \"vite dev\"",
 		"build": "pnpm pre:build && vite build",
 		"sync": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -15,8 +15,7 @@
 		"registry:dev": "jsrepo build --watch",
 		"ci:release": "jsrepo publish && changeset tag",
 		"generate-i18n": "pnpm paraglide-js compile --project ./project.inlang --outdir ./src/lib/paraglide",
-		"generate-llms": "tsx scripts/generate-llms.ts",
-		"pre:build": "pnpm sync && pnpm generate-llms && pnpm registry:build"
+		"pre:build": "pnpm sync && pnpm registry:build"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.30.0",

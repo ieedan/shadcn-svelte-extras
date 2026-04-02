@@ -5,7 +5,6 @@
 
 export const REGISTRY_ITEMS = [
 	'active',
-	'avatar-group',
 	'button',
 	'chat',
 	'code',
@@ -28,6 +27,7 @@ export const REGISTRY_ITEMS = [
 	'phone-input',
 	'pm-command',
 	'rename',
+	'shadcn-svelte-button',
 	'shortcut',
 	'snippet',
 	'star-rating',

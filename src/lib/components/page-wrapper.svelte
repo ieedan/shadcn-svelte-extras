@@ -4,7 +4,6 @@
 	import { Badge } from '$lib/components/ui/badge';
 	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
-	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 	import CodeIcon from '@lucide/svelte/icons/code';
 	import * as Navigation from '$lib/components/ui/prev-next';
 	import { UseToc } from '$lib/hooks/use-toc.svelte';
@@ -98,18 +97,6 @@
 							>
 								<span class="font-semibold">Component Source</span>
 								<CodeIcon class="size-3.5" />
-							</Badge>
-						{/if}
-						{#if page.url.pathname.startsWith('/components')}
-							{@const componentName = page.url.pathname.slice('/components/'.length)}
-							<Badge
-								href="/components/{componentName}/llms.txt"
-								variant="secondary"
-								target="_blank"
-								class="flex w-fit place-items-center gap-1 rounded-md"
-							>
-								<span class="font-semibold">llms.txt</span>
-								<ArrowUpRight class="size-3.5" />
 							</Badge>
 						{/if}
 					</div>

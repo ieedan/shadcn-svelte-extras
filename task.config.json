@@ -7,10 +7,6 @@
 					"color": "blue",
 					"command": "pnpm registry:dev"
 				},
-				"generate-llms": {
-					"color": "yellow",
-					"command": "pnpm generate-llms"
-				},
 				"app": {
 					"color": "green",
 					"command": "pnpm vite dev"
