@@ -6,7 +6,6 @@ description: "A component for switching your sites locale."
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="language-switcher" />
@@ -22,13 +21,7 @@ description: "A component for switching your sites locale."
 ## Paraglide Integration
 
 
-Example of how to integrate with <Link
-		href="https://inlang.com/m/gerre34r/library-inlang-paraglideJs/sveltekit"
-		target="_blank"
-		rel="noopener noreferrer"
-	>
-		ParaglideJS
-	</Link>:
+Example of how to integrate with [ParaglideJS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs/sveltekit):
 
 
 <Demo demo="language-switcher-paraglide" />

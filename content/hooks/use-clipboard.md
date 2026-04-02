@@ -4,7 +4,6 @@ description: "A hook to simplify copying text to the clipboard."
 ---
 
 <script lang="ts">
-
 	import Add from '$lib/components/add.svelte';
 </script>
 

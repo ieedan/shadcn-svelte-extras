@@ -4,7 +4,6 @@ description: "Why we built shadcn-svelte-extras and why it's great."
 ---
 
 <script lang="ts">
-	import { Link } from '$lib/components/ui/link';
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
 </script>
 
@@ -35,8 +34,7 @@ We are committed to delivering components to the same standard as the original. 
 	<Accordion.Item value="q-2">
 		<Accordion.Trigger>Can I still install components from the CLI?</Accordion.Trigger>
 		<Accordion.Content>
-			Yes! shadcn-svelte-extras uses <Link href="https://jsrepo.dev" target="_blank">jsrepo</Link> which
-			allows you to install components from the CLI.
+			Yes! shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) which allows you to install components from the CLI.
 		</Accordion.Content>
 	</Accordion.Item>
 	<Accordion.Item value="q-3">

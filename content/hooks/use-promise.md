@@ -4,7 +4,6 @@ description: "A hook to manage the state of a promise reactively in the absence 
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>

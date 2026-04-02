@@ -1,12 +1,11 @@
 ---
-title: "Phone Input"
-description: "A phone number input component."
+title: 'Phone Input'
+description: 'A phone number input component.'
 ---
 
 <script lang="ts">
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 ## Basic
@@ -31,10 +30,4 @@ description: "A phone number input component."
 
 ## Acknowledgements
 
-
-This component takes inspiration from
-	<Link href="https://github.com/omeralpi/shadcn-phone-input" target="_blank">
-		omeralpi/shadcn-phone-input
-	</Link>.
-
-
+This component takes inspiration from [omeralpi/shadcn-phone-input](https://github.com/omeralpi/shadcn-phone-input).

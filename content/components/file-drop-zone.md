@@ -1,13 +1,11 @@
 ---
-title: "File Drop Zone"
-description: "A file drop zone component."
+title: 'File Drop Zone'
+description: 'A file drop zone component.'
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 	import Code from '$lib/components/docs/code.svelte';
 	import schemaRaw from '$lib/docs/file-drop-zone-schema.ts?raw';
 </script>
@@ -22,7 +20,7 @@ description: "A file drop zone component."
 
 ```svelte
 <script lang="ts">
-	import * as FileDropZone from "$lib/components/ui/file-drop-zone";
+	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 </script>
 
 <FileDropZone.Root>
@@ -31,56 +29,39 @@ description: "A file drop zone component."
 </FileDropZone.Root>
 ```
 
-
-
 Custom placeholder:
-
 
 ```svelte
 <script lang="ts">
-	import { FileDropZone } from "$lib/components/ui/file-drop-zone";
+	import { FileDropZone } from '$lib/components/ui/file-drop-zone';
 </script>
 
 <FileDropZone.Root>
-	<FileDropZone.Trigger>
-		Upload files
-	</FileDropZone.Trigger>
+	<FileDropZone.Trigger>Upload files</FileDropZone.Trigger>
 </FileDropZone.Root>
 ```
 
 ## Text Area
 
-
 You can use the Textarea component to allow users to paste or drag and drop files into a textarea.
-
 
 <Demo demo="file-drop-zone-text-area" />
 
 ## Form
 
-<div>
-	<span> Resources: </span>
-	<ul class="list-disc pl-4">
-		<li>
-			<Link href="https://superforms.rocks/concepts/files#file-uploads" target="_blank">
-				https://superforms.rocks/concepts/files#file-uploads
-			</Link>
-		</li>
-	</ul>
-</div>
+**Resources:**
+
+- [superforms.rocks — file uploads](https://superforms.rocks/concepts/files#file-uploads)
+
 <Demo demo="file-drop-zone-form" />
 
-
 Schema:
-
 
 <div>
 	<Code lang="typescript" code={schemaRaw} />
 </div>
 
-
 Server:
-
 
 ```typescript
 import { fail, message, superValidate } from 'sveltekit-superforms';
@@ -104,6 +85,4 @@ export const actions = {
 		return message(form, 'Posted!');
 	}
 };
-
 ```
-

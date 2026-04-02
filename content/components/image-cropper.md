@@ -1,13 +1,11 @@
 ---
-title: "Image Cropper"
-description: "A component for uploading and resizing images."
+title: 'Image Cropper'
+description: 'A component for uploading and resizing images.'
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="image-cropper" />
@@ -25,13 +23,13 @@ description: "A component for uploading and resizing images."
 
 <ImageCropper.Root bind:src onUpload>
 	<ImageCropper.Trigger>
-		<ImageCropper.Preview/>
+		<ImageCropper.Preview />
 	</ImageCropper.Trigger>
 	<ImageCropper.Dialog>
-		<ImageCropper.Cropper/>
+		<ImageCropper.Cropper />
 		<ImageCropper.Controls>
-			<ImageCropper.Crop/>
-			<ImageCropper.Cancel/>
+			<ImageCropper.Crop />
+			<ImageCropper.Cancel />
 		</ImageCropper.Controls>
 	</ImageCropper.Dialog>
 </ImageCropper.Root>
@@ -55,10 +53,4 @@ description: "A component for uploading and resizing images."
 
 ## Acknowledgements
 
-
-This component was inspired by
-	<Link href="https://github.com/sujjeee/shadcn-image-cropper" target="_blank">
-		sujjeee/shadcn-image-cropper
-	</Link>.
-
-
+This component was inspired by [sujjeee/shadcn-image-cropper](https://github.com/sujjeee/shadcn-image-cropper).

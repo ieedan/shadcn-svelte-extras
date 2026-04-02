@@ -4,10 +4,8 @@ description: "Components for creating live chats."
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="chat" />
@@ -43,8 +41,5 @@ description: "Components for creating live chats."
 
 ## Acknowledgements
 
-This component takes inspiration from
-<Link href="https://github.com/jakobhoeg/shadcn-chat" target="_blank">
-	jakobhoeg/shadcn-chat
-</Link>.
+This component takes inspiration from [jakobhoeg/shadcn-chat](https://github.com/jakobhoeg/shadcn-chat).
 

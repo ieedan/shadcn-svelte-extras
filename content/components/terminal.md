@@ -4,10 +4,8 @@ description: "An implementation of the MacOS terminal. Useful for showcasing a c
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="terminal" />
@@ -66,7 +64,4 @@ You can make the terminal preview continuously loop using the `<Terminal.Loop/>`
 
 ## Acknowledgements
 
-This component was inspired by
-<Link href="https://magicui.design/docs/components/terminal" target="_blank">
-	magicuidesign/magicui
-</Link>.
+This component was inspired by [magicuidesign/magicui](https://magicui.design/docs/components/terminal).

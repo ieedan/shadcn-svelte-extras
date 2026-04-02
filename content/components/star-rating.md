@@ -1,22 +1,16 @@
 ---
-title: "Star Rating"
-description: "A simple star rating component."
+title: 'Star Rating'
+description: 'A simple star rating component.'
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 ## Basic
 
-
-The `<StarRating/>` component builds on top of the <Link href="https://bits-ui.com" target="_blank"
-		>bits-ui</Link
-	> `<RatingGroup/>` component so it has all the behaviors you'd expect.
-
+The `<StarRating/>` component builds on top of the [bits-ui](https://bits-ui.com) `<RatingGroup/>` component so it has all the behaviors you'd expect.
 
 <Demo demo="star-rating" />
 
@@ -42,17 +36,13 @@ The `<StarRating/>` component builds on top of the <Link href="https://bits-ui.c
 
 ## Custom Stars
 
-
 You can have an arbitrary number of stars.
-
 
 <Demo demo="star-rating-custom-stars" />
 
 ## Half Rating
 
-
 You can also have half ratings. And they even work in RTL!
-
 
 <Demo demo="star-rating-half-rating" />
 

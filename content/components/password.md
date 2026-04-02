@@ -1,13 +1,11 @@
 ---
-title: "Password"
-description: "Components for handling passwords and other secrets."
+title: 'Password'
+description: 'Components for handling passwords and other secrets.'
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="password" />
@@ -25,8 +23,8 @@ description: "Components for handling passwords and other secrets."
 
 <Password.Root>
 	<Password.Input>
-		<Password.Copy/>
-		<Password.ToggleVisibility/>
+		<Password.Copy />
+		<Password.ToggleVisibility />
 	</Password.Input>
 	<Password.Strength />
 </Password.Root>
@@ -34,36 +32,26 @@ description: "Components for handling passwords and other secrets."
 
 ## Toggle Visibility
 
-
 Add a button to toggle the visibility of the password.
-
 
 <Demo demo="password-toggle-visibility" />
 
 ## Copy
 
-
 Add a button to copy the secret to the clipboard.
-
 
 <Demo demo="password-copy" />
 
 ## Both
 
-
 You can also add both a visibility toggle and a copy button and they will play nicely.
-
 
 <Demo demo="password-both" />
 
 ## Strength
 
-
-Add a strength meter to the password input using
-	<Link href="https://zxcvbn-ts.github.io/zxcvbn/" target="_blank">zxcvbn-ts</Link>
-
+Add a strength meter to the password input using [zxcvbn-ts](https://zxcvbn-ts.github.io/zxcvbn/)
 
 When a password is too weak (as determined by the `minScore` prop) the input is marked as invalid and users will be unable to submit the form.
-
 
 <Demo demo="password-strength" />

@@ -4,7 +4,6 @@ description: "A hook to track and sort items based on their frequency of use."
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>

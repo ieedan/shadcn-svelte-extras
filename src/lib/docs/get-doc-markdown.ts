@@ -1,4 +1,5 @@
 import { slugFromPath } from './get-doc';
+import { transformDocMarkdown } from './transform-doc-markdown';
 
 const rawModules = import.meta.glob<string>('/content/**/*.md', {
 	query: '?raw',
@@ -8,7 +9,8 @@ const rawModules = import.meta.glob<string>('/content/**/*.md', {
 export async function getDocMarkdown(slug: string): Promise<string | null> {
 	for (const [path, load] of Object.entries(rawModules)) {
 		if (slugFromPath(path) === slug) {
-			return await load();
+			const raw = await load();
+			return transformDocMarkdown(raw);
 		}
 	}
 	return null;

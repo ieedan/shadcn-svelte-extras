@@ -4,7 +4,6 @@ description: "A component for renaming stuff."
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>

@@ -4,7 +4,6 @@ description: "A hook to enable the creation of containers that automatically scr
 ---
 
 <script lang="ts">
-
 	import Add from '$lib/components/add.svelte';
 </script>
 

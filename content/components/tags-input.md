@@ -4,7 +4,6 @@ description: "A tags input component."
 ---
 
 <script lang="ts">
-
 	import Code from '$lib/components/docs/code.svelte';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';

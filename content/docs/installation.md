@@ -4,13 +4,11 @@ description: "How to add and use extras in your project."
 ---
 
 <script lang="ts">
-
-	import { Link } from '$lib/components/ui/link';
 	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-shadcn-svelte-extras uses <Link href="https://jsrepo.dev" target="_blank">jsrepo</Link> to allow you to install components into your project just like in <Link href="https://shadcn-svelte.com" target="_blank">shadcn-svelte</Link>, but with some additional features such as semantic versioning and easy updates.
+shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) to allow you to install components into your project just like in [shadcn-svelte](https://shadcn-svelte.com), but with some additional features such as semantic versioning and easy updates.
 
 ## Setup
 

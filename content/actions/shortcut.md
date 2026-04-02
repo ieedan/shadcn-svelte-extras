@@ -4,7 +4,6 @@ description: "An action to create shortcuts for your application."
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>

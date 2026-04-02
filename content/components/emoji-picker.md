@@ -1,13 +1,11 @@
 ---
-title: "Emoji Picker"
-description: "A composable emoji picker component."
+title: 'Emoji Picker'
+description: 'A composable emoji picker component.'
 ---
 
 <script lang="ts">
-
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 <Demo demo="emoji-picker" />
@@ -48,20 +46,13 @@ description: "A composable emoji picker component."
 
 ## Recents
 
-
 You can show a list of recently used emojis by passing the `showRecents` prop.
 
-
 The list is sorted by frecency meaning emojis used more are at the top and 2 emojis with the same
-	amount of uses will be sorted by the last time they were used.
-
+amount of uses will be sorted by the last time they were used.
 
 <Demo demo="emoji-picker-recents" />
 
 ## Acknowledgements
 
-
-The API and style of this component takes inspiration from
-	<Link href="https://frimousse.liveblocks.io/" target="_blank">Frimousse</Link>.
-
-
+The API and style of this component takes inspiration from [Frimousse](https://frimousse.liveblocks.io/).

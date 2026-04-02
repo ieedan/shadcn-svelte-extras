@@ -4,9 +4,7 @@ description: "A hook to simplify working with boolean values."
 ---
 
 <script lang="ts">
-
 	import Add from '$lib/components/add.svelte';
-	import { Link } from '$lib/components/ui/link';
 </script>
 
 ## Installation
@@ -52,9 +50,6 @@ After:
 ## Acknowledgements
 
 
-This hook was inspired by
-	<Link href="https://hookcn.ouassim.tech/docs/hooks/use-boolean" target="_blank">
-		strlrd-29/hookcn
-	</Link>.
+This hook was inspired by [strlrd-29/hookcn](https://hookcn.ouassim.tech/docs/hooks/use-boolean).
 
 
