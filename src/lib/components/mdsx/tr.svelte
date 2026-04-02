@@ -9,6 +9,6 @@
 	}: HTMLAttributes<HTMLTableRowElement> = $props();
 </script>
 
-<tr class={cn("m-0 border-b", className)} {...restProps}>
+<tr class={cn("m-0 border-t border-border p-0 even:bg-muted", className)} {...restProps}>
 	{@render children?.()}
 </tr>

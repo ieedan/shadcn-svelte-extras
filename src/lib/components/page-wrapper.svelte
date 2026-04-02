@@ -29,9 +29,9 @@
 	class="relative flex w-full justify-center gap-4 px-6 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
 >
 	<div class="mx-auto w-full max-w-4xl min-w-0" style="min-height: calc(100svh - 112px);">
-		<div class="flex flex-col gap-5">
+		<div class="flex flex-col">
 			{#if doc}
-				<div class="flex flex-col gap-1">
+				<div class="flex flex-col gap-1 mb-5">
 					<div class="flex items-center justify-between gap-2">
 						<h1 class="text-4xl font-bold">
 							{doc.doc.name}

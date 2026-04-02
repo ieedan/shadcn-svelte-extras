@@ -4,13 +4,16 @@ description: "Click and change the theme."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
 <Demo demo="light-switch" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="light-switch" />
-<Subheading>Ghost</Subheading>
+
+## Ghost
+
 <Demo demo="light-switch-variants" />

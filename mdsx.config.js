@@ -1,38 +1,15 @@
 // @ts-check
 import { resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import rehypePrettyCode from 'rehype-pretty-code';
+import { fileURLToPath, URL } from 'node:url';
+import { toString } from 'hast-util-to-string';
+import parseNumericRange from 'parse-numeric-range';
 import rehypeSlug from 'rehype-slug';
 import { codeImport } from 'remark-code-import';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
-import { createHighlighterCore } from 'shiki/core';
-import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 import { defineConfig } from 'mdsx';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-const jsEngine = createJavaScriptRegexEngine();
-
-export async function createHighlighter() {
-	if (!globalThis.__shikiHighlighter) {
-		globalThis.__shikiHighlighter = await createHighlighterCore({
-			themes: [
-				import('@shikijs/themes/github-dark'),
-				import('@shikijs/themes/github-light-default'),
-			],
-			langs: [
-				import('@shikijs/langs/typescript'),
-				import('@shikijs/langs/svelte'),
-				import('@shikijs/langs/css'),
-				import('@shikijs/langs/json'),
-				import('@shikijs/langs/bash'),
-				import('@shikijs/langs/diff'),
-			],
-			engine: jsEngine,
-		});
-	}
-	return globalThis.__shikiHighlighter;
-}
 
 /**
  * @typedef {import('mdast').Root} MdastRoot
@@ -41,39 +18,10 @@ export async function createHighlighter() {
  * @typedef {import('unified').Transformer<MdastRoot, MdastRoot>} MdastTransformer
  */
 
-/**
- * @type {import('rehype-pretty-code').Options}
- */
-const prettyCodeOptions = {
-	theme: {
-		dark: 'github-dark',
-		light: 'github-light-default',
-	},
-	keepBackground: false,
-	// @ts-expect-error rehype-pretty-code accepts a custom highlighter factory
-	getHighlighter: createHighlighter,
-	onVisitLine(node) {
-		if (node.children.length === 0) {
-			node.children = [{ type: 'text', value: ' ' }];
-		}
-	},
-	onVisitHighlightedLine(node) {
-		node.properties.className = ['line--highlighted'];
-	},
-	onVisitHighlightedChars(node) {
-		node.properties.className = ['chars--highlighted'];
-	},
-};
-
 export const mdsxConfig = defineConfig({
 	extensions: ['.md'],
 	remarkPlugins: [remarkGfm, codeImport, remarkRemovePrettierIgnore],
-	rehypePlugins: [
-		rehypeSlug,
-		rehypePreData,
-		[rehypePrettyCode, prettyCodeOptions],
-		rehypeHandleMetadata,
-	],
+	rehypePlugins: [rehypeSlug, rehypePreData, rehypeAttachMdsxCodeProps],
 	blueprints: {
 		default: {
 			path: resolve(__dirname, './src/lib/components/mdsx/blueprint.svelte'),
@@ -132,31 +80,50 @@ function rehypePreData() {
 }
 
 /**
+ * Fenced blocks are highlighted by the blueprint `pre` → ui `Code.Root`. Pass source + line meta as data attributes.
  * @returns {HastTransformer}
  */
-function rehypeHandleMetadata() {
-	return async (tree) => {
-		visit(tree, (node) => {
-			if (node?.type === 'element' && node?.tagName === 'figure') {
-				if (!('data-rehype-pretty-code-figure' in node.properties)) {
-					return;
-				}
+function rehypeAttachMdsxCodeProps() {
+	return (tree) => {
+		visit(tree, 'element', (node) => {
+			if (node.tagName !== 'pre') return;
+			const codeEl = node.children?.[0];
+			if (!codeEl || codeEl.type !== 'element' || codeEl.tagName !== 'code') return;
 
-				const preElement = node.children.at(-1);
-				if (preElement && 'tagName' in preElement && preElement.tagName !== 'pre') {
-					return;
-				}
+			const raw = toString(codeEl);
+			const className = codeEl.properties?.className;
+			let lang = 'plaintext';
+			if (Array.isArray(className)) {
+				const langClass = className.find(
+					(c) => typeof c === 'string' && c.startsWith('language-')
+				);
+				if (typeof langClass === 'string') lang = langClass.replace(/^language-/, '');
+			}
 
-				const firstChild = node.children.at(0);
+			const meta =
+				codeEl.data && 'meta' in codeEl.data && typeof codeEl.data.meta === 'string'
+					? codeEl.data.meta
+					: '';
 
-				if (firstChild && 'tagName' in firstChild && firstChild.tagName === 'figcaption') {
-					node.properties['data-metadata'] = '';
-					const lastChild = node.children.at(-1);
-					if (lastChild && 'properties' in lastChild) {
-						lastChild.properties['data-metadata'] = '';
+			/** @type {number[]} */
+			const highlights = [];
+			if (meta) {
+				for (const m of meta.matchAll(/\{([^}]*)\}/g)) {
+					const inner = m[1]?.trim();
+					if (!inner) continue;
+					try {
+						highlights.push(...parseNumericRange(inner));
+					} catch {
+						/* ignore invalid ranges */
 					}
 				}
 			}
+
+			const p = node.properties ?? (node.properties = {});
+			p['data-mdsx-raw'] = Buffer.from(raw, 'utf8').toString('base64url');
+			p['data-mdsx-lang'] = lang;
+			const uniq = [...new Set(highlights)].sort((a, b) => a - b);
+			if (uniq.length) p['data-mdsx-highlight'] = uniq.join(',');
 		});
 	};
 }

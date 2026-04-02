@@ -39,7 +39,7 @@
 	}: Props = $props();
 </script>
 
-<div class="mdsx">
+<div class="mdsx flex flex-col">
 	<!-- eslint-disable-next-line svelte/no-unused-svelte-ignore -->
 	<!-- svelte-ignore slot_element_deprecated -->
 	<slot {title} {description} {source} {component} />

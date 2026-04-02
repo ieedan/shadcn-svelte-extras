@@ -4,7 +4,6 @@ description: "A file tree component."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
@@ -12,14 +11,20 @@ description: "A file tree component."
 </script>
 
 <Demo demo="tree-view" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="tree-view" />
-<Subheading>Custom Icons</Subheading>
+
+## Custom Icons
+
 <Demo demo="tree-view-custom-icons" />
-<p>
-	If you are using custom icons in a project we recommend you wrap the folder/file components with
+
+
+If you are using custom icons in a project we recommend you wrap the folder/file components with
 	the custom icons:
-</p>
+
+
 <div>
 	<Code lang="svelte" highlight={[[13, 21]]} code={treeViewFileCustomRaw} />
 </div>

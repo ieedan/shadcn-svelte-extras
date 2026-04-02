@@ -4,34 +4,41 @@ description: "A hook to determine if the user is on a Mac."
 ---
 
 <script lang="ts">
-	import { CodeSpan, Subheading } from '$lib/components/docs';
-	import Code from '$lib/components/docs/code.svelte';
+
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 	import { Link } from '$lib/components/ui/link';
-	const _docCode0 = "\\<script lang=\"ts\"\\>\n    import { isMac } from '$lib/hooks/is-mac.svelte.js';\n\\<\\/script\\>\n\n<p>{isMac ? 'Mac' : 'Not Mac'}</p>";
 </script>
 
 <Demo demo="is-mac" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="is-mac" />
-<Subheading>Usage</Subheading>
-<div>
-	<Code
-		lang="svelte"
-		highlight={[2, 5]}
-		code={_docCode0}
-	/>
-</div>
-<Subheading>Keys</Subheading>
-<p>
-	Often times you'll want to show modifier keys in your UI. You can do this with the exported
-	<CodeSpan>cmdOrCtrl</CodeSpan> and <CodeSpan>optionOrAlt</CodeSpan> variables.
-</p>
+
+## Usage
+
+```svelte {2,5}
+<script lang="ts">
+    import { isMac } from '$lib/hooks/is-mac.svelte.js';
+</script>
+
+<p>{isMac ? 'Mac' : 'Not Mac'}</p>
+```
+
+## Keys
+
+
+Often times you'll want to show modifier keys in your UI. You can do this with the exported
+	`cmdOrCtrl` and `optionOrAlt` variables.
+
+
 <Demo demo="is-mac-keys" />
-<Subheading>Acknowledgements</Subheading>
-<p>
-	This hook is based on the shadcn-svelte
+
+## Acknowledgements
+
+
+This hook is based on the shadcn-svelte
 	<Link
 		href="https://github.com/huntabyte/shadcn-svelte/blob/main/docs/src/lib/hooks/use-is-mac.svelte.ts"
 		target="_blank"
@@ -43,4 +50,5 @@ description: "A hook to determine if the user is on a Mac."
 	>
 		Thomas G. Lopes
 	</Link>
-</p>
+
+

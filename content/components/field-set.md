@@ -4,13 +4,16 @@ description: "A field set component."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
 <Demo demo="field-set" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="field-set" />
-<Subheading>Destructive</Subheading>
+
+## Destructive
+
 <Demo demo="field-set-destructive" />

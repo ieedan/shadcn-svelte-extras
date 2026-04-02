@@ -5,6 +5,6 @@
 	let { class: className, children, ...restProps }: HTMLAttributes<HTMLLIElement> = $props();
 </script>
 
-<li class={cn("mt-2", className)} {...restProps}>
+<li class={cn(className)} {...restProps}>
 	{@render children?.()}
 </li>

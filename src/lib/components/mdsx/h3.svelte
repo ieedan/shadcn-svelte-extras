@@ -7,7 +7,7 @@
 
 <h3
 	class={cn(
-		"font-heading mt-12 scroll-m-28 text-lg font-medium tracking-tight [&+p]:!mt-4 *:[code]:text-xl",
+		"mt-12 scroll-m-20 text-2xl font-semibold tracking-tight [&+p]:!mt-4 *:[code]:text-xl",
 		className
 	)}
 	{...restProps}

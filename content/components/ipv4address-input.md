@@ -4,18 +4,26 @@ description: "An IPv4 address input with all the behavior you'd expect."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-<Subheading>Basic</Subheading>
+## Basic
+
 <Demo demo="ipv4address-input" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="ipv4address-input" />
-<Subheading>Placeholder</Subheading>
+
+## Placeholder
+
 <Demo demo="ipv4address-input-placeholder" />
-<Subheading>Reactive</Subheading>
+
+## Reactive
+
 <Demo demo="ipv4address-input-reactive" />
-<Subheading>Validation</Subheading>
+
+## Validation
+
 <Demo demo="ipv4address-input-valid" />

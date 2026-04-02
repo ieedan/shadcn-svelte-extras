@@ -185,6 +185,10 @@ html {
 		@apply -mx-1;
 	}
 
+	.mdsx [data-rehype-pretty-code-figure] {
+		margin-top: 0;
+	}
+
 	[data-rehype-pretty-code-title] {
 		border-bottom: color-mix(in oklab, var(--border) 30%, transparent);
 		border-bottom-width: 1px;
@@ -268,6 +272,6 @@ html {
 	}
 
 	.mdsx code:not(pre code) {
-		@apply bg-muted relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-[0.8rem] outline-none;
+		@apply bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold outline-none;
 	}
 }

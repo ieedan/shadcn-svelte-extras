@@ -4,15 +4,20 @@ description: "A snippet component."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
 <Demo demo="snippet" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="snippet" />
-<Subheading>Variants</Subheading>
+
+## Variants
+
 <Demo demo="snippet-variants" />
-<Subheading>Multiline</Subheading>
+
+## Multiline
+
 <Demo demo="snippet-multiline" />

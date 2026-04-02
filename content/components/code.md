@@ -4,7 +4,6 @@ description: "A code component."
 ---
 
 <script lang="ts">
-	import { CodeSpan, Subheading } from '$lib/components/docs';
 	import Code from '$lib/components/docs/code.svelte';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
@@ -12,12 +11,17 @@ description: "A code component."
 </script>
 
 <Demo demo="code" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="code" />
-<Subheading>Configuring Languages</Subheading>
-<p>
-	The highlighter and languages can be configured from <CodeSpan>shiki.ts</CodeSpan>.
-</p>
+
+## Configuring Languages
+
+
+The highlighter and languages can be configured from `shiki.ts`.
+
+
 <Code
 	lang="typescript"
 	code={shikiRaw}
@@ -27,15 +31,27 @@ description: "A code component."
 		[18, 25]
 	]}
 />
-<Subheading>Copy Button</Subheading>
+
+## Copy Button
+
 <Demo demo="code-copy-button" />
-<Subheading>No Line Numbers</Subheading>
+
+## No Line Numbers
+
 <Demo demo="code-no-line-numbers" />
-<Subheading>Variants</Subheading>
+
+## Variants
+
 <Demo demo="code-variants" />
-<Subheading>Highlight Lines</Subheading>
+
+## Highlight Lines
+
 <Demo demo="code-highlight-lines" />
-<Subheading>Overflow</Subheading>
+
+## Overflow
+
 <Demo demo="code-overflow" />
-<Subheading>Code Block</Subheading>
+
+## Code Block
+
 <Demo demo="code-block" />

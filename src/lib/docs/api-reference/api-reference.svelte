@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Subheading } from '../../components/docs';
+	import { h2 as MarkdownH2 } from '$lib/components/mdsx';
 	import type { Component } from './api-reference';
 	import ReferenceTable from './reference-table.svelte';
 
@@ -8,7 +8,7 @@
 		$props();
 </script>
 
-<Subheading>API Reference</Subheading>
+<MarkdownH2>API Reference</MarkdownH2>
 {#each Object.values(reference.components) as component (component.name)}
 	<ReferenceTable name={reference.name} {component} />
 {/each}

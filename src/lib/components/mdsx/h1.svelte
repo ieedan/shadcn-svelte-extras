@@ -6,7 +6,7 @@
 </script>
 
 <h1
-	class={cn("font-heading mt-2 scroll-m-28 text-3xl font-bold tracking-tight", className)}
+	class={cn("scroll-m-20 text-4xl font-extrabold tracking-tight text-balance", className)}
 	{...restProps}
 >
 	{@render children?.()}

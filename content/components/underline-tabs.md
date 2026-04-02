@@ -4,13 +4,16 @@ description: "A horizontal tabs component with an underline."
 ---
 
 <script lang="ts">
-	import { Subheading } from '$lib/components/docs';
 	import Demo from '$lib/components/demo.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
 <Demo demo="underline-tabs" />
-<Subheading>Installation</Subheading>
+
+## Installation
+
 <Add item="underline-tabs" />
-<Subheading>Overflow</Subheading>
+
+## Overflow
+
 <Demo demo="underline-tabs-overflow" />
