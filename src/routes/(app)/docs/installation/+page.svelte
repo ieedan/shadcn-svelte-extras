@@ -9,7 +9,7 @@
 <p>
 	shadcn-svelte-extras uses <Link href="https://jsrepo.dev" target="_blank">jsrepo</Link> to allow you
 	to install components into your project just like in
-	<Link href="https://next.shadcn-svelte.com" target="_blank">shadcn-svelte</Link>, but with some
+	<Link href="https://shadcn-svelte.com" target="_blank">shadcn-svelte</Link>, but with some
 	additional features such as semantic versioning and easy updates.
 </p>
 <Subheading>Setup</Subheading>
@@ -22,13 +22,14 @@
 <div>
 	<Code
 		lang="typescript"
-		highlight={[[5, 11]]}
+		highlight={[[5, 12]]}
 		code={`import { defineConfig } from 'jsrepo';
 
 export default defineConfig({
     registries: ['@ieedan/shadcn-svelte-extras'],
     paths: {
 			ui: "$lib/components/ui",
+			component: "$lib/components",
 			hook: "$lib/hooks",
 			action: "$lib/actions",
 			util: "$lib/utils",

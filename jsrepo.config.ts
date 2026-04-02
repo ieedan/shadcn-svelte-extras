@@ -1,4 +1,4 @@
-import { defineConfig, RegistryItem } from 'jsrepo';
+import { defineConfig, InvalidImportWarning, RegistryItem } from 'jsrepo';
 import addType from './.jsrepo/outputs/add-type';
 import demoType from './.jsrepo/outputs/demo-type';
 
@@ -1340,5 +1340,16 @@ export default defineConfig({
 				}
 			] satisfies RegistryItem[])
 		]
+	},
+	build: {
+		onwarn: (warning, handler) => {
+			if (warning instanceof InvalidImportWarning) {
+				if (['$app/server', '$app/state', '$app/navigation'].includes(warning.specifier)) {
+					return;
+				}
+			}
+
+			handler(warning);
+		}
 	}
 });

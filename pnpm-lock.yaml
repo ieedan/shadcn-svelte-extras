@@ -124,8 +124,8 @@ importers:
         specifier: ^0.37.1
         version: 0.37.1(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(zod@4.3.6)
       shadcn-svelte:
-        specifier: ^1.2.6
-        version: 1.2.6(svelte@5.55.1)
+        specifier: ^1.2.7
+        version: 1.2.7(patch_hash=fa5506818fdc72e363fb71cfc05c6e969ce2fe3bdb76c0feb9058e8647bf2c43)(svelte@5.55.1)
       shiki:
         specifier: ^4.0.2
         version: 4.0.2
@@ -2705,8 +2705,8 @@ packages:
   set-cookie-parser@3.0.1:
     resolution: {integrity: sha512-n7Z7dXZhJbwuAHhNzkTti6Aw9QDDjZtm3JTpTGATIdNzdQz5GuFs22w90BcvF4INfnrL5xrX3oGsuqO5Dx3A1Q==}
 
-  shadcn-svelte@1.2.6:
-    resolution: {integrity: sha512-nI2ybAZwQwgejl+8Z7Y6c/aG1QBXTJqK+oCAOdh1N7L3djiWV7ru9Ox6DSq7Bs+EsSPTIzp0dkr7DzSv/0qdGA==}
+  shadcn-svelte@1.2.7:
+    resolution: {integrity: sha512-mWuQk4H4gtV+J2wJQ7nEPKNnB/v86AALFryZU0SSM7ChHmJJMZ1kH+qIuxYKrXm9vOOOcSWHRsWzPDB71DnjYA==}
     hasBin: true
     peerDependencies:
       svelte: ^5.0.0
@@ -5529,7 +5529,7 @@ snapshots:
 
   set-cookie-parser@3.0.1: {}
 
-  shadcn-svelte@1.2.6(svelte@5.55.1):
+  shadcn-svelte@1.2.7(patch_hash=fa5506818fdc72e363fb71cfc05c6e969ce2fe3bdb76c0feb9058e8647bf2c43)(svelte@5.55.1):
     dependencies:
       commander: 14.0.3
       node-fetch-native: 1.6.7

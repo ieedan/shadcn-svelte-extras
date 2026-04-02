@@ -6,6 +6,7 @@
 	import { Input } from '$lib/components/ui/input';
 	import { sleep } from '$lib/utils/sleep';
 	import { enhance } from '$app/forms';
+	import * as Field from '$lib/components/ui/field';
 
 	let loading = $state(false);
 
@@ -33,19 +34,21 @@
 			use:enhance
 			class="flex flex-col gap-4"
 		>
-			<div class="flex flex-col gap-2">
-				<Label>Email</Label>
-				<Input name="email" type="email" placeholder="m@example.com" required />
-			</div>
-			<div class="flex flex-col gap-2">
-				<Label>Password</Label>
-				<Password.Root>
-					<Password.Input name="password" required placeholder="Password">
-						<Password.ToggleVisibility />
-					</Password.Input>
-					<Password.Strength />
-				</Password.Root>
-			</div>
+			<Field.Group>
+				<Field.Field>
+					<Label>Email</Label>
+					<Input name="email" type="email" placeholder="m@example.com" required />
+				</Field.Field>
+				<Field.Field>
+					<Label>Password</Label>
+					<Password.Root>
+						<Password.Input name="password" required placeholder="Password">
+							<Password.ToggleVisibility />
+						</Password.Input>
+						<Password.Strength />
+					</Password.Root>
+				</Field.Field>
+			</Field.Group>
 			<Button type="submit" class="w-full" {loading}>Create account</Button>
 		</form>
 	</Card.Content>

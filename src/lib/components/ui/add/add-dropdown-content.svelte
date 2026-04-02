@@ -5,6 +5,6 @@
 	let { align = 'end', children, ...rest }: ComponentProps<typeof DropdownMenu.Content> = $props();
 </script>
 
-<DropdownMenu.Content {align} {...rest}>
+<DropdownMenu.Content {align} class="w-fit" {...rest}>
 	{@render children?.()}
 </DropdownMenu.Content>

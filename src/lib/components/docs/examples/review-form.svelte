@@ -4,6 +4,7 @@
 	import { Label } from '$lib/components/ui/label';
 	import * as Card from '$lib/components/ui/card';
 	import * as StarRating from '$lib/components/ui/star-rating';
+	import * as Field from '$lib/components/ui/field';
 
 	let loading = $state(false);
 </script>
@@ -14,12 +15,12 @@
 		<Card.Description>Tell us about your experience using acme.com</Card.Description>
 	</Card.Header>
 	<Card.Content class="flex flex-col gap-4">
-		<div class="flex flex-col gap-2">
-			<div>
+		<Field.Group>
+			<Field.Field>
 				<Label>Comment</Label>
 				<Textarea placeholder="Tell us about your experience..." />
-			</div>
-			<div>
+			</Field.Field>
+			<Field.Field>
 				<Label>Overall Rating</Label>
 				<StarRating.Root value={1}>
 					{#snippet children({ items })}
@@ -28,8 +29,8 @@
 						{/each}
 					{/snippet}
 				</StarRating.Root>
-			</div>
-		</div>
+			</Field.Field>
+		</Field.Group>
 		<Button
 			{loading}
 			class="w-full"
