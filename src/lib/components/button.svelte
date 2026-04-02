@@ -26,7 +26,7 @@
 	}: ButtonProps = $props();
 
 	let pending = $state(false);
-	
+
 	const loading = $derived(loadingProp || pending);
 </script>
 

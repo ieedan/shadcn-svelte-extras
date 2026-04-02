@@ -13,13 +13,13 @@
 <button
 	type="button"
 	class={cn(
-		'hover:bg-accent flex flex-1 place-items-center rounded-l-md transition-colors md:pr-2 [&_svg]:size-3.5',
+		'hover:bg-accent flex min-w-0 flex-1 items-center overflow-hidden rounded-l-md transition-colors md:pr-2 [&_svg]:size-3.5',
 		className
 	)}
 	{...rest}
 	{...buttonState.props}
 >
-	<div class="flex size-9 items-center justify-center">
+	<div class="flex size-9 shrink-0 items-center justify-center">
 		<CheckIcon
 			class={cn(
 				'absolute scale-0 transition-all ease-out',
@@ -34,7 +34,10 @@
 			)}
 		/>
 	</div>
-	<span class="hidden font-mono text-xs text-nowrap text-ellipsis select-text md:inline">
+	<span
+		class="min-w-0 flex-1 truncate px-1 text-left font-mono text-xs select-text md:px-0"
+		title={buttonState.root.addCommand}
+	>
 		{buttonState.root.addCommand}
 	</span>
 </button>

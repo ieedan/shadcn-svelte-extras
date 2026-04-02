@@ -19,5 +19,5 @@
 	<span class="text-xs">
 		{dropdownCopyInitState.root.initCommand}
 	</span>
-	<span class="text-muted-foreground text-start text-xs">Init registry</span>
+	<span class="text-muted-foreground text-start text-xs">{dropdownCopyInitState.initHint}</span>
 </DropdownMenu.Item>

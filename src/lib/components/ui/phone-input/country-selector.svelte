@@ -88,7 +88,7 @@
 								</span>
 								<div class="w-4">
 									{#if country.iso2 == selected}
-										<CheckIcon class="size-4 phone-input-check-icon" />
+										<CheckIcon class="phone-input-check-icon size-4" />
 									{/if}
 								</div>
 							</Command.Item>

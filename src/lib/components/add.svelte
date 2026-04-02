@@ -16,6 +16,10 @@
 		<Add.GroupSeparator />
 		<Add.Dropdown>
 			<Add.DropdownContent>
+				{#each Add.INSTALLERS as installer (installer)}
+					<Add.DropdownInstallerOption {installer} />
+				{/each}
+				<Add.DropdownSeparator />
 				<Add.DropdownCopyInit />
 				<Add.DropdownSeparator />
 				{#each Add.AGENTS as agent (agent)}

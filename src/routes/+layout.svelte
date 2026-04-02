@@ -13,6 +13,7 @@
 	let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags ?? {}));
 
 	const agent = new PersistedState<Add.Agent>('user-agent-preference', 'npm');
+	const installer = new PersistedState<Add.Installer>('user-installer-preference', 'jsrepo');
 	const registry = new PersistedState<(typeof REGISTRY_OPTIONS)[number]>(
 		'user-registry-preference',
 		'@ieedan/shadcn-svelte-extras'
@@ -25,6 +26,7 @@
 <Toaster />
 <Add.Provider
 	bind:agent={agent.current}
+	bind:installer={installer.current}
 	bind:registry={registry.current}
 	registryOptions={REGISTRY_OPTIONS}
 >
