@@ -27,8 +27,7 @@
 			"name": "button",
 			"type": "registry:component",
 			"registryDependencies": [
-				"./shadcn-svelte-button.json",
-				"./shadcn-svelte-spinner.json"
+				"./utils.json"
 			],
 			"files": [
 				{
@@ -37,7 +36,10 @@
 				}
 			],
 			"title": "Button",
-			"description": "An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements."
+			"description": "An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.",
+			"devDependencies": [
+				"tailwind-variants@^3.2.2"
+			]
 		},
 		{
 			"name": "casing",
@@ -908,55 +910,68 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-action.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-action.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-cancel.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-cancel.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-description.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-description.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-footer.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-footer.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-header.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-header.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-media.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-media.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-overlay.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-overlay.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-title.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-title.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/alert-dialog.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/alert-dialog/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "alert-dialog/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/alert-dialog",
@@ -973,31 +988,38 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/avatar/avatar-badge.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar-badge.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/avatar-fallback.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar-fallback.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/avatar-group-count.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar-group-count.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/avatar-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar-group.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/avatar-image.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar-image.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/avatar.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/avatar.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/avatar/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "avatar/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/avatar",
@@ -1007,18 +1029,20 @@
 		},
 		{
 			"name": "shadcn-svelte-button",
-			"type": "registry:component",
+			"type": "registry:ui",
 			"registryDependencies": [
 				"./utils.json"
 			],
 			"files": [
 				{
 					"path": "src/lib/components/ui/button/button.svelte",
-					"type": "registry:component"
+					"type": "registry:ui",
+					"target": "button/button.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/button/index.ts",
-					"type": "registry:component"
+					"type": "registry:ui",
+					"target": "button/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/button",
@@ -1033,19 +1057,23 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/collapsible/collapsible-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "collapsible/collapsible-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/collapsible/collapsible-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "collapsible/collapsible-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/collapsible/collapsible.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "collapsible/collapsible.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/collapsible/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "collapsible/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/collapsible",
@@ -1064,51 +1092,63 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/command/command-dialog.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-dialog.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-empty.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-empty.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-group.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-input.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-input.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-item.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-item.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-link-item.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-link-item.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-list.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-list.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-loading.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-loading.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-separator.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-separator.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command-shortcut.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command-shortcut.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/command.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/command.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/command/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "command/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/command",
@@ -1127,47 +1167,58 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/dialog/dialog-close.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-close.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-description.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-description.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-footer.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-footer.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-header.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-header.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-overlay.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-overlay.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-title.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-title.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/dialog.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/dialog.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dialog/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dialog/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/dialog",
@@ -1185,51 +1236,63 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/drawer/drawer-close.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-close.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-description.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-description.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-footer.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-footer.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-header.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-header.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-nested.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-nested.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-overlay.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-overlay.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-title.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-title.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/drawer.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/drawer.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/drawer/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "drawer/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/drawer",
@@ -1246,75 +1309,93 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-checkbox-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-checkbox-group.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-checkbox-item.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-checkbox-item.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-group-heading.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-group-heading.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-group.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-item.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-item.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-label.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-label.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-radio-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-radio-group.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-radio-item.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-radio-item.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-separator.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-separator.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-shortcut.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-shortcut.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-sub-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-sub-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-sub-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-sub-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-sub.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-sub.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/dropdown-menu.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/dropdown-menu/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "dropdown-menu/index.ts"
 				}
 			],
 			"title": "shadcn-svelte/dropdown-menu",
@@ -1332,11 +1413,13 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/input/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/input/input.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input/input.svelte"
 				}
 			],
 			"title": "shadcn-svelte/input"
@@ -1353,31 +1436,38 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/input-group/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group-addon.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group-addon.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group-button.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group-button.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group-input.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group-input.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group-text.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group-text.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group-textarea.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group-textarea.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/input-group/input-group.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "input-group/input-group.svelte"
 				}
 			],
 			"title": "shadcn-svelte/input-group",
@@ -1394,39 +1484,48 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/popover/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-close.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-close.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-description.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-description.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-header.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-header.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-title.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-title.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/popover/popover.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "popover/popover.svelte"
 				}
 			],
 			"title": "shadcn-svelte/popover",
@@ -1443,15 +1542,18 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/scroll-area/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "scroll-area/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/scroll-area/scroll-area-scrollbar.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "scroll-area/scroll-area-scrollbar.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/scroll-area/scroll-area.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "scroll-area/scroll-area.svelte"
 				}
 			],
 			"title": "shadcn-svelte/scroll-area",
@@ -1468,11 +1570,13 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/spinner/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "spinner/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/spinner/spinner.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "spinner/spinner.svelte"
 				}
 			],
 			"title": "shadcn-svelte/spinner",
@@ -1489,23 +1593,28 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/tabs/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tabs/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/tabs/tabs-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tabs/tabs-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tabs/tabs-list.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tabs/tabs-list.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tabs/tabs-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tabs/tabs-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tabs/tabs.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tabs/tabs.svelte"
 				}
 			],
 			"title": "shadcn-svelte/tabs",
@@ -1523,11 +1632,13 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/textarea/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "textarea/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/textarea/textarea.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "textarea/textarea.svelte"
 				}
 			],
 			"title": "shadcn-svelte/textarea"
@@ -1541,11 +1652,13 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/toggle/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "toggle/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/toggle/toggle.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "toggle/toggle.svelte"
 				}
 			],
 			"title": "shadcn-svelte/toggle",
@@ -1563,27 +1676,33 @@
 			"files": [
 				{
 					"path": "src/lib/components/ui/tooltip/index.ts",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/index.ts"
 				},
 				{
 					"path": "src/lib/components/ui/tooltip/tooltip-content.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/tooltip-content.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tooltip/tooltip-portal.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/tooltip-portal.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tooltip/tooltip-provider.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/tooltip-provider.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tooltip/tooltip-trigger.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/tooltip-trigger.svelte"
 				},
 				{
 					"path": "src/lib/components/ui/tooltip/tooltip.svelte",
-					"type": "registry:ui"
+					"type": "registry:ui",
+					"target": "tooltip/tooltip.svelte"
 				}
 			],
 			"title": "shadcn-svelte/tooltip",

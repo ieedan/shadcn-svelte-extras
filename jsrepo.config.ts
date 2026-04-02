@@ -1179,7 +1179,8 @@ export default defineConfig({
 				{
 					name: 'shadcn-svelte-button',
 					title: 'shadcn-svelte/button',
-					type: 'component',
+					type: 'ui',
+					add: 'when-needed',
 					files: [
 						{
 							path: 'src/lib/components/ui/button'

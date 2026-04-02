@@ -18,6 +18,29 @@ const JSREPO_TO_SHADCN: Record<string, string> = {
 
 const SKIP_ROLES = new Set(['example', 'doc', 'test']);
 
+/** Matches shadcn registry build: multi-file ui/page/file targets are `<item.name>/<file>`, which we override for prefixed items. */
+const FOLDER_TARGET_TYPES = new Set(['registry:page', 'registry:ui', 'registry:file']);
+
+const SHADCN_REGISTRY_PREFIX = 'shadcn-svelte-';
+
+function stripShadcnRegistryItemPrefix(itemName: string): string | undefined {
+	if (!itemName.startsWith(SHADCN_REGISTRY_PREFIX)) return undefined;
+	return itemName.slice(SHADCN_REGISTRY_PREFIX.length);
+}
+
+function shadcnSourceFileTarget(
+	itemName: string,
+	fileRegistryType: string,
+	filteredFileCount: number,
+	posixPath: string
+): string | undefined {
+	const dir = stripShadcnRegistryItemPrefix(itemName);
+	if (dir === undefined) return undefined;
+	const useFolder = filteredFileCount !== 1 && FOLDER_TARGET_TYPES.has(fileRegistryType);
+	if (!useFolder) return undefined;
+	return `${dir}/${path.posix.basename(posixPath)}`;
+}
+
 function mapRegistryType(jsrepoType: string): string {
 	return JSREPO_TO_SHADCN[jsrepoType] ?? 'registry:component';
 }
@@ -60,13 +83,22 @@ export default function (): Output {
 
 			const items = buildResult.items
 				.map((item) => {
-					const files = item.files
-						.filter((file) => !SKIP_ROLES.has(file.role))
-						.map((file) => ({
-							path: toPosix(path.relative(cwd, file.absolutePath)),
-							type: mapRegistryType(file.type)
-						}))
-						.sort((a, b) => a.path.localeCompare(b.path));
+					const filteredFiles = item.files.filter((file) => !SKIP_ROLES.has(file.role));
+					const fileCount = filteredFiles.length;
+
+					const files = filteredFiles
+						.map((file) => {
+							const posixPath = toPosix(path.relative(cwd, file.absolutePath));
+							const type = mapRegistryType(file.type);
+							const fileEntry: Record<string, unknown> = {
+								path: posixPath,
+								type
+							};
+							const target = shadcnSourceFileTarget(item.name, type, fileCount, posixPath);
+							if (target !== undefined) fileEntry.target = target;
+							return fileEntry;
+						})
+						.sort((a, b) => (a.path as string).localeCompare(b.path as string));
 
 					if (files.length === 0) return null;
 
