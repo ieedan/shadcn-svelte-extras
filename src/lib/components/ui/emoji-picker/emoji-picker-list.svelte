@@ -52,7 +52,7 @@
 						{@const { name, skin } = parseValue(item)}
 						{@const emoji = emojiData.emojis[name].skins[skin].native}
 						<Command.Item
-							class="flex aspect-square size-9 place-items-center justify-center text-lg"
+							class="flex aspect-square size-9 place-items-center justify-center text-lg [&_svg]:hidden!"
 							value="{item}:recent"
 							onSelect={() => {
 								pickerState.select(item);
@@ -81,7 +81,7 @@
 						{@const emojiSkin = emoji.skins.length > 1 ? pickerState.skinIndex : 0}
 						{@const key = makeValue(item, emojiSkin)}
 						<Command.Item
-							class="flex aspect-square size-9 place-items-center justify-center text-lg"
+							class="flex aspect-square size-9 place-items-center justify-center text-lg [&_svg]:hidden!"
 							value={item}
 							onSelect={() => {
 								pickerState.select(key);

@@ -8,6 +8,7 @@ import transformLucideImports from 'vite-plugin-transform-lucide-imports';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const contentDirPath = path.join(__dirname, 'content');
+export const veliteDirPath = path.join(__dirname, ".velite");
 
 export default defineConfig({
 	plugins: [
@@ -23,7 +24,7 @@ export default defineConfig({
 	],
 	server: {
 		fs: {
-			allow: [contentDirPath]
+			allow: [veliteDirPath, contentDirPath]
 		}
 	}
 });

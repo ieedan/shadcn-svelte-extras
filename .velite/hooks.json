@@ -1,0 +1,197 @@
+[
+  {
+    "title": "IsMac",
+    "description": "A hook to determine if the user is on a Mac.",
+    "path": "hooks/is-mac",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Keys",
+        "url": "#keys",
+        "items": []
+      },
+      {
+        "title": "Acknowledgements",
+        "url": "#acknowledgements",
+        "items": []
+      }
+    ],
+    "slug": "hooks/is-mac",
+    "href": "/docs/hooks/is-mac"
+  },
+  {
+    "title": "UseAutoScroll",
+    "description": "A hook to enable the creation of containers that automatically scroll to the bottom of their content.",
+    "path": "hooks/use-auto-scroll",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-auto-scroll",
+    "href": "/docs/hooks/use-auto-scroll"
+  },
+  {
+    "title": "UseBoolean",
+    "description": "A hook to simplify working with boolean values.",
+    "path": "hooks/use-boolean",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Acknowledgements",
+        "url": "#acknowledgements",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-boolean",
+    "href": "/docs/hooks/use-boolean"
+  },
+  {
+    "title": "UseClipboard",
+    "description": "A hook to simplify copying text to the clipboard.",
+    "path": "hooks/use-clipboard",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Delay",
+        "url": "#delay",
+        "items": []
+      },
+      {
+        "title": "Status",
+        "url": "#status",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-clipboard",
+    "href": "/docs/hooks/use-clipboard"
+  },
+  {
+    "title": "UseFrecency",
+    "description": "A hook to track and sort items based on their frequency of use.",
+    "path": "hooks/use-frecency",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-frecency",
+    "href": "/docs/hooks/use-frecency"
+  },
+  {
+    "title": "UseMedia",
+    "description": "A hook to track the size of the screen using the standard Tailwind CSS breakpoints.",
+    "path": "hooks/use-media",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Custom Breakpoints",
+        "url": "#custom-breakpoints",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-media",
+    "href": "/docs/hooks/use-media"
+  },
+  {
+    "title": "UsePromise",
+    "description": "A hook to manage the state of a promise reactively in the absence of {#await}.",
+    "path": "hooks/use-promise",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-promise",
+    "href": "/docs/hooks/use-promise"
+  },
+  {
+    "title": "UseToc",
+    "description": "A hook used to generate a table of contents based on the page content",
+    "path": "hooks/use-toc",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Ignoring Headings",
+        "url": "#ignoring-headings",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-toc",
+    "href": "/docs/hooks/use-toc"
+  }
+]

@@ -46,6 +46,10 @@ const config = {
 		prerender: {
 			origin: 'https://shadcn-svelte-extras.com',
 			entries: mdPrerenderPaths
+		},
+		alias: {
+			$content: '.velite',
+			'$content/*': '.velite/*'
 		}
 	}
 };

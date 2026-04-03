@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Introduction",
+    "description": "Why we built shadcn-svelte-extras and why it's great.",
+    "path": "index",
+    "component": false,
+    "toc": [
+      {
+        "title": "Not a port",
+        "url": "#not-a-port",
+        "items": []
+      },
+      {
+        "title": "Composability",
+        "url": "#composability",
+        "items": []
+      },
+      {
+        "title": "Quality",
+        "url": "#quality",
+        "items": []
+      }
+    ],
+    "slug": "index",
+    "href": "/docs"
+  },
+  {
+    "title": "Installation",
+    "description": "How to add and use extras in your project.",
+    "path": "installation",
+    "component": false,
+    "toc": [
+      {
+        "title": "Setup",
+        "url": "#setup",
+        "items": []
+      },
+      {
+        "title": "MCP",
+        "url": "#mcp",
+        "items": []
+      },
+      {
+        "title": "Tailwind v3",
+        "url": "#tailwind-v3",
+        "items": []
+      }
+    ],
+    "slug": "installation",
+    "href": "/docs/installation"
+  }
+]

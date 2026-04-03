@@ -1,4 +1,4 @@
-import { slugFromPath } from './get-doc';
+import { slugFromPath } from '../docs';
 import { transformDocMarkdown } from './transform-doc-markdown';
 
 const rawModules = import.meta.glob<string>('/content/**/*.md', {
@@ -15,3 +15,5 @@ export async function getDocMarkdown(slug: string): Promise<string | null> {
 	}
 	return null;
 }
+
+

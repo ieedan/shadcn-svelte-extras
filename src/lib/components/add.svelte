@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Add from '$lib/components/ui/add';
-	import type { RegistryItem } from '$lib/registry-items';
+	import type { RegistryItem } from '$lib/registry/items';
 
 	type Props = {
 		item: RegistryItem;

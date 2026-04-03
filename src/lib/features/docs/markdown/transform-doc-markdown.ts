@@ -1,11 +1,10 @@
-import {
-	DOC_SITE_ORIGIN,
-	GITHUB_DOC_BLOB_BASE,
-	REGISTRY_ITEM_URL_BASE
-} from '$lib/constants';
 import { getReference } from '$lib/docs/api-reference/components';
 import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
 import { resolveCommand } from 'package-manager-detector/commands';
+
+const DOC_SITE_ORIGIN = 'https://shadcn-svelte-extras.com';
+const GITHUB_DOC_BLOB_BASE = 'https://github.com/ieedan/shadcn-svelte-extras/blob/main/content';
+const REGISTRY_ITEM_URL_BASE = 'https://shadcn-svelte-extras.com/r';
 
 /** Bundled at build time so doc `<Code />` expansion works on Cloudflare (no `node:fs`). */
 const rawLibLoaders = import.meta.glob('/src/lib/**/*', {

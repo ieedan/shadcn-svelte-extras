@@ -4,7 +4,9 @@
 	"version": "6.10.0",
 	"type": "module",
 	"scripts": {
-		"dev": "concurrently -n 'registry,app' -c 'blue,green' \"pnpm registry:dev\"  \"vite dev\"",
+		"dev": "concurrently -n 'registry,app' -c 'blue,green,yellow' \"pnpm registry:dev\"  \"pnpm dev:app\" \"pnpm dev:content\"",
+		"dev:app": "vite dev",
+		"dev:content": "velite dev --watch",
 		"build": "pnpm pre:build && vite build",
 		"sync": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -84,6 +86,7 @@
 		"unist-util-visit": "^5.0.0",
 		"valibot": "1.3.1",
 		"vaul-svelte": "1.0.0-next.7",
+		"velite": "^0.3.1",
 		"vite": "8.0.3",
 		"vite-plugin-transform-lucide-imports": "^0.3.0",
 		"wrangler": "^4.79.0",

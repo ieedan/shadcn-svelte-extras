@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import { map } from '$lib/map';
+	import { groupedDocs } from '$lib/features/docs/docs';
 	import type { ComponentProps } from 'svelte';
 	import Logo from './logo.svelte';
-	import { Badge } from '$lib/components/ui/badge';
+
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
@@ -30,22 +30,22 @@
 	<Sidebar.Content>
 		<Sidebar.Group>
 			<Sidebar.Menu>
-				{#each Object.entries(map) as [group, routes] (group)}
+				{#each Object.entries(groupedDocs) as [group, routes] (group)}
 					<Sidebar.Group>
 						<Sidebar.GroupLabel>{group}</Sidebar.GroupLabel>
 						<Sidebar.GroupContent>
 							<Sidebar.Menu>
-								{#each routes as { name, href, status } (name)}
+								{#each routes as { title, slug } (slug)}
 									<Sidebar.MenuItem>
 										<Sidebar.MenuButton>
 											{#snippet child({ props })}
-												<a {href} {...props}>
-													{name}
-													{#if status}
+												<a href={slug} {...props}>
+													{title}
+													<!-- {#if status}
 														<Badge class="bg-brand hover:bg-brand text-white">
 															{status}
 														</Badge>
-													{/if}
+													{/if} -->
 												</a>
 											{/snippet}
 										</Sidebar.MenuButton>

@@ -3,7 +3,7 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const Markdown = $derived(data.component);
+	const Markdown = $derived(data.doc.component);
 </script>
 
 <Markdown />

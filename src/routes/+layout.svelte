@@ -5,8 +5,11 @@
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import * as Add from '$lib/components/ui/add';
-	import { REGISTRY_OPTIONS } from '$lib/constants';
 	import { PersistedState } from 'runed';
+	import { dev } from '$app/environment';
+	import { UmamiAnalytics } from '@lukulent/svelte-umami';
+
+	const REGISTRY_OPTIONS = ['@ieedan/shadcn-svelte-extras'] as const;
 
 	let { data, children } = $props();
 
@@ -21,6 +24,14 @@
 </script>
 
 <MetaTags {...metaTags} />
+
+<!-- only inject analytics in production (intentionally placed here so we don't count demo views) -->
+{#if !dev}
+	<UmamiAnalytics
+		srcURL="https://cloud.umami.is/script.js"
+		websiteID="07b288db-9239-4fbf-9d68-4f2ca9b63f89"
+	/>
+{/if}
 
 <ModeWatcher />
 <Toaster />

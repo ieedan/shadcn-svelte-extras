@@ -5,7 +5,7 @@ import fs from 'node:fs';
 export default function (): Output {
 	return {
 		output: async (buildResult, { cwd }) => {
-			const filePath = path.join(cwd, 'src/lib/registry-items.ts');
+			const filePath = path.join(cwd, 'src/lib/registry/items.ts');
 
 			const itemNames = buildResult.items
 				.filter((item) => item.add === 'when-added')

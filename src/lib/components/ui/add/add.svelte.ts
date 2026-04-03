@@ -1,4 +1,3 @@
-import { REGISTRY_ITEM_URL_BASE } from '$lib/constants';
 import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 import { resolveCommand } from 'package-manager-detector/commands';
 import { getContext, setContext } from 'svelte';
@@ -60,7 +59,7 @@ class AddRootState {
 
 	addCommand: string = $derived.by(() => {
 		if (this.installer === 'shadcn-svelte') {
-			const url = `${REGISTRY_ITEM_URL_BASE}/${this.opts.item.current}.json`;
+			const url = `https://shadcn-svelte-extras.com/r/${this.opts.item.current}.json`;
 			const command = resolveCommand(this.agent, 'execute', ['shadcn-svelte@latest', 'add', url]);
 
 			return command
