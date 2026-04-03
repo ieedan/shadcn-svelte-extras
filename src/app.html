@@ -4,6 +4,25 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			const USER_CONFIG_COOKIE_NAME = "extras_user_config";
+			const cookieMap = {};
+			document.cookie.split(";").forEach((pair) => {
+				const [key, value] = pair.trim().split("=");
+				cookieMap[key] = value;
+			});
+			const userConfigCookie = cookieMap[USER_CONFIG_COOKIE_NAME];
+			if (userConfigCookie) {
+				try {
+					const userConfig = JSON.parse(decodeURIComponent(userConfigCookie));
+					if (userConfig.layout) {
+						document.documentElement.classList.add(`layout-${userConfig.layout}`);
+					}
+				} catch (e) {
+					console.error("Error parsing user config cookie:", e);
+				}
+			}
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

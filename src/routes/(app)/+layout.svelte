@@ -21,4 +21,8 @@
 <Command />
 
 <SiteHeader />
-{@render children()}
+<div class="flex flex-col items-center">
+	<div class="site-container">
+		{@render children()}
+	</div>
+</div>

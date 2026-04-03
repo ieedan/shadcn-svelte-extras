@@ -1,8 +1,14 @@
-import * as v from 'valibot';
+import { z } from 'zod';
 import { MEGABYTE } from '$lib/components/ui/file-drop-zone';
 
-export const schema = v.object({
-	attachments: v.array(v.pipe(v.file(), v.maxSize(MEGABYTE * 2)))
+const maxBytes = MEGABYTE * 2;
+
+const fileWithMaxSize = z.instanceof(File).refine((file) => file.size <= maxBytes, {
+	message: `Each file must be ${maxBytes} bytes or smaller`
 });
 
-export type Schema = v.InferInput<typeof schema>;
+export const schema = z.object({
+	attachments: z.array(fileWithMaxSize)
+});
+
+export type Schema = z.infer<typeof schema>;

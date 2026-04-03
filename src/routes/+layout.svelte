@@ -8,6 +8,7 @@
 	import { PersistedState } from 'runed';
 	import { dev } from '$app/environment';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
+	import { UserConfig, UserConfigContext } from '$lib/user-config.svelte';
 
 	const REGISTRY_OPTIONS = ['@ieedan/shadcn-svelte-extras'] as const;
 
@@ -21,6 +22,9 @@
 		'user-registry-preference',
 		'@ieedan/shadcn-svelte-extras'
 	);
+
+	// svelte-ignore state_referenced_locally
+	UserConfigContext.set(new UserConfig(data.userConfig));
 </script>
 
 <MetaTags {...metaTags} />

@@ -66,18 +66,18 @@ Server:
 
 ```typescript
 import { fail, message, superValidate } from 'sveltekit-superforms';
-import { valibot } from 'sveltekit-superforms/adapters';
+import { zod4 } from 'sveltekit-superforms/adapters';
 import { schema } from './schema';
 
 export const load = async () => {
 	return {
-		form: await superValidate({}, valibot(schema))
+		form: await superValidate({}, zod4(schema))
 	};
 };
 
 export const actions = {
 	default: async ({ request }) => {
-		const form = await superValidate(request, valibot(schema));
+		const form = await superValidate(request, zod4(schema));
 
 		if (!form.valid) {
 			return fail(400, { form });

@@ -204,9 +204,6 @@ importers:
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
-      valibot:
-        specifier: 1.3.1
-        version: 1.3.1(typescript@6.0.2)
       vaul-svelte:
         specifier: 1.0.0-next.7
         version: 1.0.0-next.7(svelte@5.55.1)
@@ -225,6 +222,9 @@ importers:
       yeezy-dates:
         specifier: ^1.1.0
         version: 1.1.0
+      zod:
+        specifier: ^4.3.6
+        version: 4.3.6
 
 packages:
 
@@ -7377,6 +7377,7 @@ snapshots:
   valibot@1.3.1(typescript@6.0.2):
     optionalDependencies:
       typescript: 6.0.2
+    optional: true
 
   validator@13.15.26:
     optional: true
@@ -7562,7 +7563,6 @@ snapshots:
       zod: 4.3.6
     optional: true
 
-  zod@4.3.6:
-    optional: true
+  zod@4.3.6: {}
 
   zwitch@2.0.4: {}

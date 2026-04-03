@@ -7,6 +7,7 @@
 @import 'shadcn-svelte/tailwind.css';
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant fixed (&:is(.layout-fixed *));
 
 :root {
 	--radius: 0.625rem;
@@ -168,6 +169,10 @@ html {
 
 * {
 	overscroll-behavior: none;
+}
+
+@utility site-container {
+	@apply fixed:max-w-7xl w-full px-4
 }
 
 @layer components {
