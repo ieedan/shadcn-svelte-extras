@@ -1,6 +1,6 @@
 ---
-title: "Copy Button"
-description: "A button used to copy text to the clipboard."
+title: 'Copy Button'
+description: 'A button used to copy text to the clipboard.'
 ---
 
 <script lang="ts">

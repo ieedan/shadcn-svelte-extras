@@ -1,6 +1,6 @@
 ---
-title: "Confirm Delete Dialog"
-description: "A dialog for confirming delete actions."
+title: 'Confirm Delete Dialog'
+description: 'A dialog for confirming delete actions.'
 ---
 
 <script lang="ts">
@@ -37,22 +37,17 @@ description: "A dialog for confirming delete actions."
 >
 	Delete
 </button>
-
 ```
 
 ## With Text Confirmation
 
-
 Force the user to enter specific text to confirm the action.
-
 
 <Demo demo="confirm-delete-dialog-with-text" />
 
 ## Skip Confirmation
 
-
 Sometimes it's nice to give the user the ability to skip the confirmation. In this case you can set the `skipConfirmation` option to `true`.
-
 
 <Demo demo="confirm-delete-dialog-skip-confirmation" />
 

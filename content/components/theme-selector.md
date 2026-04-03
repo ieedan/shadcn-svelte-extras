@@ -1,6 +1,6 @@
 ---
-title: "Theme Selector"
-description: "Click to select the theme."
+title: 'Theme Selector'
+description: 'Click to select the theme.'
 ---
 
 <script lang="ts">

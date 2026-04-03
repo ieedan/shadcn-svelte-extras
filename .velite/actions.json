@@ -1,57 +1,57 @@
 [
-  {
-    "title": "Active",
-    "description": "An action to determine if a link is active.",
-    "path": "actions/active",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Attachment Usage",
-        "url": "#attachment-usage",
-        "items": []
-      }
-    ],
-    "slug": "actions/active",
-    "href": "/docs/actions/active"
-  },
-  {
-    "title": "Shortcut",
-    "description": "An action to create shortcuts for your application.",
-    "path": "actions/shortcut",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Attachment Usage",
-        "url": "#attachment-usage",
-        "items": []
-      },
-      {
-        "title": "Multiple",
-        "url": "#multiple",
-        "items": []
-      }
-    ],
-    "slug": "actions/shortcut",
-    "href": "/docs/actions/shortcut"
-  }
+	{
+		"title": "Active",
+		"description": "An action to determine if a link is active.",
+		"path": "actions/active",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Attachment Usage",
+				"url": "#attachment-usage",
+				"items": []
+			}
+		],
+		"slug": "actions/active",
+		"href": "/docs/actions/active"
+	},
+	{
+		"title": "Shortcut",
+		"description": "An action to create shortcuts for your application.",
+		"path": "actions/shortcut",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Attachment Usage",
+				"url": "#attachment-usage",
+				"items": []
+			},
+			{
+				"title": "Multiple",
+				"url": "#multiple",
+				"items": []
+			}
+		],
+		"slug": "actions/shortcut",
+		"href": "/docs/actions/shortcut"
+	}
 ]

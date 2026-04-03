@@ -1,6 +1,6 @@
 ---
-title: "UseMedia"
-description: "A hook to track the size of the screen using the standard Tailwind CSS breakpoints."
+title: 'UseMedia'
+description: 'A hook to track the size of the screen using the standard Tailwind CSS breakpoints.'
 ---
 
 <script lang="ts">
@@ -18,19 +18,16 @@ description: "A hook to track the size of the screen using the standard Tailwind
 
 ```svelte {2,4}
 <script lang="ts">
-    import { useMedia } from '$lib/hooks/use-media.svelte';
+	import { useMedia } from '$lib/hooks/use-media.svelte';
 
-    const media = useMedia();
+	const media = useMedia();
 </script>
 
 {media.sm}
-
 ```
 
 ## Custom Breakpoints
 
-
 You can also define your own breakpoints and get full type safety.
-
 
 <Demo demo="use-media-custom" />

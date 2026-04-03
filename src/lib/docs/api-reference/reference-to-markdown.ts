@@ -32,9 +32,7 @@ function formatComponentSection(referenceName: string, component: Component<unkn
 	const entries = Object.entries(component.props);
 	if (entries.length === 0) return out;
 
-	out +=
-		'| Prop | Type | Default | Required | Bindable |\n' +
-		'| --- | --- | --- | --- | --- |\n';
+	out += '| Prop | Type | Default | Required | Bindable |\n' + '| --- | --- | --- | --- | --- |\n';
 
 	for (const [prop, value] of entries) {
 		const v = value as PropReference;
@@ -51,5 +49,10 @@ export function referenceBundleToMarkdown(bundle: ReferenceBundle): string {
 	for (const component of Object.values(bundle.components)) {
 		parts.push(formatComponentSection(bundle.name, component));
 	}
-	return parts.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
+	return (
+		parts
+			.join('\n')
+			.replace(/\n{3,}/g, '\n\n')
+			.trimEnd() + '\n'
+	);
 }

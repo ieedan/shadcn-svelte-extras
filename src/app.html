@@ -5,10 +5,10 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<script>
-			const USER_CONFIG_COOKIE_NAME = "extras_user_config";
+			const USER_CONFIG_COOKIE_NAME = 'extras_user_config';
 			const cookieMap = {};
-			document.cookie.split(";").forEach((pair) => {
-				const [key, value] = pair.trim().split("=");
+			document.cookie.split(';').forEach((pair) => {
+				const [key, value] = pair.trim().split('=');
 				cookieMap[key] = value;
 			});
 			const userConfigCookie = cookieMap[USER_CONFIG_COOKIE_NAME];
@@ -19,7 +19,7 @@
 						document.documentElement.classList.add(`layout-${userConfig.layout}`);
 					}
 				} catch (e) {
-					console.error("Error parsing user config cookie:", e);
+					console.error('Error parsing user config cookie:', e);
 				}
 			}
 		</script>

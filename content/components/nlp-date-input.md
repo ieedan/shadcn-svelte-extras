@@ -1,6 +1,6 @@
 ---
-title: "NLPDateInput"
-description: "A natural language date input with suggestions."
+title: 'NLPDateInput'
+description: 'A natural language date input with suggestions.'
 ---
 
 <script lang="ts">
@@ -9,9 +9,7 @@ description: "A natural language date input with suggestions."
 	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
-
 Allows you to provide a date in natural language and helps by giving suggestions.
-
 
 <Demo demo="nlp-date-input" />
 
@@ -21,11 +19,9 @@ Allows you to provide a date in natural language and helps by giving suggestions
 
 ## Min/Max
 
-
 You may want to limit what suggestions are actually presented to the user so that they don't
-	schedule an appointment 30 years from now. You can do this with the
-	`min` and `max` props.
-
+schedule an appointment 30 years from now. You can do this with the
+`min` and `max` props.
 
 <Demo demo="nlp-date-input-min-max" />
 

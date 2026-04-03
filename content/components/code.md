@@ -1,6 +1,6 @@
 ---
-title: "Code"
-description: "A code component."
+title: 'Code'
+description: 'A code component.'
 ---
 
 <script lang="ts">
@@ -22,13 +22,13 @@ description: "A code component."
 The highlighter and languages can be configured from `shiki.ts`.
 
 <Code
-	lang="typescript"
-	code={shikiRaw}
-	class="h-fit"
-	highlight={[
-		[5, 12],
-		[18, 25]
-	]}
+lang="typescript"
+code={shikiRaw}
+class="h-fit"
+highlight={[
+[5, 12],
+[18, 25]
+]}
 />
 
 ## Copy Button

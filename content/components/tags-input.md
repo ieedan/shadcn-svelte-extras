@@ -1,6 +1,6 @@
 ---
-title: "Tags Input"
-description: "A tags input component."
+title: 'Tags Input'
+description: 'A tags input component.'
 ---
 
 <script lang="ts">
@@ -21,48 +21,38 @@ description: "A tags input component."
 
 ```svelte
 <script lang="ts">
-	import { TagsInput } from "$lib/components/ui/tags-input";
+	import { TagsInput } from '$lib/components/ui/tags-input';
 </script>
 
-<TagsInput/>
+<TagsInput />
 ```
 
 ## Custom Validation
 
-
 For most of the validation and transformation you will need to do you can use the
-	`validate` property.
-
+`validate` property.
 
 For example let's say you want to make all of the tags lowercase.
 
-
 Write a custom validate function:
-
 
 <div>
 	<Code lang="typescript" code={customValidateRaw} />
 </div>
 
-
 Pass the function to the `<TagsInput/>` component:
-
 
 <Demo demo="tags-input-lowercase" />
 
 ## Autocomplete
 
-
 Provide a list of `suggestions` to show an autocomplete dropdown as the user types.
-
 
 <Demo demo="tags-input-autocomplete" />
 
 ## Restricted to Suggestions
 
-
 Set `restrictToSuggestions` to only allow values from the suggestions list.
-
 
 <Demo demo="tags-input-autocomplete-restricted" />
 

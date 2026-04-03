@@ -1,6 +1,6 @@
 ---
-title: "Terminal"
-description: "An implementation of the MacOS terminal. Useful for showcasing a command line interface."
+title: 'Terminal'
+description: 'An implementation of the MacOS terminal. Useful for showcasing a command line interface.'
 ---
 
 <script lang="ts">
@@ -23,11 +23,10 @@ description: "An implementation of the MacOS terminal. Useful for showcasing a c
 </script>
 
 <Terminal.Root>
-	<Terminal.TypingAnimation/>
-	<Terminal.AnimatedSpan/>
+	<Terminal.TypingAnimation />
+	<Terminal.AnimatedSpan />
 </Terminal.Root>
 ```
-
 
 You can add a delay to `<Terminal.Root/>` to delay every animation by that amount of time:
 
@@ -37,11 +36,10 @@ You can add a delay to `<Terminal.Root/>` to delay every animation by that amoun
 </script>
 
 <Terminal.Root delay={250}>
-	<Terminal.TypingAnimation/>
-	<Terminal.AnimatedSpan/>
+	<Terminal.TypingAnimation />
+	<Terminal.AnimatedSpan />
 </Terminal.Root>
 ```
-
 
 You can also change the speed of all animations from `<Terminal.Root/>`:
 
@@ -52,8 +50,8 @@ You can also change the speed of all animations from `<Terminal.Root/>`:
 
 <!-- half speed -->
 <Terminal.Root speed={0.5}>
-	<Terminal.TypingAnimation/>
-	<Terminal.AnimatedSpan/>
+	<Terminal.TypingAnimation />
+	<Terminal.AnimatedSpan />
 </Terminal.Root>
 ```
 

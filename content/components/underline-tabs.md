@@ -1,6 +1,6 @@
 ---
-title: "Underline Tabs"
-description: "A horizontal tabs component with an underline."
+title: 'Underline Tabs'
+description: 'A horizontal tabs component with an underline.'
 ---
 
 <script lang="ts">

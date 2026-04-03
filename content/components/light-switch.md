@@ -1,6 +1,6 @@
 ---
-title: "Light Switch"
-description: "Click and change the theme."
+title: 'Light Switch'
+description: 'Click and change the theme.'
 ---
 
 <script lang="ts">

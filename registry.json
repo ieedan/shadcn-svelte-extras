@@ -26,10 +26,7 @@
 		{
 			"name": "button",
 			"type": "registry:component",
-			"registryDependencies": [
-				"./shadcn-svelte-button.json",
-				"./shadcn-svelte-spinner.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-button.json", "./shadcn-svelte-spinner.json"],
 			"files": [
 				{
 					"path": "src/lib/components/button.svelte",
@@ -42,9 +39,7 @@
 		{
 			"name": "casing",
 			"type": "registry:lib",
-			"registryDependencies": [
-				"./is-letter.json"
-			],
+			"registryDependencies": ["./is-letter.json"],
 			"files": [
 				{
 					"path": "src/lib/utils/casing.ts",
@@ -93,19 +88,12 @@
 			],
 			"title": "Chat",
 			"description": "A component for creating live chats, messaging interfaces, conversation UIs, chat bubbles, message threads, and real-time communication displays.",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "code",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./copy-button.json",
-				"./utils.json",
-				"./button.json"
-			],
+			"registryDependencies": ["./copy-button.json", "./utils.json", "./button.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/code/code-copy-button.svelte",
@@ -151,10 +139,7 @@
 		{
 			"name": "confirm-delete-dialog",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./shadcn-svelte-alert-dialog.json",
-				"./shadcn-svelte-input.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-alert-dialog.json", "./shadcn-svelte-input.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/confirm-delete-dialog/confirm-delete-dialog.svelte",
@@ -193,10 +178,7 @@
 			],
 			"title": "CopyButton",
 			"description": "A button used to copy text to the clipboard, copy code snippets, copy content, clipboard copy functionality with visual feedback and copy confirmation.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "emoji-picker",
@@ -259,9 +241,7 @@
 		{
 			"name": "field-set",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/field-set/field-set-content.svelte",
@@ -290,17 +270,12 @@
 			],
 			"title": "FieldSet",
 			"description": "A field set component for grouping form fields, form groups, input groups, form sections, with labels, descriptions, error states, and validation feedback.",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["tailwind-variants@^3.2.2", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "file-drop-zone",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/file-drop-zone/file-drop-zone-textarea.svelte",
@@ -408,10 +383,7 @@
 		{
 			"name": "ipv4-address",
 			"type": "registry:lib",
-			"registryDependencies": [
-				"./is-number.json",
-				"./result.json"
-			],
+			"registryDependencies": ["./is-number.json", "./result.json"],
 			"files": [
 				{
 					"path": "src/lib/utils/ipv4-address.ts",
@@ -422,11 +394,7 @@
 		{
 			"name": "ipv4address-input",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./is-number.json",
-				"./utils.json",
-				"./ipv4-address.json"
-			],
+			"registryDependencies": ["./is-number.json", "./utils.json", "./ipv4-address.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/ipv4address-input/index.ts",
@@ -507,16 +475,12 @@
 			],
 			"title": "LanguageSwitcher",
 			"description": "A language switcher component for changing locales, i18n language selector, locale switcher, internationalization, translation switcher, and multi-language support.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "light-switch",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./button.json"
-			],
+			"registryDependencies": ["./button.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/light-switch/index.ts",
@@ -533,17 +497,12 @@
 			],
 			"title": "LightSwitch",
 			"description": "A light switch component for toggling themes, dark mode toggle, light dark mode switcher, theme toggle button, with smooth animations and visual feedback.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"mode-watcher@^1.1.0"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "mode-watcher@^1.1.0"]
 		},
 		{
 			"name": "link",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/link/index.ts",
@@ -560,9 +519,7 @@
 		{
 			"name": "meter",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/meter/index.ts",
@@ -575,17 +532,12 @@
 			],
 			"title": "Meter",
 			"description": "A meter component for displaying scalar measurements, value indicators, gauges, measurement displays, disk usage, storage capacity, with min max values and visual value indication.",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "modal",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./shadcn-svelte-dialog.json",
-				"./shadcn-svelte-drawer.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-dialog.json", "./shadcn-svelte-drawer.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/modal/index.ts",
@@ -630,17 +582,12 @@
 			],
 			"title": "Modal",
 			"description": "A modal component for dialogs, popups, overlays, dialog boxes, modal windows, with backdrop, close functionality, and responsive design.",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "runed@^0.37.1"]
 		},
 		{
 			"name": "nlp-date-input",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./shadcn-svelte-command.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-command.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/nlp-date-input/index.ts",
@@ -657,18 +604,12 @@
 			],
 			"title": "NlpDateInput",
 			"description": "A natural language processing date input component for parsing date strings, smart date input, date picker with NLP, text to date conversion, and date suggestions.",
-			"devDependencies": [
-				"yeezy-dates@^1.1.0"
-			]
+			"devDependencies": ["yeezy-dates@^1.1.0"]
 		},
 		{
 			"name": "number-field",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./button.json",
-				"./utils.json",
-				"./use-ramp.json"
-			],
+			"registryDependencies": ["./button.json", "./utils.json", "./use-ramp.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/number-field/index.ts",
@@ -705,11 +646,7 @@
 			],
 			"title": "NumberField",
 			"description": "A component for incrementing and decrementing a number.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"svelte-toolbelt@^0.10.6",
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "svelte-toolbelt@^0.10.6", "runed@^0.37.1"]
 		},
 		{
 			"name": "password",
@@ -841,10 +778,7 @@
 		{
 			"name": "rename",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./button.json",
-				"./utils.json"
-			],
+			"registryDependencies": ["./button.json", "./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/rename/index.ts",
@@ -881,10 +815,7 @@
 			],
 			"title": "Rename",
 			"description": "A component for renaming files, folders, items, inline editing, editable text, rename input, with validation and keyboard shortcuts.",
-			"devDependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["svelte-toolbelt@^0.10.6", "runed@^0.37.1"]
 		},
 		{
 			"name": "result",
@@ -900,11 +831,7 @@
 		{
 			"name": "shadcn-svelte-alert-dialog",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./shadcn-svelte-button.json",
-				"./button.json",
-				"./utils.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-button.json", "./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/alert-dialog/alert-dialog-action.svelte",
@@ -973,16 +900,12 @@
 				}
 			],
 			"title": "shadcn-svelte/alert-dialog",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-avatar",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/avatar/avatar-badge.svelte",
@@ -1021,16 +944,12 @@
 				}
 			],
 			"title": "shadcn-svelte/avatar",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-button",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/button/button.svelte",
@@ -1044,9 +963,7 @@
 				}
 			],
 			"title": "shadcn-svelte/button",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2"
-			]
+			"devDependencies": ["tailwind-variants@^3.2.2"]
 		},
 		{
 			"name": "shadcn-svelte-collapsible",
@@ -1075,9 +992,7 @@
 				}
 			],
 			"title": "shadcn-svelte/collapsible",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-command",
@@ -1150,18 +1065,12 @@
 				}
 			],
 			"title": "shadcn-svelte/command",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "shadcn-svelte-dialog",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json",
-				"./button.json"
-			],
+			"registryDependencies": ["./utils.json", "./shadcn-svelte-button.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/dialog/dialog-close.svelte",
@@ -1220,17 +1129,12 @@
 				}
 			],
 			"title": "shadcn-svelte/dialog",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "shadcn-svelte-drawer",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/drawer/drawer-close.svelte",
@@ -1294,16 +1198,12 @@
 				}
 			],
 			"title": "shadcn-svelte/drawer",
-			"devDependencies": [
-				"vaul-svelte@1.0.0-next.7"
-			]
+			"devDependencies": ["vaul-svelte@1.0.0-next.7"]
 		},
 		{
 			"name": "shadcn-svelte-dropdown-menu",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/dropdown-menu/dropdown-menu-checkbox-group.svelte",
@@ -1397,17 +1297,12 @@
 				}
 			],
 			"title": "shadcn-svelte/dropdown-menu",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "shadcn-svelte-input",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/input/index.ts",
@@ -1427,7 +1322,7 @@
 			"type": "registry:ui",
 			"registryDependencies": [
 				"./utils.json",
-				"./button.json",
+				"./shadcn-svelte-button.json",
 				"./shadcn-svelte-input.json",
 				"./shadcn-svelte-textarea.json"
 			],
@@ -1469,16 +1364,12 @@
 				}
 			],
 			"title": "shadcn-svelte/input-group",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2"
-			]
+			"devDependencies": ["tailwind-variants@^3.2.2"]
 		},
 		{
 			"name": "shadcn-svelte-popover",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/popover/index.ts",
@@ -1527,16 +1418,12 @@
 				}
 			],
 			"title": "shadcn-svelte/popover",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-scroll-area",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/scroll-area/index.ts",
@@ -1555,16 +1442,12 @@
 				}
 			],
 			"title": "shadcn-svelte/scroll-area",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-spinner",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/spinner/index.ts",
@@ -1578,16 +1461,12 @@
 				}
 			],
 			"title": "shadcn-svelte/spinner",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "shadcn-svelte-tabs",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/tabs/index.ts",
@@ -1616,17 +1495,12 @@
 				}
 			],
 			"title": "shadcn-svelte/tabs",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"tailwind-variants@^3.2.2"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "tailwind-variants@^3.2.2"]
 		},
 		{
 			"name": "shadcn-svelte-textarea",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/textarea/index.ts",
@@ -1644,9 +1518,7 @@
 		{
 			"name": "shadcn-svelte-toggle",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/toggle/index.ts",
@@ -1660,17 +1532,12 @@
 				}
 			],
 			"title": "shadcn-svelte/toggle",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["tailwind-variants@^3.2.2", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shadcn-svelte-tooltip",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/tooltip/index.ts",
@@ -1704,9 +1571,7 @@
 				}
 			],
 			"title": "shadcn-svelte/tooltip",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		},
 		{
 			"name": "shortcut",
@@ -1724,11 +1589,7 @@
 		{
 			"name": "snippet",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json",
-				"./copy-button.json",
-				"./use-clipboard.json"
-			],
+			"registryDependencies": ["./utils.json", "./copy-button.json", "./use-clipboard.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/snippet/index.ts",
@@ -1741,16 +1602,12 @@
 			],
 			"title": "Snippet",
 			"description": "A snippet component for displaying code snippets, command snippets, text snippets, with copy functionality, variants, and multiline support.",
-			"devDependencies": [
-				"tailwind-variants@^3.2.2"
-			]
+			"devDependencies": ["tailwind-variants@^3.2.2"]
 		},
 		{
 			"name": "star-rating",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/star-rating/index.ts",
@@ -1771,18 +1628,12 @@
 			],
 			"title": "StarRating",
 			"description": "A star rating component for ratings, reviews, star selector, 5 star rating, rating input, with half stars, readonly mode, custom colors, and sizes.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "stepper",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json",
-				"./shadcn-svelte-button.json"
-			],
+			"registryDependencies": ["./utils.json", "./shadcn-svelte-button.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/stepper/index.ts",
@@ -1839,17 +1690,12 @@
 			],
 			"title": "Stepper",
 			"description": "A stepper component for multi-step forms, step navigation, progress indicators, wizard flows, step-by-step processes, with next/previous navigation and step validation.",
-			"devDependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["svelte-toolbelt@^0.10.6", "runed@^0.37.1"]
 		},
 		{
 			"name": "tags-input",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/tags-input/index.ts",
@@ -1874,18 +1720,12 @@
 			],
 			"title": "TagsInput",
 			"description": "A tags input component for tag input fields, multi-tag input, tag selector, chip input, tag management, with add remove tags, and tag validation.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0"]
 		},
 		{
 			"name": "terminal",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json",
-				"./typewriter.json",
-				"./window.json"
-			],
+			"registryDependencies": ["./utils.json", "./typewriter.json", "./window.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/terminal/index.ts",
@@ -1922,19 +1762,12 @@
 			],
 			"title": "Terminal",
 			"description": "A terminal component for displaying command line interfaces, terminal emulator, CLI display, shell terminal, code examples, with typing animation and command output.",
-			"devDependencies": [
-				"svelte-toolbelt@^0.10.6",
-				"runed@^0.37.1",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["svelte-toolbelt@^0.10.6", "runed@^0.37.1", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "theme-selector",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./shadcn-svelte-dropdown-menu.json",
-				"./shadcn-svelte-button.json"
-			],
+			"registryDependencies": ["./shadcn-svelte-dropdown-menu.json", "./shadcn-svelte-button.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/theme-selector/index.ts",
@@ -1947,18 +1780,12 @@
 			],
 			"title": "ThemeSelector",
 			"description": "A theme selector component for choosing themes, theme picker, color scheme selector, dark light theme switcher, with multiple theme options and visual preview.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"mode-watcher@^1.1.0"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "mode-watcher@^1.1.0"]
 		},
 		{
 			"name": "toc",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./use-toc.json",
-				"./utils.json"
-			],
+			"registryDependencies": ["./use-toc.json", "./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/toc/index.ts",
@@ -1975,10 +1802,7 @@
 		{
 			"name": "tree-view",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json",
-				"./shadcn-svelte-collapsible.json"
-			],
+			"registryDependencies": ["./utils.json", "./shadcn-svelte-collapsible.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/tree-view/index.ts",
@@ -2003,10 +1827,7 @@
 			],
 			"title": "TreeView",
 			"description": "A tree view component for displaying hierarchical data, file tree, folder structure, nested lists, directory tree, with expand collapse, custom icons, and selection.",
-			"devDependencies": [
-				"@lucide/svelte@^1.7.0",
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["@lucide/svelte@^1.7.0", "bits-ui@^2.16.5"]
 		},
 		{
 			"name": "typewriter",
@@ -2023,9 +1844,7 @@
 		{
 			"name": "underline-tabs",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/underline-tabs/index.ts",
@@ -2054,11 +1873,7 @@
 			],
 			"title": "UnderlineTabs",
 			"description": "A underline tabs component for displaying tabs, tab navigation, tab selection, tab navigation, and tab selection.",
-			"devDependencies": [
-				"bits-ui@^2.16.5",
-				"svelte-toolbelt@^0.10.6",
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["bits-ui@^2.16.5", "svelte-toolbelt@^0.10.6", "runed@^0.37.1"]
 		},
 		{
 			"name": "use-auto-scroll",
@@ -2111,9 +1926,7 @@
 			],
 			"title": "UseFrecency",
 			"description": "Sort items based on how frequently and recent they were used. Frequency sorting, recency sorting, usage tracking, smart sorting, and item ranking.",
-			"devDependencies": [
-				"runed@^0.37.1"
-			]
+			"devDependencies": ["runed@^0.37.1"]
 		},
 		{
 			"name": "use-media",
@@ -2178,17 +1991,12 @@
 				}
 			],
 			"description": "Global utilities used by most of the components.",
-			"devDependencies": [
-				"clsx@^2.1.1",
-				"tailwind-merge@^3.5.0"
-			]
+			"devDependencies": ["clsx@^2.1.1", "tailwind-merge@^3.5.0"]
 		},
 		{
 			"name": "window",
 			"type": "registry:ui",
-			"registryDependencies": [
-				"./utils.json"
-			],
+			"registryDependencies": ["./utils.json"],
 			"files": [
 				{
 					"path": "src/lib/components/ui/window/index.ts",
@@ -2201,9 +2009,7 @@
 			],
 			"title": "Window",
 			"description": "A beautiful styled window component for windowed UI, desktop-style windows, window container, with title bar, close button, and customizable content area.",
-			"devDependencies": [
-				"bits-ui@^2.16.5"
-			]
+			"devDependencies": ["bits-ui@^2.16.5"]
 		}
 	],
 	"description": "Turn key shadcn-svelte components to help finish your app."

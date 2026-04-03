@@ -1,6 +1,6 @@
 ---
-title: "IsMac"
-description: "A hook to determine if the user is on a Mac."
+title: 'IsMac'
+description: 'A hook to determine if the user is on a Mac.'
 ---
 
 <script lang="ts">
@@ -18,7 +18,7 @@ description: "A hook to determine if the user is on a Mac."
 
 ```svelte {2,5}
 <script lang="ts">
-    import { isMac } from '$lib/hooks/is-mac.svelte.js';
+	import { isMac } from '$lib/hooks/is-mac.svelte.js';
 </script>
 
 <p>{isMac ? 'Mac' : 'Not Mac'}</p>
@@ -26,16 +26,11 @@ description: "A hook to determine if the user is on a Mac."
 
 ## Keys
 
-
 Often times you'll want to show modifier keys in your UI. You can do this with the exported
-	`cmdOrCtrl` and `optionOrAlt` variables.
-
+`cmdOrCtrl` and `optionOrAlt` variables.
 
 <Demo demo="is-mac-keys" />
 
 ## Acknowledgements
 
-
 This hook is based on the shadcn-svelte [useIsMac](https://github.com/huntabyte/shadcn-svelte/blob/main/docs/src/lib/hooks/use-is-mac.svelte.ts) hook, as well as some useful enhancements by [Thomas G. Lopes](https://github.com/tglide).
-
-

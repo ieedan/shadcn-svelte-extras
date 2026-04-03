@@ -1,6 +1,6 @@
 ---
-title: "Number Field"
-description: "A component for incrementing and decrementing a value."
+title: 'Number Field'
+description: 'A component for incrementing and decrementing a value.'
 ---
 
 <script lang="ts">
@@ -17,10 +17,8 @@ description: "A component for incrementing and decrementing a value."
 
 ## Step
 
-
 Use the `step` prop to increment or decrement the value by a specific amount, in
-	this case 100.
-
+this case 100.
 
 <Demo demo="number-field-step" />
 

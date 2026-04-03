@@ -19,7 +19,7 @@ const KEYWORDS = [
 ] as const;
 
 export const load: LayoutLoad = ({ url }) => {
-	const description = `Finish your app with awesome svelte components like phone-input, tags-input, star-rating, file-drop-zone and more`
+	const description = `Finish your app with awesome svelte components like phone-input, tags-input, star-rating, file-drop-zone and more`;
 
 	const title = SITE;
 	const canonical = new URL(url.pathname, url.origin).href;

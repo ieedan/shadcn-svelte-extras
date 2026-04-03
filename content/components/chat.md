@@ -1,6 +1,6 @@
 ---
-title: "Chat"
-description: "Components for creating live chats."
+title: 'Chat'
+description: 'Components for creating live chats.'
 ---
 
 <script lang="ts">
@@ -19,23 +19,16 @@ description: "Components for creating live chats."
 
 ```svelte
 <script lang="ts">
-	import * as Chat from "$lib/components/ui/chat";
+	import * as Chat from '$lib/components/ui/chat';
 </script>
 
 <Chat.List>
 	<Chat.Bubble>
 		<Chat.BubbleAvatar>
-			<Chat.BubbleAvatarImage 
-				src="https://github.com/shadcn.png" 
-				alt="@shadcn" 
-			/>
-			<Chat.BubbleAvatarFallback>
-				CN
-			</Chat.BubbleAvatarFallback>
+			<Chat.BubbleAvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+			<Chat.BubbleAvatarFallback>CN</Chat.BubbleAvatarFallback>
 		</Chat.BubbleAvatar>
-		<Chat.BubbleMessage>
-			Hello, World!
-		</Chat.BubbleMessage>
+		<Chat.BubbleMessage>Hello, World!</Chat.BubbleMessage>
 	</Chat.Bubble>
 </Chat.List>
 ```

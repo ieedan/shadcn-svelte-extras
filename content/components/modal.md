@@ -1,6 +1,6 @@
 ---
-title: "Modal"
-description: "A responsive dialog component."
+title: 'Modal'
+description: 'A responsive dialog component.'
 ---
 
 <script lang="ts">
@@ -17,23 +17,21 @@ description: "A responsive dialog component."
 
 ## Usage
 
-
 The modal component can be composed just like a dialog or drawer component.
-
 
 ```svelte
 <script lang="ts">
-	import * as Modal from "$lib/components/ui/modal";
+	import * as Modal from '$lib/components/ui/modal';
 </script>
 
 <Modal.Root>
-	<Modal.Trigger/>
+	<Modal.Trigger />
 	<Modal.Content>
 		<Modal.Header>
-			<Modal.Title/>
-			<Modal.Description/>
+			<Modal.Title />
+			<Modal.Description />
 		</Modal.Header>
-		<Modal.Footer/>
+		<Modal.Footer />
 	</Modal.Content>
 </Modal.Root>
 ```

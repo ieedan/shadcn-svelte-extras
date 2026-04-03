@@ -1,6 +1,6 @@
 ---
-title: "Snippet"
-description: "A snippet component."
+title: 'Snippet'
+description: 'A snippet component.'
 ---
 
 <script lang="ts">

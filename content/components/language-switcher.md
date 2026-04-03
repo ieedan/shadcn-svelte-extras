@@ -1,6 +1,6 @@
 ---
-title: "Language Switcher"
-description: "A component for switching your sites locale."
+title: 'Language Switcher'
+description: 'A component for switching your sites locale.'
 ---
 
 <script lang="ts">
@@ -21,9 +21,7 @@ description: "A component for switching your sites locale."
 
 ## Paraglide Integration
 
-
 Example of how to integrate with [ParaglideJS](https://inlang.com/m/gerre34r/library-inlang-paraglideJs/sveltekit):
-
 
 <Demo demo="language-switcher-paraglide" />
 

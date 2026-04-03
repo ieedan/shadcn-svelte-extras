@@ -15,19 +15,18 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from '$lib/demos/chat.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
-	import { ArrowRightIcon } from '@lucide/svelte';
 	import Button from '$lib/components/button.svelte';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
 <div class="flex flex-col gap-8">
-	<div class="flex flex-col items-center gap-2 lg:py-20 md:py-10 py-6">
-		<h1 class="text-5xl font-bold text-center">shadcn-svelte-extras</h1>
-		<p class="text-muted-foreground text-lg text-center">Finish your component library.</p>
+	<div class="flex flex-col items-center gap-2 py-6 md:py-10 lg:py-20">
+		<h1 class="text-center text-5xl font-bold">shadcn-svelte-extras</h1>
+		<p class="text-muted-foreground text-center text-lg">Finish your component library.</p>
 		<div class="mt-2 flex place-items-center gap-2">
-			<Button href="/docs/installation" size="sm">Get Started</Button>
-			<Button variant="outline" href="/components" size="sm">Browse Components</Button>
+			<Button href="/docs/installation">Get Started</Button>
+			<Button variant="outline" href="/components">Browse Components</Button>
 		</div>
 	</div>
 	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">

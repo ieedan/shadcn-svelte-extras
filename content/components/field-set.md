@@ -1,6 +1,6 @@
 ---
-title: "Field Set"
-description: "A field set component."
+title: 'Field Set'
+description: 'A field set component.'
 ---
 
 <script lang="ts">

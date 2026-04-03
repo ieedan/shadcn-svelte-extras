@@ -1,6 +1,6 @@
 ---
-title: "Table of Contents"
-description: "A component for displaying a table of contents."
+title: 'Table of Contents'
+description: 'A component for displaying a table of contents.'
 ---
 
 <script lang="ts">
@@ -37,7 +37,7 @@ description: "A component for displaying a table of contents."
 <div bind:this={toc.ref}>
 	<!-- page contents -->
 </div>
-<Toc.Root toc={toc.current}/>
+<Toc.Root toc={toc.current} />
 ```
 
 <ApiReference />

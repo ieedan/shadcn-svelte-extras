@@ -1,6 +1,6 @@
 ---
-title: "Shortcut"
-description: "An action to create shortcuts for your application."
+title: 'Shortcut'
+description: 'An action to create shortcuts for your application.'
 ---
 
 <script lang="ts">
@@ -19,11 +19,11 @@ description: "An action to create shortcuts for your application."
 ```svelte
 <!-- Ctrl/Command + K shortcut -->
 <svelte:window
-		use:shortcut={{
-			key: 'k',
-			ctrl: true,
-			callback: commandMenu.toggle
-		}}
+	use:shortcut={{
+		key: 'k',
+		ctrl: true,
+		callback: commandMenu.toggle
+	}}
 />
 ```
 
@@ -32,34 +32,31 @@ description: "An action to create shortcuts for your application."
 ```svelte
 <!-- Ctrl/Command + K shortcut -->
 <svelte:window
-		{...attachShortcut({
-			key: 'k',
-			ctrl: true,
-			callback: commandMenu.toggle
-		})}
+	{...attachShortcut({
+		key: 'k',
+		ctrl: true,
+		callback: commandMenu.toggle
+	})}
 />
 ```
 
 ## Multiple
 
-
 Configure multiple shortcuts by providing an array of options.
-
 
 ```svelte
 <svelte:window
-		use:shortcut={[
-			{
-				key: 'k',
-				ctrl: true,
-				callback: commandMenu.toggle
-			},
-			{
-				key: 's',
-				ctrl: true,
-				callback: searchInput.focus
-			}
-		]}
+	use:shortcut={[
+		{
+			key: 'k',
+			ctrl: true,
+			callback: commandMenu.toggle
+		},
+		{
+			key: 's',
+			ctrl: true,
+			callback: searchInput.focus
+		}
+	]}
 />
 ```
-

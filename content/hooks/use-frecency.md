@@ -1,6 +1,6 @@
 ---
-title: "UseFrecency"
-description: "A hook to track and sort items based on their frequency of use."
+title: 'UseFrecency'
+description: 'A hook to track and sort items based on their frequency of use.'
 ---
 
 <script lang="ts">
@@ -18,11 +18,10 @@ description: "A hook to track and sort items based on their frequency of use."
 
 ```svelte {2,4}
 <script lang="ts">
-    import { UseFrecency } from '$lib/hooks/use-frecency.svelte.js';
+	import { UseFrecency } from '$lib/hooks/use-frecency.svelte.js';
 
-    const frecency = new UseFrecency('frecency-key');
+	const frecency = new UseFrecency('frecency-key');
 </script>
 
 <p>{frecency.items}</p>
 ```
-

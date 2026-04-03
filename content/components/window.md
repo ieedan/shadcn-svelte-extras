@@ -1,6 +1,6 @@
 ---
-title: "Window"
-description: "A window component."
+title: 'Window'
+description: 'A window component.'
 ---
 
 <script lang="ts">

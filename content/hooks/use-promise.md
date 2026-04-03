@@ -1,6 +1,6 @@
 ---
-title: "UsePromise"
-description: "A hook to manage the state of a promise reactively in the absence of {#await}."
+title: 'UsePromise'
+description: 'A hook to manage the state of a promise reactively in the absence of {#await}.'
 ---
 
 <script lang="ts">
@@ -16,9 +16,7 @@ description: "A hook to manage the state of a promise reactively in the absence 
 
 ## Usage
 
-
 Set a default value for the version until it is streamed back from the server.
-
 
 ```svelte {2,6,12}
 <script lang="ts">
@@ -35,4 +33,3 @@ Set a default value for the version until it is streamed back from the server.
     args={[\`jsrepo@\${version.current}\`, 'add', 'hooks/use-promise.svelte']}
 />
 ```
-

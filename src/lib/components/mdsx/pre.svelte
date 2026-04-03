@@ -49,7 +49,7 @@
 		json: 'json',
 		svelte: 'svelte',
 		typescript: 'typescript',
-		ts: 'typescript',
+		ts: 'typescript'
 	};
 
 	const lang = $derived.by(() => {

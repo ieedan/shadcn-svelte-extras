@@ -24,9 +24,9 @@ export const mdsxConfig = defineConfig({
 	rehypePlugins: [rehypeSlug, rehypePreData, rehypeAttachMdsxCodeProps],
 	blueprints: {
 		default: {
-			path: resolve(__dirname, './src/lib/components/mdsx/blueprint.svelte'),
-		},
-	},
+			path: resolve(__dirname, './src/lib/components/mdsx/blueprint.svelte')
+		}
+	}
 });
 
 /**
@@ -94,9 +94,7 @@ function rehypeAttachMdsxCodeProps() {
 			const className = codeEl.properties?.className;
 			let lang = 'plaintext';
 			if (Array.isArray(className)) {
-				const langClass = className.find(
-					(c) => typeof c === 'string' && c.startsWith('language-')
-				);
+				const langClass = className.find((c) => typeof c === 'string' && c.startsWith('language-'));
 				if (typeof langClass === 'string') lang = langClass.replace(/^language-/, '');
 			}
 

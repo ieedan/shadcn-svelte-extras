@@ -1,6 +1,6 @@
 ---
-title: "Link"
-description: "A simple link component."
+title: 'Link'
+description: 'A simple link component.'
 ---
 
 <script lang="ts">

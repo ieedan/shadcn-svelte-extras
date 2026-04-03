@@ -15,5 +15,3 @@ export async function getDocMarkdown(slug: string): Promise<string | null> {
 	}
 	return null;
 }
-
-

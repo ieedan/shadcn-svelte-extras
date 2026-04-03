@@ -1,6 +1,6 @@
 ---
-title: "Installation"
-description: "How to add and use extras in your project."
+title: 'Installation'
+description: 'How to add and use extras in your project.'
 ---
 
 <script lang="ts">
@@ -22,18 +22,17 @@ Configure the `paths` key in your `jsrepo.config.ts` file so that components, ho
 import { defineConfig } from 'jsrepo';
 
 export default defineConfig({
-    registries: ['@ieedan/shadcn-svelte-extras'],
-    paths: {
-			ui: "$lib/components/ui",
-			component: "$lib/components",
-			hook: "$lib/hooks",
-			action: "$lib/actions",
-			util: "$lib/utils",
-			lib: "$lib"
-    }
+	registries: ['@ieedan/shadcn-svelte-extras'],
+	paths: {
+		ui: '$lib/components/ui',
+		component: '$lib/components',
+		hook: '$lib/hooks',
+		action: '$lib/actions',
+		util: '$lib/utils',
+		lib: '$lib'
+	}
 });
 ```
-
 
 Start adding extras!
 
@@ -55,7 +54,6 @@ You can still access the tailwind v3 components by using jsrepo v2 and pinning t
 
 ```json
 {
-    "repos": ["@ieedan/shadcn-svelte-extras@2.1.1"],
+	"repos": ["@ieedan/shadcn-svelte-extras@2.1.1"]
 }
 ```
-

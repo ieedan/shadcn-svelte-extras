@@ -2,11 +2,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
 
-	let {
-		class: className,
-		children,
-		...restProps
-	}: HTMLAttributes<HTMLElement> = $props();
+	let { class: className, children, ...restProps }: HTMLAttributes<HTMLElement> = $props();
 </script>
 
 <!-- svelte-ignore a11y_figcaption_parent -->

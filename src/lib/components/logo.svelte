@@ -40,13 +40,5 @@
 		fill="black"
 		class="dark:fill-white"
 	/>
-	<rect
-		x="8"
-		y="10.25"
-		width="6"
-		height="1.5"
-		rx="0.75"
-		fill="black"
-		class="dark:fill-white"
-	/>
+	<rect x="8" y="10.25" width="6" height="1.5" rx="0.75" fill="black" class="dark:fill-white" />
 </svg>

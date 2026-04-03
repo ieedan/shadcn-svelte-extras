@@ -1,6 +1,6 @@
 ---
-title: "Stepper"
-description: "A keyboard accessible stepper component."
+title: 'Stepper'
+description: 'A keyboard accessible stepper component.'
 ---
 
 <script lang="ts">
@@ -33,31 +33,24 @@ description: "A keyboard accessible stepper component."
 		</Stepper.Item>
 	</Stepper.Nav>
 </Stepper.Root>
-
 ```
 
 ## Icons
 
-
 Add an icon to the `Indicator` component to display an icon.
-
 
 <Demo demo="stepper-icon" />
 
 ## Vertical
 
-
 Add `orientation="vertical"` to the `Nav` component to make the
-	stepper vertical.
-
+stepper vertical.
 
 <Demo demo="stepper-vertical" />
 
 ## Form
 
-
 Create a multi-step form with the `Stepper` component.
-
 
 <Demo demo="stepper-form" class="min-h-[600px]" />
 

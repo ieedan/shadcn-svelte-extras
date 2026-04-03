@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: 'Introduction'
 description: "Why we built shadcn-svelte-extras and why it's great."
 ---
 
@@ -24,24 +24,24 @@ Every component in shadcn-svelte-extras is designed with composability in mind. 
 We are committed to delivering components to the same standard as the original. They will be beautiful, performant, and composable.
 
 <Accordion.Root type="single">
-	<Accordion.Item value="q-1">
-		<Accordion.Trigger>How compatible is this with shadcn-svelte?</Accordion.Trigger>
-		<Accordion.Content>
-			Our team includes contributors to shadcn-svelte and they keep up well with any changes made to
-			the original.
-		</Accordion.Content>
-	</Accordion.Item>
-	<Accordion.Item value="q-2">
-		<Accordion.Trigger>Can I still install components from the CLI?</Accordion.Trigger>
-		<Accordion.Content>
-			Yes! shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) which allows you to install components from the CLI.
-		</Accordion.Content>
-	</Accordion.Item>
-	<Accordion.Item value="q-3">
-		<Accordion.Trigger>Is it Tailwind 4 compatible?</Accordion.Trigger>
-		<Accordion.Content>
-			Yes! shadcn-svelte-extras has been updated to support Tailwind 4. Tailwind 3 support is
-			available for versions `@2.1.1` and below.
-		</Accordion.Content>
-	</Accordion.Item>
+<Accordion.Item value="q-1">
+<Accordion.Trigger>How compatible is this with shadcn-svelte?</Accordion.Trigger>
+<Accordion.Content>
+Our team includes contributors to shadcn-svelte and they keep up well with any changes made to
+the original.
+</Accordion.Content>
+</Accordion.Item>
+<Accordion.Item value="q-2">
+<Accordion.Trigger>Can I still install components from the CLI?</Accordion.Trigger>
+<Accordion.Content>
+Yes! shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) which allows you to install components from the CLI.
+</Accordion.Content>
+</Accordion.Item>
+<Accordion.Item value="q-3">
+<Accordion.Trigger>Is it Tailwind 4 compatible?</Accordion.Trigger>
+<Accordion.Content>
+Yes! shadcn-svelte-extras has been updated to support Tailwind 4. Tailwind 3 support is
+available for versions `@2.1.1` and below.
+</Accordion.Content>
+</Accordion.Item>
 </Accordion.Root>

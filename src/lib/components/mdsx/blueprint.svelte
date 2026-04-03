@@ -20,8 +20,8 @@
 		th,
 		tr,
 		ul,
-		figcaption,
-	} from "./index.js";
+		figcaption
+	} from './index.js';
 </script>
 
 <script lang="ts">
@@ -31,12 +31,7 @@
 		source?: string;
 		component?: string;
 	};
-	let {
-		title = '',
-		description = '',
-		source = '',
-		component = '',
-	}: Props = $props();
+	let { title = '', description = '', source = '', component = '' }: Props = $props();
 </script>
 
 <div class="mdsx flex flex-col">

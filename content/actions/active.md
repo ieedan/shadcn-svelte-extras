@@ -1,6 +1,6 @@
 ---
-title: "Active"
-description: "An action to determine if a link is active."
+title: 'Active'
+description: 'An action to determine if a link is active.'
 ---
 
 <script lang="ts">
@@ -20,25 +20,12 @@ Adds a `data-active` attribute to the `<a/>` tag to be used for styling.
 
 ```svelte
 <!-- Use data-[active=true] and data-[active=false] to style the link -->
-<a 
-		href="/docs" 
-		use:active 
-		class="data-[active=true]:bg-secondary"
->
-		Link
-</a>
+<a href="/docs" use:active class="data-[active=true]:bg-secondary"> Link </a>
 ```
 
 ## Attachment Usage
 
 ```svelte
 <!-- Use data-[active=true] and data-[active=false] to style the link -->
-<a 
-		href="/docs" 
-		{...attachActive()} 
-		class="data-[active=true]:bg-secondary"
->
-		Link
-</a>
+<a href="/docs" {...attachActive()} class="data-[active=true]:bg-secondary"> Link </a>
 ```
-

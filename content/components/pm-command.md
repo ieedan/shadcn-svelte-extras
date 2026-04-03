@@ -1,6 +1,6 @@
 ---
-title: "PMCommand"
-description: "A package manager command component."
+title: 'PMCommand'
+description: 'A package manager command component.'
 ---
 
 <script lang="ts">
@@ -38,7 +38,7 @@ Use the runed `PersistedState` API to remember the users package manager.
 ## Customize Agents
 
 You can also customize the agents to your liking by providing your own array of agents with the
-	`agents` prop.
+`agents` prop.
 
 <Demo demo="pm-command-customize-agents" />
 

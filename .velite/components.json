@@ -1,912 +1,912 @@
 [
-  {
-    "title": "Button",
-    "description": "An extended button component.",
-    "path": "components/button",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Loading",
-        "url": "#loading",
-        "items": []
-      },
-      {
-        "title": "onClickPromise",
-        "url": "#onclickpromise",
-        "items": []
-      }
-    ],
-    "slug": "components/button",
-    "href": "/docs/components/button"
-  },
-  {
-    "title": "Chat",
-    "description": "Components for creating live chats.",
-    "path": "components/chat",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Acknowledgements",
-        "url": "#acknowledgements",
-        "items": []
-      }
-    ],
-    "slug": "components/chat",
-    "href": "/docs/components/chat"
-  },
-  {
-    "title": "Code",
-    "description": "A code component.",
-    "path": "components/code",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Configuring Languages",
-        "url": "#configuring-languages",
-        "items": []
-      },
-      {
-        "title": "Copy Button",
-        "url": "#copy-button",
-        "items": []
-      },
-      {
-        "title": "No Line Numbers",
-        "url": "#no-line-numbers",
-        "items": []
-      },
-      {
-        "title": "Variants",
-        "url": "#variants",
-        "items": []
-      },
-      {
-        "title": "Highlight Lines",
-        "url": "#highlight-lines",
-        "items": []
-      },
-      {
-        "title": "Overflow",
-        "url": "#overflow",
-        "items": []
-      },
-      {
-        "title": "Code Block",
-        "url": "#code-block",
-        "items": []
-      }
-    ],
-    "slug": "components/code",
-    "href": "/docs/components/code"
-  },
-  {
-    "title": "Confirm Delete Dialog",
-    "description": "A dialog for confirming delete actions.",
-    "path": "components/confirm-delete-dialog",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "With Text Confirmation",
-        "url": "#with-text-confirmation",
-        "items": []
-      },
-      {
-        "title": "Skip Confirmation",
-        "url": "#skip-confirmation",
-        "items": []
-      }
-    ],
-    "slug": "components/confirm-delete-dialog",
-    "href": "/docs/components/confirm-delete-dialog"
-  },
-  {
-    "title": "Copy Button",
-    "description": "A button used to copy text to the clipboard.",
-    "path": "components/copy-button",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Custom Icon",
-        "url": "#custom-icon",
-        "items": []
-      },
-      {
-        "title": "With Text",
-        "url": "#with-text",
-        "items": []
-      }
-    ],
-    "slug": "components/copy-button",
-    "href": "/docs/components/copy-button"
-  },
-  {
-    "title": "Emoji Picker",
-    "description": "A composable emoji picker component.",
-    "path": "components/emoji-picker",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Default Skin",
-        "url": "#default-skin",
-        "items": []
-      },
-      {
-        "title": "Popover",
-        "url": "#popover",
-        "items": []
-      },
-      {
-        "title": "Footer",
-        "url": "#footer",
-        "items": []
-      },
-      {
-        "title": "Recents",
-        "url": "#recents",
-        "items": []
-      },
-      {
-        "title": "Acknowledgements",
-        "url": "#acknowledgements",
-        "items": []
-      }
-    ],
-    "slug": "components/emoji-picker",
-    "href": "/docs/components/emoji-picker"
-  },
-  {
-    "title": "Field Set",
-    "description": "A field set component.",
-    "path": "components/field-set",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Destructive",
-        "url": "#destructive",
-        "items": []
-      }
-    ],
-    "slug": "components/field-set",
-    "href": "/docs/components/field-set"
-  },
-  {
-    "title": "File Drop Zone",
-    "description": "A file drop zone component.",
-    "path": "components/file-drop-zone",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Text Area",
-        "url": "#text-area",
-        "items": []
-      },
-      {
-        "title": "Form",
-        "url": "#form",
-        "items": []
-      }
-    ],
-    "slug": "components/file-drop-zone",
-    "href": "/docs/components/file-drop-zone"
-  },
-  {
-    "title": "Image Cropper",
-    "description": "A component for uploading and resizing images.",
-    "path": "components/image-cropper",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Square Preview",
-        "url": "#square-preview",
-        "items": []
-      },
-      {
-        "title": "No Default Image",
-        "url": "#no-default-image",
-        "items": []
-      },
-      {
-        "title": "Custom Trigger",
-        "url": "#custom-trigger",
-        "items": []
-      },
-      {
-        "title": "Custom Preview",
-        "url": "#custom-preview",
-        "items": []
-      },
-      {
-        "title": "Acknowledgements",
-        "url": "#acknowledgements",
-        "items": []
-      }
-    ],
-    "slug": "components/image-cropper",
-    "href": "/docs/components/image-cropper"
-  },
-  {
-    "title": "IPv4Address Input",
-    "description": "An IPv4 address input with all the behavior you'd expect.",
-    "path": "components/ipv4address-input",
-    "component": false,
-    "toc": [
-      {
-        "title": "Basic",
-        "url": "#basic",
-        "items": []
-      },
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Placeholder",
-        "url": "#placeholder",
-        "items": []
-      },
-      {
-        "title": "Reactive",
-        "url": "#reactive",
-        "items": []
-      },
-      {
-        "title": "Validation",
-        "url": "#validation",
-        "items": []
-      }
-    ],
-    "slug": "components/ipv4address-input",
-    "href": "/docs/components/ipv4address-input"
-  },
-  {
-    "title": "Language Switcher",
-    "description": "A component for switching your sites locale.",
-    "path": "components/language-switcher",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Ghost + Align",
-        "url": "#ghost--align",
-        "items": []
-      },
-      {
-        "title": "Paraglide Integration",
-        "url": "#paraglide-integration",
-        "items": []
-      }
-    ],
-    "slug": "components/language-switcher",
-    "href": "/docs/components/language-switcher"
-  },
-  {
-    "title": "Light Switch",
-    "description": "Click and change the theme.",
-    "path": "components/light-switch",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Ghost",
-        "url": "#ghost",
-        "items": []
-      }
-    ],
-    "slug": "components/light-switch",
-    "href": "/docs/components/light-switch"
-  },
-  {
-    "title": "Link",
-    "description": "A simple link component.",
-    "path": "components/link",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      }
-    ],
-    "slug": "components/link",
-    "href": "/docs/components/link"
-  },
-  {
-    "title": "Meter",
-    "description": "A meter component.",
-    "path": "components/meter",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      }
-    ],
-    "slug": "components/meter",
-    "href": "/docs/components/meter"
-  },
-  {
-    "title": "Modal",
-    "description": "A responsive dialog component.",
-    "path": "components/modal",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      }
-    ],
-    "slug": "components/modal",
-    "href": "/docs/components/modal"
-  },
-  {
-    "title": "NLPDateInput",
-    "description": "A natural language date input with suggestions.",
-    "path": "components/nlp-date-input",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Min/Max",
-        "url": "#minmax",
-        "items": []
-      }
-    ],
-    "slug": "components/nlp-date-input",
-    "href": "/docs/components/nlp-date-input"
-  },
-  {
-    "title": "Number Field",
-    "description": "A component for incrementing and decrementing a value.",
-    "path": "components/number-field",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Step",
-        "url": "#step",
-        "items": []
-      }
-    ],
-    "slug": "components/number-field",
-    "href": "/docs/components/number-field"
-  },
-  {
-    "title": "Password",
-    "description": "Components for handling passwords and other secrets.",
-    "path": "components/password",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Toggle Visibility",
-        "url": "#toggle-visibility",
-        "items": []
-      },
-      {
-        "title": "Copy",
-        "url": "#copy",
-        "items": []
-      },
-      {
-        "title": "Both",
-        "url": "#both",
-        "items": []
-      },
-      {
-        "title": "Strength",
-        "url": "#strength",
-        "items": []
-      }
-    ],
-    "slug": "components/password",
-    "href": "/docs/components/password"
-  },
-  {
-    "title": "Phone Input",
-    "description": "A phone number input component.",
-    "path": "components/phone-input",
-    "component": false,
-    "toc": [
-      {
-        "title": "Basic",
-        "url": "#basic",
-        "items": []
-      },
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Default Country",
-        "url": "#default-country",
-        "items": []
-      },
-      {
-        "title": "Default Value",
-        "url": "#default-value",
-        "items": []
-      },
-      {
-        "title": "Custom Country Ordering",
-        "url": "#custom-country-ordering",
-        "items": []
-      },
-      {
-        "title": "Acknowledgements",
-        "url": "#acknowledgements",
-        "items": []
-      }
-    ],
-    "slug": "components/phone-input",
-    "href": "/docs/components/phone-input"
-  },
-  {
-    "title": "PMCommand",
-    "description": "A package manager command component.",
-    "path": "components/pm-command",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Commands",
-        "url": "#commands",
-        "items": []
-      },
-      {
-        "title": "Variants",
-        "url": "#variants",
-        "items": []
-      },
-      {
-        "title": "Overflow",
-        "url": "#overflow",
-        "items": []
-      },
-      {
-        "title": "Persisted Package Manager",
-        "url": "#persisted-package-manager",
-        "items": []
-      },
-      {
-        "title": "Customize Agents",
-        "url": "#customize-agents",
-        "items": []
-      }
-    ],
-    "slug": "components/pm-command",
-    "href": "/docs/components/pm-command"
-  },
-  {
-    "title": "Rename",
-    "description": "A component for renaming stuff.",
-    "path": "components/rename",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Content Editable",
-        "url": "#content-editable",
-        "items": []
-      },
-      {
-        "title": "Text Area",
-        "url": "#text-area",
-        "items": []
-      },
-      {
-        "title": "External Control",
-        "url": "#external-control",
-        "items": []
-      }
-    ],
-    "slug": "components/rename",
-    "href": "/docs/components/rename"
-  },
-  {
-    "title": "Snippet",
-    "description": "A snippet component.",
-    "path": "components/snippet",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Variants",
-        "url": "#variants",
-        "items": []
-      },
-      {
-        "title": "Multiline",
-        "url": "#multiline",
-        "items": []
-      }
-    ],
-    "slug": "components/snippet",
-    "href": "/docs/components/snippet"
-  },
-  {
-    "title": "Star Rating",
-    "description": "A simple star rating component.",
-    "path": "components/star-rating",
-    "component": false,
-    "toc": [
-      {
-        "title": "Basic",
-        "url": "#basic",
-        "items": []
-      },
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Custom Stars",
-        "url": "#custom-stars",
-        "items": []
-      },
-      {
-        "title": "Half Rating",
-        "url": "#half-rating",
-        "items": []
-      },
-      {
-        "title": "Disabled",
-        "url": "#disabled",
-        "items": []
-      },
-      {
-        "title": "Readonly",
-        "url": "#readonly",
-        "items": []
-      },
-      {
-        "title": "Custom Color",
-        "url": "#custom-color",
-        "items": []
-      },
-      {
-        "title": "Custom Size",
-        "url": "#custom-size",
-        "items": []
-      }
-    ],
-    "slug": "components/star-rating",
-    "href": "/docs/components/star-rating"
-  },
-  {
-    "title": "Stepper",
-    "description": "A keyboard accessible stepper component.",
-    "path": "components/stepper",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Icons",
-        "url": "#icons",
-        "items": []
-      },
-      {
-        "title": "Vertical",
-        "url": "#vertical",
-        "items": []
-      },
-      {
-        "title": "Form",
-        "url": "#form",
-        "items": []
-      }
-    ],
-    "slug": "components/stepper",
-    "href": "/docs/components/stepper"
-  },
-  {
-    "title": "Tags Input",
-    "description": "A tags input component.",
-    "path": "components/tags-input",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Custom Validation",
-        "url": "#custom-validation",
-        "items": []
-      },
-      {
-        "title": "Autocomplete",
-        "url": "#autocomplete",
-        "items": []
-      },
-      {
-        "title": "Restricted to Suggestions",
-        "url": "#restricted-to-suggestions",
-        "items": []
-      }
-    ],
-    "slug": "components/tags-input",
-    "href": "/docs/components/tags-input"
-  },
-  {
-    "title": "Terminal",
-    "description": "An implementation of the MacOS terminal. Useful for showcasing a command line interface.",
-    "path": "components/terminal",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Loop",
-        "url": "#loop",
-        "items": []
-      },
-      {
-        "title": "Acknowledgements",
-        "url": "#acknowledgements",
-        "items": []
-      }
-    ],
-    "slug": "components/terminal",
-    "href": "/docs/components/terminal"
-  },
-  {
-    "title": "Theme Selector",
-    "description": "Click to select the theme.",
-    "path": "components/theme-selector",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Ghost",
-        "url": "#ghost",
-        "items": []
-      }
-    ],
-    "slug": "components/theme-selector",
-    "href": "/docs/components/theme-selector"
-  },
-  {
-    "title": "Table of Contents",
-    "description": "A component for displaying a table of contents.",
-    "path": "components/toc",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Usage",
-        "url": "#usage",
-        "items": []
-      },
-      {
-        "title": "Generate the table of contents with UseToc",
-        "url": "#generate-the-table-of-contents-with-usetoc",
-        "items": []
-      }
-    ],
-    "slug": "components/toc",
-    "href": "/docs/components/toc"
-  },
-  {
-    "title": "Tree View",
-    "description": "A file tree component.",
-    "path": "components/tree-view",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Custom Icons",
-        "url": "#custom-icons",
-        "items": []
-      }
-    ],
-    "slug": "components/tree-view",
-    "href": "/docs/components/tree-view"
-  },
-  {
-    "title": "Underline Tabs",
-    "description": "A horizontal tabs component with an underline.",
-    "path": "components/underline-tabs",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      },
-      {
-        "title": "Overflow",
-        "url": "#overflow",
-        "items": []
-      }
-    ],
-    "slug": "components/underline-tabs",
-    "href": "/docs/components/underline-tabs"
-  },
-  {
-    "title": "Window",
-    "description": "A window component.",
-    "path": "components/window",
-    "component": false,
-    "toc": [
-      {
-        "title": "Installation",
-        "url": "#installation",
-        "items": []
-      }
-    ],
-    "slug": "components/window",
-    "href": "/docs/components/window"
-  }
+	{
+		"title": "Button",
+		"description": "An extended button component.",
+		"path": "components/button",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Loading",
+				"url": "#loading",
+				"items": []
+			},
+			{
+				"title": "onClickPromise",
+				"url": "#onclickpromise",
+				"items": []
+			}
+		],
+		"slug": "components/button",
+		"href": "/docs/components/button"
+	},
+	{
+		"title": "Chat",
+		"description": "Components for creating live chats.",
+		"path": "components/chat",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Acknowledgements",
+				"url": "#acknowledgements",
+				"items": []
+			}
+		],
+		"slug": "components/chat",
+		"href": "/docs/components/chat"
+	},
+	{
+		"title": "Code",
+		"description": "A code component.",
+		"path": "components/code",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Configuring Languages",
+				"url": "#configuring-languages",
+				"items": []
+			},
+			{
+				"title": "Copy Button",
+				"url": "#copy-button",
+				"items": []
+			},
+			{
+				"title": "No Line Numbers",
+				"url": "#no-line-numbers",
+				"items": []
+			},
+			{
+				"title": "Variants",
+				"url": "#variants",
+				"items": []
+			},
+			{
+				"title": "Highlight Lines",
+				"url": "#highlight-lines",
+				"items": []
+			},
+			{
+				"title": "Overflow",
+				"url": "#overflow",
+				"items": []
+			},
+			{
+				"title": "Code Block",
+				"url": "#code-block",
+				"items": []
+			}
+		],
+		"slug": "components/code",
+		"href": "/docs/components/code"
+	},
+	{
+		"title": "Confirm Delete Dialog",
+		"description": "A dialog for confirming delete actions.",
+		"path": "components/confirm-delete-dialog",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "With Text Confirmation",
+				"url": "#with-text-confirmation",
+				"items": []
+			},
+			{
+				"title": "Skip Confirmation",
+				"url": "#skip-confirmation",
+				"items": []
+			}
+		],
+		"slug": "components/confirm-delete-dialog",
+		"href": "/docs/components/confirm-delete-dialog"
+	},
+	{
+		"title": "Copy Button",
+		"description": "A button used to copy text to the clipboard.",
+		"path": "components/copy-button",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Custom Icon",
+				"url": "#custom-icon",
+				"items": []
+			},
+			{
+				"title": "With Text",
+				"url": "#with-text",
+				"items": []
+			}
+		],
+		"slug": "components/copy-button",
+		"href": "/docs/components/copy-button"
+	},
+	{
+		"title": "Emoji Picker",
+		"description": "A composable emoji picker component.",
+		"path": "components/emoji-picker",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Default Skin",
+				"url": "#default-skin",
+				"items": []
+			},
+			{
+				"title": "Popover",
+				"url": "#popover",
+				"items": []
+			},
+			{
+				"title": "Footer",
+				"url": "#footer",
+				"items": []
+			},
+			{
+				"title": "Recents",
+				"url": "#recents",
+				"items": []
+			},
+			{
+				"title": "Acknowledgements",
+				"url": "#acknowledgements",
+				"items": []
+			}
+		],
+		"slug": "components/emoji-picker",
+		"href": "/docs/components/emoji-picker"
+	},
+	{
+		"title": "Field Set",
+		"description": "A field set component.",
+		"path": "components/field-set",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Destructive",
+				"url": "#destructive",
+				"items": []
+			}
+		],
+		"slug": "components/field-set",
+		"href": "/docs/components/field-set"
+	},
+	{
+		"title": "File Drop Zone",
+		"description": "A file drop zone component.",
+		"path": "components/file-drop-zone",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Text Area",
+				"url": "#text-area",
+				"items": []
+			},
+			{
+				"title": "Form",
+				"url": "#form",
+				"items": []
+			}
+		],
+		"slug": "components/file-drop-zone",
+		"href": "/docs/components/file-drop-zone"
+	},
+	{
+		"title": "Image Cropper",
+		"description": "A component for uploading and resizing images.",
+		"path": "components/image-cropper",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Square Preview",
+				"url": "#square-preview",
+				"items": []
+			},
+			{
+				"title": "No Default Image",
+				"url": "#no-default-image",
+				"items": []
+			},
+			{
+				"title": "Custom Trigger",
+				"url": "#custom-trigger",
+				"items": []
+			},
+			{
+				"title": "Custom Preview",
+				"url": "#custom-preview",
+				"items": []
+			},
+			{
+				"title": "Acknowledgements",
+				"url": "#acknowledgements",
+				"items": []
+			}
+		],
+		"slug": "components/image-cropper",
+		"href": "/docs/components/image-cropper"
+	},
+	{
+		"title": "IPv4Address Input",
+		"description": "An IPv4 address input with all the behavior you'd expect.",
+		"path": "components/ipv4address-input",
+		"component": false,
+		"toc": [
+			{
+				"title": "Basic",
+				"url": "#basic",
+				"items": []
+			},
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Placeholder",
+				"url": "#placeholder",
+				"items": []
+			},
+			{
+				"title": "Reactive",
+				"url": "#reactive",
+				"items": []
+			},
+			{
+				"title": "Validation",
+				"url": "#validation",
+				"items": []
+			}
+		],
+		"slug": "components/ipv4address-input",
+		"href": "/docs/components/ipv4address-input"
+	},
+	{
+		"title": "Language Switcher",
+		"description": "A component for switching your sites locale.",
+		"path": "components/language-switcher",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Ghost + Align",
+				"url": "#ghost--align",
+				"items": []
+			},
+			{
+				"title": "Paraglide Integration",
+				"url": "#paraglide-integration",
+				"items": []
+			}
+		],
+		"slug": "components/language-switcher",
+		"href": "/docs/components/language-switcher"
+	},
+	{
+		"title": "Light Switch",
+		"description": "Click and change the theme.",
+		"path": "components/light-switch",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Ghost",
+				"url": "#ghost",
+				"items": []
+			}
+		],
+		"slug": "components/light-switch",
+		"href": "/docs/components/light-switch"
+	},
+	{
+		"title": "Link",
+		"description": "A simple link component.",
+		"path": "components/link",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			}
+		],
+		"slug": "components/link",
+		"href": "/docs/components/link"
+	},
+	{
+		"title": "Meter",
+		"description": "A meter component.",
+		"path": "components/meter",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			}
+		],
+		"slug": "components/meter",
+		"href": "/docs/components/meter"
+	},
+	{
+		"title": "Modal",
+		"description": "A responsive dialog component.",
+		"path": "components/modal",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			}
+		],
+		"slug": "components/modal",
+		"href": "/docs/components/modal"
+	},
+	{
+		"title": "NLPDateInput",
+		"description": "A natural language date input with suggestions.",
+		"path": "components/nlp-date-input",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Min/Max",
+				"url": "#minmax",
+				"items": []
+			}
+		],
+		"slug": "components/nlp-date-input",
+		"href": "/docs/components/nlp-date-input"
+	},
+	{
+		"title": "Number Field",
+		"description": "A component for incrementing and decrementing a value.",
+		"path": "components/number-field",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Step",
+				"url": "#step",
+				"items": []
+			}
+		],
+		"slug": "components/number-field",
+		"href": "/docs/components/number-field"
+	},
+	{
+		"title": "Password",
+		"description": "Components for handling passwords and other secrets.",
+		"path": "components/password",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Toggle Visibility",
+				"url": "#toggle-visibility",
+				"items": []
+			},
+			{
+				"title": "Copy",
+				"url": "#copy",
+				"items": []
+			},
+			{
+				"title": "Both",
+				"url": "#both",
+				"items": []
+			},
+			{
+				"title": "Strength",
+				"url": "#strength",
+				"items": []
+			}
+		],
+		"slug": "components/password",
+		"href": "/docs/components/password"
+	},
+	{
+		"title": "Phone Input",
+		"description": "A phone number input component.",
+		"path": "components/phone-input",
+		"component": false,
+		"toc": [
+			{
+				"title": "Basic",
+				"url": "#basic",
+				"items": []
+			},
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Default Country",
+				"url": "#default-country",
+				"items": []
+			},
+			{
+				"title": "Default Value",
+				"url": "#default-value",
+				"items": []
+			},
+			{
+				"title": "Custom Country Ordering",
+				"url": "#custom-country-ordering",
+				"items": []
+			},
+			{
+				"title": "Acknowledgements",
+				"url": "#acknowledgements",
+				"items": []
+			}
+		],
+		"slug": "components/phone-input",
+		"href": "/docs/components/phone-input"
+	},
+	{
+		"title": "PMCommand",
+		"description": "A package manager command component.",
+		"path": "components/pm-command",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Commands",
+				"url": "#commands",
+				"items": []
+			},
+			{
+				"title": "Variants",
+				"url": "#variants",
+				"items": []
+			},
+			{
+				"title": "Overflow",
+				"url": "#overflow",
+				"items": []
+			},
+			{
+				"title": "Persisted Package Manager",
+				"url": "#persisted-package-manager",
+				"items": []
+			},
+			{
+				"title": "Customize Agents",
+				"url": "#customize-agents",
+				"items": []
+			}
+		],
+		"slug": "components/pm-command",
+		"href": "/docs/components/pm-command"
+	},
+	{
+		"title": "Rename",
+		"description": "A component for renaming stuff.",
+		"path": "components/rename",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Content Editable",
+				"url": "#content-editable",
+				"items": []
+			},
+			{
+				"title": "Text Area",
+				"url": "#text-area",
+				"items": []
+			},
+			{
+				"title": "External Control",
+				"url": "#external-control",
+				"items": []
+			}
+		],
+		"slug": "components/rename",
+		"href": "/docs/components/rename"
+	},
+	{
+		"title": "Snippet",
+		"description": "A snippet component.",
+		"path": "components/snippet",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Variants",
+				"url": "#variants",
+				"items": []
+			},
+			{
+				"title": "Multiline",
+				"url": "#multiline",
+				"items": []
+			}
+		],
+		"slug": "components/snippet",
+		"href": "/docs/components/snippet"
+	},
+	{
+		"title": "Star Rating",
+		"description": "A simple star rating component.",
+		"path": "components/star-rating",
+		"component": false,
+		"toc": [
+			{
+				"title": "Basic",
+				"url": "#basic",
+				"items": []
+			},
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Custom Stars",
+				"url": "#custom-stars",
+				"items": []
+			},
+			{
+				"title": "Half Rating",
+				"url": "#half-rating",
+				"items": []
+			},
+			{
+				"title": "Disabled",
+				"url": "#disabled",
+				"items": []
+			},
+			{
+				"title": "Readonly",
+				"url": "#readonly",
+				"items": []
+			},
+			{
+				"title": "Custom Color",
+				"url": "#custom-color",
+				"items": []
+			},
+			{
+				"title": "Custom Size",
+				"url": "#custom-size",
+				"items": []
+			}
+		],
+		"slug": "components/star-rating",
+		"href": "/docs/components/star-rating"
+	},
+	{
+		"title": "Stepper",
+		"description": "A keyboard accessible stepper component.",
+		"path": "components/stepper",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Icons",
+				"url": "#icons",
+				"items": []
+			},
+			{
+				"title": "Vertical",
+				"url": "#vertical",
+				"items": []
+			},
+			{
+				"title": "Form",
+				"url": "#form",
+				"items": []
+			}
+		],
+		"slug": "components/stepper",
+		"href": "/docs/components/stepper"
+	},
+	{
+		"title": "Tags Input",
+		"description": "A tags input component.",
+		"path": "components/tags-input",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Custom Validation",
+				"url": "#custom-validation",
+				"items": []
+			},
+			{
+				"title": "Autocomplete",
+				"url": "#autocomplete",
+				"items": []
+			},
+			{
+				"title": "Restricted to Suggestions",
+				"url": "#restricted-to-suggestions",
+				"items": []
+			}
+		],
+		"slug": "components/tags-input",
+		"href": "/docs/components/tags-input"
+	},
+	{
+		"title": "Terminal",
+		"description": "An implementation of the MacOS terminal. Useful for showcasing a command line interface.",
+		"path": "components/terminal",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Loop",
+				"url": "#loop",
+				"items": []
+			},
+			{
+				"title": "Acknowledgements",
+				"url": "#acknowledgements",
+				"items": []
+			}
+		],
+		"slug": "components/terminal",
+		"href": "/docs/components/terminal"
+	},
+	{
+		"title": "Theme Selector",
+		"description": "Click to select the theme.",
+		"path": "components/theme-selector",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Ghost",
+				"url": "#ghost",
+				"items": []
+			}
+		],
+		"slug": "components/theme-selector",
+		"href": "/docs/components/theme-selector"
+	},
+	{
+		"title": "Table of Contents",
+		"description": "A component for displaying a table of contents.",
+		"path": "components/toc",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Usage",
+				"url": "#usage",
+				"items": []
+			},
+			{
+				"title": "Generate the table of contents with UseToc",
+				"url": "#generate-the-table-of-contents-with-usetoc",
+				"items": []
+			}
+		],
+		"slug": "components/toc",
+		"href": "/docs/components/toc"
+	},
+	{
+		"title": "Tree View",
+		"description": "A file tree component.",
+		"path": "components/tree-view",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Custom Icons",
+				"url": "#custom-icons",
+				"items": []
+			}
+		],
+		"slug": "components/tree-view",
+		"href": "/docs/components/tree-view"
+	},
+	{
+		"title": "Underline Tabs",
+		"description": "A horizontal tabs component with an underline.",
+		"path": "components/underline-tabs",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			},
+			{
+				"title": "Overflow",
+				"url": "#overflow",
+				"items": []
+			}
+		],
+		"slug": "components/underline-tabs",
+		"href": "/docs/components/underline-tabs"
+	},
+	{
+		"title": "Window",
+		"description": "A window component.",
+		"path": "components/window",
+		"component": false,
+		"toc": [
+			{
+				"title": "Installation",
+				"url": "#installation",
+				"items": []
+			}
+		],
+		"slug": "components/window",
+		"href": "/docs/components/window"
+	}
 ]

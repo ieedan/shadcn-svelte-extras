@@ -156,8 +156,7 @@ function highlightToFenceMeta(ranges: number[][]): string {
 }
 
 function formatCodeFence(lang: string, content: string, highlight?: number[][]): string {
-	const meta =
-		highlight && highlight.length ? highlightToFenceMeta(highlight) : '';
+	const meta = highlight && highlight.length ? highlightToFenceMeta(highlight) : '';
 	const body = content.replace(/\r\n/g, '\n').replace(/\n$/, '');
 	return '```' + lang + meta + '\n' + body + '\n```\n';
 }
@@ -209,7 +208,11 @@ async function replaceCodeTags(
 		async (m) => (await expand(m[1]!)) ?? m[0]!
 	);
 
-	out = await replaceAsync(out, /<Code\s+([\s\S]*?)\/\s*>/g, async (m) => (await expand(m[1]!)) ?? m[0]!);
+	out = await replaceAsync(
+		out,
+		/<Code\s+([\s\S]*?)\/\s*>/g,
+		async (m) => (await expand(m[1]!)) ?? m[0]!
+	);
 
 	return out;
 }

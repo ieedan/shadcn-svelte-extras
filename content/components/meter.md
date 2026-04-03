@@ -1,6 +1,6 @@
 ---
-title: "Meter"
-description: "A meter component."
+title: 'Meter'
+description: 'A meter component.'
 ---
 
 <script lang="ts">
@@ -22,10 +22,7 @@ description: "A meter component."
 	import { Meter } from '$lib/components/ui/meter';
 </script>
 
-<Meter
-	value={50}
-	max={100}
-/>
+<Meter value={50} max={100} />
 ```
 
 <ApiReference />

@@ -2,7 +2,7 @@
 	import { tv, type VariantProps } from 'tailwind-variants';
 
 	export const fieldVariants = tv({
-		base: 'data-[invalid=true]:text-destructive group/field flex w-full gap-2',
+		base: 'data-[invalid=true]:text-destructive group/field flex w-full gap-3',
 		variants: {
 			orientation: {
 				vertical: 'cn-field-orientation-vertical flex-col [&>*]:w-full [&>.sr-only]:w-auto',

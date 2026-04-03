@@ -30,7 +30,7 @@
 		return `${CONTENT_BASE_URL.replace(/\/$/, '')}/${page.url.pathname.replace(/^\//, '')}.md`;
 	});
 
-    $inspect(source)
+	$inspect(source);
 
 	const markdownViewHref = $derived(
 		new URL(`${page.url.pathname.replace(/\/$/, '')}.md`, page.url.origin).href

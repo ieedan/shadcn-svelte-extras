@@ -1,6 +1,6 @@
 ---
-title: "Tree View"
-description: "A file tree component."
+title: 'Tree View'
+description: 'A file tree component.'
 ---
 
 <script lang="ts">
@@ -21,10 +21,8 @@ description: "A file tree component."
 
 <Demo demo="tree-view-custom-icons" />
 
-
 If you are using custom icons in a project we recommend you wrap the folder/file components with
-	the custom icons:
-
+the custom icons:
 
 <div>
 	<Code lang="svelte" highlight={[[13, 21]]} code={treeViewFileCustomRaw} />
