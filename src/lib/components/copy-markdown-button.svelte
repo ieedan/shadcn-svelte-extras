@@ -6,6 +6,7 @@
 	import { cn } from '$lib/utils';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import { page } from '$app/state';
+	import { useDocs } from '$lib/features/docs/docs-context.svelte';
 	import type { Component } from 'svelte';
 	import GithubLogo from '$lib/components/logos/github.svelte';
 	import MarkdownLogo from '$lib/components/logos/markdown.svelte';
@@ -21,20 +22,13 @@
 
 	const CONTENT_BASE_URL = 'https://github.com/ieedan/shadcn-svelte-extras/tree/main/content/';
 
-	const shareQuery = $derived(
-		`Read ${new URL(`${page.url.pathname}.md`, page.url.origin).toString()} I want to ask questions about it.`
-	);
+	const docs = useDocs();
 
-	const source = $derived.by(() => {
-		// Ensure no double slashes
-		return `${CONTENT_BASE_URL.replace(/\/$/, '')}/${page.url.pathname.replace(/^\//, '')}.md`;
-	});
+	const markdownViewHref = $derived(new URL(`/docs/${docs.doc.doc.slug}.md`, page.url.origin).href);
 
-	$inspect(source);
+	const shareQuery = $derived(`Read ${markdownViewHref} I want to ask questions about it.`);
 
-	const markdownViewHref = $derived(
-		new URL(`${page.url.pathname.replace(/\/$/, '')}.md`, page.url.origin).href
-	);
+	const source = $derived(`${CONTENT_BASE_URL.replace(/\/$/, '')}/${docs.doc.doc.path}.md`);
 
 	const chatItems: LinkItem[] = $derived([
 		{
@@ -64,7 +58,7 @@
 	<button
 		type="button"
 		class={cn(
-			buttonVariants({ variant: 'secondary', size: 'default' }),
+			buttonVariants({ variant: 'secondary', size: 'sm' }),
 			'rounded-r-none md:text-[0.8rem]'
 		)}
 	>
@@ -74,7 +68,7 @@
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger
 			class={cn(
-				buttonVariants({ variant: 'secondary', size: 'icon' }),
+				buttonVariants({ variant: 'secondary', size: 'icon-sm' }),
 				'rounded-l-none border-l-0'
 			)}
 		>

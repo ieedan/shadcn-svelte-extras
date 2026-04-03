@@ -7,7 +7,7 @@
 	import { Separator } from './ui/separator';
 </script>
 
-<header class="flex flex-col items-center">
+<header class="bg-background sticky top-0 z-10 flex flex-col items-center">
 	<div class="site-container flex h-(--header-height) w-full items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">

@@ -24,7 +24,7 @@ function markdownPrerenderEntries(contentRoot) {
 				if (rel.endsWith('/index')) {
 					rel = rel.slice(0, -'/index'.length);
 				}
-				paths.push(`/${rel}.md`);
+				paths.push(`/docs/${rel}.md`);
 			}
 		}
 	}

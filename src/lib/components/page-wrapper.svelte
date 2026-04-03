@@ -27,7 +27,10 @@
 <div
 	class="relative flex w-full justify-center gap-4 px-6 py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]"
 >
-	<div class="mx-auto w-full max-w-4xl min-w-0" style="min-height: calc(100svh - 112px);">
+	<div
+		class="mx-auto w-full max-w-4xl min-w-0"
+		style="min-height: calc(100svh - var(--header-height) - 4rem);"
+	>
 		<div class="flex flex-col">
 			<div class="mb-5 flex flex-col gap-1">
 				<div class="flex items-center justify-between gap-2">
@@ -119,7 +122,9 @@
 		</Navigation.Root>
 	</div>
 	<div class="hidden xl:block">
-		<div class="sticky top-20 -mt-6 h-[calc(100vh-7rem)] pt-4">
+		<div
+			class="sticky top-[calc(var(--header-height)+2rem)] h-[calc(100vh-var(--header-height)-4rem)]"
+		>
 			<div class="no-scrollbar h-full pb-10">
 				<div class="space-y-2">
 					<span class="text-foreground text-sm font-medium">On This Page</span>

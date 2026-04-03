@@ -69,7 +69,7 @@ const Copy = api.createComponentReference({
 	props: {},
 	forwardTo: {
 		name: 'Copy Button',
-		href: '/components/copy-button'
+		href: '/docs/components/copy-button'
 	}
 });
 

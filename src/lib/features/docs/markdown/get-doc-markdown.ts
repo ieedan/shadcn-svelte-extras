@@ -8,7 +8,6 @@ const rawModules = import.meta.glob<string>('/content/**/*.md', {
 
 export async function getDocMarkdown(slug: string): Promise<string | null> {
 	for (const [path, load] of Object.entries(rawModules)) {
-		console.log(slugFromPath(path), slug);
 		if (slugFromPath(path) === slug) {
 			const raw = await load();
 			return await transformDocMarkdown(raw, slug);
