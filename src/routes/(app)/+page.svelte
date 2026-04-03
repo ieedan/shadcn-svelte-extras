@@ -20,16 +20,18 @@
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
-<div class="flex flex-col gap-8">
+<div class="flex flex-col items-center gap-8">
 	<div class="flex flex-col items-center gap-2 py-6 md:py-10 lg:py-20">
-		<h1 class="text-center text-5xl font-bold">shadcn-svelte-extras</h1>
-		<p class="text-muted-foreground text-center text-lg">Finish your component library.</p>
+		<h1 class="text-center text-5xl font-medium">shadcn-svelte-extras</h1>
+		<p class="text-center text-lg">
+			Finish your component library with beautiful, composable components.
+		</p>
 		<div class="mt-2 flex place-items-center gap-2">
 			<Button href="/docs/installation">Get Started</Button>
-			<Button variant="outline" href="/components">Browse Components</Button>
+			<Button variant="ghost" href="/components">Browse Components</Button>
 		</div>
 	</div>
-	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
+	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3 container">
 		<div class="flex flex-col gap-4 lg:col-start-1">
 			<ChatExample />
 			<TagsInput bind:value={tags} placeholder="Add a tag" />

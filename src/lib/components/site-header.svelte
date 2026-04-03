@@ -8,7 +8,7 @@
 </script>
 
 <header class="flex flex-col items-center">
-	<div class="site-container flex w-full items-center justify-between py-2">
+	<div class="site-container flex h-(--header-height) w-full items-center justify-between">
 		<div class="flex items-center">
 			<a href="/">
 				<Logo class="mr-2 size-6" />

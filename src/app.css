@@ -173,7 +173,7 @@ html {
 }
 
 @utility site-container {
-	@apply fixed:max-w-7xl w-full px-4;
+	@apply fixed:max-w-7xl w-full px-6;
 }
 
 @layer components {
