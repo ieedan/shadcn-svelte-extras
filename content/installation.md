@@ -5,34 +5,15 @@ description: 'How to add and use extras in your project.'
 
 <script lang="ts">
 	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
+	import InstallationSetupTabs from '$lib/components/docs/installation-setup-tabs.svelte';
 	import Add from '$lib/components/add.svelte';
 </script>
 
-shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) to allow you to install components into your project just like in [shadcn-svelte](https://shadcn-svelte.com), but with some additional features such as semantic versioning and easy updates.
+shadcn-svelte-extras distributes it's components as copy-pastable code that you can use in your project just like in [shadcn-svelte](https://shadcn-svelte.com).
 
-## Setup
+To get started you can use either `jsrepo` or `shadcn-svelte`.
 
-Initialize jsrepo with shadcn-svelte-extras:
-
-<JsrepoCommand command="execute" args={['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']} />
-
-Configure the `paths` key in your `jsrepo.config.ts` file so that components, hooks, and utils are added to the correct places:
-
-```typescript {5-12}
-import { defineConfig } from 'jsrepo';
-
-export default defineConfig({
-	registries: ['@ieedan/shadcn-svelte-extras'],
-	paths: {
-		ui: '$lib/components/ui',
-		component: '$lib/components',
-		hook: '$lib/hooks',
-		action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
-	}
-});
-```
+<InstallationSetupTabs />
 
 Start adding extras!
 

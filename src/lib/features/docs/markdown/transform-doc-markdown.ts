@@ -64,9 +64,7 @@ function formatAddBlock(item: string, withoutRegistry: boolean): string {
 	const shadcn = formatShadcnAddCommand(item);
 	return (
 		`#### Add \`${item}\`\n\n` +
-		'**jsrepo** (default registry: `' +
-		DEFAULT_REGISTRY +
-		'`):\n\n' +
+		'**jsrepo**:\n\n' +
 		'```bash\n' +
 		jsrepo +
 		'\n```\n\n' +

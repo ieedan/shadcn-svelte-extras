@@ -277,6 +277,22 @@ html {
 		font-size: 0.8rem;
 	}
 
+	.mdsx [data-slot='underline-tabs-list'] {
+		@apply mt-4;
+	}
+
+	.mdsx [data-slot='underline-tabs-content'] {
+		@apply mt-2;
+	}
+
+	.mdsx [data-slot='jsrepo-command'] {
+		@apply mt-6;
+	}
+
+	.mdsx [data-slot='pm-command'] {
+		@apply mt-6;
+	}
+
 	.mdsx code:not(pre code) {
 		@apply bg-muted relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold outline-none;
 	}
