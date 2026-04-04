@@ -11,7 +11,7 @@ export const allDocs = [
 ];
 
 export const groupedDocs = {
-	'Getting Started': gettingStarted,
+	'Getting Started': reorder(gettingStarted, ['index', 'installation']),
 	Components: components,
 	Actions: actions,
 	Hooks: hooks
@@ -52,4 +52,14 @@ export async function getComponent(slug: string): Promise<Component | null> {
 	}
 
 	return null;
+}
+
+function reorder<T extends { slug: string }>(docs: readonly T[], slugOrder: readonly string[]): T[] {
+	const rank = new Map(slugOrder.map((slug, i) => [slug, i]));
+	return [...docs].sort((a, b) => {
+		const ar = rank.get(a.slug) ?? slugOrder.length;
+		const br = rank.get(b.slug) ?? slugOrder.length;
+		if (ar !== br) return ar - br;
+		return a.slug.localeCompare(b.slug);
+	});
 }
