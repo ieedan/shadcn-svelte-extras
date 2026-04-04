@@ -38,7 +38,7 @@
 				// both are mounted (offset 36px * 2)
 				'pr-[4.5rem]':
 					state.root.passwordState.copyMounted && state.root.passwordState.toggleMounted,
-				'tracking-wider': state.root.opts.hidden.current && value.length > 0
+				'tracking-widest': state.root.opts.hidden.current && value.length > 0
 			},
 			className
 		)}

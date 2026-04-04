@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- fix(password): Apply `tracking-wider` when input is masked and has a value
+- fix(password): Apply `tracking-widest` when input is masked and has a value
 
 ## 6.10.0
 
