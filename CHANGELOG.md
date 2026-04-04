@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 6.10.1
+
+### Patch Changes
+
+- fix(password): Apply `tracking-wider` when input is masked and has a value
+
 ## 6.10.0
 
 ### Minor Changes
