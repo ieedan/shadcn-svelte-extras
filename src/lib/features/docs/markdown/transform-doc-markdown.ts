@@ -15,6 +15,44 @@ const rawLibLoaders = import.meta.glob('/src/lib/**/*', {
 
 const DEFAULT_REGISTRY = '@ieedan/shadcn-svelte-extras';
 
+/** Keep in sync with `installation-setup-tabs.svelte` (`jsrepoConfigExample`). */
+const INSTALLATION_JSREPO_CONFIG_EXAMPLE = `import { defineConfig } from 'jsrepo';
+
+export default defineConfig({
+	registries: ['@ieedan/shadcn-svelte-extras'],
+	paths: {
+		ui: '$lib/components/ui',
+		component: '$lib/components',
+		hook: '$lib/hooks',
+		action: '$lib/actions',
+		util: '$lib/utils',
+		lib: '$lib'
+	}
+});`;
+
+/** Keep in sync with `installation-setup-tabs.svelte` (`componentsJsonExample`). */
+const INSTALLATION_COMPONENTS_JSON_EXAMPLE = `{
+	"$schema": "https://shadcn-svelte.com/schema.json",
+	"tailwind": {
+		"css": "src/app.css",
+		"baseColor": "neutral"
+	},
+	"aliases": {
+		"components": "$lib/components",
+		"utils": "$lib/utils",
+		"ui": "$lib/components/ui",
+		"hooks": "$lib/hooks",
+		"lib": "$lib"
+	},
+	"typescript": true,
+	"registry": "https://shadcn-svelte.com/registry",
+	"style": "vega",
+	"iconLibrary": "lucide",
+	"menuColor": "default",
+	"menuAccent": "subtle"
+}
+`;
+
 function normalizeLibRelPath(path: string): string {
 	return path.replace(/\\/g, '/').replace(/^\/+/, '');
 }
@@ -73,6 +111,45 @@ function formatAddBlock(item: string, withoutRegistry: boolean): string {
 		'**shadcn-svelte**:\n\n' +
 		'```bash\n' +
 		shadcn +
+		'\n```\n'
+	);
+}
+
+/** Markdown for `<InstallationSetupTabs />` — mirrors the live tab content. */
+function formatInstallationSetupTabsBlock(): string {
+	const jsrepoInit = formatNpmExecuteLine(['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']);
+	const jsrepoAdd = formatNpmExecuteLine(['jsrepo', 'add', 'button']);
+	const shadcnInit = formatNpmExecuteLine(['shadcn-svelte', 'init']);
+	const shadcnAdd = formatNpmExecuteLine([
+		'shadcn-svelte',
+		'add',
+		`${REGISTRY_ITEM_URL_BASE}/button.json`
+	]);
+
+	return (
+		'### jsrepo\n\n' +
+		'Initialize jsrepo with shadcn-svelte-extras:\n\n' +
+		'```bash\n' +
+		jsrepoInit +
+		'\n```\n\n' +
+		'Configure the `paths` key in your `jsrepo.config.ts` file so that components, hooks, and utils are added to the correct places:\n\n' +
+		formatCodeFence('typescript', INSTALLATION_JSREPO_CONFIG_EXAMPLE, [[5, 12]]) +
+		'\n' +
+		'Install extras into your project using `jsrepo add`:\n\n' +
+		'```bash\n' +
+		jsrepoAdd +
+		'\n```\n\n' +
+		'### shadcn-svelte\n\n' +
+		'Initialize shadcn-svelte:\n\n' +
+		'```bash\n' +
+		shadcnInit +
+		'\n```\n\n' +
+		'Configure the aliases in your `components.json` file with the right paths:\n\n' +
+		formatCodeFence('json', INSTALLATION_COMPONENTS_JSON_EXAMPLE, [[7, 13]]) +
+		'\n' +
+		'Install extras into your project using `shadcn-svelte add`:\n\n' +
+		'```bash\n' +
+		shadcnAdd +
 		'\n```\n'
 	);
 }
@@ -238,6 +315,13 @@ function stripJsrepoCommandImport(markdown: string): string {
 	);
 }
 
+function stripInstallationSetupTabsImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import InstallationSetupTabs from ['"]\$lib\/components\/docs\/installation-setup-tabs\.svelte['"];\s*\n/gm,
+		''
+	);
+}
+
 /** String literals inside `args={[ ... ]}` in doc markdown. */
 function parseBracketStringArray(inner: string): string[] {
 	const parts: string[] = [];
@@ -247,6 +331,12 @@ function parseBracketStringArray(inner: string): string[] {
 		parts.push((m[1] ?? m[2] ?? '').trim());
 	}
 	return parts;
+}
+
+function replaceInstallationSetupTabsTags(markdown: string): string {
+	return markdown.replace(/<InstallationSetupTabs\s*\/>/g, () =>
+		formatInstallationSetupTabsBlock()
+	);
 }
 
 function replaceJsrepoCommandTags(markdown: string): string {
@@ -296,6 +386,7 @@ export async function transformDocMarkdown(markdown: string, docSlug?: string): 
 		return formatAddBlock(item, withoutRegistry);
 	});
 
+	merged = replaceInstallationSetupTabsTags(merged);
 	merged = replaceJsrepoCommandTags(merged);
 
 	merged = await replaceCodeTags(merged, rawImportMap, usedRawVars);
@@ -304,6 +395,7 @@ export async function transformDocMarkdown(markdown: string, docSlug?: string): 
 	merged = stripCodeDocImport(merged);
 	merged = stripApiReferenceImport(merged);
 	merged = stripJsrepoCommandImport(merged);
+	merged = stripInstallationSetupTabsImport(merged);
 	merged = stripRawImports(merged, usedRawVars);
 	merged = removeEmptyScriptBlocks(merged);
 

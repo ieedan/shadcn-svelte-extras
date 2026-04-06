@@ -46,9 +46,12 @@
 		<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 			{#each filteredActions as action (action.path)}
 				<div class="border-border hover:bg-accent relative rounded-lg p-4">
-					<a href={action.href} class="text-lg font-medium">
+					<a href={action.href} class="flex items-center gap-2 text-lg font-medium">
 						<span class="absolute inset-0"></span>
 						{action.title}
+						{#if action.indicator === 'new'}
+							<span class="bg-brand flex size-2 rounded-full" title="New"></span>
+						{/if}
 					</a>
 					<p class="text-muted-foreground text-sm">{action.description}</p>
 				</div>

@@ -38,6 +38,9 @@
 												<span class="absolute inset-0 flex w-(--sidebar-width) bg-transparent"
 												></span>
 												{doc.title}
+												{#if doc.indicator === 'new'}
+													<span class="bg-brand flex size-2 rounded-full" title="New"></span>
+												{/if}
 											</a>
 										{/snippet}
 									</Sidebar.MenuButton>

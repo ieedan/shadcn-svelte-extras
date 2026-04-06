@@ -15,7 +15,8 @@ const docSchema = s
 			})
 			.optional(),
 		component: s.boolean().default(false),
-		toc: s.toc()
+		toc: s.toc(),
+		indicator: s.union([s.literal('new'), s.literal('updated')]).optional()
 	})
 	.transform((data) => {
 		return {

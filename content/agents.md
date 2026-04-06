@@ -1,6 +1,7 @@
 ---
 title: 'Agents'
 description: 'How to use shadcn-svelte-extras with agents'
+indicator: 'new'
 ---
 
 <script lang="ts">

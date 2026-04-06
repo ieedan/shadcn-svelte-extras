@@ -243,6 +243,28 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'github-button',
+					title: 'GitHub Button',
+					description:
+						'A button linking to a GitHub repository with optional star count, live GitHub stats, repository link button, and smooth star count animation for async data.',
+					type: 'ui',
+					files: [
+						{
+							path: 'src/lib/components/ui/github-button'
+						},
+						{
+							path: 'src/lib/demos/github-button.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						},
+						{
+							path: 'src/lib/demos/github-button-icon-only.svelte',
+							role: 'example',
+							dependencyResolution: 'manual'
+						}
+					]
+				},
+				{
 					name: 'image-cropper',
 					title: 'ImageCropper',
 					description:

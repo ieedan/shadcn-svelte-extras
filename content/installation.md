@@ -11,10 +11,12 @@ description: 'How to add and use extras in your project.'
 
 shadcn-svelte-extras distributes it's components as copy-pastable code that you can use in your project just like in [shadcn-svelte](https://shadcn-svelte.com).
 
-To get started you can use either `jsrepo` or `shadcn-svelte`.
+To get started you can use either `jsrepo` or `shadcn-svelte`. Both assume that you have already initialized your project using the shadcn-svelte CLI.
 
 <InstallationSetupTabs />
 
-Start adding extras!
+Once you've initialized using the CLI of your choice you can start adding extras!
+
+Each component will have a copy-pasteable command like the one below that you can customize based on your project setup.
 
 <Add item="button" />

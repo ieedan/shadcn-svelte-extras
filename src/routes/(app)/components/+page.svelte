@@ -46,9 +46,12 @@
 		<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 			{#each filteredComponents as component (component.path)}
 				<div class="border-border hover:bg-accent relative rounded-lg p-4">
-					<a href={component.href} class="text-lg font-medium">
+					<a href={component.href} class="flex items-center gap-2 text-lg font-medium">
 						<span class="absolute inset-0"></span>
 						{component.title}
+						{#if component.indicator === 'new'}
+							<span class="bg-brand flex size-2 rounded-full" title="New"></span>
+						{/if}
 					</a>
 					<p class="text-muted-foreground text-sm">{component.description}</p>
 				</div>

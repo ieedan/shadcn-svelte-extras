@@ -250,6 +250,32 @@
     "href": "/docs/components/file-drop-zone"
   },
   {
+    "title": "GitHub Button",
+    "description": "A button that displays the number of stars and links to a GitHub repository.",
+    "path": "components/github-button",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Icon only",
+        "url": "#icon-only",
+        "items": []
+      }
+    ],
+    "indicator": "new",
+    "slug": "components/github-button",
+    "href": "/docs/components/github-button"
+  },
+  {
     "title": "Image Cropper",
     "description": "A component for uploading and resizing images.",
     "path": "components/image-cropper",

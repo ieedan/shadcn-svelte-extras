@@ -42,9 +42,12 @@
 		<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 			{#each filteredHooks as hook (hook.path)}
 				<div class="border-border hover:bg-accent relative rounded-lg p-4">
-					<a href={hook.href} class="text-lg font-medium">
+					<a href={hook.href} class="flex items-center gap-2 text-lg font-medium">
 						<span class="absolute inset-0"></span>
 						{hook.title}
+						{#if hook.indicator === 'new'}
+							<span class="bg-brand flex size-2 rounded-full" title="New"></span>
+						{/if}
 					</a>
 					<p class="text-muted-foreground text-sm">{hook.description}</p>
 				</div>

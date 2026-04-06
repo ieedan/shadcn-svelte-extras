@@ -1,10 +1,15 @@
 <script lang="ts">
 	import Delayed from '$lib/components/delayed.svelte';
 	import { Spinner } from '$lib/components/ui/spinner/index.js';
+	import { page } from '$app/state';
+	import { Button } from '$lib/components/ui/button';
+	import { MinimizeIcon } from '@lucide/svelte';
 
 	let { data } = $props();
 
 	const ComponentPromise = import(`$lib/demos/${data.path}.svelte`);
+
+	const from = $derived(page.url.searchParams.get('from'));
 </script>
 
 <div class="flex min-h-dvh place-items-center justify-center">
@@ -19,3 +24,10 @@
 		<Component />
 	{/await}
 </div>
+{#if from !== null}
+	<div class="fixed top-4 right-4">
+		<Button href={from} size="icon" variant="ghost">
+			<MinimizeIcon />
+		</Button>
+	</div>
+{/if}

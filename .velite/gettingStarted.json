@@ -16,6 +16,7 @@
         "items": []
       }
     ],
+    "indicator": "new",
     "slug": "agents",
     "href": "/docs/agents"
   },

@@ -19,35 +19,16 @@ export default defineConfig({
 		lib: '$lib'
 	}
 });`;
-
-	const componentsJsonExample = `{
-	"$schema": "https://shadcn-svelte.com/schema.json",
-	"tailwind": {
-		"css": "src/app.css",
-		"baseColor": "neutral"
-	},
-	"aliases": {
-		"components": "$lib/components",
-		"utils": "$lib/utils",
-		"ui": "$lib/components/ui",
-		"hooks": "$lib/hooks",
-		"lib": "$lib"
-	},
-	"typescript": true,
-	"registry": "https://shadcn-svelte.com/registry",
-	"style": "vega",
-	"iconLibrary": "lucide",
-	"menuColor": "default",
-	"menuAccent": "subtle"
-}
-`;
 </script>
 
 <UnderlineTabs.Root value="jsrepo">
 	<UnderlineTabs.List>
-		<UnderlineTabs.Trigger value="jsrepo">
+		<UnderlineTabs.Trigger value="jsrepo" class="flex items-center gap-2">
 			<JsrepoLogo />
 			jsrepo
+			<span class="text-muted-foreground bg-muted rounded-md px-1.5 py-0.5 text-xs">
+				Recommended
+			</span>
 		</UnderlineTabs.Trigger>
 		<UnderlineTabs.Trigger value="shadcn-svelte">
 			<ShadcnSvelteLogo />
@@ -85,21 +66,6 @@ export default defineConfig({
 		<JsrepoCommand command="execute" args={['jsrepo', 'add', 'button']} />
 	</UnderlineTabs.Content>
 	<UnderlineTabs.Content value="shadcn-svelte">
-		Initialize shadcn-svelte:
-		<PmCommand command="execute" args={['shadcn-svelte', 'init']} />
-		<p class="leading-7 [&:not(:first-child)]:mt-6">
-			Configure the aliases in your <span
-				class="bg-accent rounded-md px-[0.3rem] py-[0.2rem] font-mono text-sm">components.json</span
-			> file with the right paths:
-		</p>
-		<Code.Root
-			lang="json"
-			code={componentsJsonExample}
-			highlight={[[7, 13]]}
-			class="mt-6 w-full min-w-0"
-		>
-			<Code.CopyButton />
-		</Code.Root>
 		<p class="leading-7 [&:not(:first-child)]:mt-6">
 			Install extras into your project using <code
 				class="bg-muted relative rounded-md px-[0.3rem] py-[0.2rem] font-mono text-sm"

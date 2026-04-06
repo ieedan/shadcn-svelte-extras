@@ -1,11 +1,23 @@
 <script lang="ts">
 	import Logo from './logo.svelte';
 	import { LightSwitch } from './ui/light-switch';
-	import GithubLogo from './logos/github.svelte';
-	import Button from './button.svelte';
 	import LayoutToggle from './layout-toggle.svelte';
 	import { Separator } from './ui/separator';
 	import MobileSheet from './mobile-sheet.svelte';
+	import { GitHubButton, getStars } from './ui/github-button';
+	import { onMount } from 'svelte';
+
+	const STARS_FALLBACK = 525;
+
+	let stars = $state(STARS_FALLBACK);
+
+	onMount(async () => {
+		stars = await getStars({
+			owner: 'ieedan',
+			repo: 'shadcn-svelte-extras',
+			fallback: STARS_FALLBACK
+		});
+	});
 </script>
 
 <header class="bg-background sticky top-0 z-10 flex flex-col items-center">
@@ -24,9 +36,11 @@
 			<LayoutToggle class="hidden xl:block" />
 			<Separator orientation="vertical" class="hidden xl:block" />
 			<LightSwitch variant="ghost" />
-			<Button variant="ghost" href="https://github.com/ieedan/shadcn-svelte-extras">
-				<GithubLogo class="size-4" />
-			</Button>
+			<GitHubButton
+				variant="ghost"
+				repo={{ owner: 'ieedan', name: 'shadcn-svelte-extras' }}
+				{stars}
+			/>
 		</div>
 	</div>
 </header>

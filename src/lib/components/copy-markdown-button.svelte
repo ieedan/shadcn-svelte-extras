@@ -64,12 +64,12 @@
 		type="button"
 		class={cn(
 			buttonVariants({ variant: 'secondary', size: 'sm' }),
-			'rounded-r-none md:text-[0.8rem] flex items-center gap-2'
+			'flex items-center gap-2 rounded-r-none md:text-[0.8rem]'
 		)}
 		onclick={() => clipboard.copy(markdownViewHref)}
 	>
 		{#if clipboard.copied}
-			<div in:scale={{ duration: 500, start: 0.85 }} >
+			<div in:scale={{ duration: 500, start: 0.85 }}>
 				<CheckIcon tabindex={-1} />
 			</div>
 		{:else}

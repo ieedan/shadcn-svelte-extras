@@ -28,6 +28,8 @@ export const DEMOS = [
 	'file-drop-zone',
 	'file-drop-zone-form',
 	'file-drop-zone-text-area',
+	'github-button',
+	'github-button-icon-only',
 	'image-cropper',
 	'image-cropper-custom-preview',
 	'image-cropper-custom-trigger',
