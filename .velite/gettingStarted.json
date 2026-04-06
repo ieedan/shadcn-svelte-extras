@@ -29,18 +29,7 @@
     "description": "How to add and use extras in your project.",
     "path": "installation",
     "component": false,
-    "toc": [
-      {
-        "title": "MCP",
-        "url": "#mcp",
-        "items": []
-      },
-      {
-        "title": "Tailwind v3",
-        "url": "#tailwind-v3",
-        "items": []
-      }
-    ],
+    "toc": [],
     "slug": "installation",
     "href": "/docs/installation"
   }

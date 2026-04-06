@@ -18,23 +18,3 @@ To get started you can use either `jsrepo` or `shadcn-svelte`.
 Start adding extras!
 
 <Add item="button" />
-
-## MCP
-
-To setup the jsrepo MCP server you can run the following command:
-
-<JsrepoCommand command="execute" args={['jsrepo', 'config', 'mcp']} />
-
-This will configure the jsrepo MCP server for the client of your choice.
-
-We also added a Cursor Rules config file for your convenience. You can add it when you initialize shadcn-svelte-extras with the `jsrepo init` command.
-
-## Tailwind v3
-
-You can still access the tailwind v3 components by using jsrepo v2 and pinning the registry version to the latest tailwind v3 compatible version:
-
-```json
-{
-	"repos": ["@ieedan/shadcn-svelte-extras@2.1.1"]
-}
-```
