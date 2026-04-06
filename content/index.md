@@ -5,6 +5,7 @@ description: "Why we built shadcn-svelte-extras and why it's great."
 
 <script lang="ts">
 	import * as Accordion from '$lib/components/ui/accordion/index.js';
+	import { Link } from '$lib/components/ui/link';
 </script>
 
 shadcn-svelte-extras was built to fill in the gaps left by the limited components provided by shadcn/ui by creating the rest of the primitives you may need to finish your application without sacrificing the composability, quality, or style of the original.
@@ -23,7 +24,7 @@ Every component in shadcn-svelte-extras is designed with composability in mind. 
 
 We are committed to delivering components to the same standard as the original. They will be beautiful, performant, and composable.
 
-<Accordion.Root type="single">
+<Accordion.Root type="single" class="mt-6">
 <Accordion.Item value="q-1">
 <Accordion.Trigger>How compatible is this with shadcn-svelte?</Accordion.Trigger>
 <Accordion.Content>
@@ -34,14 +35,7 @@ the original.
 <Accordion.Item value="q-2">
 <Accordion.Trigger>Can I still install components from the CLI?</Accordion.Trigger>
 <Accordion.Content>
-Yes! shadcn-svelte-extras uses [jsrepo](https://jsrepo.dev) which allows you to install components from the CLI.
-</Accordion.Content>
-</Accordion.Item>
-<Accordion.Item value="q-3">
-<Accordion.Trigger>Is it Tailwind 4 compatible?</Accordion.Trigger>
-<Accordion.Content>
-Yes! shadcn-svelte-extras has been updated to support Tailwind 4. Tailwind 3 support is
-available for versions `@2.1.1` and below.
+Yes! shadcn-svelte-extras supports adding components from the CLI using both <Link href="https://jsrepo.dev">jsrepo</Link> and <Link href="https://shadcn-svelte.com/docs/cli">shadcn-svelte</Link>.
 </Accordion.Content>
 </Accordion.Item>
 </Accordion.Root>
