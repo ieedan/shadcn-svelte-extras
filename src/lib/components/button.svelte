@@ -9,6 +9,32 @@
 				| Parameters<MouseEventHandler<HTMLAnchorElement>>[0]
 		) => Promise<void>;
 	};
+
+	export type Size = 'default' | 'xs' | 'sm' | 'lg';
+
+	/**
+	 * Map sizes to their icon/normal size variant
+	 */
+	export const sizeMap = {
+		default: {
+			icon: 'icon',
+			normal: 'default'
+		},
+		xs: {
+			icon: 'icon-xs',
+			normal: 'xs'
+		},
+		sm: {
+			icon: 'icon-sm',
+			normal: 'sm'
+		},
+		lg: {
+			icon: 'icon-lg',
+			normal: 'lg'
+		}
+	} as const;
+
+	export { type ButtonSize, type ButtonVariant } from '$lib/components/ui/button';
 </script>
 
 <script lang="ts">

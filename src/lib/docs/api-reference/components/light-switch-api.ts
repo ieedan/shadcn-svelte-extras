@@ -8,6 +8,11 @@ const Root = api.createComponentReference<LightSwitchProps>({
 			type: '"outline" | "ghost"',
 			description: 'The visual style of the light switch.',
 			defaultValue: 'outline'
+		}),
+		size: api.createStringUnionProp({
+			type: '"default" | "xs" | "sm" | "lg"',
+			description: 'The size of the light switch.',
+			defaultValue: 'default'
 		})
 	}
 });

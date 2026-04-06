@@ -11,12 +11,10 @@
 
 	let stars = $state(STARS_FALLBACK);
 
+	const repo = { owner: 'ieedan', repo: 'shadcn-svelte-extras' };
+
 	onMount(async () => {
-		stars = await getStars({
-			owner: 'ieedan',
-			repo: 'shadcn-svelte-extras',
-			fallback: STARS_FALLBACK
-		});
+		stars = await getStars({ ...repo, fallback: STARS_FALLBACK });
 	});
 </script>
 
@@ -33,14 +31,11 @@
 			{@render HeaderLink({ href: '/actions', name: 'Actions' })}
 		</div>
 		<div class="flex items-center gap-2 **:data-[slot=separator]:h-4!">
-			<LayoutToggle class="hidden xl:block" />
+			<GitHubButton variant="ghost" size="sm" {repo} {stars} />
+			<Separator orientation="vertical" />
+			<LayoutToggle class="hidden xl:flex" />
 			<Separator orientation="vertical" class="hidden xl:block" />
-			<LightSwitch variant="ghost" />
-			<GitHubButton
-				variant="ghost"
-				repo={{ owner: 'ieedan', name: 'shadcn-svelte-extras' }}
-				{stars}
-			/>
+			<LightSwitch variant="ghost" size="sm" />
 		</div>
 	</div>
 </header>

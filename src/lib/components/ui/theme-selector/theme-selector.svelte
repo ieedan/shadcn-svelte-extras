@@ -1,6 +1,9 @@
 <script lang="ts" module>
+	import type { Size } from '$lib/components/button.svelte';
+
 	export type ThemeSelectorProps = {
 		variant?: 'outline' | 'ghost';
+		size?: Size;
 	};
 </script>
 

@@ -1,16 +1,12 @@
 import * as api from '../api-reference';
+import type { GithubButtonProps } from '$lib/components/ui/github-button/types';
 
-type GitHubButtonPropsReference = {
-	repo: unknown;
-	stars?: unknown;
-	starsTweenedDuration?: unknown;
-	variant?: unknown;
-	class?: unknown;
-	ref?: unknown;
-	disabled?: unknown;
-};
+type GithubButtonDocumentedProps = Pick<
+	GithubButtonProps,
+	'repo' | 'stars' | 'starsTweenedDuration' | 'variant' | 'size' | 'class' | 'ref' | 'disabled'
+>;
 
-const Root = api.createComponentReference<GitHubButtonPropsReference>({
+const Root = api.createComponentReference<GithubButtonDocumentedProps>({
 	description:
 		'Button-styled link to a GitHub repository with the GitHub logo and an optional tweened star count.',
 	props: {
@@ -34,6 +30,12 @@ const Root = api.createComponentReference<GitHubButtonPropsReference>({
 			type: '"default" | "destructive" | "outline" | "secondary" | "ghost" | "link"',
 			description: 'Visual variant (same as the Button component).',
 			defaultValue: 'outline'
+		}),
+		size: api.createStringUnionProp({
+			type: '"default" | "xs" | "sm" | "lg"',
+			description:
+				'Layout size for the wrapped Button (icon size when `stars` is omitted, normal size when stars are shown).',
+			defaultValue: 'default'
 		}),
 		class: api.createStringProp({
 			description: 'Additional classes merged onto the button/link.'

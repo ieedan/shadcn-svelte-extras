@@ -8,6 +8,11 @@ const Root = api.createComponentReference<ThemeSelectorProps>({
 			type: '"outline" | "ghost"',
 			description: 'The visual style of the theme selector.',
 			defaultValue: 'outline'
+		}),
+		size: api.createStringUnionProp({
+			type: '"default" | "xs" | "sm" | "lg"',
+			description: 'The size of the theme selector.',
+			defaultValue: 'default'
 		})
 	}
 });

@@ -1,17 +1,9 @@
 <script lang="ts">
-	import { Button, type ButtonProps } from '$lib/components/ui/button';
+	import Button, { sizeMap } from '$lib/components/button.svelte';
+	import type { GithubButtonProps } from './types';
 	import { cn } from '$lib/utils';
 	import { cubicInOut } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';
-
-	type Props = Omit<ButtonProps, 'href' | 'children' | 'size'> & {
-		repo: {
-			owner: string;
-			repo: string;
-		};
-		stars?: Promise<number> | number;
-		starsTweenedDuration?: number;
-	};
 
 	let {
 		starsTweenedDuration = 5000,
@@ -19,8 +11,9 @@
 		repo,
 		class: className,
 		stars,
+		size = 'default',
 		...rest
-	}: Props = $props();
+	}: GithubButtonProps = $props();
 
 	function displayStars(stars: number): string {
 		if (stars < 1000) return `${stars.toFixed(0)}`;
@@ -47,7 +40,7 @@
 	href={`https://github.com/${repo.owner}/${repo.repo}`}
 	class={cn('[&_span]:text-muted-foreground gap-2 font-mono text-xs', className)}
 	{variant}
-	size={stars === undefined ? 'icon' : 'default'}
+	size={stars === undefined ? sizeMap[size].icon : sizeMap[size].normal}
 	{...rest}
 >
 	<svg
