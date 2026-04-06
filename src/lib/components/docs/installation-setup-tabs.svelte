@@ -5,7 +5,6 @@
 	import JsrepoLogo from '$lib/components/logos/jsrepo.svelte';
 	import ShadcnSvelteLogo from '$lib/components/logos/shadcn-svelte.svelte';
 	import PmCommand from '../ui/pm-command/pm-command.svelte';
-	import P from '../mdsx/p.svelte';
 
 	const jsrepoConfigExample = `import { defineConfig } from 'jsrepo';
 
