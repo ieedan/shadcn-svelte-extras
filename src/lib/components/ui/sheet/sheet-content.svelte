@@ -19,17 +19,21 @@
 		showCloseButton = true,
 		portalProps,
 		children,
+		showOverlay = true,
 		...restProps
 	}: WithoutChildrenOrChild<SheetPrimitive.ContentProps> & {
 		portalProps?: WithoutChildrenOrChild<ComponentProps<typeof SheetPortal>>;
 		side?: Side;
 		showCloseButton?: boolean;
 		children: Snippet;
+		showOverlay?: boolean;
 	} = $props();
 </script>
 
 <SheetPortal {...portalProps}>
-	<SheetOverlay />
+	{#if showOverlay}
+		<SheetOverlay />
+	{/if}
 	<SheetPrimitive.Content
 		bind:ref
 		data-slot="sheet-content"

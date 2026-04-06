@@ -11,7 +11,7 @@
 
 <Sidebar.Root
 	bind:ref
-	class="sticky top-[calc(var(--header-height)+1px)] z-30 hidden h-[calc(100svh-var(--header-height)-4rem)] overscroll-none bg-transparent lg:flex"
+	class="sticky top-[calc(var(--header-height)+1px)] z-30 hidden h-[calc(100dvh-var(--header-height)-4rem)] overscroll-none bg-transparent lg:flex"
 	collapsible="none"
 	{...restProps}
 >

@@ -7,7 +7,7 @@
 	const ComponentPromise = import(`$lib/demos/${data.path}.svelte`);
 </script>
 
-<div class="flex min-h-svh place-items-center justify-center">
+<div class="flex min-h-dvh place-items-center justify-center">
 	{#await ComponentPromise}
 		<!-- delay the loading state just a bit to make it seem faster -->
 		<Delayed delay={1000}>

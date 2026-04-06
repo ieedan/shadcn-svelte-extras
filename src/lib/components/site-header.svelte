@@ -5,11 +5,13 @@
 	import Button from './button.svelte';
 	import LayoutToggle from './layout-toggle.svelte';
 	import { Separator } from './ui/separator';
+	import MobileSheet from './mobile-sheet.svelte';
 </script>
 
 <header class="bg-background sticky top-0 z-10 flex flex-col items-center">
 	<div class="site-container flex h-(--header-height) w-full items-center justify-between">
-		<div class="flex items-center">
+		<MobileSheet />
+		<div class="hidden items-center md:flex">
 			<a href="/">
 				<Logo class="mr-2 size-6" />
 			</a>
@@ -19,8 +21,8 @@
 			{@render HeaderLink({ href: '/actions', name: 'Actions' })}
 		</div>
 		<div class="flex items-center gap-2 **:data-[slot=separator]:h-4!">
-			<LayoutToggle />
-			<Separator orientation="vertical" />
+			<LayoutToggle class="hidden xl:block" />
+			<Separator orientation="vertical" class="hidden xl:block" />
 			<LightSwitch variant="ghost" />
 			<Button variant="ghost" href="https://github.com/ieedan/shadcn-svelte-extras">
 				<GithubLogo class="size-4" />

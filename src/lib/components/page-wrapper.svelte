@@ -29,7 +29,7 @@
 >
 	<div
 		class="mx-auto w-full max-w-4xl min-w-0"
-		style="min-height: calc(100svh - var(--header-height) - 4rem);"
+		style="min-height: calc(100dvh - var(--header-height) - 4rem);"
 	>
 		<div class="flex flex-col">
 			<div class="mb-5 flex flex-col gap-1">
