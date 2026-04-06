@@ -1,7 +1,15 @@
+<script lang="ts" module>
+	export type NLPDateInputProps = {
+		min?: Date;
+		max?: Date;
+		placeholder?: string;
+		onChoice?: (opts: { label: string; date: Date }) => void;
+	};
+</script>
+
 <script lang="ts">
 	import * as Command from '$lib/components/ui/command';
 	import { parseDate } from 'yeezy-dates';
-	import type { NLPDateInputProps } from './types';
 
 	let {
 		placeholder = 'E.g. "tomorrow at 5pm" or "in 2 hours"',

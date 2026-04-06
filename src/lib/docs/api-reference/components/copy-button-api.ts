@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { CopyButtonPropsWithoutHTML } from '$lib/components/ui/copy-button/types';
+import type { CopyButtonPropsWithoutHTML } from '$lib/components/ui/copy-button/copy-button.svelte';
 
 const Root = api.createComponentReference<CopyButtonPropsWithoutHTML>({
 	description: 'A button that copies text to the clipboard and shows feedback.',

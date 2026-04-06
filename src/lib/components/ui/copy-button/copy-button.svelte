@@ -1,3 +1,23 @@
+<script lang="ts" module>
+	import type { Snippet } from 'svelte';
+	import type { ButtonProps } from '$lib/components/ui/button';
+	import type { HTMLAttributes } from 'svelte/elements';
+	import type { WithChildren, WithoutChildren } from 'bits-ui';
+
+	export type CopyButtonPropsWithoutHTML = WithChildren<
+		Pick<ButtonProps, 'size' | 'variant'> & {
+			ref?: HTMLButtonElement | null;
+			text: string;
+			icon?: Snippet<[]>;
+			animationDuration?: number;
+			onCopy?: (status: 'success' | 'failure' | undefined) => void;
+		}
+	>;
+
+	export type CopyButtonProps = CopyButtonPropsWithoutHTML &
+		WithoutChildren<HTMLAttributes<HTMLButtonElement>>;
+</script>
+
 <script lang="ts">
 	import Button from '$lib/components/button.svelte';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
@@ -6,7 +26,6 @@
 	import CopyIcon from '@lucide/svelte/icons/copy';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { scale } from 'svelte/transition';
-	import type { CopyButtonProps } from './types';
 
 	let {
 		ref = $bindable(null),

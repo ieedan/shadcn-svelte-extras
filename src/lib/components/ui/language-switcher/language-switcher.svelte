@@ -1,9 +1,36 @@
+<script lang="ts" module>
+	export type Language = {
+		/** Language code (e.g., 'en', 'de') */
+		code: string;
+		/** Display name (e.g., 'English', 'Deutsch') */
+		label: string;
+	};
+
+	export type LanguageSwitcherProps = {
+		/** List of available languages */
+		languages: Language[];
+
+		/** Current selected language code */
+		value?: string;
+
+		/** Dropdown alignment */
+		align?: 'start' | 'center' | 'end';
+
+		/** Button variant */
+		variant?: 'outline' | 'ghost';
+
+		/** Called when the language changes */
+		onChange?: (code: string) => void;
+
+		class?: string;
+	};
+</script>
+
 <script lang="ts">
 	import GlobeIcon from '@lucide/svelte/icons/globe';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { cn } from '$lib/utils.js';
-	import type { LanguageSwitcherProps } from './types';
 
 	let {
 		languages = [],

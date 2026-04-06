@@ -1,6 +1,19 @@
+<script lang="ts" module>
+	import type { ButtonProps, Size } from '$lib/components/button.svelte';
+
+	export type GithubButtonProps = Omit<ButtonProps, 'href' | 'children' | 'size'> & {
+		repo: {
+			owner: string;
+			repo: string;
+		};
+		stars?: Promise<number> | number;
+		starsTweenedDuration?: number;
+		size?: Size;
+	};
+</script>
+
 <script lang="ts">
 	import Button, { sizeMap } from '$lib/components/button.svelte';
-	import type { GithubButtonProps } from './types';
 	import { cn } from '$lib/utils';
 	import { cubicInOut } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';

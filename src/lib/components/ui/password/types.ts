@@ -5,7 +5,7 @@ import type {
 	Toggle as TogglePrimitive
 } from 'bits-ui';
 import type { HTMLAttributes, HTMLInputAttributes } from 'svelte/elements';
-import type { CopyButtonProps } from '$lib/components/ui/copy-button/types';
+import type { CopyButtonProps } from '$lib/components/ui/copy-button/copy-button.svelte';
 import type { ZxcvbnResult } from '@zxcvbn-ts/core';
 
 export type PasswordRootPropsWithoutHTML = WithChildren<{

@@ -1,9 +1,17 @@
+<script lang="ts" module>
+	import type { Size } from '$lib/components/button.svelte';
+
+	export type LightSwitchProps = {
+		variant?: 'outline' | 'ghost';
+		size?: Size;
+	};
+</script>
+
 <script lang="ts">
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import { toggleMode } from 'mode-watcher';
 	import Button, { sizeMap } from '$lib/components/button.svelte';
-	import type { LightSwitchProps } from './types';
 
 	let { variant = 'outline', size = 'default' }: LightSwitchProps = $props();
 </script>

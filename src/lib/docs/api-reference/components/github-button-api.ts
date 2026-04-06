@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { GithubButtonProps } from '$lib/components/ui/github-button/types';
+import type { GithubButtonProps } from '$lib/components/ui/github-button/github-button.svelte';
 
 type GithubButtonDocumentedProps = Pick<
 	GithubButtonProps,
