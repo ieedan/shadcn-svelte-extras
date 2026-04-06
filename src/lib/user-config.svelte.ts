@@ -1,7 +1,7 @@
 import { Context } from 'runed';
 import { z } from 'zod';
 
-export const USER_CONFIG_COOKIE_NAME = 'scn_user_config';
+export const USER_CONFIG_COOKIE_NAME = 'extras_user_config';
 
 const layoutSchema = z.enum(['fixed', 'full']).default('full');
 const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('pnpm');

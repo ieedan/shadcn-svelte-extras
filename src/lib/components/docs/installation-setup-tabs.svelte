@@ -83,24 +83,21 @@ export default defineConfig({
 				>jsrepo add</code
 			>:
 		</p>
-		<JsrepoCommand
-			command="execute"
-			args={['jsrepo', 'add', 'button']}
-		/>
+		<JsrepoCommand command="execute" args={['jsrepo', 'add', 'button']} />
 	</UnderlineTabs.Content>
 	<UnderlineTabs.Content value="shadcn-svelte">
 		Initialize shadcn-svelte:
 		<PmCommand command="execute" args={['shadcn-svelte', 'init']} />
 		<p class="leading-7 [&:not(:first-child)]:mt-6">
-			Configure the aliases in your <span class="bg-accent rounded-md px-[0.3rem] py-[0.2rem] font-mono text-sm"
-				>components.json</span
+			Configure the aliases in your <span
+				class="bg-accent rounded-md px-[0.3rem] py-[0.2rem] font-mono text-sm">components.json</span
 			> file with the right paths:
 		</p>
 		<Code.Root
 			lang="json"
 			code={componentsJsonExample}
 			highlight={[[7, 13]]}
-			class="w-full min-w-0 mt-6"
+			class="mt-6 w-full min-w-0"
 		>
 			<Code.CopyButton />
 		</Code.Root>
