@@ -3,19 +3,19 @@ import { gettingStarted, components, actions, hooks } from '$content/index.js';
 import type { CurrentDoc } from './types';
 import { join } from '$lib/utils/url';
 
-export const allDocs = [
-	...gettingStarted.map((doc) => ({ ...doc, group: 'Getting Started' })),
-	...components.map((doc) => ({ ...doc, group: 'Components' })),
-	...actions.map((doc) => ({ ...doc, group: 'Actions' })),
-	...hooks.map((doc) => ({ ...doc, group: 'Hooks' }))
-];
-
 export const groupedDocs = {
 	'Getting Started': reorder(gettingStarted, ['index', 'installation']),
 	Components: components,
 	Actions: actions,
 	Hooks: hooks
 };
+
+export const allDocs = [
+	...groupedDocs['Getting Started'].map((doc) => ({ ...doc, group: 'Getting Started' })),
+	...groupedDocs['Components'].map((doc) => ({ ...doc, group: 'Components' })),
+	...groupedDocs['Actions'].map((doc) => ({ ...doc, group: 'Actions' })),
+	...groupedDocs['Hooks'].map((doc) => ({ ...doc, group: 'Hooks' }))
+];
 
 export async function getDoc(path: string): Promise<CurrentDoc | null> {
 	const index = allDocs.findIndex((doc) => {

@@ -1,5 +1,6 @@
 import { getReference } from '$lib/docs/api-reference/components';
 import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
+import type { Command } from 'package-manager-detector';
 import { resolveCommand } from 'package-manager-detector/commands';
 
 const DOC_SITE_ORIGIN = 'https://shadcn-svelte-extras.com';
@@ -36,18 +37,19 @@ function demoGithubUrl(slug: string): string {
 	return `${GITHUB_DOC_BLOB_BASE}/${demoSourcePath(slug)}`;
 }
 
+function formatNpmExecuteLine(args: string[], command: Command = 'execute'): string {
+	const resolved = resolveCommand('npm', command, args);
+	return resolved ? `${resolved.command} ${resolved.args.join(' ')}` : `npx ${args.join(' ')}`;
+}
+
 function formatJsrepoAddCommand(item: string, withoutRegistry: boolean): string {
 	const target = withoutRegistry ? item : `${DEFAULT_REGISTRY}/${item}`;
-	const resolved = resolveCommand('npm', 'execute', ['jsrepo', 'add', target]);
-	return resolved ? `${resolved.command} ${resolved.args.join(' ')}` : `npx jsrepo add ${target}`;
+	return formatNpmExecuteLine(['jsrepo', 'add', target]);
 }
 
 function formatShadcnAddCommand(item: string): string {
 	const url = `${REGISTRY_ITEM_URL_BASE}/${item}.json`;
-	const resolved = resolveCommand('npm', 'execute', ['shadcn-svelte@latest', 'add', url]);
-	return resolved
-		? `${resolved.command} ${resolved.args.join(' ')}`
-		: `npx shadcn-svelte@latest add ${url}`;
+	return formatNpmExecuteLine(['shadcn-svelte@latest', 'add', url]);
 }
 
 function formatDemoBlock(slug: string, liveUrl: string, sourceUrl: string): string {
@@ -229,6 +231,36 @@ function stripApiReferenceImport(markdown: string): string {
 	);
 }
 
+function stripJsrepoCommandImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import JsrepoCommand from ['"]\$lib\/components\/docs\/jsrepo-command\.svelte['"];\s*\n/gm,
+		''
+	);
+}
+
+/** String literals inside `args={[ ... ]}` in doc markdown. */
+function parseBracketStringArray(inner: string): string[] {
+	const parts: string[] = [];
+	const re = /'([^']*)'|"([^"]*)"/g;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(inner)) !== null) {
+		parts.push((m[1] ?? m[2] ?? '').trim());
+	}
+	return parts;
+}
+
+function replaceJsrepoCommandTags(markdown: string): string {
+	return markdown.replace(/<JsrepoCommand\s+([\s\S]*?)\s*\/>/g, (full, attrs: string) => {
+		const cmdM = attrs.match(/command\s*=\s*["']([^"']+)["']/);
+		const argsM = attrs.match(/args\s*=\s*\{\s*\[([\s\S]*?)\]\s*\}/);
+		if (!cmdM || !argsM) return full;
+		const args = parseBracketStringArray(argsM[1]!);
+		if (!args.length) return full;
+		const line = formatNpmExecuteLine(args, cmdM[1]! as Command);
+		return '```bash\n' + line + '\n```\n';
+	});
+}
+
 function replaceApiReferenceTags(markdown: string, docSlug: string | undefined): string {
 	const slug = docSlug?.match(/^components\/(.+)$/)?.[1];
 	const ref = slug ? getReference(slug) : undefined;
@@ -264,11 +296,14 @@ export async function transformDocMarkdown(markdown: string, docSlug?: string): 
 		return formatAddBlock(item, withoutRegistry);
 	});
 
+	merged = replaceJsrepoCommandTags(merged);
+
 	merged = await replaceCodeTags(merged, rawImportMap, usedRawVars);
 	merged = replaceApiReferenceTags(merged, docSlug);
 	merged = stripDemoAddImports(merged);
 	merged = stripCodeDocImport(merged);
 	merged = stripApiReferenceImport(merged);
+	merged = stripJsrepoCommandImport(merged);
 	merged = stripRawImports(merged, usedRawVars);
 	merged = removeEmptyScriptBlocks(merged);
 

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
 	import { buttonVariants } from '$lib/components/ui/button';
-	import CopyIcon from '@lucide/svelte/icons/copy';
 	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
 	import { cn } from '$lib/utils';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
@@ -13,6 +12,10 @@
 	import OpenaiLogo from '$lib/components/logos/openai.svelte';
 	import AnthropicLogo from '$lib/components/logos/anthropic.svelte';
 	import FinalchatLogo from '$lib/components/logos/finalchat.svelte';
+	import LinkIcon from '@lucide/svelte/icons/link';
+	import CheckIcon from '@lucide/svelte/icons/check';
+	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { scale } from 'svelte/transition';
 
 	type LinkItem = {
 		title: string;
@@ -52,6 +55,8 @@
 			icon: FinalchatLogo
 		}
 	]);
+
+	const clipboard = new UseClipboard({ delay: 1000 });
 </script>
 
 <div class="flex items-center gap-0">
@@ -59,11 +64,20 @@
 		type="button"
 		class={cn(
 			buttonVariants({ variant: 'secondary', size: 'sm' }),
-			'rounded-r-none md:text-[0.8rem]'
+			'rounded-r-none md:text-[0.8rem] flex items-center gap-2'
 		)}
+		onclick={() => clipboard.copy(markdownViewHref)}
 	>
-		<CopyIcon class="size-4" />
-		Copy Page
+		{#if clipboard.copied}
+			<div in:scale={{ duration: 500, start: 0.85 }} >
+				<CheckIcon tabindex={-1} />
+			</div>
+		{:else}
+			<div in:scale={{ duration: 500, start: 0.85 }}>
+				<LinkIcon tabindex={-1} />
+			</div>
+		{/if}
+		Copy Link
 	</button>
 	<DropdownMenu.Root>
 		<DropdownMenu.Trigger

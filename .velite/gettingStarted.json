@@ -1,5 +1,25 @@
 [
   {
+    "title": "Agents",
+    "description": "How to use shadcn-svelte-extras with agents",
+    "path": "agents",
+    "component": false,
+    "toc": [
+      {
+        "title": "Providing Agents With Documentation",
+        "url": "#providing-agents-with-documentation",
+        "items": []
+      },
+      {
+        "title": "MCP",
+        "url": "#mcp",
+        "items": []
+      }
+    ],
+    "slug": "agents",
+    "href": "/docs/agents"
+  },
+  {
     "title": "Introduction",
     "description": "Why we built shadcn-svelte-extras and why it's great.",
     "path": "index",
