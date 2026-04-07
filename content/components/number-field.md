@@ -31,6 +31,18 @@ description: 'A component for incrementing and decrementing a value.'
 </NumberField.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `NumberField`:
+
+```text
+NumberField.Root
+└── NumberField.Group
+    ├── NumberField.Decrement
+    ├── NumberField.Input
+    └── NumberField.Increment
+```
+
 ## Step
 
 Use the `step` prop to increment or decrement the value by a specific amount, in

@@ -53,5 +53,36 @@
     ],
     "slug": "actions/shortcut",
     "href": "/docs/actions/shortcut"
+  },
+  {
+    "title": "Typewriter",
+    "description": "A Svelte transition and attachment that reveals text character by character.",
+    "path": "actions/typewriter",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": [
+          {
+            "title": "Transition",
+            "url": "#transition",
+            "items": []
+          },
+          {
+            "title": "Attachment",
+            "url": "#attachment",
+            "items": []
+          }
+        ]
+      }
+    ],
+    "slug": "actions/typewriter",
+    "href": "/docs/actions/typewriter"
   }
 ]

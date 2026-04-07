@@ -28,6 +28,18 @@ description: 'An implementation of the MacOS terminal. Useful for showcasing a c
 </Terminal.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `Terminal`:
+
+```text
+Terminal.Loop (optional)
+└── Terminal.Root
+    ├── Terminal.TypingAnimation
+    ├── Terminal.AnimatedSpan
+    └── Terminal.Loading
+```
+
 You can add a delay to `<Terminal.Root/>` to delay every animation by that amount of time:
 
 ```svelte {5}

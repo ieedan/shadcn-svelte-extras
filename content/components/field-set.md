@@ -32,6 +32,17 @@ description: 'A field set component.'
 </FieldSet.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `FieldSet`:
+
+```text
+FieldSet.Root
+├── FieldSet.Title
+├── FieldSet.Content
+└── FieldSet.Footer
+```
+
 ## Destructive
 
 <Demo demo="field-set-destructive" />

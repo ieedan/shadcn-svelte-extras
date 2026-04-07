@@ -36,4 +36,18 @@ The modal component can be composed just like a dialog or drawer component.
 </Modal.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `Modal`:
+
+```text
+Modal.Root / Modal.NestedRoot
+├── Modal.Trigger
+└── Modal.Content
+    ├── Modal.Header
+    │   ├── Modal.Title
+    │   └── Modal.Description
+    └── Modal.Footer
+```
+
 <ApiReference />

@@ -35,6 +35,15 @@ The `<StarRating/>` component builds on top of the [bits-ui](https://bits-ui.com
 </StarRating.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `StarRating`:
+
+```text
+StarRating.Root
+└── StarRating.Star
+```
+
 ## Custom Stars
 
 You can have an arbitrary number of stars.

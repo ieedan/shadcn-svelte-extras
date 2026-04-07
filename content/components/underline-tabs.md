@@ -30,6 +30,17 @@ description: 'A horizontal tabs component with an underline.'
 </UnderlineTabs.Root>
 ```
 
+## Composition
+
+Use the following composition to build `UnderlineTabs`:
+
+```text
+UnderlineTabs.Root
+├── UnderlineTabs.List
+│   └── UnderlineTabs.Trigger
+└── UnderlineTabs.Content
+```
+
 ## Overflow
 
 <Demo demo="underline-tabs-overflow" />

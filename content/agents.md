@@ -31,7 +31,7 @@ It gives it capabilities such as:
 
 - Searching the registry
 - Viewing component source
-- Viewing component demos/examples
+- Viewing component demos/examples/documentation
 
 To setup the `jsrepo` mcp you can run the following command:
 

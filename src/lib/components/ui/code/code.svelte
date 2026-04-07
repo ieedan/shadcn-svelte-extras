@@ -18,7 +18,7 @@
 	}: CodeRootProps = $props();
 
 	const codeState = useCode({
-		code: box.with(() => code),
+		code: box.with(() => code.trimEnd()),
 		hideLines: box.with(() => hideLines),
 		highlight: box.with(() => highlight),
 		lang: box.with(() => lang)

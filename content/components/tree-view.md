@@ -31,6 +31,16 @@ description: 'A file tree component.'
 </TreeView.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `TreeView`:
+
+```text
+TreeView.Root
+└── TreeView.Folder
+    └── TreeView.File
+```
+
 ## Custom Icons
 
 <Demo demo="tree-view-custom-icons" />

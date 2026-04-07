@@ -35,6 +35,23 @@ description: 'A keyboard accessible stepper component.'
 </Stepper.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `Stepper`:
+
+```text
+Stepper.Root
+├── Stepper.Nav
+│   └── Stepper.Item
+│       ├── Stepper.Trigger
+│       │   ├── Stepper.Indicator
+│       │   ├── Stepper.Title
+│       │   └── Stepper.Description
+│       └── Stepper.Separator
+├── Stepper.Previous
+└── Stepper.Next
+```
+
 ## Icons
 
 Add an icon to the `Indicator` component to display an icon.

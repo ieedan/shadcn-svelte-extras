@@ -29,6 +29,16 @@ description: 'A code component.'
 <Code.Root lang="typescript" {code} />
 ```
 
+## Composition
+
+Use the following composition to build a `Code` block:
+
+```text
+Code.Overflow (optional)
+└── Code.Root
+    └── Code.CopyButton
+```
+
 ## Configuring Languages
 
 The highlighter and languages can be configured from `shiki.ts`.

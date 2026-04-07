@@ -1,6 +1,6 @@
 import { Output } from 'jsrepo/outputs';
-import fs from 'node:fs';
 import path from 'node:path';
+import { writeFileIfChanged } from '../utils';
 
 const SCHEMA = 'https://shadcn-svelte.com/schema/registry.json';
 
@@ -146,15 +146,11 @@ export default function (): Output {
 				doc.description = buildResult.description;
 			}
 
-			fs.writeFileSync(outPath, `${JSON.stringify(doc, null, '\t')}\n`);
+			const next = `${JSON.stringify(doc, null, '\t')}\n`;
+			writeFileIfChanged(outPath, next);
 		},
-		clean: async ({ cwd }) => {
-			const outPath = path.join(cwd, 'registry.json');
-			try {
-				fs.unlinkSync(outPath);
-			} catch {
-				// ignore if missing
-			}
-		}
+		// Deleting registry.json here fires fs events in the repo root; jsrepo --watch uses fs.watch on the
+		// config path (often same directory), which can retrigger rebuilds in a tight loop.
+		clean: async () => {}
 	};
 }

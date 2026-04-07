@@ -23,9 +23,9 @@ description: 'A component for uploading and resizing images.'
 </script>
 
 <ImageCropper.Root bind:src onUpload>
-	<ImageCropper.Trigger>
+	<ImageCropper.UploadTrigger>
 		<ImageCropper.Preview />
-	</ImageCropper.Trigger>
+	</ImageCropper.UploadTrigger>
 	<ImageCropper.Dialog>
 		<ImageCropper.Cropper />
 		<ImageCropper.Controls>
@@ -34,6 +34,21 @@ description: 'A component for uploading and resizing images.'
 		</ImageCropper.Controls>
 	</ImageCropper.Dialog>
 </ImageCropper.Root>
+```
+
+## Composition
+
+Use the following composition to build an `ImageCropper`:
+
+```text
+ImageCropper.Root
+├── ImageCropper.UploadTrigger
+│   └── ImageCropper.Preview
+└── ImageCropper.Dialog
+    ├── ImageCropper.Cropper
+    └── ImageCropper.Controls
+        ├── ImageCropper.Crop
+        └── ImageCropper.Cancel
 ```
 
 ## Square Preview

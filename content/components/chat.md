@@ -33,6 +33,19 @@ description: 'Components for creating live chats.'
 </Chat.List>
 ```
 
+## Composition
+
+Use the following composition to build a chat:
+
+```text
+Chat.List
+└── Chat.Bubble
+    ├── Chat.BubbleAvatar
+    │   ├── Chat.BubbleAvatarImage
+    │   └── Chat.BubbleAvatarFallback
+    └── Chat.BubbleMessage
+```
+
 ## Acknowledgements
 
 This component takes inspiration from [jakobhoeg/shadcn-chat](https://github.com/jakobhoeg/shadcn-chat).

@@ -35,6 +35,20 @@ description: 'A component for renaming stuff.'
 <Rename.Root />
 ```
 
+## Composition
+
+Use the following composition to build `Rename`:
+
+```text
+Rename.Provider
+├── Rename.Root
+├── Rename.Save
+├── Rename.Cancel
+└── Rename.Edit
+```
+
+`Rename.Root` is also exported as `Rename`. For inline editing without a toolbar, use `Rename.Root` (or `Rename`) alone.
+
 ## Content Editable
 
 When in content editable mode the user can click on the text to start editing it.

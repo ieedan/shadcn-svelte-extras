@@ -10,6 +10,17 @@ const Root = api.createComponentReference({
 	}
 });
 
+const NestedRoot = api.createComponentReference({
+	name: 'NestedRoot',
+	description:
+		'Drop-in replacement for `Root` when stacking modals (nested dialog on desktop, nested drawer on mobile).',
+	props: {},
+	forwardTo: {
+		name: 'bits-ui Dialog',
+		href: 'https://www.bits-ui.com/docs/components/dialog#api-reference'
+	}
+});
+
 const Trigger = api.createComponentReference({
 	name: 'Trigger',
 	description: 'The trigger element for the modal.',
@@ -66,6 +77,7 @@ export const reference = {
 	name: 'Modal' as const,
 	components: {
 		Root,
+		NestedRoot,
 		Trigger,
 		Content,
 		Footer,

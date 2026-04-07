@@ -33,6 +33,19 @@ description: 'A composable emoji picker component.'
 </EmojiPicker.Root>
 ```
 
+## Composition
+
+Use the following composition to build an `EmojiPicker`:
+
+```text
+EmojiPicker.Root
+└── EmojiPicker.Viewport
+    ├── EmojiPicker.Search
+    ├── EmojiPicker.List
+    └── EmojiPicker.Footer
+        └── EmojiPicker.SkinToneSelector
+```
+
 ## Default Skin
 
 <Demo demo="emoji-picker-skin" />

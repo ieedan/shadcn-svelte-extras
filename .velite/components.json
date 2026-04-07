@@ -46,6 +46,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Acknowledgements",
         "url": "#acknowledgements",
         "items": []
@@ -68,6 +73,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -186,6 +196,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Default Skin",
         "url": "#default-skin",
         "items": []
@@ -231,6 +246,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Destructive",
         "url": "#destructive",
         "items": []
@@ -253,6 +273,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -309,6 +334,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -490,6 +520,11 @@
         "title": "Usage",
         "url": "#usage",
         "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
       }
     ],
     "slug": "components/modal",
@@ -537,6 +572,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Step",
         "url": "#step",
         "items": []
@@ -559,6 +599,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -692,6 +737,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Content Editable",
         "url": "#content-editable",
         "items": []
@@ -762,6 +812,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Custom Stars",
         "url": "#custom-stars",
         "items": []
@@ -809,6 +864,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -879,6 +939,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {
@@ -962,6 +1027,11 @@
         "items": []
       },
       {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
         "title": "Custom Icons",
         "url": "#custom-icons",
         "items": []
@@ -984,6 +1054,11 @@
       {
         "title": "Usage",
         "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
         "items": []
       },
       {

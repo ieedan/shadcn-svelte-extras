@@ -170,6 +170,26 @@
     "href": "/docs/hooks/use-promise"
   },
   {
+    "title": "UseRamp",
+    "description": "Repeatedly call a function on an accelerating schedule while a condition holds (hold-to-repeat, ramping counter).",
+    "path": "hooks/use-ramp",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      }
+    ],
+    "slug": "hooks/use-ramp",
+    "href": "/docs/hooks/use-ramp"
+  },
+  {
     "title": "UseToc",
     "description": "A hook used to generate a table of contents based on the page content",
     "path": "hooks/use-toc",

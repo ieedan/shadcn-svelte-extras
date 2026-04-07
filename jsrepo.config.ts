@@ -4,6 +4,9 @@ import addType from './.jsrepo/outputs/add-type';
 import demoType from './.jsrepo/outputs/demo-type';
 import registryJson from './.jsrepo/outputs/registry-json';
 
+// Documentation URLs live in item `meta.documentation`, not `files`: jsrepo --watch fs.watches every listed path; Velite also watches markdown under content/, which caused rebuild churn when docs were registry files.
+const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';
+
 export default defineConfig({
 	registries: ['@registry/kit'],
 	paths: {
@@ -45,15 +48,11 @@ export default defineConfig({
 					description:
 						'A component for creating live chats, messaging interfaces, conversation UIs, chat bubbles, message threads, and real-time communication displays.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/chat` },
 					files: [
 						{
 							path: 'src/lib/components/ui/chat'
 						},
-						{
-							path: 'src/lib/demos/chat.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -62,45 +61,11 @@ export default defineConfig({
 					description:
 						'A code component for displaying syntax-highlighted code blocks, code snippets, programming code, source code, with line numbers, copy functionality, and code highlighting.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/code` },
 					files: [
 						{
 							path: 'src/lib/components/ui/code'
 						},
-						{
-							path: 'src/lib/demos/code.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-copy-button.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-no-line-numbers.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-highlight-lines.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-overflow.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/code-block.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -108,25 +73,11 @@ export default defineConfig({
 					title: 'ConfirmDeleteDialog',
 					description: 'A dialog for confirming delete actions.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/confirm-delete-dialog` },
 					files: [
 						{
 							path: 'src/lib/components/ui/confirm-delete-dialog'
 						},
-						{
-							path: 'src/lib/demos/confirm-delete-dialog.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/confirm-delete-dialog-with-text.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/confirm-delete-dialog-skip-confirmation.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -135,25 +86,11 @@ export default defineConfig({
 					description:
 						'A button used to copy text to the clipboard, copy code snippets, copy content, clipboard copy functionality with visual feedback and copy confirmation.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/copy-button` },
 					files: [
 						{
 							path: 'src/lib/components/ui/copy-button'
 						},
-						{
-							path: 'src/lib/demos/copy-button.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/copy-button-icon.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/copy-button-with-text.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -162,35 +99,11 @@ export default defineConfig({
 					description:
 						'A composable emoji picker component for selecting emojis, emoji selector, emoji chooser, emoji reactions, emoji input, with categories, search, and recent emojis.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/emoji-picker` },
 					files: [
 						{
 							path: 'src/lib/components/ui/emoji-picker'
 						},
-						{
-							path: 'src/lib/demos/emoji-picker.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/emoji-picker-skin.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/emoji-picker-popover.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/emoji-picker-footer.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/emoji-picker-recents.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -199,20 +112,11 @@ export default defineConfig({
 					description:
 						'A field set component for grouping form fields, form groups, input groups, form sections, with labels, descriptions, error states, and validation feedback.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/field-set` },
 					files: [
 						{
 							path: 'src/lib/components/ui/field-set'
 						},
-						{
-							path: 'src/lib/demos/field-set.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/field-set-destructive.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -221,25 +125,11 @@ export default defineConfig({
 					description:
 						'A file drop zone component for drag and drop file uploads, file uploader, file input, drag drop files, file selector, with preview, validation, and multiple file support.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/file-drop-zone` },
 					files: [
 						{
 							path: 'src/lib/components/ui/file-drop-zone'
 						},
-						{
-							path: 'src/lib/demos/file-drop-zone.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/file-drop-zone-form.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/file-drop-zone-text-area.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -248,20 +138,11 @@ export default defineConfig({
 					description:
 						'A button linking to a GitHub repository with optional star count, live GitHub stats, repository link button, and smooth star count animation for async data.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/github-button` },
 					files: [
 						{
 							path: 'src/lib/components/ui/github-button'
 						},
-						{
-							path: 'src/lib/demos/github-button.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/github-button-icon-only.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -270,35 +151,11 @@ export default defineConfig({
 					description:
 						'An image cropper component for cropping images, image editor, photo cropper, image resize, crop tool, with aspect ratio control, preview, and image upload.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/image-cropper` },
 					files: [
 						{
 							path: 'src/lib/components/ui/image-cropper'
 						},
-						{
-							path: 'src/lib/demos/image-cropper.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/image-cropper-square-preview.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/image-cropper-no-default-image.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/image-cropper-custom-trigger.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/image-cropper-custom-preview.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -307,30 +164,11 @@ export default defineConfig({
 					description:
 						'An IPv4 address input component for entering IP addresses, network addresses, IP input field, with validation, formatting, and octet separation.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/ipv4address-input` },
 					files: [
 						{
 							path: 'src/lib/components/ui/ipv4address-input'
 						},
-						{
-							path: 'src/lib/demos/ipv4address-input.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/ipv4address-input-placeholder.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/ipv4address-input-reactive.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/ipv4address-input-valid.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -339,25 +177,11 @@ export default defineConfig({
 					description:
 						'A language switcher component for changing locales, i18n language selector, locale switcher, internationalization, translation switcher, and multi-language support.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/language-switcher` },
 					files: [
 						{
 							path: 'src/lib/components/ui/language-switcher'
 						},
-						{
-							path: 'src/lib/demos/language-switcher.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/language-switcher-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/language-switcher-paraglide.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -366,20 +190,11 @@ export default defineConfig({
 					description:
 						'A light switch component for toggling themes, dark mode toggle, light dark mode switcher, theme toggle button, with smooth animations and visual feedback.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/light-switch` },
 					files: [
 						{
 							path: 'src/lib/components/ui/light-switch'
 						},
-						{
-							path: 'src/lib/demos/light-switch.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/light-switch-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -388,15 +203,11 @@ export default defineConfig({
 					description:
 						'A link component for navigation, anchor links, hyperlinks, styled links, with variants, external link indicators, and active states.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/link` },
 					files: [
 						{
 							path: 'src/lib/components/ui/link'
 						},
-						{
-							path: 'src/lib/demos/link.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -405,15 +216,11 @@ export default defineConfig({
 					description:
 						'A meter component for displaying scalar measurements, value indicators, gauges, measurement displays, disk usage, storage capacity, with min max values and visual value indication.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/meter` },
 					files: [
 						{
 							path: 'src/lib/components/ui/meter'
 						},
-						{
-							path: 'src/lib/demos/meter.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -422,15 +229,11 @@ export default defineConfig({
 					description:
 						'A modal component for dialogs, popups, overlays, dialog boxes, modal windows, with backdrop, close functionality, and responsive design.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/modal` },
 					files: [
 						{
 							path: 'src/lib/components/ui/modal'
 						},
-						{
-							path: 'src/lib/demos/modal.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -439,20 +242,11 @@ export default defineConfig({
 					description:
 						'A natural language processing date input component for parsing date strings, smart date input, date picker with NLP, text to date conversion, and date suggestions.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/nlp-date-input` },
 					files: [
 						{
 							path: 'src/lib/components/ui/nlp-date-input'
 						},
-						{
-							path: 'src/lib/demos/nlp-date-input.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/nlp-date-input-min-max.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -460,20 +254,11 @@ export default defineConfig({
 					title: 'NumberField',
 					description: 'A component for incrementing and decrementing a number.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/number-field` },
 					files: [
 						{
 							path: 'src/lib/components/ui/number-field'
 						},
-						{
-							path: 'src/lib/demos/number-field.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/number-field-step.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -482,35 +267,11 @@ export default defineConfig({
 					description:
 						'A password component for password input fields, secure password entry, password visibility toggle, password strength indicator, and secret input handling.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/password` },
 					files: [
 						{
 							path: 'src/lib/components/ui/password'
 						},
-						{
-							path: 'src/lib/demos/password.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/password-toggle-visibility.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/password-copy.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/password-both.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/password-strength.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -519,30 +280,11 @@ export default defineConfig({
 					description:
 						'A phone number input component for telephone numbers, phone number form field, international phone input, country code selector, and phone validation.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/phone-input` },
 					files: [
 						{
 							path: 'src/lib/components/ui/phone-input'
 						},
-						{
-							path: 'src/lib/demos/phone-input.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/phone-input-default-country.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/phone-input-default-value.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/phone-input-custom-ordering.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -551,40 +293,11 @@ export default defineConfig({
 					description:
 						'A package manager command component for displaying npm, pnpm, yarn, bun commands, install commands, package manager instructions, and copyable command snippets.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/pm-command` },
 					files: [
 						{
 							path: 'src/lib/components/ui/pm-command'
 						},
-						{
-							path: 'src/lib/demos/pm-command.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/pm-command-commands.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/pm-command-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/pm-command-overflow.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/pm-command-persisted-pm.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/pm-command-customize-agents.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -593,30 +306,11 @@ export default defineConfig({
 					description:
 						'A component for renaming files, folders, items, inline editing, editable text, rename input, with validation and keyboard shortcuts.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/rename` },
 					files: [
 						{
 							path: 'src/lib/components/ui/rename'
 						},
-						{
-							path: 'src/lib/demos/rename.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/rename-content-editable.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/rename-context-menu.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/rename-text-area.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -625,25 +319,11 @@ export default defineConfig({
 					description:
 						'A snippet component for displaying code snippets, command snippets, text snippets, with copy functionality, variants, and multiline support.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/snippet` },
 					files: [
 						{
 							path: 'src/lib/components/ui/snippet'
 						},
-						{
-							path: 'src/lib/demos/snippet.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/snippet-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/snippet-multiline.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -652,30 +332,11 @@ export default defineConfig({
 					description:
 						'A stepper component for multi-step forms, step navigation, progress indicators, wizard flows, step-by-step processes, with next/previous navigation and step validation.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/stepper` },
 					files: [
 						{
 							path: 'src/lib/components/ui/stepper'
 						},
-						{
-							path: 'src/lib/demos/stepper.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/stepper-icon.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/stepper-vertical.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/stepper-form.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -684,45 +345,11 @@ export default defineConfig({
 					description:
 						'A star rating component for ratings, reviews, star selector, 5 star rating, rating input, with half stars, readonly mode, custom colors, and sizes.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/star-rating` },
 					files: [
 						{
 							path: 'src/lib/components/ui/star-rating'
 						},
-						{
-							path: 'src/lib/demos/star-rating.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-custom-stars.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-half-rating.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-disabled.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-readonly.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-custom-color.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/star-rating-custom-size.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -731,30 +358,11 @@ export default defineConfig({
 					description:
 						'A tags input component for tag input fields, multi-tag input, tag selector, chip input, tag management, with add remove tags, and tag validation.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/tags-input` },
 					files: [
 						{
 							path: 'src/lib/components/ui/tags-input'
 						},
-						{
-							path: 'src/lib/demos/tags-input.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/tags-input-lowercase.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/tags-input-autocomplete.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/tags-input-autocomplete-restricted.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -763,20 +371,11 @@ export default defineConfig({
 					description:
 						'A terminal component for displaying command line interfaces, terminal emulator, CLI display, shell terminal, code examples, with typing animation and command output.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/terminal` },
 					files: [
 						{
 							path: 'src/lib/components/ui/terminal'
 						},
-						{
-							path: 'src/lib/demos/terminal.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/terminal-loop.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -785,20 +384,11 @@ export default defineConfig({
 					description:
 						'A theme selector component for choosing themes, theme picker, color scheme selector, dark light theme switcher, with multiple theme options and visual preview.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/theme-selector` },
 					files: [
 						{
 							path: 'src/lib/components/ui/theme-selector'
 						},
-						{
-							path: 'src/lib/demos/theme-selector.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/theme-selector-variants.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -807,15 +397,11 @@ export default defineConfig({
 					description:
 						'A table of contents component for navigation, document outline, page navigation, TOC sidebar, with anchor links, active section highlighting, and scroll tracking.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/toc` },
 					files: [
 						{
 							path: 'src/lib/components/ui/toc'
 						},
-						{
-							path: 'src/lib/demos/toc.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -824,20 +410,11 @@ export default defineConfig({
 					description:
 						'A tree view component for displaying hierarchical data, file tree, folder structure, nested lists, directory tree, with expand collapse, custom icons, and selection.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/tree-view` },
 					files: [
 						{
 							path: 'src/lib/components/ui/tree-view'
 						},
-						{
-							path: 'src/lib/demos/tree-view.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/tree-view-custom-icons.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -846,20 +423,11 @@ export default defineConfig({
 					description:
 						'A underline tabs component for displaying tabs, tab navigation, tab selection, tab navigation, and tab selection.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/underline-tabs` },
 					files: [
 						{
 							path: 'src/lib/components/ui/underline-tabs'
 						},
-						{
-							path: 'src/lib/demos/underline-tabs.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/underline-tabs-overflow.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -868,15 +436,11 @@ export default defineConfig({
 					description:
 						'A beautiful styled window component for windowed UI, desktop-style windows, window container, with title bar, close button, and customizable content area.',
 					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/window` },
 					files: [
 						{
 							path: 'src/lib/components/ui/window'
 						},
-						{
-							path: 'src/lib/demos/window.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -889,25 +453,11 @@ export default defineConfig({
 					description:
 						'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
 					type: 'component',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/button` },
 					files: [
 						{
 							path: 'src/lib/components/button.svelte'
 						},
-						{
-							path: 'src/lib/demos/button.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/button-loading.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/button-on-click-promise.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -920,15 +470,11 @@ export default defineConfig({
 					description:
 						'Automatically add the `data-active` attribute to a link based on its active state. Active link detection, navigation state, route matching, and active link styling.',
 					type: 'action',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/actions/active` },
 					files: [
 						{
 							path: 'src/lib/actions/active.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/active.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -937,15 +483,11 @@ export default defineConfig({
 					description:
 						'Add keyboard shortcuts to your application. Keyboard shortcuts, hotkeys, key bindings, keyboard navigation, command shortcuts, and keyboard event handling.',
 					type: 'action',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/actions/shortcut` },
 					files: [
 						{
 							path: 'src/lib/actions/shortcut.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/shortcut.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -958,20 +500,11 @@ export default defineConfig({
 					description:
 						'Determine if the user is on a Mac. Platform detection, macOS detection, Mac OS detection, platform-specific UI, and Mac keyboard shortcuts.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/is-mac` },
 					files: [
 						{
 							path: 'src/lib/hooks/is-mac.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/is-mac.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/is-mac-keys.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -980,6 +513,7 @@ export default defineConfig({
 					description:
 						'Automatically scroll to the bottom of an element when new content is added. Auto scroll, chat scroll, message scroll, scroll to bottom, and dynamic content scrolling.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-auto-scroll` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-auto-scroll.svelte.ts'
@@ -992,6 +526,7 @@ export default defineConfig({
 					description:
 						'Simplify working with boolean values. Toggle state, boolean state management, true false toggle, boolean hook, and reactive boolean values.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-boolean` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-boolean.svelte.ts'
@@ -1004,6 +539,7 @@ export default defineConfig({
 					description:
 						'Copy text to the users clipboard. Clipboard API, copy to clipboard, clipboard copy hook, copy functionality, and clipboard state management.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-clipboard` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-clipboard.svelte.ts'
@@ -1016,20 +552,11 @@ export default defineConfig({
 					description:
 						'Track the size of the screen using the standard Tailwind CSS breakpoints. Responsive breakpoints, media queries, screen size detection, mobile desktop detection, and responsive design hooks.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-media` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-media.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/use-media.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						},
-						{
-							path: 'src/lib/demos/use-media-custom.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -1038,15 +565,11 @@ export default defineConfig({
 					description:
 						'Manage the state of a promise reactively in the absence of {#await}. Promise state management, async state, loading error success states, promise hook, and reactive promises.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-promise` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-promise.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/use-promise.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				},
 				{
@@ -1055,6 +578,7 @@ export default defineConfig({
 					add: 'when-needed',
 					description: 'Ramp a value up/down over time.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-ramp` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-ramp.svelte.ts'
@@ -1067,6 +591,7 @@ export default defineConfig({
 					description:
 						'Generate a table of contents. TOC generation, document outline, heading extraction, navigation generation, and table of contents hook.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-toc` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-toc.svelte.ts'
@@ -1079,15 +604,11 @@ export default defineConfig({
 					description:
 						'Sort items based on how frequently and recent they were used. Frequency sorting, recency sorting, usage tracking, smart sorting, and item ranking.',
 					type: 'hook',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/hooks/use-frecency` },
 					files: [
 						{
 							path: 'src/lib/hooks/use-frecency.svelte.ts'
 						},
-						{
-							path: 'src/lib/demos/use-frecency.svelte',
-							role: 'example',
-							dependencyResolution: 'manual'
-						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -1165,6 +686,7 @@ export default defineConfig({
 					title: 'Typewriter',
 					type: 'action',
 					add: 'when-needed',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/actions/typewriter` },
 					files: [
 						{
 							path: 'src/lib/actions/typewriter.svelte.ts'

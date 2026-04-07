@@ -1,6 +1,6 @@
 import { Output } from 'jsrepo/outputs';
 import path from 'node:path';
-import fs from 'node:fs';
+import { writeFileIfChanged } from '../utils';
 
 export default function (): Output {
 	return {
@@ -24,7 +24,7 @@ ${itemNames.map((item) => `\t'${item}'`).join(',\n')}
 export type RegistryItem = (typeof REGISTRY_ITEMS)[number];
 `;
 
-			fs.writeFileSync(filePath, fileContent);
+			writeFileIfChanged(filePath, fileContent);
 		},
 		clean: async () => {}
 	};

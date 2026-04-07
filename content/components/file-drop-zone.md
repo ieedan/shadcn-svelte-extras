@@ -30,6 +30,16 @@ description: 'A file drop zone component.'
 </FileDropZone.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `FileDropZone`:
+
+```text
+FileDropZone.Root
+├── FileDropZone.Trigger
+└── FileDropZone.Textarea
+```
+
 Custom placeholder:
 
 ```svelte

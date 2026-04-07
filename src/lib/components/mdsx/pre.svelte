@@ -48,6 +48,8 @@
 		js: 'javascript',
 		json: 'json',
 		svelte: 'svelte',
+		text: 'text',
+		plaintext: 'text',
 		typescript: 'typescript',
 		ts: 'typescript'
 	};
@@ -56,11 +58,13 @@
 		const raw = (dataMdsxLang ?? dataLanguage ?? 'plaintext').toLowerCase();
 		return LANG_MAP[raw] ?? 'typescript';
 	});
+
+	const hideLines = $derived(lang === 'text');
 </script>
 
 {#if code}
 	<div class={cn('not-prose mt-6 w-full min-w-0', className)} {...rest}>
-		<Code.Root {code} {lang} {highlight} class="w-full min-w-0">
+		<Code.Root {code} {lang} {hideLines} {highlight} class="w-full min-w-0">
 			<Code.CopyButton />
 		</Code.Root>
 	</div>

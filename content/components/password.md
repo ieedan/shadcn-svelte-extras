@@ -31,6 +31,18 @@ description: 'Components for handling passwords and other secrets.'
 </Password.Root>
 ```
 
+## Composition
+
+Use the following composition to build a `Password` field:
+
+```text
+Password.Root
+├── Password.Input
+│   ├── Password.Copy
+│   └── Password.ToggleVisibility
+└── Password.Strength
+```
+
 ## Toggle Visibility
 
 Add a button to toggle the visibility of the password.
