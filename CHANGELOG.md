@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 7.0.0
+
+### Major Changes
+
+- breaking: Remove `avatar-group` in favor of upstream shadcn-svelte avatar updates ([#375](https://github.com/ieedan/shadcn-svelte-extras/pull/375))
+
+### Minor Changes
+
+- new component: GitHub Button 🎉 ([#375](https://github.com/ieedan/shadcn-svelte-extras/pull/375))
+
 ## 6.10.0
 
 ### Minor Changes
