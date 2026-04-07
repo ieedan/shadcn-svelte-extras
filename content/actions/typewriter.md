@@ -24,9 +24,7 @@ Use as a transition on an element whose full text is already in the DOM; the tra
 </script>
 
 {#key show}
-	<p in:typewriter={{ speed: 0.8, delay: 200 }} out:fade>
-		This text types out when shown.
-	</p>
+	<p in:typewriter={{ speed: 0.8, delay: 200 }} out:fade>This text types out when shown.</p>
 {/key}
 ```
 

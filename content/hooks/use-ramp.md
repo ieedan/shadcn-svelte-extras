@@ -27,11 +27,7 @@ Use for long-press or hold interactions where the rate of repeats should speed u
 	});
 </script>
 
-<button
-	onmousedown={ramp.start}
-	onmouseup={ramp.reset}
-	onmouseleave={ramp.reset}
->
+<button onmousedown={ramp.start} onmouseup={ramp.reset} onmouseleave={ramp.reset}>
 	Hold me ({count})
 </button>
 ```

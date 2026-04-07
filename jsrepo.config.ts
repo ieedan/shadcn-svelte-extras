@@ -52,7 +52,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/chat'
-						},
+						}
 					]
 				},
 				{
@@ -65,7 +65,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/code'
-						},
+						}
 					]
 				},
 				{
@@ -77,7 +77,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/confirm-delete-dialog'
-						},
+						}
 					]
 				},
 				{
@@ -90,7 +90,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/copy-button'
-						},
+						}
 					]
 				},
 				{
@@ -103,7 +103,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/emoji-picker'
-						},
+						}
 					]
 				},
 				{
@@ -116,7 +116,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/field-set'
-						},
+						}
 					]
 				},
 				{
@@ -129,7 +129,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/file-drop-zone'
-						},
+						}
 					]
 				},
 				{
@@ -142,7 +142,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/github-button'
-						},
+						}
 					]
 				},
 				{
@@ -155,7 +155,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/image-cropper'
-						},
+						}
 					]
 				},
 				{
@@ -168,7 +168,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/ipv4address-input'
-						},
+						}
 					]
 				},
 				{
@@ -181,7 +181,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/language-switcher'
-						},
+						}
 					]
 				},
 				{
@@ -194,7 +194,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/light-switch'
-						},
+						}
 					]
 				},
 				{
@@ -207,7 +207,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/link'
-						},
+						}
 					]
 				},
 				{
@@ -220,7 +220,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/meter'
-						},
+						}
 					]
 				},
 				{
@@ -233,7 +233,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/modal'
-						},
+						}
 					]
 				},
 				{
@@ -246,7 +246,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/nlp-date-input'
-						},
+						}
 					]
 				},
 				{
@@ -258,7 +258,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/number-field'
-						},
+						}
 					]
 				},
 				{
@@ -271,7 +271,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/password'
-						},
+						}
 					]
 				},
 				{
@@ -284,7 +284,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/phone-input'
-						},
+						}
 					]
 				},
 				{
@@ -297,7 +297,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/pm-command'
-						},
+						}
 					]
 				},
 				{
@@ -310,7 +310,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/rename'
-						},
+						}
 					]
 				},
 				{
@@ -323,7 +323,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/snippet'
-						},
+						}
 					]
 				},
 				{
@@ -336,7 +336,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/stepper'
-						},
+						}
 					]
 				},
 				{
@@ -349,7 +349,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/star-rating'
-						},
+						}
 					]
 				},
 				{
@@ -362,7 +362,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/tags-input'
-						},
+						}
 					]
 				},
 				{
@@ -375,7 +375,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/terminal'
-						},
+						}
 					]
 				},
 				{
@@ -388,7 +388,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/theme-selector'
-						},
+						}
 					]
 				},
 				{
@@ -401,7 +401,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/toc'
-						},
+						}
 					]
 				},
 				{
@@ -414,7 +414,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/tree-view'
-						},
+						}
 					]
 				},
 				{
@@ -427,7 +427,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/underline-tabs'
-						},
+						}
 					]
 				},
 				{
@@ -440,7 +440,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/window'
-						},
+						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -457,7 +457,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/button.svelte'
-						},
+						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -474,7 +474,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/actions/active.svelte.ts'
-						},
+						}
 					]
 				},
 				{
@@ -487,7 +487,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/actions/shortcut.svelte.ts'
-						},
+						}
 					]
 				}
 			] satisfies RegistryItem[]),
@@ -504,7 +504,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/is-mac.svelte.ts'
-						},
+						}
 					]
 				},
 				{
@@ -556,7 +556,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-media.svelte.ts'
-						},
+						}
 					]
 				},
 				{
@@ -569,7 +569,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-promise.svelte.ts'
-						},
+						}
 					]
 				},
 				{
@@ -608,7 +608,7 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/hooks/use-frecency.svelte.ts'
-						},
+						}
 					]
 				}
 			] satisfies RegistryItem[]),
