@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Agents",
+    "description": "How to use shadcn-svelte-extras with agents",
+    "path": "agents",
+    "component": false,
+    "toc": [
+      {
+        "title": "Providing Agents With Documentation",
+        "url": "#providing-agents-with-documentation",
+        "items": []
+      },
+      {
+        "title": "MCP",
+        "url": "#mcp",
+        "items": []
+      }
+    ],
+    "indicator": "new",
+    "slug": "agents",
+    "href": "/docs/agents"
+  },
+  {
+    "title": "Introduction",
+    "description": "Why we built shadcn-svelte-extras and why it's great.",
+    "path": "index",
+    "component": false,
+    "toc": [
+      {
+        "title": "Not a port",
+        "url": "#not-a-port",
+        "items": []
+      },
+      {
+        "title": "Composability",
+        "url": "#composability",
+        "items": []
+      },
+      {
+        "title": "Quality",
+        "url": "#quality",
+        "items": []
+      }
+    ],
+    "slug": "index",
+    "href": "/docs"
+  },
+  {
+    "title": "Installation",
+    "description": "How to add and use extras in your project.",
+    "path": "installation",
+    "component": false,
+    "toc": [],
+    "slug": "installation",
+    "href": "/docs/installation"
+  }
+]

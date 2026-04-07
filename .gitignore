@@ -26,5 +26,5 @@ vite.config.ts.timestamp-*
 src/lib/paraglide/
 
 static/components
-static/llms.txt
 static/r
+registry.json

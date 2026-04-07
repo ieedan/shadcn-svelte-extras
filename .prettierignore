@@ -9,6 +9,7 @@ CHANGELOG.md
 src/lib/paraglide/
 .changeset/pre.json
 src/lib/demos/index.ts
-src/lib/registry-items.ts
+src/lib/registry/items.ts
 
 project.inlang/
+.velite/

@@ -77,12 +77,34 @@ const BubbleAvatar = api.createComponentReference({
 	}
 });
 
+const BubbleAvatarImage = api.createComponentReference({
+	name: 'BubbleAvatarImage',
+	description: 'Avatar image inside `BubbleAvatar` (re-export of `Avatar.Image`).',
+	props: {},
+	forwardTo: {
+		name: 'bits-ui Avatar.Image',
+		href: 'https://bits-ui.com/docs/components/avatar#image'
+	}
+});
+
+const BubbleAvatarFallback = api.createComponentReference({
+	name: 'BubbleAvatarFallback',
+	description: 'Avatar fallback inside `BubbleAvatar` (re-export of `Avatar.Fallback`).',
+	props: {},
+	forwardTo: {
+		name: 'bits-ui Avatar.Fallback',
+		href: 'https://bits-ui.com/docs/components/avatar#fallback'
+	}
+});
+
 export const reference = {
 	name: 'Chat' as const,
 	components: {
 		List,
 		Bubble,
 		BubbleMessage,
-		BubbleAvatar
+		BubbleAvatar,
+		BubbleAvatarImage,
+		BubbleAvatarFallback
 	}
 };

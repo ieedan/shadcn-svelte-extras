@@ -7,13 +7,13 @@
 					"color": "blue",
 					"command": "pnpm registry:dev"
 				},
-				"generate-llms": {
-					"color": "yellow",
-					"command": "pnpm generate-llms"
-				},
 				"app": {
 					"color": "green",
-					"command": "pnpm vite dev"
+					"command": "pnpm dev:app"
+				},
+				"content": {
+					"color": "yellow",
+					"command": "pnpm velite dev --watch"
 				}
 			}
 		},

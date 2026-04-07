@@ -4,8 +4,7 @@
 */
 
 export const DEMOS = [
-    	'avatar-group',
-	'avatar-group-vertical',
+    	'active',
 	'button',
 	'button-loading',
 	'button-on-click-promise',
@@ -33,6 +32,8 @@ export const DEMOS = [
 	'file-drop-zone',
 	'file-drop-zone-form',
 	'file-drop-zone-text-area',
+	'github-button',
+	'github-button-icon-only',
 	'image-cropper',
 	'image-cropper-custom-preview',
 	'image-cropper-custom-trigger',
@@ -42,6 +43,8 @@ export const DEMOS = [
 	'ipv4address-input-placeholder',
 	'ipv4address-input-reactive',
 	'ipv4address-input-valid',
+	'is-mac',
+	'is-mac-keys',
 	'language-switcher',
 	'language-switcher-paraglide',
 	'language-switcher-variants',
@@ -73,13 +76,10 @@ export const DEMOS = [
 	'rename-content-editable',
 	'rename-context-menu',
 	'rename-text-area',
+	'shortcut',
 	'snippet',
 	'snippet-multiline',
 	'snippet-variants',
-	'stepper',
-	'stepper-form',
-	'stepper-icon',
-	'stepper-vertical',
 	'star-rating',
 	'star-rating-custom-color',
 	'star-rating-custom-size',
@@ -87,6 +87,10 @@ export const DEMOS = [
 	'star-rating-disabled',
 	'star-rating-half-rating',
 	'star-rating-readonly',
+	'stepper',
+	'stepper-form',
+	'stepper-icon',
+	'stepper-vertical',
 	'tags-input',
 	'tags-input-autocomplete',
 	'tags-input-autocomplete-restricted',
@@ -100,15 +104,11 @@ export const DEMOS = [
 	'tree-view-custom-icons',
 	'underline-tabs',
 	'underline-tabs-overflow',
-	'window',
-	'active',
-	'shortcut',
-	'is-mac',
-	'is-mac-keys',
+	'use-frecency',
 	'use-media',
 	'use-media-custom',
 	'use-promise',
-	'use-frecency'
+	'window'
 ] as const;
 
 export type Demo = (typeof DEMOS)[number];

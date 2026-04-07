@@ -25,7 +25,7 @@ const Root = api.createComponentReference<CodeRootPropsWithoutHTML>({
 			defaultValue: 'default'
 		}),
 		lang: api.createStringUnionProp({
-			type: '"bash" | "diff" | "javascript" | "json" | "svelte" | "typescript"',
+			type: '"bash" | "diff" | "javascript" | "json" | "svelte" | "text" | "typescript"',
 			description: 'The language for syntax highlighting.',
 			defaultValue: 'typescript'
 		}),

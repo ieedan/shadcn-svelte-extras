@@ -1,5 +1,4 @@
 import { definePageMetaTags } from 'svelte-meta-tags';
-import { map, type Route } from '$lib/map';
 import type { LayoutLoad } from './$types';
 
 const SITE = 'shadcn-svelte-extras';
@@ -19,37 +18,10 @@ const KEYWORDS = [
 	'file-drop-zone'
 ] as const;
 
-function flattenDocs(): Array<{ group: string } & Route> {
-	return Object.entries(map).flatMap(([group, routes]) => routes.map((r) => ({ group, ...r })));
-}
-
-function getDocForPathname(pathname: string): ({ group: string } & Route) | undefined {
-	const docs = flattenDocs();
-	return docs.find((doc) => new URL(doc.href, 'https://example.com').pathname === pathname);
-}
-
-function componentsIntroDescription(): string {
-	return Array.from(Object.entries(map))
-		.filter(([cat]) => cat === 'Components')
-		.flatMap(([_, components]) =>
-			components.map((comp, i) => `${i === components.length - 1 ? 'and ' : ''}${comp.name}`)
-		)
-		.join(', ');
-}
-
 export const load: LayoutLoad = ({ url }) => {
-	const doc = getDocForPathname(url.pathname);
+	const description = `Finish your app with awesome svelte components like phone-input, tags-input, star-rating, file-drop-zone and more`;
 
-	if (!doc) {
-		return {};
-	}
-
-	const description =
-		doc.name === 'Introduction'
-			? `Finish your app with awesome svelte components like ${componentsIntroDescription()}`
-			: doc.description;
-
-	const title = `${doc.name} - ${SITE}`;
+	const title = SITE;
 	const canonical = new URL(url.pathname, url.origin).href;
 
 	const pageTags = definePageMetaTags({

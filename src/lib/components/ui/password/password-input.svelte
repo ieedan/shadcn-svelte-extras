@@ -31,7 +31,7 @@
 		bind:ref
 		type={state.root.opts.hidden.current ? 'password' : 'text'}
 		class={cn(
-			'transition-all',
+			'transition-[width]',
 			{
 				// either or is mounted (offset 36px)
 				'pr-9': state.root.passwordState.copyMounted || state.root.passwordState.toggleMounted,

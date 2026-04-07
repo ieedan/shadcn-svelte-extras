@@ -1,0 +1,403 @@
+import { getReference } from '$lib/docs/api-reference/components';
+import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
+import type { Command } from 'package-manager-detector';
+import { resolveCommand } from 'package-manager-detector/commands';
+
+const DOC_SITE_ORIGIN = 'https://shadcn-svelte-extras.com';
+const GITHUB_DOC_BLOB_BASE = 'https://github.com/ieedan/shadcn-svelte-extras/blob/main/content';
+const REGISTRY_ITEM_URL_BASE = 'https://shadcn-svelte-extras.com/r';
+
+/** Bundled at build time so doc `<Code />` expansion works on Cloudflare (no `node:fs`). */
+const rawLibLoaders = import.meta.glob('/src/lib/**/*', {
+	query: '?raw',
+	import: 'default'
+}) as Record<string, () => Promise<string>>;
+
+const DEFAULT_REGISTRY = '@ieedan/shadcn-svelte-extras';
+
+/** Keep in sync with `installation-setup-tabs.svelte` (`jsrepoConfigExample`). */
+const INSTALLATION_JSREPO_CONFIG_EXAMPLE = `import { defineConfig } from 'jsrepo';
+
+export default defineConfig({
+	registries: ['@ieedan/shadcn-svelte-extras'],
+	paths: {
+		ui: '$lib/components/ui',
+		component: '$lib/components',
+		hook: '$lib/hooks',
+		action: '$lib/actions',
+		util: '$lib/utils',
+		lib: '$lib'
+	}
+});`;
+
+/** Keep in sync with `installation-setup-tabs.svelte` (`componentsJsonExample`). */
+const INSTALLATION_COMPONENTS_JSON_EXAMPLE = `{
+	"$schema": "https://shadcn-svelte.com/schema.json",
+	"tailwind": {
+		"css": "src/app.css",
+		"baseColor": "neutral"
+	},
+	"aliases": {
+		"components": "$lib/components",
+		"utils": "$lib/utils",
+		"ui": "$lib/components/ui",
+		"hooks": "$lib/hooks",
+		"lib": "$lib"
+	},
+	"typescript": true,
+	"registry": "https://shadcn-svelte.com/registry",
+	"style": "vega",
+	"iconLibrary": "lucide",
+	"menuColor": "default",
+	"menuAccent": "subtle"
+}
+`;
+
+function normalizeLibRelPath(path: string): string {
+	return path.replace(/\\/g, '/').replace(/^\/+/, '');
+}
+
+/** Match Vite glob keys (`/src/lib/...`) to a repo-relative path (`src/lib/...`). */
+function findRawLoader(relPath: string): (() => Promise<string>) | undefined {
+	const n = normalizeLibRelPath(relPath);
+	for (const key of [`/${n}`, n]) {
+		const load = rawLibLoaders[key];
+		if (load) return load;
+	}
+	return undefined;
+}
+
+function demoSourcePath(slug: string): string {
+	return `src/lib/demos/${slug}.svelte`;
+}
+
+function demoGithubUrl(slug: string): string {
+	return `${GITHUB_DOC_BLOB_BASE}/${demoSourcePath(slug)}`;
+}
+
+function formatNpmExecuteLine(args: string[], command: Command = 'execute'): string {
+	const resolved = resolveCommand('npm', command, args);
+	return resolved ? `${resolved.command} ${resolved.args.join(' ')}` : `npx ${args.join(' ')}`;
+}
+
+function formatJsrepoAddCommand(item: string, withoutRegistry: boolean): string {
+	const target = withoutRegistry ? item : `${DEFAULT_REGISTRY}/${item}`;
+	return formatNpmExecuteLine(['jsrepo', 'add', target]);
+}
+
+function formatShadcnAddCommand(item: string): string {
+	const url = `${REGISTRY_ITEM_URL_BASE}/${item}.json`;
+	return formatNpmExecuteLine(['shadcn-svelte@latest', 'add', url]);
+}
+
+function formatDemoBlock(slug: string, liveUrl: string, sourceUrl: string): string {
+	const relPath = demoSourcePath(slug);
+	return (
+		`#### Demo: \`${slug}\`\n\n` +
+		`**Live:** [${liveUrl}](${liveUrl}) (full-page demo, same as the docs embed)\n\n` +
+		`**Source:** [\`${relPath}\`](${sourceUrl}) on GitHub\n`
+	);
+}
+
+function formatAddBlock(item: string, withoutRegistry: boolean): string {
+	const jsrepo = formatJsrepoAddCommand(item, withoutRegistry);
+	const shadcn = formatShadcnAddCommand(item);
+	return (
+		`#### Add \`${item}\`\n\n` +
+		'**jsrepo**:\n\n' +
+		'```bash\n' +
+		jsrepo +
+		'\n```\n\n' +
+		'**shadcn-svelte**:\n\n' +
+		'```bash\n' +
+		shadcn +
+		'\n```\n'
+	);
+}
+
+/** Markdown for `<InstallationSetupTabs />` — mirrors the live tab content. */
+function formatInstallationSetupTabsBlock(): string {
+	const jsrepoInit = formatNpmExecuteLine(['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']);
+	const jsrepoAdd = formatNpmExecuteLine(['jsrepo', 'add', 'button']);
+	const shadcnInit = formatNpmExecuteLine(['shadcn-svelte', 'init']);
+	const shadcnAdd = formatNpmExecuteLine([
+		'shadcn-svelte',
+		'add',
+		`${REGISTRY_ITEM_URL_BASE}/button.json`
+	]);
+
+	return (
+		'### jsrepo\n\n' +
+		'Initialize jsrepo with shadcn-svelte-extras:\n\n' +
+		'```bash\n' +
+		jsrepoInit +
+		'\n```\n\n' +
+		'Configure the `paths` key in your `jsrepo.config.ts` file so that components, hooks, and utils are added to the correct places:\n\n' +
+		formatCodeFence('typescript', INSTALLATION_JSREPO_CONFIG_EXAMPLE, [[5, 12]]) +
+		'\n' +
+		'Install extras into your project using `jsrepo add`:\n\n' +
+		'```bash\n' +
+		jsrepoAdd +
+		'\n```\n\n' +
+		'### shadcn-svelte\n\n' +
+		'Initialize shadcn-svelte:\n\n' +
+		'```bash\n' +
+		shadcnInit +
+		'\n```\n\n' +
+		'Configure the aliases in your `components.json` file with the right paths:\n\n' +
+		formatCodeFence('json', INSTALLATION_COMPONENTS_JSON_EXAMPLE, [[7, 13]]) +
+		'\n' +
+		'Install extras into your project using `shadcn-svelte add`:\n\n' +
+		'```bash\n' +
+		shadcnAdd +
+		'\n```\n'
+	);
+}
+
+function stripDemoAddImports(markdown: string): string {
+	return markdown
+		.replace(/^\s*import Demo from '\$lib\/components\/demo\.svelte';\s*\n/gm, '')
+		.replace(/^\s*import Add from '\$lib\/components\/add\.svelte';\s*\n/gm, '');
+}
+
+function removeEmptyScriptBlocks(markdown: string): string {
+	return markdown.replace(/<script lang="ts">([\s\S]*?)<\/script>\s*/g, (_, inner: string) => {
+		if (!inner.replace(/^\s*$/gm, '').trim()) return '';
+		return `<script lang="ts">${inner}</script>\n\n`;
+	});
+}
+
+/** Map `$lib/…` specifiers (without `?raw`) to `src/lib/…` paths (Vite glob keys). */
+function resolveLibImportPath(specifier: string): string {
+	if (specifier.startsWith('$lib/')) {
+		return `src/lib/${specifier.slice('$lib/'.length)}`.replace(/\\/g, '/');
+	}
+	throw new Error(`Unsupported raw import (expected \$lib/…): ${specifier}`);
+}
+
+/** Variable name → `src/lib/…` path for `import x from '…?raw'` in doc markdown. */
+function parseRawImportMap(markdown: string): Map<string, string> {
+	const map = new Map<string, string>();
+	const re = /^\s*import\s+(\w+)\s+from\s+['"]([^'"]+)\?raw['"];\s*$/gm;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(markdown)) !== null) {
+		const [, name, spec] = m;
+		map.set(name, resolveLibImportPath(spec));
+	}
+	return map;
+}
+
+function extractHighlightRanges(attrs: string): number[][] | undefined {
+	const match = attrs.match(/\bhighlight\s*=\s*\{/);
+	if (!match || match.index === undefined) return undefined;
+	let i = match.index + match[0].length - 1;
+	if (attrs[i] !== '{') return undefined;
+	let depth = 0;
+	const start = i;
+	for (; i < attrs.length; i++) {
+		const c = attrs[i];
+		if (c === '{') depth++;
+		else if (c === '}') {
+			depth--;
+			if (depth === 0) {
+				const inner = attrs.slice(start + 1, i);
+				try {
+					const parsed = JSON.parse(inner) as unknown;
+					if (!Array.isArray(parsed)) return undefined;
+					return parsed as number[][];
+				} catch {
+					return undefined;
+				}
+			}
+		}
+	}
+	return undefined;
+}
+
+function parseCodeAttrs(attrs: string): {
+	lang: string;
+	codeVar: string;
+	highlight?: number[][];
+} | null {
+	const langM = attrs.match(/\blang\s*=\s*["']([^"']+)["']/);
+	const codeM = attrs.match(/\bcode\s*=\s*\{(\w+)\}/);
+	if (!langM || !codeM) return null;
+	const highlight = extractHighlightRanges(attrs);
+	return { lang: langM[1], codeVar: codeM[1], highlight };
+}
+
+function highlightToFenceMeta(ranges: number[][]): string {
+	if (!ranges.length) return '';
+	const parts = ranges.map(([a, b]) => (a === b ? `${a}` : `${a}-${b}`));
+	return ` {${parts.join(',')}}`;
+}
+
+function formatCodeFence(lang: string, content: string, highlight?: number[][]): string {
+	const meta = highlight && highlight.length ? highlightToFenceMeta(highlight) : '';
+	const body = content.replace(/\r\n/g, '\n').replace(/\n$/, '');
+	return '```' + lang + meta + '\n' + body + '\n```\n';
+}
+
+async function replaceAsync(
+	str: string,
+	re: RegExp,
+	replacer: (match: RegExpExecArray) => Promise<string>
+): Promise<string> {
+	const flags = re.flags.includes('g') ? re.flags : `${re.flags}g`;
+	const globalRe = new RegExp(re.source, flags);
+	const parts: string[] = [];
+	let lastIndex = 0;
+	let m: RegExpExecArray | null;
+	while ((m = globalRe.exec(str)) !== null) {
+		parts.push(str.slice(lastIndex, m.index));
+		parts.push(await replacer(m));
+		lastIndex = globalRe.lastIndex;
+	}
+	parts.push(str.slice(lastIndex));
+	return parts.join('');
+}
+
+async function replaceCodeTags(
+	markdown: string,
+	rawMap: Map<string, string>,
+	usedRawVars: Set<string>
+): Promise<string> {
+	const expand = async (attrs: string): Promise<string | null> => {
+		const parsed = parseCodeAttrs(attrs);
+		if (!parsed) return null;
+		const relPath = rawMap.get(parsed.codeVar);
+		if (!relPath) return null;
+		const load = findRawLoader(relPath);
+		if (!load) return null;
+		let fileContent: string;
+		try {
+			fileContent = await load();
+		} catch {
+			return null;
+		}
+		usedRawVars.add(parsed.codeVar);
+		return formatCodeFence(parsed.lang, fileContent, parsed.highlight);
+	};
+
+	let out = await replaceAsync(
+		markdown,
+		/<div>\s*<Code\s+([\s\S]*?)\/\s*>\s*<\/div>/gi,
+		async (m) => (await expand(m[1]!)) ?? m[0]!
+	);
+
+	out = await replaceAsync(
+		out,
+		/<Code\s+([\s\S]*?)\/\s*>/g,
+		async (m) => (await expand(m[1]!)) ?? m[0]!
+	);
+
+	return out;
+}
+
+function stripCodeDocImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import Code from '\$lib\/components\/docs\/code\.svelte';\s*\n/gm,
+		''
+	);
+}
+
+function stripApiReferenceImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import ApiReference from '\$lib\/docs\/api-reference\/api-reference\.svelte';\s*\n/gm,
+		''
+	);
+}
+
+function stripJsrepoCommandImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import JsrepoCommand from ['"]\$lib\/components\/docs\/jsrepo-command\.svelte['"];\s*\n/gm,
+		''
+	);
+}
+
+function stripInstallationSetupTabsImport(markdown: string): string {
+	return markdown.replace(
+		/^\s*import InstallationSetupTabs from ['"]\$lib\/components\/docs\/installation-setup-tabs\.svelte['"];\s*\n/gm,
+		''
+	);
+}
+
+/** String literals inside `args={[ ... ]}` in doc markdown. */
+function parseBracketStringArray(inner: string): string[] {
+	const parts: string[] = [];
+	const re = /'([^']*)'|"([^"]*)"/g;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(inner)) !== null) {
+		parts.push((m[1] ?? m[2] ?? '').trim());
+	}
+	return parts;
+}
+
+function replaceInstallationSetupTabsTags(markdown: string): string {
+	return markdown.replace(/<InstallationSetupTabs\s*\/>/g, () =>
+		formatInstallationSetupTabsBlock()
+	);
+}
+
+function replaceJsrepoCommandTags(markdown: string): string {
+	return markdown.replace(/<JsrepoCommand\s+([\s\S]*?)\s*\/>/g, (full, attrs: string) => {
+		const cmdM = attrs.match(/command\s*=\s*["']([^"']+)["']/);
+		const argsM = attrs.match(/args\s*=\s*\{\s*\[([\s\S]*?)\]\s*\}/);
+		if (!cmdM || !argsM) return full;
+		const args = parseBracketStringArray(argsM[1]!);
+		if (!args.length) return full;
+		const line = formatNpmExecuteLine(args, cmdM[1]! as Command);
+		return '```bash\n' + line + '\n```\n';
+	});
+}
+
+function replaceApiReferenceTags(markdown: string, docSlug: string | undefined): string {
+	const slug = docSlug?.match(/^components\/(.+)$/)?.[1];
+	const ref = slug ? getReference(slug) : undefined;
+	const replacement = ref ? referenceBundleToMarkdown(ref) : '';
+	return markdown.replace(/<ApiReference\s*\/>/g, replacement);
+}
+
+function stripRawImports(markdown: string, vars: Set<string>): string {
+	let out = markdown;
+	for (const v of vars) {
+		out = out.replace(
+			new RegExp(`^\\s*import\\s+${v}\\s+from\\s+['"][^'"]+\\?raw['"];\\s*\\n`, 'gm'),
+			''
+		);
+	}
+	return out;
+}
+
+const DEMO_TAG = /<Demo\s+demo="([^"]+)"[^/]*\/>/g;
+const ADD_TAG = /<Add\s+item="([^"]+)"([^/]*)\/>/g;
+
+export async function transformDocMarkdown(markdown: string, docSlug?: string): Promise<string> {
+	const rawImportMap = parseRawImportMap(markdown);
+	const usedRawVars = new Set<string>();
+
+	let merged = markdown.replace(DEMO_TAG, (_, slug: string) => {
+		const liveUrl = `${DOC_SITE_ORIGIN}/demos/${slug}`;
+		return formatDemoBlock(slug, liveUrl, demoGithubUrl(slug));
+	});
+
+	merged = merged.replace(ADD_TAG, (_, item: string, rest: string) => {
+		const withoutRegistry = /\bwithoutRegistry\b/.test(rest);
+		return formatAddBlock(item, withoutRegistry);
+	});
+
+	merged = replaceInstallationSetupTabsTags(merged);
+	merged = replaceJsrepoCommandTags(merged);
+
+	merged = await replaceCodeTags(merged, rawImportMap, usedRawVars);
+	merged = replaceApiReferenceTags(merged, docSlug);
+	merged = stripDemoAddImports(merged);
+	merged = stripCodeDocImport(merged);
+	merged = stripApiReferenceImport(merged);
+	merged = stripJsrepoCommandImport(merged);
+	merged = stripInstallationSetupTabsImport(merged);
+	merged = stripRawImports(merged, usedRawVars);
+	merged = removeEmptyScriptBlocks(merged);
+
+	return merged.replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
+}

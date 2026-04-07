@@ -15,28 +15,23 @@
 	import SearchButton from '$lib/components/search-button.svelte';
 	import ChatExample from '$lib/demos/chat.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
-	import { ArrowRightIcon } from '@lucide/svelte';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
-<div class="flex flex-col gap-8 p-8">
-	<div class="flex flex-col gap-2">
-		<a href="/components/stepper" class="flex place-items-center gap-1 text-sm font-normal">
-			<span class="hover:underline">
-				New component <span class="font-bold">Stepper</span>!
-			</span>
-			<ArrowRightIcon class="size-3.5" />
-		</a>
-		<h1 class="text-5xl font-bold">shadcn-svelte-extras</h1>
-		<p class="text-muted-foreground text-lg">Finish your app with 20+ components and utilities.</p>
+<div class="flex flex-col items-center gap-8">
+	<div class="flex flex-col items-center gap-2 py-6 md:py-10 lg:py-20">
+		<h1 class="text-center text-5xl font-medium">shadcn-svelte-extras</h1>
+		<p class="text-center text-lg">
+			Finish your component library with beautiful, composable components.
+		</p>
 		<div class="mt-2 flex place-items-center gap-2">
-			<Button href="/docs/installation" size="sm">Get Started</Button>
-			<Button variant="outline" href="/components" size="sm">Browse Components</Button>
+			<Button href="/docs/installation">Get Started</Button>
+			<Button variant="ghost" href="/components">Browse Components</Button>
 		</div>
 	</div>
-	<div class="grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
+	<div class="container grid grid-cols-1 gap-4 lg:grid-cols-2 2xl:grid-cols-3">
 		<div class="flex flex-col gap-4 lg:col-start-1">
 			<ChatExample />
 			<TagsInput bind:value={tags} placeholder="Add a tag" />

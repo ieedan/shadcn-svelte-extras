@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
+	import { buttonVariants } from '$lib/components/ui/button';
 	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 	import * as Select from '$lib/components/ui/select';
 	import ImageIcon from '@lucide/svelte/icons/image';

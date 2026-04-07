@@ -8,10 +8,11 @@ import DropdownContent from './add-dropdown-content.svelte';
 import DropdownSeparator from './add-dropdown-separator.svelte';
 import DropdownAgentOption from './add-dropdown-agent-option.svelte';
 import DropdownRegistryOption from './add-dropdown-registry-option.svelte';
+import DropdownInstallerOption from './add-dropdown-installer-option.svelte';
 import DropdownDocsLink from './add-dropdown-docs-link.svelte';
 import DropdownCopyInit from './add-dropdown-copy-init.svelte';
 
-import { AGENTS, type Agent } from './add.svelte.js';
+import { AGENTS, INSTALLERS, type Agent, type Installer } from './add.svelte.js';
 
 export {
 	Provider,
@@ -24,6 +25,7 @@ export {
 	DropdownSeparator,
 	DropdownAgentOption,
 	DropdownRegistryOption,
+	DropdownInstallerOption,
 	DropdownDocsLink,
 	DropdownCopyInit,
 	//
@@ -37,9 +39,12 @@ export {
 	DropdownSeparator as AddDropdownSeparator,
 	DropdownAgentOption as AddDropdownAgentOption,
 	DropdownRegistryOption as AddDropdownRegistryOption,
+	DropdownInstallerOption as AddDropdownInstallerOption,
 	DropdownDocsLink as AddDropdownDocsLink,
 	DropdownCopyInit as AddDropdownCopyInit,
 	//
 	AGENTS,
-	type Agent
+	INSTALLERS,
+	type Agent,
+	type Installer
 };

@@ -1,4 +1,5 @@
-import { AlertDialog as AlertDialogPrimitive } from 'bits-ui';
+import Root from './alert-dialog.svelte';
+import Portal from './alert-dialog-portal.svelte';
 import Trigger from './alert-dialog-trigger.svelte';
 import Title from './alert-dialog-title.svelte';
 import Action from './alert-dialog-action.svelte';
@@ -8,9 +9,7 @@ import Header from './alert-dialog-header.svelte';
 import Overlay from './alert-dialog-overlay.svelte';
 import Content from './alert-dialog-content.svelte';
 import Description from './alert-dialog-description.svelte';
-
-const Root = AlertDialogPrimitive.Root;
-const Portal = AlertDialogPrimitive.Portal;
+import Media from './alert-dialog-media.svelte';
 
 export {
 	Root,
@@ -24,6 +23,7 @@ export {
 	Overlay,
 	Content,
 	Description,
+	Media,
 	//
 	Root as AlertDialog,
 	Title as AlertDialogTitle,
@@ -35,5 +35,6 @@ export {
 	Trigger as AlertDialogTrigger,
 	Overlay as AlertDialogOverlay,
 	Content as AlertDialogContent,
-	Description as AlertDialogDescription
+	Description as AlertDialogDescription,
+	Media as AlertDialogMedia
 };

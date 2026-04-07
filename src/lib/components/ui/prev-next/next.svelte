@@ -2,9 +2,9 @@
 	import type { Snippet } from 'svelte';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import { cn } from '$lib/utils.js';
-	import { Button, type AnchorElementProps } from '$lib/components/ui/button';
+	import Button, { type ButtonProps } from '$lib/components/button.svelte';
 
-	interface Props extends AnchorElementProps {
+	interface Props extends ButtonProps {
 		children: Snippet<[]>;
 	}
 

@@ -1,6 +1,6 @@
 import type { Snippet } from 'svelte';
 import type { HTMLInputAttributes } from 'svelte/elements';
-import type { ButtonElementProps } from '../button';
+import type { ButtonProps } from '$lib/components/button.svelte';
 import type { UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 import type { WithElementRef } from '$lib/utils';
 
@@ -13,7 +13,7 @@ export type NumberFieldRootProps = {
 	children: Snippet;
 };
 
-export type NumberFieldButtonProps = Omit<ButtonElementProps, 'disabled'> & {
+export type NumberFieldButtonProps = Omit<ButtonProps, 'disabled'> & {
 	disabled?: boolean;
 };
 

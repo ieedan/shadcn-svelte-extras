@@ -1,17 +1,18 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
 	import * as FieldSet from '$lib/components/ui/field-set';
+	import * as Field from '$lib/components/ui/field';
 </script>
 
 <div class="w-full p-6">
 	<FieldSet.Root variant="destructive">
 		<FieldSet.Content>
-			<div>
+			<Field.Field>
 				<Label>Project Name</Label>
 				<Input value="ieedan/std" class="max-w-[225px]" />
-			</div>
+			</Field.Field>
 		</FieldSet.Content>
 		<FieldSet.Footer>
 			<div class="flex w-full place-items-center justify-between">

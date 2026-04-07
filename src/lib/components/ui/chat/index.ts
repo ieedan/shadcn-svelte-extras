@@ -9,4 +9,11 @@ const BubbleAvatarFallback = Avatar.Fallback;
 
 export { List, Bubble, BubbleMessage, BubbleAvatar, BubbleAvatarImage, BubbleAvatarFallback };
 
-export type * from './types';
+export type {
+	ChatListPropsWithoutHTML,
+	ChatListProps,
+	ChatBubblePropsWithoutHTML,
+	ChatBubbleProps,
+	ChatBubbleMessagePropsWithoutHTML,
+	ChatBubbleMessageProps
+} from './types';

@@ -2,7 +2,7 @@
 	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
 	import * as Card from '$lib/components/ui/card';
 	import { Label } from '$lib/components/ui/label';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 
 	let loading = $state(false);
 </script>

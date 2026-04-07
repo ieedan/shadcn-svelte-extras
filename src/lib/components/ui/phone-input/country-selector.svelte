@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as Popover from '$lib/components/ui/popover';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as Command from '$lib/components/ui/command';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import CheckIcon from '@lucide/svelte/icons/check';
@@ -74,10 +74,10 @@
 			<Command.List>
 				<ScrollArea class="h-72">
 					<Command.Empty>No country found.</Command.Empty>
-					<Command.Group>
+					<Command.Group class="overflow-clip">
 						{#each countries.sort(order) as country (country.id)}
 							<Command.Item
-								class="gap-2"
+								class="gap-2 [&_.cn-command-item-indicator]:hidden"
 								value={country.name}
 								onSelect={() => selectCountry(country)}
 							>
@@ -88,7 +88,7 @@
 								</span>
 								<div class="w-4">
 									{#if country.iso2 == selected}
-										<CheckIcon class="size-4" />
+										<CheckIcon class="phone-input-check-icon size-4" />
 									{/if}
 								</div>
 							</Command.Item>

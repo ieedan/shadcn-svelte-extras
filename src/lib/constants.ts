@@ -1,1 +1,0 @@
-export const REGISTRY_OPTIONS = ['@ieedan/shadcn-svelte-extras'] as const;

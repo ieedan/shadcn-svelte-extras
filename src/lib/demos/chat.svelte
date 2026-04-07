@@ -3,7 +3,8 @@
 	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
 	import * as Popover from '$lib/components/ui/popover';
 	import * as Avatar from '$lib/components/ui/avatar';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { buttonVariants } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import InfoIcon from '@lucide/svelte/icons/info';
 	import PhoneIcon from '@lucide/svelte/icons/phone';
 	import SendIcon from '@lucide/svelte/icons/send';

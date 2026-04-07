@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PhoneInput } from '$lib/components/ui/phone-input';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as FieldSet from '$lib/components/ui/field-set';
 
 	let loading = $state(false);

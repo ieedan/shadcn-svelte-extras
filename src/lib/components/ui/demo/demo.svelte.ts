@@ -1,8 +1,8 @@
 import { goto } from '$app/navigation';
-import { resolve } from '$app/paths';
 import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type * as Resizable from '$lib/components/ui/resizable';
+import { page } from '$app/state';
 
 export type TabValue = 'preview' | 'code';
 export type Mode = 'iframe' | 'component';
@@ -117,7 +117,7 @@ class FullscreenState {
 	}
 
 	async fullscreen() {
-		await goto(resolve(`/demos/${this.root.demo}`));
+		await goto(`/demos/${this.root.demo}?from=${page.url.pathname}`);
 	}
 }
 

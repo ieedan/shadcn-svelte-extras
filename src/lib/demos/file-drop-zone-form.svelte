@@ -1,20 +1,15 @@
 <script lang="ts" module>
-	export const schema = v.object({
-		attachments: v.array(v.pipe(v.file(), v.maxSize(FileDropZone.MEGABYTE * 2)))
-	});
-
-	type Schema = v.InferInput<typeof schema>;
+	import { schema, type Schema } from '$lib/docs/file-drop-zone-schema';
 </script>
 
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';
 	import { type SuperValidated, superForm, filesProxy } from 'sveltekit-superforms';
 	import SuperDebug from 'sveltekit-superforms';
-	import { valibotClient } from 'sveltekit-superforms/adapters';
-	import * as v from 'valibot';
+	import { zod4Client } from 'sveltekit-superforms/adapters';
 
 	// Create a mock form data structure for demo purposes
 	// In a real app, this would come from +page.server.ts
@@ -30,7 +25,7 @@
 	} as SuperValidated<Schema>;
 
 	const form = superForm(mockFormData, {
-		validators: valibotClient(schema)
+		validators: zod4Client(schema)
 	});
 
 	const { form: formData, enhance, message } = form;

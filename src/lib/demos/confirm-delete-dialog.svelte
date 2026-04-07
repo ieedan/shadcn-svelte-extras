@@ -45,15 +45,14 @@
 
 <ConfirmDeleteDialog />
 
-<div class="w-full p-6">
-	<div class="grid w-full gap-2 sm:grid-cols-2 xl:grid-cols-3">
+<div class="@container w-full p-6">
+	<div class="grid w-full grid-cols-1 gap-2 @sm:grid-cols-2 @2xl:grid-cols-3">
 		{#each projects as project (project.url)}
 			<div
 				class="hover:bg-accent/50 border-border relative flex w-full flex-col gap-2 rounded-md border p-4 transition-colors"
 			>
 				<div class="flex items-center justify-between">
 					<a href="#/" class="flex items-center gap-2">
-						<span class="absolute inset-0"></span>
 						<Avatar.Root class="rounded-md">
 							<Avatar.Image src={project.faviconUrl} />
 						</Avatar.Root>
@@ -70,6 +69,7 @@
 							<DropdownMenu.Item>Add Favorite</DropdownMenu.Item>
 							<DropdownMenu.Item>View Logs</DropdownMenu.Item>
 							<DropdownMenu.Item>Archive</DropdownMenu.Item>
+							<DropdownMenu.Separator />
 							<DropdownMenu.Item
 								variant="destructive"
 								onSelect={() => {

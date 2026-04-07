@@ -61,7 +61,7 @@
 	const commandText = $derived(`${cmd?.command} ${cmd?.args.join(' ')}`);
 </script>
 
-<div class={cn(style({ variant }), className)}>
+<div data-slot="jsrepo-command" class={cn(style({ variant }), className)}>
 	<div class="border-border flex place-items-center justify-between gap-2 border-b py-1 pr-2">
 		<div class="flex place-items-center gap-2 px-2">
 			<div class="bg-foreground flex size-4 place-items-center justify-center opacity-50">

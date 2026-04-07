@@ -2,4 +2,4 @@ import NLPDateInput from './nlp-date-input.svelte';
 
 export { NLPDateInput };
 
-export type * from './types';
+export type { NLPDateInputProps } from './nlp-date-input.svelte';

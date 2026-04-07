@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 	import { Progress } from '$lib/components/ui/progress';
 	import { sleep } from '$lib/utils/sleep';

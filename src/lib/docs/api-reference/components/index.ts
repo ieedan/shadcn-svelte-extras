@@ -1,13 +1,13 @@
 import * as casing from '../../../utils/casing.js';
 
 // import all references
-import { reference as AvatarGroupReference } from './avatar-group-api';
 import { reference as ButtonReference } from './button-api';
 import { reference as ChatReference } from './chat-api';
 import { reference as CodeReference } from './code-api';
 import { reference as CopyButtonReference } from './copy-button-api';
 import { reference as FieldSetReference } from './field-set-api';
 import { reference as FileDropZoneReference } from './file-drop-zone-api';
+import { reference as GithubButtonReference } from './github-button-api';
 import { reference as ImageCropperReference } from './image-cropper-api';
 import { reference as Ipv4addressInputReference } from './ipv4address-input-api';
 import { reference as LanguageSwitcherReference } from './language-switcher-api';
@@ -34,13 +34,13 @@ import { reference as PasswordReference } from './password-api';
 import { reference as RenameReference } from './rename-api';
 
 export const references = [
-	AvatarGroupReference,
 	ButtonReference,
 	ChatReference,
 	CodeReference,
 	CopyButtonReference,
 	FieldSetReference,
 	FileDropZoneReference,
+	GithubButtonReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
 	LanguageSwitcherReference,
@@ -76,13 +76,13 @@ export function getReference(name: string) {
 }
 
 export {
-	AvatarGroupReference,
 	ButtonReference,
 	ChatReference,
 	CodeReference,
 	CopyButtonReference,
 	FieldSetReference,
 	FileDropZoneReference,
+	GithubButtonReference,
 	ImageCropperReference,
 	Ipv4addressInputReference,
 	LanguageSwitcherReference,

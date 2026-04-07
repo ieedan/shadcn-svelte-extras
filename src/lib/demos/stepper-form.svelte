@@ -2,7 +2,7 @@
 	import * as Stepper from '$lib/components/ui/stepper';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
-	import { Button } from '$lib/components/ui/button';
+	import Button from '$lib/components/button.svelte';
 	import * as ToggleGroup from '$lib/components/ui/toggle-group';
 	import { toast } from 'svelte-sonner';
 	import {

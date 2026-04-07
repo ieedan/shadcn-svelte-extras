@@ -1,7 +1,7 @@
 import { Context } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { FormEventHandler } from 'svelte/elements';
-import type { ButtonElementProps } from '../button';
+import type { ButtonProps } from '$lib/components/button.svelte';
 import { useRamp, type UseRampOptions } from '$lib/hooks/use-ramp.svelte';
 
 type NumberFieldRootProps = WritableBoxedValues<{
@@ -59,11 +59,11 @@ export class NumberFieldInputContext {
 type NumberFieldButtonProps = {
 	direction: 'up' | 'down';
 } & ReadableBoxedValues<{
-	onpointerdown: ButtonElementProps['onpointerdown'];
-	onpointerup: ButtonElementProps['onpointerup'];
-	onpointerleave: ButtonElementProps['onpointerleave'];
-	onpointercancel: ButtonElementProps['onpointercancel'];
-	onclick: ButtonElementProps['onclick'];
+	onpointerdown: ButtonProps['onpointerdown'];
+	onpointerup: ButtonProps['onpointerup'];
+	onpointerleave: ButtonProps['onpointerleave'];
+	onpointercancel: ButtonProps['onpointercancel'];
+	onclick: ButtonProps['onclick'];
 	disabled: boolean;
 }>;
 
@@ -81,7 +81,7 @@ export class NumberFieldButton {
 		});
 	}
 
-	onpointerdown(e: Parameters<NonNullable<ButtonElementProps['onpointerdown']>>[0]) {
+	onpointerdown(e: Parameters<NonNullable<ButtonProps['onpointerdown']>>[0]) {
 		this.increment();
 
 		this.rampState.start();
@@ -89,22 +89,22 @@ export class NumberFieldButton {
 		this.opts.onpointerdown.current?.(e);
 	}
 
-	onpointerup(e: Parameters<NonNullable<ButtonElementProps['onpointerup']>>[0]) {
+	onpointerup(e: Parameters<NonNullable<ButtonProps['onpointerup']>>[0]) {
 		this.rampState.reset();
 		this.opts.onpointerup.current?.(e);
 	}
 
-	onpointerleave(e: Parameters<NonNullable<ButtonElementProps['onpointerleave']>>[0]) {
+	onpointerleave(e: Parameters<NonNullable<ButtonProps['onpointerleave']>>[0]) {
 		this.rampState.reset();
 		this.opts.onpointerleave.current?.(e);
 	}
 
-	onpointercancel(e: Parameters<NonNullable<ButtonElementProps['onpointercancel']>>[0]) {
+	onpointercancel(e: Parameters<NonNullable<ButtonProps['onpointercancel']>>[0]) {
 		this.rampState.reset();
 		this.opts.onpointercancel.current?.(e);
 	}
 
-	onclick(e: Parameters<NonNullable<ButtonElementProps['onclick']>>[0]) {
+	onclick(e: Parameters<NonNullable<ButtonProps['onclick']>>[0]) {
 		if (!this.rampState.ramping) return;
 
 		this.increment();

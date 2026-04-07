@@ -10,4 +10,15 @@ import { getFileFromUrl } from './utils';
 
 export { Root, UploadTrigger, Preview, Dialog, Cropper, Controls, Crop, Cancel, getFileFromUrl };
 
-export type * from './types';
+export type {
+	ImageCropperRootPropsWithoutHTML,
+	ImageCropperRootProps,
+	ImageCropperDialogProps,
+	ImageCropperCropperProps,
+	ImageCropperControlsWithoutHTML,
+	ImageCropperControlsProps,
+	ImageCropperPreviewPropsWithoutHTML,
+	ImageCropperPreviewProps,
+	ImageCropperUploadTriggerPropsWithoutHTML,
+	ImageCropperUploadTriggerProps
+} from './types';

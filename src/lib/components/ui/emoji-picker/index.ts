@@ -7,4 +7,16 @@ import SkinToneSelector from './emoji-picker-skin-tone-selector.svelte';
 
 export { Root, List, Viewport, Search, Footer, SkinToneSelector };
 
-export type * from './types';
+export type {
+	SelectedEmoji,
+	EmojiPickerSkin,
+	EmojiPickerRootPropsWithoutHTML,
+	EmojiPickerRootProps,
+	EmojiPickerListPropsWithoutHTML,
+	EmojiPickerListProps,
+	EmojiPickerSearchProps,
+	EmojiPickerFooterPropsWithoutHTML,
+	EmojiPickerFooterProps,
+	EmojiPickerSkinPropsWithoutHTML,
+	EmojiPickerSkinProps
+} from './types';

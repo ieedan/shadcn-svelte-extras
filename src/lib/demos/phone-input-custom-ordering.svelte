@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { PhoneInput } from '$lib/components/ui/phone-input';
 	import { Label } from '$lib/components/ui/label';
+	import * as Field from '$lib/components/ui/field';
 </script>
 
-<div>
+<Field.Field class="w-fit">
 	<Label>Phone Number</Label>
 	<PhoneInput
 		placeholder="Enter a phone number"
@@ -16,4 +17,4 @@
 			return a.name.localeCompare(b.name);
 		}}
 	/>
-</div>
+</Field.Field>
