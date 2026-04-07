@@ -15,6 +15,23 @@ description: 'A component for switching your sites locale.'
 
 <Add item="language-switcher" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
+
+	const languages = [
+		{ code: 'en', label: 'English' },
+		{ code: 'de', label: 'Deutsch' }
+	];
+
+	let value = $state('en');
+</script>
+
+<LanguageSwitcher {languages} bind:value />
+```
+
 ## Ghost + Align
 
 <Demo demo="language-switcher-variants" />

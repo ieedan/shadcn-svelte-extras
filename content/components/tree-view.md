@@ -17,6 +17,20 @@ description: 'A file tree component.'
 
 <Add item="tree-view" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import * as TreeView from '$lib/components/ui/tree-view';
+</script>
+
+<TreeView.Root>
+	<TreeView.Folder name="src">
+		<TreeView.File name="app.ts" />
+	</TreeView.Folder>
+</TreeView.Root>
+```
+
 ## Custom Icons
 
 <Demo demo="tree-view-custom-icons" />

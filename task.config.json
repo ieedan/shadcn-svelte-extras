@@ -9,7 +9,7 @@
 				},
 				"app": {
 					"color": "green",
-					"command": "pnpm vite dev"
+					"command": "pnpm dev:app"
 				},
 				"content": {
 					"color": "yellow",

@@ -17,6 +17,16 @@ description: "An IPv4 address input with all the behavior you'd expect."
 
 <Add item="ipv4address-input" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
+</script>
+
+<IPv4AddressInput />
+```
+
 ## Placeholder
 
 <Demo demo="ipv4address-input-placeholder" />

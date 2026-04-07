@@ -17,6 +17,16 @@ The same old button you know from shadcn-svelte with a few extra touches.
 
 <Add item="button" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import Button from '$lib/components/button.svelte';
+</script>
+
+<Button>Save</Button>
+```
+
 ## Loading
 
 <Demo demo="button-loading" />

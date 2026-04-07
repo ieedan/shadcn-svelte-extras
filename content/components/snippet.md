@@ -15,6 +15,16 @@ description: 'A snippet component.'
 
 <Add item="snippet" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { Snippet } from '$lib/components/ui/snippet';
+</script>
+
+<Snippet text="npx jsrepo add ui/snippet" />
+```
+
 ## Variants
 
 <Demo demo="snippet-variants" />

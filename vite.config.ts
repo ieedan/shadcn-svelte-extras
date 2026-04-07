@@ -23,6 +23,8 @@ export default defineConfig({
 		transformLucideImports()
 	],
 	server: {
+		// Portless serves at https://extras.localhost (and <branch>.extras.localhost in worktrees)
+		allowedHosts: ['.localhost'],
 		fs: {
 			allow: [veliteDirPath, contentDirPath]
 		}

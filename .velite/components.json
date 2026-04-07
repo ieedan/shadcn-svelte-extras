@@ -11,6 +11,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Loading",
         "url": "#loading",
         "items": []
@@ -58,6 +63,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -141,6 +151,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Custom Icon",
         "url": "#custom-icon",
         "items": []
@@ -208,6 +223,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -337,6 +357,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Placeholder",
         "url": "#placeholder",
         "items": []
@@ -367,6 +392,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Ghost + Align",
         "url": "#ghost--align",
         "items": []
@@ -389,6 +419,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -472,6 +507,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Min/Max",
         "url": "#minmax",
         "items": []
@@ -489,6 +529,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -557,6 +602,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Default Country",
         "url": "#default-country",
         "items": []
@@ -589,6 +639,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -664,6 +719,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       },
       {
@@ -847,6 +907,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Ghost",
         "url": "#ghost",
         "items": []
@@ -892,6 +957,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Custom Icons",
         "url": "#custom-icons",
         "items": []
@@ -912,6 +982,11 @@
         "items": []
       },
       {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
         "title": "Overflow",
         "url": "#overflow",
         "items": []
@@ -929,6 +1004,11 @@
       {
         "title": "Installation",
         "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
         "items": []
       }
     ],

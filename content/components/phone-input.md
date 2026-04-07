@@ -17,6 +17,16 @@ description: 'A phone number input component.'
 
 <Add item="phone-input" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { PhoneInput } from '$lib/components/ui/phone-input';
+</script>
+
+<PhoneInput placeholder="Enter a phone number" />
+```
+
 ## Default Country
 
 <Demo demo="phone-input-default-country" />

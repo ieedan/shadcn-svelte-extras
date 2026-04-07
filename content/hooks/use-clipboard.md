@@ -37,7 +37,7 @@ Create a button that copies some text to the clipboard.
 
 So that you can show a status to your users `UseClipboard` delays resetting the state of `.copied`. By default this delay is set to 500ms.
 
-```typescript {2,6}
+```typescript {1}
 const clipboard = new UseClipboard({ delay: 500 });
 ```
 

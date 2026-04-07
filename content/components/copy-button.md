@@ -15,6 +15,16 @@ description: 'A button used to copy text to the clipboard.'
 
 <Add item="copy-button" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { CopyButton } from '$lib/components/ui/copy-button';
+</script>
+
+<CopyButton text="Hello, World!" />
+```
+
 ## Custom Icon
 
 <Demo demo="copy-button-icon" />

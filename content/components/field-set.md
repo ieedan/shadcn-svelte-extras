@@ -15,6 +15,23 @@ description: 'A field set component.'
 
 <Add item="field-set" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import * as FieldSet from '$lib/components/ui/field-set';
+</script>
+
+<FieldSet.Root>
+	<FieldSet.Content>
+		<!-- fields -->
+	</FieldSet.Content>
+	<FieldSet.Footer>
+		<!-- actions -->
+	</FieldSet.Footer>
+</FieldSet.Root>
+```
+
 ## Destructive
 
 <Demo demo="field-set-destructive" />

@@ -15,4 +15,16 @@ description: 'A window component.'
 
 <Add item="window" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { Window } from '$lib/components/ui/window';
+</script>
+
+<Window>
+	<p>Window content</p>
+</Window>
+```
+
 <ApiReference />

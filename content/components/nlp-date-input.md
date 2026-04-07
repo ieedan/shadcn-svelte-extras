@@ -17,6 +17,16 @@ Allows you to provide a date in natural language and helps by giving suggestions
 
 <Add item="nlp-date-input" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { NLPDateInput } from '$lib/components/ui/nlp-date-input';
+</script>
+
+<NLPDateInput />
+```
+
 ## Min/Max
 
 You may want to limit what suggestions are actually presented to the user so that they don't

@@ -17,6 +17,18 @@ description: 'A code component.'
 
 <Add item="code" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import * as Code from '$lib/components/ui/code';
+
+	const code = `const greet = () => console.log('Hello');`;
+</script>
+
+<Code.Root lang="typescript" {code} />
+```
+
 ## Configuring Languages
 
 The highlighter and languages can be configured from `shiki.ts`.

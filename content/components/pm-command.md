@@ -15,6 +15,16 @@ description: 'A package manager command component.'
 
 <Add item="pm-command" />
 
+## Usage
+
+```svelte
+<script lang="ts">
+	import { PMCommand } from '$lib/components/ui/pm-command';
+</script>
+
+<PMCommand command="execute" args={['npm', 'install']} />
+```
+
 ## Commands
 
 We use [package-manager-detector](https://github.com/antfu-collective/package-manager-detector) to ensure that every package manager is properly supported. Also giving your auto-complete for your commands.
