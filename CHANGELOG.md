@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.0.1
+
+### Patch Changes
+
+- fix(PhoneInput): Change `overflow-hidden` -> `overflow-clip` on flag to prevent scrolling issues ([#377](https://github.com/ieedan/shadcn-svelte-extras/pull/377))
+
 ## 7.0.0
 
 ### Major Changes
