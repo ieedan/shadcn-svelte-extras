@@ -14,6 +14,11 @@ const Root = api.createComponentReference<SplitButtonPropsWithoutHTML>({
 		children: api.createAnyProp({
 			description: 'Content for the split button (primary action, separator, menu trigger, etc.).',
 			type: 'Snippet'
+		}),
+		orientation: api.createStringUnionProp({
+			type: '"horizontal" | "vertical"',
+			description: 'Layout direction (same as Button Group).',
+			defaultValue: 'horizontal'
 		})
 	}
 });

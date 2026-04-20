@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { SplitButton } from '$lib/components/ui/split-button';
+	import * as SplitButton from '$lib/components/ui/split-button';
 </script>
 
-<SplitButton>
+<SplitButton.Root>
 	<!-- Implement primary action and dropdown trigger here -->
-</SplitButton>
+</SplitButton.Root>
