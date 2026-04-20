@@ -791,6 +791,27 @@
     "href": "/docs/components/snippet"
   },
   {
+    "title": "Split Button",
+    "description": "A primary action paired with a secondary action (for example, a menu).",
+    "path": "components/split-button",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      }
+    ],
+    "indicator": "new",
+    "slug": "components/split-button",
+    "href": "/docs/components/split-button"
+  },
+  {
     "title": "Star Rating",
     "description": "A simple star rating component.",
     "path": "components/star-rating",

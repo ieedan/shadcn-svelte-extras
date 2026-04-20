@@ -340,6 +340,19 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'split-button',
+					title: 'SplitButton',
+					description:
+						'A split button combining a primary action with a secondary action such as a dropdown menu or alternate command.',
+					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/split-button` },
+					files: [
+						{
+							path: 'src/lib/components/ui/split-button'
+						}
+					]
+				},
+				{
 					name: 'star-rating',
 					title: 'StarRating',
 					description:

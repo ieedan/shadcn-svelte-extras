@@ -20,6 +20,7 @@ import { reference as PhoneInputReference } from './phone-input-api';
 import { reference as PMCommandReference } from './pm-command-api';
 import { reference as NumberFieldReference } from './number-field-api';
 import { reference as SnippetReference } from './snippet-api';
+import { reference as SplitButtonReference } from './split-button-api';
 import { reference as StarRatingReference } from './star-rating-api';
 import { reference as StepperReference } from './stepper-api';
 import { reference as TagsInputReference } from './tags-input-api';
@@ -53,6 +54,7 @@ export const references = [
 	PMCommandReference,
 	NumberFieldReference,
 	SnippetReference,
+	SplitButtonReference,
 	StarRatingReference,
 	StepperReference,
 	TagsInputReference,
@@ -95,6 +97,7 @@ export {
 	PMCommandReference,
 	NumberFieldReference,
 	SnippetReference,
+	SplitButtonReference,
 	StarRatingReference,
 	StepperReference,
 	TagsInputReference,

@@ -80,6 +80,7 @@ export const DEMOS = [
 	'snippet',
 	'snippet-multiline',
 	'snippet-variants',
+	'split-button',
 	'star-rating',
 	'star-rating-custom-color',
 	'star-rating-custom-size',
