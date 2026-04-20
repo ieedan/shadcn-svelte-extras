@@ -8,7 +8,9 @@
 		ref?: HTMLDivElement | null;
 		orientation?: ButtonGroupOrientation;
 		value?: string;
+		disabled?: boolean;
 		onclick?: (event: SplitButtonClickEvent) => void;
+		onClickPromise?: (event: SplitButtonClickEvent) => Promise<void>;
 		onActionSelect?: (value: string) => void;
 	}>;
 
@@ -26,7 +28,9 @@
 		class: className,
 		orientation = 'horizontal',
 		value = $bindable(undefined),
+		disabled,
 		onclick,
+		onClickPromise,
 		onActionSelect,
 		children,
 		...rest
@@ -37,7 +41,9 @@
 			() => value,
 			(v) => (value = v)
 		),
+		disabled: box.with(() => disabled),
 		onclick: box.with(() => onclick),
+		onClickPromise: box.with(() => onClickPromise),
 		onActionSelect: box.with(() => onActionSelect)
 	});
 </script>

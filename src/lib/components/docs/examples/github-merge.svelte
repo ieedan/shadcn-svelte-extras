@@ -34,25 +34,16 @@
 				behind (base commit: <code class="text-xs">28c320c</code>)
 			</p>
 		</div>
-		<SplitButton.Root bind:value={update}>
-			<SplitButton.Action
-				value="merge"
-				size="sm"
-				variant="outline"
-				onClickPromise={async () => {
-					await sleep(1000);
-				}}
-			>
+		<SplitButton.Root
+			bind:value={update}
+			onClickPromise={async () => {
+				await sleep(1000);
+			}}
+		>
+			<SplitButton.Action value="merge" size="sm" variant="outline">
 				Update branch
 			</SplitButton.Action>
-			<SplitButton.Action
-				value="rebase"
-				size="sm"
-				variant="outline"
-				onClickPromise={async () => {
-					await sleep(1000);
-				}}
-			>
+			<SplitButton.Action value="rebase" size="sm" variant="outline">
 				Rebase branch
 			</SplitButton.Action>
 			<SplitButton.Select>
@@ -81,31 +72,15 @@
 	<Separator />
 
 	<div class="flex flex-wrap items-center gap-3 p-4">
-		<SplitButton.Root bind:value={primary}>
-			<SplitButton.Action
-				value="merge"
-				onClickPromise={async () => {
-					await sleep(1000);
-				}}
-			>
-				Merge changes
-			</SplitButton.Action>
-			<SplitButton.Action
-				value="squash"
-				onClickPromise={async () => {
-					await sleep(1000);
-				}}
-			>
-				Squash and merge
-			</SplitButton.Action>
-			<SplitButton.Action
-				value="rebase"
-				onClickPromise={async () => {
-					await sleep(1000);
-				}}
-			>
-				Rebase and merge
-			</SplitButton.Action>
+		<SplitButton.Root
+			bind:value={primary}
+			onClickPromise={async () => {
+				await sleep(1000);
+			}}
+		>
+			<SplitButton.Action value="merge">Merge changes</SplitButton.Action>
+			<SplitButton.Action value="squash">Squash and merge</SplitButton.Action>
+			<SplitButton.Action value="rebase">Rebase and merge</SplitButton.Action>
 			<SplitButton.Select>
 				<SplitButton.SelectTrigger />
 				<SplitButton.SelectContent class="max-w-72">

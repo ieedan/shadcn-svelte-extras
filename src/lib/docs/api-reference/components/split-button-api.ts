@@ -28,10 +28,19 @@ const Root = api.createComponentReference<SplitButtonPropsWithoutHTML>({
 				'The currently selected action value. Matches a child `Action`/`SelectAction` value.',
 			bindable: true
 		}),
+		disabled: api.createBooleanProp({
+			description: 'Disables both the visible action and the dropdown trigger.',
+			defaultValue: false
+		}),
 		onclick: api.createFunctionProp({
 			description:
 				'Fired when the visible action is clicked. Receives `{ action, originalEvent }`.',
 			type: '(event: { action: string; originalEvent: MouseEvent }) => void'
+		}),
+		onClickPromise: api.createFunctionProp({
+			description:
+				'Fired alongside `onclick`. While the returned promise is pending, the action shows a loading state and both the action and dropdown trigger are disabled.',
+			type: '(event: { action: string; originalEvent: MouseEvent }) => Promise<void>'
 		}),
 		onActionSelect: api.createFunctionProp({
 			description: 'Fired when the selected action changes via the dropdown.',

@@ -16,6 +16,8 @@
 		ref = $bindable(null),
 		value,
 		onclick,
+		disabled,
+		loading,
 		children,
 		...rest
 	}: SplitButtonActionProps = $props();
@@ -27,7 +29,13 @@
 </script>
 
 {#if state.isActive}
-	<Button bind:ref onclick={(e) => state.onclick(e)} {...rest}>
+	<Button
+		bind:ref
+		disabled={disabled || state.rootState.disabled}
+		loading={loading || state.rootState.loading}
+		onclick={(e) => state.onclick(e)}
+		{...rest}
+	>
 		{@render children?.()}
 	</Button>
 {/if}

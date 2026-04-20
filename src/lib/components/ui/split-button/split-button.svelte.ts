@@ -13,11 +13,15 @@ type SplitButtonRootProps = WritableBoxedValues<{
 	value: string | undefined;
 }> &
 	ReadableBoxedValues<{
+		disabled: boolean | undefined;
 		onclick: ((event: SplitButtonClickEvent) => void) | undefined;
+		onClickPromise: ((event: SplitButtonClickEvent) => Promise<void>) | undefined;
 		onActionSelect: ((value: string) => void) | undefined;
 	}>;
 
 class SplitButtonRootState {
+	pending = $state(false);
+
 	constructor(readonly opts: SplitButtonRootProps) {}
 
 	seed(value: string) {
@@ -34,18 +38,36 @@ class SplitButtonRootState {
 		this.opts.value.current = value;
 	}
 
+	get disabled() {
+		return this.opts.disabled.current === true || this.pending;
+	}
+
+	get loading() {
+		return this.pending;
+	}
+
 	onSelect(value: string) {
 		this.opts.onActionSelect.current?.(value);
 	}
 
-	onclick(
+	async onclick(
 		event: MouseEvent & {
 			currentTarget: EventTarget & (HTMLButtonElement | HTMLAnchorElement);
 		}
 	) {
 		const action = this.opts.value.current;
 		if (action === undefined) return;
-		this.opts.onclick.current?.({ action, originalEvent: event });
+		const payload: SplitButtonClickEvent = { action, originalEvent: event };
+		this.opts.onclick.current?.(payload);
+		const promiseFn = this.opts.onClickPromise.current;
+		if (promiseFn) {
+			this.pending = true;
+			try {
+				await promiseFn(payload);
+			} finally {
+				this.pending = false;
+			}
+		}
 	}
 }
 
