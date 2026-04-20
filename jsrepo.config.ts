@@ -340,6 +340,19 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'split-button',
+					title: 'SplitButton',
+					description:
+						'A split button combining a primary action with a secondary action such as a dropdown menu or alternate command.',
+					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/split-button` },
+					files: [
+						{
+							path: 'src/lib/components/ui/split-button'
+						}
+					]
+				},
+				{
 					name: 'star-rating',
 					title: 'StarRating',
 					description:
@@ -732,6 +745,17 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'shadcn-svelte-button-group',
+					title: 'shadcn-svelte/button-group',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/button-group'
+						}
+					]
+				},
+				{
 					name: 'shadcn-svelte-collapsible',
 					title: 'shadcn-svelte/collapsible',
 					type: 'ui',
@@ -827,6 +851,28 @@ export default defineConfig({
 					files: [
 						{
 							path: 'src/lib/components/ui/scroll-area'
+						}
+					]
+				},
+				{
+					name: 'shadcn-svelte-select',
+					title: 'shadcn-svelte/select',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/select'
+						}
+					]
+				},
+				{
+					name: 'shadcn-svelte-separator',
+					title: 'shadcn-svelte/separator',
+					type: 'ui',
+					add: 'when-needed',
+					files: [
+						{
+							path: 'src/lib/components/ui/separator'
 						}
 					]
 				},

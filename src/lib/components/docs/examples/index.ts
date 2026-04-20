@@ -8,6 +8,7 @@ import FileDropZone from './file-drop-zone.svelte';
 import PmCommand from './pm-command.svelte';
 import SignupForm from './signup-form.svelte';
 import StepperExample from './stepper-example.svelte';
+import GithubMerge from './github-merge.svelte';
 
 export {
 	ReviewForm,
@@ -19,5 +20,6 @@ export {
 	Terminal,
 	FileDropZone,
 	SignupForm,
-	StepperExample
+	StepperExample,
+	GithubMerge
 };

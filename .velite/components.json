@@ -791,6 +791,32 @@
     "href": "/docs/components/snippet"
   },
   {
+    "title": "Split Button",
+    "description": "Allow users to select which action to perform from a list of options.",
+    "path": "components/split-button",
+    "component": false,
+    "toc": [
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Variants",
+        "url": "#variants",
+        "items": []
+      }
+    ],
+    "indicator": "new",
+    "slug": "components/split-button",
+    "href": "/docs/components/split-button"
+  },
+  {
     "title": "Star Rating",
     "description": "A simple star rating component.",
     "path": "components/star-rating",

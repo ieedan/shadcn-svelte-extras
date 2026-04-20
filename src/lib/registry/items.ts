@@ -30,6 +30,7 @@ export const REGISTRY_ITEMS = [
 	'rename',
 	'shortcut',
 	'snippet',
+	'split-button',
 	'star-rating',
 	'stepper',
 	'tags-input',
