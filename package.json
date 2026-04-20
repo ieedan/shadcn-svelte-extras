@@ -1,7 +1,7 @@
 {
 	"name": "shadcn-svelte-extras",
 	"packageManager": "pnpm@10.23.0",
-	"version": "7.0.1",
+	"version": "7.1.0",
 	"type": "module",
 	"scripts": {
 		"dev": "concurrently -n 'registry,app' -c 'blue,green,yellow' \"pnpm registry:dev\"  \"pnpm dev:app\" \"pnpm dev:content\"",

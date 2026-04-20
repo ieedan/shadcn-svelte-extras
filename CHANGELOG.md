@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.1.0
+
+### Minor Changes
+
+- new component: Split Button 🎉 ([#379](https://github.com/ieedan/shadcn-svelte-extras/pull/379))
+
 ## 7.0.1
 
 ### Patch Changes
