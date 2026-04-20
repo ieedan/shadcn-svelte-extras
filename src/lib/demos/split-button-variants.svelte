@@ -66,19 +66,43 @@
 		}
 	];
 
-	let selectedId = $state(stylePresets[0]!.id);
+	/** `null` = theme default (no preset); otherwise committed look on root + trigger */
+	let appliedPresetId = $state<string | null>(null);
+	/** Selection from the menu + label on the primary segment (may differ until Apply) */
+	let pendingPresetId = $state(stylePresets[0]!.id);
 
-	const activeStyle = $derived(stylePresets.find((p) => p.id === selectedId) ?? stylePresets[0]!);
+	type ResolvedStyle = Pick<StylePreset, 'rootClass' | 'actionSize' | 'triggerSize' | 'variant'>;
+
+	const themeDefault: ResolvedStyle = {};
+
+	const appliedStyle: ResolvedStyle = $derived(
+		appliedPresetId === null
+			? themeDefault
+			: (stylePresets.find((p) => p.id === appliedPresetId) ?? themeDefault)
+	);
+
+	const isApplyDisabled = $derived(pendingPresetId === appliedPresetId);
 </script>
 
-<SplitButton.Root class={activeStyle.rootClass} bind:value={selectedId}>
+<SplitButton.Root
+	class={appliedStyle.rootClass}
+	bind:value={pendingPresetId}
+	onclick={(e) => {
+		appliedPresetId = e.action;
+	}}
+>
 	{#each stylePresets as preset (preset.id)}
-		<SplitButton.Action value={preset.id} size={preset.actionSize} variant={preset.variant}>
-			{preset.label}
+		<SplitButton.Action
+			value={preset.id}
+			size={appliedStyle.actionSize}
+			variant={appliedStyle.variant}
+			disabled={isApplyDisabled}
+		>
+			Apply {preset.label}
 		</SplitButton.Action>
 	{/each}
 	<SplitButton.Select>
-		<SplitButton.SelectTrigger size={activeStyle.triggerSize} variant={activeStyle.variant} />
+		<SplitButton.SelectTrigger size={appliedStyle.triggerSize} variant={appliedStyle.variant} />
 		<SplitButton.SelectContent class="max-w-sm">
 			<SplitButton.SelectGroup>
 				{#each stylePresets as preset (preset.id)}

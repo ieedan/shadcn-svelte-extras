@@ -1,8 +1,16 @@
 <script lang="ts">
 	import * as SplitButton from '$lib/components/ui/split-button';
+
+	function sleep(ms: number) {
+		return new Promise((resolve) => setTimeout(resolve, ms));
+	}
 </script>
 
-<SplitButton.Root>
+<SplitButton.Root
+	onClickPromise={async () => {
+		await sleep(1000);
+	}}
+>
 	<SplitButton.Action value="merge">Merge changes</SplitButton.Action>
 	<SplitButton.Action value="squash">Squash and merge</SplitButton.Action>
 	<SplitButton.Action value="rebase">Rebase and merge</SplitButton.Action>
