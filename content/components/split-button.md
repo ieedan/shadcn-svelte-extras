@@ -1,6 +1,6 @@
 ---
 title: 'Split Button'
-description: 'A primary action paired with a secondary action (for example, a menu).'
+description: 'Allow users to select which action to perform from a list of options.'
 indicator: 'new'
 ---
 
@@ -20,12 +20,24 @@ indicator: 'new'
 
 ```svelte
 <script lang="ts">
-	import { SplitButton } from '$lib/components/ui/split-button';
+	import * as SplitButton from '$lib/components/ui/split-button';
 </script>
 
-<SplitButton>
-	<!-- Primary action and menu trigger -->
-</SplitButton>
+<SplitButton.Root>
+	<SplitButton.Action value="merge">Merge changes</SplitButton.Action>
+	<SplitButton.Action value="squash">Squash and merge</SplitButton.Action>
+	<SplitButton.Action value="rebase">Rebase and merge</SplitButton.Action>
+	<SplitButton.Select>
+		<SplitButton.SelectTrigger />
+		<SplitButton.SelectContent>
+			<SplitButton.SelectGroup>
+				<SplitButton.SelectAction value="merge">Create a merge commit</SplitButton.SelectAction>
+				<SplitButton.SelectAction value="squash">Squash and merge</SplitButton.SelectAction>
+				<SplitButton.SelectAction value="rebase">Rebase and merge</SplitButton.SelectAction>
+			</SplitButton.SelectGroup>
+		</SplitButton.SelectContent>
+	</SplitButton.Select>
+</SplitButton.Root>
 ```
 
 <ApiReference />

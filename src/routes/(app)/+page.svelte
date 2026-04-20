@@ -16,12 +16,22 @@
 	import ChatExample from '$lib/demos/chat.svelte';
 	import { TagsInput } from '$lib/components/ui/tags-input';
 	import Button from '$lib/components/button.svelte';
+	import { Badge } from '$lib/components/ui/badge';
+	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 
 	let tags = $state(['shadcn-svelte', 'extras']);
 </script>
 
 <div class="flex flex-col items-center gap-8">
 	<div class="flex flex-col items-center gap-2 py-6 md:py-10 lg:py-20">
+		<Badge
+			href="/docs/components/split-button"
+			variant="secondary"
+			class="rounded-full"
+		>
+			🎉 New Component: Split Button 
+			<ArrowRightIcon class="size-4 shrink-0" />
+		</Badge>
 		<h1 class="text-center text-5xl font-medium">shadcn-svelte-extras</h1>
 		<p class="text-center text-lg">
 			Finish your component library with beautiful, composable components.

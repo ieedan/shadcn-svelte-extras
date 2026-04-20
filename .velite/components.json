@@ -792,7 +792,7 @@
   },
   {
     "title": "Split Button",
-    "description": "A primary action paired with a secondary action (for example, a menu).",
+    "description": "Allow users to select which action to perform from a list of options.",
     "path": "components/split-button",
     "component": false,
     "toc": [
