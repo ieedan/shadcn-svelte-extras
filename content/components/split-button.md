@@ -40,4 +40,8 @@ indicator: 'new'
 </SplitButton.Root>
 ```
 
+## Variants
+
+<Demo demo="split-button-variants" />
+
 <ApiReference />

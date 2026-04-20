@@ -2,7 +2,7 @@
 	import * as SplitButton from '$lib/components/ui/split-button';
 </script>
 
-<SplitButton.Root class="[--primary-foreground:#fff] [--primary:#1F6FEB]">
+<SplitButton.Root>
 	<SplitButton.Action value="merge">Merge changes</SplitButton.Action>
 	<SplitButton.Action value="squash">Squash and merge</SplitButton.Action>
 	<SplitButton.Action value="rebase">Rebase and merge</SplitButton.Action>

@@ -1,6 +1,5 @@
 <script lang="ts" module>
 	import type { WithoutChildren } from 'bits-ui';
-	import type { ButtonProps } from '$lib/components/ui/button';
 
 	export type SplitButtonActionProps = WithoutChildren<ButtonProps> & {
 		value: string;
@@ -9,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
+	import Button, { type ButtonProps } from '$lib/components/button.svelte';
 	import { useSplitButtonAction } from './split-button.svelte.js';
 	import { box } from 'svelte-toolbelt';
 

@@ -805,6 +805,11 @@
         "title": "Usage",
         "url": "#usage",
         "items": []
+      },
+      {
+        "title": "Variants",
+        "url": "#variants",
+        "items": []
       }
     ],
     "indicator": "new",
