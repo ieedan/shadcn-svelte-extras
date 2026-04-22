@@ -21,18 +21,6 @@ To do this simply click the `Copy Link` button at the top of the page, or append
 
 If you want to view the markdown content of the page you can click the dropdown next to the `Copy Link` button and select `View as Markdown`.
 
-## Accept Header Content Negotiation
-
-Following the [accept markdown](https://acceptmarkdown.com) convention, every page on this site will respond with clean Markdown when the request includes an `Accept: text/markdown` header. The response is served with `Content-Type: text/markdown; charset=utf-8` and `Vary: Accept`, so agents get the token-efficient Markdown representation while browsers still receive HTML from the same URL.
-
-```bash
-curl -H "Accept: text/markdown" https://shadcn-svelte-extras.com/docs/components/button
-```
-
-## Sitemap for Agents
-
-Agents that need to discover what's available can fetch the root of the site as Markdown — either by requesting `/` with `Accept: text/markdown`, or by fetching [`/llms.txt`](/llms.txt) directly. Both return the same Markdown sitemap with links to every doc page (and its `.md` twin).
-
 ## MCP
 
 If you're using `jsrepo` to install shadcn-svelte-extras you can use the [jsrepo mcp](https://www.jsrepo.dev/docs/mcp).
