@@ -27,9 +27,7 @@ export function buildSitemapMarkdown(origin: string): string {
 	lines.push('');
 	lines.push('## How to read the docs as Markdown');
 	lines.push('');
-	lines.push(
-		'- Append `.md` to any doc URL (for example `/docs/components/button.md`).'
-	);
+	lines.push('- Append `.md` to any doc URL (for example `/docs/components/button.md`).');
 	lines.push(
 		'- Or request the HTML URL with `Accept: text/markdown` and the server ' +
 			'will respond with `Content-Type: text/markdown; charset=utf-8` ' +
@@ -50,5 +48,10 @@ export function buildSitemapMarkdown(origin: string): string {
 		lines.push('');
 	}
 
-	return lines.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd() + '\n';
+	return (
+		lines
+			.join('\n')
+			.replace(/\n{3,}/g, '\n\n')
+			.trimEnd() + '\n'
+	);
 }

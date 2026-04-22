@@ -57,9 +57,7 @@ function bestMatch(entries: AcceptEntry[], candidates: Iterable<string>): Accept
 				!best ||
 				entry.q > best.q ||
 				(entry.q === best.q && entry.specificity > best.specificity) ||
-				(entry.q === best.q &&
-					entry.specificity === best.specificity &&
-					entry.index < best.index)
+				(entry.q === best.q && entry.specificity === best.specificity && entry.index < best.index)
 			) {
 				best = entry;
 			}
