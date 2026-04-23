@@ -15,8 +15,10 @@ const MARKDOWN_HEADERS = {
 
 /**
  * Content negotiation per https://acceptmarkdown.com: when a client asks for
- * Markdown we serve it from the same URL, otherwise we fall through to the
- * normal HTML response and tag it with `Vary: Accept`.
+ * Markdown we serve it from the same URL; when the Accept header genuinely
+ * can't be satisfied (no `* / *` fallback, no `text/html`, no `text/markdown`)
+ * we return 406; otherwise we fall through to the normal HTML response and
+ * tag it with `Vary: Accept`.
  */
 const contentNegotiationHandle: Handle = async ({ event, resolve }) => {
 	const { request, url } = event;
@@ -31,6 +33,17 @@ const contentNegotiationHandle: Handle = async ({ event, resolve }) => {
 					headers: MARKDOWN_HEADERS
 				});
 			}
+		}
+
+		if (preference === 'other') {
+			const body = 'Not Acceptable. Available representations: text/html, text/markdown.\n';
+			return new Response(request.method === 'HEAD' ? null : body, {
+				status: 406,
+				headers: {
+					'Content-Type': 'text/plain; charset=utf-8',
+					Vary: 'Accept'
+				}
+			});
 		}
 	}
 
