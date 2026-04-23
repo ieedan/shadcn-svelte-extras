@@ -43,7 +43,7 @@ export function buildSitemapMarkdown(origin: string): string {
 			const pageUrl = `${base}${doc.href}`;
 			const mdUrl = `${base}/docs/${doc.slug}.md`;
 			const label = doc.navLabel ?? doc.title;
-			lines.push(`- [${label}](${pageUrl}) — ${doc.description} ([Markdown](${mdUrl}))`);
+			lines.push(`- [${label}](${pageUrl}) - ${doc.description} ([Markdown](${mdUrl}))`);
 		}
 		lines.push('');
 	}
