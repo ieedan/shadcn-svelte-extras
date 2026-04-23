@@ -1,13 +1,10 @@
-import { allDocs, getDoc } from '$lib/features/docs/docs';
+import { getDoc } from '$lib/features/docs/docs';
 import { error } from '@sveltejs/kit';
-import type { EntryGenerator } from './$types';
 
-export const prerender = true;
-
-export const entries: EntryGenerator = () =>
-	allDocs.map((doc) => ({
-		slug: doc.href === '/docs' ? '' : doc.href.replace(/^\/docs\//, '')
-	}));
+// Intentionally not prerendered: the `hooks.server.ts` content-negotiation
+// handler needs to run on every `/docs/*` request so `Accept: text/markdown`
+// can be served Markdown from the same URL (see https://acceptmarkdown.com).
+// The `.md` twin endpoint is still prerendered for fast agent reads.
 
 export async function load({ params }) {
 	const doc = await getDoc(params.slug);
