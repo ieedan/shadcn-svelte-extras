@@ -4,6 +4,7 @@
 	import { buttonVariants } from '$lib/components/ui/button';
 	import { Label } from '$lib/components/ui/label';
 	import { Input } from '$lib/components/ui/input';
+	import * as Field from '$lib/components/ui/field';
 </script>
 
 <Modal.Root>
@@ -15,16 +16,16 @@
 				Make changes to your profile here. Click save when you're done.
 			</Modal.Description>
 		</Modal.Header>
-		<div class="flex flex-col gap-2">
-			<div>
+		<Field.Group>
+			<Field.Field>
 				<Label for="name">Name</Label>
 				<Input id="name" value="Pedro Duarte" />
-			</div>
-			<div>
+			</Field.Field>
+			<Field.Field>
 				<Label for="username">Username</Label>
 				<Input id="username" value="@peduarte" />
-			</div>
-		</div>
+			</Field.Field>
+		</Field.Group>
 		<Modal.Footer>
 			<Button>Save Changes</Button>
 		</Modal.Footer>
