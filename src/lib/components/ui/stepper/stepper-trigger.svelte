@@ -26,7 +26,7 @@
 	bind:this={ref}
 	data-slot="stepper-trigger"
 	class={cn(
-		'group/stepper-trigger z-1 flex',
+		'group/stepper-trigger z-1 flex outline-none',
 		'group-data-[orientation=horizontal]/stepper-nav:flex-col',
 		'group-data-[orientation=vertical]/stepper-nav:flex-row group-data-[orientation=vertical]/stepper-nav:gap-4',
 		className
