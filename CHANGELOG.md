@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.1.1
+
+### Patch Changes
+
+- fix(Stepper): focus ring follows the circular indicator shape ([#385](https://github.com/ieedan/shadcn-svelte-extras/pull/385))
+
 ## 7.1.0
 
 ### Minor Changes
