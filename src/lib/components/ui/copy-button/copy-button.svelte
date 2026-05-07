@@ -22,6 +22,7 @@
 	import Button from '$lib/components/button.svelte';
 	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
 	import { cn } from '$lib/utils.js';
+	import { mergeProps } from 'bits-ui';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import CopyIcon from '@lucide/svelte/icons/copy';
 	import XIcon from '@lucide/svelte/icons/x';
@@ -48,6 +49,16 @@
 	}
 
 	const clipboard = new UseClipboard();
+
+	const merged = $derived(
+		mergeProps(rest, {
+			onclick: async () => {
+				const status = await clipboard.copy(text);
+
+				onCopy?.(status);
+			}
+		})
+	);
 </script>
 
 <Button
@@ -58,12 +69,7 @@
 	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
-	onclick={async () => {
-		const status = await clipboard.copy(text);
-
-		onCopy?.(status);
-	}}
-	{...rest as /* eslint-disable-line @typescript-eslint/no-explicit-any */ any}
+	{...merged as /* eslint-disable-line @typescript-eslint/no-explicit-any */ any}
 >
 	{#if clipboard.status === 'success'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>
