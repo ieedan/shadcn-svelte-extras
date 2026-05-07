@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.1.2
+
+### Patch Changes
+
+- fix(CopyButton): compose `onclick` with spread props so wrappers like `Tooltip.Trigger` no longer override the copy handler (fixes broken copy in `PMCommand` and `JsrepoCommand`) ([#387](https://github.com/ieedan/shadcn-svelte-extras/pull/387))
+
 ## 7.1.1
 
 ### Patch Changes
