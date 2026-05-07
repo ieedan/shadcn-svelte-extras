@@ -40,7 +40,7 @@
 			</Alert.Title>
 		</Alert.Root>
 	{:else if Object.entries(component.props).length > 0}
-		<div class="border-border bg-card rounded-lg border">
+		<div class="border-border bg-card overflow-hidden rounded-lg border">
 			<table class={cn('w-full', '')}>
 				<thead>
 					<tr class="border-border border-b">
