@@ -8,7 +8,13 @@
       {
         "title": "Providing Agents With Documentation",
         "url": "#providing-agents-with-documentation",
-        "items": []
+        "items": [
+          {
+            "title": "Sitemap for Agents",
+            "url": "#sitemap-for-agents",
+            "items": []
+          }
+        ]
       },
       {
         "title": "MCP",

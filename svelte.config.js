@@ -45,7 +45,7 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			origin: 'https://shadcn-svelte-extras.com',
-			entries: mdPrerenderPaths
+			entries: [...mdPrerenderPaths, '/llms.txt']
 		},
 		alias: {
 			$content: '.velite',

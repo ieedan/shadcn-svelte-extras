@@ -21,6 +21,10 @@ To do this simply click the `Copy Link` button at the top of the page, or append
 
 If you want to view the markdown content of the page you can click the dropdown next to the `Copy Link` button and select `View as Markdown`.
 
+### Sitemap for Agents
+
+You can find a complete sitemap of the documentation at [`/llms.txt`](/llms.txt). This is also a convenient way to let the agent know what components are available.
+
 ## MCP
 
 If you're using `jsrepo` to install shadcn-svelte-extras you can use the [jsrepo mcp](https://www.jsrepo.dev/docs/mcp).
