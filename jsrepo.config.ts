@@ -1,8 +1,7 @@
-import { execSync } from 'node:child_process';
 import { defineConfig, InvalidImportWarning, RegistryItem } from 'jsrepo';
 import addType from './.jsrepo/outputs/add-type';
 import demoType from './.jsrepo/outputs/demo-type';
-import registryJson from './.jsrepo/outputs/registry-json';
+import { output as shadcnSvelteOutput } from '@jsrepo/shadcn-svelte';
 
 // Documentation URLs live in item `meta.documentation`, not `files`: jsrepo --watch fs.watches every listed path; Velite also watches markdown under content/, which caused rebuild churn when docs were registry files.
 const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';
@@ -38,7 +37,26 @@ export default defineConfig({
 			lib: '$lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
-		outputs: [addType(), demoType(), registryJson()],
+		outputs: [
+			addType(),
+			demoType(),
+			shadcnSvelteOutput({
+				dir: './static/r',
+				cleanOnFailure: false,
+				aliases: {
+					lib: '$lib',
+					ui: '$lib/components/ui',
+					components: '$lib/components',
+					utils: '$lib/utils',
+					hooks: '$lib/hooks'
+				},
+				typeMap: {
+					util: 'registry:lib',
+					action: 'registry:lib',
+					logo: 'registry:component'
+				}
+			})
+		],
 		items: [
 			// ui
 			...([
@@ -734,8 +752,8 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'shadcn-svelte-button',
-					title: 'shadcn-svelte/button',
+					name: 'button',
+					title: 'button',
 					type: 'ui',
 					add: 'when-needed',
 					files: [
@@ -943,16 +961,6 @@ export default defineConfig({
 			}
 
 			handler(warning);
-		}
-	},
-	hooks: {
-		after: async (args) => {
-			if (args.command !== 'build') return;
-			execSync('pnpm exec shadcn-svelte registry build', {
-				cwd: args.options.cwd,
-				stdio: 'inherit',
-				env: process.env
-			});
 		}
 	}
 });
