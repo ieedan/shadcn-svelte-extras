@@ -63,7 +63,7 @@ export class UseAutoScroll {
 			}
 		);
 
-		// should detect when something changed that effected the scroll height
+		// should detect when something changed that affected the scroll height
 		useMutationObserver(
 			() => this.#ref,
 			() => {
