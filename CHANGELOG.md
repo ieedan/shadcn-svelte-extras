@@ -1,5 +1,15 @@
 # shadcn-svelte-extras
 
+## 7.1.3
+
+### Patch Changes
+
+- fix: Hide other icons when the `<Button/>` is loading ([#395](https://github.com/ieedan/shadcn-svelte-extras/pull/395))
+
+- fix: Remove `tabindex={-1}` for `<CopyButton/>` ([#395](https://github.com/ieedan/shadcn-svelte-extras/pull/395))
+
+- fix: Fix tab behavior on `<IPV4AddressInput/>` ([#395](https://github.com/ieedan/shadcn-svelte-extras/pull/395))
+
 ## 7.1.2
 
 ### Patch Changes
