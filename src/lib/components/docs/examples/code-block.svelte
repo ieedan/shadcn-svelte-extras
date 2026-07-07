@@ -18,7 +18,7 @@
 				src/routes/+layout.svelte
 			</span>
 		</div>
-		<CopyButton text={code} class="size-7" />
+		<CopyButton text={code} tabindex={-1} class="size-7" />
 	</div>
 	<Code.Root lang="svelte" class="border-none" {code} highlight={[2, 5]} />
 </div>
