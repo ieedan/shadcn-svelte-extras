@@ -93,6 +93,7 @@
 	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={secondInput}
+		tabindex={-1}
 		goNext={() => thirdInput?.focus()}
 		goPrevious={() => firstInput?.focus()}
 		bind:value={
@@ -115,6 +116,7 @@
 	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={thirdInput}
+		tabindex={-1}
 		goNext={() => fourthInput?.focus()}
 		goPrevious={() => secondInput?.focus()}
 		bind:value={
@@ -137,6 +139,7 @@
 	<span class="font-mono">{separator}</span>
 	<Input
 		bind:ref={fourthInput}
+		tabindex={-1}
 		goPrevious={() => thirdInput?.focus()}
 		bind:value={
 			() => octets[3],
@@ -156,4 +159,4 @@
 		onpaste={paste}
 	/>
 </div>
-<input class="hidden" {name} {value} />
+<input class="hidden" tabindex={-1} {name} {value} />

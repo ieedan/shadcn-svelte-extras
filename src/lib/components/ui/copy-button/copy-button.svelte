@@ -37,7 +37,7 @@
 		size = 'icon',
 		onCopy,
 		class: className,
-		tabindex = -1,
+		tabindex,
 		children,
 		...rest
 	}: CopyButtonProps = $props();
@@ -69,7 +69,7 @@
 	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
-	{...merged as /* eslint-disable-line @typescript-eslint/no-explicit-any */ any}
+	{...merged as unknown as ButtonProps}
 >
 	{#if clipboard.status === 'success'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>
