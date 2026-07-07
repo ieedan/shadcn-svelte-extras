@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import type { ButtonProps } from '$lib/components/ui/button';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { type WithChildren, type WithoutChildren } from 'bits-ui';
+	import type { WithChildren, WithoutChildren } from 'bits-ui';
 
 	export type CopyButtonPropsWithoutHTML = WithChildren<
 		Pick<ButtonProps, 'size' | 'variant'> & {
@@ -50,11 +50,8 @@
 
 	const clipboard = new UseClipboard();
 
-	const mergedProps = $derived(
+	const merged = $derived(
 		mergeProps(rest, {
-			variant,
-			size, 
-			tabindex,
 			onclick: async () => {
 				const status = await clipboard.copy(text);
 
@@ -66,10 +63,13 @@
 
 <Button
 	bind:ref
+	{variant}
+	{size}
+	{tabindex}
 	class={cn('flex items-center gap-2', className)}
 	type="button"
 	name="copy"
-	{...mergedProps as unknown as ButtonProps}
+	{...merged as unknown as ButtonProps}
 >
 	{#if clipboard.status === 'success'}
 		<div in:scale={{ duration: animationDuration, start: 0.85 }}>
