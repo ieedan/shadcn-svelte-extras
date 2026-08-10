@@ -3,6 +3,14 @@ import type { FileRejectedReason } from './types';
 import { Context } from 'runed';
 import type { HTMLAttributes } from 'svelte/elements';
 
+function getFiles(dataTransfer: DataTransfer | null): File[] {
+	return Array.from(dataTransfer?.files ?? []);
+}
+
+function hasFiles(dataTransfer: DataTransfer | null): boolean {
+	return dataTransfer?.types.includes('Files') ?? false;
+}
+
 type FileDropZoneStateOptions = ReadableBoxedValues<{
 	id: string;
 	disabled: boolean;
@@ -16,6 +24,7 @@ type FileDropZoneStateOptions = ReadableBoxedValues<{
 
 class FileDropZoneState {
 	uploading = $state(false);
+	#handledPasteEvents = new WeakSet<ClipboardEvent>();
 
 	constructor(readonly opts: FileDropZoneStateOptions) {
 		if (this.opts.maxFiles !== undefined && this.opts.fileCount === undefined) {
@@ -37,9 +46,23 @@ class FileDropZoneState {
 
 		e.preventDefault();
 
-		const droppedFiles = Array.from(e.dataTransfer?.files ?? []);
+		const droppedFiles = getFiles(e.dataTransfer);
 
 		await this.upload(droppedFiles);
+	}
+
+	async uploadFromClipboard(e: ClipboardEvent) {
+		if (this.opts.disabled.current || !this.canUploadFiles) return;
+
+		if (this.#handledPasteEvents.has(e)) return;
+
+		this.#handledPasteEvents.add(e);
+
+		const pastedFiles = getFiles(e.clipboardData);
+
+		if (pastedFiles.length === 0) return;
+
+		await this.upload(pastedFiles);
 	}
 
 	async onchange(
@@ -189,17 +212,7 @@ class FileDropZoneTextareaState {
 	}
 
 	onpaste(e: Parameters<NonNullable<HTMLAttributes<HTMLTextAreaElement>['onpaste']>>[0]) {
-		const clipboardData = e.clipboardData;
-		if (!clipboardData) {
-			this.opts.onpaste.current?.(e);
-			return;
-		}
-
-		const files = Array.from(clipboardData.items)
-			.map((item) => item.getAsFile())
-			.filter((file) => file !== null);
-
-		this.rootState.upload(files);
+		this.rootState.uploadFromClipboard(e);
 
 		this.opts.onpaste.current?.(e);
 	}
@@ -209,6 +222,94 @@ class FileDropZoneTextareaState {
 		ondrop: this.ondrop.bind(this),
 		onpaste: this.onpaste.bind(this)
 	}));
+}
+
+type FileDropZonePasteCaptureStateOptions = ReadableBoxedValues<{
+	disabled: boolean;
+	onpaste: ((e: ClipboardEvent) => void) | undefined;
+}>;
+
+class FileDropZonePasteCaptureState {
+	constructor(
+		readonly opts: FileDropZonePasteCaptureStateOptions,
+		readonly rootState: FileDropZoneState
+	) {}
+
+	onpaste(e: ClipboardEvent) {
+		if (!this.opts.disabled.current) {
+			this.rootState.uploadFromClipboard(e);
+		}
+
+		this.opts.onpaste.current?.(e);
+	}
+
+	props = {
+		onpaste: this.onpaste.bind(this)
+	};
+}
+
+type FileDropZoneDragOverlayStateOptions = ReadableBoxedValues<{
+	disabled: boolean;
+}>;
+
+class FileDropZoneDragOverlayState {
+	#depth = $state(0);
+
+	constructor(
+		readonly opts: FileDropZoneDragOverlayStateOptions,
+		readonly rootState: FileDropZoneState
+	) {}
+
+	canDropFiles = $derived.by(() => !this.opts.disabled.current && this.rootState.canUploadFiles);
+
+	dragging = $derived.by(() => this.#depth > 0 && this.canDropFiles);
+
+	ondragenter(e: DragEvent) {
+		if (!hasFiles(e.dataTransfer)) return;
+
+		this.#depth++;
+	}
+
+	ondragleave(e: DragEvent) {
+		if (!hasFiles(e.dataTransfer)) return;
+
+		this.#depth = Math.max(this.#depth - 1, 0);
+	}
+
+	ondragover(e: DragEvent) {
+		if (!this.dragging) return;
+
+		e.preventDefault();
+	}
+
+	reset() {
+		this.#depth = 0;
+	}
+
+	async ondrop(
+		e: DragEvent & {
+			currentTarget: EventTarget;
+		}
+	) {
+		this.reset();
+
+		if (!this.canDropFiles) return;
+
+		await this.rootState.ondrop(e);
+	}
+
+	windowProps = {
+		ondragenter: this.ondragenter.bind(this),
+		ondragleave: this.ondragleave.bind(this),
+		ondragover: this.ondragover.bind(this),
+		ondragend: this.reset.bind(this),
+		ondrop: this.reset.bind(this)
+	};
+
+	props = {
+		ondragover: this.ondragover.bind(this),
+		ondrop: this.ondrop.bind(this)
+	};
 }
 
 const ctx = new Context<FileDropZoneState>('file-drop-zone-state');
@@ -223,4 +324,12 @@ export function useFileDropZoneTrigger() {
 
 export function useFileDropZoneTextarea(opts: FileDropZoneTextareaOptions) {
 	return new FileDropZoneTextareaState(opts, ctx.get());
+}
+
+export function useFileDropZonePasteCapture(opts: FileDropZonePasteCaptureStateOptions) {
+	return new FileDropZonePasteCaptureState(opts, ctx.get());
+}
+
+export function useFileDropZoneDragOverlay(opts: FileDropZoneDragOverlayStateOptions) {
+	return new FileDropZoneDragOverlayState(opts, ctx.get());
 }

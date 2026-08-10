@@ -1,5 +1,7 @@
 import * as api from '../api-reference';
 import type {
+	FileDropZoneDragOverlayPropsWithoutHTML,
+	FileDropZonePasteCaptureProps,
 	FileDropZoneRootPropsWithoutHTML,
 	FileDropZoneTriggerPropsWithoutHTML
 } from '$lib/components/ui/file-drop-zone/types';
@@ -95,11 +97,58 @@ const Textarea = api.createComponentReference({
 	}
 });
 
+const PasteCapture = api.createComponentReference<FileDropZonePasteCaptureProps>({
+	name: 'PasteCapture',
+	description:
+		'Captures paste events anywhere on the page and uploads any files found on the clipboard. Renders nothing.',
+	props: {
+		disabled: api.createBooleanProp({
+			description: 'Whether pasted files should be prevented from being uploaded.',
+			defaultValue: false
+		}),
+		onpaste: api.createFunctionProp({
+			description: 'Called whenever the user pastes anywhere on the page.',
+			type: '(e: ClipboardEvent) => void'
+		})
+	}
+});
+
+const DragOverlay = api.createComponentReference<FileDropZoneDragOverlayPropsWithoutHTML>({
+	name: 'DragOverlay',
+	description:
+		'A page wide overlay that is shown while the user drags files over the page and accepts the files when they are dropped. Provides a default UI if no children are provided.',
+	props: {
+		ref: api.createAnyProp({
+			description: 'A reference to the overlay element.',
+			bindable: true,
+			type: 'HTMLDivElement',
+			defaultValue: 'null'
+		}),
+		disabled: api.createBooleanProp({
+			description: 'Whether the overlay should be prevented from being shown.',
+			defaultValue: false
+		}),
+		portalProps: api.createAnyProp({
+			description:
+				'Props passed to the portal the overlay is rendered into. Disable the portal to scope the overlay to its container.',
+			type: 'PortalProps',
+			tooltip: '{ to?: Element | string; disabled?: boolean }'
+		}),
+		children: api.createAnyProp({
+			description:
+				'Custom content to render inside the overlay. If not provided, a default overlay UI is shown.',
+			type: 'Snippet'
+		})
+	}
+});
+
 export const reference = {
 	name: 'FileDropZone' as const,
 	components: {
 		Root,
 		Trigger,
-		Textarea
+		Textarea,
+		PasteCapture,
+		DragOverlay
 	}
 };

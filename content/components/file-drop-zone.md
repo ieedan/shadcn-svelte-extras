@@ -27,6 +27,8 @@ description: 'A file drop zone component.'
 <FileDropZone.Root>
 	<FileDropZone.Trigger />
 	<FileDropZone.Textarea />
+	<FileDropZone.PasteCapture />
+	<FileDropZone.DragOverlay />
 </FileDropZone.Root>
 ```
 
@@ -37,7 +39,9 @@ Use the following composition to build a `FileDropZone`:
 ```text
 FileDropZone.Root
 ├── FileDropZone.Trigger
-└── FileDropZone.Textarea
+├── FileDropZone.Textarea
+├── FileDropZone.PasteCapture
+└── FileDropZone.DragOverlay
 ```
 
 Custom placeholder:
@@ -57,6 +61,44 @@ Custom placeholder:
 You can use the Textarea component to allow users to paste or drag and drop files into a textarea.
 
 <Demo demo="file-drop-zone-text-area" />
+
+## Paste Capture
+
+Use the `PasteCapture` component to upload files whenever the user pastes anywhere on the page. Only files are uploaded, pasted text is ignored.
+
+<Demo demo="file-drop-zone-paste-capture" />
+
+`PasteCapture` renders nothing so it can be placed anywhere inside of `FileDropZone.Root`:
+
+```svelte
+<script lang="ts">
+	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
+</script>
+
+<FileDropZone.Root {onUpload}>
+	<FileDropZone.PasteCapture />
+	<FileDropZone.Trigger />
+</FileDropZone.Root>
+```
+
+When it's used alongside `FileDropZone.Textarea` a single paste is only ever uploaded once.
+
+## Drag Overlay
+
+Use the `DragOverlay` component to show a page wide overlay while the user drags files over the page. Files dropped onto the overlay are uploaded just like files dropped onto the `Trigger`.
+
+<Demo demo="file-drop-zone-drag-overlay" />
+
+The overlay is portalled to the `body` and covers the viewport. To scope it to a container instead, disable the portal and make it absolutely positioned:
+
+```svelte
+<div class="relative">
+	<FileDropZone.Root {onUpload}>
+		<FileDropZone.Trigger />
+		<FileDropZone.DragOverlay class="absolute" portalProps={{ disabled: true }} />
+	</FileDropZone.Root>
+</div>
+```
 
 ## Form
 

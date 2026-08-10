@@ -1,6 +1,6 @@
-import type { WithChildren } from 'bits-ui';
+import type { PortalProps, WithChildren, WithoutChildren } from 'bits-ui';
 import type { WithElementRef } from 'svelte-toolbelt';
-import type { HTMLInputAttributes, HTMLLabelAttributes } from 'svelte/elements';
+import type { HTMLAttributes, HTMLInputAttributes, HTMLLabelAttributes } from 'svelte/elements';
 
 export type FileRejectedReason =
 	| 'Maximum file size exceeded'
@@ -53,3 +53,25 @@ export type FileDropZoneTriggerPropsWithoutHTML = WithChildren<WithElementRef<{}
 
 export type FileDropZoneTriggerProps = FileDropZoneTriggerPropsWithoutHTML &
 	Omit<HTMLLabelAttributes, 'for'>;
+
+export type FileDropZonePasteCaptureProps = {
+	/** Prevents pasted files from being uploaded. */
+	disabled?: boolean;
+	/** Called whenever the user pastes anywhere on the page. */
+	onpaste?: (e: ClipboardEvent) => void;
+};
+
+export type FileDropZoneDragOverlayPropsWithoutHTML = WithChildren<
+	WithElementRef<
+		{
+			/** Prevents the overlay from being shown and files from being dropped onto it. */
+			disabled?: boolean;
+			/** Props passed to the portal the overlay is rendered into. */
+			portalProps?: WithoutChildren<PortalProps>;
+		},
+		HTMLDivElement
+	>
+>;
+
+export type FileDropZoneDragOverlayProps = FileDropZoneDragOverlayPropsWithoutHTML &
+	Omit<HTMLAttributes<HTMLDivElement>, 'children'>;
