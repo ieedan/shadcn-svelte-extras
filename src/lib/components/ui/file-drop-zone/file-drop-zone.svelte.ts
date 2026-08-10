@@ -239,7 +239,13 @@ class FileDropZoneDragOverlayState {
 	constructor(
 		readonly opts: FileDropZoneDragOverlayStateOptions,
 		readonly rootState: FileDropZoneState
-	) {}
+	) {
+		this.ondragenter = this.ondragenter.bind(this);
+		this.ondragleave = this.ondragleave.bind(this);
+		this.ondragover = this.ondragover.bind(this);
+		this.ondrop = this.ondrop.bind(this);
+		this.reset = this.reset.bind(this);
+	}
 
 	canDropFiles = $derived.by(() => !this.opts.disabled.current && this.rootState.canUploadFiles);
 
@@ -279,18 +285,18 @@ class FileDropZoneDragOverlayState {
 		await this.rootState.ondrop(e);
 	}
 
-	windowProps = {
-		ondragenter: this.ondragenter.bind(this),
-		ondragleave: this.ondragleave.bind(this),
-		ondragover: this.ondragover.bind(this),
-		ondragend: this.reset.bind(this),
-		ondrop: this.reset.bind(this)
-	};
+	windowProps = $derived.by(() => ({
+		ondragenter: this.ondragenter,
+		ondragleave: this.ondragleave,
+		ondragover: this.ondragover,
+		ondragend: this.reset,
+		ondrop: this.reset
+	}));
 
-	props = {
-		ondragover: this.ondragover.bind(this),
-		ondrop: this.ondrop.bind(this)
-	};
+	props = $derived.by(() => ({
+		ondragover: this.ondragover,
+		ondrop: this.ondrop
+	}));
 }
 
 const ctx = new Context<FileDropZoneState>('file-drop-zone-state');
