@@ -316,7 +316,6 @@
         "items": []
       }
     ],
-    "indicator": "new",
     "slug": "components/github-button",
     "href": "/docs/components/github-button"
   },
@@ -812,7 +811,6 @@
         "items": []
       }
     ],
-    "indicator": "new",
     "slug": "components/split-button",
     "href": "/docs/components/split-button"
   },

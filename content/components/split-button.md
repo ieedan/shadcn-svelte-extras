@@ -1,7 +1,6 @@
 ---
 title: 'Split Button'
 description: 'Allow users to select which action to perform from a list of options.'
-indicator: 'new'
 ---
 
 <script lang="ts">
