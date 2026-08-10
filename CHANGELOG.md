@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.1.4
+
+### Patch Changes
+
+- chore: upgrade zxcvbn-ts to v4 ([#397](https://github.com/ieedan/shadcn-svelte-extras/pull/397))
+
 ## 7.1.3
 
 ### Patch Changes

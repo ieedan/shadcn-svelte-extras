@@ -1,7 +1,6 @@
 ---
 title: 'GitHub Button'
 description: 'A button that displays the number of stars and links to a GitHub repository.'
-indicator: 'new'
 ---
 
 <script lang="ts">
