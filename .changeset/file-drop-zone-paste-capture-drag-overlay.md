@@ -2,4 +2,4 @@
 'shadcn-svelte-extras': minor
 ---
 
-feat: Add `<FileDropZone.PasteCapture/>` and `<FileDropZone.DragOverlay/>`
+feat: Add `capturePaste` to `<FileDropZone.Root/>` and add `<FileDropZone.DragOverlay/>`

@@ -35,7 +35,7 @@
 	};
 </script>
 
-<div class="relative flex w-full flex-col gap-2 p-6">
+<div class="flex w-full flex-col gap-2 p-6">
 	<FileDropZone.Root
 		{onUpload}
 		{onFileRejected}
@@ -45,7 +45,7 @@
 		fileCount={files.length}
 	>
 		<FileDropZone.Trigger />
-		<FileDropZone.DragOverlay class="absolute rounded-md" portalProps={{ disabled: true }} />
+		<FileDropZone.DragOverlay />
 	</FileDropZone.Root>
 	<div class="flex flex-col gap-2">
 		{#each files as file, i (file.name)}

@@ -1,7 +1,6 @@
 import * as api from '../api-reference';
 import type {
 	FileDropZoneDragOverlayPropsWithoutHTML,
-	FileDropZonePasteCaptureProps,
 	FileDropZoneRootPropsWithoutHTML,
 	FileDropZoneTriggerPropsWithoutHTML
 } from '$lib/components/ui/file-drop-zone/types';
@@ -46,6 +45,11 @@ const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 		accept: api.createStringProp({
 			description:
 				'A comma separated list of one or more file types to accept. [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept)\n\nExample: ".doc,.docx,application/msword"\nCommon: "audio/*", "image/*", "video/*"'
+		}),
+		capturePaste: api.createBooleanProp({
+			description:
+				'Whether to upload any files on the clipboard when the user pastes anywhere on the page. Pasted text is ignored.',
+			defaultValue: false
 		})
 	}
 });
@@ -97,22 +101,6 @@ const Textarea = api.createComponentReference({
 	}
 });
 
-const PasteCapture = api.createComponentReference<FileDropZonePasteCaptureProps>({
-	name: 'PasteCapture',
-	description:
-		'Captures paste events anywhere on the page and uploads any files found on the clipboard. Renders nothing.',
-	props: {
-		disabled: api.createBooleanProp({
-			description: 'Whether pasted files should be prevented from being uploaded.',
-			defaultValue: false
-		}),
-		onpaste: api.createFunctionProp({
-			description: 'Called whenever the user pastes anywhere on the page.',
-			type: '(e: ClipboardEvent) => void'
-		})
-	}
-});
-
 const DragOverlay = api.createComponentReference<FileDropZoneDragOverlayPropsWithoutHTML>({
 	name: 'DragOverlay',
 	description:
@@ -148,7 +136,6 @@ export const reference = {
 		Root,
 		Trigger,
 		Textarea,
-		PasteCapture,
 		DragOverlay
 	}
 };

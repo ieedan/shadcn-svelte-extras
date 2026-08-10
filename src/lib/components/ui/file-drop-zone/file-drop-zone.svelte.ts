@@ -35,6 +35,11 @@ class FileDropZoneState {
 
 		this.onchange = this.onchange.bind(this);
 		this.ondrop = this.ondrop.bind(this);
+		this.onpaste = this.onpaste.bind(this);
+	}
+
+	onpaste(e: ClipboardEvent) {
+		this.uploadFromClipboard(e);
 	}
 
 	async ondrop(
@@ -224,30 +229,6 @@ class FileDropZoneTextareaState {
 	}));
 }
 
-type FileDropZonePasteCaptureStateOptions = ReadableBoxedValues<{
-	disabled: boolean;
-	onpaste: ((e: ClipboardEvent) => void) | undefined;
-}>;
-
-class FileDropZonePasteCaptureState {
-	constructor(
-		readonly opts: FileDropZonePasteCaptureStateOptions,
-		readonly rootState: FileDropZoneState
-	) {}
-
-	onpaste(e: ClipboardEvent) {
-		if (!this.opts.disabled.current) {
-			this.rootState.uploadFromClipboard(e);
-		}
-
-		this.opts.onpaste.current?.(e);
-	}
-
-	props = {
-		onpaste: this.onpaste.bind(this)
-	};
-}
-
 type FileDropZoneDragOverlayStateOptions = ReadableBoxedValues<{
 	disabled: boolean;
 }>;
@@ -324,10 +305,6 @@ export function useFileDropZoneTrigger() {
 
 export function useFileDropZoneTextarea(opts: FileDropZoneTextareaOptions) {
 	return new FileDropZoneTextareaState(opts, ctx.get());
-}
-
-export function useFileDropZonePasteCapture(opts: FileDropZonePasteCaptureStateOptions) {
-	return new FileDropZonePasteCaptureState(opts, ctx.get());
 }
 
 export function useFileDropZoneDragOverlay(opts: FileDropZoneDragOverlayStateOptions) {

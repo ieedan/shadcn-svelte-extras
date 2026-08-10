@@ -22,6 +22,8 @@ export type FileDropZoneRootPropsWithoutHTML = WithChildren<{
 	maxFileSize?: number;
 	/** Called when a file does not meet the upload criteria (size, or type) */
 	onFileRejected?: (opts: { reason: FileRejectedReason; file: File }) => void;
+	/** Uploads any files on the clipboard when the user pastes anywhere on the page. Pasted text is ignored. */
+	capturePaste?: boolean;
 
 	// just for extra documentation
 	/** Takes a comma separated list of one or more file types.
@@ -53,13 +55,6 @@ export type FileDropZoneTriggerPropsWithoutHTML = WithChildren<WithElementRef<{}
 
 export type FileDropZoneTriggerProps = FileDropZoneTriggerPropsWithoutHTML &
 	Omit<HTMLLabelAttributes, 'for'>;
-
-export type FileDropZonePasteCaptureProps = {
-	/** Prevents pasted files from being uploaded. */
-	disabled?: boolean;
-	/** Called whenever the user pastes anywhere on the page. */
-	onpaste?: (e: ClipboardEvent) => void;
-};
 
 export type FileDropZoneDragOverlayPropsWithoutHTML = WithChildren<
 	WithElementRef<

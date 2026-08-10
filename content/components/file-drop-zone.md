@@ -27,7 +27,6 @@ description: 'A file drop zone component.'
 <FileDropZone.Root>
 	<FileDropZone.Trigger />
 	<FileDropZone.Textarea />
-	<FileDropZone.PasteCapture />
 	<FileDropZone.DragOverlay />
 </FileDropZone.Root>
 ```
@@ -40,7 +39,6 @@ Use the following composition to build a `FileDropZone`:
 FileDropZone.Root
 ├── FileDropZone.Trigger
 ├── FileDropZone.Textarea
-├── FileDropZone.PasteCapture
 └── FileDropZone.DragOverlay
 ```
 
@@ -64,19 +62,16 @@ You can use the Textarea component to allow users to paste or drag and drop file
 
 ## Paste Capture
 
-Use the `PasteCapture` component to upload files whenever the user pastes anywhere on the page. Only files are uploaded, pasted text is ignored.
+Add `capturePaste` to upload files whenever the user pastes anywhere on the page. Only files are uploaded, pasted text is ignored.
 
 <Demo demo="file-drop-zone-paste-capture" />
-
-`PasteCapture` renders nothing so it can be placed anywhere inside of `FileDropZone.Root`:
 
 ```svelte
 <script lang="ts">
 	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
 </script>
 
-<FileDropZone.Root {onUpload}>
-	<FileDropZone.PasteCapture />
+<FileDropZone.Root {onUpload} capturePaste>
 	<FileDropZone.Trigger />
 </FileDropZone.Root>
 ```
@@ -89,7 +84,7 @@ Use the `DragOverlay` component to show a page wide overlay while the user drags
 
 <Demo demo="file-drop-zone-drag-overlay" />
 
-The overlay is portalled to the `body` and covers the viewport. To scope it to a container instead, disable the portal and make it absolutely positioned:
+The overlay is portalled to the `body` so it covers the whole page no matter where `FileDropZone.Root` lives in your tree. To scope it to a container instead, disable the portal and make it absolutely positioned:
 
 ```svelte
 <div class="relative">

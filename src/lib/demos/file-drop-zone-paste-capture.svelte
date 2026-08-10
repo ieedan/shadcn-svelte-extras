@@ -46,8 +46,8 @@
 		accept="image/*"
 		maxFiles={4}
 		fileCount={files.length}
+		capturePaste
 	>
-		<FileDropZone.PasteCapture />
 		<FileDropZone.Trigger>
 			<div
 				class="hover:bg-accent/25 flex h-48 flex-col place-items-center justify-center gap-2 rounded-lg border border-dashed p-6 transition-all hover:cursor-pointer"

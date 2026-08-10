@@ -13,6 +13,7 @@
 		onUpload,
 		onFileRejected,
 		accept,
+		capturePaste = false,
 		children,
 		...rest
 	}: FileDropZoneRootProps = $props();
@@ -28,6 +29,8 @@
 		accept: box.with(() => accept)
 	});
 </script>
+
+<svelte:document onpaste={capturePaste ? rootState.onpaste : undefined} />
 
 <input class="hidden" {...rootState.props} {...rest} />
 

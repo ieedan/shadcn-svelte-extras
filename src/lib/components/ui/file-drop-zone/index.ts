@@ -1,11 +1,9 @@
 import Root from './file-drop-zone.svelte';
 import Trigger from './file-drop-zone-trigger.svelte';
 import Textarea from './file-drop-zone-textarea.svelte';
-import PasteCapture from './file-drop-zone-paste-capture.svelte';
 import DragOverlay from './file-drop-zone-drag-overlay.svelte';
 import type {
 	FileDropZoneDragOverlayProps,
-	FileDropZonePasteCaptureProps,
 	FileDropZoneRootProps,
 	FileRejectedReason
 } from './types';
@@ -35,10 +33,8 @@ export {
 	Root,
 	Trigger,
 	Textarea,
-	PasteCapture,
 	DragOverlay,
 	type FileDropZoneRootProps,
-	type FileDropZonePasteCaptureProps,
 	type FileDropZoneDragOverlayProps,
 	type FileRejectedReason
 };
