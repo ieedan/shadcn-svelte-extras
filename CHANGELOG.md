@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.2.0
+
+### Minor Changes
+
+- feat: Add `capturePaste` to `<FileDropZone.Root/>` and add `<FileDropZone.DragOverlay/>` ([#399](https://github.com/ieedan/shadcn-svelte-extras/pull/399))
+
 ## 7.1.4
 
 ### Patch Changes
