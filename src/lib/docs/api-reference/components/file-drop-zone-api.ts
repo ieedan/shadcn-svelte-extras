@@ -1,5 +1,6 @@
 import * as api from '../api-reference';
 import type {
+	FileDropZoneDragOverlayPropsWithoutHTML,
 	FileDropZoneRootPropsWithoutHTML,
 	FileDropZoneTriggerPropsWithoutHTML
 } from '$lib/components/ui/file-drop-zone/types';
@@ -44,6 +45,11 @@ const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 		accept: api.createStringProp({
 			description:
 				'A comma separated list of one or more file types to accept. [MDN Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept)\n\nExample: ".doc,.docx,application/msword"\nCommon: "audio/*", "image/*", "video/*"'
+		}),
+		capturePaste: api.createBooleanProp({
+			description:
+				'Whether to upload any files on the clipboard when the user pastes anywhere on the page. Pasted text is ignored.',
+			defaultValue: false
 		})
 	}
 });
@@ -95,11 +101,41 @@ const Textarea = api.createComponentReference({
 	}
 });
 
+const DragOverlay = api.createComponentReference<FileDropZoneDragOverlayPropsWithoutHTML>({
+	name: 'DragOverlay',
+	description:
+		'A page wide overlay that is shown while the user drags files over the page and accepts the files when they are dropped. Provides a default UI if no children are provided.',
+	props: {
+		ref: api.createAnyProp({
+			description: 'A reference to the overlay element.',
+			bindable: true,
+			type: 'HTMLDivElement',
+			defaultValue: 'null'
+		}),
+		disabled: api.createBooleanProp({
+			description: 'Whether the overlay should be prevented from being shown.',
+			defaultValue: false
+		}),
+		portalProps: api.createAnyProp({
+			description:
+				'Props passed to the portal the overlay is rendered into. Disable the portal to scope the overlay to its container.',
+			type: 'PortalProps',
+			tooltip: '{ to?: Element | string; disabled?: boolean }'
+		}),
+		children: api.createAnyProp({
+			description:
+				'Custom content to render inside the overlay. If not provided, a default overlay UI is shown.',
+			type: 'Snippet'
+		})
+	}
+});
+
 export const reference = {
 	name: 'FileDropZone' as const,
 	components: {
 		Root,
 		Trigger,
-		Textarea
+		Textarea,
+		DragOverlay
 	}
 };

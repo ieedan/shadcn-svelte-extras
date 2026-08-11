@@ -286,6 +286,16 @@
         "items": []
       },
       {
+        "title": "Paste Capture",
+        "url": "#paste-capture",
+        "items": []
+      },
+      {
+        "title": "Drag Overlay",
+        "url": "#drag-overlay",
+        "items": []
+      },
+      {
         "title": "Form",
         "url": "#form",
         "items": []
