@@ -27,7 +27,7 @@ description: 'A component for showing a short, copyable, command or phrase.'
 
 ## Variants
 
-It defaults to `outline` but can also be `primary`, `secondary`, or `destructive.` 
+It defaults to `outline` but can also be `primary`, `secondary`, or `destructive.`
 
 <Demo demo="snippet-variants" />
 

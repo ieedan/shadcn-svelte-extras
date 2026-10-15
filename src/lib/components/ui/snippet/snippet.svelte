@@ -38,7 +38,6 @@
 		<textarea
 			readonly
 			rows={Math.max(text.length, 1)}
-			use:restingPad={content}
 			class="snippet-field block max-h-full min-h-0 w-full min-w-0 flex-auto resize-none overflow-auto bg-transparent font-mono text-sm leading-5 font-light whitespace-pre text-inherit outline-none"
 			value={content}
 			wrap="off"
