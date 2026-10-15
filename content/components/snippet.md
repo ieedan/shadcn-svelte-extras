@@ -1,6 +1,6 @@
 ---
 title: 'Snippet'
-description: 'A snippet component.'
+description: 'A component for showing a short, copyable, command or phrase.'
 ---
 
 <script lang="ts">
@@ -27,10 +27,20 @@ description: 'A snippet component.'
 
 ## Variants
 
+It defaults to `outline` but can also be `primary`, `secondary`, or `destructive.` 
+
 <Demo demo="snippet-variants" />
 
 ## Multiline
 
+You can have multiple lines for multiple commands.
+
 <Demo demo="snippet-multiline" />
+
+## Overflow
+
+It also handles overflows nicely, allowing users to scroll the text, and showing them faded edges where there is more to see (in supported browsers).
+
+<Demo demo="snippet-overflow" />
 
 <ApiReference />
