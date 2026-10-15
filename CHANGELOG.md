@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.2.1
+
+### Patch Changes
+
+- feat: refactor snippet to input/textarea ([#403](https://github.com/ieedan/shadcn-svelte-extras/pull/403))
+
 ## 7.2.0
 
 ### Minor Changes
