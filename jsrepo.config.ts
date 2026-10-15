@@ -120,6 +120,18 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'filter',
+					title: 'Filter',
+					description: 'A filter component.',
+					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/filter` },
+					files: [
+						{
+							path: 'src/lib/components/ui/filter'
+						}
+					]
+				},
+				{
 					name: 'file-drop-zone',
 					title: 'FileDropZone',
 					description:

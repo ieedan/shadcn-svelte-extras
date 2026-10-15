@@ -13,6 +13,7 @@ export const REGISTRY_ITEMS = [
 	'emoji-picker',
 	'field-set',
 	'file-drop-zone',
+	'filter',
 	'github-button',
 	'image-cropper',
 	'ipv4address-input',
