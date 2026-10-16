@@ -6,7 +6,7 @@ import { reference as ChatReference } from './chat-api';
 import { reference as CodeReference } from './code-api';
 import { reference as CopyButtonReference } from './copy-button-api';
 import { reference as FieldSetReference } from './field-set-api';
-import { reference as FilterReference } from './filter-api';
+import { reference as FiltersReference } from './filters-api';
 import { reference as FileDropZoneReference } from './file-drop-zone-api';
 import { reference as GithubButtonReference } from './github-button-api';
 import { reference as ImageCropperReference } from './image-cropper-api';
@@ -41,7 +41,7 @@ export const references = [
 	CodeReference,
 	CopyButtonReference,
 	FieldSetReference,
-	FilterReference,
+	FiltersReference,
 	FileDropZoneReference,
 	GithubButtonReference,
 	ImageCropperReference,
@@ -85,7 +85,7 @@ export {
 	CodeReference,
 	CopyButtonReference,
 	FieldSetReference,
-	FilterReference,
+	FiltersReference,
 	FileDropZoneReference,
 	GithubButtonReference,
 	ImageCropperReference,

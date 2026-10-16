@@ -120,14 +120,14 @@ export default defineConfig({
 					]
 				},
 				{
-					name: 'filter',
-					title: 'Filter',
-					description: 'A filter component.',
+					name: 'filters',
+					title: 'Filters',
+					description: 'A filters component.',
 					type: 'ui',
-					meta: { documentation: `${DOCS_ORIGIN}/docs/components/filter` },
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/filters` },
 					files: [
 						{
-							path: 'src/lib/components/ui/filter'
+							path: 'src/lib/components/ui/filters'
 						}
 					]
 				},

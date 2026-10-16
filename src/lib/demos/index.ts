@@ -4,7 +4,7 @@
 */
 
 export const DEMOS = [
-    	'active',
+    'active',
 	'button',
 	'button-loading',
 	'button-on-click-promise',
@@ -34,7 +34,7 @@ export const DEMOS = [
 	'file-drop-zone-form',
 	'file-drop-zone-paste-capture',
 	'file-drop-zone-text-area',
-	'filter',
+	'filters',
 	'github-button',
 	'github-button-icon-only',
 	'image-cropper',

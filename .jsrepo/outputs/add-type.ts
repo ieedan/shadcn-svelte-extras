@@ -18,7 +18,7 @@ export default function (): Output {
 */
 
 export const REGISTRY_ITEMS = [
-${itemNames.map((item) => `\t'${item}'`).join(',\n')}
+${itemNames.map((item, i) => `${i > 0 ? '\t' : ''}'${item}'`).join(',\n')}
 ] as const;
 
 export type RegistryItem = (typeof REGISTRY_ITEMS)[number];

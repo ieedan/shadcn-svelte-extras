@@ -305,9 +305,9 @@
     "href": "/docs/components/file-drop-zone"
   },
   {
-    "title": "Filter",
-    "description": "A filter component.",
-    "path": "components/filter",
+    "title": "Filters",
+    "description": "A filters component.",
+    "path": "components/filters",
     "component": false,
     "toc": [
       {
@@ -322,8 +322,8 @@
       }
     ],
     "indicator": "new",
-    "slug": "components/filter",
-    "href": "/docs/components/filter"
+    "slug": "components/filters",
+    "href": "/docs/components/filters"
   },
   {
     "title": "GitHub Button",

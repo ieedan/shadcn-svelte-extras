@@ -21,7 +21,7 @@ export default function (): Output {
 */
 
 export const DEMOS = [
-    ${demoNames.map((demo) => `\t'${demo}'`).join(',\n')}
+    ${demoNames.map((demo, i) => `${i > 0 ? '\t' : ''}'${demo}'`).join(',\n')}
 ] as const;
 
 export type Demo = (typeof DEMOS)[number];

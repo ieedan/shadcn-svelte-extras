@@ -1,6 +1,6 @@
 ---
-title: 'Filter'
-description: 'A filter component.'
+title: 'Filters'
+description: 'A filters component.'
 indicator: new
 ---
 
@@ -10,20 +10,20 @@ indicator: new
 	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
 </script>
 
-<Demo demo="filter" />
+<Demo demo="filters" />
 
 ## Installation
 
-<Add item="filter" />
+<Add item="filters" />
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-	import { Filter } from '$lib/components/ui/filter';
+	import * as Filters from '$lib/components/ui/filters';
 </script>
 
-<Filter />
+<Filters.Provider />
 ```
 
 <ApiReference />

@@ -4,7 +4,7 @@
 */
 
 export const REGISTRY_ITEMS = [
-	'active',
+'active',
 	'button',
 	'chat',
 	'code',
@@ -13,7 +13,7 @@ export const REGISTRY_ITEMS = [
 	'emoji-picker',
 	'field-set',
 	'file-drop-zone',
-	'filter',
+	'filters',
 	'github-button',
 	'image-cropper',
 	'ipv4address-input',

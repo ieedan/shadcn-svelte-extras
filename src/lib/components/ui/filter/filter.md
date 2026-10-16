@@ -1,8 +1,0 @@
-# filter
-
-```txt
-
-```
-
-## Filter types
-
