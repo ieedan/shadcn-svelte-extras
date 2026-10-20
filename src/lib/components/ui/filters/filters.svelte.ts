@@ -1,7 +1,7 @@
 import type { ReadableBoxedValues, WritableBoxedValues } from "svelte-toolbelt";
 import {
     BOOLEAN_FILTER_OPERATORS,
-    FilterFactoryBase,
+    DATE_FILTER_OPERATORS,
     ID_FILTER_OPERATORS,
     NUMBER_FILTER_OPERATORS,
     STRING_FILTER_OPERATORS,
@@ -88,6 +88,8 @@ export class FiltersPillState {
                 return [...STRING_FILTER_OPERATORS];
             case 'id':
                 return [...ID_FILTER_OPERATORS];
+            case 'date':
+                return [...DATE_FILTER_OPERATORS];
         }
     }
 
@@ -100,6 +102,13 @@ export class FiltersPillState {
                 return null;
             case 'string':
                 return null;
+            case 'date':
+                if (!this.factory) return null;
+                if (this.factory?.type !== 'date') {
+                    console.warn(`Filter factory ${this.factory?.name} is not a date factory`);
+                    return null;
+                }
+                return this.factory.relativeOptions;
             case 'id':
                 if (!this.factory) return null;
                 if (this.factory?.type !== 'id') {
