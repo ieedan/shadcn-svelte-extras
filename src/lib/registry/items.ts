@@ -8,6 +8,7 @@ export const REGISTRY_ITEMS = [
 	'button',
 	'chat',
 	'code',
+	'color-picker',
 	'confirm-delete-dialog',
 	'copy-button',
 	'emoji-picker',

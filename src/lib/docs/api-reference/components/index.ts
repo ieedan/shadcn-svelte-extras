@@ -4,6 +4,7 @@ import * as casing from '../../../utils/casing.js';
 import { reference as ButtonReference } from './button-api';
 import { reference as ChatReference } from './chat-api';
 import { reference as CodeReference } from './code-api';
+import { reference as ColorPickerReference } from './color-picker-api';
 import { reference as CopyButtonReference } from './copy-button-api';
 import { reference as FieldSetReference } from './field-set-api';
 import { reference as FileDropZoneReference } from './file-drop-zone-api';
@@ -38,6 +39,7 @@ export const references = [
 	ButtonReference,
 	ChatReference,
 	CodeReference,
+	ColorPickerReference,
 	CopyButtonReference,
 	FieldSetReference,
 	FileDropZoneReference,
@@ -81,6 +83,7 @@ export {
 	ButtonReference,
 	ChatReference,
 	CodeReference,
+	ColorPickerReference,
 	CopyButtonReference,
 	FieldSetReference,
 	FileDropZoneReference,
