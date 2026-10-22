@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.2.2
+
+### Patch Changes
+
+- fix: `<UnderlineTabs.List/>` no longer scrolls vertically on up/down arrow keys ([#408](https://github.com/ieedan/shadcn-svelte-extras/pull/408))
+
 ## 7.2.1
 
 ### Patch Changes
