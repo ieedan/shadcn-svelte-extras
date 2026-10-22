@@ -821,7 +821,7 @@
   },
   {
     "title": "Snippet",
-    "description": "A snippet component.",
+    "description": "A component for showing a short, copyable, command or phrase.",
     "path": "components/snippet",
     "component": false,
     "toc": [
@@ -843,6 +843,11 @@
       {
         "title": "Multiline",
         "url": "#multiline",
+        "items": []
+      },
+      {
+        "title": "Overflow",
+        "url": "#overflow",
         "items": []
       }
     ],

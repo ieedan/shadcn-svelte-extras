@@ -85,6 +85,7 @@ export const DEMOS = [
 	'shortcut',
 	'snippet',
 	'snippet-multiline',
+	'snippet-overflow',
 	'snippet-variants',
 	'split-button',
 	'split-button-variants',
