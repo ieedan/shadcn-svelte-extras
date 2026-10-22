@@ -5,11 +5,8 @@
 	import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 	import type { FilterList } from '../filters/types.js';
-	import {
-		createFilterContext,
-		matchesFilter,
-		type RelativeDateResolver
-	} from './apply-filters.js';
+	import { createFilterContext, matchesFilter, type UnresolvedBehavior } from './apply-filters.js';
+	import type { AnyRelativeDateDefinition } from './relative-dates.js';
 
 	type Column = {
 		/** The key of the row to render in this column. */
@@ -30,10 +27,14 @@
 		/** A unique key for each row. Defaults to the row's index in `data`. */
 		rowKey?: (row: T, index: number) => string | number;
 		/**
-		 * Resolvers for relative date ids used by date filters (e.g. `last-7-days`). Merged over the
-		 * built-in ids: today, yesterday, last-7-days, last-30-days, this-month, last-month, this-year.
+		 * Extra relative date definitions (merged over the built-in ones by id). Pass the same
+		 * definitions your date factories offer so every option the user can pick can be resolved.
 		 */
-		relativeDates?: Record<string, RelativeDateResolver>;
+		relativeDates?: AnyRelativeDateDefinition[];
+		/** App settings relative date definitions can read (e.g. `fiscalYearStartMonth`). */
+		config?: Record<string, unknown>;
+		/** What to do with a relative date that has no definition. Defaults to `ignore`. */
+		onUnresolved?: UnresolvedBehavior;
 		/** The number of rows per page. */
 		pageSize?: number;
 		/** The current page (1-indexed). */
@@ -49,13 +50,21 @@
 		columns,
 		rowKey,
 		relativeDates,
+		config,
+		onUnresolved,
 		pageSize = 10,
 		page = $bindable(1),
 		empty,
 		class: className
 	}: Props = $props();
 
-	const context = $derived(createFilterContext(relativeDates));
+	const context = $derived(
+		createFilterContext({
+			relativeDates,
+			config,
+			onUnresolved
+		})
+	);
 
 	// keep the original index so the default row key stays stable as filters change
 	const rows = $derived(

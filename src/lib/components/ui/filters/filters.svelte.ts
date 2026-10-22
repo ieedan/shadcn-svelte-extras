@@ -9,6 +9,7 @@ import {
     type FilterFactory,
     type FilterList,
     type FilterOperator,
+    type FilterValueOption,
 } from "./types";
 import { Context } from "runed";
 
@@ -93,7 +94,7 @@ export class FiltersPillState {
         }
     }
 
-    get valueOptions(): { id: string | number; label: string; description?: string }[] | null {
+    get valueOptions(): FilterValueOption[] | null {
         const filter = this.opts.filter.current;
         switch (filter.type) {
             case 'number':
@@ -108,7 +109,7 @@ export class FiltersPillState {
                     console.warn(`Filter factory ${this.factory?.name} is not a date factory`);
                     return null;
                 }
-                return this.factory.relativeOptions;
+                return this.factory.valueOptions;
             case 'id':
                 if (!this.factory) return null;
                 if (this.factory?.type !== 'id') {

@@ -1,16 +1,20 @@
 import {
 	CalendarDate,
-	endOfMonth,
-	endOfYear,
 	fromDate,
 	getLocalTimeZone,
 	parseDate,
-	startOfMonth,
-	startOfYear,
 	today,
 	toCalendarDate,
 	type DateValue
 } from '@internationalized/date';
+import {
+	DEFAULT_RELATIVE_DATES,
+	isRelativeDateValue,
+	resolveRelativeDate,
+	type AnyRelativeDateDefinition,
+	type DateSpan,
+	type RelativeDateContext
+} from './relative-dates.js';
 import type {
 	BooleanFilter,
 	DateFilter,
@@ -21,37 +25,36 @@ import type {
 	StringFilter
 } from '../filters/types.js';
 
-/** Resolves a relative date id (e.g. `last-7-days`) to an inclusive `[from, to]` range of days. */
-export type RelativeDateResolver = (today: CalendarDate) => [CalendarDate, CalendarDate];
+export type UnresolvedBehavior = 'ignore' | 'match-none' | 'error';
 
-/**
- * The relative date ids understood out of the box. A date filter whose value is one of these ids
- * (instead of a date) is resolved against the current day every time the table is filtered.
- */
-export const DEFAULT_RELATIVE_DATES: Record<string, RelativeDateResolver> = {
-	today: (now) => [now, now],
-	yesterday: (now) => [now.subtract({ days: 1 }), now.subtract({ days: 1 })],
-	'last-7-days': (now) => [now.subtract({ days: 6 }), now],
-	'last-30-days': (now) => [now.subtract({ days: 29 }), now],
-	'this-month': (now) => [startOfMonth(now), endOfMonth(now)],
-	'last-month': (now) => {
-		const last = now.subtract({ months: 1 });
-		return [startOfMonth(last), endOfMonth(last)];
-	},
-	'this-year': (now) => [startOfYear(now), endOfYear(now)]
+export type FilterContext = RelativeDateContext & {
+	relativeDates: Record<string, AnyRelativeDateDefinition>;
+	/**
+	 * What to do with a relative date whose definition is missing (e.g. a saved filter using an
+	 * id that was removed). Ignoring it widens the results, so servers should use `match-none` or
+	 * `error`.
+	 */
+	onUnresolved: UnresolvedBehavior;
 };
 
-export type FilterContext = {
-	today: CalendarDate;
-	relativeDates: Record<string, RelativeDateResolver>;
+export type FilterContextOptions = {
+	/** Extra definitions, merged over the built-in ones by id. */
+	relativeDates?: AnyRelativeDateDefinition[];
+	timeZone?: string;
+	config?: Record<string, unknown>;
+	onUnresolved?: UnresolvedBehavior;
 };
 
-export function createFilterContext(
-	relativeDates: Record<string, RelativeDateResolver> = {}
-): FilterContext {
+export function createFilterContext(options: FilterContextOptions = {}): FilterContext {
+	const timeZone = options.timeZone ?? getLocalTimeZone();
 	return {
-		today: toCalendarDate(today(getLocalTimeZone())),
-		relativeDates: { ...DEFAULT_RELATIVE_DATES, ...relativeDates }
+		today: toCalendarDate(today(timeZone)),
+		timeZone,
+		config: options.config ?? {},
+		relativeDates: Object.fromEntries(
+			[...DEFAULT_RELATIVE_DATES, ...(options.relativeDates ?? [])].map((d) => [d.id, d])
+		),
+		onUnresolved: options.onUnresolved ?? 'ignore'
 	};
 }
 
@@ -59,7 +62,7 @@ export function createFilterContext(
  * Filters `data` down to the rows that match **every** filter (AND).
  *
  * Filters that are incomplete or can't be interpreted (e.g. a `between` filter that only has a
- * single date, or a relative date id) are ignored so they never hide the whole dataset.
+ * single date) are ignored so they never hide the whole dataset.
  */
 export function applyFilters<T extends Record<string, unknown>>(
 	data: readonly T[],
@@ -177,12 +180,17 @@ function matchesDate(value: unknown, filter: DateFilter, context: FilterContext)
 	const isRange = filter.operator === 'b<=a<=c' || filter.operator === '!b<=a<=c';
 	const row = toCalendarDay(value);
 
-	// relative values are stored as an id string instead of a date
+	// relative values are stored as the id of a definition and its params instead of a date
 	const raw: unknown = filter.value;
-	if (typeof raw === 'string') {
-		const resolve = context.relativeDates[raw];
-		if (!resolve) return true;
-		return matchesRelativeDate(row, resolve(context.today), filter.operator);
+	if (isRelativeDateValue(raw)) {
+		const span = resolveRelativeDate(raw, context.relativeDates, context);
+		if (!span) {
+			if (context.onUnresolved === 'error') {
+				throw new Error(`Unknown relative date "${raw.id}"`);
+			}
+			return context.onUnresolved === 'ignore';
+		}
+		return matchesSpan(row, span, filter.operator);
 	}
 
 	if (isRange) {
@@ -202,12 +210,18 @@ function matchesDate(value: unknown, filter: DateFilter, context: FilterContext)
 	return compare(row, target, filter.operator, (a, b) => a.compare(b)) ?? true;
 }
 
-function matchesRelativeDate(
+/**
+ * Operators apply to the resolved span: `=` is inside it, `>` after its end and `<` before its
+ * start. An open end never has anything beyond it.
+ */
+function matchesSpan(
 	row: CalendarDate | null,
-	[from, to]: [CalendarDate, CalendarDate],
+	{ from, to }: DateSpan,
 	operator: DateFilter['operator']
 ): boolean {
-	const inside = row !== null && row.compare(from) >= 0 && row.compare(to) <= 0;
+	const afterStart = row !== null && (!from || row.compare(from) >= 0);
+	const beforeEnd = row !== null && (!to || row.compare(to) <= 0);
+	const inside = afterStart && beforeEnd;
 	switch (operator) {
 		case '=':
 		case 'b<=a<=c':
@@ -216,13 +230,13 @@ function matchesRelativeDate(
 		case '!b<=a<=c':
 			return !inside;
 		case '>':
-			return row !== null && row.compare(to) > 0;
+			return row !== null && !!to && row.compare(to) > 0;
 		case '<':
-			return row !== null && row.compare(from) < 0;
+			return row !== null && !!from && row.compare(from) < 0;
 		case '>=':
-			return row !== null && row.compare(from) >= 0;
+			return afterStart;
 		case '<=':
-			return row !== null && row.compare(to) <= 0;
+			return beforeEnd;
 	}
 }
 

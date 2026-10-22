@@ -53,9 +53,29 @@ export type StringFilter = IFilter<'string', string, StringOperator>;
 export type IdFilter = IFilter<'id', string | number, IdOperator>;
 
 /**
- * DateValue for a set date, [DateValue, DateValue] for a date range, or a string for a relative date
+ * A relative date ("Last 3 months", "Last FY") is stored as the id of the relative date and its
+ * params. Turning it into real dates is up to whatever runs the filter, so nothing here resolves it.
+ *
+ * @example
+ * // A relative date
+ * { id: 'today' } satisfies RelativeDateValue
+ * 
+ * @example
+ * // A custom relative date
+ * { id: 'last-fy' } satisfies RelativeDateValue
+ *
+ * @example
+ * // a custom relative date with params
+ * { id: 'last-n', params: { n: 3, unit: 'month' } } satisfies RelativeDateValue
+ *
  */
-export type DateFilter = IFilter<'date', DateValue | [DateValue, DateValue] | string, DateOperator>;
+export type RelativeDateValue = {
+    /** The `id` of the relative date, one of the field's `valueOptions`. */
+    id: string;
+    params?: Record<string, string | number>;
+};
+
+export type DateFilter = IFilter<'date', DateValue | [DateValue, DateValue] | RelativeDateValue, DateOperator>;
 
 export type FilterTypes = {
     'number': NumberFilter;
@@ -85,7 +105,8 @@ export function createFilter<Type extends keyof FilterTypes>(
         id: FilterFactoryBase.generateId(),
         operator,
         value,
-    };
+        // TypeScript can't correlate `type` with `operator`/`value` for a generic `Type`
+    } as FilterTypes[Type];
 }
 
 export abstract class FilterFactoryBase<Type extends keyof FilterTypes> {
@@ -120,14 +141,20 @@ export class StringFilterFactory extends FilterFactoryBase<'string'> {
     }
 }
 
+export type FilterValueOption = { id: string | number; label: string; description?: string };
+
 export class IdFilterFactory extends FilterFactoryBase<'id'> {
-    constructor(readonly name: string, readonly valueOptions: { id: string | number; label: string; description?: string }[]) {
+    constructor(readonly name: string, readonly valueOptions: FilterValueOption[]) {
         super(name, 'id');
     }
 }
 
 export class DateFilterFactory extends FilterFactoryBase<'date'> {
-    constructor(readonly name: string, readonly relativeOptions: { id: string; label: string; }[] = []) {
+    /**
+     * @param valueOptions The relative dates this field can be filtered by (the `id` is what gets
+     * stored in a `RelativeDateValue`).
+     */
+    constructor(readonly name: string, readonly valueOptions: FilterValueOption[] = []) {
         super(name, 'date');
     }
 }

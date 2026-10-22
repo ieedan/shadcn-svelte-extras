@@ -5,7 +5,22 @@ export {
 	applyFilters,
 	matchesFilter,
 	createFilterContext,
-	DEFAULT_RELATIVE_DATES,
 	type FilterContext,
-	type RelativeDateResolver
+	type FilterContextOptions,
+	type UnresolvedBehavior
 } from './apply-filters.js';
+export {
+	DEFAULT_RELATIVE_DATES,
+	createRelativeDateValue,
+	defaultRelativeParams,
+	defineRelativeDate,
+	isRelativeDateValue,
+	resolveRelativeDate,
+	type AnyRelativeDateDefinition,
+	type DateSpan,
+	type RelativeDateOption,
+	type RelativeDateParamSpec,
+	type RelativeDateParams,
+	type RelativeDateContext,
+	type RelativeDateDefinition
+} from './relative-dates.js';

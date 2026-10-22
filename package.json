@@ -1,6 +1,6 @@
 {
 	"name": "shadcn-svelte-extras",
-	"packageManager": "pnpm@10.23.0",
+	"packageManager": "pnpm@12.14.0",
 	"version": "7.2.1",
 	"type": "module",
 	"scripts": {

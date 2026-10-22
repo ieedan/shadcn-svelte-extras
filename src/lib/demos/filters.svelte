@@ -1,7 +1,20 @@
 <script lang="ts">
 	import * as Filters from '$lib/components/ui/filters';
-	import { FilteredTable } from '$lib/components/ui/filtered-table';
-	import { DateFormatter, getLocalTimeZone, today, type DateValue } from '@internationalized/date';
+	import {
+		FilteredTable,
+		DEFAULT_RELATIVE_DATES,
+		createRelativeDateValue,
+		defineRelativeDate,
+		isRelativeDateValue
+	} from '$lib/components/ui/filtered-table';
+	import {
+		CalendarDate,
+		DateFormatter,
+		getDayOfWeek,
+		getLocalTimeZone,
+		today,
+		type DateValue
+	} from '@internationalized/date';
 	import {
 		FILTER_OPERATORS_MAP,
 		NumberFilterFactory,
@@ -13,8 +26,7 @@
 		type DateFilter,
 		type FilterOperator,
 		type IdFilter,
-		type NumberFilter,
-		type StringFilter
+		type NumberFilter
 	} from '$lib/components/ui/filters/types';
 	import { Button } from '$lib/components/ui/button';
 	import { Input } from '$lib/components/ui/input';
@@ -57,6 +69,40 @@
 
 	const peopleById = new Map(people.map((person) => [person.id, person.name]));
 
+	// Relative dates are plain functions, anything that can be computed from "today" works. The
+	// filter only stores the id and params, resolving them is up to whatever runs the filter (here
+	// the table, in an app usually the server) so these never need to be saved.
+
+	/** The fiscal year is read from the table's `config` so each org can have its own. */
+	const lastFY = defineRelativeDate({
+		id: 'last-fy',
+		label: 'Last FY',
+		resolve: ({ today, config }) => {
+			const startMonth = (config.fiscalYearStartMonth as number | undefined) ?? 1;
+			const currentStartYear = today.month >= startMonth ? today.year : today.year - 1;
+			const from = new CalendarDate(currentStartYear - 1, startMonth, 1);
+			return { from, to: from.add({ years: 1 }).subtract({ days: 1 }) };
+		}
+	});
+
+	/** Open ended, there is no end so everything from Thanksgiving until now (and beyond) matches. */
+	const sinceLastThanksgiving = defineRelativeDate({
+		id: 'since-last-thanksgiving',
+		label: 'Since last Thanksgiving',
+		resolve: ({ today }) => {
+			// the fourth Thursday of November
+			const thanksgiving = (year: number) => {
+				const firstOfNovember = new CalendarDate(year, 11, 1);
+				const offset = (4 - getDayOfWeek(firstOfNovember, 'en-US') + 7) % 7;
+				return firstOfNovember.add({ days: offset + 21 });
+			};
+			const thisYears = thanksgiving(today.year);
+			return { from: thisYears.compare(today) <= 0 ? thisYears : thanksgiving(today.year - 1) };
+		}
+	});
+
+	const relativeDates = [...DEFAULT_RELATIVE_DATES, lastFY, sinceLastThanksgiving];
+
 	const factories = {
 		points: new NumberFilterFactory('points'),
 		title: new StringFilterFactory('title'),
@@ -65,16 +111,8 @@
 			people.map((person) => ({ id: person.id, label: person.name }))
 		),
 		completed: new BooleanFilterFactory('completed'),
-		// the ids here are resolved by the table (see `DEFAULT_RELATIVE_DATES`)
-		createdAt: new DateFilterFactory('createdAt', [
-			{ id: 'today', label: 'Today' },
-			{ id: 'yesterday', label: 'Yesterday' },
-			{ id: 'last-7-days', label: 'Last 7 days' },
-			{ id: 'last-30-days', label: 'Last 30 days' },
-			{ id: 'this-month', label: 'This month' },
-			{ id: 'last-month', label: 'Last month' },
-			{ id: 'this-year', label: 'This year' }
-		])
+		// the factory only offers the options, the table resolves them
+		createdAt: new DateFilterFactory('createdAt', relativeDates)
 	};
 
 	const verbs = ['Fix', 'Refactor', 'Document', 'Test', 'Design', 'Review', 'Deploy', 'Profile'];
@@ -147,10 +185,20 @@
 	const segment =
 		'h-full rounded-none border-0 border-l border-border bg-transparent px-2.5 text-sm font-normal shadow-none transition-colors hover:bg-accent focus-visible:bg-accent focus-visible:ring-0 dark:bg-transparent dark:hover:bg-accent data-[size=sm]:h-full [&>svg:last-child]:hidden';
 
-	const operatorItems = Object.entries(FILTER_OPERATORS_MAP).map(([key, value]) => ({
-		value: key,
-		label: value
-	}));
+	// dates read better as "is" / "is after" than the generic labels, especially with relative dates
+	const DATE_OPERATOR_LABELS: Partial<Record<FilterOperator, string>> = {
+		'=': 'is',
+		'!=': 'is not',
+		'>': 'is after',
+		'<': 'is before',
+		'>=': 'is on or after',
+		'<=': 'is on or before',
+		'b<=a<=c': 'is between',
+		'!b<=a<=c': 'is not between'
+	};
+
+	const operatorLabel = (type: Filters.Filter['type'], operator: FilterOperator) =>
+		(type === 'date' && DATE_OPERATOR_LABELS[operator]) || FILTER_OPERATORS_MAP[operator];
 
 	function setOperator(filter: Filters.Filter, operator: string) {
 		if (filter.type === 'date') {
@@ -198,11 +246,29 @@
 	const isRangeOperator = (operator: FilterOperator) =>
 		operator === 'b<=a<=c' || operator === '!b<=a<=c';
 
-	/** Relative dates are stored as the id of the relative option instead of a date. */
-	const isRelative = (filter: DateFilter) => typeof filter.value === 'string';
+	const isRelative = (filter: DateFilter) => isRelativeDateValue(filter.value);
 
-	const getSingleDate = (filter: DateFilter) =>
-		typeof filter.value === 'string' || Array.isArray(filter.value) ? undefined : filter.value;
+	const getRelative = (filter: DateFilter) =>
+		isRelativeDateValue(filter.value) ? filter.value : null;
+
+	// Controls write their value back when they sync, so skip writes that don't change anything or
+	// replacing the value every time would loop.
+	function selectRelative(filter: DateFilter, id: string) {
+		if (getRelative(filter)?.id === id) return;
+		const definition = relativeDates.find((d) => d.id === id);
+		if (definition) filter.value = createRelativeDateValue(definition);
+	}
+
+	function setRelativeParam(filter: DateFilter, name: string, value: string | number) {
+		const current = getRelative(filter);
+		if (!current || current.params?.[name] === value) return;
+		filter.value = { ...current, params: { ...current.params, [name]: value } };
+	}
+
+	const getSingleDate = (filter: DateFilter) => {
+		const value = filter.value;
+		return Array.isArray(value) || isRelativeDateValue(value) ? undefined : value;
+	};
 
 	function defaultDateValue(operator: FilterOperator): DateFilter['value'] {
 		const current = today(timeZone);
@@ -217,20 +283,12 @@
 		if (!isRelative(filter) && shapeChanged) filter.value = defaultDateValue(operator);
 	}
 
-	function setDateMode(
-		filter: DateFilter,
-		options: { id: string | number; label: string }[],
-		mode: string
-	) {
+	function setDateMode(filter: DateFilter, mode: string) {
 		if (mode === 'relative') {
-			filter.value = String(options[0].id);
+			selectRelative(filter, 'last-n');
 		} else {
 			filter.value = defaultDateValue(filter.operator);
 		}
-	}
-
-	function setRelative(filter: DateFilter, id: string) {
-		filter.value = id;
 	}
 
 	// An in-progress range (only the start picked) isn't a valid filter value yet, so it is held
@@ -281,14 +339,19 @@
 							<Select.Root
 								type="single"
 								bind:value={() => filter.operator, (value) => setOperator(filter, value)}
-								items={operatorItems}
+								items={operators.map((operator) => ({
+									value: operator,
+									label: operatorLabel(filter.type, operator)
+								}))}
 							>
 								<Select.Trigger size="sm" class={cn(segment, 'text-muted-foreground')}>
 									<Select.Value />
 								</Select.Trigger>
 								<Select.Content>
 									{#each operators as operator (operator)}
-										<Select.Item value={operator}>{FILTER_OPERATORS_MAP[operator]}</Select.Item>
+										<Select.Item value={operator}
+											>{operatorLabel(filter.type, operator)}</Select.Item
+										>
 									{/each}
 								</Select.Content>
 							</Select.Root>
@@ -351,8 +414,7 @@
 									<Select.Root
 										type="single"
 										bind:value={
-											() => dateModeLabel(dateFilter),
-											(value) => setDateMode(dateFilter, valueOptions, value)
+											() => dateModeLabel(dateFilter), (value) => setDateMode(dateFilter, value)
 										}
 										items={[
 											{
@@ -374,26 +436,61 @@
 									</Select.Root>
 								{/if}
 
-								{#if isRelative(dateFilter) && valueOptions}
+								{@const relative = getRelative(dateFilter)}
+								{#if relative}
+									{@const definition = relativeDates.find((d) => d.id === relative.id)}
 									<Select.Root
 										type="single"
-										bind:value={
-											() => String(dateFilter.value), (value) => setRelative(dateFilter, value)
-										}
-										items={valueOptions.map((option) => ({
+										bind:value={() => relative.id, (value) => selectRelative(dateFilter, value)}
+										items={valueOptions?.map((option) => ({
 											value: String(option.id),
 											label: option.label
-										}))}
+										})) ?? []}
 									>
 										<Select.Trigger size="sm" class={segment}>
 											<Select.Value />
 										</Select.Trigger>
 										<Select.Content>
-											{#each valueOptions as option (option.id)}
+											{#each valueOptions ?? [] as option (option.id)}
 												<Select.Item value={String(option.id)}>{option.label}</Select.Item>
 											{/each}
 										</Select.Content>
 									</Select.Root>
+
+									<!-- the params of the picked relative date, e.g. the "3 months" of "In the last" -->
+									{#each definition?.params ?? [] as spec (spec.name)}
+										{#if spec.type === 'number'}
+											<Input
+												type="number"
+												min={spec.min}
+												class={cn(segment, 'w-16 font-mono')}
+												bind:value={
+													() => relative.params?.[spec.name] as number,
+													(value) =>
+														typeof value === 'number' &&
+														setRelativeParam(dateFilter, spec.name, value)
+												}
+											/>
+										{:else}
+											<Select.Root
+												type="single"
+												bind:value={
+													() => String(relative.params?.[spec.name]),
+													(value) => setRelativeParam(dateFilter, spec.name, value)
+												}
+												items={spec.options}
+											>
+												<Select.Trigger size="sm" class={segment}>
+													<Select.Value />
+												</Select.Trigger>
+												<Select.Content>
+													{#each spec.options as option (option.value)}
+														<Select.Item value={option.value}>{option.label}</Select.Item>
+													{/each}
+												</Select.Content>
+											</Select.Root>
+										{/if}
+									{/each}
 								{:else if isRangeOperator(dateFilter.operator)}
 									<Popover.Root onOpenChange={(open) => !open && delete rangeDrafts[dateFilter.id]}>
 										<Popover.Trigger>
@@ -490,6 +587,8 @@
 		data={tasks}
 		{filters}
 		pageSize={10}
+		{relativeDates}
+		config={{ fiscalYearStartMonth: 7 }}
 		rowKey={(row) => row.id}
 		columns={[
 			{ key: 'id', header: 'ID' },
