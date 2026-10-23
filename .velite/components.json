@@ -120,6 +120,51 @@
     "href": "/docs/components/code"
   },
   {
+    "title": "Color Picker",
+    "description": "A composable color picker component.",
+    "path": "components/color-picker",
+    "component": false,
+    "toc": [
+      {
+        "title": "Basic",
+        "url": "#basic",
+        "items": []
+      },
+      {
+        "title": "Installation",
+        "url": "#installation",
+        "items": []
+      },
+      {
+        "title": "Usage",
+        "url": "#usage",
+        "items": []
+      },
+      {
+        "title": "Composition",
+        "url": "#composition",
+        "items": []
+      },
+      {
+        "title": "Popover",
+        "url": "#popover",
+        "items": []
+      },
+      {
+        "title": "Formats",
+        "url": "#formats",
+        "items": []
+      },
+      {
+        "title": "Disabled",
+        "url": "#disabled",
+        "items": []
+      }
+    ],
+    "slug": "components/color-picker",
+    "href": "/docs/components/color-picker"
+  },
+  {
     "title": "Confirm Delete Dialog",
     "description": "A dialog for confirming delete actions.",
     "path": "components/confirm-delete-dialog",
