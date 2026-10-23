@@ -42,23 +42,20 @@ Use the following composition to build a `ColorPicker`:
 
 ```text
 ColorPicker.Root
-└── ColorPicker.Popover
-    ├── ColorPicker.Trigger
-    └── ColorPicker.Content
-        ├── ColorPicker.Area
-        ├── ColorPicker.HueSlider
-        ├── ColorPicker.AlphaSlider
-        ├── ColorPicker.FormatSelect
-        └── ButtonGroup.Root
-            ├── ColorPicker.Input (or ColorPicker.ChannelInputs)
-            └── ColorPicker.AlphaInput
+├── ColorPicker.Area
+├── ColorPicker.HueSlider
+├── ColorPicker.AlphaSlider
+├── ColorPicker.FormatSelect
+└── ButtonGroup.Root
+    ├── ColorPicker.Input (or ColorPicker.ChannelInputs)
+    └── ColorPicker.AlphaInput
 ```
 
-`Popover`, `Trigger` and `Content` are optional. Leave them out to render the picker inline. `FormatSelect`, `ChannelInputs` and `AlphaInput` are optional too.
+`FormatSelect`, `ChannelInputs` and `AlphaInput` are optional.
 
 ## Popover
 
-Wrap the parts in `<ColorPicker.Content/>`, add a `<ColorPicker.Trigger/>` and put both inside `<ColorPicker.Popover/>`.
+Wrap a [Popover](https://shadcn-svelte.com/docs/components/popover) with `<ColorPicker.Root/>` and put the parts in `<Popover.Content/>`, so the picker keeps its state while the popover is closed. The trigger here paints its swatch from `value`, so the select leaves out `hsb`, which isn't a CSS color.
 
 This example also adds a `<ColorPicker.FormatSelect/>` and joins `<ColorPicker.ChannelInputs/>` and `<ColorPicker.AlphaInput/>` into one row with the [Button Group](https://shadcn-svelte.com/docs/components/button-group) component. `ChannelInputs` shows one field per channel for rgb, hsl and hsb, and a single text input for hex. The `grid-cols-4` class gives every number field the same width, and in a grid the hex input spans the three channel columns on its own.
 
@@ -77,40 +74,5 @@ While an `AlphaInput` is shown, the hex input leaves the alpha out. Typing a col
 ## Disabled
 
 <Demo demo="color-picker-disabled" />
-
-## Translating labels
-
-Every part has an English label that screen readers announce. Override them to translate. This example uses French:
-
-```svelte
-<script lang="ts">
-	import * as ColorPicker from '$lib/components/ui/color-picker';
-	import type { ColorChannel } from '$lib/components/ui/color-picker';
-
-	const channelLabels: Record<ColorChannel, string> = {
-		red: 'Rouge', // Red
-		green: 'Vert', // Green
-		blue: 'Bleu', // Blue
-		hue: 'Teinte', // Hue
-		saturation: 'Saturation', // Saturation
-		lightness: 'Luminosité', // Lightness
-		brightness: 'Luminosité' // Brightness
-	};
-</script>
-
-<ColorPicker.Trigger aria-label="Choisir une couleur" />
-<ColorPicker.Area
-	aria-label="Saturation et luminosité"
-	saturationLabel="Saturation"
-	brightnessLabel="Luminosité"
-	getValueText={(s, b) => `Saturation ${s} %, luminosité ${b} %`}
-/>
-<ColorPicker.HueSlider thumbLabel="Teinte" />
-<ColorPicker.AlphaSlider thumbLabel="Opacité" />
-<ColorPicker.FormatSelect aria-label="Format de couleur" />
-<ColorPicker.Input aria-label="Valeur de la couleur" />
-<ColorPicker.ChannelInputs getLabel={(channel) => channelLabels[channel]} />
-<ColorPicker.AlphaInput aria-label="Opacité" />
-```
 
 <ApiReference />

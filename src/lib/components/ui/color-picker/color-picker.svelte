@@ -47,10 +47,7 @@
 	bind:this={ref}
 	data-slot="color-picker"
 	data-disabled={disabled ? '' : undefined}
-	class={cn(
-		'flex w-64 flex-col gap-3 has-data-[slot=color-picker-trigger]:w-fit data-disabled:opacity-50',
-		className
-	)}
+	class={cn('flex w-64 flex-col gap-3 data-disabled:opacity-50', className)}
 	{...rest}
 >
 	{@render children?.()}

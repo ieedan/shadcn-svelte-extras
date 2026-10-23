@@ -37,11 +37,15 @@
 
 	const area = useColorPickerArea();
 	const valueText = $derived(getValueText(area.saturation, area.brightness));
+	// one element with stacked backgrounds, so no layer edge shows at the rounded corners
+	const background = $derived(
+		`linear-gradient(to top, #000, transparent), linear-gradient(to right, #fff, transparent), ${area.root.hueColor}`
+	);
 </script>
 
 <!--
 	Two visually hidden range inputs give screen readers a slider per axis.
-	Arrow keys still move in 2D from either one.
+	Arrow keys still move in 2D from either one, so only the first is a tab stop.
 -->
 <div
 	bind:this={ref}
@@ -53,7 +57,7 @@
 		'has-[input:focus-visible]:ring-ring/50 relative h-40 w-full cursor-crosshair touch-none rounded-md select-none has-[input:focus-visible]:ring-[3px] aria-disabled:cursor-not-allowed',
 		className
 	)}
-	style:background-color={area.root.hueColor}
+	style:background
 	{...rest}
 	onpointerdown={(e) => {
 		onpointerdown?.(e);
@@ -68,8 +72,6 @@
 		area.onkeydown(e);
 	}}
 >
-	<div class="absolute inset-0 rounded-md bg-linear-to-r from-white to-transparent"></div>
-	<div class="absolute inset-0 rounded-md bg-linear-to-t from-black to-transparent"></div>
 	<input
 		type="range"
 		class="sr-only"
@@ -89,6 +91,7 @@
 		max={100}
 		step={1}
 		value={area.brightness}
+		tabindex={-1}
 		disabled={area.root.disabled}
 		aria-label={brightnessLabel}
 		aria-orientation="vertical"

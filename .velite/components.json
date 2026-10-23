@@ -159,11 +159,6 @@
         "title": "Disabled",
         "url": "#disabled",
         "items": []
-      },
-      {
-        "title": "Translating labels",
-        "url": "#translating-labels",
-        "items": []
       }
     ],
     "slug": "components/color-picker",

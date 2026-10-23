@@ -1,9 +1,36 @@
 import * as api from '../api-reference';
+import type {
+	ColorPickerChannelInputsProps,
+	ColorPickerPropsWithoutHTML
+} from '$lib/components/ui/color-picker';
 
-const Root = api.createComponentReference({
+function createRefProp(element: string) {
+	return api.createAnyProp({
+		description: `A reference to the underlying ${element} element.`,
+		bindable: true,
+		type: element,
+		defaultValue: 'null'
+	});
+}
+
+function createClassProp() {
+	return api.createStringProp({
+		description: 'Additional classes to apply.'
+	});
+}
+
+function createThumbLabelProp(defaultValue: string) {
+	return api.createStringProp({
+		description: 'Accessible label for the thumb. Override it to translate.',
+		defaultValue
+	});
+}
+
+const Root = api.createComponentReference<ColorPickerPropsWithoutHTML>({
 	name: 'Root',
 	description: 'Holds the color state and provides it to the other parts.',
 	props: {
+		ref: createRefProp('HTMLDivElement'),
 		value: api.createStringProp({
 			description:
 				'The current color. Accepts hex, rgb(), hsl() or hsb() and is always written back in the chosen `format`.',
@@ -19,50 +46,11 @@ const Root = api.createComponentReference({
 		disabled: api.createBooleanProp({
 			description: 'Prevents the color from being changed.',
 			defaultValue: false
+		}),
+		children: api.createAnyProp({
+			description: 'The picker parts.',
+			type: 'Snippet'
 		})
-	}
-});
-
-const Popover = api.createComponentReference({
-	name: 'Popover',
-	description: 'Shows the picker in a popover. Wrap `Trigger` and `Content` with it.',
-	props: {
-		open: api.createBooleanProp({
-			description: 'Whether the popover is open.',
-			bindable: true,
-			defaultValue: false
-		})
-	},
-	forwardTo: {
-		name: 'bits-ui Popover.Root',
-		href: 'https://bits-ui.com/docs/components/popover#root'
-	}
-});
-
-const Trigger = api.createComponentReference({
-	name: 'Trigger',
-	description:
-		'A swatch button that opens the popover. Pass children to replace the default swatch.',
-	props: {},
-	forwardTo: {
-		name: 'bits-ui Popover.Trigger',
-		href: 'https://bits-ui.com/docs/components/popover#trigger'
-	}
-});
-
-const Content = api.createComponentReference({
-	name: 'Content',
-	description: 'The popover panel that holds the picker parts.',
-	props: {
-		align: api.createStringUnionProp({
-			type: '"start" | "center" | "end"',
-			description: 'How the content is aligned to the trigger.',
-			defaultValue: 'start'
-		})
-	},
-	forwardTo: {
-		name: 'bits-ui Popover.Content',
-		href: 'https://bits-ui.com/docs/components/popover#content'
 	}
 });
 
@@ -71,6 +59,8 @@ const Area = api.createComponentReference({
 	description:
 		'The saturation and brightness square. Screen readers get one slider per axis. Arrow keys move by 1 (Shift by 10), Home/End set saturation, PageUp/PageDown change brightness by 10.',
 	props: {
+		ref: createRefProp('HTMLDivElement'),
+		class: createClassProp(),
 		label: api.createStringProp({
 			description: 'Accessible label for the area. Override it to translate.',
 			defaultValue: 'Saturation and brightness'
@@ -93,31 +83,21 @@ const Area = api.createComponentReference({
 
 const HueSlider = api.createComponentReference({
 	name: 'HueSlider',
-	description: 'A slider for the hue.',
+	description: 'A slider for the hue, from 0 to 360.',
 	props: {
-		thumbLabel: api.createStringProp({
-			description: 'Accessible label for the thumb. Override it to translate.',
-			defaultValue: 'Hue'
-		})
-	},
-	forwardTo: {
-		name: 'bits-ui Slider.Root',
-		href: 'https://bits-ui.com/docs/components/slider#root'
+		ref: createRefProp('HTMLSpanElement'),
+		class: createClassProp(),
+		thumbLabel: createThumbLabelProp('Hue')
 	}
 });
 
 const AlphaSlider = api.createComponentReference({
 	name: 'AlphaSlider',
-	description: 'A slider for the transparency.',
+	description: 'A slider for the transparency, from 0 to 100%.',
 	props: {
-		thumbLabel: api.createStringProp({
-			description: 'Accessible label for the thumb. Override it to translate.',
-			defaultValue: 'Alpha'
-		})
-	},
-	forwardTo: {
-		name: 'bits-ui Slider.Root',
-		href: 'https://bits-ui.com/docs/components/slider#root'
+		ref: createRefProp('HTMLSpanElement'),
+		class: createClassProp(),
+		thumbLabel: createThumbLabelProp('Alpha')
 	}
 });
 
@@ -125,22 +105,23 @@ const Input = api.createComponentReference({
 	name: 'Input',
 	description:
 		'A text input for the color. Applies on Enter or blur, reverts invalid values and cancels on Escape. While an `AlphaInput` is shown it leaves the alpha out, and a typed color without an alpha keeps the current one.',
-	props: {}
+	props: {
+		ref: createRefProp('HTMLInputElement'),
+		class: createClassProp()
+	}
 });
 
 const FormatSelect = api.createComponentReference({
 	name: 'FormatSelect',
 	description: 'A select that changes the bound `format` of the root (HEX, RGB, HSL or HSB).',
 	props: {
+		ref: createRefProp('HTMLButtonElement'),
+		class: createClassProp(),
 		formats: api.createAnyProp({
 			type: 'ColorFormat[]',
 			description: 'The formats to offer, in order.',
 			defaultValue: "['hex', 'rgb', 'hsl', 'hsb']"
 		})
-	},
-	forwardTo: {
-		name: 'Select.Trigger',
-		href: 'https://shadcn-svelte.com/docs/components/select'
 	}
 });
 
@@ -148,14 +129,20 @@ const AlphaInput = api.createComponentReference({
 	name: 'AlphaInput',
 	description:
 		'A text input for the transparency as a percentage. Arrow keys change it by 1 (Shift by 10). Applies on Enter or blur, reverts invalid values and cancels on Escape.',
-	props: {}
+	props: {
+		ref: createRefProp('HTMLInputElement'),
+		class: createClassProp()
+	}
 });
 
-const ChannelInputs = api.createComponentReference({
+const ChannelInputs = api.createComponentReference<ColorPickerChannelInputsProps>({
 	name: 'ChannelInputs',
 	description:
 		'One number input per channel of the current format (e.g. red, green and blue for rgb), or a single `Input` for hex. Renders no wrapper, so the inputs can be joined with a Button Group.',
 	props: {
+		class: api.createStringProp({
+			description: 'Additional classes to apply to each input.'
+		}),
 		getLabel: api.createFunctionProp({
 			description: 'Accessible label for each channel input. Override it to translate.',
 			type: '(channel: ColorChannel) => string'
@@ -167,9 +154,6 @@ export const reference = {
 	name: 'ColorPicker' as const,
 	components: {
 		Root,
-		Popover,
-		Trigger,
-		Content,
 		Area,
 		HueSlider,
 		AlphaSlider,

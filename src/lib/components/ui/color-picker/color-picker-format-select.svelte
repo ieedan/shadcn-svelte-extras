@@ -10,6 +10,8 @@
 		/** The formats to offer, in order. */
 		formats?: ColorFormat[];
 	};
+
+	const LABELS: Record<ColorFormat, string> = { hex: 'HEX', rgb: 'RGB', hsl: 'HSL', hsb: 'HSB' };
 </script>
 
 <script lang="ts">
@@ -25,8 +27,6 @@
 	}: ColorPickerFormatSelectProps = $props();
 
 	const root = useColorPickerRootCtx();
-
-	const LABELS: Record<ColorFormat, string> = { hex: 'HEX', rgb: 'RGB', hsl: 'HSL', hsb: 'HSB' };
 </script>
 
 <SelectPrimitive.Root
@@ -46,8 +46,10 @@
 		{LABELS[root.format]}
 	</SelectPrimitive.Trigger>
 	<SelectPrimitive.Content class="min-w-0">
-		{#each formats as format (format)}
-			<SelectPrimitive.Item value={format} label={LABELS[format]} class="text-xs" />
-		{/each}
+		<SelectPrimitive.Group>
+			{#each formats as format (format)}
+				<SelectPrimitive.Item value={format} label={LABELS[format]} class="text-xs" />
+			{/each}
+		</SelectPrimitive.Group>
 	</SelectPrimitive.Content>
 </SelectPrimitive.Root>

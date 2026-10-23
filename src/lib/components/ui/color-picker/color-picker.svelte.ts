@@ -38,15 +38,15 @@ class ColorPickerRootState {
 		// parse synchronously so server rendering shows the right color (effects don't run on the server)
 		const initial = parseValue(this.opts.value.current);
 		this.hsva = initial ?? DEFAULT_COLOR;
-		if (initial) this.#normalize(this.opts.value.current);
+		this.#normalize(this.opts.value.current);
 
 		watch(
 			() => this.opts.value.current,
 			(value) => {
 				if (value === this.#lastEmitted) return;
 				const parsed = parseValue(value);
-				if (!parsed) return;
-				this.hsva = keepHueAndSaturation(this.hsva, parsed);
+				// an invalid value is replaced with the current color, so `value` and the picker agree
+				if (parsed) this.hsva = keepHueAndSaturation(this.hsva, parsed);
 				this.#normalize(value);
 			},
 			{ lazy: true }
@@ -167,7 +167,7 @@ function parseValue(value: string): Hsva | undefined {
 	const parsed = parseColor(value);
 	if (!parsed) {
 		console.warn(
-			`ColorPicker: "${value}" isn't a supported color. Use a hex, rgb(), hsl() or hsb() value.`
+			`ColorPicker: "${value}" isn't a supported color, so it was replaced. Use a hex, rgb(), hsl() or hsb() value.`
 		);
 	}
 	return parsed;
