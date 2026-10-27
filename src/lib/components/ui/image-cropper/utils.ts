@@ -1,6 +1,13 @@
 import type { CropArea } from 'svelte-easy-crop';
+import type { ImageCropperOutputType } from './types';
 
-export const getFileFromUrl = async (url: string, fileName = 'cropped.png'): Promise<File> => {
+const OUTPUT_TYPES: ImageCropperOutputType[] = ['image/png', 'image/jpeg', 'image/webp'];
+
+/** Keeps the uploaded format when the canvas can encode it, otherwise PNG */
+export const getOutputType = (inputType: string): ImageCropperOutputType =>
+	OUTPUT_TYPES.find((type) => type === inputType) ?? 'image/png';
+
+export const getFileFromUrl = async (url: string, fileName?: string): Promise<File> => {
 	// Fetch the file data from the URL
 	const response = await fetch(url);
 
@@ -11,8 +18,10 @@ export const getFileFromUrl = async (url: string, fileName = 'cropped.png'): Pro
 	// Convert the response into a Blob
 	const blob = await response.blob();
 
-	// Create and return a File. You can set a custom type if needed.
-	return new File([blob], fileName, { type: blob.type });
+	// Create and return a File, named after its format unless a name is given
+	return new File([blob], fileName ?? `cropped.${blob.type.replace('image/', '')}`, {
+		type: blob.type
+	});
 };
 
 const createImage = (url: string): Promise<HTMLImageElement> => {
@@ -25,21 +34,19 @@ const createImage = (url: string): Promise<HTMLImageElement> => {
 	});
 };
 
-const getRadianAngle = (degreeValue: number) => {
-	return (degreeValue * Math.PI) / 180;
-};
-
 /** Gets the cropped image from the src using the cropped area
  *
  * @param imageSrc
  * @param pixelCrop
- * @param rotation
+ * @param type
+ * @param quality
  * @returns
  */
 export const getCroppedImg = async (
 	imageSrc: string,
 	pixelCrop: CropArea,
-	rotation = 0
+	type: ImageCropperOutputType,
+	quality?: number
 ): Promise<string> => {
 	const image = await createImage(imageSrc);
 	const canvas = document.createElement('canvas');
@@ -49,37 +56,21 @@ export const getCroppedImg = async (
 		throw new Error('Error getting 2d rendering context');
 	}
 
-	const maxSize = Math.max(image.width, image.height);
-	const safeArea = 2 * ((maxSize / 2) * Math.sqrt(2));
+	const { x, y, width, height } = pixelCrop;
 
-	// set each dimensions to double largest dimension to allow for a safe area for the
-	// image to rotate in without being clipped by canvas context
-	canvas.width = safeArea;
-	canvas.height = safeArea;
+	canvas.width = width;
+	canvas.height = height;
 
-	// translate canvas context to a central location on image to allow rotating around the center.
-	ctx.translate(safeArea / 2, safeArea / 2);
-	ctx.rotate(getRadianAngle(rotation));
-	ctx.translate(-safeArea / 2, -safeArea / 2);
-
-	// draw rotated image and store data.
-	ctx.drawImage(image, safeArea / 2 - image.width * 0.5, safeArea / 2 - image.height * 0.5);
-	const data = ctx.getImageData(0, 0, safeArea, safeArea);
-
-	// set canvas width to final desired crop size - this will clear existing context
-	canvas.width = pixelCrop.width;
-	canvas.height = pixelCrop.height;
-
-	// paste generated rotate image with correct offsets for x,y crop values.
-	ctx.putImageData(
-		data,
-		Math.round(0 - safeArea / 2 + image.width * 0.5 - pixelCrop.x),
-		Math.round(0 - safeArea / 2 + image.height * 0.5 - pixelCrop.y)
-	);
+	// draw only the cropped area
+	ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
 
 	return new Promise((resolve) => {
-		canvas.toBlob((file) => {
-			resolve(URL.createObjectURL(file!));
-		}, 'image/png');
+		canvas.toBlob(
+			(file) => {
+				resolve(URL.createObjectURL(file!));
+			},
+			type,
+			quality
+		);
 	});
 };

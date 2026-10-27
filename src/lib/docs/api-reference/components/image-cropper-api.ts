@@ -23,6 +23,14 @@ const Root = api.createComponentReference<Omit<ImageCropperRootPropsWithoutHTML,
 			description: 'Callback fired when an unsupported file is uploaded. Receives the File object.',
 			type: '(file: File) => void'
 		}),
+		outputType: api.createStringUnionProp({
+			type: '"image/png" | "image/jpeg" | "image/webp"',
+			description:
+				"The format of the cropped image. Defaults to the uploaded file's format if the browser can encode it, otherwise PNG."
+		}),
+		outputQuality: api.createNumberProp({
+			description: 'Encoding quality from 0 to 1 for `image/jpeg` and `image/webp`.'
+		}),
 		children: api.createAnyProp({
 			description: 'The content of the image cropper.',
 			type: 'Snippet',
