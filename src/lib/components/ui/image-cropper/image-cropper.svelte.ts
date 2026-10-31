@@ -1,7 +1,7 @@
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import { Context } from 'runed';
 import type { CropArea, DispatchEvents } from 'svelte-easy-crop';
-import { getCroppedImg, getOutputType } from './utils';
+import { getCroppedImg } from './utils';
 import type { ImageCropperOutputType } from './types';
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#supported_image_formats
@@ -64,7 +64,7 @@ class ImageCropperRootState {
 		this.opts.src.current = await getCroppedImg(
 			this.tempUrl,
 			this.pixelCrop,
-			this.opts.outputType.current ?? getOutputType(this.#inputType),
+			this.opts.outputType.current ?? this.#inputType,
 			this.opts.outputQuality.current
 		);
 

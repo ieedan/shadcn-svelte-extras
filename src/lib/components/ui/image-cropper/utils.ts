@@ -1,11 +1,4 @@
 import type { CropArea } from 'svelte-easy-crop';
-import type { ImageCropperOutputType } from './types';
-
-const OUTPUT_TYPES: ImageCropperOutputType[] = ['image/png', 'image/jpeg', 'image/webp'];
-
-/** Keeps the uploaded format when the canvas can encode it, otherwise PNG */
-export const getOutputType = (inputType: string): ImageCropperOutputType =>
-	OUTPUT_TYPES.find((type) => type === inputType) ?? 'image/png';
 
 export const getFileFromUrl = async (url: string, fileName?: string): Promise<File> => {
 	// Fetch the file data from the URL
@@ -45,7 +38,7 @@ const createImage = (url: string): Promise<HTMLImageElement> => {
 export const getCroppedImg = async (
 	imageSrc: string,
 	pixelCrop: CropArea,
-	type: ImageCropperOutputType,
+	type: string,
 	quality?: number
 ): Promise<string> => {
 	const image = await createImage(imageSrc);
@@ -65,6 +58,8 @@ export const getCroppedImg = async (
 	ctx.drawImage(image, x, y, width, height, 0, 0, width, height);
 
 	return new Promise((resolve) => {
+		// encodes the passed in type directly, falling back to PNG if the browser can't encode it
+		// https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob
 		canvas.toBlob(
 			(file) => {
 				resolve(URL.createObjectURL(file!));
