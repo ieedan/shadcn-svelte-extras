@@ -9,11 +9,15 @@ import type { Snippet } from 'svelte';
 import type { CropperProps } from 'svelte-easy-crop';
 import type { HTMLAttributes, HTMLInputAttributes } from 'svelte/elements';
 
+export type ImageCropperOutputType = 'image/png' | 'image/jpeg' | 'image/webp';
+
 export type ImageCropperRootPropsWithoutHTML = WithChildren<{
 	id?: string;
 	src?: string;
 	onCropped?: (url: string) => void;
 	onUnsupportedFile?: (file: File) => void;
+	outputType?: ImageCropperOutputType;
+	outputQuality?: number;
 }>;
 
 export type ImageCropperRootProps = ImageCropperRootPropsWithoutHTML & HTMLInputAttributes;
