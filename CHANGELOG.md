@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.3.0
+
+### Minor Changes
+
+- feat(ImageCropper): Keep the uploaded image's format instead of always using PNG, and add `outputType` and `outputQuality` to `<ImageCropper.Root/>` ([#411](https://github.com/ieedan/shadcn-svelte-extras/pull/411))
+
 ## 7.2.2
 
 ### Patch Changes
