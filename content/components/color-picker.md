@@ -1,6 +1,7 @@
 ---
 title: 'Color Picker'
 description: 'A composable color picker component.'
+indicator: 'new'
 ---
 
 <script lang="ts">

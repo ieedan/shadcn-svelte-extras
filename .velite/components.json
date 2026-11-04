@@ -161,6 +161,7 @@
         "items": []
       }
     ],
+    "indicator": "new",
     "slug": "components/color-picker",
     "href": "/docs/components/color-picker"
   },
