@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.4.0
+
+### Minor Changes
+
+- feat: New Color Picker component ([#406](https://github.com/ieedan/shadcn-svelte-extras/pull/406))
+
 ## 7.3.0
 
 ### Minor Changes
