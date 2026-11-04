@@ -69,6 +69,19 @@ export default defineConfig({
 					]
 				},
 				{
+					name: 'color-picker',
+					title: 'ColorPicker',
+					description:
+						'A color picker component for color selection, color input, hex color picker, rgb, hsl, hsb, with saturation area, hue slider, alpha slider, format select, channel inputs, and popover mode.',
+					type: 'ui',
+					meta: { documentation: `${DOCS_ORIGIN}/docs/components/color-picker` },
+					files: [
+						{
+							path: 'src/lib/components/ui/color-picker'
+						}
+					]
+				},
+				{
 					name: 'confirm-delete-dialog',
 					title: 'ConfirmDeleteDialog',
 					description: 'A dialog for confirming delete actions.',
