@@ -234,29 +234,36 @@ function toHexByte(value: number) {
 	return Math.round(value).toString(16).padStart(2, '0');
 }
 
+/** Rounds a hue and wraps it, so `359.7` prints as `0` rather than `360` (which would parse back as `0` anyway). */
+function roundHue(h: number) {
+	return round(h) % 360;
+}
+
 export function formatColor(hsva: Hsva, format: ColorFormat): string {
-	// compare the rounded alpha so values like 0.998 don't print a redundant alpha
-	const alpha = round(hsva.a, 2);
+	// opacity is judged on the 8-bit alpha so every format agrees (hex can only store a byte),
+	// and so float noise like 0.9999999 doesn't print a redundant alpha
+	const opaque = Math.round(hsva.a * 255) === 255;
+	// 0.996 rounds to 1 at two decimals, but `/ 1` would read as opaque
+	const alpha = Math.min(round(hsva.a, 2), 0.99);
 
 	if (format === 'hsl') {
 		const { h, s, l } = hsvaToHsla(hsva);
-		const color = `${round(h)} ${round(s)}% ${round(l)}%`;
-		return alpha < 1 ? `hsl(${color} / ${alpha})` : `hsl(${color})`;
+		const color = `${roundHue(h)} ${round(s)}% ${round(l)}%`;
+		return opaque ? `hsl(${color})` : `hsl(${color} / ${alpha})`;
 	}
 
 	if (format === 'hsb') {
-		const color = `${round(hsva.h)} ${round(hsva.s)}% ${round(hsva.v)}%`;
-		return alpha < 1 ? `hsb(${color} / ${alpha})` : `hsb(${color})`;
+		const color = `${roundHue(hsva.h)} ${round(hsva.s)}% ${round(hsva.v)}%`;
+		return opaque ? `hsb(${color})` : `hsb(${color} / ${alpha})`;
 	}
 
 	const { r, g, b } = hsvaToRgba(hsva);
 
 	if (format === 'rgb') {
 		const color = `${Math.round(r)} ${Math.round(g)} ${Math.round(b)}`;
-		return alpha < 1 ? `rgb(${color} / ${alpha})` : `rgb(${color})`;
+		return opaque ? `rgb(${color})` : `rgb(${color} / ${alpha})`;
 	}
 
 	const hex = `#${toHexByte(r)}${toHexByte(g)}${toHexByte(b)}`;
-	const alphaByte = toHexByte(hsva.a * 255);
-	return alphaByte === 'ff' ? hex : `${hex}${alphaByte}`;
+	return opaque ? hex : `${hex}${toHexByte(hsva.a * 255)}`;
 }

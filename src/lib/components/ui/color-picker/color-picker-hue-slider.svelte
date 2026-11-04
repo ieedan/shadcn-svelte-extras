@@ -41,7 +41,7 @@
 		'relative flex h-3 w-full touch-none items-center rounded-full select-none data-disabled:cursor-not-allowed',
 		className
 	)}
-	style="background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)"
+	style="background: linear-gradient(to right, #f00 0%, #ff0 16.667%, #0f0 33.333%, #0ff 50%, #00f 66.667%, #f0f 83.333%, #f00 100%)"
 	{...rest}
 >
 	<Slider.Thumb
