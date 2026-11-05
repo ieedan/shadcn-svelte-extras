@@ -6,6 +6,27 @@ import { UseFrecency } from '$lib/hooks/use-frecency.svelte';
 
 const emojiData = data as EmojiMartData;
 
+/** The number of emojis rendered when the list mounts and appended each time the user scrolls to the bottom of the list. */
+const RENDER_PAGE_SIZE = 120;
+
+/** Lowercased keywords per emoji name, built once so filtering doesn't re-lowercase every keyword on each keystroke. */
+const emojiKeywords: Record<string, string[]> = Object.create(null);
+for (const [name, emoji] of Object.entries(emojiData.emojis)) {
+	emojiKeywords[name] = emoji.keywords.map((keyword) => keyword.toLowerCase());
+}
+
+/** Whether any of the emoji's keywords starts with `search` (must already be lowercase). */
+function matchesKeywords(search: string, name: string): boolean {
+	const keywords = emojiKeywords[name];
+	if (!keywords) return false;
+
+	for (const keyword of keywords) {
+		if (keyword.startsWith(search)) return true;
+	}
+
+	return false;
+}
+
 type EmojiPickerState = {
 	search: string;
 	active: SelectedEmoji | null;
@@ -30,6 +51,7 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
+	listRenderLimit = $state(RENDER_PAGE_SIZE);
 	frecency: UseFrecency | null;
 
 	constructor(readonly opts: EmojiPickerRootProps) {
@@ -103,8 +125,45 @@ export function makeValue(name: string, skin: number) {
 }
 
 class EmojiPickerListState {
+	search = $derived.by(() => this.root.emojiPickerState.search.toLowerCase());
+
+	filteredCategories = $derived.by(() => {
+		const search = this.search;
+		const filtered: { id: string; emojis: string[] }[] = [];
+		for (const category of emojiData.categories) {
+			const emojis = category.emojis.filter((name) => matchesKeywords(search, name));
+			if (emojis.length > 0) filtered.push({ id: category.id, emojis });
+		}
+		return filtered;
+	});
+
+	recents = $derived.by(() => {
+		if (!this.showRecents) return [];
+		const search = this.search;
+		return (this.root.frecency?.items ?? [])
+			.filter((item) => matchesKeywords(search, parseValue(item).name))
+			.slice(0, this.maxRecents);
+	});
+
+	visibleGroups = $derived.by(() => {
+		let budget = this.root.listRenderLimit;
+		let remaining = 0;
+		const groups: { id: string; emojis: string[] }[] = [];
+		for (const category of this.filteredCategories) {
+			const emojis = category.emojis.slice(0, budget);
+			budget -= emojis.length;
+			remaining += category.emojis.length - emojis.length;
+			if (emojis.length > 0) groups.push({ id: category.id, emojis });
+		}
+		return { groups, remaining };
+	});
+
 	constructor(readonly root: EmojiPickerRootState) {
 		this.select = this.select.bind(this);
+	}
+
+	showMore() {
+		this.root.listRenderLimit += RENDER_PAGE_SIZE;
 	}
 
 	get skinIndex() {
@@ -141,6 +200,7 @@ class EmojiPickerInputState {
 			() => this.opts.value.current,
 			() => {
 				this.root.emojiPickerState.search = this.opts.value.current;
+				this.root.listRenderLimit = RENDER_PAGE_SIZE;
 			}
 		);
 	}
