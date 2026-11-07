@@ -88,8 +88,8 @@ importers:
         specifier: ^4.1.1
         version: 4.1.1
       bits-ui:
-        specifier: ^2.19.2
-        version: 2.19.2(@internationalized/date@3.12.0)(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)
+        specifier: ^2.16.5
+        version: 2.16.5(@internationalized/date@3.12.0)(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -196,8 +196,8 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0
       tailwind-variants:
-        specifier: ^3.3.1
-        version: 3.3.1(tailwind-merge@3.5.0)(tailwindcss@4.2.2)
+        specifier: ^3.2.2
+        version: 3.2.2(tailwind-merge@3.5.0)(tailwindcss@4.2.2)
       tailwindcss:
         specifier: ^4.2.2
         version: 4.2.2
@@ -2201,8 +2201,8 @@ packages:
     resolution: {integrity: sha512-pbnl5XzGBdrFU/wT4jqmJVPn2B6UHPBOhzMQkY/SPUPB6QtUXtmBHBIwCbXJol93mOpGMnQyP/+BB19q04xj7g==}
     engines: {node: '>=4'}
 
-  bits-ui@2.19.2:
-    resolution: {integrity: sha512-W9upilTmLTIWjuVAD6Ta7XoS6gxRflmCQnXamj+WN1eYxZecghqGENpuSMAKQmVENMLXhh85BZb04LCrBd2+Ng==}
+  bits-ui@2.16.5:
+    resolution: {integrity: sha512-Dx+Sc1DGzRaRfzpxrBI40d+O7vykIZ8E2G6tCaOzqYLzg+mN3YYK+8f8ysAFLfkHzey1MACGrYO3IcO6ROKlSA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@internationalized/date': ^3.8.1
@@ -3955,16 +3955,14 @@ packages:
   tailwind-merge@3.5.0:
     resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
 
-  tailwind-variants@3.3.1:
-    resolution: {integrity: sha512-4pAvwUtM4HKBiRZftncAbpn6V9Hhwoa5Fl7O2u5zbp7Z5Cvu+/o/6+176WY3WCEES209543quG8zFIcXCsc5Jw==}
-    engines: {node: '>=16.9.x', pnpm: '>=7.x'}
+  tailwind-variants@3.2.2:
+    resolution: {integrity: sha512-Mi4kHeMTLvKlM98XPnK+7HoBPmf4gygdFmqQPaDivc3DpYS6aIY6KiG/PgThrGvii5YZJqRsPz0aPyhoFzmZgg==}
+    engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwind-merge: '>=3.0.0'
       tailwindcss: '*'
     peerDependenciesMeta:
       tailwind-merge:
-        optional: true
-      tailwindcss:
         optional: true
 
   tailwindcss@4.2.2:
@@ -6007,7 +6005,7 @@ snapshots:
     dependencies:
       is-windows: 1.0.2
 
-  bits-ui@2.19.2(@internationalized/date@3.12.0)(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1):
+  bits-ui@2.16.5(@internationalized/date@3.12.0)(@sveltejs/kit@2.55.0(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.1)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1)(typescript@6.0.2)(vite@8.0.3(@types/node@25.5.0)(esbuild@0.27.3)(jiti@2.6.1)(terser@5.46.1)(tsx@4.21.0)(yaml@2.7.1)))(svelte@5.55.1):
     dependencies:
       '@floating-ui/core': 1.7.2
       '@floating-ui/dom': 1.7.2
@@ -8243,10 +8241,11 @@ snapshots:
 
   tailwind-merge@3.5.0: {}
 
-  tailwind-variants@3.3.1(tailwind-merge@3.5.0)(tailwindcss@4.2.2):
+  tailwind-variants@3.2.2(tailwind-merge@3.5.0)(tailwindcss@4.2.2):
+    dependencies:
+      tailwindcss: 4.2.2
     optionalDependencies:
       tailwind-merge: 3.5.0
-      tailwindcss: 4.2.2
 
   tailwindcss@4.2.2: {}
 
