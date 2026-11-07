@@ -71,6 +71,7 @@ export default defineConfig({
 				},
 				{
 					name: 'color-picker',
+					strict: false,
 					title: 'ColorPicker',
 					description:
 						'A color picker component for color selection, color input, hex color picker, rgb, hsl, hsb, with saturation area, hue slider, alpha slider, format select, channel inputs, and popover mode.',
