@@ -78,6 +78,7 @@
 <script lang="ts">
 	import * as AlertDialog from '$lib/components/ui/alert-dialog';
 	import { Input } from '$lib/components/ui/input';
+	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
 </script>
 
 <AlertDialog.Root bind:open={dialogState.open}>
@@ -118,10 +119,13 @@
 				<AlertDialog.Action
 					type="submit"
 					variant="destructive"
-					loading={dialogState.loading}
-					disabled={dialogState.options?.input &&
-						dialogState.inputText !== dialogState.options.input.confirmationText}
+					disabled={(dialogState.options?.input &&
+						dialogState.inputText !== dialogState.options.input.confirmationText) ||
+						dialogState.loading}
 				>
+					{#if dialogState.loading}
+						<LoaderCircleIcon data-icon="inline-start" class="animate-spin" />
+					{/if}
 					{dialogState.options?.confirm?.text ?? 'Delete'}
 				</AlertDialog.Action>
 			</AlertDialog.Footer>

@@ -44,6 +44,7 @@ export default defineConfig({
 			...([
 				{
 					name: 'chat',
+					strict: false,
 					title: 'Chat',
 					description:
 						'A component for creating live chats, messaging interfaces, conversation UIs, chat bubbles, message threads, and real-time communication displays.',
@@ -70,6 +71,7 @@ export default defineConfig({
 				},
 				{
 					name: 'color-picker',
+					strict: false,
 					title: 'ColorPicker',
 					description:
 						'A color picker component for color selection, color input, hex color picker, rgb, hsl, hsb, with saturation area, hue slider, alpha slider, format select, channel inputs, and popover mode.',
@@ -83,6 +85,7 @@ export default defineConfig({
 				},
 				{
 					name: 'confirm-delete-dialog',
+					strict: false,
 					title: 'ConfirmDeleteDialog',
 					description: 'A dialog for confirming delete actions.',
 					type: 'ui',
@@ -95,6 +98,7 @@ export default defineConfig({
 				},
 				{
 					name: 'copy-button',
+					strict: false,
 					title: 'CopyButton',
 					description:
 						'A button used to copy text to the clipboard, copy code snippets, copy content, clipboard copy functionality with visual feedback and copy confirmation.',
@@ -108,6 +112,7 @@ export default defineConfig({
 				},
 				{
 					name: 'emoji-picker',
+					strict: false,
 					title: 'EmojiPicker',
 					description:
 						'A composable emoji picker component for selecting emojis, emoji selector, emoji chooser, emoji reactions, emoji input, with categories, search, and recent emojis.',
@@ -160,6 +165,7 @@ export default defineConfig({
 				},
 				{
 					name: 'image-cropper',
+					strict: false,
 					title: 'ImageCropper',
 					description:
 						'An image cropper component for cropping images, image editor, photo cropper, image resize, crop tool, with aspect ratio control, preview, and image upload.',
@@ -186,6 +192,7 @@ export default defineConfig({
 				},
 				{
 					name: 'language-switcher',
+					strict: false,
 					title: 'LanguageSwitcher',
 					description:
 						'A language switcher component for changing locales, i18n language selector, locale switcher, internationalization, translation switcher, and multi-language support.',
@@ -238,6 +245,7 @@ export default defineConfig({
 				},
 				{
 					name: 'modal',
+					strict: false,
 					title: 'Modal',
 					description:
 						'A modal component for dialogs, popups, overlays, dialog boxes, modal windows, with backdrop, close functionality, and responsive design.',
@@ -251,6 +259,7 @@ export default defineConfig({
 				},
 				{
 					name: 'nlp-date-input',
+					strict: false,
 					title: 'NlpDateInput',
 					description:
 						'A natural language processing date input component for parsing date strings, smart date input, date picker with NLP, text to date conversion, and date suggestions.',
@@ -276,6 +285,7 @@ export default defineConfig({
 				},
 				{
 					name: 'password',
+					strict: false,
 					title: 'Password',
 					description:
 						'A password component for password input fields, secure password entry, password visibility toggle, password strength indicator, and secret input handling.',
@@ -289,6 +299,7 @@ export default defineConfig({
 				},
 				{
 					name: 'phone-input',
+					strict: false,
 					title: 'PhoneInput',
 					description:
 						'A phone number input component for telephone numbers, phone number form field, international phone input, country code selector, and phone validation.',
@@ -302,6 +313,7 @@ export default defineConfig({
 				},
 				{
 					name: 'pm-command',
+					strict: false,
 					title: 'PmCommand',
 					description:
 						'A package manager command component for displaying npm, pnpm, yarn, bun commands, install commands, package manager instructions, and copyable command snippets.',
@@ -341,6 +353,7 @@ export default defineConfig({
 				},
 				{
 					name: 'stepper',
+					strict: false,
 					title: 'Stepper',
 					description:
 						'A stepper component for multi-step forms, step navigation, progress indicators, wizard flows, step-by-step processes, with next/previous navigation and step validation.',
@@ -354,6 +367,7 @@ export default defineConfig({
 				},
 				{
 					name: 'split-button',
+					strict: false,
 					title: 'SplitButton',
 					description:
 						'A split button combining a primary action with a secondary action such as a dropdown menu or alternate command.',
@@ -406,6 +420,7 @@ export default defineConfig({
 				},
 				{
 					name: 'theme-selector',
+					strict: false,
 					title: 'ThemeSelector',
 					description:
 						'A theme selector component for choosing themes, theme picker, color scheme selector, dark light theme switcher, with multiple theme options and visual preview.',
@@ -432,6 +447,7 @@ export default defineConfig({
 				},
 				{
 					name: 'tree-view',
+					strict: false,
 					title: 'TreeView',
 					description:
 						'A tree view component for displaying hierarchical data, file tree, folder structure, nested lists, directory tree, with expand collapse, custom icons, and selection.',
@@ -475,6 +491,7 @@ export default defineConfig({
 			...([
 				{
 					name: 'button',
+					strict: false,
 					title: 'Button',
 					description:
 						'An extended button component with loading states, promise handling, click handlers, variants, sizes, and disabled states for interactive UI elements.',
@@ -719,238 +736,26 @@ export default defineConfig({
 						}
 					]
 				}
-			] satisfies RegistryItem[]),
-
-			// shadcn-svelte
-			...([
-				// ui
-				{
-					name: 'shadcn-svelte-alert-dialog',
-					title: 'shadcn-svelte/alert-dialog',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/alert-dialog'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-avatar',
-					title: 'shadcn-svelte/avatar',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/avatar'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-button',
-					title: 'shadcn-svelte/button',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/button'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-button-group',
-					title: 'shadcn-svelte/button-group',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/button-group'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-collapsible',
-					title: 'shadcn-svelte/collapsible',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/collapsible'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-command',
-					title: 'shadcn-svelte/command',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/command'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-dialog',
-					title: 'shadcn-svelte/dialog',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/dialog'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-drawer',
-					title: 'shadcn-svelte/drawer',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/drawer'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-dropdown-menu',
-					title: 'shadcn-svelte/dropdown-menu',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/dropdown-menu'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-input',
-					title: 'shadcn-svelte/input',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/input'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-input-group',
-					title: 'shadcn-svelte/input-group',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/input-group'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-popover',
-					title: 'shadcn-svelte/popover',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/popover'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-scroll-area',
-					title: 'shadcn-svelte/scroll-area',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/scroll-area'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-select',
-					title: 'shadcn-svelte/select',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/select'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-separator',
-					title: 'shadcn-svelte/separator',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/separator'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-spinner',
-					title: 'shadcn-svelte/spinner',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/spinner'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-tabs',
-					title: 'shadcn-svelte/tabs',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/tabs'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-textarea',
-					title: 'shadcn-svelte/textarea',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/textarea'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-toggle',
-					title: 'shadcn-svelte/toggle',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/toggle'
-						}
-					]
-				},
-				{
-					name: 'shadcn-svelte-tooltip',
-					title: 'shadcn-svelte/tooltip',
-					type: 'ui',
-					add: 'when-needed',
-					files: [
-						{
-							path: 'src/lib/components/ui/tooltip'
-						}
-					]
-				}
 			] satisfies RegistryItem[])
+
+			// NOTE: Upstream shadcn-svelte components are intentionally NOT vendored.
+			// Items import `$lib/components/ui/*` which resolves to the consumer's own
+			// shadcn-svelte components (respecting their style preset). Fixes #373.
 		]
 	},
 	build: {
 		onwarn: (warning, handler) => {
 			if (warning instanceof InvalidImportWarning) {
 				if (['$app/server', '$app/state', '$app/navigation'].includes(warning.specifier)) {
+					return;
+				}
+				// Upstream shadcn-svelte components are intentionally unresolved: they
+				// resolve to the consumer's own components at install time (#373).
+				if (
+					/^\$lib\/components\/ui\/(alert-dialog|avatar|button|button-group|collapsible|command|dialog|drawer|dropdown-menu|input|popover|scroll-area|select|spinner|tabs|toggle|tooltip)(\/|$)/.test(
+						warning.specifier
+					)
+				) {
 					return;
 				}
 			}
