@@ -8,7 +8,6 @@
 @import '@fontsource-variable/inter';
 
 @custom-variant dark (&:is(.dark *));
-@custom-variant fixed (&:is(.layout-fixed *));
 
 :root {
 	--radius: 0.625rem;
@@ -173,7 +172,7 @@ html {
 }
 
 @utility site-container {
-	@apply fixed:max-w-7xl w-full px-6;
+	@apply w-full px-6;
 }
 
 @layer components {

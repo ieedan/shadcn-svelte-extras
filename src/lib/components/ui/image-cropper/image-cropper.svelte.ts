@@ -2,6 +2,7 @@ import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import { Context } from 'runed';
 import type { CropArea, DispatchEvents } from 'svelte-easy-crop';
 import { getCroppedImg } from './utils';
+import type { ImageCropperOutputType } from './types';
 
 // https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img#supported_image_formats
 export const VALID_IMAGE_TYPES = [
@@ -21,10 +22,13 @@ export type ImageCropperRootProps = WritableBoxedValues<{
 		id: string;
 		onCropped: (url: string) => void;
 		onUnsupportedFile: (file: File) => void;
+		outputType: ImageCropperOutputType | undefined;
+		outputQuality: number | undefined;
 	}>;
 
 class ImageCropperRootState {
 	#createdUrls = $state<string[]>([]);
+	#inputType = '';
 	open = $state(false);
 	tempUrl = $state<string>();
 	pixelCrop = $state<CropArea>();
@@ -42,6 +46,7 @@ class ImageCropperRootState {
 			return;
 		}
 
+		this.#inputType = file.type;
 		this.tempUrl = URL.createObjectURL(file);
 		this.#createdUrls.push(this.tempUrl);
 		this.open = true;
@@ -56,7 +61,12 @@ class ImageCropperRootState {
 	async onCrop() {
 		if (!this.pixelCrop || !this.tempUrl) return;
 
-		this.opts.src.current = await getCroppedImg(this.tempUrl, this.pixelCrop);
+		this.opts.src.current = await getCroppedImg(
+			this.tempUrl,
+			this.pixelCrop,
+			this.opts.outputType.current ?? this.#inputType,
+			this.opts.outputQuality.current
+		);
 
 		this.open = false;
 

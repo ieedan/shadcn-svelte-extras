@@ -53,7 +53,7 @@
 	{/if}
 	{#if state.rootState.opts.value.current === value}
 		<div
-			class="bg-primary absolute -bottom-px z-1 h-0.5 w-full"
+			class="bg-primary absolute bottom-0 z-1 h-0.5 w-full"
 			in:receive={{ key: `${state.rootState.opts.id.current}-tab-active-border`, duration: 200 }}
 			out:send={{ key: `${state.rootState.opts.id.current}-tab-active-border`, duration: 200 }}
 		></div>

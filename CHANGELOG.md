@@ -1,5 +1,29 @@
 # shadcn-svelte-extras
 
+## 7.4.0
+
+### Minor Changes
+
+- feat: New Color Picker component ([#406](https://github.com/ieedan/shadcn-svelte-extras/pull/406))
+
+## 7.3.0
+
+### Minor Changes
+
+- feat(ImageCropper): Keep the uploaded image's format instead of always using PNG, and add `outputType` and `outputQuality` to `<ImageCropper.Root/>` ([#411](https://github.com/ieedan/shadcn-svelte-extras/pull/411))
+
+## 7.2.2
+
+### Patch Changes
+
+- fix: `<UnderlineTabs.List/>` no longer scrolls vertically on up/down arrow keys ([#408](https://github.com/ieedan/shadcn-svelte-extras/pull/408))
+
+## 7.2.1
+
+### Patch Changes
+
+- feat: refactor snippet to input/textarea ([#403](https://github.com/ieedan/shadcn-svelte-extras/pull/403))
+
 ## 7.2.0
 
 ### Minor Changes

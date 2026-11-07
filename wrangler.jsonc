@@ -10,5 +10,8 @@
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
-	}
+	},
+	// Required by `wrangler preview` (Worker Previews). Previews don't inherit production
+	// vars/secrets/bindings, add any the site needs here. https://developers.cloudflare.com/workers/previews/configuration/
+	"previews": {}
 }
