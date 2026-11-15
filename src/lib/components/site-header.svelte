@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Logo from './logo.svelte';
 	import { LightSwitch } from './ui/light-switch';
-	import LayoutToggle from './layout-toggle.svelte';
 	import { Separator } from './ui/separator';
 	import MobileSheet from './mobile-sheet.svelte';
 	import { GitHubButton, getStars } from './ui/github-button';
@@ -33,8 +32,6 @@
 		<div class="flex items-center gap-2 **:data-[slot=separator]:h-4!">
 			<GitHubButton variant="ghost" size="sm" {repo} {stars} />
 			<Separator orientation="vertical" />
-			<LayoutToggle class="hidden xl:flex" />
-			<Separator orientation="vertical" class="hidden xl:block" />
 			<LightSwitch variant="ghost" size="sm" />
 		</div>
 	</div>

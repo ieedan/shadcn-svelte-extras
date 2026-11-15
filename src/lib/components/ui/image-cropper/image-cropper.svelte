@@ -10,6 +10,8 @@
 		src = $bindable(''),
 		onCropped = () => {},
 		onUnsupportedFile = () => {},
+		outputType,
+		outputQuality,
 		children,
 		...rest
 	}: ImageCropperRootProps = $props();
@@ -21,7 +23,9 @@
 			(v) => (src = v)
 		),
 		onCropped: box.with(() => onCropped),
-		onUnsupportedFile: box.with(() => onUnsupportedFile)
+		onUnsupportedFile: box.with(() => onUnsupportedFile),
+		outputType: box.with(() => outputType),
+		outputQuality: box.with(() => outputQuality)
 	});
 
 	onDestroy(() => rootState.dispose());

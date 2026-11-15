@@ -20,5 +20,6 @@ export type {
 	ImageCropperPreviewPropsWithoutHTML,
 	ImageCropperPreviewProps,
 	ImageCropperUploadTriggerPropsWithoutHTML,
-	ImageCropperUploadTriggerProps
+	ImageCropperUploadTriggerProps,
+	ImageCropperOutputType
 } from './types';

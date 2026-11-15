@@ -14,7 +14,7 @@
 	bind:ref
 	data-slot="underline-tabs-list"
 	class={cn(
-		'text-muted-foreground border-border relative inline-flex h-9 w-full max-w-full items-center justify-start overflow-x-auto border-b',
+		'text-muted-foreground relative inline-flex h-9 w-full max-w-full items-center justify-start overflow-x-auto overflow-y-hidden shadow-[inset_0_-1px_0_0_var(--color-border)]',
 		className
 	)}
 	{...restProps}

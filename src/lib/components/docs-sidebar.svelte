@@ -31,7 +31,7 @@
 								<Sidebar.MenuItem class="w-full">
 									<Sidebar.MenuButton
 										isActive={doc.href === pathname}
-										class="data-[active=true]:bg-accent data-[active=true]:border-accent 3xl:fixed:w-full 3xl:fixed:max-w-48 relative h-[30px] w-fit overflow-clip border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
+										class="data-[active=true]:bg-accent data-[active=true]:border-accent relative h-[30px] w-fit overflow-clip border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md"
 									>
 										{#snippet child({ props })}
 											<a href={doc.href} {...props}>

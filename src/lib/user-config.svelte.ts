@@ -3,18 +3,13 @@ import { z } from 'zod';
 
 export const USER_CONFIG_COOKIE_NAME = 'extras_user_config';
 
-const layoutSchema = z.enum(['fixed', 'full']).default('full');
 const packageManagerSchema = z.enum(['npm', 'yarn', 'pnpm', 'bun']).default('pnpm');
-
-export type Layout = z.infer<typeof layoutSchema>;
 
 export const userConfigSchema = z
 	.object({
-		layout: layoutSchema,
 		packageManager: packageManagerSchema
 	})
 	.default({
-		layout: 'full',
 		packageManager: 'pnpm'
 	});
 
@@ -51,18 +46,7 @@ export class UserConfig {
 	setConfig(config: Partial<UserConfigType>): void {
 		this.#config = { ...this.#config, ...config };
 		document.cookie = `${USER_CONFIG_COOKIE_NAME}=${encodeURIComponent(JSON.stringify(this.#config))}; path=/; max-age=31536000; SameSite=Lax;`;
-
-		if (config.layout) updateLayoutClass(this.#config.layout);
 	}
-}
-
-function updateLayoutClass(newLayout: Layout): void {
-	if (typeof document === 'undefined') return;
-
-	// Remove any existing layout classes
-	document.documentElement.classList.remove('layout-fixed', 'layout-full');
-	// Add the new layout class
-	document.documentElement.classList.add(`layout-${newLayout}`);
 }
 
 export const UserConfigContext = new Context<UserConfig>('UserConfigContext');
