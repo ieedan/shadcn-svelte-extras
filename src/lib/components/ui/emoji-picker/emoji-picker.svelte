@@ -14,6 +14,9 @@
 		maxRecents = 12,
 		onSkinChange = () => {},
 		class: className,
+		loop = false,
+		vimBindings = true,
+		onkeydowncapture,
 		children,
 		...rest
 	}: EmojiPickerRootProps = $props();
@@ -28,6 +31,8 @@
 			(v) => (skin = v)
 		),
 		showRecents: box.with(() => showRecents),
+		loop: box.with(() => loop),
+		vimBindings: box.with(() => vimBindings),
 		recentsKey: box.with(() => recentsKey),
 		maxRecents: box.with(() => maxRecents),
 		onSelect: box.with(() => onSelect),
@@ -36,7 +41,14 @@
 </script>
 
 <CommandPrimitive.Root
+	bind:value={state.commandValue}
 	{...rest}
+	{loop}
+	{vimBindings}
+	onkeydowncapture={(event) => {
+		if (!state.replayedKeys.has(event)) onkeydowncapture?.(event);
+		void state.list?.onkeydowncapture(event);
+	}}
 	columns={6}
 	shouldFilter={false}
 	class={cn('max-w-[232px]', className)}

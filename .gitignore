@@ -28,3 +28,7 @@ src/lib/paraglide/
 static/components
 static/r
 registry.json
+
+# Browser test artifacts
+/test-results/
+/playwright-report/

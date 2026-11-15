@@ -1,4 +1,5 @@
 import { Context, watch } from 'runed';
+import { flushSync, tick } from 'svelte';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { EmojiPickerSkin, SelectedEmoji } from './types';
 import data, { type EmojiMartData } from '@emoji-mart/data';
@@ -44,6 +45,8 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 	ReadableBoxedValues<{
 		onSelect: (emoji: SelectedEmoji) => void;
 		showRecents: boolean;
+		loop: boolean;
+		vimBindings: boolean;
 		recentsKey: string;
 		maxRecents: number;
 		onSkinChange: (skin: EmojiPickerSkin) => void;
@@ -52,6 +55,9 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
 	listRenderLimit = $state(RENDER_PAGE_SIZE);
+	list: EmojiPickerListState | null = null;
+	commandValue = $state('');
+	replayedKeys = new WeakSet<Event>();
 	frecency: UseFrecency | null;
 
 	constructor(readonly opts: EmojiPickerRootProps) {
@@ -160,10 +166,75 @@ class EmojiPickerListState {
 
 	constructor(readonly root: EmojiPickerRootState) {
 		this.select = this.select.bind(this);
+		root.list = this;
+	}
+
+	async onkeydowncapture(event: KeyboardEvent) {
+		if (event.defaultPrevented || !this.visibleGroups.remaining) return;
+
+		const isVim = event.ctrlKey && this.root.opts.vimBindings.current;
+		const forward =
+			['ArrowDown', 'ArrowRight'].includes(event.key) ||
+			(isVim && ['j', 'n', 'l'].includes(event.key));
+		const backward =
+			['ArrowUp', 'ArrowLeft'].includes(event.key) ||
+			(isVim && ['k', 'p', 'h'].includes(event.key));
+		if (!forward && !backward && event.key !== 'End') return;
+		const root = event.currentTarget as HTMLElement;
+		const items = Array.from(
+			root.querySelectorAll<HTMLElement>('[data-command-item]:not([data-disabled])')
+		);
+		const selected = items.findIndex((item) => item.hasAttribute('data-selected'));
+		const jump =
+			event.key === 'End' ||
+			(forward && (event.metaKey || event.altKey)) ||
+			(backward && this.root.opts.loop.current && selected < 12);
+		if (!jump && !(forward && selected >= items.length - 12)) return;
+
+		// Item registration resets Bits UI selection on the next ticks. Wait for
+		// that to settle, restore the active item, then let Bits UI move the grid.
+		event.preventDefault();
+		event.stopPropagation();
+		const target = event.target as HTMLElement;
+		const search = this.search;
+		await this.reveal(
+			jump
+				? this.filteredCategories.reduce((count, group) => count + group.emojis.length, 0)
+				: this.root.listRenderLimit + RENDER_PAGE_SIZE
+		);
+		if (!target.isConnected || search !== this.search) return;
+		const replay = new KeyboardEvent('keydown', {
+			key: event.key,
+			code: event.code,
+			ctrlKey: event.ctrlKey,
+			metaKey: event.metaKey,
+			altKey: event.altKey,
+			shiftKey: event.shiftKey,
+			repeat: event.repeat,
+			bubbles: true,
+			cancelable: true
+		});
+		this.root.replayedKeys.add(replay);
+		target.dispatchEvent(replay);
+	}
+
+	async reveal(limit: number) {
+		const selected = this.root.commandValue;
+		const search = this.search;
+		this.root.listRenderLimit = limit;
+		// Bits UI schedules sorting, then initial selection, in successive ticks.
+		await tick();
+		await tick();
+		if (selected && search === this.search) {
+			flushSync(() => {
+				this.root.commandValue = selected;
+				this.root.onValueChange(selected);
+			});
+		}
 	}
 
 	showMore() {
-		this.root.listRenderLimit += RENDER_PAGE_SIZE;
+		void this.reveal(this.root.listRenderLimit + RENDER_PAGE_SIZE);
 	}
 
 	get skinIndex() {
