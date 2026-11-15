@@ -1,10 +1,32 @@
 import { Context, watch } from 'runed';
+import { flushSync, tick } from 'svelte';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { EmojiPickerSkin, SelectedEmoji } from './types';
 import data, { type EmojiMartData } from '@emoji-mart/data';
 import { UseFrecency } from '$lib/hooks/use-frecency.svelte';
 
 const emojiData = data as EmojiMartData;
+
+/** The number of emojis rendered when the list mounts and appended each time the user scrolls to the bottom of the list. */
+const RENDER_PAGE_SIZE = 120;
+
+/** Lowercased keywords per emoji name, built once so filtering doesn't re-lowercase every keyword on each keystroke. */
+const emojiKeywords: Record<string, string[]> = Object.create(null);
+for (const [name, emoji] of Object.entries(emojiData.emojis)) {
+	emojiKeywords[name] = emoji.keywords.map((keyword) => keyword.toLowerCase());
+}
+
+/** Whether any of the emoji's keywords starts with `search` (must already be lowercase). */
+function matchesKeywords(search: string, name: string): boolean {
+	const keywords = emojiKeywords[name];
+	if (!keywords) return false;
+
+	for (const keyword of keywords) {
+		if (keyword.startsWith(search)) return true;
+	}
+
+	return false;
+}
 
 type EmojiPickerState = {
 	search: string;
@@ -23,6 +45,8 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 	ReadableBoxedValues<{
 		onSelect: (emoji: SelectedEmoji) => void;
 		showRecents: boolean;
+		loop: boolean;
+		vimBindings: boolean;
 		recentsKey: string;
 		maxRecents: number;
 		onSkinChange: (skin: EmojiPickerSkin) => void;
@@ -30,6 +54,10 @@ type EmojiPickerRootProps = WritableBoxedValues<{
 
 class EmojiPickerRootState {
 	emojiPickerState = $state(defaultState);
+	listRenderLimit = $state(RENDER_PAGE_SIZE);
+	list: EmojiPickerListState | null = null;
+	commandValue = $state('');
+	replayedKeys = new WeakSet<Event>();
 	frecency: UseFrecency | null;
 
 	constructor(readonly opts: EmojiPickerRootProps) {
@@ -103,8 +131,110 @@ export function makeValue(name: string, skin: number) {
 }
 
 class EmojiPickerListState {
+	search = $derived.by(() => this.root.emojiPickerState.search.toLowerCase());
+
+	filteredCategories = $derived.by(() => {
+		const search = this.search;
+		const filtered: { id: string; emojis: string[] }[] = [];
+		for (const category of emojiData.categories) {
+			const emojis = category.emojis.filter((name) => matchesKeywords(search, name));
+			if (emojis.length > 0) filtered.push({ id: category.id, emojis });
+		}
+		return filtered;
+	});
+
+	recents = $derived.by(() => {
+		if (!this.showRecents) return [];
+		const search = this.search;
+		return (this.root.frecency?.items ?? [])
+			.filter((item) => matchesKeywords(search, parseValue(item).name))
+			.slice(0, this.maxRecents);
+	});
+
+	visibleGroups = $derived.by(() => {
+		let budget = this.root.listRenderLimit;
+		let remaining = 0;
+		const groups: { id: string; emojis: string[] }[] = [];
+		for (const category of this.filteredCategories) {
+			const emojis = category.emojis.slice(0, budget);
+			budget -= emojis.length;
+			remaining += category.emojis.length - emojis.length;
+			if (emojis.length > 0) groups.push({ id: category.id, emojis });
+		}
+		return { groups, remaining };
+	});
+
 	constructor(readonly root: EmojiPickerRootState) {
 		this.select = this.select.bind(this);
+		root.list = this;
+	}
+
+	async onkeydowncapture(event: KeyboardEvent) {
+		if (event.defaultPrevented || !this.visibleGroups.remaining) return;
+
+		const isVim = event.ctrlKey && this.root.opts.vimBindings.current;
+		const forward =
+			['ArrowDown', 'ArrowRight'].includes(event.key) ||
+			(isVim && ['j', 'n', 'l'].includes(event.key));
+		const backward =
+			['ArrowUp', 'ArrowLeft'].includes(event.key) ||
+			(isVim && ['k', 'p', 'h'].includes(event.key));
+		if (!forward && !backward && event.key !== 'End') return;
+		const root = event.currentTarget as HTMLElement;
+		const items = Array.from(
+			root.querySelectorAll<HTMLElement>('[data-command-item]:not([data-disabled])')
+		);
+		const selected = items.findIndex((item) => item.hasAttribute('data-selected'));
+		const jump =
+			event.key === 'End' ||
+			(forward && (event.metaKey || event.altKey)) ||
+			(backward && this.root.opts.loop.current && selected < 12);
+		if (!jump && !(forward && selected >= items.length - 12)) return;
+
+		// Item registration resets Bits UI selection on the next ticks. Wait for
+		// that to settle, restore the active item, then let Bits UI move the grid.
+		event.preventDefault();
+		event.stopPropagation();
+		const target = event.target as HTMLElement;
+		const search = this.search;
+		await this.reveal(
+			jump
+				? this.filteredCategories.reduce((count, group) => count + group.emojis.length, 0)
+				: this.root.listRenderLimit + RENDER_PAGE_SIZE
+		);
+		if (!target.isConnected || search !== this.search) return;
+		const replay = new KeyboardEvent('keydown', {
+			key: event.key,
+			code: event.code,
+			ctrlKey: event.ctrlKey,
+			metaKey: event.metaKey,
+			altKey: event.altKey,
+			shiftKey: event.shiftKey,
+			repeat: event.repeat,
+			bubbles: true,
+			cancelable: true
+		});
+		this.root.replayedKeys.add(replay);
+		target.dispatchEvent(replay);
+	}
+
+	async reveal(limit: number) {
+		const selected = this.root.commandValue;
+		const search = this.search;
+		this.root.listRenderLimit = limit;
+		// Bits UI schedules sorting, then initial selection, in successive ticks.
+		await tick();
+		await tick();
+		if (selected && search === this.search) {
+			flushSync(() => {
+				this.root.commandValue = selected;
+				this.root.onValueChange(selected);
+			});
+		}
+	}
+
+	showMore() {
+		void this.reveal(this.root.listRenderLimit + RENDER_PAGE_SIZE);
 	}
 
 	get skinIndex() {
@@ -141,6 +271,7 @@ class EmojiPickerInputState {
 			() => this.opts.value.current,
 			() => {
 				this.root.emojiPickerState.search = this.opts.value.current;
+				this.root.listRenderLimit = RENDER_PAGE_SIZE;
 			}
 		);
 	}

@@ -22,3 +22,9 @@ jobs:
 
       - name: Check
         run: pnpm check
+
+      - name: Install browser
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Emoji picker browser tests
+        run: pnpm test:emoji-picker
