@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { useColorPickerAlphaInput } from './color-picker.svelte.js';
 	import ColorPickerDraftInput from './color-picker-draft-input.svelte';
 

@@ -4,8 +4,8 @@ description: 'A hook to track the size of the screen using the standard Tailwind
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 <Demo demo="use-media" />
@@ -18,7 +18,7 @@ description: 'A hook to track the size of the screen using the standard Tailwind
 
 ```svelte {2,4}
 <script lang="ts">
-	import { useMedia } from '$lib/hooks/use-media.svelte';
+	import { useMedia } from '#lib/hooks/use-media.svelte.ts';
 
 	const media = useMedia();
 </script>

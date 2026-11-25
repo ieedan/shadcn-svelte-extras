@@ -1,9 +1,9 @@
 <script lang="ts">
-	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
-	import * as UnderlineTabs from '$lib/components/ui/underline-tabs';
-	import * as Code from '$lib/components/ui/code';
-	import JsrepoLogo from '$lib/components/logos/jsrepo.svelte';
-	import ShadcnSvelteLogo from '$lib/components/logos/shadcn-svelte.svelte';
+	import JsrepoCommand from '#lib/components/docs/jsrepo-command.svelte';
+	import * as UnderlineTabs from '#lib/components/ui/underline-tabs/index.ts';
+	import * as Code from '#lib/components/ui/code/index.ts';
+	import JsrepoLogo from '#lib/components/logos/jsrepo.svelte';
+	import ShadcnSvelteLogo from '#lib/components/logos/shadcn-svelte.svelte';
 	import PmCommand from '../ui/pm-command/pm-command.svelte';
 
 	const jsrepoConfigExample = `import { defineConfig } from 'jsrepo';
@@ -11,12 +11,12 @@
 export default defineConfig({
 	registries: ['@ieedan/shadcn-svelte-extras'],
 	paths: {
-		ui: '$lib/components/ui',
-		component: '$lib/components',
-		hook: '$lib/hooks',
-		action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
+		ui: '#lib/components/ui',
+		component: '#lib/components/index.ts',
+		hook: '#lib/hooks',
+		action: '#lib/actions',
+		util: '#lib/utils.ts',
+		lib: '#lib'
 	}
 });`;
 </script>

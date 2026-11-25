@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
 	import type { ComponentProps } from 'svelte';
 
 	let { align = 'end', children, ...rest }: ComponentProps<typeof DropdownMenu.Content> = $props();

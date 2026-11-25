@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Input } from '$lib/components/ui/input';
-	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
-	import { Label } from '$lib/components/ui/label';
-	import * as Field from '$lib/components/ui/field';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { IPv4AddressInput } from '#lib/components/ui/ipv4address-input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import * as Field from '#lib/components/ui/field/index.ts';
 
 	let value = '192.168.1.1';
 </script>

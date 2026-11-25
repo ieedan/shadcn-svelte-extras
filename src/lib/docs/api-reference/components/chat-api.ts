@@ -3,7 +3,7 @@ import type {
 	ChatBubblePropsWithoutHTML,
 	ChatBubbleMessagePropsWithoutHTML,
 	ChatListPropsWithoutHTML
-} from '$lib/components/ui/chat/types';
+} from '#lib/components/ui/chat/types.ts';
 
 const List = api.createComponentReference<ChatListPropsWithoutHTML>({
 	name: 'List',

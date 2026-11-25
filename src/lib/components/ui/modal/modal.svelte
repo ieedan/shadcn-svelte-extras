@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import * as Dialog from '#lib/components/ui/dialog/index.js';
+	import * as Drawer from '#lib/components/ui/drawer/index.js';
 	import type { DialogRootProps } from 'bits-ui';
 	import { useModal } from './modal.svelte.js';
 

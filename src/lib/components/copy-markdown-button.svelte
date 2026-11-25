@@ -1,20 +1,20 @@
 <script lang="ts">
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { buttonVariants } from '$lib/components/ui/button';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
 	import MessageCircleIcon from '@lucide/svelte/icons/message-circle';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 	import { page } from '$app/state';
-	import { useDocs } from '$lib/features/docs/docs-context.svelte';
+	import { useDocs } from '#lib/features/docs/docs-context.svelte.ts';
 	import type { Component } from 'svelte';
-	import GithubLogo from '$lib/components/logos/github.svelte';
-	import MarkdownLogo from '$lib/components/logos/markdown.svelte';
-	import OpenaiLogo from '$lib/components/logos/openai.svelte';
-	import AnthropicLogo from '$lib/components/logos/anthropic.svelte';
-	import FinalchatLogo from '$lib/components/logos/finalchat.svelte';
+	import GithubLogo from '#lib/components/logos/github.svelte';
+	import MarkdownLogo from '#lib/components/logos/markdown.svelte';
+	import OpenaiLogo from '#lib/components/logos/openai.svelte';
+	import AnthropicLogo from '#lib/components/logos/anthropic.svelte';
+	import FinalchatLogo from '#lib/components/logos/finalchat.svelte';
 	import LinkIcon from '@lucide/svelte/icons/link';
 	import CheckIcon from '@lucide/svelte/icons/check';
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { UseClipboard } from '#lib/hooks/use-clipboard.svelte.ts';
 	import { scale } from 'svelte/transition';
 
 	type LinkItem = {

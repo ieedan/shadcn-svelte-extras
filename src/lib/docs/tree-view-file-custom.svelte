@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { TreeViewFile } from '$lib/components/ui/tree-view';
-	import * as Icons from '$lib/components/icons';
+	import { TreeViewFile } from '#lib/components/ui/tree-view/index.ts';
+	import * as Icons from '#lib/components/icons/index.ts';
 
 	type Props = {
 		name: string;

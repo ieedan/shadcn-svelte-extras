@@ -1,14 +1,14 @@
 <script lang="ts">
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
 	import {
 		useAddDropdownInstallerOption,
 		type Installer
-	} from '$lib/components/ui/add/add.svelte.js';
+	} from '#lib/components/ui/add/add.svelte.js';
 	import { box } from 'svelte-toolbelt';
 	import type { ComponentProps } from 'svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import CheckIcon from '@lucide/svelte/icons/check';
-	import { Badge } from '$lib/components/ui/badge';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
 	import AddInstallerLogo from './add-installer-logo.svelte';
 
 	let {

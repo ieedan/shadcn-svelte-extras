@@ -4,7 +4,7 @@ import type {
 	EmojiPickerSkinPropsWithoutHTML,
 	EmojiPickerListPropsWithoutHTML,
 	EmojiPickerRootPropsWithoutHTML
-} from '$lib/components/ui/emoji-picker';
+} from '#lib/components/ui/emoji-picker/index.ts';
 
 const Root = api.createComponentReference<EmojiPickerRootPropsWithoutHTML>({
 	name: 'Root',

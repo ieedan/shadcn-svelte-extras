@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as ColorPicker from '$lib/components/ui/color-picker';
+	import * as ColorPicker from '#lib/components/ui/color-picker/index.ts';
 
 	let value = $state('#3b82f6');
 </script>

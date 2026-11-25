@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { cn } from '$lib/utils';
+	import * as Tabs from '#lib/components/ui/tabs/index.ts';
+	import { cn } from '#lib/utils.ts';
 	import { Portal } from 'bits-ui';
-	import * as Code from '$lib/components/ui/code';
+	import * as Code from '#lib/components/ui/code/index.ts';
 	import type { ComponentProps } from 'svelte';
 	import { useDemoCode } from './demo.svelte.js';
 	import { box } from 'svelte-toolbelt';

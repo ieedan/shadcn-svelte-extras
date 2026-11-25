@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
+	import Button from '#lib/components/button.svelte';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';
 

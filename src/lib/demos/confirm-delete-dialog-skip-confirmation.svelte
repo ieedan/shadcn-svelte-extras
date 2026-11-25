@@ -1,7 +1,10 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { ConfirmDeleteDialog, confirmDelete } from '$lib/components/ui/confirm-delete-dialog';
-	import { sleep } from '$lib/utils/sleep';
+	import Button from '#lib/components/button.svelte';
+	import {
+		ConfirmDeleteDialog,
+		confirmDelete
+	} from '#lib/components/ui/confirm-delete-dialog/index.ts';
+	import { sleep } from '#lib/utils/sleep.ts';
 	import { toast } from 'svelte-sonner';
 
 	let loading = $state(false);

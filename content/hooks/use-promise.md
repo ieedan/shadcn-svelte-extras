@@ -4,8 +4,8 @@ description: 'A hook to manage the state of a promise reactively in the absence 
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 <Demo demo="use-promise" />
@@ -20,7 +20,7 @@ Set a default value for the version until it is streamed back from the server.
 
 ```svelte {2,6,12}
 <script lang="ts">
-    import { UsePromise } from '$lib/hooks/use-promise.svelte.js';
+    import { UsePromise } from '#lib/hooks/use-promise.svelte.js';
 
     let { data } = $props();
 

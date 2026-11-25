@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Password from '$lib/components/ui/password';
+	import * as Password from '#lib/components/ui/password/index.ts';
 	import type { ZxcvbnResult } from '@zxcvbn-ts/core';
 
 	const SCORE_NAMING = ['Poor', 'Weak', 'Average', 'Strong', 'Secure'];

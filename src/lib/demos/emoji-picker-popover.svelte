@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/ui/button';
-	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
-	import * as Popover from '$lib/components/ui/popover';
-	import { cn } from '$lib/utils.js';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import * as EmojiPicker from '#lib/components/ui/emoji-picker/index.ts';
+	import * as Popover from '#lib/components/ui/popover/index.ts';
+	import { cn } from '#lib/utils.js';
 	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
 	import { toast } from 'svelte-sonner';
 

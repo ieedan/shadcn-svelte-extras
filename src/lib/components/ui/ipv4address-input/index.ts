@@ -1,4 +1,4 @@
-import { isNumber } from '$lib/utils/is-number';
+import { isNumber } from '#lib/utils/is-number.ts';
 import IPv4AddressInput from './ipv4address-input.svelte';
 
 /** Attempts to parse the provided address into a valid IP. Returns undefined for

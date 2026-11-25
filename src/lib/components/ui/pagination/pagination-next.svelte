@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { PaginationLink } from './index.js';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
 

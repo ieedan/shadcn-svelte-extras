@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { PMCommand } from '$lib/components/ui/pm-command';
-	import { UsePromise } from '$lib/hooks/use-promise.svelte';
+	import { PMCommand } from '#lib/components/ui/pm-command/index.ts';
+	import { UsePromise } from '#lib/hooks/use-promise.svelte.ts';
 	import { onMount } from 'svelte';
 
 	let resolve = $state<() => void>();

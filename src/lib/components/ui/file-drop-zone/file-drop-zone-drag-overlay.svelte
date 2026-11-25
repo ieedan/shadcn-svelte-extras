@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { useFileDropZoneDragOverlay } from './file-drop-zone.svelte.js';
 	import type { FileDropZoneDragOverlayProps } from './types.js';
 	import UploadIcon from '@lucide/svelte/icons/upload';

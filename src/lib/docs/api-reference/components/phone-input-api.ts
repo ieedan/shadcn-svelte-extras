@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { PhoneInputProps } from '$lib/components/ui/phone-input/types';
+import type { PhoneInputProps } from '#lib/components/ui/phone-input/types.ts';
 
 const Root = api.createComponentReference<PhoneInputProps>({
 	description: 'The root component for the phone input.',

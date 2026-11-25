@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
-	import { cn } from '$lib/utils.js';
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
+	import { cn } from '#lib/utils.js';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
 
 	interface Props extends ButtonProps {
 		children: Snippet<[]>;

@@ -4,9 +4,9 @@ description: 'A natural language date input with suggestions.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 Allows you to provide a date in natural language and helps by giving suggestions.
@@ -21,7 +21,7 @@ Allows you to provide a date in natural language and helps by giving suggestions
 
 ```svelte
 <script lang="ts">
-	import { NLPDateInput } from '$lib/components/ui/nlp-date-input';
+	import { NLPDateInput } from '#lib/components/ui/nlp-date-input/index.ts';
 </script>
 
 <NLPDateInput />

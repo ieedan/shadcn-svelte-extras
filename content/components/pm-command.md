@@ -4,9 +4,9 @@ description: 'A package manager command component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="pm-command" />
@@ -19,7 +19,7 @@ description: 'A package manager command component.'
 
 ```svelte
 <script lang="ts">
-	import { PMCommand } from '$lib/components/ui/pm-command';
+	import { PMCommand } from '#lib/components/ui/pm-command/index.ts';
 </script>
 
 <PMCommand command="execute" args={['npm', 'install']} />

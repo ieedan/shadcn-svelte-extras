@@ -4,11 +4,11 @@ description: 'A file drop zone component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import Code from '$lib/components/docs/code.svelte';
-	import schemaRaw from '$lib/docs/file-drop-zone-schema.ts?raw';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import Code from '#lib/components/docs/code.svelte';
+	import schemaRaw from '#lib/docs/file-drop-zone-schema.ts?raw';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="file-drop-zone" />
@@ -21,7 +21,7 @@ description: 'A file drop zone component.'
 
 ```svelte
 <script lang="ts">
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
 </script>
 
 <FileDropZone.Root>
@@ -46,7 +46,7 @@ Custom placeholder:
 
 ```svelte
 <script lang="ts">
-	import { FileDropZone } from '$lib/components/ui/file-drop-zone';
+	import { FileDropZone } from '#lib/components/ui/file-drop-zone/index.ts';
 </script>
 
 <FileDropZone.Root>
@@ -68,7 +68,7 @@ Add `capturePaste` to upload files whenever the user pastes anywhere on the page
 
 ```svelte
 <script lang="ts">
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
 </script>
 
 <FileDropZone.Root {onUpload} capturePaste>

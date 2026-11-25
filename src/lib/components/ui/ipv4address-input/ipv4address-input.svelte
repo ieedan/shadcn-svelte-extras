@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import Input from './ipv4address-input-input.svelte';
 	import { safeParseIPv4Address } from '.';
-	import { isNumber } from '$lib/utils/is-number';
-	import * as ipv4address from '$lib/utils/ipv4-address';
+	import { isNumber } from '#lib/utils/is-number.ts';
+	import * as ipv4address from '#lib/utils/ipv4-address.ts';
 	import type { IPv4AddressInputProps } from './types';
 
 	let {

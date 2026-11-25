@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { useAddButton } from './add.svelte.js';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import AddAgentLogo from './add-agent-logo.svelte';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
 
 	let { class: className, ...rest }: ComponentProps<typeof DropdownMenu.Separator> = $props();
 </script>

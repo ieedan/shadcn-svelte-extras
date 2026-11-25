@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Sheet from '$lib/components/ui/sheet';
+	import * as Sheet from '#lib/components/ui/sheet/index.ts';
 	import MenuIcon from '@lucide/svelte/icons/menu';
 	import XIcon from '@lucide/svelte/icons/x';
-	import { groupedDocs } from '$lib/features/docs/docs';
+	import { groupedDocs } from '#lib/features/docs/docs.ts';
 
 	let open = $state(false);
 

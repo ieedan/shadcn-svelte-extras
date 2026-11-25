@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-	import Button from '$lib/components/button.svelte';
+	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.ts';
+	import Button from '#lib/components/button.svelte';
 	import SearchIcon from '@lucide/svelte/icons/search';
-	import { cn } from '$lib/utils.js';
-	import { commandContext } from '$lib/context';
-	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
+	import { cn } from '#lib/utils.js';
+	import { commandContext } from '#lib/context.ts';
+	import { cmdOrCtrl } from '#lib/hooks/is-mac.svelte.ts';
 
 	type Props = {
 		class?: string;

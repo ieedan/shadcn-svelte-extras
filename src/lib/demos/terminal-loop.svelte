@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Terminal from '$lib/components/ui/terminal';
+	import * as Terminal from '#lib/components/ui/terminal/index.ts';
 </script>
 
 <Terminal.Loop>

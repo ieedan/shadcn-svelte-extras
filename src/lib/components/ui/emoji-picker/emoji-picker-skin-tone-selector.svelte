@@ -2,8 +2,8 @@
 	import { box } from 'svelte-toolbelt';
 	import { useEmojiPickerSkinToneSelector } from './emoji-picker.svelte.js';
 	import type { EmojiPickerSkinProps } from './types.js';
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
-	import { cn } from '$lib/utils.js';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
+	import { cn } from '#lib/utils.js';
 
 	let {
 		previewEmoji = '👋',

@@ -34,8 +34,8 @@
 		"@lukulent/svelte-umami": "^0.0.4",
 		"@shikijs/langs": "^4.0.2",
 		"@shikijs/themes": "^4.0.2",
-		"@sveltejs/adapter-cloudflare": "^7.2.8",
-		"@sveltejs/kit": "^2.55.0",
+		"@sveltejs/adapter-cloudflare": "^8.0.0",
+		"@sveltejs/kit": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.0.0",
 		"@tailwindcss/vite": "^4.2.2",
 		"@tanstack/table-core": "^8.21.3",
@@ -72,8 +72,8 @@
 		"runed": "^0.37.1",
 		"shadcn-svelte": "^1.2.7",
 		"shiki": "^4.0.2",
-		"svelte": "^5.55.1",
-		"svelte-check": "^4.4.6",
+		"svelte": "^5.57.2",
+		"svelte-check": "^4.7.5",
 		"svelte-easy-crop": "^5.0.1",
 		"svelte-meta-tags": "^4.5.2",
 		"svelte-sonner": "^1.1.0",
@@ -91,9 +91,9 @@
 		"unist-util-visit": "^5.0.0",
 		"vaul-svelte": "1.0.0-next.7",
 		"velite": "^0.3.1",
-		"vite": "8.0.3",
+		"vite": "^8.0.12",
 		"vite-plugin-transform-lucide-imports": "^0.3.0",
-		"wrangler": "^4.152.0",
+		"wrangler": "^4.168.0",
 		"yeezy-dates": "^1.1.0",
 		"zod": "^4.3.6"
 	},
@@ -103,10 +103,17 @@
 		],
 		"onlyBuiltDependencies": [
 			"@tailwindcss/oxide",
-			"esbuild"
+			"esbuild",
+			"workerd"
 		]
 	},
 	"dependencies": {
 		"@svitejs/changesets-changelog-github-compact": "^1.2.0"
+	},
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*",
+		"#content": "./.velite/index.js",
+		"#content/*": "./.velite/*"
 	}
 }

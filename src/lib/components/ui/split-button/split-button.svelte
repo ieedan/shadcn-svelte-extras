@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ButtonGroupOrientation } from '$lib/components/ui/button-group';
+	import type { ButtonGroupOrientation } from '#lib/components/ui/button-group/index.ts';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithChildren, WithoutChildren } from 'bits-ui';
 	import type { SplitButtonClickEvent } from './split-button.svelte.js';
@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-	import ButtonGroup from '$lib/components/ui/button-group/button-group.svelte';
+	import ButtonGroup from '#lib/components/ui/button-group/button-group.svelte';
 	import { useSplitButtonRoot } from './split-button.svelte.js';
 	import { box } from 'svelte-toolbelt';
 

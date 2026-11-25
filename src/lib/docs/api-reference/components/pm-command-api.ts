@@ -1,4 +1,4 @@
-import type { PMCommandProps } from '$lib/components/ui/pm-command/pm-command.svelte';
+import type { PMCommandProps } from '#lib/components/ui/pm-command/pm-command.svelte';
 import * as api from '../api-reference';
 
 const Root = api.createComponentReference<PMCommandProps>({

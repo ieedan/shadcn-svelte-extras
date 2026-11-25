@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Props as IconProps } from './icons';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 
 	let { class: className, ...rest }: IconProps = $props();
 </script>

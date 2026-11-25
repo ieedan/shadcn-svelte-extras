@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithChildren, WithoutChildren } from 'bits-ui';
-	import type { WithElementRef } from '$lib/utils.js';
+	import type { WithElementRef } from '#lib/utils.js';
 	import type { ColorFormat } from './color.js';
 
 	export type ColorPickerPropsWithoutHTML = WithChildren<{
@@ -16,7 +16,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { box } from 'svelte-toolbelt';
 	import { useColorPickerRoot } from './color-picker.svelte.js';
 

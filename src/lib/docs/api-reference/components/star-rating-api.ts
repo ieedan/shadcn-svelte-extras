@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { StarRatingStarProps } from '$lib/components/ui/star-rating/types';
+import type { StarRatingStarProps } from '#lib/components/ui/star-rating/types.ts';
 
 const Root = api.createComponentReference({
 	name: 'Root',

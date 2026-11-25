@@ -2,7 +2,7 @@
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import { useStepperItemTrigger } from './stepper.svelte.js';
 	import { box, type WithElementRef } from 'svelte-toolbelt';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 
 	let {
 		ref = $bindable(null),

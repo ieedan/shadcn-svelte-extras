@@ -4,7 +4,7 @@ description: 'A hook to enable the creation of containers that automatically scr
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation
@@ -17,7 +17,7 @@ Create a container that automatically scrolls to the bottom.
 
 ```svelte {2,6,10,13,14}
 <script lang="ts">
-	import { UseAutoScroll } from '$lib/hooks/use-auto-scroll.svelte';
+	import { UseAutoScroll } from '#lib/hooks/use-auto-scroll.svelte.ts';
 
 	let { children } = $props();
 

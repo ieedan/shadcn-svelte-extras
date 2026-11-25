@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as StarRating from '$lib/components/ui/star-rating';
+	import * as StarRating from '#lib/components/ui/star-rating/index.ts';
 </script>
 
 <StarRating.Root max={10}>

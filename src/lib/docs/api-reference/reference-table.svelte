@@ -1,11 +1,11 @@
 <script lang="ts" generics="T">
 	import type { Component, PropReference } from './api-reference';
-	import * as Alert from '$lib/components/ui/alert';
-	import { Link } from '$lib/components/ui/link';
-	import { cn } from '$lib/utils.js';
-	import * as HoverCard from '$lib/components/ui/hover-card';
+	import * as Alert from '#lib/components/ui/alert/index.ts';
+	import { Link } from '#lib/components/ui/link/index.ts';
+	import { cn } from '#lib/utils.js';
+	import * as HoverCard from '#lib/components/ui/hover-card/index.ts';
 	import InfoIcon from '@lucide/svelte/icons/info';
-	import { highlighter } from '$lib/components/ui/code/shiki';
+	import { highlighter } from '#lib/components/ui/code/shiki.ts';
 	import type { HighlighterCore } from 'shiki';
 	import { onMount } from 'svelte';
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
 	import { useRenameCancel } from './rename.svelte.js';
 
 	const cancelState = useRenameCancel();

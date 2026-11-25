@@ -1,17 +1,17 @@
 <script lang="ts">
-	import * as Chat from '$lib/components/ui/chat';
-	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
-	import * as Popover from '$lib/components/ui/popover';
-	import * as Avatar from '$lib/components/ui/avatar';
-	import { buttonVariants } from '$lib/components/ui/button';
-	import Button from '$lib/components/button.svelte';
+	import * as Chat from '#lib/components/ui/chat/index.ts';
+	import * as EmojiPicker from '#lib/components/ui/emoji-picker/index.ts';
+	import * as Popover from '#lib/components/ui/popover/index.ts';
+	import * as Avatar from '#lib/components/ui/avatar/index.ts';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import Button from '#lib/components/button.svelte';
 	import InfoIcon from '@lucide/svelte/icons/info';
 	import PhoneIcon from '@lucide/svelte/icons/phone';
 	import SendIcon from '@lucide/svelte/icons/send';
 	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
 	import VideoIcon from '@lucide/svelte/icons/video';
-	import { Input } from '$lib/components/ui/input';
-	import { cn } from '$lib/utils.js';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { cn } from '#lib/utils.js';
 
 	type User = {
 		id: string;

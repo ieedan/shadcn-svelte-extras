@@ -1,17 +1,17 @@
 <script lang="ts">
 	import type { Snippet as SnippetType } from 'svelte';
-	import { Badge } from '$lib/components/ui/badge';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
 	import ArrowLeftIcon from '@lucide/svelte/icons/arrow-left';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 	import CodeIcon from '@lucide/svelte/icons/code';
-	import * as Navigation from '$lib/components/ui/prev-next';
-	import { UseToc } from '$lib/hooks/use-toc.svelte';
-	import * as Toc from '$lib/components/ui/toc';
-	import Button from '$lib/components/button.svelte';
+	import * as Navigation from '#lib/components/ui/prev-next/index.ts';
+	import { UseToc } from '#lib/hooks/use-toc.svelte.ts';
+	import * as Toc from '#lib/components/ui/toc/index.ts';
+	import Button from '#lib/components/button.svelte';
 	import * as Tooltip from './ui/tooltip';
 	import CarbonAds from './carbon-ads.svelte';
 	import CopyMarkdownButton from './copy-markdown-button.svelte';
-	import { useDocs } from '$lib/features/docs/docs-context.svelte';
+	import { useDocs } from '#lib/features/docs/docs-context.svelte.ts';
 
 	type Props = {
 		children: SnippetType;

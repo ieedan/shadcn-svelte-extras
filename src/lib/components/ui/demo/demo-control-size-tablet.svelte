@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as ToggleGroup from '$lib/components/ui/toggle-group';
+	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
 	import TabletIcon from '@lucide/svelte/icons/tablet';
 	import type { ComponentProps } from 'svelte';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { controlVariants } from './index.js';
 
 	let {

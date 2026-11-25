@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
+	import * as EmojiPicker from '#lib/components/ui/emoji-picker/index.ts';
 	import { toast } from 'svelte-sonner';
 </script>
 

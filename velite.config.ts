@@ -1,4 +1,4 @@
-import { addLeadingSlash, join, removeLeadingSlash, removeTrailingSlash } from '$lib/utils/url';
+import { addLeadingSlash, join, removeLeadingSlash, removeTrailingSlash } from '#lib/utils/url.ts';
 import { defineCollection, defineConfig, s } from 'velite';
 
 const docSchema = s

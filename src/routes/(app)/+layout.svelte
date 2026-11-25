@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { commandContext } from '$lib/context';
-	import { shortcut } from '$lib/actions/shortcut.svelte';
-	import { Command } from '$lib/components/docs/command';
-	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
-	import SiteHeader from '$lib/components/site-header.svelte';
+	import { commandContext } from '#lib/context.ts';
+	import { shortcut } from '#lib/actions/shortcut.svelte.ts';
+	import { Command } from '#lib/components/docs/command/index.ts';
+	import { UseBoolean } from '#lib/hooks/use-boolean.svelte.ts';
+	import SiteHeader from '#lib/components/site-header.svelte';
 
 	let { children } = $props();
 

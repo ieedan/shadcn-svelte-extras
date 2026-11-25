@@ -1,10 +1,10 @@
 <script>
-	import Button from '$lib/components/button.svelte';
-	import { Textarea } from '$lib/components/ui/textarea';
-	import { Label } from '$lib/components/ui/label';
-	import * as Card from '$lib/components/ui/card';
-	import * as StarRating from '$lib/components/ui/star-rating';
-	import * as Field from '$lib/components/ui/field';
+	import Button from '#lib/components/button.svelte';
+	import { Textarea } from '#lib/components/ui/textarea/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import * as StarRating from '#lib/components/ui/star-rating/index.ts';
+	import * as Field from '#lib/components/ui/field/index.ts';
 
 	let loading = $state(false);
 </script>

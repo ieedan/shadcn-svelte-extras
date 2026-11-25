@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as UnderlineTabs from '$lib/components/ui/underline-tabs';
-	import { Window } from '$lib/components/ui/window';
+	import * as UnderlineTabs from '#lib/components/ui/underline-tabs/index.ts';
+	import { Window } from '#lib/components/ui/window/index.ts';
 </script>
 
 <div class="flex w-full max-w-full items-center justify-center p-6">

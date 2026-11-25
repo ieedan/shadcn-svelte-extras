@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import type { TagsInputProps } from './types';
 	import TagsInputTag from './tags-input-tag.svelte';
 	import TagsInputSuggestion from './tags-input-suggestion.svelte';

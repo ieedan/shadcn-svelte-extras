@@ -4,9 +4,9 @@ description: "An IPv4 address input with all the behavior you'd expect."
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -21,7 +21,7 @@ description: "An IPv4 address input with all the behavior you'd expect."
 
 ```svelte
 <script lang="ts">
-	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
+	import { IPv4AddressInput } from '#lib/components/ui/ipv4address-input/index.ts';
 </script>
 
 <IPv4AddressInput />

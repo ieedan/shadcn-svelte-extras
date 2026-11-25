@@ -3,7 +3,7 @@ import type {
 	FileDropZoneDragOverlayPropsWithoutHTML,
 	FileDropZoneRootPropsWithoutHTML,
 	FileDropZoneTriggerPropsWithoutHTML
-} from '$lib/components/ui/file-drop-zone/types';
+} from '#lib/components/ui/file-drop-zone/types.ts';
 
 const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 	name: 'Root',

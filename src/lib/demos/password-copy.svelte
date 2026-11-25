@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Password from '$lib/components/ui/password';
+	import * as Password from '#lib/components/ui/password/index.ts';
 </script>
 
 <div class="flex w-full max-w-3xs flex-col gap-2">

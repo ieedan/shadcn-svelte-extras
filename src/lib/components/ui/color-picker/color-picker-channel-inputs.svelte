@@ -13,7 +13,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { CHANNELS } from './color.js';
 	import { useColorPickerRootCtx } from './color-picker.svelte.js';
 	import ColorPickerInput from './color-picker-input.svelte';

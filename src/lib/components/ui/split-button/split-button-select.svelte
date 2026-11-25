@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { WithoutChild } from '$lib/utils.js';
+	import type { WithoutChild } from '#lib/utils.js';
 
 	export type SplitButtonSelectProps = Omit<
 		WithoutChild<SelectPrimitive.RootProps>,

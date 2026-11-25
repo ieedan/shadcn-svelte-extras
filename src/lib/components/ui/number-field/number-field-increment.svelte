@@ -1,9 +1,9 @@
 <script lang="ts">
 	import PlusIcon from '@lucide/svelte/icons/plus';
-	import Button from '$lib/components/button.svelte';
+	import Button from '#lib/components/button.svelte';
 	import { useNumberFieldButton } from './number-field.svelte.js';
 	import type { NumberFieldButtonProps } from './types.js';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import { box } from 'svelte-toolbelt';
 	import { onDestroy } from 'svelte';
 

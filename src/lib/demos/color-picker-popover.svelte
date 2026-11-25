@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/ui/button';
-	import * as ButtonGroup from '$lib/components/ui/button-group';
-	import * as ColorPicker from '$lib/components/ui/color-picker';
-	import * as Popover from '$lib/components/ui/popover';
-	import { cn } from '$lib/utils.js';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import * as ButtonGroup from '#lib/components/ui/button-group/index.ts';
+	import * as ColorPicker from '#lib/components/ui/color-picker/index.ts';
+	import * as Popover from '#lib/components/ui/popover/index.ts';
+	import { cn } from '#lib/utils.js';
 
 	let value = $state('#22c55e');
 

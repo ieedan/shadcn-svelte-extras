@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { h2 as MarkdownH2 } from '$lib/components/mdsx';
+	import { h2 as MarkdownH2 } from '#lib/components/mdsx/index.ts';
 	import type { Component } from './api-reference';
 	import ReferenceTable from './reference-table.svelte';
 	import { getReference } from './components';

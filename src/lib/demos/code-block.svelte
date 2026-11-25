@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { TypeScript } from '$lib/components/icons';
-	import * as Code from '$lib/components/ui/code';
+	import { TypeScript } from '#lib/components/icons/index.ts';
+	import * as Code from '#lib/components/ui/code/index.ts';
 
 	const code = `import { defineConfig } from 'jsrepo';
     

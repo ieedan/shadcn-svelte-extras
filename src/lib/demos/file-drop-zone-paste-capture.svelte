@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
-	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
-	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
+	import Button from '#lib/components/button.svelte';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
+	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.ts';
+	import { cmdOrCtrl } from '#lib/hooks/is-mac.svelte.ts';
 	import ClipboardIcon from '@lucide/svelte/icons/clipboard';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';

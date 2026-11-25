@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { box } from 'svelte-toolbelt';
 	import { useColorPickerChannelInput } from './color-picker.svelte.js';
 	import ColorPickerDraftInput from './color-picker-draft-input.svelte';

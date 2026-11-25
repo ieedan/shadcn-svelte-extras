@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
 	import { useImageCropperCancel } from './image-cropper.svelte.js';
 	import Trash2Icon from '@lucide/svelte/icons/trash-2';
 

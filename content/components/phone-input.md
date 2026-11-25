@@ -4,9 +4,9 @@ description: 'A phone number input component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -21,7 +21,7 @@ description: 'A phone number input component.'
 
 ```svelte
 <script lang="ts">
-	import { PhoneInput } from '$lib/components/ui/phone-input';
+	import { PhoneInput } from '#lib/components/ui/phone-input/index.ts';
 </script>
 
 <PhoneInput placeholder="Enter a phone number" />

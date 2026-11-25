@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as ImageCropper from '$lib/components/ui/image-cropper';
+	import * as ImageCropper from '#lib/components/ui/image-cropper/index.ts';
 	import { toast } from 'svelte-sonner';
 </script>
 

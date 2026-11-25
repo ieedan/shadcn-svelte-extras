@@ -5,9 +5,9 @@ indicator: 'new'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -24,7 +24,7 @@ The `<ColorPicker/>` component is built from small parts so you only render what
 
 ```svelte
 <script lang="ts">
-	import * as ColorPicker from '$lib/components/ui/color-picker';
+	import * as ColorPicker from '#lib/components/ui/color-picker/index.ts';
 
 	let value = $state('#3b82f6');
 </script>

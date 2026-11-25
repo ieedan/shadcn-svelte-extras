@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { NLPDateInput } from '$lib/components/ui/nlp-date-input';
+	import { NLPDateInput } from '#lib/components/ui/nlp-date-input/index.ts';
 	import { toast } from 'svelte-sonner';
 
 	const DAY = 24 * 60 * 60 * 1000;

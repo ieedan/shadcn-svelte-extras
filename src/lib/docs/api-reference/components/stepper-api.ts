@@ -3,7 +3,7 @@ import type {
 	StepperRootProps,
 	StepperNavPropsWithoutHTML,
 	StepperItemPropsWithoutHTML
-} from '$lib/components/ui/stepper/types';
+} from '#lib/components/ui/stepper/types.ts';
 
 const Root = api.createComponentReference<StepperRootProps>({
 	name: 'Root',

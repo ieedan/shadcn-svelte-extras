@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Resizable from '$lib/components/ui/resizable';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import { cn } from '$lib/utils';
+	import * as Resizable from '#lib/components/ui/resizable/index.ts';
+	import * as Tabs from '#lib/components/ui/tabs/index.ts';
+	import { cn } from '#lib/utils.ts';
 	import { useDemoPreview } from './demo.svelte.js';
 	import type { Snippet } from 'svelte';
 	import { box } from 'svelte-toolbelt';

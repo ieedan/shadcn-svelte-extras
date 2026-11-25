@@ -1,4 +1,4 @@
-import type { WindowPropsWithoutHTML } from '$lib/components/ui/window/window.svelte';
+import type { WindowPropsWithoutHTML } from '#lib/components/ui/window/window.svelte';
 import * as api from '../api-reference';
 
 const Root = api.createComponentReference<WindowPropsWithoutHTML>({

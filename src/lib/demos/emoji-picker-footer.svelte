@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
-	import type { EmojiPickerSkin } from '$lib/components/ui/emoji-picker';
+	import * as EmojiPicker from '#lib/components/ui/emoji-picker/index.ts';
+	import type { EmojiPickerSkin } from '#lib/components/ui/emoji-picker/index.ts';
 	import { PersistedState } from 'runed';
 	import { toast } from 'svelte-sonner';
 

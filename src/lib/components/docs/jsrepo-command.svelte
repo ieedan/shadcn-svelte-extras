@@ -24,15 +24,15 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import type { Command, Agent } from 'package-manager-detector';
 	import { resolveCommand } from 'package-manager-detector/commands';
-	import CopyButton from '$lib/components/ui/copy-button/copy-button.svelte';
+	import CopyButton from '#lib/components/ui/copy-button/copy-button.svelte';
 	import ClipboardIcon from '@lucide/svelte/icons/clipboard';
 	import TerminalIcon from '@lucide/svelte/icons/terminal';
-	import * as Tooltip from '$lib/components/ui/tooltip';
+	import * as Tooltip from '#lib/components/ui/tooltip/index.ts';
 	import { PersistedState } from 'runed';
-	import * as Tabs from '$lib/components/ui/tabs';
+	import * as Tabs from '#lib/components/ui/tabs/index.ts';
 
 	let { variant = 'default', class: className, command, args }: PMCommandProps = $props();
 

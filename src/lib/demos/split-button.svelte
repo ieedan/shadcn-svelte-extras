@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as SplitButton from '$lib/components/ui/split-button';
+	import * as SplitButton from '#lib/components/ui/split-button/index.ts';
 
 	function sleep(ms: number) {
 		return new Promise((resolve) => setTimeout(resolve, ms));

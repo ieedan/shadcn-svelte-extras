@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import * as Tabs from '$lib/components/ui/tabs';
-	import * as Code from '$lib/components/ui/code';
-	import { cn } from '$lib/utils.js';
+	import * as Tabs from '#lib/components/ui/tabs/index.ts';
+	import * as Code from '#lib/components/ui/code/index.ts';
+	import { cn } from '#lib/utils.js';
 	import { Button } from './ui/button';
 	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 

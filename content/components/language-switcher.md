@@ -4,9 +4,9 @@ description: 'A component for switching your sites locale.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="language-switcher" />
@@ -19,7 +19,7 @@ description: 'A component for switching your sites locale.'
 
 ```svelte
 <script lang="ts">
-	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
+	import { LanguageSwitcher } from '#lib/components/ui/language-switcher/index.ts';
 
 	const languages = [
 		{ code: 'en', label: 'English' },

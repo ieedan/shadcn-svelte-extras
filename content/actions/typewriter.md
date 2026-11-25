@@ -4,7 +4,7 @@ description: 'A Svelte transition and attachment that reveals text character by 
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation
@@ -19,7 +19,7 @@ Use as a transition on an element whose full text is already in the DOM; the tra
 
 ```svelte
 <script lang="ts">
-	import { typewriter } from '$lib/actions/typewriter.svelte';
+	import { typewriter } from '#lib/actions/typewriter.svelte.ts';
 	import { fade } from 'svelte/transition';
 </script>
 
@@ -34,7 +34,7 @@ For Svelte 5 attachments, use `attachTypewriter` so the effect applies when the 
 
 ```svelte
 <script lang="ts">
-	import { attachTypewriter } from '$lib/actions/typewriter.svelte';
+	import { attachTypewriter } from '#lib/actions/typewriter.svelte.ts';
 </script>
 
 <p {...attachTypewriter({ speed: 1, delay: 0 })}>Hello, world!</p>

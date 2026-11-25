@@ -4,8 +4,8 @@ description: "Why we built shadcn-svelte-extras and why it's great."
 ---
 
 <script lang="ts">
-	import * as Accordion from '$lib/components/ui/accordion/index.js';
-	import { Link } from '$lib/components/ui/link';
+	import * as Accordion from '#lib/components/ui/accordion/index.js';
+	import { Link } from '#lib/components/ui/link/index.ts';
 </script>
 
 shadcn-svelte-extras was built to fill in the gaps left by the limited components provided by shadcn/ui by creating the rest of the primitives you may need to finish your application without sacrificing the composability, quality, or style of the original.

@@ -10,14 +10,14 @@ const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';
 export default defineConfig({
 	registries: ['@registry/kit'],
 	paths: {
-		ui: '$lib/components/ui',
-		component: '$lib/components',
-		block: '$lib/components',
-		logo: '$lib/components/logos',
-		hook: '$lib/hooks',
-		action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
+		ui: '#lib/components/ui',
+		component: '#lib/components/index.ts',
+		block: '#lib/components/index.ts',
+		logo: '#lib/components/logos',
+		hook: '#lib/hooks',
+		action: '#lib/actions',
+		util: '#lib/utils.ts',
+		lib: '#lib'
 	},
 	registry: {
 		name: '@ieedan/shadcn-svelte-extras',
@@ -29,13 +29,13 @@ export default defineConfig({
 		repository: 'https://github.com/ieedan/shadcn-svelte-extras',
 		tags: ['svelte', 'shadcn', 'typescript', 'components', 'utilities'],
 		defaultPaths: {
-			ui: '$lib/components/ui',
-			component: '$lib/components',
-			block: '$lib/components',
-			hook: '$lib/hooks',
-			action: '$lib/actions',
-			util: '$lib/utils',
-			lib: '$lib'
+			ui: '#lib/components/ui',
+			component: '#lib/components/index.ts',
+			block: '#lib/components/index.ts',
+			hook: '#lib/hooks',
+			action: '#lib/actions',
+			util: '#lib/utils.ts',
+			lib: '#lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
 		outputs: [addType(), demoType(), registryJson()],

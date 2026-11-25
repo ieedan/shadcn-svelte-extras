@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TagsInput } from '$lib/components/ui/tags-input';
+	import { TagsInput } from '#lib/components/ui/tags-input/index.ts';
 
 	const suggestions = ['Svelte', 'React', 'Vue', 'Angular', 'Solid', 'Ember', 'Next.js', 'Nuxt'];
 

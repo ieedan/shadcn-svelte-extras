@@ -1,4 +1,4 @@
-import { DEMOS } from '$lib/demos/index.js';
+import { DEMOS } from '#lib/demos/index.js';
 import { error } from '@sveltejs/kit';
 
 export async function load({ params }) {

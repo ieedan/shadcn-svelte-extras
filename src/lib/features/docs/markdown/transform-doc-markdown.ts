@@ -1,5 +1,5 @@
-import { getReference } from '$lib/docs/api-reference/components';
-import { referenceBundleToMarkdown } from '$lib/docs/api-reference/reference-to-markdown';
+import { getReference } from '#lib/docs/api-reference/components/index.ts';
+import { referenceBundleToMarkdown } from '#lib/docs/api-reference/reference-to-markdown.ts';
 import type { Command } from 'package-manager-detector';
 import { resolveCommand } from 'package-manager-detector/commands';
 
@@ -21,12 +21,12 @@ const INSTALLATION_JSREPO_CONFIG_EXAMPLE = `import { defineConfig } from 'jsrepo
 export default defineConfig({
 	registries: ['@ieedan/shadcn-svelte-extras'],
 	paths: {
-		ui: '$lib/components/ui',
-		component: '$lib/components',
-		hook: '$lib/hooks',
-		action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
+		ui: '#lib/components/ui',
+		component: '#lib/components/index.ts',
+		hook: '#lib/hooks',
+		action: '#lib/actions',
+		util: '#lib/utils.ts',
+		lib: '#lib'
 	}
 });`;
 
@@ -38,11 +38,11 @@ const INSTALLATION_COMPONENTS_JSON_EXAMPLE = `{
 		"baseColor": "neutral"
 	},
 	"aliases": {
-		"components": "$lib/components",
-		"utils": "$lib/utils",
-		"ui": "$lib/components/ui",
-		"hooks": "$lib/hooks",
-		"lib": "$lib"
+		"components": "#lib/components/index.ts",
+		"utils": "#lib/utils.ts",
+		"ui": "#lib/components/ui",
+		"hooks": "#lib/hooks",
+		"lib": "#lib"
 	},
 	"typescript": true,
 	"registry": "https://shadcn-svelte.com/registry",
@@ -167,10 +167,10 @@ function removeEmptyScriptBlocks(markdown: string): string {
 	});
 }
 
-/** Map `$lib/…` specifiers (without `?raw`) to `src/lib/…` paths (Vite glob keys). */
+/** Map `#lib/…` specifiers (without `?raw`) to `src/lib/…` paths (Vite glob keys). */
 function resolveLibImportPath(specifier: string): string {
 	if (specifier.startsWith('$lib/')) {
-		return `src/lib/${specifier.slice('$lib/'.length)}`.replace(/\\/g, '/');
+		return `src/lib/${specifier.slice('#lib/'.length)}`.replace(/\\/g, '/');
 	}
 	throw new Error(`Unsupported raw import (expected \$lib/…): ${specifier}`);
 }

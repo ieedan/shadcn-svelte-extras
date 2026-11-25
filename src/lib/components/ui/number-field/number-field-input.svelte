@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.js';
 	import { useNumberFieldInput } from './number-field.svelte.js';
 	import type { NumberFieldInputProps } from './types.js';
 
