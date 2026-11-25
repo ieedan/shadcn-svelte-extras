@@ -8,6 +8,7 @@
 		"dev:app": "vite dev",
 		"dev:content": "velite dev --watch",
 		"build": "pnpm pre:build && vite build",
+		"prepare": "svelte-kit sync || echo ''",
 		"sync": "svelte-kit sync",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
