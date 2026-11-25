@@ -4,7 +4,7 @@ description: 'A hook to simplify working with boolean values.'
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation
@@ -29,7 +29,7 @@ After:
 
 ```svelte {2,4,7}
 <script lang="ts">
-	import { UseBoolean } from '$lib/hooks/use-boolean.svelte';
+	import { UseBoolean } from '#lib/hooks/use-boolean.svelte.ts';
 
 	const enabled = new UseBoolean(true);
 </script>

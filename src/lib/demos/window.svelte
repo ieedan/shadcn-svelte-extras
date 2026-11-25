@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Window } from '$lib/components/ui/window';
+	import { Window } from '#lib/components/ui/window/index.ts';
 </script>
 
 <Window class="m-6 max-w-xl">

@@ -4,10 +4,10 @@ description: 'How to use shadcn-svelte-extras with agents'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
-	import JsrepoCommand from '$lib/components/docs/jsrepo-command.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
+	import JsrepoCommand from '#lib/components/docs/jsrepo-command.svelte';
 </script>
 
 As agents continue to push development forward we have improved our documentation to make it easier for them to work with shadcn-svelte-extras.

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import * as FieldSet from '$lib/components/ui/field-set';
-	import * as Field from '$lib/components/ui/field';
+	import Button from '#lib/components/button.svelte';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import * as FieldSet from '#lib/components/ui/field-set/index.ts';
+	import * as Field from '#lib/components/ui/field/index.ts';
 </script>
 
 <div class="w-full p-6">

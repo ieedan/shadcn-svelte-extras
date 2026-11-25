@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as SplitButton from '$lib/components/ui/split-button';
-	import { Separator } from '$lib/components/ui/separator';
+	import * as SplitButton from '#lib/components/ui/split-button/index.ts';
+	import { Separator } from '#lib/components/ui/separator/index.ts';
 	import CircleCheckIcon from '@lucide/svelte/icons/circle-check';
 	import CircleDashedIcon from '@lucide/svelte/icons/circle-dashed';
 

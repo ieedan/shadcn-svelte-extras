@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Code from '$lib/components/ui/code';
+	import * as Code from '#lib/components/ui/code/index.ts';
 
 	let { ...rest }: Code.RootProps = $props();
 </script>

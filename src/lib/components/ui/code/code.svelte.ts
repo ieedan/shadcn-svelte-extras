@@ -1,7 +1,7 @@
 import { Context } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
-import type { CodeRootProps } from './types';
-import { highlighter } from './shiki';
+import type { CodeRootProps } from './types.ts';
+import { highlighter } from './shiki.ts';
 import type { HighlighterCore } from 'shiki';
 
 type CodeOverflowStateProps = WritableBoxedValues<{

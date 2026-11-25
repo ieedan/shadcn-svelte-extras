@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { useModalSub } from './modal.svelte.js';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import { useModalSub } from './modal.svelte.ts';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
+	import * as Drawer from '#lib/components/ui/drawer/index.ts';
 	import type { DialogDescriptionProps } from 'bits-ui';
 
 	const modal = useModalSub();

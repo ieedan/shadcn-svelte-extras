@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { IPv4AddressInput } from '$lib/components/ui/ipv4address-input';
-	import * as Card from '$lib/components/ui/card';
-	import { Label } from '$lib/components/ui/label';
-	import Button from '$lib/components/button.svelte';
+	import { IPv4AddressInput } from '#lib/components/ui/ipv4address-input/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import Button from '#lib/components/button.svelte';
 
 	let loading = $state(false);
 </script>

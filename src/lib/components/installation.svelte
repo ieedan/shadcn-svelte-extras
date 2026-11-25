@@ -1,6 +1,6 @@
 <script lang="ts">
 	import JsrepoCommand from './docs/jsrepo-command.svelte';
-	import { h2 as MarkdownH2 } from '$lib/components/mdsx';
+	import { h2 as MarkdownH2 } from '#lib/components/mdsx/index.ts';
 
 	type Props = {
 		specifier: `${string}/${string}`;

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { PhoneInput } from '$lib/components/ui/phone-input';
-	import Button from '$lib/components/button.svelte';
-	import * as FieldSet from '$lib/components/ui/field-set';
+	import { PhoneInput } from '#lib/components/ui/phone-input/index.ts';
+	import Button from '#lib/components/button.svelte';
+	import * as FieldSet from '#lib/components/ui/field-set/index.ts';
 
 	let loading = $state(false);
 </script>

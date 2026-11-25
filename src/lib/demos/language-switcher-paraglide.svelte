@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
+	import { LanguageSwitcher } from '#lib/components/ui/language-switcher/index.ts';
 	import {
 		getLocale,
 		setLocale,
 		type Locale,
 		locales as availableLocales,
 		isLocale
-	} from '$lib/paraglide/runtime';
-	import { m } from '$lib/paraglide/messages.js';
+	} from '#lib/paraglide/runtime.js';
+	import { m } from '#lib/paraglide/messages.js';
 
 	const languageLabels: Partial<Record<Locale, string>> = {
 		en: 'English',

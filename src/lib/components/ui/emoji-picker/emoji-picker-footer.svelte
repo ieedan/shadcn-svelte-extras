@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { EmojiPickerFooterProps } from './types';
-	import { useEmojiPickerFooter } from './emoji-picker.svelte.js';
-	import { cn } from '$lib/utils.js';
+	import type { EmojiPickerFooterProps } from './types.ts';
+	import { useEmojiPickerFooter } from './emoji-picker.svelte.ts';
+	import { cn } from '#lib/utils.ts';
 
 	let { class: className, children, ...rest }: EmojiPickerFooterProps = $props();
 

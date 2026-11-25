@@ -4,9 +4,9 @@ description: 'An extended button component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 The same old button you know from shadcn-svelte with a few extra touches.
@@ -21,7 +21,7 @@ The same old button you know from shadcn-svelte with a few extra touches.
 
 ```svelte
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
+	import Button from '#lib/components/button.svelte';
 </script>
 
 <Button>Save</Button>

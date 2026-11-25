@@ -1,5 +1,5 @@
-import * as api from '../api-reference';
-import type { SnippetProps } from '$lib/components/ui/snippet/snippet.svelte';
+import * as api from '../api-reference.ts';
+import type { SnippetProps } from '#lib/components/ui/snippet/snippet.svelte';
 
 const Root = api.createComponentReference<SnippetProps>({
 	description: 'The root component for displaying a code snippet with copy functionality.',

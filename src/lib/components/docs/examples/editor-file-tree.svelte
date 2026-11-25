@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as TreeView from '$lib/components/ui/tree-view';
+	import * as TreeView from '#lib/components/ui/tree-view/index.ts';
 </script>
 
 <div class="border-border h-[825px] w-full border">

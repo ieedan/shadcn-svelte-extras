@@ -1,9 +1,9 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	CodeRootPropsWithoutHTML,
 	CodeCopyButtonPropsWithoutHTML,
 	CodeOverflowPropsWithoutHTML
-} from '$lib/components/ui/code/types';
+} from '#lib/components/ui/code/types.ts';
 
 const Root = api.createComponentReference<CodeRootPropsWithoutHTML>({
 	name: 'Root',

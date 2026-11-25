@@ -1,7 +1,7 @@
 import type { Component } from 'svelte';
-import { gettingStarted, components, actions, hooks } from '$content/index.js';
-import type { CurrentDoc } from './types';
-import { join } from '$lib/utils/url';
+import { gettingStarted, components, actions, hooks } from '#content/index.js';
+import type { CurrentDoc } from './types.ts';
+import { join } from '#lib/utils/url.ts';
 
 export const groupedDocs = {
 	'Getting Started': reorder(gettingStarted, ['index', 'installation']),

@@ -4,9 +4,9 @@ description: 'Components for handling passwords and other secrets.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="password" />
@@ -19,7 +19,7 @@ description: 'Components for handling passwords and other secrets.'
 
 ```svelte
 <script lang="ts">
-	import * as Password from '$lib/components/ui/password';
+	import * as Password from '#lib/components/ui/password/index.ts';
 </script>
 
 <Password.Root>

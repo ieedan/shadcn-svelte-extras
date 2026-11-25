@@ -1,10 +1,10 @@
 <script lang="ts" module>
-	import { schema, type Schema } from '$lib/docs/file-drop-zone-schema';
+	import { schema, type Schema } from '#lib/docs/file-drop-zone-schema.ts';
 </script>
 
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
+	import Button from '#lib/components/button.svelte';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { toast } from 'svelte-sonner';
 	import { type SuperValidated, superForm, filesProxy } from 'sveltekit-superforms';

@@ -4,9 +4,9 @@ description: 'A simple star rating component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 ## Basic
@@ -23,7 +23,7 @@ The `<StarRating/>` component builds on top of the [bits-ui](https://bits-ui.com
 
 ```svelte
 <script lang="ts">
-	import * as StarRating from '$lib/components/ui/star-rating';
+	import * as StarRating from '#lib/components/ui/star-rating/index.ts';
 </script>
 
 <StarRating.Root>

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { sleep } from '$lib/utils/sleep';
+	import Button from '#lib/components/button.svelte';
+	import { sleep } from '#lib/utils/sleep.ts';
 
 	async function work() {
 		await sleep(1000);

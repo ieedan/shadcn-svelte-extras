@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { getFileFromUrl } from '$lib/components/ui/image-cropper';
-	import * as ImageCropper from '$lib/components/ui/image-cropper';
+	import { getFileFromUrl } from '#lib/components/ui/image-cropper/index.ts';
+	import * as ImageCropper from '#lib/components/ui/image-cropper/index.ts';
 	import { toast } from 'svelte-sonner';
 </script>
 

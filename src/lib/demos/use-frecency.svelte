@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Badge } from '$lib/components/ui/badge';
-	import Button from '$lib/components/button.svelte';
-	import { UseFrecency } from '$lib/hooks/use-frecency.svelte';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
+	import Button from '#lib/components/button.svelte';
+	import { UseFrecency } from '#lib/hooks/use-frecency.svelte.ts';
 
 	const frameworks = ['Angular', 'Svelte', 'React', 'Vue'];
 

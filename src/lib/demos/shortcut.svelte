@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Kbd, KbdGroup } from '$lib/components/ui/kbd';
+	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.ts';
 	import { toast } from 'svelte-sonner';
-	import { shortcut } from '$lib/actions/shortcut.svelte';
-	import { cmdOrCtrl } from '$lib/hooks/is-mac.svelte';
+	import { shortcut } from '#lib/actions/shortcut.svelte.ts';
+	import { cmdOrCtrl } from '#lib/hooks/is-mac.svelte.ts';
 </script>
 
 <!-- Ctrl/Command + 1 shortcut -->

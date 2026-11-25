@@ -1,9 +1,9 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	PasswordRootPropsWithoutHTML,
 	PasswordInputPropsWithoutHTML,
 	PasswordStrengthPropsWithoutHTML
-} from '$lib/components/ui/password/types';
+} from '#lib/components/ui/password/types.ts';
 
 const Root = api.createComponentReference<PasswordRootPropsWithoutHTML>({
 	name: 'Root',

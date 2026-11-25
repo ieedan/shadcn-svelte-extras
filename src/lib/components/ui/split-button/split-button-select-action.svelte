@@ -1,14 +1,14 @@
 <script lang="ts" module>
 	import type { Select as SelectPrimitiveNs } from 'bits-ui';
-	import type { WithoutChild } from '$lib/utils.js';
+	import type { WithoutChild } from '#lib/utils.ts';
 
 	export type SplitButtonSelectActionProps = WithoutChild<SelectPrimitiveNs.ItemProps>;
 </script>
 
 <script lang="ts">
 	import { Select as SelectPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils.js';
-	import { useSplitButtonSelectAction } from './split-button.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { useSplitButtonSelectAction } from './split-button.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 	import CheckIcon from '@lucide/svelte/icons/check';
 

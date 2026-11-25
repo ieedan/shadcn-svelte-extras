@@ -1,8 +1,8 @@
 <script lang="ts">
 	import MaximizeIcon from '@lucide/svelte/icons/maximize';
-	import { useDemoFullscreen } from './demo.svelte.js';
-	import { cn } from '$lib/utils.js';
-	import { controlVariants } from './index.js';
+	import { useDemoFullscreen } from './demo.svelte.ts';
+	import { cn } from '#lib/utils.ts';
+	import { controlVariants } from './index.ts';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import type { WithElementRef } from 'bits-ui';
 

@@ -15,6 +15,6 @@ export type { ColorPickerInputProps } from './color-picker-input.svelte';
 export type { ColorPickerFormatSelectProps } from './color-picker-format-select.svelte';
 export type { ColorPickerAlphaInputProps } from './color-picker-alpha-input.svelte';
 export type { ColorPickerChannelInputsProps } from './color-picker-channel-inputs.svelte';
-export type { ColorChannel, ColorFormat, Hsva } from './color.js';
+export type { ColorChannel, ColorFormat, Hsva } from './color.ts';
 
 export { Root, Area, HueSlider, AlphaSlider, Input, FormatSelect, AlphaInput, ChannelInputs };

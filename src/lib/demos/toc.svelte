@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Toc from '$lib/components/ui/toc';
+	import * as Toc from '#lib/components/ui/toc/index.ts';
 
 	const toc = [
 		{

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as TreeView from '$lib/components/ui/tree-view';
-	import * as Icons from '$lib/components/icons';
+	import * as TreeView from '#lib/components/ui/tree-view/index.ts';
+	import * as Icons from '#lib/components/icons/index.ts';
 	import FolderDotIcon from '@lucide/svelte/icons/folder-dot';
 	import FolderOpenDotIcon from '@lucide/svelte/icons/folder-open-dot';
 </script>

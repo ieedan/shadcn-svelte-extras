@@ -1,4 +1,3 @@
-// @ts-check
 import { resolve } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
 import { toString } from 'hast-util-to-string';
@@ -8,15 +7,14 @@ import { codeImport } from 'remark-code-import';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 import { defineConfig } from 'mdsx';
+import type { Root as MdastRoot } from 'mdast';
+import type { Root as HastRoot } from 'hast';
+import type { Transformer } from 'unified';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
-/**
- * @typedef {import('mdast').Root} MdastRoot
- * @typedef {import('hast').Root} HastRoot
- * @typedef {import('unified').Transformer<HastRoot, HastRoot>} HastTransformer
- * @typedef {import('unified').Transformer<MdastRoot, MdastRoot>} MdastTransformer
- */
+type HastTransformer = Transformer<HastRoot, HastRoot>;
+type MdastTransformer = Transformer<MdastRoot, MdastRoot>;
 
 export const mdsxConfig = defineConfig({
 	extensions: ['.md'],
@@ -29,10 +27,7 @@ export const mdsxConfig = defineConfig({
 	}
 });
 
-/**
- * @returns {MdastTransformer}
- */
-function remarkRemovePrettierIgnore() {
+function remarkRemovePrettierIgnore(): MdastTransformer {
 	return async (tree) => {
 		visit(tree, 'code', (node) => {
 			node.value = node.value
@@ -42,10 +37,7 @@ function remarkRemovePrettierIgnore() {
 	};
 }
 
-/**
- * @returns {HastTransformer}
- */
-function rehypePreData() {
+function rehypePreData(): HastTransformer {
 	return (tree) => {
 		visit(tree, (node) => {
 			if (node?.type === 'element' && node?.tagName === 'pre') {
@@ -81,9 +73,8 @@ function rehypePreData() {
 
 /**
  * Fenced blocks are highlighted by the blueprint `pre` → ui `Code.Root`. Pass source + line meta as data attributes.
- * @returns {HastTransformer}
  */
-function rehypeAttachMdsxCodeProps() {
+function rehypeAttachMdsxCodeProps(): HastTransformer {
 	return (tree) => {
 		visit(tree, 'element', (node) => {
 			if (node.tagName !== 'pre') return;
@@ -103,8 +94,7 @@ function rehypeAttachMdsxCodeProps() {
 					? codeEl.data.meta
 					: '';
 
-			/** @type {number[]} */
-			const highlights = [];
+			const highlights: number[] = [];
 			if (meta) {
 				for (const m of meta.matchAll(/\{([^}]*)\}/g)) {
 					const inner = m[1]?.trim();

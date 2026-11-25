@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Code from '$lib/components/ui/code';
-	import { cn } from '$lib/utils.js';
-	import type { SupportedLanguage } from '$lib/components/ui/code/shiki';
+	import * as Code from '#lib/components/ui/code/index.ts';
+	import { cn } from '#lib/utils.ts';
+	import type { SupportedLanguage } from '#lib/components/ui/code/shiki.ts';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	type Props = Omit<HTMLAttributes<HTMLDivElement>, 'children'> & {

@@ -2,7 +2,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import Root from './code.svelte';
 import Overflow from './code-overflow.svelte';
 import CopyButton from './code-copy-button.svelte';
-import type { CodeCopyButtonProps, CodeRootProps } from './types';
+import type { CodeCopyButtonProps, CodeRootProps } from './types.ts';
 
 export const codeVariants = tv({
 	base: 'not-prose relative h-full overflow-auto rounded-lg border',

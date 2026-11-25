@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
-	import { Progress } from '$lib/components/ui/progress';
-	import { sleep } from '$lib/utils/sleep';
+	import Button from '#lib/components/button.svelte';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
+	import { Progress } from '#lib/components/ui/progress/index.ts';
+	import { sleep } from '#lib/utils/sleep.ts';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { onDestroy } from 'svelte';
 	import { toast } from 'svelte-sonner';

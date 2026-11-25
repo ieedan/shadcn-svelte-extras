@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Logo from './logo.svelte';
-	import { LightSwitch } from './ui/light-switch';
-	import { Separator } from './ui/separator';
+	import { LightSwitch } from './ui/light-switch/index.ts';
+	import { Separator } from './ui/separator/index.ts';
 	import MobileSheet from './mobile-sheet.svelte';
-	import { GitHubButton, getStars } from './ui/github-button';
+	import { GitHubButton, getStars } from './ui/github-button/index.ts';
 	import { onMount } from 'svelte';
 
 	const STARS_FALLBACK = 525;

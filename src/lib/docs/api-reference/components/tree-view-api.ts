@@ -1,8 +1,8 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	TreeViewFilePropsWithoutHTML,
 	TreeViewFolderProps
-} from '$lib/components/ui/tree-view/types';
+} from '#lib/components/ui/tree-view/types.ts';
 
 const Root = api.createComponentReference({
 	name: 'Root',

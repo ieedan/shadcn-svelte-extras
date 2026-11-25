@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Code from '$lib/components/ui/code';
-	import codeCode from '$lib/components/ui/code/code.svelte?raw';
+	import * as Code from '#lib/components/ui/code/index.ts';
+	import codeCode from '#lib/components/ui/code/code.svelte?raw';
 </script>
 
 <div class="w-full p-6">

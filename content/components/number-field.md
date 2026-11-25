@@ -4,9 +4,9 @@ description: 'A component for incrementing and decrementing a value.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="number-field" />
@@ -19,7 +19,7 @@ description: 'A component for incrementing and decrementing a value.'
 
 ```svelte
 <script lang="ts">
-	import * as NumberField from '$lib/components/ui/number-field';
+	import * as NumberField from '#lib/components/ui/number-field/index.ts';
 </script>
 
 <NumberField.Root>

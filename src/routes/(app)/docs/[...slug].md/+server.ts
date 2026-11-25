@@ -1,4 +1,4 @@
-import { getDocMarkdown } from '$lib/features/docs/markdown/get-doc-markdown';
+import { getDocMarkdown } from '#lib/features/docs/markdown/get-doc-markdown.ts';
 
 export async function GET({ params }) {
 	const markdown = await getDocMarkdown(params.slug);

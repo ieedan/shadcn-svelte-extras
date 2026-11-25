@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as StarRating from '$lib/components/ui/star-rating';
+	import * as StarRating from '#lib/components/ui/star-rating/index.ts';
 
 	let value = $state(0);
 </script>

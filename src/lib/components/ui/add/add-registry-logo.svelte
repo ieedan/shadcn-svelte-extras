@@ -1,12 +1,12 @@
 <script lang="ts">
-	import GithubLogo from '$lib/components/logos/github.svelte';
-	import JsrepoLogo from '$lib/components/logos/jsrepo.svelte';
-	import GitlabLogo from '$lib/components/logos/gitlab.svelte';
-	import BitbucketLogo from '$lib/components/logos/bitbucket.svelte';
+	import GithubLogo from '#lib/components/logos/github.svelte';
+	import JsrepoLogo from '#lib/components/logos/jsrepo.svelte';
+	import GitlabLogo from '#lib/components/logos/gitlab.svelte';
+	import BitbucketLogo from '#lib/components/logos/bitbucket.svelte';
 	import type { Component } from 'svelte';
-	import AzureDevops from '$lib/components/logos/azure-devops.svelte';
+	import AzureDevops from '#lib/components/logos/azure-devops.svelte';
 	import ServerIcon from '@lucide/svelte/icons/server';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 
 	type Props = {
 		registry: string;

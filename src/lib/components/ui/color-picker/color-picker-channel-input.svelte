@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import type { ColorPickerDraftInputBaseProps } from './color-picker-draft-input.svelte';
-	import type { ChannelFormat } from './color.js';
+	import type { ChannelFormat } from './color.ts';
 
 	export type ColorPickerChannelInputProps = ColorPickerDraftInputBaseProps & {
 		format: ChannelFormat;
@@ -10,9 +10,9 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { box } from 'svelte-toolbelt';
-	import { useColorPickerChannelInput } from './color-picker.svelte.js';
+	import { useColorPickerChannelInput } from './color-picker.svelte.ts';
 	import ColorPickerDraftInput from './color-picker-draft-input.svelte';
 
 	let {

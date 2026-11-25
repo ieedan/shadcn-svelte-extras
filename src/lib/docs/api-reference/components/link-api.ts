@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 
 const Link = api.createComponentReference({
 	description: 'A styled anchor element.',

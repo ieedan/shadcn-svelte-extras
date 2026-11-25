@@ -4,11 +4,11 @@ description: 'A tags input component.'
 ---
 
 <script lang="ts">
-	import Code from '$lib/components/docs/code.svelte';
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import customValidateRaw from '$lib/docs/tags-input-custom-validate.ts?raw';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Code from '#lib/components/docs/code.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import customValidateRaw from '#lib/docs/tags-input-custom-validate.ts?raw';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="tags-input" />
@@ -21,7 +21,7 @@ description: 'A tags input component.'
 
 ```svelte
 <script lang="ts">
-	import { TagsInput } from '$lib/components/ui/tags-input';
+	import { TagsInput } from '#lib/components/ui/tags-input/index.ts';
 </script>
 
 <TagsInput />

@@ -1,8 +1,8 @@
 <script lang="ts" module>
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { tv, type VariantProps } from 'tailwind-variants';
-	import { CopyButton } from '../copy-button';
-	import type { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { CopyButton } from '../copy-button/index.ts';
+	import type { UseClipboard } from '#lib/hooks/use-clipboard.svelte.ts';
 
 	const style = tv({
 		base: 'bg-background relative flex w-full max-w-full min-w-0 flex-col overflow-hidden rounded-md border py-2.5 pr-12 pl-3',

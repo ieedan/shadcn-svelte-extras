@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Link } from '$lib/components/ui/link';
+	import { Link } from '#lib/components/ui/link/index.ts';
 </script>
 
 <p class="text-center">

@@ -4,11 +4,11 @@ description: 'A file tree component.'
 ---
 
 <script lang="ts">
-	import Code from '$lib/components/docs/code.svelte';
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import treeViewFileCustomRaw from '$lib/docs/tree-view-file-custom.svelte?raw';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Code from '#lib/components/docs/code.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import treeViewFileCustomRaw from '#lib/docs/tree-view-file-custom.svelte?raw';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="tree-view" />
@@ -21,7 +21,7 @@ description: 'A file tree component.'
 
 ```svelte
 <script lang="ts">
-	import * as TreeView from '$lib/components/ui/tree-view';
+	import * as TreeView from '#lib/components/ui/tree-view/index.ts';
 </script>
 
 <TreeView.Root>

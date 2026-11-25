@@ -1,12 +1,15 @@
 <script lang="ts">
-	import { buttonVariants } from '$lib/components/ui/button';
-	import { confirmDelete, ConfirmDeleteDialog } from '$lib/components/ui/confirm-delete-dialog';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import {
+		confirmDelete,
+		ConfirmDeleteDialog
+	} from '#lib/components/ui/confirm-delete-dialog/index.ts';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
 	import EllipsisIcon from '@lucide/svelte/icons/ellipsis';
-	import * as Avatar from '$lib/components/ui/avatar';
-	import { Badge } from '$lib/components/ui/badge';
-	import Github from '$lib/components/logos/github.svelte';
-	import { sleep } from '$lib/utils/sleep';
+	import * as Avatar from '#lib/components/ui/avatar/index.ts';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
+	import Github from '#lib/components/logos/github.svelte';
+	import { sleep } from '#lib/utils/sleep.ts';
 
 	type Project = {
 		name: string;

@@ -4,9 +4,9 @@ description: 'A keyboard accessible stepper component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="stepper" />
@@ -19,7 +19,7 @@ description: 'A keyboard accessible stepper component.'
 
 ```svelte
 <script lang="ts">
-	import * as Stepper from '$lib/components/ui/stepper';
+	import * as Stepper from '#lib/components/ui/stepper/index.ts';
 </script>
 
 <Stepper.Root>

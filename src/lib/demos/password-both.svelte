@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Password from '$lib/components/ui/password';
-	import * as Toggle from '$lib/components/ui/toggle';
+	import * as Password from '#lib/components/ui/password/index.ts';
+	import * as Toggle from '#lib/components/ui/toggle/index.ts';
 
 	let showVisibility = $state(true);
 	let showCopy = $state(true);

@@ -4,7 +4,7 @@ description: 'A hook used to generate a table of contents based on the page cont
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation

@@ -3,9 +3,7 @@ import type { WithElementRef } from 'svelte-toolbelt';
 import type { HTMLAttributes, HTMLInputAttributes, HTMLLabelAttributes } from 'svelte/elements';
 
 export type FileRejectedReason =
-	| 'Maximum file size exceeded'
-	| 'File type not allowed'
-	| 'Maximum files uploaded';
+	'Maximum file size exceeded' | 'File type not allowed' | 'Maximum files uploaded';
 
 export type FileDropZoneRootPropsWithoutHTML = WithChildren<{
 	ref?: HTMLInputElement | null;

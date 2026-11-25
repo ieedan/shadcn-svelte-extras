@@ -4,9 +4,9 @@ description: 'A dialog for confirming delete actions.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="confirm-delete-dialog" />
@@ -19,7 +19,10 @@ description: 'A dialog for confirming delete actions.'
 
 ```svelte
 <script lang="ts">
-	import { ConfirmDeleteDialog, confirmDelete } from '$lib/components/ui/confirm-delete-dialog';
+	import {
+		ConfirmDeleteDialog,
+		confirmDelete
+	} from '#lib/components/ui/confirm-delete-dialog/index.ts';
 </script>
 
 <ConfirmDeleteDialog />

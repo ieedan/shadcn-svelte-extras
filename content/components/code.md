@@ -4,11 +4,11 @@ description: 'A code component.'
 ---
 
 <script lang="ts">
-	import Code from '$lib/components/docs/code.svelte';
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import shikiRaw from '$lib/components/ui/code/shiki.ts?raw';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Code from '#lib/components/docs/code.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import shikiRaw from '#lib/components/ui/code/shiki.ts?raw';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="code" />
@@ -21,7 +21,7 @@ description: 'A code component.'
 
 ```svelte
 <script lang="ts">
-	import * as Code from '$lib/components/ui/code';
+	import * as Code from '#lib/components/ui/code/index.ts';
 
 	const code = `const greet = () => console.log('Hello');`;
 </script>

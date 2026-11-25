@@ -1,5 +1,5 @@
-import * as api from '../api-reference';
-import type { IPv4AddressInputPropsWithoutHTML } from '$lib/components/ui/ipv4address-input/types';
+import * as api from '../api-reference.ts';
+import type { IPv4AddressInputPropsWithoutHTML } from '#lib/components/ui/ipv4address-input/types.ts';
 
 const Root = api.createComponentReference<IPv4AddressInputPropsWithoutHTML>({
 	description:

@@ -1,7 +1,7 @@
 import { goto } from '$app/navigation';
 import { Context, watch } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
-import type * as Resizable from '$lib/components/ui/resizable';
+import type * as Resizable from '#lib/components/ui/resizable/index.ts';
 import { page } from '$app/state';
 
 export type TabValue = 'preview' | 'code';
@@ -74,7 +74,7 @@ class DemoCodeState {
 	#demoCode: Promise<string> | undefined = $derived.by(() => {
 		if (!this.root.demo) return undefined;
 
-		return import(`$lib/demos/${this.root.demo}.svelte?raw`).then(({ default: code }) => code);
+		return import(`#lib/demos/${this.root.demo}.svelte?raw`).then(({ default: code }) => code);
 	});
 }
 

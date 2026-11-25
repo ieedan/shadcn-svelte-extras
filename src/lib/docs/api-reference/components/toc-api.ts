@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 
 const Root = api.createComponentReference({
 	description: 'The root component for rendering a table of contents.',

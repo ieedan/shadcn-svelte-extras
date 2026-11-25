@@ -4,9 +4,9 @@ description: 'A horizontal tabs component with an underline.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="underline-tabs" />
@@ -19,7 +19,7 @@ description: 'A horizontal tabs component with an underline.'
 
 ```svelte
 <script lang="ts">
-	import * as UnderlineTabs from '$lib/components/ui/underline-tabs';
+	import * as UnderlineTabs from '#lib/components/ui/underline-tabs/index.ts';
 </script>
 
 <UnderlineTabs.Root value="overview">

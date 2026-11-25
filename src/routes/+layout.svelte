@@ -2,13 +2,13 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import { page } from '$app/state';
-	import { Toaster } from '$lib/components/ui/sonner/index.js';
+	import { Toaster } from '#lib/components/ui/sonner/index.ts';
 	import { MetaTags, deepMerge } from 'svelte-meta-tags';
-	import * as Add from '$lib/components/ui/add';
+	import * as Add from '#lib/components/ui/add/index.ts';
 	import { PersistedState } from 'runed';
-	import { dev } from '$app/environment';
+	import { dev } from '$app/env';
 	import { UmamiAnalytics } from '@lukulent/svelte-umami';
-	import { UserConfig, UserConfigContext } from '$lib/user-config.svelte';
+	import { UserConfig, UserConfigContext } from '#lib/user-config.svelte.ts';
 
 	const REGISTRY_OPTIONS = ['@ieedan/shadcn-svelte-extras'] as const;
 

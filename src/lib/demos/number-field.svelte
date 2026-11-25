@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as NumberField from '$lib/components/ui/number-field';
+	import * as NumberField from '#lib/components/ui/number-field/index.ts';
 </script>
 
 <NumberField.Root min={-1000} max={1000}>

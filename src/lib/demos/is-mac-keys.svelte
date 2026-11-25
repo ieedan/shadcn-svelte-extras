@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cmdOrCtrl, optionOrAlt } from '$lib/hooks/is-mac.svelte';
-	import { Kbd } from '$lib/components/ui/kbd';
+	import { cmdOrCtrl, optionOrAlt } from '#lib/hooks/is-mac.svelte.ts';
+	import { Kbd } from '#lib/components/ui/kbd/index.ts';
 </script>
 
 <div class="flex flex-col place-items-center gap-2">

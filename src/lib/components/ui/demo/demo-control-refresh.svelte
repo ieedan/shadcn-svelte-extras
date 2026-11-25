@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { useDemoRefresh } from './demo.svelte.js';
-	import { cn } from '$lib/utils.js';
-	import { controlVariants } from './index.js';
+	import { useDemoRefresh } from './demo.svelte.ts';
+	import { cn } from '#lib/utils.ts';
+	import { controlVariants } from './index.ts';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 	import type { WithElementRef } from 'bits-ui';
 	import RotateCcwIcon from '@lucide/svelte/icons/rotate-ccw';

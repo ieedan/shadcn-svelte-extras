@@ -4,9 +4,9 @@ description: 'Allow users to select which action to perform from a list of optio
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="split-button" />
@@ -19,7 +19,7 @@ description: 'Allow users to select which action to perform from a list of optio
 
 ```svelte
 <script lang="ts">
-	import * as SplitButton from '$lib/components/ui/split-button';
+	import * as SplitButton from '#lib/components/ui/split-button/index.ts';
 </script>
 
 <SplitButton.Root>

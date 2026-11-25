@@ -1,9 +1,7 @@
-<!-- Thanks Hunter! https://github.com/huntabyte/shadcn-svelte/blob/cb5d1d3b05c721593db07fa1974110038d44c1b0/docs/src/lib/components/carbon.svelte -->
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
-	import { dev, browser } from '$app/environment';
+	import { dev, browser } from '$app/env';
 
 	const src =
 		'https://cdn.carbonads.com/carbon.js?serve=CW7IE53W&placement=wwwshadcn-svelte-extrascom&format=cover';
@@ -24,7 +22,11 @@
 		}
 	});
 
-	beforeNavigate(() => refreshCarbonAds());
+	beforeNavigate(({ shallow, type }) => {
+		if (shallow && type === 'goto') return;
+
+		return refreshCarbonAds();
+	});
 
 	function createCarbonScript() {
 		const script = document.createElement('script');
@@ -55,4 +57,5 @@
 	}
 </script>
 
+<!-- Thanks Hunter! https://github.com/huntabyte/shadcn-svelte/blob/cb5d1d3b05c721593db07fa1974110038d44c1b0/docs/src/lib/components/carbon.svelte -->
 <div id={localId} class="w-full pt-4"></div>

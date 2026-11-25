@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Snippet } from '$lib/components/ui/snippet';
+	import { Snippet } from '#lib/components/ui/snippet/index.ts';
 </script>
 
 <div class="flex w-full max-w-[300px] flex-col gap-2">

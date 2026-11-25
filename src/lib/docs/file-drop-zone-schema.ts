@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { MEGABYTE } from '$lib/components/ui/file-drop-zone';
+import { MEGABYTE } from '#lib/components/ui/file-drop-zone/index.ts';
 
 const maxBytes = MEGABYTE * 2;
 

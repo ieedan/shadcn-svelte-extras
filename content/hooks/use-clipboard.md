@@ -4,7 +4,7 @@ description: 'A hook to simplify copying text to the clipboard.'
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation
@@ -17,7 +17,7 @@ Create a button that copies some text to the clipboard.
 
 ```svelte {2,6}
 <script lang="ts">
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { UseClipboard } from '#lib/hooks/use-clipboard.svelte.ts';
 
 	let { children } = $props();
 
@@ -47,7 +47,7 @@ You can check `.status` to determine if the copy was a success or failure and up
 
 ```svelte {2,6,10-16}
 <script lang="ts">
-	import { UseClipboard } from '$lib/hooks/use-clipboard.svelte';
+	import { UseClipboard } from '#lib/hooks/use-clipboard.svelte.ts';
 
 	let { children } = $props();
 

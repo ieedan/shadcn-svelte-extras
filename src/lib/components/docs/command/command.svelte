@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Dialog from '$lib/components/ui/dialog';
-	import * as Command from '$lib/components/ui/command';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
+	import * as Command from '#lib/components/ui/command/index.ts';
 	import { goto } from '$app/navigation';
-	import { commandContext } from '$lib/context';
-	import { groupedDocs } from '$lib/features/docs/docs';
+	import { commandContext } from '#lib/context.ts';
+	import { groupedDocs } from '#lib/features/docs/docs.ts';
 
 	const commandState = commandContext.get();
 </script>

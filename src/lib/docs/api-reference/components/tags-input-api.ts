@@ -1,5 +1,5 @@
-import * as api from '../api-reference';
-import type { TagsInputPropsWithoutHTML } from '$lib/components/ui/tags-input/types';
+import * as api from '../api-reference.ts';
+import type { TagsInputPropsWithoutHTML } from '#lib/components/ui/tags-input/types.ts';
 
 const Root = api.createComponentReference<TagsInputPropsWithoutHTML>({
 	description: 'The root tags input component. Allows entry and validation of multiple tags.',

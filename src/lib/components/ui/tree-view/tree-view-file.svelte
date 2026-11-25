@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FileIcon from '@lucide/svelte/icons/file';
-	import { cn } from '$lib/utils.js';
-	import type { TreeViewFileProps } from './types';
+	import { cn } from '#lib/utils.ts';
+	import type { TreeViewFileProps } from './types.ts';
 
 	let { name, icon, type = 'button', class: className, ...rest }: TreeViewFileProps = $props();
 </script>

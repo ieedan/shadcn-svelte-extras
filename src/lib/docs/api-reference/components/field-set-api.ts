@@ -1,10 +1,10 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	FieldSetRootPropsWithoutHTML,
 	FieldSetTitlePropsWithoutHtml,
 	FieldSetContentPropsWithoutHTML,
 	FieldSetFooterPropsWithoutHTML
-} from '$lib/components/ui/field-set/types';
+} from '#lib/components/ui/field-set/types.ts';
 
 const Root = api.createComponentReference<FieldSetRootPropsWithoutHTML>({
 	name: 'Root',

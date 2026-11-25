@@ -1,9 +1,9 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	FileDropZoneDragOverlayPropsWithoutHTML,
 	FileDropZoneRootPropsWithoutHTML,
 	FileDropZoneTriggerPropsWithoutHTML
-} from '$lib/components/ui/file-drop-zone/types';
+} from '#lib/components/ui/file-drop-zone/types.ts';
 
 const Root = api.createComponentReference<FileDropZoneRootPropsWithoutHTML>({
 	name: 'Root',
