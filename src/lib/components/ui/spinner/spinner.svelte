@@ -6,7 +6,8 @@
 	let {
 		class: className,
 		role = 'status',
-		// we add name, color, and stroke for compatibility with different icon libraries props
+		// we add name, color, and stroke for compatibility with different icon libraries props.
+		// only forward them when set, otherwise `stroke: undefined` overrides the icon's `currentColor`
 		name,
 		color,
 		stroke,
@@ -17,9 +18,9 @@
 
 <Loader2Icon
 	{role}
-	name={name === null ? undefined : name}
-	color={color === null ? undefined : color}
-	stroke={stroke === null ? undefined : stroke}
+	{...name != null ? { name } : {}}
+	{...color != null ? { color } : {}}
+	{...stroke != null ? { stroke } : {}}
 	aria-label={ariaLabel}
 	class={cn('size-4 animate-spin', className)}
 	{...restProps}
