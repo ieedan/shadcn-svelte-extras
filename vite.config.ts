@@ -62,7 +62,18 @@ export default defineConfig({
 				origin: 'https://shadcn-svelte-extras.com',
 			}
 		}),
-		transformLucideImports()
+		transformLucideImports(),
+		{
+			// The Cloudflare adapter turns on dependency discovery for the SSR environment. That optimizer
+			// has no svelte plugin, so Svelte libraries that ship `.svelte.js` files (e.g. mode-watcher ->
+			// svelte-toolbelt) get prebundled with their runes uncompiled (`$state is not defined`).
+			// Disabling discovery lets them go through the regular transform pipeline instead.
+			name: 'ssr-disable-dependency-discovery',
+			enforce: 'post',
+			config() {
+				return { environments: { ssr: { optimizeDeps: { noDiscovery: true } } } };
+			}
+		}
 	],
 	server: {
 		fs: {
