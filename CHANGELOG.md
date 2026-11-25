@@ -1,5 +1,11 @@
 # shadcn-svelte-extras
 
+## 7.4.1
+
+### Patch Changes
+
+- feat: migrate to SvelteKit 3 ([#416](https://github.com/ieedan/shadcn-svelte-extras/pull/416))
+
 ## 7.4.0
 
 ### Minor Changes
