@@ -59,7 +59,7 @@ export default defineConfig({
 				entries: mdPrerenderPaths
 			},
 			paths: {
-				origin: 'https://shadcn-svelte-extras.com',
+				origin: 'https://shadcn-svelte-extras.com'
 			}
 		}),
 		transformLucideImports(),
