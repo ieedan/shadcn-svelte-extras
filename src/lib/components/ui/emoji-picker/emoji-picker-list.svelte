@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Command from '#lib/components/ui/command/index.ts';
+	import * as Command from '#lib/components/ui/command/index.js';
 	import { Command as CommandPrimitive } from 'bits-ui';
 	import data, { type EmojiMartData } from '@emoji-mart/data';
-	import * as casing from '#lib/utils/casing.ts';
-	import type { EmojiPickerListProps } from './types';
+	import * as casing from '#lib/utils/casing.js';
+	import type { EmojiPickerListProps } from './types.js';
 	import { makeValue, parseValue, useEmojiPickerList } from './emoji-picker.svelte.js';
 	import { cn } from '#lib/utils.js';
 

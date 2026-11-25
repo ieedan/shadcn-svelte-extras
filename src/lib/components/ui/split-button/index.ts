@@ -10,7 +10,7 @@ import {
 	SelectGroupHeading,
 	SelectLabel,
 	SelectSeparator
-} from '#lib/components/ui/select/index.ts';
+} from '#lib/components/ui/select/index.js';
 
 export type { SplitButtonProps, SplitButtonPropsWithoutHTML } from './split-button.svelte';
 export type { SplitButtonActionProps } from './split-button-action.svelte';

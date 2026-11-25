@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from '#lib/utils.js';
-	import type { FieldSetTitleProps } from './types';
+	import type { FieldSetTitleProps } from './types.js';
 
 	let {
 		ref = $bindable(null),

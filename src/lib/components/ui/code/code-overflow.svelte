@@ -2,7 +2,7 @@
 	import Button from '#lib/components/button.svelte';
 	import { useCodeOverflow } from './code.svelte.js';
 	import { box } from 'svelte-toolbelt';
-	import type { CodeOverflowProps } from './types';
+	import type { CodeOverflowProps } from './types.js';
 	import { cn } from '#lib/utils.js';
 
 	let {

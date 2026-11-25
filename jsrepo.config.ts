@@ -11,12 +11,12 @@ export default defineConfig({
 	registries: ['@registry/kit'],
 	paths: {
 		ui: '#lib/components/ui',
-		component: '#lib/components/index.ts',
-		block: '#lib/components/index.ts',
+		component: '#lib/components',
+		block: '#lib/components',
 		logo: '#lib/components/logos',
 		hook: '#lib/hooks',
 		action: '#lib/actions',
-		util: '#lib/utils.ts',
+		util: '#lib/utils',
 		lib: '#lib'
 	},
 	registry: {
@@ -30,11 +30,11 @@ export default defineConfig({
 		tags: ['svelte', 'shadcn', 'typescript', 'components', 'utilities'],
 		defaultPaths: {
 			ui: '#lib/components/ui',
-			component: '#lib/components/index.ts',
-			block: '#lib/components/index.ts',
+			component: '#lib/components',
+			block: '#lib/components',
 			hook: '#lib/hooks',
 			action: '#lib/actions',
-			util: '#lib/utils.ts',
+			util: '#lib/utils',
 			lib: '#lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],

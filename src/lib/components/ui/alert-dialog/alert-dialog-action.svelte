@@ -6,7 +6,7 @@
 		type ButtonSize
 	} from '#lib/components/ui/button/index.js';
 	import { cn } from '#lib/utils.js';
-	import { Spinner } from '#lib/components/ui/spinner/index.ts';
+	import { Spinner } from '#lib/components/ui/spinner/index.js';
 
 	let {
 		ref = $bindable(null),

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from '#lib/utils.js';
-	import { fieldSetVariants } from '.';
-	import type { FieldSetRootProps } from './types';
+	import { fieldSetVariants } from './index.js';
+	import type { FieldSetRootProps } from './types.js';
 
 	let {
 		ref = $bindable(null),

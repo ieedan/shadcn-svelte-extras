@@ -5,7 +5,7 @@
 	import ArrowDownIcon from '@lucide/svelte/icons/arrow-down';
 	import { scale } from 'svelte/transition';
 	import { UseAutoScroll } from '#lib/hooks/use-auto-scroll.svelte.js';
-	import type { ChatListProps } from './types';
+	import type { ChatListProps } from './types.js';
 
 	let { ref = $bindable(null), children, class: className, ...rest }: ChatListProps = $props();
 

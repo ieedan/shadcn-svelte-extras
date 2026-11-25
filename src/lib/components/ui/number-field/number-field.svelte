@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { box } from 'svelte-toolbelt';
-	import type { NumberFieldRootProps } from './types';
+	import type { NumberFieldRootProps } from './types.js';
 	import { useNumberField } from './number-field.svelte.js';
 
 	let {

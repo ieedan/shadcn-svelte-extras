@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Popover from '#lib/components/ui/popover/index.ts';
+	import * as Popover from '#lib/components/ui/popover/index.js';
 	import Button from '#lib/components/button.svelte';
-	import * as Command from '#lib/components/ui/command/index.ts';
-	import { ScrollArea } from '#lib/components/ui/scroll-area/index.ts';
+	import * as Command from '#lib/components/ui/command/index.js';
+	import { ScrollArea } from '#lib/components/ui/scroll-area/index.js';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import ChevronsUpDownIcon from '@lucide/svelte/icons/chevrons-up-down';
 	import { cn } from '#lib/utils.js';

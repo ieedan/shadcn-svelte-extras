@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from '#lib/utils.ts';
+	import { cn } from '#lib/utils.js';
 	import { useStepperNav } from './stepper.svelte.js';
-	import type { StepperNavProps } from './types';
+	import type { StepperNavProps } from './types.js';
 	import { box } from 'svelte-toolbelt';
 
 	let {

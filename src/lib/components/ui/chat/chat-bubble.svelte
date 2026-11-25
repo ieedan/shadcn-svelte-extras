@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ChatBubbleProps } from './types';
+	import type { ChatBubbleProps } from './types.js';
 	import { cn } from '#lib/utils.js';
 
 	let {

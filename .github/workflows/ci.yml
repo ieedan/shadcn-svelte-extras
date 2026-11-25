@@ -17,8 +17,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Generate i18n files and Lint
-        run: pnpm generate-i18n && pnpm lint
+      # the lint step reads registry.json to know which files are shipped by the registry
+      - name: Build registry, generate i18n files and Lint
+        run: pnpm registry:build && pnpm generate-i18n && pnpm lint
 
       - name: Check
         run: pnpm check

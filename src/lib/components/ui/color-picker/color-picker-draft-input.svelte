@@ -19,7 +19,7 @@
 	so they share the draft handling (apply on Enter or blur, cancel on Escape).
 -->
 <script lang="ts">
-	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Input } from '#lib/components/ui/input/index.js';
 	import { cn } from '#lib/utils.js';
 	import { useColorPickerRootCtx } from './color-picker.svelte.js';
 

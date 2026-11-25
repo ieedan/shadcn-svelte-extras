@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { box } from 'svelte-toolbelt';
 	import { usePassword } from './password.svelte.js';
-	import type { PasswordRootProps } from './types';
+	import type { PasswordRootProps } from './types.js';
 	import { cn } from '#lib/utils.js';
 
 	let {

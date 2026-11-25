@@ -3,7 +3,7 @@
 	import { box, mergeProps } from 'svelte-toolbelt';
 	import { usePasswordInput } from './password.svelte.js';
 	import type { PasswordInputProps } from './types.js';
-	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Input } from '#lib/components/ui/input/index.js';
 
 	let {
 		ref = $bindable(null),

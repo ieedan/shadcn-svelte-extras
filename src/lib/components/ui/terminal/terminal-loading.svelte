@@ -3,7 +3,7 @@
 	import { onDestroy } from 'svelte';
 	import { useAnimation } from './terminal.svelte.js';
 	import { fly } from 'svelte/transition';
-	import type { TerminalLoadingProps } from './types';
+	import type { TerminalLoadingProps } from './types.js';
 	import { box } from 'svelte-toolbelt';
 
 	const frames = ['◒', '◐', '◓', '◑'];

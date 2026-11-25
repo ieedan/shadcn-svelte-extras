@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Command as CommandPrimitive } from 'bits-ui';
-	import type { EmojiPickerSearchProps } from './types';
+	import type { EmojiPickerSearchProps } from './types.js';
 	import { useEmojiPickerInput } from './emoji-picker.svelte.js';
 	import { box } from 'svelte-toolbelt';
 

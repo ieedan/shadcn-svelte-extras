@@ -3,7 +3,7 @@
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
 	import { cn } from '#lib/utils.js';
-	import type { TreeViewFolderProps } from './types';
+	import type { TreeViewFolderProps } from './types.js';
 
 	let {
 		name,

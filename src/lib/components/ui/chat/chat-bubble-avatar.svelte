@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Root } from '#lib/components/ui/avatar/index.ts';
+	import { Root } from '#lib/components/ui/avatar/index.js';
 	import { Avatar as AvatarPrimitive } from 'bits-ui';
 	import { cn } from '#lib/utils.js';
 

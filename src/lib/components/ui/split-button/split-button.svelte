@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ButtonGroupOrientation } from '#lib/components/ui/button-group/index.ts';
+	import type { ButtonGroupOrientation } from '#lib/components/ui/button-group/index.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithChildren, WithoutChildren } from 'bits-ui';
 	import type { SplitButtonClickEvent } from './split-button.svelte.js';

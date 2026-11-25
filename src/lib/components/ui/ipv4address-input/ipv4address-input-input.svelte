@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isNumber } from '#lib/utils/is-number.ts';
+	import { isNumber } from '#lib/utils/is-number.js';
 	import { cn } from '#lib/utils.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 

@@ -2,7 +2,7 @@
 	import { cn } from '#lib/utils.js';
 	import { onDestroy } from 'svelte';
 	import { useAnimation } from './terminal.svelte.js';
-	import type { TerminalAnimationProps } from './types';
+	import type { TerminalAnimationProps } from './types.js';
 	import { fly } from 'svelte/transition';
 	import { box } from 'svelte-toolbelt';
 

@@ -8,7 +8,7 @@
 </script>
 
 <script lang="ts">
-	import type { Heading } from '#lib/hooks/use-toc.svelte.ts';
+	import type { Heading } from '#lib/hooks/use-toc.svelte.js';
 	import { cn } from '#lib/utils.js';
 	import Self from './toc.svelte';
 

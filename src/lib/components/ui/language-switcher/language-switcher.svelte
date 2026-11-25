@@ -28,8 +28,8 @@
 
 <script lang="ts">
 	import GlobeIcon from '@lucide/svelte/icons/globe';
-	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
-	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
+	import { buttonVariants } from '#lib/components/ui/button/index.js';
 	import { cn } from '#lib/utils.js';
 
 	let {

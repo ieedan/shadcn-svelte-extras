@@ -3,7 +3,7 @@
 	import StarHalfIcon from '@lucide/svelte/icons/star-half';
 	import StarIcon from '@lucide/svelte/icons/star';
 	import { RatingGroup } from 'bits-ui';
-	import type { StarRatingStarProps } from './types';
+	import type { StarRatingStarProps } from './types.js';
 
 	let { index, state, class: className }: StarRatingStarProps = $props();
 </script>

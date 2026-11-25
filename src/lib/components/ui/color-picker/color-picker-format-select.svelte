@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { ComponentProps } from 'svelte';
 	import type { ColorFormat } from './color.js';
-	import type { SelectTrigger } from '#lib/components/ui/select/index.ts';
+	import type { SelectTrigger } from '#lib/components/ui/select/index.js';
 
 	export type ColorPickerFormatSelectProps = Omit<
 		ComponentProps<typeof SelectTrigger>,
@@ -15,7 +15,7 @@
 </script>
 
 <script lang="ts">
-	import * as SelectPrimitive from '#lib/components/ui/select/index.ts';
+	import * as SelectPrimitive from '#lib/components/ui/select/index.js';
 	import { cn } from '#lib/utils.js';
 	import { useColorPickerRootCtx } from './color-picker.svelte.js';
 

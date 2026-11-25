@@ -6,7 +6,7 @@ import type {
 	FileDropZoneDragOverlayProps,
 	FileDropZoneRootProps,
 	FileRejectedReason
-} from './types';
+} from './types.js';
 
 export function displaySize(bytes: number): string {
 	if (bytes < KILOBYTE) return `${bytes.toFixed(0)} B`;

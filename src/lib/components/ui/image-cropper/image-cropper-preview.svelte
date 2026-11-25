@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as Avatar from '#lib/components/ui/avatar/index.ts';
-	import type { ImageCropperPreviewProps } from './types';
+	import * as Avatar from '#lib/components/ui/avatar/index.js';
+	import type { ImageCropperPreviewProps } from './types.js';
 	import { useImageCropperPreview } from './image-cropper.svelte.js';
 	import UploadIcon from '@lucide/svelte/icons/upload';
 	import { cn } from '#lib/utils.js';

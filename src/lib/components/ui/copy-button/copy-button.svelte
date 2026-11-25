@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import type { Snippet } from 'svelte';
-	import type { ButtonProps } from '#lib/components/ui/button/index.ts';
+	import type { ButtonProps } from '#lib/components/ui/button/index.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithChildren, WithoutChildren } from 'bits-ui';
 
@@ -20,7 +20,7 @@
 
 <script lang="ts">
 	import Button from '#lib/components/button.svelte';
-	import { UseClipboard } from '#lib/hooks/use-clipboard.svelte.ts';
+	import { UseClipboard } from '#lib/hooks/use-clipboard.svelte.js';
 	import { cn } from '#lib/utils.js';
 	import { mergeProps } from 'bits-ui';
 	import CheckIcon from '@lucide/svelte/icons/check';
