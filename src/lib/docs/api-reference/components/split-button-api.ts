@@ -1,5 +1,5 @@
 import * as api from '../api-reference';
-import type { SplitButtonPropsWithoutHTML } from '#lib/components/ui/split-button/split-button.svelte.ts';
+import type { SplitButtonPropsWithoutHTML } from '#lib/components/ui/split-button/split-button.svelte';
 import type { SplitButtonActionProps } from '#lib/components/ui/split-button/split-button-action.svelte';
 import type { SplitButtonSelectProps } from '#lib/components/ui/split-button/split-button-select.svelte';
 import type { SplitButtonSelectActionProps } from '#lib/components/ui/split-button/split-button-select-action.svelte';

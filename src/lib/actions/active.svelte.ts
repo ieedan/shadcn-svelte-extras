@@ -19,7 +19,11 @@ export type Options = {
 	 *  @default false
 	 */
 	isSearch?: boolean;
-	url: URL;
+	url: {
+		pathname: string;
+		hash: string;
+		searchParams: { get(name: string): string | null };
+	};
 };
 
 /** Sets the `data-active` attribute on an `<a/>` tag based on its 'active' state.

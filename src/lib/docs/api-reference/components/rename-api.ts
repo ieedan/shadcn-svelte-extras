@@ -1,4 +1,4 @@
-import type { RenameProps } from '#lib/components/ui/rename/rename.svelte.ts';
+import type { RenameProps } from '#lib/components/ui/rename/rename.svelte';
 import * as api from '../api-reference';
 
 const Root = api.createComponentReference<RenameProps<'p'>>({
