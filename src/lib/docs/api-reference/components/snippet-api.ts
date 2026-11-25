@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { SnippetProps } from '#lib/components/ui/snippet/snippet.svelte';
 
 const Root = api.createComponentReference<SnippetProps>({

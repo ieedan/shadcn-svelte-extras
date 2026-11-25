@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Sidebar from '#lib/components/ui/sidebar/index.js';
+	import * as Sidebar from '#lib/components/ui/sidebar/index.ts';
 	import { groupedDocs } from '#lib/features/docs/docs.ts';
 	import { page } from '$app/state';
 	import type { ComponentProps } from 'svelte';

@@ -1,8 +1,8 @@
 <script lang="ts" module>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithChildren, WithoutChildren } from 'bits-ui';
-	import type { WithElementRef } from '#lib/utils.js';
-	import type { ColorFormat } from './color.js';
+	import type { WithElementRef } from '#lib/utils.ts';
+	import type { ColorFormat } from './color.ts';
 
 	export type ColorPickerPropsWithoutHTML = WithChildren<{
 		ref?: HTMLDivElement | null;
@@ -16,9 +16,9 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { box } from 'svelte-toolbelt';
-	import { useColorPickerRoot } from './color-picker.svelte.js';
+	import { useColorPickerRoot } from './color-picker.svelte.ts';
 
 	let {
 		ref = $bindable(null),

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 	import type { ComponentProps } from 'svelte';
 

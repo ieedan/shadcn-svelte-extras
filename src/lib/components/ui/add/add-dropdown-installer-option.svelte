@@ -3,7 +3,7 @@
 	import {
 		useAddDropdownInstallerOption,
 		type Installer
-	} from '#lib/components/ui/add/add.svelte.js';
+	} from '#lib/components/ui/add/add.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 	import type { ComponentProps } from 'svelte';
 	import { cn } from '#lib/utils.ts';

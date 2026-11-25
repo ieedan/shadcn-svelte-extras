@@ -5,8 +5,8 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
-	import { useColorPickerAlphaInput } from './color-picker.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { useColorPickerAlphaInput } from './color-picker.svelte.ts';
 	import ColorPickerDraftInput from './color-picker-draft-input.svelte';
 
 	let { ref = $bindable(null), class: className, ...rest }: ColorPickerAlphaInputProps = $props();

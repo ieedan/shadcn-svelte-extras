@@ -18,7 +18,7 @@ description: 'A hook to determine if the user is on a Mac.'
 
 ```svelte {2,5}
 <script lang="ts">
-	import { isMac } from '#lib/hooks/is-mac.svelte.js';
+	import { isMac } from '#lib/hooks/is-mac.svelte.ts';
 </script>
 
 <p>{isMac ? 'Mac' : 'Not Mac'}</p>

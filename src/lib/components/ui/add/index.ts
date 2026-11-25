@@ -12,7 +12,7 @@ import DropdownInstallerOption from './add-dropdown-installer-option.svelte';
 import DropdownDocsLink from './add-dropdown-docs-link.svelte';
 import DropdownCopyInit from './add-dropdown-copy-init.svelte';
 
-import { AGENTS, INSTALLERS, type Agent, type Installer } from './add.svelte.js';
+import { AGENTS, INSTALLERS, type Agent, type Installer } from './add.svelte.ts';
 
 export {
 	Provider,

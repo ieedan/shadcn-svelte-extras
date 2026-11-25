@@ -1,7 +1,7 @@
 <script lang="ts">
 	import * as Demo from '#lib/components/ui/demo/index.ts';
 	import { cn } from '#lib/utils.ts';
-	import { Spinner } from './ui/spinner';
+	import { Spinner } from './ui/spinner/index.ts';
 
 	type Props = {
 		demo: string;

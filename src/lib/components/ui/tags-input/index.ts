@@ -2,4 +2,4 @@ import TagsInput from './tags-input.svelte';
 
 export { TagsInput };
 
-export type { TagsInputPropsWithoutHTML, TagsInputProps } from './types.js';
+export type { TagsInputPropsWithoutHTML, TagsInputProps } from './types.ts';

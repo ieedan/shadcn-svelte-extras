@@ -1,5 +1,5 @@
 import type { WithChild } from 'svelte-toolbelt';
-import type { ButtonSize, ButtonVariant } from '../button/index.js';
+import type { ButtonSize, ButtonVariant } from '../button/index.ts';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { Snippet } from 'svelte';
 

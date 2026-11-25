@@ -3,7 +3,7 @@
 	import type { ComponentProps } from 'svelte';
 	import ExternalLink from '@lucide/svelte/icons/external-link';
 	import { cn } from '#lib/utils.ts';
-	import { useAddDropdownDocsLink } from './add.svelte.js';
+	import { useAddDropdownDocsLink } from './add.svelte.ts';
 	import { mergeProps } from 'bits-ui';
 
 	let {

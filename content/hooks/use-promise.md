@@ -20,7 +20,7 @@ Set a default value for the version until it is streamed back from the server.
 
 ```svelte {2,6,12}
 <script lang="ts">
-    import { UsePromise } from '#lib/hooks/use-promise.svelte.js';
+    import { UsePromise } from '#lib/hooks/use-promise.svelte.ts';
 
     let { data } = $props();
 

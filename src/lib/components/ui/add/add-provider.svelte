@@ -1,5 +1,5 @@
 <script lang="ts" generics="RegistryOptions extends readonly string[]">
-	import { useAddProvider, type Agent, type Installer } from './add.svelte.js';
+	import { useAddProvider, type Agent, type Installer } from './add.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 	import type { Snippet } from 'svelte';
 

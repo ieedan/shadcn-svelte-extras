@@ -4,7 +4,7 @@ description: "Why we built shadcn-svelte-extras and why it's great."
 ---
 
 <script lang="ts">
-	import * as Accordion from '#lib/components/ui/accordion/index.js';
+	import * as Accordion from '#lib/components/ui/accordion/index.ts';
 	import { Link } from '#lib/components/ui/link/index.ts';
 </script>
 

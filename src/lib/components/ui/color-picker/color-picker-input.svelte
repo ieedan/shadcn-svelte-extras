@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import { useColorPickerInput } from './color-picker.svelte.js';
+	import { useColorPickerInput } from './color-picker.svelte.ts';
 	import ColorPickerDraftInput from './color-picker-draft-input.svelte';
 
 	let { ref = $bindable(null), ...rest }: ColorPickerInputProps = $props();

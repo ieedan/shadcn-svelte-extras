@@ -4,7 +4,7 @@
 	import { Portal } from 'bits-ui';
 	import * as Code from '#lib/components/ui/code/index.ts';
 	import type { ComponentProps } from 'svelte';
-	import { useDemoCode } from './demo.svelte.js';
+	import { useDemoCode } from './demo.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let {

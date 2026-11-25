@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { HTMLInputAttributes } from 'svelte/elements';
-	import type { WithElementRef } from '#lib/utils.js';
-	import type { ColorPickerDraftState } from './color-picker.svelte.js';
+	import type { WithElementRef } from '#lib/utils.ts';
+	import type { ColorPickerDraftState } from './color-picker.svelte.ts';
 
 	/** Props shared by the text inputs of the picker. */
 	export type ColorPickerDraftInputBaseProps = WithElementRef<
@@ -19,9 +19,9 @@
 	so they share the draft handling (apply on Enter or blur, cancel on Escape).
 -->
 <script lang="ts">
-	import { Input } from '#lib/components/ui/input/index.js';
-	import { cn } from '#lib/utils.js';
-	import { useColorPickerRootCtx } from './color-picker.svelte.js';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { cn } from '#lib/utils.ts';
+	import { useColorPickerRootCtx } from './color-picker.svelte.ts';
 
 	let {
 		ref = $bindable(null),

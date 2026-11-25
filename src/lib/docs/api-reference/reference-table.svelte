@@ -1,8 +1,8 @@
 <script lang="ts" generics="T">
-	import type { Component, PropReference } from './api-reference';
+	import type { Component, PropReference } from './api-reference.ts';
 	import * as Alert from '#lib/components/ui/alert/index.ts';
 	import { Link } from '#lib/components/ui/link/index.ts';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import * as HoverCard from '#lib/components/ui/hover-card/index.ts';
 	import InfoIcon from '@lucide/svelte/icons/info';
 	import { highlighter } from '#lib/components/ui/code/shiki.ts';

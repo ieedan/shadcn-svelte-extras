@@ -1,4 +1,4 @@
-import type { Component, PropReference } from './api-reference';
+import type { Component, PropReference } from './api-reference.ts';
 
 export type ReferenceBundle = {
 	name: string;

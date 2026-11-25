@@ -4,8 +4,8 @@
 		type CarouselProps,
 		type EmblaContext,
 		setEmblaContext
-	} from './context.js';
-	import { cn, type WithElementRef } from '#lib/utils.js';
+	} from './context.ts';
+	import { cn, type WithElementRef } from '#lib/utils.ts';
 
 	let {
 		ref = $bindable(null),

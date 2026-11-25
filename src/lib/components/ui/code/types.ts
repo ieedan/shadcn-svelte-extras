@@ -1,6 +1,6 @@
 import type { WithChildren, WithoutChildren } from 'bits-ui';
-import type { CodeVariant } from './index.js';
-import type { SupportedLanguage } from './shiki.js';
+import type { CodeVariant } from './index.ts';
+import type { SupportedLanguage } from './shiki.ts';
 import type { HTMLAttributes } from 'svelte/elements';
 import type { CopyButtonPropsWithoutHTML } from '#lib/components/ui/copy-button/copy-button.svelte';
 

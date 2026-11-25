@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
-	import { useNumberFieldInput } from './number-field.svelte.js';
-	import type { NumberFieldInputProps } from './types.js';
+	import { cn } from '#lib/utils.ts';
+	import { useNumberFieldInput } from './number-field.svelte.ts';
+	import type { NumberFieldInputProps } from './types.ts';
 
 	let { ref = $bindable(null), class: className, ...rest }: NumberFieldInputProps = $props();
 

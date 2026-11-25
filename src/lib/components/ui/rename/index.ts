@@ -8,7 +8,7 @@ import Edit from './rename-edit.svelte';
  * This can be consumed one of two ways:
  * ```svelte
  * <script lang="ts">
- *  import { Rename } from '#lib/components/ui/rename/index.js';
+ *  import { Rename } from '#lib/components/ui/rename/index.ts';
  * </script>
  *
  * <Rename ... />
@@ -18,7 +18,7 @@ import Edit from './rename-edit.svelte';
  *
  * ```svelte
  * <script lang="ts">
- *  import * as Rename from '#lib/components/ui/rename/index.js';
+ *  import * as Rename from '#lib/components/ui/rename/index.ts';
  * </script>
  *
  * <Rename.Provider>

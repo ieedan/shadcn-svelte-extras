@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { LanguageSwitcherProps } from '#lib/components/ui/language-switcher/language-switcher.svelte';
 
 const Root = api.createComponentReference<LanguageSwitcherProps>({

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import ChevronRightIcon from '@lucide/svelte/icons/chevron-right';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import Button, { type ButtonProps } from '#lib/components/button.svelte';
 
 	interface Props extends ButtonProps {

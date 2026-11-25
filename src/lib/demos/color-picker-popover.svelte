@@ -3,7 +3,7 @@
 	import * as ButtonGroup from '#lib/components/ui/button-group/index.ts';
 	import * as ColorPicker from '#lib/components/ui/color-picker/index.ts';
 	import * as Popover from '#lib/components/ui/popover/index.ts';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 
 	let value = $state('#22c55e');
 

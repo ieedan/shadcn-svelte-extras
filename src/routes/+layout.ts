@@ -1,5 +1,5 @@
 import { browser } from '$app/env';
-import { parseUserConfig } from '#lib/user-config.svelte.js';
+import { parseUserConfig } from '#lib/user-config.svelte.ts';
 import type { LayoutLoad } from './$types.js';
 
 export const load: LayoutLoad = ({ data }) => {

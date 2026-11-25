@@ -1,8 +1,8 @@
 import { execSync } from 'node:child_process';
 import { defineConfig, InvalidImportWarning, RegistryItem } from 'jsrepo';
-import addType from './.jsrepo/outputs/add-type';
-import demoType from './.jsrepo/outputs/demo-type';
-import registryJson from './.jsrepo/outputs/registry-json';
+import addType from './.jsrepo/outputs/add-type.ts';
+import demoType from './.jsrepo/outputs/demo-type.ts';
+import registryJson from './.jsrepo/outputs/registry-json.ts';
 
 // Documentation URLs live in item `meta.documentation`, not `files`: jsrepo --watch fs.watches every listed path; Velite also watches markdown under content/, which caused rebuild churn when docs were registry files.
 const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';

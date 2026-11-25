@@ -10,7 +10,7 @@ import { join, relative } from 'node:path';
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsx } from 'mdsx';
-import { mdsxConfig } from './mdsx.config.js';
+import { mdsxConfig } from './mdsx.config.ts';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const contentDirPath = path.join(__dirname, 'content');

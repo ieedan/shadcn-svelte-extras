@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Collapsible from '#lib/components/ui/collapsible/index.js';
+	import * as Collapsible from '#lib/components/ui/collapsible/index.ts';
 	import FolderIcon from '@lucide/svelte/icons/folder';
 	import FolderOpenIcon from '@lucide/svelte/icons/folder-open';
-	import { cn } from '#lib/utils.js';
-	import type { TreeViewFolderProps } from './types.js';
+	import { cn } from '#lib/utils.ts';
+	import type { TreeViewFolderProps } from './types.ts';
 
 	let {
 		name,

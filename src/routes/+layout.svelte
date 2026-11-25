@@ -2,7 +2,7 @@
 	import { ModeWatcher } from 'mode-watcher';
 	import '../app.css';
 	import { page } from '$app/state';
-	import { Toaster } from '#lib/components/ui/sonner/index.js';
+	import { Toaster } from '#lib/components/ui/sonner/index.ts';
 	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 	import * as Add from '#lib/components/ui/add/index.ts';
 	import { PersistedState } from 'runed';

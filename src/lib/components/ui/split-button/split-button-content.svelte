@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SelectContent } from '#lib/components/ui/select/index.js';
+	import { SelectContent } from '#lib/components/ui/select/index.ts';
 	import type { ComponentProps } from 'svelte';
 
 	let { align = 'end', children, ...restProps }: ComponentProps<typeof SelectContent> = $props();

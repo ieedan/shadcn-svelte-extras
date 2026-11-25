@@ -1,5 +1,5 @@
 import type { ReadableBoxedValues } from 'svelte-toolbelt';
-import type { FileRejectedReason } from './types.js';
+import type { FileRejectedReason } from './types.ts';
 import { Context } from 'runed';
 import type { HTMLAttributes } from 'svelte/elements';
 

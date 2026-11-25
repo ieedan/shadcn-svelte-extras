@@ -3,7 +3,7 @@
  * ## Usage
  * ```svelte
  * <script lang="ts">
- *      import { UseAutoScroll } from '#lib/hooks/use-auto-scroll.svelte.js';
+ *      import { UseAutoScroll } from '#lib/hooks/use-auto-scroll.svelte.ts';
  *
  *      let { children } = $props();
  *

@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { CopyButtonPropsWithoutHTML } from '#lib/components/ui/copy-button/copy-button.svelte';
 
 const Root = api.createComponentReference<CopyButtonPropsWithoutHTML>({

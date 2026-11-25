@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Root } from '#lib/components/ui/avatar/index.js';
+	import { Root } from '#lib/components/ui/avatar/index.ts';
 	import { Avatar as AvatarPrimitive } from 'bits-ui';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 
 	let {
 		ref = $bindable(null),

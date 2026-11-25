@@ -2,8 +2,8 @@
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
 	import MonitorIcon from '@lucide/svelte/icons/monitor';
 	import type { ComponentProps } from 'svelte';
-	import { cn } from '#lib/utils.js';
-	import { controlVariants } from './index.js';
+	import { cn } from '#lib/utils.ts';
+	import { controlVariants } from './index.ts';
 
 	let {
 		ref = $bindable(null),

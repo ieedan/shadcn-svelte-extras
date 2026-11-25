@@ -1,8 +1,8 @@
 <script lang="ts">
-	import * as Dialog from '#lib/components/ui/dialog/index.js';
-	import * as Drawer from '#lib/components/ui/drawer/index.js';
+	import * as Dialog from '#lib/components/ui/dialog/index.ts';
+	import * as Drawer from '#lib/components/ui/drawer/index.ts';
 	import type { DialogRootProps } from 'bits-ui';
-	import { useModal } from './modal.svelte.js';
+	import { useModal } from './modal.svelte.ts';
 
 	let { open = $bindable(false), children, ...rest }: DialogRootProps = $props();
 

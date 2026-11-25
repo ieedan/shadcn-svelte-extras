@@ -15,20 +15,8 @@ const rawLibLoaders = import.meta.glob('/src/lib/**/*', {
 
 const DEFAULT_REGISTRY = '@ieedan/shadcn-svelte-extras';
 
-/** Keep in sync with `installation-setup-tabs.svelte` (`jsrepoConfigExample`). */
-const INSTALLATION_JSREPO_CONFIG_EXAMPLE = `import { defineConfig } from 'jsrepo';
-
-export default defineConfig({
-	registries: ['@ieedan/shadcn-svelte-extras'],
-	paths: {
-		ui: '#lib/components/ui',
-		component: '#lib/components/index.ts',
-		hook: '#lib/hooks',
-		action: '#lib/actions',
-		util: '#lib/utils.ts',
-		lib: '#lib'
-	}
-});`;
+const INSTALLATION_JSREPO_CONFIG_PATH = 'src/lib/docs/jsrepo-sveltekit-3-config.ts';
+const INSTALLATION_JSREPO_SVELTEKIT_2_CONFIG_PATH = 'src/lib/docs/jsrepo-sveltekit-2-config.ts';
 
 /** Keep in sync with `installation-setup-tabs.svelte` (`componentsJsonExample`). */
 const INSTALLATION_COMPONENTS_JSON_EXAMPLE = `{
@@ -38,8 +26,8 @@ const INSTALLATION_COMPONENTS_JSON_EXAMPLE = `{
 		"baseColor": "neutral"
 	},
 	"aliases": {
-		"components": "#lib/components/index.ts",
-		"utils": "#lib/utils.ts",
+		"components": "#lib/components",
+		"utils": "#lib/utils",
 		"ui": "#lib/components/ui",
 		"hooks": "#lib/hooks",
 		"lib": "#lib"
@@ -115,8 +103,16 @@ function formatAddBlock(item: string, withoutRegistry: boolean): string {
 	);
 }
 
+async function loadRawLibFile(relPath: string): Promise<string> {
+	const load = findRawLoader(relPath);
+	if (!load) throw new Error(`Could not find ${relPath} to render the installation docs.`);
+	return await load();
+}
+
 /** Markdown for `<InstallationSetupTabs />` — mirrors the live tab content. */
-function formatInstallationSetupTabsBlock(): string {
+async function formatInstallationSetupTabsBlock(): Promise<string> {
+	const jsrepoConfig = await loadRawLibFile(INSTALLATION_JSREPO_CONFIG_PATH);
+	const sveltekit2Config = await loadRawLibFile(INSTALLATION_JSREPO_SVELTEKIT_2_CONFIG_PATH);
 	const jsrepoInit = formatNpmExecuteLine(['jsrepo', 'init', '@ieedan/shadcn-svelte-extras']);
 	const jsrepoAdd = formatNpmExecuteLine(['jsrepo', 'add', 'button']);
 	const shadcnInit = formatNpmExecuteLine(['shadcn-svelte', 'init']);
@@ -133,7 +129,15 @@ function formatInstallationSetupTabsBlock(): string {
 		jsrepoInit +
 		'\n```\n\n' +
 		'Configure the `paths` key in your `jsrepo.config.ts` file so that components, hooks, and utils are added to the correct places:\n\n' +
-		formatCodeFence('typescript', INSTALLATION_JSREPO_CONFIG_EXAMPLE, [[5, 12]]) +
+		formatCodeFence('typescript', jsrepoConfig, [[5, 12]]) +
+		'\n' +
+		"**Using SvelteKit 2?** Components are written for SvelteKit 3 so they import files using their real extension (`.ts`). SvelteKit 2 doesn't allow that by default, so use this config to have jsrepo import them using `.js` instead:\n\n" +
+		formatCodeFence('typescript', sveltekit2Config, [
+			[2, 2],
+			[4, 17],
+			[21, 21],
+			[23, 28]
+		]) +
 		'\n' +
 		'Install extras into your project using `jsrepo add`:\n\n' +
 		'```bash\n' +
@@ -156,8 +160,8 @@ function formatInstallationSetupTabsBlock(): string {
 
 function stripDemoAddImports(markdown: string): string {
 	return markdown
-		.replace(/^\s*import Demo from '\$lib\/components\/demo\.svelte';\s*\n/gm, '')
-		.replace(/^\s*import Add from '\$lib\/components\/add\.svelte';\s*\n/gm, '');
+		.replace(/^\s*import Demo from '#lib\/components\/demo\.svelte';\s*\n/gm, '')
+		.replace(/^\s*import Add from '#lib\/components\/add\.svelte';\s*\n/gm, '');
 }
 
 function removeEmptyScriptBlocks(markdown: string): string {
@@ -169,10 +173,10 @@ function removeEmptyScriptBlocks(markdown: string): string {
 
 /** Map `#lib/…` specifiers (without `?raw`) to `src/lib/…` paths (Vite glob keys). */
 function resolveLibImportPath(specifier: string): string {
-	if (specifier.startsWith('$lib/')) {
+	if (specifier.startsWith('#lib/')) {
 		return `src/lib/${specifier.slice('#lib/'.length)}`.replace(/\\/g, '/');
 	}
-	throw new Error(`Unsupported raw import (expected \$lib/…): ${specifier}`);
+	throw new Error(`Unsupported raw import (expected #lib/…): ${specifier}`);
 }
 
 /** Variable name → `src/lib/…` path for `import x from '…?raw'` in doc markdown. */
@@ -296,28 +300,28 @@ async function replaceCodeTags(
 
 function stripCodeDocImport(markdown: string): string {
 	return markdown.replace(
-		/^\s*import Code from '\$lib\/components\/docs\/code\.svelte';\s*\n/gm,
+		/^\s*import Code from '#lib\/components\/docs\/code\.svelte';\s*\n/gm,
 		''
 	);
 }
 
 function stripApiReferenceImport(markdown: string): string {
 	return markdown.replace(
-		/^\s*import ApiReference from '\$lib\/docs\/api-reference\/api-reference\.svelte';\s*\n/gm,
+		/^\s*import ApiReference from '#lib\/docs\/api-reference\/api-reference\.svelte';\s*\n/gm,
 		''
 	);
 }
 
 function stripJsrepoCommandImport(markdown: string): string {
 	return markdown.replace(
-		/^\s*import JsrepoCommand from ['"]\$lib\/components\/docs\/jsrepo-command\.svelte['"];\s*\n/gm,
+		/^\s*import JsrepoCommand from ['"]#lib\/components\/docs\/jsrepo-command\.svelte['"];\s*\n/gm,
 		''
 	);
 }
 
 function stripInstallationSetupTabsImport(markdown: string): string {
 	return markdown.replace(
-		/^\s*import InstallationSetupTabs from ['"]\$lib\/components\/docs\/installation-setup-tabs\.svelte['"];\s*\n/gm,
+		/^\s*import InstallationSetupTabs from ['"]#lib\/components\/docs\/installation-setup-tabs\.svelte['"];\s*\n/gm,
 		''
 	);
 }
@@ -333,8 +337,8 @@ function parseBracketStringArray(inner: string): string[] {
 	return parts;
 }
 
-function replaceInstallationSetupTabsTags(markdown: string): string {
-	return markdown.replace(/<InstallationSetupTabs\s*\/>/g, () =>
+async function replaceInstallationSetupTabsTags(markdown: string): Promise<string> {
+	return await replaceAsync(markdown, /<InstallationSetupTabs\s*\/>/g, () =>
 		formatInstallationSetupTabsBlock()
 	);
 }
@@ -386,7 +390,7 @@ export async function transformDocMarkdown(markdown: string, docSlug?: string): 
 		return formatAddBlock(item, withoutRegistry);
 	});
 
-	merged = replaceInstallationSetupTabsTags(merged);
+	merged = await replaceInstallationSetupTabsTags(merged);
 	merged = replaceJsrepoCommandTags(merged);
 
 	merged = await replaceCodeTags(merged, rawImportMap, usedRawVars);

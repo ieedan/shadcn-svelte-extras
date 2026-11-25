@@ -14,7 +14,7 @@
 
 <script lang="ts">
 	import Button, { sizeMap } from '#lib/components/button.svelte';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { cubicInOut } from 'svelte/easing';
 	import { Tween } from 'svelte/motion';
 

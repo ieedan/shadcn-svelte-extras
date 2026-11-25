@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
 	import type { ComponentProps } from 'svelte';
-	import { useDemoControlGroup } from './demo.svelte.js';
+	import { useDemoControlGroup } from './demo.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let {

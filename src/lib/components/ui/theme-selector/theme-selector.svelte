@@ -11,8 +11,8 @@
 	import SunIcon from '@lucide/svelte/icons/sun';
 	import MoonIcon from '@lucide/svelte/icons/moon';
 	import { resetMode, setMode } from 'mode-watcher';
-	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js';
-	import { buttonVariants } from '#lib/components/ui/button/index.js';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
 
 	let { variant = 'outline' }: ThemeSelectorProps = $props();
 </script>

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import Button, { type ButtonProps } from '#lib/components/button.svelte';
-	import { useSplitButtonAction } from './split-button.svelte.js';
+	import { useSplitButtonAction } from './split-button.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let {

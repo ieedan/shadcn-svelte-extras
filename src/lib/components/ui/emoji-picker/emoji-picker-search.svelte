@@ -1,8 +1,8 @@
 <script lang="ts">
 	import SearchIcon from '@lucide/svelte/icons/search';
 	import { Command as CommandPrimitive } from 'bits-ui';
-	import type { EmojiPickerSearchProps } from './types.js';
-	import { useEmojiPickerInput } from './emoji-picker.svelte.js';
+	import type { EmojiPickerSearchProps } from './types.ts';
+	import { useEmojiPickerInput } from './emoji-picker.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let { value = $bindable(''), placeholder = 'Search', ...rest }: EmojiPickerSearchProps = $props();

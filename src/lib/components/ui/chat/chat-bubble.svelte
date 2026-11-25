@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { ChatBubbleProps } from './types.js';
-	import { cn } from '#lib/utils.js';
+	import type { ChatBubbleProps } from './types.ts';
+	import { cn } from '#lib/utils.ts';
 
 	let {
 		ref = $bindable(null),

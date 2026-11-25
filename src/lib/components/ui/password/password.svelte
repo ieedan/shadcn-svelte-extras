@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { box } from 'svelte-toolbelt';
-	import { usePassword } from './password.svelte.js';
-	import type { PasswordRootProps } from './types.js';
-	import { cn } from '#lib/utils.js';
+	import { usePassword } from './password.svelte.ts';
+	import type { PasswordRootProps } from './types.ts';
+	import { cn } from '#lib/utils.ts';
 
 	let {
 		ref = $bindable(null),

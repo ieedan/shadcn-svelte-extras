@@ -2,7 +2,7 @@ import { Context } from 'runed';
 import type { ReadableBoxedValues, WritableBoxedValues } from 'svelte-toolbelt';
 import type { FormEventHandler } from 'svelte/elements';
 import type { ButtonProps } from '#lib/components/button.svelte';
-import { useRamp, type UseRampOptions } from '#lib/hooks/use-ramp.svelte.js';
+import { useRamp, type UseRampOptions } from '#lib/hooks/use-ramp.svelte.ts';
 
 type NumberFieldRootProps = WritableBoxedValues<{
 	value: number;

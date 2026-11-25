@@ -8,7 +8,7 @@
 	import { UseToc } from '#lib/hooks/use-toc.svelte.ts';
 	import * as Toc from '#lib/components/ui/toc/index.ts';
 	import Button from '#lib/components/button.svelte';
-	import * as Tooltip from './ui/tooltip';
+	import * as Tooltip from './ui/tooltip/index.ts';
 	import CarbonAds from './carbon-ads.svelte';
 	import CopyMarkdownButton from './copy-markdown-button.svelte';
 	import { useDocs } from '#lib/features/docs/docs-context.svelte.ts';

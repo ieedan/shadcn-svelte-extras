@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { NLPDateInputProps } from '#lib/components/ui/nlp-date-input/nlp-date-input.svelte';
 
 const Root = api.createComponentReference<NLPDateInputProps>({

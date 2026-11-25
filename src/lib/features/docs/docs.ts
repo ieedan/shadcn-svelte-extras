@@ -1,6 +1,6 @@
 import type { Component } from 'svelte';
 import { gettingStarted, components, actions, hooks } from '#content/index.js';
-import type { CurrentDoc } from './types';
+import type { CurrentDoc } from './types.ts';
 import { join } from '#lib/utils/url.ts';
 
 export const groupedDocs = {

@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { HTMLAttributes } from 'svelte/elements';
 	import type { WithoutChildren } from 'bits-ui';
-	import type { WithElementRef } from '#lib/utils.js';
+	import type { WithElementRef } from '#lib/utils.ts';
 
 	export type ColorPickerAreaProps = WithoutChildren<
 		WithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
@@ -18,8 +18,8 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
-	import { useColorPickerArea } from './color-picker.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { useColorPickerArea } from './color-picker.svelte.ts';
 
 	let {
 		ref = $bindable(null),

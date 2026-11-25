@@ -11,7 +11,7 @@
 	import SmilePlusIcon from '@lucide/svelte/icons/smile-plus';
 	import VideoIcon from '@lucide/svelte/icons/video';
 	import { Input } from '#lib/components/ui/input/index.ts';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 
 	type User = {
 		id: string;

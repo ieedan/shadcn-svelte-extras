@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { ThemeSelectorProps } from '#lib/components/ui/theme-selector/theme-selector.svelte';
 
 const Root = api.createComponentReference<ThemeSelectorProps>({

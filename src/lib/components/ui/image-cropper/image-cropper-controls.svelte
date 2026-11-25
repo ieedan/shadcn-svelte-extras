@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
-	import type { ImageCropperControlsProps } from './types.js';
+	import { cn } from '#lib/utils.ts';
+	import type { ImageCropperControlsProps } from './types.ts';
 
 	let {
 		ref = $bindable(null),

@@ -13,7 +13,7 @@ import {
 	type ChannelFormat,
 	type ColorFormat,
 	type Hsva
-} from './color.js';
+} from './color.ts';
 
 const DEFAULT_COLOR: Hsva = { h: 0, s: 0, v: 0, a: 1 };
 const KEYBOARD_STEP = 1;

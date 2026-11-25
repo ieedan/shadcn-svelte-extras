@@ -7,7 +7,7 @@ import type {
 	FieldSetTitleProps,
 	FieldSetContentProps,
 	FieldSetFooterProps
-} from './types.js';
+} from './types.ts';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 export const fieldSetVariants = tv({

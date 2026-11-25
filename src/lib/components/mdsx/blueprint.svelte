@@ -21,7 +21,7 @@
 		tr,
 		ul,
 		figcaption
-	} from './index.js';
+	} from './index.ts';
 </script>
 
 <script lang="ts">

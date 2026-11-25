@@ -2,8 +2,8 @@
 	import type { Snippet } from 'svelte';
 	import * as Tabs from '#lib/components/ui/tabs/index.ts';
 	import * as Code from '#lib/components/ui/code/index.ts';
-	import { cn } from '#lib/utils.js';
-	import { Button } from './ui/button';
+	import { cn } from '#lib/utils.ts';
+	import { Button } from './ui/button/index.ts';
 	import RefreshCwIcon from '@lucide/svelte/icons/refresh-cw';
 
 	type Props = {

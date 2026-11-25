@@ -8,8 +8,8 @@
 </script>
 
 <script lang="ts">
-	import type { Heading } from '#lib/hooks/use-toc.svelte.js';
-	import { cn } from '#lib/utils.js';
+	import type { Heading } from '#lib/hooks/use-toc.svelte.ts';
+	import { cn } from '#lib/utils.ts';
 	import Self from './toc.svelte';
 
 	let { toc, isChild = false, class: className }: TocProps = $props();

@@ -19,4 +19,4 @@ export type {
 	EmojiPickerFooterProps,
 	EmojiPickerSkinPropsWithoutHTML,
 	EmojiPickerSkinProps
-} from './types.js';
+} from './types.ts';

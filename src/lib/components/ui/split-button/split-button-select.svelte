@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { WithoutChild } from '#lib/utils.js';
+	import type { WithoutChild } from '#lib/utils.ts';
 
 	export type SplitButtonSelectProps = Omit<
 		WithoutChild<SelectPrimitive.RootProps>,
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	import { Select as SelectPrimitive } from 'bits-ui';
-	import { useSplitButtonRootCtx } from './split-button.svelte.js';
+	import { useSplitButtonRootCtx } from './split-button.svelte.ts';
 
 	let { open = $bindable(false), children, ...restProps }: SplitButtonSelectProps = $props();
 

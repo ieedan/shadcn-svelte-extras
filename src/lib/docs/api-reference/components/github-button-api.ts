@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { GithubButtonProps } from '#lib/components/ui/github-button/github-button.svelte';
 
 type GithubButtonDocumentedProps = Pick<

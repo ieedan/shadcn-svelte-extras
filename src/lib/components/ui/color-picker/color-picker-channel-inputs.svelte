@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ColorChannel } from './color.js';
+	import type { ColorChannel } from './color.ts';
 
 	export type ColorPickerChannelInputsProps = {
 		/** Classes for each input. */
@@ -13,9 +13,9 @@
 </script>
 
 <script lang="ts">
-	import { cn } from '#lib/utils.js';
-	import { CHANNELS } from './color.js';
-	import { useColorPickerRootCtx } from './color-picker.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { CHANNELS } from './color.ts';
+	import { useColorPickerRootCtx } from './color-picker.svelte.ts';
 	import ColorPickerInput from './color-picker-input.svelte';
 	import ColorPickerChannelInput from './color-picker-channel-input.svelte';
 

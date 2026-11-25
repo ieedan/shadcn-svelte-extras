@@ -1,4 +1,4 @@
-import type { LooseAutocomplete } from '../../utils/types.js';
+import type { LooseAutocomplete } from '../../utils/types.ts';
 
 export type Component<T> = {
 	/** Undefined only if the component is the only component */

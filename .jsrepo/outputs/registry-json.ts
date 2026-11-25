@@ -1,6 +1,6 @@
 import { Output } from 'jsrepo/outputs';
 import path from 'node:path';
-import { writeFileIfChanged } from '../utils';
+import { writeFileIfChanged } from '../utils.ts';
 
 const SCHEMA = 'https://shadcn-svelte.com/schema/registry.json';
 

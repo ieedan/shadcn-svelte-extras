@@ -2,7 +2,7 @@
 	import { Kbd, KbdGroup } from '#lib/components/ui/kbd/index.ts';
 	import Button from '#lib/components/button.svelte';
 	import SearchIcon from '@lucide/svelte/icons/search';
-	import { cn } from '#lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { commandContext } from '#lib/context.ts';
 	import { cmdOrCtrl } from '#lib/hooks/is-mac.svelte.ts';
 

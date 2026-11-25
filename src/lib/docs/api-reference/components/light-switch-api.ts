@@ -1,4 +1,4 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type { LightSwitchProps } from '#lib/components/ui/light-switch/light-switch.svelte';
 
 const Root = api.createComponentReference<LightSwitchProps>({
