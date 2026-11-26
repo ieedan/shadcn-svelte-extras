@@ -1,4 +1,4 @@
-import type { TagsInputProps } from '$lib/components/ui/tags-input/types';
+import type { TagsInputProps } from '#lib/components/ui/tags-input/types.ts';
 
 export const customValidate: TagsInputProps['validate'] = (val, tags) => {
 	// trim and convert to lowercase

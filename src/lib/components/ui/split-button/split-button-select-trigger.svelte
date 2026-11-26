@@ -1,6 +1,6 @@
 <script lang="ts" module>
-	import type { WithoutChild } from '$lib/utils.js';
-	import type { ButtonSize, ButtonVariant } from '$lib/components/ui/button';
+	import type { WithoutChild } from '#lib/utils.ts';
+	import type { ButtonSize, ButtonVariant } from '#lib/components/ui/button/index.ts';
 
 	export type SplitButtonSelectTriggerProps = WithoutChild<SelectPrimitive.TriggerProps> & {
 		variant?: ButtonVariant;
@@ -10,9 +10,9 @@
 
 <script lang="ts">
 	import { Select as SelectPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils.js';
-	import { buttonVariants } from '$lib/components/ui/button';
-	import { useSplitButtonRootCtx } from './split-button.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import { useSplitButtonRootCtx } from './split-button.svelte.ts';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
 
 	let {

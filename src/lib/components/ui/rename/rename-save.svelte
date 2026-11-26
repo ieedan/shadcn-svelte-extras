@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
-	import { useRenameSave } from './rename.svelte.js';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
+	import { useRenameSave } from './rename.svelte.ts';
 
 	const saveState = useRenameSave();
 

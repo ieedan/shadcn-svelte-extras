@@ -1,10 +1,10 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	ImageCropperRootPropsWithoutHTML,
 	ImageCropperControlsWithoutHTML,
 	ImageCropperPreviewPropsWithoutHTML,
 	ImageCropperUploadTriggerPropsWithoutHTML
-} from '$lib/components/ui/image-cropper/types';
+} from '#lib/components/ui/image-cropper/types.ts';
 
 const Root = api.createComponentReference<Omit<ImageCropperRootPropsWithoutHTML, 'id'>>({
 	name: 'Root',

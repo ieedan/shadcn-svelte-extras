@@ -1,10 +1,10 @@
 <script lang="ts">
-	import * as Modal from '$lib/components/ui/modal';
-	import Button from '$lib/components/button.svelte';
-	import { buttonVariants } from '$lib/components/ui/button';
-	import { Label } from '$lib/components/ui/label';
-	import { Input } from '$lib/components/ui/input';
-	import * as Field from '$lib/components/ui/field';
+	import * as Modal from '#lib/components/ui/modal/index.ts';
+	import Button from '#lib/components/button.svelte';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import * as Field from '#lib/components/ui/field/index.ts';
 </script>
 
 <Modal.Root>

@@ -1,8 +1,8 @@
 import { execSync } from 'node:child_process';
 import { defineConfig, InvalidImportWarning, RegistryItem } from 'jsrepo';
-import addType from './.jsrepo/outputs/add-type';
-import demoType from './.jsrepo/outputs/demo-type';
-import registryJson from './.jsrepo/outputs/registry-json';
+import addType from './.jsrepo/outputs/add-type.ts';
+import demoType from './.jsrepo/outputs/demo-type.ts';
+import registryJson from './.jsrepo/outputs/registry-json.ts';
 
 // Documentation URLs live in item `meta.documentation`, not `files`: jsrepo --watch fs.watches every listed path; Velite also watches markdown under content/, which caused rebuild churn when docs were registry files.
 const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';
@@ -10,14 +10,14 @@ const DOCS_ORIGIN = 'https://www.shadcn-svelte-extras.com';
 export default defineConfig({
 	registries: ['@registry/kit'],
 	paths: {
-		ui: '$lib/components/ui',
-		component: '$lib/components',
-		block: '$lib/components',
-		logo: '$lib/components/logos',
-		hook: '$lib/hooks',
-		action: '$lib/actions',
-		util: '$lib/utils',
-		lib: '$lib'
+		ui: '#lib/components/ui',
+		component: '#lib/components',
+		block: '#lib/components',
+		logo: '#lib/components/logos',
+		hook: '#lib/hooks',
+		action: '#lib/actions',
+		util: '#lib/utils',
+		lib: '#lib'
 	},
 	registry: {
 		name: '@ieedan/shadcn-svelte-extras',
@@ -29,13 +29,13 @@ export default defineConfig({
 		repository: 'https://github.com/ieedan/shadcn-svelte-extras',
 		tags: ['svelte', 'shadcn', 'typescript', 'components', 'utilities'],
 		defaultPaths: {
-			ui: '$lib/components/ui',
-			component: '$lib/components',
-			block: '$lib/components',
-			hook: '$lib/hooks',
-			action: '$lib/actions',
-			util: '$lib/utils',
-			lib: '$lib'
+			ui: '#lib/components/ui',
+			component: '#lib/components',
+			block: '#lib/components',
+			hook: '#lib/hooks',
+			action: '#lib/actions',
+			util: '#lib/utils',
+			lib: '#lib'
 		},
 		excludeDeps: ['svelte', '@sveltejs/kit'],
 		outputs: [addType(), demoType(), registryJson()],

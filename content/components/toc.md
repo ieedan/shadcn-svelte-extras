@@ -4,9 +4,9 @@ description: 'A component for displaying a table of contents.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="toc" />
@@ -19,7 +19,7 @@ description: 'A component for displaying a table of contents.'
 
 ```svelte
 <script lang="ts">
-	import * as Toc from '$lib/components/ui/toc';
+	import * as Toc from '#lib/components/ui/toc/index.ts';
 </script>
 
 <Toc.Root />
@@ -29,7 +29,7 @@ description: 'A component for displaying a table of contents.'
 
 ```svelte
 <script lang="ts">
-	import * as Toc from '$lib/components/ui/toc';
+	import * as Toc from '#lib/components/ui/toc/index.ts';
 
 	const toc = new UseToc();
 </script>

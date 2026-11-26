@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Rename from '$lib/components/ui/rename';
-	import * as ContextMenu from '$lib/components/ui/context-menu';
+	import * as Rename from '#lib/components/ui/rename/index.ts';
+	import * as ContextMenu from '#lib/components/ui/context-menu/index.ts';
 	import FileIcon from '@lucide/svelte/icons/file';
-	import * as Icons from '$lib/components/icons';
-	import { Kbd } from '$lib/components/ui/kbd';
+	import * as Icons from '#lib/components/icons/index.ts';
+	import { Kbd } from '#lib/components/ui/kbd/index.ts';
 
 	type Doc = {
 		name: string;

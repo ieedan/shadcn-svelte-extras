@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { useCodeOverflow } from './code.svelte.js';
+	import Button from '#lib/components/button.svelte';
+	import { useCodeOverflow } from './code.svelte.ts';
 	import { box } from 'svelte-toolbelt';
-	import type { CodeOverflowProps } from './types';
-	import { cn } from '$lib/utils.js';
+	import type { CodeOverflowProps } from './types.ts';
+	import { cn } from '#lib/utils.ts';
 
 	let {
 		collapsed = $bindable(true),

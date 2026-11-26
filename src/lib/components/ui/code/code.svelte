@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import { codeVariants } from '.';
-	import type { CodeRootProps } from './types';
-	import { useCode } from './code.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { codeVariants } from './index.ts';
+	import type { CodeRootProps } from './types.ts';
+	import { useCode } from './code.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let {

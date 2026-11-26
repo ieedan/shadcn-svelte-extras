@@ -1,9 +1,9 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	TerminalRootProps,
 	TerminalAnimationProps,
 	TerminalLoadingProps
-} from '$lib/components/ui/terminal/types';
+} from '#lib/components/ui/terminal/types.ts';
 
 const Root = api.createComponentReference<TerminalRootProps>({
 	name: 'Root',

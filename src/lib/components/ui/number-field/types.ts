@@ -1,8 +1,8 @@
 import type { Snippet } from 'svelte';
 import type { HTMLInputAttributes } from 'svelte/elements';
-import type { ButtonProps } from '$lib/components/button.svelte';
-import type { UseRampOptions } from '$lib/hooks/use-ramp.svelte';
-import type { WithElementRef } from '$lib/utils';
+import type { ButtonProps } from '#lib/components/button.svelte';
+import type { UseRampOptions } from '#lib/hooks/use-ramp.svelte.ts';
+import type { WithElementRef } from '#lib/utils.ts';
 
 export type NumberFieldRootProps = {
 	value?: number;

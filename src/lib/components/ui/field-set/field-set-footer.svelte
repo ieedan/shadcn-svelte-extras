@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
-	import type { FieldSetFooterProps } from './types';
+	import { cn } from '#lib/utils.ts';
+	import type { FieldSetFooterProps } from './types.ts';
 
 	let {
 		ref = $bindable(null),

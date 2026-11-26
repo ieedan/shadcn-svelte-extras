@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { isMac } from '$lib/hooks/is-mac.svelte';
-	import * as Icons from '$lib/components/icons';
+	import { isMac } from '#lib/hooks/is-mac.svelte.ts';
+	import * as Icons from '#lib/components/icons/index.ts';
 </script>
 
 {#if isMac}

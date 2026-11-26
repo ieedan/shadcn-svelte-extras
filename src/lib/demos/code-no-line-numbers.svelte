@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Code from '$lib/components/ui/code';
+	import * as Code from '#lib/components/ui/code/index.ts';
 
-	const code = `import * as Code from "$lib/components/ui/code";`;
+	const code = `import * as Code from "#lib/components/ui/code";`;
 </script>
 
 <div class="w-full p-6">

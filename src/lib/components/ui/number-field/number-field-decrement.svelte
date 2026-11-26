@@ -1,9 +1,9 @@
 <script lang="ts">
 	import MinusIcon from '@lucide/svelte/icons/minus';
-	import Button from '$lib/components/button.svelte';
-	import { useNumberFieldButton } from './number-field.svelte.js';
-	import type { NumberFieldButtonProps } from './types.js';
-	import { cn } from '$lib/utils';
+	import Button from '#lib/components/button.svelte';
+	import { useNumberFieldButton } from './number-field.svelte.ts';
+	import type { NumberFieldButtonProps } from './types.ts';
+	import { cn } from '#lib/utils.ts';
 	import { box } from 'svelte-toolbelt';
 	import { onDestroy } from 'svelte';
 

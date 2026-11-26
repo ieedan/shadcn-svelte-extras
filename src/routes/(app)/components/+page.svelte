@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { components } from '$content/index.js';
-	import * as InputGroup from '$lib/components/ui/input-group';
+	import { components } from '#content/index.js';
+	import * as InputGroup from '#lib/components/ui/input-group/index.ts';
 	import SearchIcon from '@lucide/svelte/icons/search';
-	import * as Kbd from '$lib/components/ui/kbd';
-	import { shortcut } from '$lib/actions/shortcut.svelte';
+	import * as Kbd from '#lib/components/ui/kbd/index.ts';
+	import { shortcut } from '#lib/actions/shortcut.svelte.ts';
 
 	let search = $state('');
 	let searchInput = $state<HTMLInputElement | null>(null);

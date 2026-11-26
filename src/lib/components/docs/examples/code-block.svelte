@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { Svelte } from '$lib/components/icons';
-	import * as Code from '$lib/components/ui/code';
-	import { CopyButton } from '$lib/components/ui/copy-button';
+	import { Svelte } from '#lib/components/icons/index.ts';
+	import * as Code from '#lib/components/ui/code/index.ts';
+	import { CopyButton } from '#lib/components/ui/copy-button/index.ts';
 
 	let code = `\<script\>
     import { ModeWatcher } from "mode-watcher";    

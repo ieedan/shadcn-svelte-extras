@@ -1,10 +1,10 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	EmojiPickerFooterPropsWithoutHTML,
 	EmojiPickerSkinPropsWithoutHTML,
 	EmojiPickerListPropsWithoutHTML,
 	EmojiPickerRootPropsWithoutHTML
-} from '$lib/components/ui/emoji-picker';
+} from '#lib/components/ui/emoji-picker/index.ts';
 
 const Root = api.createComponentReference<EmojiPickerRootPropsWithoutHTML>({
 	name: 'Root',

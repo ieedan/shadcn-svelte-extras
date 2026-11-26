@@ -4,9 +4,9 @@ description: 'Click and change the theme.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="light-switch" />
@@ -21,7 +21,7 @@ Include [`ModeWatcher`](https://github.com/svecosystem/mode-watcher) from `mode-
 
 ```svelte
 <script lang="ts">
-	import { LightSwitch } from '$lib/components/ui/light-switch';
+	import { LightSwitch } from '#lib/components/ui/light-switch/index.ts';
 </script>
 
 <LightSwitch />

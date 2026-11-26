@@ -4,9 +4,9 @@ description: 'A composable emoji picker component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="emoji-picker" />
@@ -19,7 +19,7 @@ description: 'A composable emoji picker component.'
 
 ```svelte
 <script lang="ts">
-	import * as EmojiPicker from '$lib/components/ui/emoji-picker';
+	import * as EmojiPicker from '#lib/components/ui/emoji-picker/index.ts';
 </script>
 
 <EmojiPicker.Root>

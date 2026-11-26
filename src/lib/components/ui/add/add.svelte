@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { useAdd } from './add.svelte.js';
+	import { useAdd } from './add.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	type Props = {

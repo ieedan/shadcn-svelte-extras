@@ -1,5 +1,5 @@
-import * as api from '../api-reference';
-import type { ButtonProps } from '$lib/components/button.svelte';
+import * as api from '../api-reference.ts';
+import type { ButtonProps } from '#lib/components/button.svelte';
 import type { HTMLButtonAttributes, HTMLAnchorAttributes } from 'svelte/elements';
 import { type WithChildren } from 'bits-ui';
 

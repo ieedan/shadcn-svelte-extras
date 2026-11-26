@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import * as NumberField from '$lib/components/ui/number-field';
+	import Button from '#lib/components/button.svelte';
+	import * as NumberField from '#lib/components/ui/number-field/index.ts';
 	import CheckIcon from '@lucide/svelte/icons/check';
 	import SkipForwardIcon from '@lucide/svelte/icons/skip-forward';
 	import FireIcon from '@lucide/svelte/icons/flame';

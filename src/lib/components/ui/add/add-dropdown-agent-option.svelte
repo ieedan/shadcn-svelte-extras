@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
-	import { useAddDropdownAgentOption, type Agent } from '$lib/components/ui/add/add.svelte.js';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
+	import { useAddDropdownAgentOption, type Agent } from '#lib/components/ui/add/add.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 	import type { ComponentProps } from 'svelte';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import AddAgentLogo from './add-agent-logo.svelte';
 	import CheckIcon from '@lucide/svelte/icons/check';
 

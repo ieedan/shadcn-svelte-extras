@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import { onDestroy } from 'svelte';
-	import { useAnimation } from './terminal.svelte.js';
-	import type { TerminalAnimationProps } from './types';
-	import { typewriter } from '$lib/actions/typewriter.svelte';
+	import { useAnimation } from './terminal.svelte.ts';
+	import type { TerminalAnimationProps } from './types.ts';
+	import { typewriter } from '#lib/actions/typewriter.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let { children, delay = 0, class: className }: TerminalAnimationProps = $props();

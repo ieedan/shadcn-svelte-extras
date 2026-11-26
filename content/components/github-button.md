@@ -4,9 +4,9 @@ description: 'A button that displays the number of stars and links to a GitHub r
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="github-button" />
@@ -19,7 +19,7 @@ description: 'A button that displays the number of stars and links to a GitHub r
 
 ```svelte
 <script lang="ts">
-	import { GitHubButton } from '$lib/components/ui/github-button';
+	import { GitHubButton } from '#lib/components/ui/github-button/index.ts';
 
 	const repo = { owner: 'ieedan', repo: 'shadcn-svelte-extras' };
 	const stars = 500;

@@ -1,4 +1,4 @@
-import { allDocs, getDoc } from '$lib/features/docs/docs';
+import { allDocs, getDoc } from '#lib/features/docs/docs.ts';
 import { error } from '@sveltejs/kit';
 import type { EntryGenerator } from './$types';
 

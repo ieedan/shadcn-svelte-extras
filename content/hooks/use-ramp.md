@@ -4,7 +4,7 @@ description: 'Repeatedly call a function on an accelerating schedule while a con
 ---
 
 <script lang="ts">
-	import Add from '$lib/components/add.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 ## Installation
@@ -17,7 +17,7 @@ Use for long-press or hold interactions where the rate of repeats should speed u
 
 ```svelte
 <script lang="ts">
-	import { useRamp } from '$lib/hooks/use-ramp.svelte';
+	import { useRamp } from '#lib/hooks/use-ramp.svelte.ts';
 
 	let count = $state(0);
 

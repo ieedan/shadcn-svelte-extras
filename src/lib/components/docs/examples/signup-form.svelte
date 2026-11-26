@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { Label } from '$lib/components/ui/label';
-	import * as Card from '$lib/components/ui/card';
-	import * as Password from '$lib/components/ui/password';
-	import { Input } from '$lib/components/ui/input';
-	import { sleep } from '$lib/utils/sleep';
+	import Button from '#lib/components/button.svelte';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import * as Password from '#lib/components/ui/password/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { sleep } from '#lib/utils/sleep.ts';
 	import { enhance } from '$app/forms';
-	import * as Field from '$lib/components/ui/field';
+	import * as Field from '#lib/components/ui/field/index.ts';
 
 	let loading = $state(false);
 

@@ -11,13 +11,13 @@
 		SignupForm,
 		StepperExample,
 		GithubMerge
-	} from '$lib/components/docs/examples';
-	import { Snippet } from '$lib/components/ui/snippet';
-	import SearchButton from '$lib/components/search-button.svelte';
-	import ChatExample from '$lib/demos/chat.svelte';
-	import { TagsInput } from '$lib/components/ui/tags-input';
-	import Button from '$lib/components/button.svelte';
-	import { Badge } from '$lib/components/ui/badge';
+	} from '#lib/components/docs/examples/index.ts';
+	import { Snippet } from '#lib/components/ui/snippet/index.ts';
+	import SearchButton from '#lib/components/search-button.svelte';
+	import ChatExample from '#lib/demos/chat.svelte';
+	import { TagsInput } from '#lib/components/ui/tags-input/index.ts';
+	import Button from '#lib/components/button.svelte';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
 	import ArrowRightIcon from '@lucide/svelte/icons/arrow-right';
 
 	let tags = $state(['shadcn-svelte', 'extras']);

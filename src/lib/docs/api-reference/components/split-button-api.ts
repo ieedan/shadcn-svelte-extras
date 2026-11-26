@@ -1,8 +1,8 @@
-import * as api from '../api-reference';
-import type { SplitButtonPropsWithoutHTML } from '$lib/components/ui/split-button/split-button.svelte';
-import type { SplitButtonActionProps } from '$lib/components/ui/split-button/split-button-action.svelte';
-import type { SplitButtonSelectProps } from '$lib/components/ui/split-button/split-button-select.svelte';
-import type { SplitButtonSelectActionProps } from '$lib/components/ui/split-button/split-button-select-action.svelte';
+import * as api from '../api-reference.ts';
+import type { SplitButtonPropsWithoutHTML } from '#lib/components/ui/split-button/split-button.svelte';
+import type { SplitButtonActionProps } from '#lib/components/ui/split-button/split-button-action.svelte';
+import type { SplitButtonSelectProps } from '#lib/components/ui/split-button/split-button-select.svelte';
+import type { SplitButtonSelectActionProps } from '#lib/components/ui/split-button/split-button-select-action.svelte';
 
 const Root = api.createComponentReference<SplitButtonPropsWithoutHTML>({
 	name: 'Root',

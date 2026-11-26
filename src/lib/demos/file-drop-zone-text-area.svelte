@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
-	import { buttonVariants } from '$lib/components/ui/button';
-	import * as FileDropZone from '$lib/components/ui/file-drop-zone';
-	import * as Select from '$lib/components/ui/select';
+	import Button from '#lib/components/button.svelte';
+	import { buttonVariants } from '#lib/components/ui/button/index.ts';
+	import * as FileDropZone from '#lib/components/ui/file-drop-zone/index.ts';
+	import * as Select from '#lib/components/ui/select/index.ts';
 	import ImageIcon from '@lucide/svelte/icons/image';
 	import SendIcon from '@lucide/svelte/icons/send-horizontal';
 	import XIcon from '@lucide/svelte/icons/x';
-	import { cn } from '$lib/utils';
+	import { cn } from '#lib/utils.ts';
 	import { slide } from 'svelte/transition';
 
 	const models = [

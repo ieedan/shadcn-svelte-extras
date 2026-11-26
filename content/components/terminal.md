@@ -4,9 +4,9 @@ description: 'An implementation of the MacOS terminal. Useful for showcasing a c
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="terminal" />
@@ -19,7 +19,7 @@ description: 'An implementation of the MacOS terminal. Useful for showcasing a c
 
 ```svelte
 <script lang="ts">
-	import * as Terminal from '$lib/components/ui/terminal';
+	import * as Terminal from '#lib/components/ui/terminal/index.ts';
 </script>
 
 <Terminal.Root>
@@ -44,7 +44,7 @@ You can add a delay to `<Terminal.Root/>` to delay every animation by that amoun
 
 ```svelte {5}
 <script lang="ts">
-	import * as Terminal from '$lib/components/ui/terminal';
+	import * as Terminal from '#lib/components/ui/terminal/index.ts';
 </script>
 
 <Terminal.Root delay={250}>
@@ -57,7 +57,7 @@ You can also change the speed of all animations from `<Terminal.Root/>`:
 
 ```svelte {5,6}
 <script lang="ts">
-	import * as Terminal from '$lib/components/ui/terminal';
+	import * as Terminal from '#lib/components/ui/terminal/index.ts';
 </script>
 
 <!-- half speed -->

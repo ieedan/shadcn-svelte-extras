@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from '$lib/utils.js';
+	import { cn } from '#lib/utils.ts';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
 	let { children, class: className, ...rest }: HTMLAnchorAttributes = $props();

@@ -4,9 +4,9 @@ description: 'A field set component.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="field-set" />
@@ -19,7 +19,7 @@ description: 'A field set component.'
 
 ```svelte
 <script lang="ts">
-	import * as FieldSet from '$lib/components/ui/field-set';
+	import * as FieldSet from '#lib/components/ui/field-set/index.ts';
 </script>
 
 <FieldSet.Root>

@@ -172,13 +172,7 @@ export function parseColor(value: string | undefined): Hsva | undefined {
 export type ChannelFormat = Exclude<ColorFormat, 'hex'>;
 
 export type ColorChannel =
-	| 'red'
-	| 'green'
-	| 'blue'
-	| 'hue'
-	| 'saturation'
-	| 'lightness'
-	| 'brightness';
+	'red' | 'green' | 'blue' | 'hue' | 'saturation' | 'lightness' | 'brightness';
 
 export const CHANNELS: Record<ChannelFormat, { name: ColorChannel; max: number }[]> = {
 	rgb: [

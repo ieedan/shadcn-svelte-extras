@@ -1,4 +1,4 @@
-import { USER_CONFIG_COOKIE_NAME, userConfigSchema } from '$lib/user-config.svelte';
+import { USER_CONFIG_COOKIE_NAME, userConfigSchema } from '#lib/user-config.svelte.ts';
 import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 const SITE = 'shadcn-svelte-extras';

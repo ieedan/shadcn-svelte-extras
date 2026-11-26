@@ -4,9 +4,9 @@ description: 'A component for renaming stuff.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="rename" />
@@ -19,7 +19,7 @@ description: 'A component for renaming stuff.'
 
 ```svelte
 <script lang="ts">
-	import * as Rename from '$lib/components/ui/rename';
+	import * as Rename from '#lib/components/ui/rename/index.ts';
 </script>
 
 <Rename.Provider>

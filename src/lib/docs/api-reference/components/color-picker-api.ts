@@ -1,8 +1,8 @@
-import * as api from '../api-reference';
+import * as api from '../api-reference.ts';
 import type {
 	ColorPickerChannelInputsProps,
 	ColorPickerPropsWithoutHTML
-} from '$lib/components/ui/color-picker';
+} from '#lib/components/ui/color-picker/index.ts';
 
 function createRefProp(element: string) {
 	return api.createAnyProp({

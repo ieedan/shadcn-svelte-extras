@@ -4,9 +4,9 @@ description: 'Components for creating live chats.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="chat" />
@@ -19,7 +19,7 @@ description: 'Components for creating live chats.'
 
 ```svelte
 <script lang="ts">
-	import * as Chat from '$lib/components/ui/chat';
+	import * as Chat from '#lib/components/ui/chat/index.ts';
 </script>
 
 <Chat.List>

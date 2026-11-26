@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Country } from 'svelte-tel-input/types';
-	import { getFlag } from './flags';
+	import { getFlag } from './flags.ts';
 
 	interface Props {
 		country?: Country | null;

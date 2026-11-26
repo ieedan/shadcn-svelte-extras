@@ -1,8 +1,8 @@
 <script lang="ts">
-	import DocsSidebar from '$lib/components/docs-sidebar.svelte';
-	import PageWrapper from '$lib/components/page-wrapper.svelte';
-	import { setupDocs } from '$lib/features/docs/docs-context.svelte';
-	import * as Sidebar from '$lib/components/ui/sidebar';
+	import DocsSidebar from '#lib/components/docs-sidebar.svelte';
+	import PageWrapper from '#lib/components/page-wrapper.svelte';
+	import { setupDocs } from '#lib/features/docs/docs-context.svelte.ts';
+	import * as Sidebar from '#lib/components/ui/sidebar/index.ts';
 
 	let { children } = $props();
 

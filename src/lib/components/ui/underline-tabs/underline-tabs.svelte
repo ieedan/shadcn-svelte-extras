@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Tabs as TabsPrimitive } from 'bits-ui';
-	import { cn } from '$lib/utils.js';
-	import { useUnderlineTabs } from './underline-tabs.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { useUnderlineTabs } from './underline-tabs.svelte.ts';
 	import { box } from 'svelte-toolbelt';
 
 	const uid = $props.id();

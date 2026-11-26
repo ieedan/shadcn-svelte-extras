@@ -4,8 +4,8 @@ description: 'A hook to track and sort items based on their frequency of use.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
 </script>
 
 <Demo demo="use-frecency" />
@@ -18,7 +18,7 @@ description: 'A hook to track and sort items based on their frequency of use.'
 
 ```svelte {2,4}
 <script lang="ts">
-	import { UseFrecency } from '$lib/hooks/use-frecency.svelte.js';
+	import { UseFrecency } from '#lib/hooks/use-frecency.svelte.ts';
 
 	const frecency = new UseFrecency('frecency-key');
 </script>

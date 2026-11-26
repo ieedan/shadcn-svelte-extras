@@ -5,4 +5,8 @@ export {
 	type ButtonProps as Props
 } from './button.svelte';
 
-export { buttonVariants, type ButtonSize, type ButtonVariant } from '$lib/components/ui/button';
+export {
+	buttonVariants,
+	type ButtonSize,
+	type ButtonVariant
+} from '#lib/components/ui/button/index.ts';

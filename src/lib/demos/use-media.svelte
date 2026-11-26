@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { useMedia } from '$lib/hooks/use-media.svelte';
+	import { useMedia } from '#lib/hooks/use-media.svelte.ts';
 	import { scale } from 'svelte/transition';
 
 	const media = useMedia();

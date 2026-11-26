@@ -1,7 +1,7 @@
 <script lang="ts">
-	import * as Demo from '$lib/components/ui/demo';
-	import { cn } from '$lib/utils';
-	import { Spinner } from './ui/spinner';
+	import * as Demo from '#lib/components/ui/demo/index.ts';
+	import { cn } from '#lib/utils.ts';
+	import { Spinner } from './ui/spinner/index.ts';
 
 	type Props = {
 		demo: string;
@@ -11,7 +11,7 @@
 	let { demo, class: className }: Props = $props();
 
 	const ComponentPromise = $derived(
-		import(`$lib/demos/${demo}.svelte`).then(({ default: Component }) => Component)
+		import(`#lib/demos/${demo}.svelte`).then(({ default: Component }) => Component)
 	);
 </script>
 
@@ -38,5 +38,5 @@
 			{/await}
 		</div>
 	</Demo.Preview>
-	<Demo.Code code={import(`$lib/demos/${demo}.svelte?raw`).then(({ default: Code }) => Code)} />
+	<Demo.Code code={import(`#lib/demos/${demo}.svelte?raw`).then(({ default: Code }) => Code)} />
 </Demo.Root>

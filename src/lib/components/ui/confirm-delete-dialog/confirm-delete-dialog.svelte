@@ -76,8 +76,8 @@
 </script>
 
 <script lang="ts">
-	import * as AlertDialog from '$lib/components/ui/alert-dialog';
-	import { Input } from '$lib/components/ui/input';
+	import * as AlertDialog from '#lib/components/ui/alert-dialog/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
 	import LoaderCircleIcon from '@lucide/svelte/icons/loader-circle';
 </script>
 

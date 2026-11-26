@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Delayed from '$lib/components/delayed.svelte';
-	import { Spinner } from '$lib/components/ui/spinner/index.js';
+	import Delayed from '#lib/components/delayed.svelte';
+	import { Spinner } from '#lib/components/ui/spinner/index.ts';
 	import { page } from '$app/state';
-	import { Button } from '$lib/components/ui/button';
+	import { Button } from '#lib/components/ui/button/index.ts';
 	import { MinimizeIcon } from '@lucide/svelte';
 
 	let { data } = $props();
 
-	const ComponentPromise = import(`$lib/demos/${data.path}.svelte`);
+	const ComponentPromise = import(`#lib/demos/${data.path}.svelte`);
 
 	const from = $derived(page.url.searchParams.get('from'));
 </script>

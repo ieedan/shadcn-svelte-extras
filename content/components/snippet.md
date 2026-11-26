@@ -4,9 +4,9 @@ description: 'A component for showing a short, copyable, command or phrase.'
 ---
 
 <script lang="ts">
-	import Demo from '$lib/components/demo.svelte';
-	import Add from '$lib/components/add.svelte';
-	import ApiReference from '$lib/docs/api-reference/api-reference.svelte';
+	import Demo from '#lib/components/demo.svelte';
+	import Add from '#lib/components/add.svelte';
+	import ApiReference from '#lib/docs/api-reference/api-reference.svelte';
 </script>
 
 <Demo demo="snippet" />
@@ -19,7 +19,7 @@ description: 'A component for showing a short, copyable, command or phrase.'
 
 ```svelte
 <script lang="ts">
-	import { Snippet } from '$lib/components/ui/snippet';
+	import { Snippet } from '#lib/components/ui/snippet/index.ts';
 </script>
 
 <Snippet text="npx jsrepo add ui/snippet" />

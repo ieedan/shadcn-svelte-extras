@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as ColorPicker from '$lib/components/ui/color-picker';
+	import * as ColorPicker from '#lib/components/ui/color-picker/index.ts';
 
 	let hex = $state('#8b5cf6');
 	let rgb = $state('rgb(139 92 246)');

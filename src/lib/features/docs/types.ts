@@ -1,4 +1,4 @@
-import type { gettingStarted } from '$content/index.js';
+import type { gettingStarted } from '#content/index.js';
 import type { Component } from 'svelte';
 
 export type Doc = (typeof gettingStarted)[number];

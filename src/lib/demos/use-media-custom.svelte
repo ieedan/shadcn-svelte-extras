@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TAILWIND_BREAKPOINTS, useMedia } from '$lib/hooks/use-media.svelte';
+	import { TAILWIND_BREAKPOINTS, useMedia } from '#lib/hooks/use-media.svelte.ts';
 	import { scale } from 'svelte/transition';
 
 	const media = useMedia({ ...TAILWIND_BREAKPOINTS, custom: '500px' });

@@ -1,5 +1,5 @@
-import { slugFromPath } from '../docs';
-import { transformDocMarkdown } from './transform-doc-markdown';
+import { slugFromPath } from '../docs.ts';
+import { transformDocMarkdown } from './transform-doc-markdown.ts';
 
 const rawModules = import.meta.glob<string>('/content/**/*.md', {
 	query: '?raw',

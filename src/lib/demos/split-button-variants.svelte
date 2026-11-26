@@ -1,6 +1,6 @@
 <script lang="ts">
-	import * as SplitButton from '$lib/components/ui/split-button';
-	import type { ButtonSize, ButtonVariant } from '$lib/components/ui/button';
+	import * as SplitButton from '#lib/components/ui/split-button/index.ts';
+	import type { ButtonSize, ButtonVariant } from '#lib/components/ui/button/index.ts';
 
 	type StylePreset = {
 		id: string;

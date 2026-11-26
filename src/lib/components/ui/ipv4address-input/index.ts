@@ -1,4 +1,4 @@
-import { isNumber } from '$lib/utils/is-number';
+import { isNumber } from '#lib/utils/is-number.ts';
 import IPv4AddressInput from './ipv4address-input.svelte';
 
 /** Attempts to parse the provided address into a valid IP. Returns undefined for
@@ -46,4 +46,4 @@ export const safeParseIPv4Address = (
 
 export { IPv4AddressInput };
 
-export type { IPv4AddressInputProps, IPv4AddressInputPropsWithoutHTML } from './types';
+export type { IPv4AddressInputProps, IPv4AddressInputPropsWithoutHTML } from './types.ts';

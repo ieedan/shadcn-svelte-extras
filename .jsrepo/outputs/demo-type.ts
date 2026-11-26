@@ -1,7 +1,7 @@
 import { Output } from 'jsrepo/outputs';
 import path from 'node:path';
 import fs from 'node:fs';
-import { writeFileIfChanged } from '../utils';
+import { writeFileIfChanged } from '../utils.ts';
 
 export default function (): Output {
 	return {

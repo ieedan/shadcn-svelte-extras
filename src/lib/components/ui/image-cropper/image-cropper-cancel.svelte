@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Button, { type ButtonProps } from '$lib/components/button.svelte';
-	import { useImageCropperCancel } from './image-cropper.svelte.js';
+	import Button, { type ButtonProps } from '#lib/components/button.svelte';
+	import { useImageCropperCancel } from './image-cropper.svelte.ts';
 	import Trash2Icon from '@lucide/svelte/icons/trash-2';
 
 	let {

@@ -1,6 +1,6 @@
 import { Context } from 'runed';
 import { page } from '$app/state';
-import type { CurrentDoc } from './types';
+import type { CurrentDoc } from './types.ts';
 
 class DocsContext {
 	constructor() {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Rename from '$lib/components/ui/rename';
+	import * as Rename from '#lib/components/ui/rename/index.ts';
 
 	let value = $state('feat: add rename component');
 </script>

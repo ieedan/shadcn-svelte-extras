@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LanguageSwitcher } from '$lib/components/ui/language-switcher';
+	import { LanguageSwitcher } from '#lib/components/ui/language-switcher/index.ts';
 
 	const languages = [
 		{ code: 'en', label: 'English' },

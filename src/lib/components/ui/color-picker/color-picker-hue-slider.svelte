@@ -1,6 +1,6 @@
 <script lang="ts" module>
 	import type { SliderSingleRootProps } from 'bits-ui';
-	import type { WithElementRef, WithoutChildrenOrChild } from '$lib/utils.js';
+	import type { WithElementRef, WithoutChildrenOrChild } from '#lib/utils.ts';
 
 	export type ColorPickerHueSliderProps = WithElementRef<
 		Omit<
@@ -15,8 +15,8 @@
 
 <script lang="ts">
 	import { Slider } from 'bits-ui';
-	import { cn } from '$lib/utils.js';
-	import { useColorPickerRootCtx } from './color-picker.svelte.js';
+	import { cn } from '#lib/utils.ts';
+	import { useColorPickerRootCtx } from './color-picker.svelte.ts';
 
 	let {
 		ref = $bindable(null),

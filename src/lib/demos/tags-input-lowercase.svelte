@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { TagsInput } from '$lib/components/ui/tags-input';
-	import type { TagsInputProps } from '$lib/components/ui/tags-input/types';
+	import { TagsInput } from '#lib/components/ui/tags-input/index.ts';
+	import type { TagsInputProps } from '#lib/components/ui/tags-input/types.ts';
 
 	const customValidate: TagsInputProps['validate'] = (val, tags) => {
 		// trim and convert to lowercase

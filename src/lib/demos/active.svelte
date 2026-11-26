@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { active } from '$lib/actions/active.svelte';
+	import { active } from '#lib/actions/active.svelte.ts';
 
 	const links = [
 		{

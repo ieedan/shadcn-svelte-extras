@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { Window } from '$lib/components/ui/window';
-	import { cn } from '$lib/utils.js';
-	import { useTerminalRoot } from './terminal.svelte.js';
+	import { Window } from '#lib/components/ui/window/index.ts';
+	import { cn } from '#lib/utils.ts';
+	import { useTerminalRoot } from './terminal.svelte.ts';
 	import { onMount } from 'svelte';
-	import type { TerminalRootProps } from './types.js';
+	import type { TerminalRootProps } from './types.ts';
 	import { box } from 'svelte-toolbelt';
 
 	let {

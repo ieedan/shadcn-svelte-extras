@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Stepper from '$lib/components/ui/stepper';
+	import * as Stepper from '#lib/components/ui/stepper/index.ts';
 	import { ShoppingCart } from '@lucide/svelte';
 	import BookUser from '@lucide/svelte/icons/book-user';
 	import CreditCard from '@lucide/svelte/icons/credit-card';

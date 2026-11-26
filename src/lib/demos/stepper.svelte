@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as Stepper from '$lib/components/ui/stepper';
+	import * as Stepper from '#lib/components/ui/stepper/index.ts';
 
 	let step = $state(2);
 </script>

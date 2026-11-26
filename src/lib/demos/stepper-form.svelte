@@ -1,9 +1,9 @@
 <script lang="ts">
-	import * as Stepper from '$lib/components/ui/stepper';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import Button from '$lib/components/button.svelte';
-	import * as ToggleGroup from '$lib/components/ui/toggle-group';
+	import * as Stepper from '#lib/components/ui/stepper/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import Button from '#lib/components/button.svelte';
+	import * as ToggleGroup from '#lib/components/ui/toggle-group/index.ts';
 	import { toast } from 'svelte-sonner';
 	import {
 		BookUserIcon,
@@ -12,7 +12,7 @@
 		ShoppingCartIcon,
 		SmileIcon
 	} from '@lucide/svelte';
-	import * as Accordion from '$lib/components/ui/accordion';
+	import * as Accordion from '#lib/components/ui/accordion/index.ts';
 
 	let step = $state(1);
 

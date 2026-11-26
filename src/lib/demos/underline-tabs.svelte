@@ -1,5 +1,5 @@
 <script lang="ts">
-	import * as UnderlineTabs from '$lib/components/ui/underline-tabs';
+	import * as UnderlineTabs from '#lib/components/ui/underline-tabs/index.ts';
 </script>
 
 <div class="relative w-full max-w-[458px]">
