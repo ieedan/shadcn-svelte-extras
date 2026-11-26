@@ -13,6 +13,8 @@ shadcn-svelte-extras distributes it's components as copy-pastable code that you 
 
 To get started you can use either `jsrepo` or `shadcn-svelte`. Both assume that you have already initialized your project using the shadcn-svelte CLI.
 
+Extras use your project's own shadcn-svelte components, preserving your chosen style preset. Install the upstream components imported by an extra before using it, for example `pnpm dlx shadcn-svelte@latest add alert-dialog input` for `confirm-delete-dialog`. The jsrepo registry does not bundle or overwrite these upstream components.
+
 <InstallationSetupTabs />
 
 Once you've initialized using the CLI of your choice you can start adding extras!
